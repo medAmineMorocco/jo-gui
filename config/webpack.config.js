@@ -84,6 +84,17 @@ module.exports = function(webpackEnv) {
         options: cssOptions,
       },
       {
+        loader: 'less-loader', // compiles Less to CSS
+        options: {
+          lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
+            modifyVars: {
+              'primary-color': '#D4C382'
+            },
+            javascriptEnabled: true,
+          },
+        }
+      },
+      {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in
         // package.json
