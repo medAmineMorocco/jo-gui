@@ -1,0 +1,5 @@
+@import "../../src/theme/global_styles.css";
+@font-face {
+    font-family: Paris2024;
+    src: url("https://www.paris2024.org/app/themes/2024-reveal/dist/fonts/Paris2024-VariableItalic_498de891.woff2");
+}
