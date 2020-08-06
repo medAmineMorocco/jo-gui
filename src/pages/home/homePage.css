@@ -1,3 +1,15 @@
+.show-overlay-btn {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 1000;
+}
+
+.show-overlay-btn:hover {
+    background-color: white;
+    color: black;
+}
+
 .hero-container {
     height: 68vh;
     position: relative;

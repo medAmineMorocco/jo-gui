@@ -8,7 +8,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
     const isMobile = useWindowSize();
 
     const closeButton = (
-        <Button type="primary" shape="circle" icon={<CloseOutlined />} />
+        <Button className="modal-close-btn" type="primary" shape="circle" icon={<CloseOutlined />} />
     );
     if (isMobile) {
         return (

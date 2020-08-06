@@ -66,7 +66,7 @@ export function IntroPage() {
     return (<Fragment>
         <Header>
             <Button
-                className="show-overlay-btn"
+                className="show-modal-btn"
                 type="primary"
                 shape="circle"
                 icon={<InfoOutlined/>}

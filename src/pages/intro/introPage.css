@@ -20,9 +20,14 @@
     justify-content: center;
 }
 
-.show-overlay-btn {
-    position: absolute;
+.show-modal-btn {
+    position: fixed;
     top: 8px;
     right: 8px;
+    z-index: 1000;
+}
+
+.show-modal-btn:hover {
+    background-color: white;
     color: black;
 }

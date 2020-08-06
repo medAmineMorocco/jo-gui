@@ -1,3 +1,12 @@
+.modal-close-btn {
+    color: black;
+}
+
+.modal-close-btn:hover {
+    background-color: white;
+    color: black;
+}
+
 .ant-modal {
     margin: 0;
     padding-bottom: 0;
