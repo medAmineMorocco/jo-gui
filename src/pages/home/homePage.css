@@ -5,7 +5,7 @@
     z-index: 1000;
 }
 
-.show-overlay-btn:hover {
+.show-overlay-btn:hover, .show-overlay-btn:focus {
     background-color: white;
     color: black;
 }

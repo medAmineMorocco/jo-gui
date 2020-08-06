@@ -24,10 +24,11 @@
     position: fixed;
     top: 8px;
     right: 8px;
+    color: black;
     z-index: 1000;
 }
 
-.show-modal-btn:hover {
+.show-modal-btn:hover, .show-modal-btn:focus {
     background-color: white;
     color: black;
 }
