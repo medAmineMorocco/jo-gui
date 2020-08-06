@@ -74,14 +74,15 @@ export function Login() {
                 onFinishFailed={onFinishFailed}
             >
                 <FormItemInput
+                    className="email-input"
                     label={IDENTIFIER}
                     name="email"
                     rules={[{ required: true, message: IDENTIFIER_REQUIRED },
                         { pattern: new RegExp(/^\w+([.-]?\w+)+@paris2024.org/g), message: IDENTIFIER_NOT_VALID }]}
                 />
 
-                <Form.Item>
-                    <Button text={LOGIN} style={{float: 'right'}}/>
+                <Form.Item className="login-submit">
+                    <Button text={LOGIN} htmlType="submit" style={{float: 'right'}}/>
                 </Form.Item>
             </Form>
         </Fragment>

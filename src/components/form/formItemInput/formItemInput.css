@@ -7,7 +7,7 @@
     color: white;
 }
 
-span[role="img"] {
+.tooltip-icon {
     float: right;
 }
 

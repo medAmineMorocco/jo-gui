@@ -5,7 +5,7 @@ import { QuestionCircleFilled } from "@ant-design/icons";
 import { getColor } from "@utils/cssUtil";
 import "./formItemInput.css";
 
-export function FormItemInput({ label, name, rules, tooltipTitle }) {
+export function FormItemInput({ label, name, rules, tooltipTitle, className }) {
     const mainColor = getColor('--main-color');
     const inputRef = useRef();
     const [color, setColor] = useState(mainColor);
@@ -30,12 +30,13 @@ export function FormItemInput({ label, name, rules, tooltipTitle }) {
 
     return (
         <Form.Item
+            className={className}
             label={
                 <span
                     style={{ color }}>
           {label}
                     {tooltipTitle && (
-                        <Tooltip title={tooltipTitle} color={mainColor} placement="topRight">
+                        <Tooltip className="tooltip-icon" title={tooltipTitle} color={mainColor} placement="topRight">
                             <QuestionCircleFilled />
                         </Tooltip>
                     )}

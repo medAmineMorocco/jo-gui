@@ -1,0 +1,28 @@
+.left-side-menu {
+    background-image: url("/images/menu.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.right-side-menu {
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.show-overlay-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: black;
+}

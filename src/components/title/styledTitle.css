@@ -13,7 +13,7 @@
     color: white;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
     .styled-title-container {
         font-size: 10vw;
         line-height: 8vw;

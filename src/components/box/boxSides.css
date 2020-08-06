@@ -1,13 +1,11 @@
 .box-sides-container {
-    width: 60vw;
-    height: auto;
-    margin-left: 20vw;
+    display: flex;
+    margin-left: 8vh;
+    margin-right: 8vh;
+    background-color: black;
 }
 
 .box-side {
-    height: 30vw;
-    width: 30vw;
-    float: left;
+    flex-grow: 1;
     position: relative;
-    background-color: black;
 }

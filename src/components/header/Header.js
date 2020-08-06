@@ -11,7 +11,6 @@ export function Header(props) {
                 width="260px"
                 height="132px"
             />
-
             {props.children}
         </div>
     );
