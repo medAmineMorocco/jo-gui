@@ -28,12 +28,14 @@ export function Section({
     if (!imgStyle) {
       return (
         <div className="section-container">
-          <div className="section-text-container" style={style}>
-            <h1>{title}</h1>
-            <div className="section-paragraphs-container-full">
-              {renderedParagraphs}
+          <div className="section-container-full">
+            <div className="section-text-container" style={style}>
+              <h1>{title}</h1>
+              <div className="section-paragraphs-container-full">
+                {renderedParagraphs}
+              </div>
+              <div className="section-source">{source}</div>
             </div>
-            <div className="section-source">{source}</div>
           </div>
         </div>
       );

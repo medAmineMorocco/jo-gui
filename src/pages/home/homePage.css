@@ -5,7 +5,8 @@
     z-index: 1000;
 }
 
-.show-overlay-btn:hover, .show-overlay-btn:focus {
+.show-overlay-btn:hover,
+.show-overlay-btn:focus {
     background-color: white;
     color: black;
 }
@@ -54,6 +55,25 @@
     font-family: Source Sans Pro;
     width: 100%;
     height: 20vh;
+}
+
+.section-divider {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 97.15%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.section-footer {
+    position: absolute;
+    background: url("/images/section_end2.png");;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    width: 100%;
+    height: 100vh;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 
 @media (max-width: 767px) {

@@ -39,7 +39,6 @@ export const SECTION3_PARAG4 = "La partie vie professionnelle étant différente
 export const SECTION3_PARAG5 = "Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.";
 export const SECTION3_SOURCE = "Source : https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
 
-
 /* Menu Page */
 export const MENU_DESCRIPTION = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
 consectetur dolor ac libero.`;

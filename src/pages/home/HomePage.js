@@ -77,6 +77,11 @@ export function HomePage(props) {
             <Section title={SECTION2_TITLE} paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]} style={{background: '#FF8675'}} imgStyle={{ backgroundImage: 'url("/images/section_2.png")'}} imgPosition='left'></Section>
             <Section title={SECTION3_TITLE} paragraphs={[SECTION3_PARAG1, SECTION3_PARAG2, SECTION3_PARAG3, SECTION3_PARAG4, SECTION3_PARAG5]} style={{background: '#003B55'}} source={SECTION3_SOURCE}></Section>
 
+            <div className="section-footer">
+                <div className="section-divider"></div>
+                <div className="section-end"></div>
+            </div>
+
             <Footer style={{display: 'flex', justifyContent: 'center'}}>'
                 <Button className="footer-action-start" type="primary" shape="round" onClick={onStart}>
                     {FOOTER_START_ACTION} <ArrowRightOutlined />
