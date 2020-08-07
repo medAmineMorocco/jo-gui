@@ -82,7 +82,7 @@ export function HomePage(props) {
                 <div className="section-end"></div>
             </div>
 
-            <Footer style={{display: 'flex', justifyContent: 'center'}}>'
+            <Footer style={{display: 'flex', justifyContent: 'center'}}>
                 <Button className="footer-action-start" type="primary" shape="round" onClick={onStart}>
                     {FOOTER_START_ACTION} <ArrowRightOutlined />
                 </Button>
