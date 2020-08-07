@@ -11,7 +11,7 @@
     text-align: center;
     font-family: Source Sans Pro;
     width: 100%;
-    height: 100%;
+    height: 150vh;
 }
 
 .section-text-container h1 {
@@ -39,4 +39,29 @@
 .section-paragraphs-container {
     margin: 5vw;
     margin-top: 3vh;
+}
+
+.section-paragraphs-container-full {
+    display: flex;
+    flex-flow: column wrap;
+    height: 50%;
+    margin-top: 10vh;
+}
+
+.section-paragraphs-container-full>p {
+    text-align: left;
+    width: 40%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.section-source {
+    margin-top: 30vh;
+    margin-left: 2vw;
+    height: 10%;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2vw;
 }

@@ -25,6 +25,13 @@ import {
     SECTION2_TITLE,
     SECTION2_PARAG1,
     SECTION2_PARAG2,
+    SECTION3_TITLE,
+    SECTION3_PARAG1,
+    SECTION3_PARAG2,
+    SECTION3_PARAG3,
+    SECTION3_PARAG4,
+    SECTION3_PARAG5,
+    SECTION3_SOURCE
 } from "@utils/constants";
 import {useHistory} from "react-router-dom";
 import "./homePage.css";
@@ -66,8 +73,9 @@ export function HomePage(props) {
                 <p>{MAIN_DESC3}</p>
             </div>
 
-            <Section title={SECTION1_TITLE} paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3, SECTION1_PARAG4, SECTION1_PARAG5]} style={{background: '#009494'}} imgStyle={{ backgroundImage: 'url("/images/section_1.png")'}}/>
-            <Section title={SECTION2_TITLE} paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]} style={{background: '#FF8675'}} imgStyle={{ backgroundImage: 'url("/images/section_2.png")'}} imgPosition='left'/>
+            <Section title={SECTION1_TITLE} paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3, SECTION1_PARAG4, SECTION1_PARAG5]} style={{background: '#009494'}} imgStyle={{ backgroundImage: 'url("/images/section_1.png")'}} imgPosition='right'></Section>
+            <Section title={SECTION2_TITLE} paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]} style={{background: '#FF8675'}} imgStyle={{ backgroundImage: 'url("/images/section_2.png")'}} imgPosition='left'></Section>
+            <Section title={SECTION3_TITLE} paragraphs={[SECTION3_PARAG1, SECTION3_PARAG2, SECTION3_PARAG3, SECTION3_PARAG4, SECTION3_PARAG5]} style={{background: '#003B55'}} source={SECTION3_SOURCE}></Section>
 
             <Footer style={{display: 'flex', justifyContent: 'center'}}>'
                 <Button className="footer-action-start" type="primary" shape="round" onClick={onStart}>

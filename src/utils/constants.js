@@ -31,6 +31,15 @@ export const SECTION2_TITLE = "Pourquoi calculer son impact carbone ?";
 export const SECTION2_PARAG1 = "Calculer son impact carbone, c'est la première étape pour piloter ses choix dès à présent et se fixer des objectifs pour réduire son impact carbone.";
 export const SECTION2_PARAG2 = "Cela fait partie de la méthode AERCM (Anticiper, Eviter, Reduire, Compenser, et Mobiliser) adoptée par Paris 2024, afin de respecter ses engagements, et atteindre la neutralité carbone.";
 
+export const SECTION3_TITLE = "Comment cet outil calcul mon impact ?";
+export const SECTION3_PARAG1 = "Sur le modèle du “bilan carbone®” développé par l'ADEME, cet outil de dignostic estime tes émissions carbone en associant les postes d'émissions de tes activités avec des facteurs d'émissions.";
+export const SECTION3_PARAG2 = "Cet outil estime les émissions de 6 gaz (CO2, CH4, NO2, PFC, HFC, et SF6) selon une méthode standardisée, reconnue offciellement internationnalement, et dont les règles sont accessibles par tous car publiques.";
+export const SECTION3_PARAG3 = "Le CO₂ majoriatirement répandu, est utilisé comme référence. L'impact carbone est exprimé en tonne équivalent CO₂, unité dans laquelle les quantités des autres gaz sont converties.";
+export const SECTION3_PARAG4 = "La partie vie professionnelle étant différente de celle passée à la maison, sur le point de vue de la restauration par exemple (au restaurant VS chez soi), l'impact carbone est calculé séparément pour une meilleure lecture.";
+export const SECTION3_PARAG5 = "Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.";
+export const SECTION3_SOURCE = "Source : https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
+
+
 /* Menu Page */
 export const MENU_DESCRIPTION = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
 consectetur dolor ac libero.`;
