@@ -91,11 +91,24 @@ export function HomePage(props) {
                 <div className="section-divider"></div>
                 <div className="website-info">
                     {WEBSITE_INFO_MSG}
-                    <p><a href="">{WEBSITE_URL}</a></p>
+                    <p><a href="#0">{WEBSITE_URL}</a></p>
                 </div>
                 <div className="website-invite">{WEBSITE_INVITATION_MSG}</div>
             </div>
 
+            <div className="contacts">
+                <div className="contacts-urls">
+                    <a href="#0">{CONTACT_LEGAL_MENTION}</a>-
+                    <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>-
+                    <a href="#0">{CONTACT_PRIVACY_POLICY}</a>-
+                    <a href="#0">{CONTACT_COOKIES}</a>-
+                    <a href="#0">{CONTACT_CALL_TENDER}</a>-
+                    <a href="#0">{CONTACT_TERMS_PURCHASE}</a>
+                </div>
+            </div>
+
+            <div className="footer-picture"></div>
+            
             <Footer style={{display: 'flex', justifyContent: 'center'}}>
                 <Button className="footer-action-start" type="primary" shape="round" onClick={onStart}>
                     {FOOTER_START_ACTION} <ArrowRightOutlined />
