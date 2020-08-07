@@ -67,13 +67,40 @@
 
 .section-footer {
     position: absolute;
-    background: url("/images/section_end2.png");;
+    background: url("/images/section_end2.png");
+    ;
     mix-blend-mode: normal;
     opacity: 0.8;
     width: 100%;
     height: 100vh;
     background-size: 100% auto;
     background-repeat: no-repeat;
+}
+
+.website-info {
+    margin: 0 auto;
+    position: relative;
+    width: 50%;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 8vh;
+    text-align: center;
+    margin-top: 27vh;
+}
+
+.website-invite {
+    margin: 0 auto;
+    width: 20%;
+    position: relative;
+    font-family: Paris2024;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 2vw;
+    margin-top: 5vh;
 }
 
 @media (max-width: 767px) {

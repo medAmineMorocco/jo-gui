@@ -39,6 +39,17 @@ export const SECTION3_PARAG4 = "La partie vie professionnelle étant différente
 export const SECTION3_PARAG5 = "Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.";
 export const SECTION3_SOURCE = "Source : https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
 
+export const WEBSITE_INFO_MSG = "Pour plus d’informations, consultez notre page dédiée.";
+export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
+export const WEBSITE_INVITATION_MSG = "Commencez votre bilan maintenant !";
+
+export const CONTACT_LEGAL_MENTION = "Mentions légales";
+export const CONTACT_ACCESSIBILITY_SITES = "Accéssibilité Sites"
+export const CONTACT_PRIVACY_POLICY = "Politique de confidentialité"
+export const CONTACT_COOKIES = "Cookies"
+export const CONTACT_CALL_TENDER = "Appels d'Offre et Consultations"
+export const CONTACT_TERMS_PURCHASE = "Conditions Générales d'Achat"
+
 /* Menu Page */
 export const MENU_DESCRIPTION = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
 consectetur dolor ac libero.`;

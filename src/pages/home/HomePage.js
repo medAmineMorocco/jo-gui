@@ -31,7 +31,17 @@ import {
     SECTION3_PARAG3,
     SECTION3_PARAG4,
     SECTION3_PARAG5,
-    SECTION3_SOURCE
+    SECTION3_SOURCE,
+    WEBSITE_INFO_MSG,
+    WEBSITE_URL,
+    WEBSITE_INVITATION_MSG,
+    CONTACT_LEGAL_MENTION,
+    CONTACT_ACCESSIBILITY_SITES,
+    CONTACT_PRIVACY_POLICY,
+    CONTACT_COOKIES,
+    CONTACT_CALL_TENDER,
+    CONTACT_TERMS_PURCHASE
+
 } from "@utils/constants";
 import {useHistory} from "react-router-dom";
 import "./homePage.css";
@@ -79,7 +89,11 @@ export function HomePage(props) {
 
             <div className="section-footer">
                 <div className="section-divider"></div>
-                <div className="section-end"></div>
+                <div className="website-info">
+                    {WEBSITE_INFO_MSG}
+                    <p><a href="">{WEBSITE_URL}</a></p>
+                </div>
+                <div className="website-invite">{WEBSITE_INVITATION_MSG}</div>
             </div>
 
             <Footer style={{display: 'flex', justifyContent: 'center'}}>
