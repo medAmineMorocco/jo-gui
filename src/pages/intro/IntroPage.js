@@ -55,7 +55,7 @@ export function IntroPage() {
         const right = (
             <div className="right-side-menu">
                 <StyledTitle title1={HERO_TITLE1} title2={HERO_TITLE2}/>
-                <p>{MENU_DESCRIPTION}</p>
+                <p className="intro-menu-description">{MENU_DESCRIPTION}</p>
                 <div style={{marginLeft: "20%"}}>
                     <Summary/>
                 </div>
@@ -80,6 +80,8 @@ export function IntroPage() {
             hideOverlay={() => setVisible(false)}
         />
         {content}
-        <Footer/>
+        <Footer>
+            <div style={{position: 'absolute', width: '100%', height: '100%', top: '0', left: '0', backgroundColor: 'red'}}>lol</div>
+        </Footer>
     </Fragment>)
 }
