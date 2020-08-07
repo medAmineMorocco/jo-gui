@@ -33,6 +33,17 @@
     text-transform: capitalize;
 }
 
+.main-description {
+    position: relative;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 1.5vw;
+    text-align: center;
+    font-family: Source Sans Pro;
+    width: 100%;
+    height: 20vh;
+}
+
 @media (max-width: 767px) {
     .hero-container {
         background-position: 50% 50%;
@@ -41,5 +52,15 @@
     .hero-description {
         font-size: 8vw;
         line-height: 6vw;
+    }
+
+    .main-description {
+        width: auto;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        font-size: 5vw;
+        text-align: left;
+        font-weight: 400;
+        height: 120vh;
     }
 }

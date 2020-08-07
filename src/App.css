@@ -4,6 +4,11 @@
   src: url(/fonts/Paris2024-VariableItalic.woff2);
 }
 
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/fonts/SourceSansPro-Regular.ttf);
+}
+
 body {
   background-color: var(--bg-color-shade-2);
   color: white;
