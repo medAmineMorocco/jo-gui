@@ -2,7 +2,7 @@ import React, {Fragment, useState} from "react";
 import {InfoOutlined} from "@ant-design/icons";
 import {Header} from "@components/header/Header";
 import {BoxSides} from "@components/box/BoxSides";
-import {Footer} from "@components/footer/Footer";
+import {FooterWithNavigation} from "@components/footer/FooterWithNavigation";
 import {StyledTitle} from "@components/title/StyledTitle";
 import {Summary} from "@components/summary/Summary";
 import { Modal } from "@components/modal/Modal";
@@ -12,9 +12,11 @@ import {
     HERO_TITLE2,
     MENU_DESCRIPTION,
     ABOUT_TITLE,
-    ABOUT_CONTENT
+    ABOUT_CONTENT,
+    NAVIGATION_HOME,
+    NAVIGATION_PROFESSIONAL
 } from "@utils/constants";
-import {Button} from "antd";
+import {Button as ButtonAntd} from "antd";
 import "./introPage.css";
 
 export function IntroPage() {
@@ -41,7 +43,8 @@ export function IntroPage() {
                             paddingLeft: "10vw",
                             paddingRight: "10vw",
                             paddingTop: "16px",
-                            paddingBottom: "16px"
+                            paddingBottom: "16px",
+                            textAlign: 'center'
                         }}
                     >
                         {MENU_DESCRIPTION}
@@ -65,7 +68,7 @@ export function IntroPage() {
     }
     return (<Fragment>
         <Header>
-            <Button
+            <ButtonAntd
                 className="show-modal-btn"
                 type="primary"
                 shape="circle"
@@ -80,8 +83,6 @@ export function IntroPage() {
             hideOverlay={() => setVisible(false)}
         />
         {content}
-        <Footer>
-            <div style={{position: 'absolute', width: '100%', height: '100%', top: '0', left: '0', backgroundColor: 'red'}}>lol</div>
-        </Footer>
+        <FooterWithNavigation previous={NAVIGATION_HOME} next={NAVIGATION_PROFESSIONAL}/>
     </Fragment>)
 }

@@ -38,3 +38,7 @@ consectetur dolor ac libero.`;
 export const PROFESSIONAL_MENU_ITEM = "Vie Professionnelle";
 export const PERSONAL_MENU_ITEM = "Vie Personnelle";
 export const RESULTS_MENU_ITEM = "Résultats";
+
+/* Navigation */
+export const NAVIGATION_HOME = "Accueil";
+export const NAVIGATION_PROFESSIONAL = "Vie professionnelle";

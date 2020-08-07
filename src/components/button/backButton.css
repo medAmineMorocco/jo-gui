@@ -1,0 +1,9 @@
+.back-btn {
+    color: black;
+    border: none;
+    background-color: var(--bg-color-shade-4);
+}
+
+.back-btn:hover, .back-btn:focus {
+    color: black;
+}

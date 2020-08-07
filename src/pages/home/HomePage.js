@@ -66,8 +66,8 @@ export function HomePage(props) {
                 <p>{MAIN_DESC3}</p>
             </div>
 
-            <Section title={SECTION1_TITLE} paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3, SECTION1_PARAG4, SECTION1_PARAG5]} style={{background: '#009494'}} imgStyle={{ backgroundImage: 'url("/images/section_1.png")'}}></Section>
-            <Section title={SECTION2_TITLE} paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]} style={{background: '#FF8675'}} imgStyle={{ backgroundImage: 'url("/images/section_2.png")'}} imgPosition='left'></Section>
+            <Section title={SECTION1_TITLE} paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3, SECTION1_PARAG4, SECTION1_PARAG5]} style={{background: '#009494'}} imgStyle={{ backgroundImage: 'url("/images/section_1.png")'}}/>
+            <Section title={SECTION2_TITLE} paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]} style={{background: '#FF8675'}} imgStyle={{ backgroundImage: 'url("/images/section_2.png")'}} imgPosition='left'/>
 
             <Footer style={{display: 'flex', justifyContent: 'center'}}>'
                 <Button className="footer-action-start" type="primary" shape="round" onClick={onStart}>
