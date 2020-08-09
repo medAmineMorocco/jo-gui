@@ -37,7 +37,7 @@ export const SECTION3_PARAG2 = "Cet outil estime les émissions de 6 gaz (CO2, C
 export const SECTION3_PARAG3 = "Le CO₂ majoriatirement répandu, est utilisé comme référence. L'impact carbone est exprimé en tonne équivalent CO₂, unité dans laquelle les quantités des autres gaz sont converties.";
 export const SECTION3_PARAG4 = "La partie vie professionnelle étant différente de celle passée à la maison, sur le point de vue de la restauration par exemple (au restaurant VS chez soi), l'impact carbone est calculé séparément pour une meilleure lecture.";
 export const SECTION3_PARAG5 = "Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.";
-export const SECTION3_SOURCE = "Source : https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
+export const SECTION3_SOURCE = "https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
 
 export const WEBSITE_INFO_MSG = "Pour plus d’informations, consultez notre page dédiée.";
 export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";

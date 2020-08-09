@@ -1,6 +1,7 @@
 import React from "react";
 import { useWindowSize } from "@hooks/window";
 import { BoxSides } from "@components/box/BoxSides";
+import { Accordion } from "@components/accordion/Accordion";
 import "./section.css";
 
 export function Section({
@@ -23,7 +24,7 @@ export function Section({
   });
 
   if (isMobile) {
-    return <div>Mobile Mode</div>;
+    return <div><Accordion title={title} renderedParagraphs={renderedParagraphs} style={style} source={source}></Accordion></div>;
   } else {
     if (!imgStyle) {
       return (
@@ -34,7 +35,7 @@ export function Section({
               <div className="section-paragraphs-container-full">
                 {renderedParagraphs}
               </div>
-              <div className="section-source">{source}</div>
+              <div className="section-source">Source : <a href={source}>{source}</a></div>
             </div>
           </div>
         </div>
