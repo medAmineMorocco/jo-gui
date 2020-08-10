@@ -1,10 +1,12 @@
 import React from "react";
 import "./styledTitle.css";
+import { useWindowSize } from "@hooks/window";
 
 export function StyledTitle({ title1, title2, style }) {
+    const isMobile = useWindowSize();
     return (
-        <h1 style={style} className="styled-title-container">
+        <p style={!isMobile ? style : {}} className="styled-title-container">
             {title1} <br /> {title2}
-        </h1>
+        </p>
     );
 }
