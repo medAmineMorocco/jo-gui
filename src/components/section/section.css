@@ -24,10 +24,12 @@
 .section-text-container h1 {
     color: white;
     font-family: Paris2024;
+    margin: 0 auto;
     margin-top: 6vh;
     margin-bottom: 1vh;
     font-weight: 600;
     line-height: 6vh;
+    width: 90%;
 }
 
 .section-img {
