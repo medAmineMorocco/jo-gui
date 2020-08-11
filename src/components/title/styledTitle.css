@@ -2,7 +2,7 @@
     color: var(--main-color);
     font-family: Paris2024Bold;
     font-weight: bolder;
-    font-size: 46px;
+    font-size: 40px;
     line-height: 36px;
     text-align: center;
     text-transform: uppercase;
@@ -11,11 +11,10 @@
 .styled-title-container::first-line {
     color: white;
 }
-
-/* @media (max-width: 767px) {
+/* 
+@media (max-width: 767px) {
     .styled-title-container {
         font-size: 12vw;
         line-height: 10vw;
-        margin-bottom: 60px;
-    } */
-/* } */
+    } 
+ }  */
