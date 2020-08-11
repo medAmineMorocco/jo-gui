@@ -9,6 +9,11 @@
   src: url(/fonts/SourceSansPro-Regular.ttf);
 }
 
+@font-face {
+  font-family: Paris2024Bold;
+  src: url(/fonts/Paris2024-BlackItalic.otf);
+}
+
 body {
   background-color: var(--bg-color-shade-2);
   color: white;

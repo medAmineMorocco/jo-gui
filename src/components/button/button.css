@@ -5,11 +5,12 @@
     border: none;
     text-align: center;
     font-family: Source Sans Pro;
-    font-size: 12px;
+    font-size: 15px;
     font-style: normal;
     font-weight: bold;
     line-height: 16px;
     text-transform: uppercase;
+    height: 35px;
 }
 
 .custom-btn:hover, .custom-btn:focus {

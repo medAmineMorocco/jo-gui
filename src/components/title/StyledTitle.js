@@ -1,10 +1,14 @@
 import React from "react";
+import { Row, Col } from 'antd';
 import "./styledTitle.css";
 
 export function StyledTitle({ title1, title2, style }) {
     return (
+        <Row align="middle" justify="center">
         <h1 style={style} className="styled-title-container">
-            {title1} <br /> {title2}
+            <Col span={24}>{title1}</Col> 
+            <Col span={24}>{title2}</Col>
         </h1>
+        </Row>
     );
 }

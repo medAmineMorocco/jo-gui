@@ -42,8 +42,8 @@ export function IntroPage() {
                         style={{
                             paddingLeft: "10vw",
                             paddingRight: "10vw",
-                            paddingTop: "16px",
-                            paddingBottom: "16px",
+                            paddingTop: "5px",
+                            paddingBottom: "5px",
                             textAlign: 'center'
                         }}
                     >
