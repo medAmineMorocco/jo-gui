@@ -1,7 +1,16 @@
 @import "./theme/global_styles.css";
 @font-face {
   font-family: Paris2024;
-  src: url(/fonts/Paris2024-VariableItalic.woff2);
+  src: url(/fonts/Paris2024-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Paris2024;
+  src: url(/fonts/Paris2024-BoldItalic.otf);
+  font-weight: bold;
+  font-style: italic;
 }
 
 @font-face {

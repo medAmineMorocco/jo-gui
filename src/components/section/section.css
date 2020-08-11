@@ -27,6 +27,7 @@
     margin-top: 6vh;
     margin-bottom: 1vh;
     font-weight: 600;
+    line-height: 6vh;
 }
 
 .section-img {
@@ -45,7 +46,7 @@
 
 .section-paragraphs-container {
     margin: 5vw;
-    margin-top: 3vh;
+    margin-top: 4vh;
 }
 
 .section-paragraphs-container-full {
