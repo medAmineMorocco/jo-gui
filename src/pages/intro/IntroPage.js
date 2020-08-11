@@ -8,11 +8,13 @@ import {Summary} from "@components/summary/Summary";
 import { Modal } from "@components/modal/Modal";
 import {useWindowSize} from "@hooks/window";
 import {
-    HERO_TITLE1,
-    HERO_TITLE2,
+    INTRO_TITLE1,
+    INTRO_TITLE2,
     MENU_DESCRIPTION,
     ABOUT_TITLE,
-    ABOUT_CONTENT,
+    ABOUT_CONTENT1,
+    ABOUT_CONTENT2,
+    ABOUT_CONTENT3,
     NAVIGATION_HOME,
     NAVIGATION_PROFESSIONAL
 } from "@utils/constants";
@@ -28,25 +30,9 @@ export function IntroPage() {
     if (isMobile) {
         content = (
             <Fragment>
-                <StyledTitle title1={HERO_TITLE1} title2={HERO_TITLE2}/>
-                <div
-                    style={{
-                        width: "100%",
-                        height: "auto",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center"
-                    }}
-                >
-                    <p
-                        style={{
-                            paddingLeft: "10vw",
-                            paddingRight: "10vw",
-                            paddingTop: "16px",
-                            paddingBottom: "16px",
-                            textAlign: 'center'
-                        }}
-                    >
+                <StyledTitle title1={INTRO_TITLE1} title2={INTRO_TITLE2}/>
+                <div className="description-container">
+                    <p className="description">
                         {MENU_DESCRIPTION}
                     </p>
                     <Summary/>
@@ -57,7 +43,7 @@ export function IntroPage() {
         const left = <div className="left-side-menu"/>;
         const right = (
             <div className="right-side-menu">
-                <StyledTitle title1={HERO_TITLE1} title2={HERO_TITLE2}/>
+                <StyledTitle title1={INTRO_TITLE1} title2={INTRO_TITLE2}/>
                 <p className="intro-menu-description">{MENU_DESCRIPTION}</p>
                 <div style={{marginLeft: "20%"}}>
                     <Summary/>
@@ -78,7 +64,7 @@ export function IntroPage() {
         </Header>
         <Modal
             title={ABOUT_TITLE}
-            content={ABOUT_CONTENT}
+            content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
             isVisible={isVisible}
             hideOverlay={() => setVisible(false)}
         />

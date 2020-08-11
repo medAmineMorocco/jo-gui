@@ -10,6 +10,11 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
     const closeButton = (
         <Button className="modal-close-btn" type="primary" shape="circle" icon={<CloseOutlined />} />
     );
+
+    const paragraphs = [];
+    content.forEach((element, index) => {
+        paragraphs.push(<p key={"modal-parag-" + index}>{element}</p>)
+    });
     if (isMobile) {
         return (
             <ModalAntd
@@ -22,7 +27,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
                 style={{ top: "0", height: "100%" }}
                 bodyStyle={{ color: "white", textAlign: "center" }}
             >
-                <p>{content}</p>
+                <p>{paragraphs}</p>
             </ModalAntd>
         );
     }
@@ -34,7 +39,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
             visible={isVisible}
             closeIcon={closeButton}
         >
-            <p>{content}</p>
+            <p>{paragraphs}</p>
         </Drawer>
     );
 }

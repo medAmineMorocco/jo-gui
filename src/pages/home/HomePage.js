@@ -12,7 +12,9 @@ import {
   HERO_DESCRIPTION,
   FOOTER_START_ACTION,
   ABOUT_TITLE,
-  ABOUT_CONTENT,
+  ABOUT_CONTENT1,
+  ABOUT_CONTENT2,
+  ABOUT_CONTENT3,
   MAIN_DESC1,
   MAIN_DESC2,
   MAIN_DESC3,
@@ -66,7 +68,7 @@ export function HomePage(props) {
       </Header>
       <Modal
         title={ABOUT_TITLE}
-        content={ABOUT_CONTENT}
+        content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />
@@ -100,14 +102,14 @@ export function HomePage(props) {
           SECTION1_PARAG5,
         ]}
         style={{ background: "#009494" }}
-        imgStyle={{ backgroundImage: 'url("/images/section-1.png")' }}
+        imgStyle={{ backgroundImage: 'url("/images/section-1.jpg")' }}
         imgPosition="right"
       ></Section>
       <Section
         title={SECTION2_TITLE}
         paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]}
         style={{ background: "#FF8675" }}
-        imgStyle={{ backgroundImage: 'url("/images/section-2.png")' }}
+        imgStyle={{ backgroundImage: 'url("/images/section-2.jpg")' }}
         imgPosition="left"
       ></Section>
       <Section
