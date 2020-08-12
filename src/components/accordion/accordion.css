@@ -10,7 +10,6 @@
     outline: none;
     font-size: 7vw;
     line-height: 5vh;
-    transition: 0.4s;
     border: 0;
 }
 
@@ -44,14 +43,7 @@
     padding: 0 8vw;
     max-height: 0;
     overflow: hidden;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.panel-active {
-    max-height: 100%;
+    transition: max-height 0.7s ease-in-out;
 }
 
 .panel>p {

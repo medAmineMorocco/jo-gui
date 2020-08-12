@@ -8,8 +8,32 @@ export class Accordion extends React.Component {
     this.state = { active: false };
   }
 
-  toggleAccordion() {
+  toggleAccordion(event) {
     this.setState({ active: !this.state.active });
+    var panelElement = this.getPanelElement(event);
+
+    if (!panelElement || !panelElement.style) {
+      return;
+    }
+    if (panelElement.style.maxHeight) {
+      panelElement.style.maxHeight = null;
+    } else {
+      panelElement.style.maxHeight = panelElement.scrollHeight + "px";
+    }
+  }
+
+  getPanelElement(event) {
+    var panelElement;
+    if (event.target.className === "panel") {
+      panelElement = event.target;
+    } else if (event.target.className === "section-paragraph") {
+      panelElement = event.target.parentElement;
+    } else {
+      panelElement = !!event.target.getElementsByTagName("div")[0]
+        ? event.target.getElementsByTagName("div")[0]
+        : event.target.nextElementSibling;
+    }
+    return panelElement;
   }
 
   render() {
@@ -21,7 +45,7 @@ export class Accordion extends React.Component {
           style={this.props.style}
         >
           <h3>{this.props.title}</h3>
-          <div className={this.state.active ? "panel panel-active" : "panel"}>
+          <div className="panel">
             {this.props.renderedParagraphs}
             {!!this.props.source && (
               <div className="panel-section-source">
