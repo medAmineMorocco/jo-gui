@@ -1,24 +1,24 @@
 import React, {useRef, useState} from 'react';
 import {findDOMNode} from "react-dom";
-import { Form, Tooltip, Input } from "antd";
-import { QuestionCircleFilled } from "@ant-design/icons";
+import { Input } from "antd";
 import { getColor } from "@utils/cssUtil";
+import { FormItem } from "@components/form/formItem/FormItem";
 import "./formItemInput.css";
 
-export function FormItemInput({ label, name, rules, tooltipTitle, className }) {
+export function FormItemInput({ label, name, rules, className }) {
     const mainColor = getColor('--main-color');
     const inputRef = useRef();
-    const [color, setColor] = useState(mainColor);
+    const [labelStyle, setLabelStyle] = useState({color: mainColor});
 
     const onFocus = () => {
         const focusColor = "white";
-        setColor(focusColor);
+        setLabelStyle({...labelStyle, color: focusColor});
         changeColorElementTo(inputRef, focusColor);
     };
 
     const onBlur = () => {
         const blurColor = mainColor;
-        setColor(blurColor);
+        setLabelStyle({...labelStyle, color: blurColor});
         changeColorElementTo(inputRef, blurColor);
     };
 
@@ -29,19 +29,10 @@ export function FormItemInput({ label, name, rules, tooltipTitle, className }) {
     };
 
     return (
-        <Form.Item
+        <FormItem
             className={className}
-            label={
-                <span
-                    style={{ color }}>
-          {label}
-                    {tooltipTitle && (
-                        <Tooltip className="tooltip-icon" title={tooltipTitle} color={mainColor} placement="topRight">
-                            <QuestionCircleFilled />
-                        </Tooltip>
-                    )}
-        </span>
-            }
+            label={label}
+            labelStyle={labelStyle}
             name={name}
             rules={rules}
         >
@@ -50,6 +41,6 @@ export function FormItemInput({ label, name, rules, tooltipTitle, className }) {
                 onFocus={onFocus}
                 onBlur={onBlur}
             />
-        </Form.Item>
+        </FormItem>
     );
 }

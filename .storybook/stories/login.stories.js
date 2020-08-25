@@ -7,4 +7,4 @@ import "./stories.css";
 export default { title: 'Login', decorators: [withKnobs]};
 
 
-export const boxSides = () => <Login/>;
+export const login = () => <Login/>;
