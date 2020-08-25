@@ -1,22 +1,23 @@
 .ant-form-item-label > label.ant-form-item-required::before {
-    content: "";
+  content: "";
 }
 
 .ant-form-item-label label {
-    display: block;
-    color: var(--main-color);
+  display: block;
+  color: var(--main-color);
 }
 
 .tooltip-icon {
-    float: right;
+  float: right;
 }
 
 .ant-form-item-has-error .ant-form-item-explain,
-.ant-form-item-has-error .ant-form-item-split, .ant-form-item-explain {
-    text-align: left;
-    color: var(--error-color);
+.ant-form-item-has-error .ant-form-item-split,
+.ant-form-item-explain {
+  text-align: left;
+  color: var(--error-color);
 }
 
 .ant-form-item-has-error {
-    border-color: var(--error-color);
+  border-color: var(--error-color);
 }

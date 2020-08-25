@@ -1,60 +1,60 @@
 .accordion-container {
-    margin: 8vw;
+  margin: 8vw;
 }
 
 .accordion {
-    padding: 4vw;
-    padding-bottom: 9vw;
-    width: 100%;
-    text-align: center;
-    outline: none;
-    font-size: 7vw;
-    line-height: 5vh;
-    border: 0;
+  padding: 4vw;
+  padding-bottom: 9vw;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  font-size: 7vw;
+  line-height: 5vh;
+  border: 0;
 }
 
-.accordion>h3 {
-    color: #ffffff;
-    font-family: Paris2024;
-    margin-bottom: 3vh;
+.accordion > h3 {
+  color: #ffffff;
+  font-family: Paris2024;
+  margin-bottom: 3vh;
 }
 
 .accordion:after {
-    content: '';
-    background: url('/images/accordion-vector-down.png');
-    background-size: cover;
-    position: absolute;
-    width: 40px;
-    height: 12px;
-    margin-left: -20px;
+  content: "";
+  background: url("/images/accordion-vector-down.png");
+  background-size: cover;
+  position: absolute;
+  width: 40px;
+  height: 12px;
+  margin-left: -20px;
 }
 
 .active:after {
-    content: '';
-    background: url('/images/accordion-vector-up.png');
-    background-size: cover;
-    position: absolute;
-    width: 40px;
-    height: 12px;
-    margin-left: -20px;
+  content: "";
+  background: url("/images/accordion-vector-up.png");
+  background-size: cover;
+  position: absolute;
+  width: 40px;
+  height: 12px;
+  margin-left: -20px;
 }
 
 .panel {
-    padding: 0 8vw;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.7s ease-in-out;
+  padding: 0 8vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
 }
 
-.panel>p {
-    font-size: 4vw;
-    line-height: 6vw;
+.panel > p {
+  font-size: 4vw;
+  line-height: 6vw;
 }
 
 .panel-section-source {
-    margin-top: 0;
-    height: 10%;
-    text-align: left;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.2vw;
+  margin-top: 0;
+  height: 10%;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2vw;
 }

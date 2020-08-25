@@ -1,243 +1,243 @@
 .show-overlay-btn {
-    position: fixed;
-    top: 8px;
-    right: 8px;
-    z-index: 1000;
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 1000;
 }
 
 .show-overlay-btn:hover,
 .show-overlay-btn:focus {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .hero-container {
-    height: 68vh;
-    position: relative;
-    background-image: url("/images/hero.jpg");
-    max-width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 68vh;
+  position: relative;
+  background-image: url("/images/hero.jpg");
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 94.31%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 94.31%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-description {
-    position: absolute;
-    width: 100%;
-    bottom: 10vh;
-    font-family: Paris2024;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2vw;
-    text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 10vh;
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2vw;
+  text-align: center;
 }
 
 .hero-description::first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .main-description {
-    position: relative;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 1.5vw;
-    text-align: center;
-    font-family: Source Sans Pro;
-    width: 80%;
-    height: 20vh;
-    margin: 0 auto;
+  position: relative;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1.5vw;
+  text-align: center;
+  font-family: Source Sans Pro;
+  width: 80%;
+  height: 20vh;
+  margin: 0 auto;
 }
 
 .section-divider {
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 97.15%);
-    transform: matrix(1, 0, 0, -1, 0, 0);
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 97.15%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
 .section-footer {
-    background: url("/images/section-end.jpg");
-    mix-blend-mode: normal;
-    opacity: 0.8;
-    width: 100%;
-    height: 60vh;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+  background: url("/images/section-end.jpg");
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  width: 100%;
+  height: 60vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .website-info {
-    margin: 0 auto;
-    position: relative;
-    width: 50%;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    line-height: 8vh;
-    text-align: center;
+  margin: 0 auto;
+  position: relative;
+  width: 50%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 8vh;
+  text-align: center;
 }
 
 .website-url {
-    margin: 0 auto;
-    position: relative;
-    width: 50%;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    line-height: 8vh;
-    text-align: center;
+  margin: 0 auto;
+  position: relative;
+  width: 50%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 8vh;
+  text-align: center;
 }
 
 .website-invite {
-    margin: 0 auto;
-    width: 20%;
-    position: relative;
-    font-family: Paris2024;
-    font-style: normal;
-    font-weight: 600;
-    text-align: center;
-    line-height: 5vh;
-    font-size: 2vw;
-    margin-top: 5vh;
+  margin: 0 auto;
+  width: 20%;
+  position: relative;
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  line-height: 5vh;
+  font-size: 2vw;
+  margin-top: 5vh;
 }
 
 .contacts {
-    background: url("/images/contact-background.png");
-    width: 100%;
-    height: 14vh;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding-top: 6vh;
+  background: url("/images/contact-background.png");
+  width: 100%;
+  height: 14vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 6vh;
 }
 
 .contacts-urls {
-    margin: 0 auto;
-    width: 80%;
-    position: relative;
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
 }
 
 .contacts-urls a {
-    color: #ffffff;
-    margin: 0.5vw;
+  color: #ffffff;
+  margin: 0.5vw;
 }
 
 .footer-picture {
-    background: url("/images/footer-picture.png");
-    width: 100%;
-    height: 120vh;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+  background: url("/images/footer-picture.png");
+  width: 100%;
+  height: 120vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 767px) {
-    .hero-container {
-        background-position: 50% 50%;
-        height: 60vh;
-    }
+  .hero-container {
+    background-position: 50% 50%;
+    height: 60vh;
+  }
 
-    .hero-description {
-        font-size: 7vw;
-        line-height: 10vw;
-        bottom: 1vh;
-        width: 90%;
-        margin-left: 5vw;
-    }
+  .hero-description {
+    font-size: 7vw;
+    line-height: 10vw;
+    bottom: 1vh;
+    width: 90%;
+    margin-left: 5vw;
+  }
 
-    .main-description {
-        width: auto;
-        margin-left: 15vw;
-        margin-right: 15vw;
-        font-size: 5vw;
-        text-align: left;
-        font-weight: 400;
-        height: 70vh;
-        margin-top: 4vh;
-    }
+  .main-description {
+    width: auto;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    font-size: 5vw;
+    text-align: left;
+    font-weight: 400;
+    height: 70vh;
+    margin-top: 4vh;
+  }
 
-    .section-footer {
-        mix-blend-mode: normal;
-        opacity: 0.8;
-        width: 100%;
-        height: 32vh;
-        background: none;
-    }
+  .section-footer {
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    width: 100%;
+    height: 32vh;
+    background: none;
+  }
 
-    .section-divider {
-        display: none;
-    }
+  .section-divider {
+    display: none;
+  }
 
-    .website-info {
-        margin: 0 auto;
-        position: relative;
-        width: 80%;
-        font-family: Source Sans Pro;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 5vw;
-        line-height: 4vh;
-        text-align: center;
-    }
+  .website-info {
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 4vh;
+    text-align: center;
+  }
 
-    .website-info>p {
-        margin: 0 auto;
-        width: 90%;
-        margin-top: 3vh;
-        font-size: 4vw;
-    }
+  .website-info > p {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 3vh;
+    font-size: 4vw;
+  }
 
-    .website-url {
-        margin: 0 auto;
-        position: relative;
-        width: 90%;
-        font-family: Source Sans Pro;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 5vw;
-        line-height: 8vh;
-        text-align: center;
-        margin-top: 1vh;
-    }
+  .website-url {
+    margin: 0 auto;
+    position: relative;
+    width: 90%;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 8vh;
+    text-align: center;
+    margin-top: 1vh;
+  }
 
-    .website-invite {
-        margin-top: 2vh;
-        width: 80%;
-        font-size: 8vw;
-    }
+  .website-invite {
+    margin-top: 2vh;
+    width: 80%;
+    font-size: 8vw;
+  }
 
-    .contacts {
-        background: url("/images/contact-background.png");
-        width: 100%;
-        height: 20%;
-        background-size: 100% auto;
-        text-align: center;
-        padding-top: 0;
-    }
+  .contacts {
+    background: url("/images/contact-background.png");
+    width: 100%;
+    height: 20%;
+    background-size: 100% auto;
+    text-align: center;
+    padding-top: 0;
+  }
 
-    .contacts-urls {
-        margin: 0 auto;
-        width: 80%;
-        position: relative;
-        line-height: 8vw;
-    }
+  .contacts-urls {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    line-height: 8vw;
+  }
 
-    .contacts-urls>a {
-        margin: 2vw;
-        font-size: 3vw;
-    }
+  .contacts-urls > a {
+    margin: 2vw;
+    font-size: 3vw;
+  }
 
-    .footer-picture {
-        height: 42vh;
-    }
+  .footer-picture {
+    height: 42vh;
+  }
 }

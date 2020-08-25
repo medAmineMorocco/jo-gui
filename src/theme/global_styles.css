@@ -1,10 +1,10 @@
 :root {
-    --main-color: #d7c378;
-    --bg-color: #2c2c2c;
-    --bg-color-shade: #4A4A4A;
-    --bg-color-shade-2: #1b1b1b;
-    --bg-color-shade-3: #323232;
-    --bg-color-shade-4: #707070;
-    --error-color: #FFCC00;
-    --error-color-shade-2: #D7C378;
+  --main-color: #d7c378;
+  --bg-color: #2c2c2c;
+  --bg-color-shade: #4a4a4a;
+  --bg-color-shade-2: #1b1b1b;
+  --bg-color-shade-3: #323232;
+  --bg-color-shade-4: #707070;
+  --error-color: #ffcc00;
+  --error-color-shade-2: #d7c378;
 }
