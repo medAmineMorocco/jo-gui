@@ -11,13 +11,13 @@ export function Form({
   basicInputs = [],
 }) {
   const errorColor = getColor("--error-color");
-  const errorColorShade2 = getColor("--error-color-shade-2");
+  const mainColor = getColor("--main-color");
 
   const onDefaultFinishFailed = ({ _, errorFields }) => {
     errorFields.forEach((errors) =>
       errors.name.forEach((error) => {
-        if (basicInputs && basicInputs.includes(error)) {
-          setErrorStateForInput(error);
+        if (basicInputs && basicInputs.includes(name + "_" + error)) {
+          setErrorStateForInput(name + "_" + error);
         }
       })
     );
@@ -33,7 +33,7 @@ export function Form({
     inputContainer.style.color = errorColor;
     document.querySelector(
       `[for="${error}"]`
-    ).firstElementChild.style.color = errorColorShade2;
+    ).firstElementChild.style.color = mainColor;
   };
 
   return (
