@@ -1,4 +1,7 @@
 {
   "baseUrl": "http://localhost:3000",
-  "experimentalFetchPolyfill": true
+  "experimentalComponentTesting": true,
+  "componentFolder": "src",
+  "experimentalFetchPolyfill": true,
+  "testFiles": "**/*.spec.js"
 }
