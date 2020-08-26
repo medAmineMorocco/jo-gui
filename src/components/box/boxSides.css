@@ -1,11 +1,11 @@
 .box-sides-container {
-    display: flex;
-    margin-left: 8vh;
-    margin-right: 8vh;
-    background-color: black;
+  display: flex;
+  margin-left: 8vh;
+  margin-right: 8vh;
+  background-color: black;
 }
 
 .box-side {
-    flex-grow: 1;
-    position: relative;
+  flex-grow: 1;
+  position: relative;
 }

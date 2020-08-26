@@ -1,75 +1,75 @@
 .modal-close-btn {
-    color: black;
+  color: black;
 }
 
 .modal-close-btn:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .ant-modal {
-    margin: 0;
-    padding-bottom: 0;
+  margin: 0;
+  padding-bottom: 0;
 }
 .ant-modal-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: black;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 23px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: black;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 .ant-modal-header {
-    padding-top: 126px;
-    border-bottom: 0;
-    background-color: black;
+  padding-top: 126px;
+  border-bottom: 0;
+  background-color: black;
 }
 
 .ant-modal-title {
-    font-family: Paris2024;
-    font-style: italic;
-    font-weight: 900;
-    font-size: 46px;
-    line-height: 36px;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--main-color);
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--main-color);
 }
 
 .ant-drawer-header {
-    padding-top: 90px;
-    background-color: var(--bg-color-shade);
-    border-bottom: 0;
+  padding-top: 90px;
+  background-color: var(--bg-color-shade);
+  border-bottom: 0;
 }
 
 .ant-drawer-title {
-    font-family: Paris2024;
-    font-style: italic;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 36px;
-    text-transform: uppercase;
-    color: var(--main-color);
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: var(--main-color);
 }
 
 .ant-drawer-body {
-    background-color: var(--bg-color-shade);
+  background-color: var(--bg-color-shade);
 }
 
 .ant-drawer-content {
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 23px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 @media (max-width: 767px) {
-    .ant-modal {
-        max-width: 100%;
-    }
+  .ant-modal {
+    max-width: 100%;
+  }
 }

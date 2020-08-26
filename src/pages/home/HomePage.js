@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react"
-import { Button } from "antd"
-import { ArrowRightOutlined, InfoOutlined } from "@ant-design/icons"
-import { Modal } from "@components/modal/Modal"
-import { Header } from "@components/header/Header"
-import { Footer } from "@components/footer/Footer"
-import { StyledTitle } from "@components/title/StyledTitle"
-import { Section } from "@components/section/Section"
+import React, { Fragment, useState } from "react";
+import { Button } from "antd";
+import { ArrowRightOutlined, InfoOutlined } from "@ant-design/icons";
+import { Modal } from "@components/modal/Modal";
+import { Header } from "@components/header/Header";
+import { Footer } from "@components/footer/Footer";
+import { StyledTitle } from "@components/title/StyledTitle";
+import { Section } from "@components/section/Section";
 import {
   HERO_TITLE1,
   HERO_TITLE2,
@@ -43,17 +43,17 @@ import {
   CONTACT_COOKIES,
   CONTACT_CALL_TENDER,
   CONTACT_TERMS_PURCHASE,
-} from "@utils/constants"
-import { useHistory } from "react-router-dom"
-import "./homePage.css"
+} from "@utils/constants";
+import { useHistory } from "react-router-dom";
+import "./homePage.css";
 
 export function HomePage(props) {
-  const [isVisible, setVisible] = useState(false)
-  const history = useHistory()
+  const [isVisible, setVisible] = useState(false);
+  const history = useHistory();
 
   const onStart = () => {
-    history.push("/intro")
-  }
+    history.push("/intro");
+  };
 
   return (
     <Fragment>
@@ -139,7 +139,8 @@ export function HomePage(props) {
           <a href="#0">{CONTACT_LEGAL_MENTION}</a>-
           <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>-
           <a href="#0">{CONTACT_PRIVACY_POLICY}</a>-
-          <a href="#0">{CONTACT_COOKIES}</a>-<a href="#0">{CONTACT_CALL_TENDER}</a>-
+          <a href="#0">{CONTACT_COOKIES}</a>-
+          <a href="#0">{CONTACT_CALL_TENDER}</a>-
           <a href="#0">{CONTACT_TERMS_PURCHASE}</a>
         </div>
       </div>
@@ -157,5 +158,5 @@ export function HomePage(props) {
         </Button>
       </Footer>
     </Fragment>
-  )
+  );
 }

@@ -24,7 +24,16 @@ export function Section({
   });
 
   if (isMobile) {
-    return <div><Accordion title={title} renderedParagraphs={renderedParagraphs} style={style} source={source}></Accordion></div>;
+    return (
+      <div>
+        <Accordion
+          title={title}
+          renderedParagraphs={renderedParagraphs}
+          style={style}
+          source={source}
+        ></Accordion>
+      </div>
+    );
   } else {
     if (!imgStyle) {
       return (
@@ -35,7 +44,9 @@ export function Section({
               <div className="section-paragraphs-container-full">
                 {renderedParagraphs}
               </div>
-              <div className="section-source">Source : <a href={source}>{source}</a></div>
+              <div className="section-source">
+                Source : <a href={source}>{source}</a>
+              </div>
             </div>
           </div>
         </div>

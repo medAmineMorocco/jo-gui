@@ -1,54 +1,54 @@
 .ant-steps-item-finish
-> .ant-steps-item-container
-> .ant-steps-item-content
-> .ant-steps-item-title,
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title,
 .ant-steps-item-process
-> .ant-steps-item-container
-> .ant-steps-item-content
-> .ant-steps-item-title {
-    color: #d7c378;
-    font-family: Paris2024;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 30px;
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: #d7c378;
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
 }
 
 .ant-steps-item-finish
-> .ant-steps-item-container
-> .ant-steps-item-content
-> .ant-steps-item-description {
-    color: grey;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-description {
+  color: grey;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .ant-steps-item-finish
-.ant-steps-item-icon
-> .ant-steps-icon
-.ant-steps-icon-dot,
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot,
 .ant-steps-item-process
-.ant-steps-item-icon
-> .ant-steps-icon
-.ant-steps-icon-dot {
-    background-color: #d7c378;
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background-color: #d7c378;
 }
 
 .ant-steps-item-finish
-> .ant-steps-item-container
-> .ant-steps-item-tail::after {
-    background-color: #d7c378;
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #d7c378;
 }
 
 .ant-steps-item-container {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 767px) {
-    .ant-steps-vertical {
-        width: auto;
-    }
+  .ant-steps-vertical {
+    width: auto;
+  }
 }

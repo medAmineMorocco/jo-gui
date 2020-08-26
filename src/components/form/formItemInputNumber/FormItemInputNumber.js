@@ -1,24 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useRef } from "react";
 import { findDOMNode } from "react-dom";
-import { Input } from "antd";
+import { InputNumber } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
-import "./formItemInput.css";
+import "./formItemInputNumber.css";
 
-export function FormItemInput({ label, name, rules, className }) {
+export function FormItemInputNumber({ label, name, rules, tooltipTitle }) {
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
-  const [labelStyle, setLabelStyle] = useState({ color: mainColor });
+  const [color, setColor] = useState(mainColor);
 
   const onFocus = () => {
     const focusColor = "white";
-    setLabelStyle({ ...labelStyle, color: focusColor });
+    setColor(focusColor);
     changeColorElementTo(inputRef, focusColor);
   };
 
   const onBlur = () => {
     const blurColor = mainColor;
-    setLabelStyle({ ...labelStyle, color: blurColor });
+    setColor(blurColor);
     changeColorElementTo(inputRef, blurColor);
   };
 
@@ -30,13 +30,13 @@ export function FormItemInput({ label, name, rules, className }) {
 
   return (
     <FormItem
-      className={className}
       label={label}
-      labelStyle={labelStyle}
+      labelStyle={{ color: color }}
       name={name}
       rules={rules}
+      tooltipTitle={tooltipTitle}
     >
-      <Input ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
+      <InputNumber ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
     </FormItem>
   );
 }

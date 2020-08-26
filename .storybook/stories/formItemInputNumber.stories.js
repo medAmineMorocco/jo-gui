@@ -2,27 +2,27 @@ import React from 'react';
 import {withKnobs} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
-import {FormItemInput} from '@components/form/formItemInput/FormItemInput';
+import {FormItemInputNumber} from '@components/form/formItemInputNumber/FormItemInputNumber';
 import { getColor } from "@utils/cssUtil";
 import "./stories.css";
 
 
-export default {title: 'FormItemInput', decorators: [withKnobs]};
+export default {title: 'FormItemInputNumber', decorators: [withKnobs]};
 
 const onFinish = (values) => {
     console.log('success', values);
 };
 
-export const formItemInput = () =>
+export const formItemInputNumber = () =>
     <ConfiguredForm
         onFinish={onFinish}
         basicInputs={["without"]}
     >
-        <FormItemInput
+        <FormItemInputNumber
             name="without"
             tooltipTitle="this is a tooltip"
             label="Label with toolitp"
-            rules={[{required: true, message: "⚠ Please input your password!"}]}
+            rules={[{required: true, message: "⚠ Please input your number!"}]}
         />
         <Form.Item>
             <Button type="primary" htmlType="submit">

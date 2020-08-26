@@ -1,16 +1,22 @@
-import React from 'react';
+import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from 'antd';
+import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
-import './backButton.css';
+import "./backButton.css";
 
 export function BackButton() {
+  const history = useHistory();
 
-    const history = useHistory();
+  const onClick = () => {
+    history.push("/");
+  };
 
-    const onClick = () => {
-        history.push('/');
-    };
-
-    return <Button className="back-btn" shape='circle' icon={<ArrowLeftOutlined />} onClick={onClick} />;
+  return (
+    <Button
+      className="back-btn"
+      shape="circle"
+      icon={<ArrowLeftOutlined />}
+      onClick={onClick}
+    />
+  );
 }
