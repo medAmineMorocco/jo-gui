@@ -1,0 +1,26 @@
+.input-number-with-unit {
+  width: 80%;
+  background-color: var(--bg-color-shade-3);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.ant-input-number-input {
+  text-align: center;
+}
+
+.input-unit {
+  color: var(--main-color);
+  margin-left: 8px;
+}
+
+.ant-form-item-has-error .ant-input-number,
+.ant-form-item-has-error .ant-picker {
+  border-color: var(--error-color);
+}
+
+.ant-form-item-has-error .ant-input-number:not([disabled]):hover,
+.ant-form-item-has-error .ant-picker:not([disabled]):hover {
+  border-color: var(--error-color);
+}
