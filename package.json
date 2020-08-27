@@ -71,6 +71,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "yarn cypress open",
+    "test:run": "yarn cypress run",
     "storybook": "start-storybook -s ./public -p 9000"
   },
   "eslintConfig": {
