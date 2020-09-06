@@ -1,14 +1,35 @@
 context('Login page', () => {
 
+    const sizes = [
+        {
+            device: 'iphone-5',
+            width: 320
+        },
+        {
+            device: 'ipad-2',
+            width: 768
+        },
+        {
+            device: 'macbook-13',
+            width: 1280
+        }
+    ];
+
     const IDENTIFIER_REQUIRED = "Veuillez renseigner votre émail";
     const IDENTIFIER_NOT_VALID = "Veuillez respecter le format d'émail (exemple@paris2024.org)";
 
     it('should show email required when not enter email', () => {
-        cy.visit('/');
+        sizes.forEach(size => {
+            cy.viewport(size.device)
+            cy.visit('/');
 
-        cy.get('form').submit();
+            cy.get('form').submit();
 
-        cy.get(`body:contains("${IDENTIFIER_REQUIRED}")`).should('exist');
+            cy.get(`body:contains("${IDENTIFIER_REQUIRED}")`).should('exist')
+                .then(() => {
+                    cy.takeSnapshots('email is required', size);
+                });
+        })
     });
 
     it('should show email not valid when enter email not valid', () => {
@@ -73,9 +94,15 @@ context('Login page', () => {
     });
 
     it('should not access home page when user is not logged', () => {
-        cy.visit('/');
+        sizes.forEach(size => {
+            cy.viewport(size.device)
+            cy.visit('/');
 
-        cy.url().should('not.include', '/home');
-        cy.url().should('include', '/login');
+            cy.url().should('not.include', '/home');
+            cy.url().should('include', '/login')
+                .then(() => {
+                    cy.takeSnapshots('login page', size);
+                });
+        })
     })
 });
