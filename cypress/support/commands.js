@@ -36,3 +36,7 @@ Cypress.Commands.add('login', (email) => {
     cy.get('#login_email').clear().type(email);
     cy.get('form').submit();
 });
+
+Cypress.Commands.add('typeNumber', (questions) => {
+    questions.forEach(({name, value}) => cy.get(`#${name}`).clear().type(`${value}`));
+});
