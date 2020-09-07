@@ -10,6 +10,6 @@ export default { title: 'Button', decorators: [withKnobs]};
 
 
 export const simpleButton = () => <Button text="ok"/>;
-export const buttonWithIcon = () => <Button text="suite" icon={() => <ArrowRightOutlined/>}/>;
+export const buttonWithIcon = () => <Button text="suite" icon={<ArrowRightOutlined/>}/>;
 export const buttonWithCustomStyle = () => <Button text="suite" style={{width: '300px'}}/>;
 export const backButton = () => <BackButton icon={() => <ArrowLeftOutlined />} />;

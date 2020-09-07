@@ -13,7 +13,7 @@ export function FooterWithNavigation({ previous, next }) {
           <BackButton />
         </div>
         <div className="footer-buttons-right">
-          <Button text="suite" icon={() => <ArrowRightOutlined />} />
+          <Button text="suite" icon={<ArrowRightOutlined />} />
         </div>
       </div>
 

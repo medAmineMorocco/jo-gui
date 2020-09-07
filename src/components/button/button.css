@@ -13,6 +13,11 @@
   height: 35px;
 }
 
+.custom-btn .anticon {
+  float: right;
+  margin-left: 8px;
+}
+
 .custom-btn:hover,
 .custom-btn:focus {
   background-color: var(--main-color);
