@@ -1,0 +1,23 @@
+.hidden-form-multiple-items .ant-form-item-control-input {
+  display: none;
+}
+
+.form-multiple-items-label {
+  color: var(--main-color);
+}
+
+.form-multiple-items-input {
+  width: 100%;
+  background-color: var(--bg-color-shade-3);
+  border-color: var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.form-multiple-items-input input {
+  text-align: center;
+}
+
+.ant-input-number:hover {
+  border-color: var(--main-color);
+}
