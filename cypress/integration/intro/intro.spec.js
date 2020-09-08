@@ -29,7 +29,7 @@ context('Intro page', () => {
         })
     });
 
-    it.only('should open infos modal', () => {
+    it('should open infos modal', () => {
         sizes.forEach(size => {
             cy.viewport(size.device);
             cy.login('email@paris2024.org');
