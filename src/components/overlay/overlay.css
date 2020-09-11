@@ -1,0 +1,163 @@
+.icon-modal {
+  font-size: 30px;
+  float: left;
+  color: black;
+}
+
+.custom-btn-modal {
+  width: 480px;
+  background-color: var(--main-color);
+  border: none;
+  height: 50px;
+  border-radius: 40px;
+}
+.modal-close-btn-modal,
+.modal-close-btn-modal:hover {
+  z-index: 10001;
+  height: 50px;
+  width: 50px;
+  background: var(--main-color);
+  border-radius: 40px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-color: var(--main-color);
+  color: #000000;
+}
+.custom-btn-modal:hover,
+.custom-btn-modal:focus {
+  background-color: var(--main-color);
+  color: black;
+}
+.title-button {
+  text-transform: lowercase;
+  position: absolute;
+  left: 22.71%;
+  right: 22.5%;
+  top: 34.09%;
+  bottom: 25%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+}
+.ant-btn-primary {
+  border-color: transparent;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-prev:focus {
+  font-size: 40px;
+  color: black;
+  top: 35%;
+}
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:hover,
+.ant-carousel .slick-next:focus {
+  font-size: 40px;
+  color: black;
+  right: -5px;
+  top: 35%;
+}
+
+.title-modal {
+  text-transform: lowercase;
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #000000;
+}
+.ant-modal-wrap {
+  background-color: var(--bg-color-shade);
+}
+
+.ant-modal-close-x {
+  background-color: var(--main-color);
+  border-radius: 40px;
+  color: black;
+  font-size: 25px;
+}
+.custom-modal .ant-modal-header {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding-top: 3%;
+  padding-bottom: 0%;
+  background-color: var(--main-color);
+}
+.custom-modal .ant-modal-content {
+  border-radius: 40px;
+  background-color: var(--main-color);
+}
+.custom-modal .ant-carousel .slick-dots li.slick-active button {
+  width: 50%;
+  height: 12px;
+  background: #000000;
+  border-radius: 40px;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 8px;
+  background-color: grey;
+  border-radius: 40px;
+  width: 50%;
+}
+.ant-carousel .slick-dots-bottom {
+  bottom: 0;
+  top: 100%;
+}
+.div-image {
+  width: 50%;
+  height: 119px;
+}
+.text-modal {
+  width: 49%;
+}
+.content-style {
+  color: black;
+  padding: 5% 5% 0% 5%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .custom-btn-modal {
+    width: 100%;
+  }
+  .title-button {
+    font-size: 13px;
+  }
+  .title-modal {
+    font-size: 15px;
+    font-style: italic;
+  }
+  .content-style {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+  }
+  .div-image {
+    width: 100%;
+    height: 119px;
+    margin-bottom: 10px;
+  }
+  .text-modal {
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .ant-modal-content {
+    top: 60px;
+    margin: 5%;
+  }
+  .modal-close-btn-modal,
+  .modal-close-btn-modal:hover {
+    right: 10%;
+  }
+}
