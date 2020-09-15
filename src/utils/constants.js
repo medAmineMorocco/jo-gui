@@ -84,3 +84,10 @@ export const NAVIGATION_PROFESSIONAL = "Vie professionnelle";
 /* Intro Page */
 export const INTRO_TITLE1 = "Calcul ton";
 export const INTRO_TITLE2 = "impact carbone";
+
+/* Action de reduction */
+export const ACTIONS_REDUCTION = "ACTIONS DE RÉDUCTION";
+export const FIRST_DETAIL =
+  "Calculez de combien votre empreinte pourrait baisser en mettant en place ces changements.";
+export const LIRE_MOINS = "LIRE MOINS";
+export const LIRE_PLUS = "... LIRE PLUS";

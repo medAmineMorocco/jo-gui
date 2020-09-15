@@ -1,0 +1,55 @@
+.select-action-dropdown {
+  border-color: black;
+  background: #bcab69;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.select-action .select-option,
+.select-option:hover {
+  background-color: #bcab69;
+  color: black;
+}
+
+.select-action
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #bcab69;
+  color: black;
+}
+
+.select-action
+  .ant-select-single:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-color: black;
+  background-color: #bcab69;
+  color: black;
+  text-align: center;
+}
+
+.select-action .ant-select-selector {
+  border-color: black;
+  background-color: #bcab69;
+  color: black;
+  text-align: center;
+}
+
+.select-action .ant-select-arrow {
+  color: black;
+}
+
+.select-action .ant-select {
+  background-color: #bcab69;
+  color: black;
+}
+
+.select-action
+  .ant-select:not(.ant-select-disabled):hover
+  .ant-select-selector {
+  border-color: black;
+}
+
+.select-action .action-select-selector > .ant-select-selector {
+  background-color: #bcab69;
+  color: black;
+  border: 1px solid #000000;
+}
