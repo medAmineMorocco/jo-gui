@@ -1,0 +1,56 @@
+.back-to-card {
+  background-color: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  color: var(--main-color);
+}
+.text-counter {
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5%;
+}
+.tooltip-icon-counter {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+}
+
+.large-text {
+  font-size: 50px;
+  font-family: Paris2024;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 5%;
+}
+.flex-container-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+.flex-container-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 834px) {
+  .tooltip-icon-counter {
+    position: absolute;
+    top: 5%;
+    left: 80%;
+  }
+  .flex-container-button {
+    width: 100%;
+  }
+  .flex-container-text {
+    padding-bottom: 0;
+  }
+  .text-counter {
+    font-size: 14px;
+    padding-bottom: 0;
+  }
+}

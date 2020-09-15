@@ -37,10 +37,18 @@ Cypress.Commands.add('login', (email) => {
     cy.get('form').submit();
 });
 
+Cypress.Commands.add('count', (number) => {
+    for(let i = 1; i < number; i++) {
+      cy.get("#plus-counter").click();
+    }
+});
+
 Cypress.Commands.add('typeNumber', (questions) => {
     questions.forEach(({name, value}) => cy.get(`#${name}`).clear().type(`${value}`));
 });
 
+
 Cypress.Commands.add("checkMeals", (mealsByDay) => {
     Object.entries(mealsByDay).forEach(([day, meal]) => cy.get(`input[data-label="${day}-${meal}"]`).check());
 });
+
