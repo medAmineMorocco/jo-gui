@@ -91,3 +91,22 @@ export const FIRST_DETAIL =
   "Calculez de combien votre empreinte pourrait baisser en mettant en place ces changements.";
 export const LIRE_MOINS = "LIRE MOINS";
 export const LIRE_PLUS = "... LIRE PLUS";
+
+///////////////////////////////////////
+//   Form - Pro
+//////////////////////////////////////
+
+// introduction
+export const INTRODUCTION_QUESTION1 = "Nombre de jours travaillés par an";
+export const INTRODUCTION_QUESTION1_INFOS =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur dolor.";
+export const INTRODUCTION_QUESTION1_ERROR_MSG =
+  "⚠ Merci de saisir votre réponse";
+
+export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
+export const INTRODUCTION_QUESTION2_ERROR_MSG =
+  "⚠ Merci de saisir votre réponse";
+
+export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
+export const INTRODUCTION_QUESTION3_ERROR_MSG =
+  "⚠ Merci de saisir votre réponse";

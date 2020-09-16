@@ -33,6 +33,9 @@
 }
 
 @media (max-width: 767px) {
+  .login-styled-title {
+    margin-bottom: 60px;
+  }
   .email-input,
   .login-submit {
     width: 100%;

@@ -1,0 +1,32 @@
+.show-modal-btn {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  color: black;
+  z-index: 1000;
+}
+
+.link-to-home-icon {
+  color: black;
+}
+
+.home-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  color: var(--main-color);
+  font-family: Paris2024;
+}
+
+.styled-title-form {
+  margin-top: 100px;
+  font-size: 3vw;
+  line-height: 2.5vw;
+}
+
+@media (max-width: 767px) {
+  .styled-title-form {
+    font-size: 9vw;
+    line-height: 7.5vw;
+  }
+}
