@@ -21,7 +21,7 @@ export const modal = () => {
             />
             <Modal
                 title="title"
-                content="content"
+                content={["content"]}
                 isVisible={isVisible}
                 hideOverlay={() => setVisible(false)}
             />

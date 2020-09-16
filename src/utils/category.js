@@ -55,6 +55,7 @@ export const persoItems = [
 export const CATEGORY = {
   PRO: "vie professionnelle",
   PERSO: "vie personnelle",
+  RESULTS: "résultats",
 };
 
 const config = {

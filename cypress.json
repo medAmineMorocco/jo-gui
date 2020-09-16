@@ -3,5 +3,6 @@
   "experimentalComponentTesting": true,
   "componentFolder": "src",
   "experimentalFetchPolyfill": true,
-  "testFiles": "**/*.spec.js"
+  "testFiles": "**/*.spec.js",
+  "watchForFileChanges": false
 }

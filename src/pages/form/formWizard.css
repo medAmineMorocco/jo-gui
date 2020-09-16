@@ -1,0 +1,64 @@
+.wizard-content-left-container {
+  position: fixed;
+  width: 40%;
+  margin-top: 60px;
+}
+
+.wizard-content-left-summary-container {
+  float: right;
+  width: 50%;
+}
+
+.wizard-content-left-questions-container {
+  float: right;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wizard-content-right-container {
+  position: absolute;
+  width: 100%;
+}
+
+.wizard-content-right-form-container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  background-color: black;
+}
+
+.wizard-content-right-form-parent {
+  padding-left: 84px;
+  padding-right: 84px;
+}
+
+.form-questions-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: Paris2024;
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+}
+
+.form-questions-title:first-letter {
+  text-transform: uppercase;
+}
+
+.mobile-wizard-container {
+  padding: 32px 32px;
+}
+
+.mobile-wizard-form-container {
+  padding-top: 48px;
+}
+
+@media (max-width: 767px) {
+  .mobile-wizard-container {
+    margin-bottom: 64px;
+  }
+  .wizard-content-right-form-parent {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

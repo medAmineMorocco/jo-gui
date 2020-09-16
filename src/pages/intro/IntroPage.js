@@ -20,8 +20,10 @@ import {
 } from "@utils/constants";
 import { Button as ButtonAntd } from "antd";
 import "./introPage.css";
+import { useHistory } from "react-router-dom";
 
 export function IntroPage() {
+  const history = useHistory();
   const [isVisible, setVisible] = useState(false);
   const isMobile = useWindowSize();
 
@@ -53,6 +55,13 @@ export function IntroPage() {
   return (
     <Fragment>
       <Header>
+        <img
+          className="logo"
+          src="/images/paris-2024.png"
+          alt="paris-2024"
+          width="260px"
+          height="132px"
+        />
         <ButtonAntd
           className="show-modal-btn"
           type="primary"
@@ -69,8 +78,14 @@ export function IntroPage() {
       />
       {content}
       <FooterWithNavigation
-        previous={NAVIGATION_HOME}
-        next={NAVIGATION_PROFESSIONAL}
+        previous={{
+          category: NAVIGATION_HOME,
+          onClick: () => history.push("/"),
+        }}
+        next={{
+          category: NAVIGATION_PROFESSIONAL,
+          onClick: () => history.push("/form"),
+        }}
       />
     </Fragment>
   );
