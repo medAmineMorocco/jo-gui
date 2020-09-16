@@ -12,6 +12,8 @@ export function ProStep2({ step, setNextStep }) {
 
   const onFinish = () => {
     console.log("onFinish");
+    const submitButton = document.querySelector('[type="submit"]');
+    submitButton.blur();
     setNextStep();
   };
 

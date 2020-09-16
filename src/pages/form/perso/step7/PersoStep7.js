@@ -12,6 +12,8 @@ export function PersoStep7({ step }) {
 
   const onFinish = () => {
     console.log("onFinish");
+    const submitButton = document.querySelector('[type="submit"]');
+    submitButton.blur();
   };
 
   return (

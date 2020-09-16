@@ -51,6 +51,8 @@ export function ProStep0({ step, setNextStep }) {
       },
     ];
     saveResponsesOfQuestionsStep(stepState, step);
+    const submitButton = document.querySelector('[type="submit"]');
+    submitButton.blur();
     setNextStep();
   };
 
