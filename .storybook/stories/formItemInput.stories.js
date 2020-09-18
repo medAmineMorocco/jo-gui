@@ -1,9 +1,8 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {withKnobs, text} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {FormItemInput} from '@components/form/formItemInput/FormItemInput';
-import { getColor } from "@utils/cssUtil";
 import "./stories.css";
 
 
@@ -20,8 +19,7 @@ export const formItemInput = () =>
     >
         <FormItemInput
             name="without"
-            tooltipTitle="this is a tooltip"
-            label="Label with toolitp"
+            label={text('label', 'example of question')}
             rules={[{required: true, message: "⚠ Please input your password!"}]}
         />
         <Form.Item>

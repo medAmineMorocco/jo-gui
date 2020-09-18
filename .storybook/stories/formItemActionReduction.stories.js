@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemActionReduction } from '@components/form/action/formItemActionReduction/FormItemActionReduction';
@@ -52,7 +52,7 @@ export const actionReduction = () => {
 			<br />
 			<FormItemActionReduction
 				form={form}
-				title="Thé et café"
+				title={text('title', 'Thé et café')}
 				savierVous={savierVous}
 				selectDetail={selectDetail}
 			/>

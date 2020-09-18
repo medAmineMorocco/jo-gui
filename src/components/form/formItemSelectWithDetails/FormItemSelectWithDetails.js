@@ -46,7 +46,7 @@ export function FormItemSelectWithDetails({
         onChange={onChange}
       />
       {isDetailsVisible && (
-        <Collapse ghost>
+        <Collapse ghost className="select-with-details-collapse">
           <Collapse.Panel header="Détails" key="2" forceRender={true}>
             <table className="select-details-table">
               <tbody>

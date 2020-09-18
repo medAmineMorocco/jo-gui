@@ -1,5 +1,5 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {text, withKnobs} from "@storybook/addon-knobs";
 import {Button, Form} from "antd";
 import {MealsOfWeek} from "@components/form/mealsOfWeek/MealsOfWeek";
 import {Form as ConfiguredForm} from "@components/form/Form";
@@ -46,8 +46,8 @@ export const mealsOfWeek = () => {
             form={form}
             name="meals"
             questions={questions}
-            label="meals of week"
-            tooltipTitle="plz fill meals of all days"
+            label={text('label', 'example of question')}
+            tooltipTitle={text('infos', 'example of tooltip')}
         />
         <Form.Item>
             <Button type="primary" htmlType="submit">
