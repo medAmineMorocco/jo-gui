@@ -1,5 +1,5 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {text, withKnobs} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {FormItemSelectWithDetails} from '@components/form/formItemSelectWithDetails/FormItemSelectWithDetails';
@@ -49,8 +49,8 @@ export const formItemSelectWithDetails = () => {
         <FormItemSelectWithDetails
             form={form}
             name="distance"
-            tooltipTitle="this is the distance question"
-            label="what is the disatnce between USA and AUS ?"
+            label={text('label', 'what is the disatnce between USA and AUS ?')}
+            tooltipTitle={text('infos', 'example of tooltip')}
             options={[{text: 'Jack', value: 'Jack'}, {text: 'Lucy', value: 'Lucy'}, {
                 text: 'yiminghe',
                 value: 'yiminghe'

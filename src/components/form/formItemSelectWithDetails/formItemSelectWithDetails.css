@@ -1,20 +1,19 @@
 .hidden-form-item {
   display: none;
 }
-.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+.select-with-details-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-arrow {
   left: 46px;
 }
 
-.ant-collapse {
-  margin-top: -24px;
-}
-
-.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+.select-with-details-collapse > .ant-collapse-item > .ant-collapse-header {
   padding-left: 0;
   color: var(--main-color);
 }
 
-.ant-collapse-content-box {
+.select-with-details-collapse .ant-collapse-content-box {
   padding: 0 !important;
 }
 

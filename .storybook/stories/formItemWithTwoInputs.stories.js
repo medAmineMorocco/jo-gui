@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import {withKnobs, select, text} from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemWithTwoInputs } from '@components/form/formItemWithTwoInputs/FormItemWithTwoInputs';
@@ -20,8 +20,7 @@ export const formItemWithTwoInputs = () => {
 		Électricité: 'electric',
 	};
 	const defaultValue = 'gasoline';
-	const groupId = 'GROUP-ID1';
-	const incomingChoice = select(label, options, defaultValue, groupId);
+	const incomingChoice = select(label, options, defaultValue);
 
 	const questions = [
 		{
@@ -48,8 +47,8 @@ export const formItemWithTwoInputs = () => {
 		>
 			<FormItemWithTwoInputs
 				form={form}
-				label="Consommation moyenne aux 100 km (si connue)"
-				tooltipTitle="Consommation moyenne aux 100 km"
+				label={text('label', 'Consommation moyenne aux 100 km (si connue)')}
+				tooltipTitle={text('infos', 'example of tooltip')}
 				incomingChoice={incomingChoice}
 				questions={questions}
 			/>

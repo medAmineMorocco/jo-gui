@@ -1,5 +1,5 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {text, withKnobs} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {FormItemSelect} from '@components/form/formItemSelect/FormItemSelect';
@@ -22,8 +22,8 @@ export const formItemSelect = () => {
         <FormItemSelect
             form={form}
             name="without"
-            tooltipTitle="this is a tooltip"
-            label="Label with toolitp"
+            label={text('label', 'example of question')}
+            tooltipTitle={text('infos', 'example of tooltip')}
             options={[{text: 'Jack', value: 'Jack'}, {text: 'Lucy', value: 'Lucy'}, {text: 'yiminghe', value: 'yiminghe'}]}
         />
         <Form.Item>

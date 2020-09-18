@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { FormCounter } from '@components/form/formCounter/FormCounter.js';
 import {LaptopOutlined} from "@ant-design/icons";
 import {Form as ConfiguredForm} from "@components/form/Form";
@@ -26,7 +26,7 @@ export const counter = () => {
     onFinish={onFinish}
     basicInputs={["without"]}
 >
-<FormCounter iconCounter={LaptopOutlined} textCounter={textCounter} tooltipTitle={title} form={form} name={name}/>
+<FormCounter iconCounter={LaptopOutlined} textCounter={text('label', textCounter)} tooltipTitle={title} form={form} name={name}/>
         <Form.Item>
             <Button type="primary" htmlType="submit">
                 Click here !

@@ -1,9 +1,8 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {text, withKnobs} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {FormItemInputNumber} from '@components/form/formItemInputNumber/FormItemInputNumber';
-import { getColor } from "@utils/cssUtil";
 import "./stories.css";
 
 
@@ -20,8 +19,8 @@ export const formItemInputNumber = () =>
     >
         <FormItemInputNumber
             name="without"
-            tooltipTitle="this is a tooltip"
-            label="Label with toolitp"
+            tooltipTitle={text('infos', 'example of tooltip')}
+            label={text('label', 'example of question')}
             rules={[{required: true, message: "⚠ Please input your number!"}]}
         />
         <Form.Item>

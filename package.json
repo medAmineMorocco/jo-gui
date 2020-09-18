@@ -21,6 +21,7 @@
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "env-cmd": "^10.1.0",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.4",
@@ -70,6 +71,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "build:re7": "env-cmd -f .env.re7 npm run build",
     "test": "yarn cypress open",
     "test:run": "yarn cypress run",
     "cypress:run:chrome": "yarn cypress run --browser chrome",
@@ -111,11 +113,11 @@
     ]
   },
   "devDependencies": {
+    "@percy/cypress": "2.3.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/react": "^5.3.19",
-    "@percy/cypress": "2.3.1",
     "cypress": "4.12.0",
     "cypress-react-unit-test": "^4.11.2",
     "eslint-plugin-chai-friendly": "^0.6.0",

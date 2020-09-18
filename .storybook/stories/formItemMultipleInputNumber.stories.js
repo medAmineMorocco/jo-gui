@@ -1,5 +1,5 @@
 import React from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
+import {withKnobs, text} from "@storybook/addon-knobs";
 import {Form, Button} from "antd";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {FormItemMultipleInputNumber} from '@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber';
@@ -38,8 +38,8 @@ export const formItemMultipleInputNumber = () => {
   >
       <FormItemMultipleInputNumber
           form={form}
-          label="Label with toolitp"
-          tooltipTitle="this is a tooltip"
+          label={text('label', 'example of question ')}
+          tooltipTitle={text('infos', 'example of tooltip')}
           questions={questions}
       />
       <Form.Item>

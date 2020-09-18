@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { FormItemSwitch } from '@components/form/action/formItemSwitch/FormItemSwitch';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
@@ -22,7 +22,7 @@ export const formItemSwitch = () => {
 			<FormItemSwitch
 				form={form}
 				name="itemSwitchValue"
-				switchValue={false}
+				switchValue={boolean('disabled', false)}
 				setSwitchValue={() => {}}
 			/>
 			<Form.Item>
