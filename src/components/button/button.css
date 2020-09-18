@@ -13,9 +13,16 @@
   height: 35px;
 }
 
-.custom-btn:hover,
+.custom-btn .anticon {
+  float: right;
+  margin-left: 8px;
+}
+
 .custom-btn:focus {
   background-color: var(--main-color);
+  color: black;
+}
+.custom-btn:hover {
   color: black;
 }
 

@@ -5,19 +5,16 @@
   top: 0;
   left: 0;
 }
-
 .footer-buttons-left {
   float: left;
   margin-left: 5%;
   margin-top: -16px;
 }
-
 .footer-buttons-right {
   float: right;
   margin-right: 5%;
   margin-top: -16px;
 }
-
 .footer-navigation-container {
   position: absolute;
   width: 100%;
@@ -25,17 +22,22 @@
   top: 36px;
   left: 0;
 }
-
 .footer-navigation-left {
   float: left;
   margin-left: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
 }
-
 .footer-navigation-right {
   float: right;
   margin-right: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
+}
+.footer-navigation-details-container {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 52px;
+  left: 0;
 }

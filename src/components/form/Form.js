@@ -3,6 +3,7 @@ import { Form as FormAntd } from "antd";
 import { getColor } from "@utils/cssUtil";
 
 export function Form({
+  id,
   name,
   form,
   onFinish,
@@ -38,6 +39,7 @@ export function Form({
 
   return (
     <FormAntd
+      id={id}
       labelCol={{ span: 24 }}
       wrapperCol={{ span: 24 }}
       layout="vertical"

@@ -47,7 +47,11 @@ export function Login() {
 
   const titleWithForm = (
     <Fragment>
-      <StyledTitle title1={HERO_TITLE1} title2={HERO_TITLE2} />
+      <StyledTitle
+        className="login-styled-title"
+        title1={HERO_TITLE1}
+        title2={HERO_TITLE2}
+      />
       <ConfiguredForm
         name="login"
         form={form}

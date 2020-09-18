@@ -1,0 +1,38 @@
+.hidden-form-two-items .ant-form-item-control-input {
+  display: none;
+}
+
+.form-two-items-label {
+  color: var(--main-color);
+}
+
+.form-two-items-label-disabled {
+  color: rgba(215, 195, 120, 0.4);
+}
+
+.form-two-items-input {
+  width: 100%;
+  background-color: var(--bg-color-shade-3);
+  border-color: var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.form-two-items-input input {
+  text-align: center;
+}
+
+.form-two-items-input-disabled {
+  width: 100%;
+  background-color: #1b1b1b;
+  border: 1px solid rgba(215, 195, 120, 0.4);
+  border-radius: 0;
+}
+
+.form-two-items-input-disabled input {
+  border: 0px;
+}
+
+.ant-input-number:hover {
+  border-color: var(--main-color);
+}

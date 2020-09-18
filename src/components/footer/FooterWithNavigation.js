@@ -4,25 +4,47 @@ import { Footer } from "@components/footer/Footer";
 import { Button } from "@components/button/Button";
 import { BackButton } from "@components/button/BackButton";
 import "./footerWithNavigation.css";
-
-export function FooterWithNavigation({ previous, next }) {
+export function FooterWithNavigation({ previous, next, step }) {
+  const {
+    category: previousCategory,
+    details: previousDetails = "",
+    onClick: onPreviousClick,
+  } = previous;
+  const {
+    category: nextCategory,
+    details: nextDetails = "",
+    onClick: onNextClick,
+  } = next;
   return (
     <Footer>
       <div className="footer-buttons-container">
         <div className="footer-buttons-left">
-          <BackButton />
+          <BackButton onClick={onPreviousClick} />
         </div>
         <div className="footer-buttons-right">
-          <Button text="suite" icon={() => <ArrowRightOutlined />} />
+          <Button
+            {...(!onNextClick && { htmlType: "submit" })}
+            onClick={onNextClick}
+            form={step}
+            text="suite"
+            icon={<ArrowRightOutlined />}
+          />
         </div>
       </div>
-
       <div className="footer-navigation-container">
         <div className="footer-navigation-left">
-          <span>{previous}</span>
+          <span>{previousCategory}</span>
         </div>
         <div className="footer-navigation-right">
-          <span>{next}</span>
+          <span>{nextCategory}</span>
+        </div>
+      </div>
+      <div className="footer-navigation-details-container">
+        <div className="footer-navigation-left">
+          <span>{previousDetails}</span>
+        </div>
+        <div className="footer-navigation-right">
+          <span>{nextDetails}</span>
         </div>
       </div>
     </Footer>

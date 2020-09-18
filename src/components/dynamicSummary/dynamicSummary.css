@@ -1,0 +1,101 @@
+.dynamic-summary {
+  line-height: 0.57 !important;
+}
+
+.dynamic-summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: var(--main-color);
+  font-size: 15px;
+}
+
+.dynamic-summary
+  > .ant-steps-item-finish
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background-color: var(--main-color);
+}
+
+.dynamic-summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: var(--main-color);
+}
+
+.dynamic-summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-description {
+  color: var(--bg-color-shade-4);
+}
+
+.dynamic-summary
+  > .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: white;
+  font-size: 15px;
+}
+
+.dynamic-summary
+  > .ant-steps-item-process
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  width: 120%;
+  height: 120%;
+  background-color: white;
+}
+
+.dynamic-summary
+  > .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: var(--bg-color-shade-4);
+}
+
+.dynamic-summary
+  > .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-description {
+  color: var(--bg-color-shade-4);
+}
+
+.dynamic-summary
+  > .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: var(--bg-color-shade-4);
+  font-size: 15px;
+}
+
+.dynamic-summary
+  > .ant-steps-item-wait
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background-color: var(--bg-color-shade-4);
+}
+
+.dynamic-summary
+  > .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: var(--bg-color-shade-4);
+}
+
+.dynamic-summary
+  > .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-description {
+  color: var(--bg-color-shade-4);
+}

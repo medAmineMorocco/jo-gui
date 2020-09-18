@@ -1,8 +1,10 @@
-.ant-steps-item-finish
+.summary
+  > .ant-steps-item-finish
   > .ant-steps-item-container
   > .ant-steps-item-content
   > .ant-steps-item-title,
-.ant-steps-item-process
+.summary
+  > .ant-steps-item-process
   > .ant-steps-item-container
   > .ant-steps-item-content
   > .ant-steps-item-title {
@@ -14,7 +16,8 @@
   line-height: 30px;
 }
 
-.ant-steps-item-finish
+.summary
+  > .ant-steps-item-finish
   > .ant-steps-item-container
   > .ant-steps-item-content
   > .ant-steps-item-description {
@@ -26,29 +29,32 @@
   line-height: 20px;
 }
 
-.ant-steps-item-finish
+.summary
+  > .ant-steps-item-finish
   .ant-steps-item-icon
   > .ant-steps-icon
   .ant-steps-icon-dot,
-.ant-steps-item-process
+.summary
+  > .ant-steps-item-process
   .ant-steps-item-icon
   > .ant-steps-icon
   .ant-steps-icon-dot {
   background-color: #d7c378;
 }
 
-.ant-steps-item-finish
+.summary
+  > .ant-steps-item-finish
   > .ant-steps-item-container
   > .ant-steps-item-tail::after {
   background-color: #d7c378;
 }
 
-.ant-steps-item-container {
+.summary .ant-steps-item-container {
   margin-bottom: 15px;
 }
 
 @media (max-width: 767px) {
-  .ant-steps-vertical {
+  .summary .ant-steps-vertical {
     width: auto;
   }
 }
