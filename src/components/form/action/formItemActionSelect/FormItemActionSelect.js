@@ -10,12 +10,14 @@ export function FormItemActionSelect({ form, name, options, onChange }) {
     form.setFieldsValue({
       [name]: options[0].value,
     });
-  }, []);
+  }, [form, name, options]);
 
   return (
     <FormItem className="select-action" name={name}>
       <Select
         id={name}
+        aria-label="select-action"
+        aria-expanded
         style={{ width: 55 }}
         dropdownClassName="select-action-dropdown"
         defaultValue={options[0].value}
