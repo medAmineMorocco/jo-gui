@@ -27,6 +27,45 @@ module.exports = {
 			use: ['@svgr/webpack', 'url-loader'],
 		});
 
+		config.module.rules.push({
+			loader: 'babel-loader',
+			exclude: /node_modules/,
+			test: /\.(js|jsx)$/,
+			options: {
+				presets: ['@babel/react'],
+				plugins: [
+					['import', {
+						libraryName: 'antd',
+						libraryDirectory: 'es',
+						style: true
+					}]
+				]
+			},
+		});
+
+		config.module.rules.push({
+			test: /\.less$/,
+			loaders: [
+				'style-loader',
+				'css-loader',
+				{
+					loader: 'less-loader',
+					options: {
+						lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
+							modifyVars: {
+								'primary-color': '#D4C382'
+							},
+							javascriptEnabled: true,
+						},
+					}
+				}
+			],
+			include: [
+				path.resolve(__dirname, '../src'),
+				/[\\/]node_modules[\\/].*antd/
+			]
+		});
+
 		return config;
 	},
 };
