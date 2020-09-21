@@ -8,7 +8,7 @@ export function FormItemSwitch({ form, name, switchValue, setSwitchValue }) {
     form.setFieldsValue({
       [name]: switchValue,
     });
-  }, []);
+  }, [form, name, switchValue]);
 
   const onChange = (checked) => {
     setSwitchValue(checked);
@@ -18,6 +18,7 @@ export function FormItemSwitch({ form, name, switchValue, setSwitchValue }) {
     <FormItem className="switch-action" name={name}>
       <Switch
         id="switch-selector"
+        aria-label="action"
         defaultChecked={switchValue}
         onChange={onChange}
       />
