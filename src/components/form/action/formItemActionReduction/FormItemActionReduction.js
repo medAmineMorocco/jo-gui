@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Collapse } from "antd";
+import { Collapse, InputNumber } from "antd";
 import { FormItemSwitch } from "@components/form/action/formItemSwitch/FormItemSwitch";
 import { FormItemActionSelect } from "@components/form/action/formItemActionSelect/FormItemActionSelect";
 import { ReactComponent as ActionReductionIcon } from "@theme/icons/action-reduction-icon.svg";
 import { ReactComponent as SavierVousIcon } from "@theme/icons/savier-vous-icon.svg";
+import { FormItem } from "@components/form/formItem/FormItem";
 import "./formItemActionReduction.css";
 import {
   ACTIONS_REDUCTION,
@@ -25,12 +26,13 @@ export function FormItemActionReduction({
 
   useEffect(() => {
     if (!switchValue) {
-      form.setFieldsValue({
-        [selectDetail[0].name]: null,
-        [selectDetail[1].name]: null,
+      selectDetail.forEach((detail) => {
+        form.setFieldsValue({
+          [detail.name]: 0,
+        });
       });
     }
-  }, [switchValue]);
+  }, [form, selectDetail, switchValue]);
 
   const resizeDetailHandler = () => {
     setShowAllDetail((prev) => !prev);
@@ -42,7 +44,7 @@ export function FormItemActionReduction({
     } else {
       setDetail(detail.substring(0, 55));
     }
-  }, [showAllDetail]);
+  }, [detail, savierVous, showAllDetail]);
 
   const panelHeader = (
     <div className="panel-header">
@@ -118,17 +120,37 @@ export function FormItemActionReduction({
               </div>
             </div>
 
-            <div className="select-content detail2">
-              <span>{selectDetail[1].firstText}&nbsp;</span>
-              <FormItemActionSelect
-                form={form}
-                name={selectDetail[1].name}
-                options={selectDetail[1].options}
-              />
-              {selectDetail[1].secondText.split(" ").map((mot, key) => (
-                <span key={key}>&nbsp;{mot}</span>
-              ))}
-            </div>
+            {selectDetail.map(
+              (detail, key) =>
+                (detail.idAutoIncrement > 1 && detail.type === "deroulant" && (
+                  <div className="select-content detail2" key={key}>
+                    <span>{detail.firstText}&nbsp;</span>
+                    <FormItemActionSelect
+                      form={form}
+                      name={detail.name}
+                      options={detail.options}
+                    />
+                    {detail.secondText.split(" ").map((mot, key) => (
+                      <span key={key}>&nbsp;{mot}</span>
+                    ))}
+                  </div>
+                )) ||
+                (detail.idAutoIncrement > 1 && detail.type === "champ_saisie" && (
+                  <div className="select-content detail2" key={key}>
+                    <span className="input-detail">
+                      {detail.firstText}&nbsp;
+                    </span>
+                    <FormItem className="input-action" name={detail.name}>
+                      <InputNumber min={0} />
+                    </FormItem>
+                    {detail.secondText.split(" ").map((mot, key) => (
+                      <span className="input-detail" key={key}>
+                        &nbsp;{mot}
+                      </span>
+                    ))}
+                  </div>
+                ))
+            )}
           </div>
         )}
       </Panel>
