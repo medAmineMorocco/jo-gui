@@ -6,6 +6,7 @@ import {
   QuestionCircleFilled,
 } from "@ant-design/icons";
 import { FormItem } from "@components/form/formItem/FormItem";
+import { getColor } from "@utils/cssUtil";
 import "./formCounter.css";
 
 export function FormCounter({
@@ -14,8 +15,26 @@ export function FormCounter({
   iconCounter: IconCounter,
   form,
   name,
+  value,
 }) {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(value);
+  const mainColor = getColor("--main-color");
+  const shade = getColor("--bg-color-shade-3");
+  const [color, setColor] = useState(mainColor);
+
+  useEffect(() => {
+    setCounter(value);
+  }, [value]);
+
+  const onFocus = () => {
+    const focusColor = "white";
+    setColor(focusColor);
+  };
+
+  const onBlur = () => {
+    const blurColor = mainColor;
+    setColor(blurColor);
+  };
 
   const addCounter = () => {
     setCounter(counter + 1);
@@ -26,17 +45,21 @@ export function FormCounter({
       setCounter(counter - 1);
     }
   };
-
   useEffect(() => {
     form.setFieldsValue({
       [name]: counter,
     });
-  }, [counter]);
+  }, [form, name, counter]);
 
   return (
     <>
       <FormItem name={name}>
-        <div className="back-to-card">
+        <div
+          className="back-to-card"
+          style={{ color: color }}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        >
           <div className="flex-container-text">
             <IconCounter className="large-text" />
             <span className="text-counter">{textCounter}</span>
@@ -53,6 +76,7 @@ export function FormCounter({
               id="minus-counter"
               className="large-text"
               onClick={decreaseCounter}
+              style={counter === 0 ? { color: shade } : { color: color }}
             />
             <span id="result-counter" className="large-text">
               {counter}

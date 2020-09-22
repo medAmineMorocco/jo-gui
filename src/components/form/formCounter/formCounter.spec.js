@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { mount } from "cypress-react-unit-test";
 import { FormCounter } from "./FormCounter";
 import { Button, Form } from "antd";
@@ -7,6 +7,7 @@ import { LaptopOutlined } from "@ant-design/icons";
 
 function CounterForm({ onFinish, onFinishFailed }) {
   const [form] = Form.useForm();
+  const [count] = useState(0);
   let textCounter =
     "Nombre d'ordinateurs portable professionnels mis à votre disposition";
   let title = "Test";
@@ -23,6 +24,7 @@ function CounterForm({ onFinish, onFinishFailed }) {
         tooltipTitle={title}
         form={form}
         name={name}
+        value={count}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
@@ -35,9 +37,13 @@ function CounterForm({ onFinish, onFinishFailed }) {
 
 describe("Counter component", () => {
   it("Test to find out if the value of the counter is the value displayed and sent to the form", () => {
-    mount(<CounterForm />);
+    mount(<CounterForm />, {
+      style: `body {
+                background-color: var(--bg-color)
+            }`,
+    });
 
-    cy.count(5).click();
+    cy.count(5);
 
     cy.get("button:contains(Submit)").click();
 
@@ -45,7 +51,11 @@ describe("Counter component", () => {
   });
 
   it("Test submit nerver click in button minus or plus", () => {
-    mount(<CounterForm />);
+    mount(<CounterForm />, {
+      style: `body {
+                background-color: var(--bg-color)
+            }`,
+    });
 
     cy.get("button:contains(Submit)").click();
 
