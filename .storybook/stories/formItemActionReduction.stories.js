@@ -19,6 +19,8 @@ export const actionReduction = () => {
 
 	const selectDetail = [
 		{
+			idAutoIncrement: 1,
+			type: 'champ_saisie',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'firstSelect',
 			options: [
@@ -30,6 +32,8 @@ export const actionReduction = () => {
 			secondText: 'tasse(s) de café en vrac plutôt qu’en capsule.',
 		},
 		{
+			idAutoIncrement: 2,
+			type: 'deroulant',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'secondSelect',
 			options: [
@@ -38,6 +42,13 @@ export const actionReduction = () => {
 				{ text: '4', value: 4 },
 				{ text: '5', value: 5 },
 			],
+			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
+		},
+		{
+			idAutoIncrement: 3,
+			type: 'champ_saisie',
+			firstText: 'Chaque jour, privilégiez',
+			name: 'thirdSelect',
 			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
 		},
 	];

@@ -107,6 +107,25 @@
   margin: 30px 160px 30px 150px;
 }
 
+.input-detail {
+  margin-top: 4px;
+}
+
+.input-action {
+  width: 55px;
+}
+
+#thirdSelect {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  color: black;
+  background: #bcab69;
+  border: 1px solid black;
+}
+
 /* deep classes */
 .ant-collapse
   > .ant-collapse-item.ant-collapse-no-arrow
@@ -131,6 +150,11 @@
   padding: 0px;
 }
 
+.input-action .ant-input-number-handler-wrap {
+  display: none;
+}
+
+/* responsive */
 @media (max-width: 767px) {
   .panel-header {
     margin: 12px 40px;

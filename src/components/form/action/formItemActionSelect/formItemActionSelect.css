@@ -1,7 +1,6 @@
 .select-action-dropdown {
-  border-color: black;
   background: #bcab69;
-  border: 1px solid #000000;
+  border: 1px solid black;
   text-align: center;
 }
 

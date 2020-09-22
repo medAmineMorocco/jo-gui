@@ -12,6 +12,8 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
 
   const selectDetail = [
     {
+      idAutoIncrement: 1,
+      type: "champ_saisie",
       firstText: "Chaque jour, privilégiez",
       name: "firstSelect",
       options: [
@@ -23,6 +25,8 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
       secondText: "tasse(s) de café en vrac plutôt qu’en capsule.",
     },
     {
+      idAutoIncrement: 2,
+      type: "deroulant",
       firstText: "Chaque jour, privilégiez",
       name: "secondSelect",
       options: [
@@ -31,6 +35,13 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
         { text: "4", value: 4 },
         { text: "5", value: 5 },
       ],
+      secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
+    },
+    {
+      idAutoIncrement: 3,
+      type: "champ_saisie",
+      firstText: "Chaque jour, privilégiez",
+      name: "thirdSelect",
       secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
     },
   ];
@@ -153,6 +164,7 @@ describe("FormItemActionReduction component", () => {
           itemSwitchValue: true,
           firstSelect: 2,
           secondSelect: 2,
+          thirdSelect: 0,
         })
       );
   });
@@ -176,6 +188,8 @@ describe("FormItemActionReduction component", () => {
 
     cy.selectOption("#firstSelect", 3);
 
+    cy.get("#thirdSelect").type(3);
+
     cy.get("button:contains(Submit)")
       .click({ force: true })
       .then(() =>
@@ -183,6 +197,7 @@ describe("FormItemActionReduction component", () => {
           itemSwitchValue: true,
           firstSelect: 3,
           secondSelect: 2,
+          thirdSelect: 3,
         })
       );
   });
