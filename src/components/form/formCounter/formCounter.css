@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-@media (max-width: 834px) {
+@media (max-width: 1500px) {
   .tooltip-icon-counter {
     position: absolute;
     top: 5%;
@@ -50,13 +50,6 @@
     padding-bottom: 0;
   }
   .text-counter {
-    font-size: 14px;
     padding-bottom: 0;
-  }
-}
-
-@media (max-width: 1500px) {
-  .flex-container-button {
-    width: 100%;
   }
 }
