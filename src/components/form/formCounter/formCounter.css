@@ -6,7 +6,7 @@
 }
 .text-counter {
   color: var(--main-color);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   padding: 5%;
 }
@@ -52,5 +52,11 @@
   .text-counter {
     font-size: 14px;
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 1500px) {
+  .flex-container-button {
+    width: 100%;
   }
 }
