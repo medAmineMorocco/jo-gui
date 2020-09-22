@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { withKnobs, text } from "@storybook/addon-knobs";
-import { FormCounter } from '@components/form/formCounter/FormCounter.js';
+import { FormCounter } from '@components/form/formCounter/FormCounter';
 import {LaptopOutlined} from "@ant-design/icons";
 import {Form as ConfiguredForm} from "@components/form/Form";
 import {Form , Button} from "antd";
@@ -20,13 +20,15 @@ const onFinish = (values) => {
 
 export const counter = () => {
     const [form] = Form.useForm();
+    const [count, ] = useState(0);
+
     return(
     <ConfiguredForm
     form={form}
     onFinish={onFinish}
     basicInputs={["without"]}
 >
-<FormCounter iconCounter={LaptopOutlined} textCounter={text('label', textCounter)} tooltipTitle={title} form={form} name={name}/>
+<FormCounter value={count} iconCounter={LaptopOutlined} textCounter={text('label', textCounter)} tooltipTitle={title} form={form} name={name}/>
         <Form.Item>
             <Button type="primary" htmlType="submit">
                 Click here !

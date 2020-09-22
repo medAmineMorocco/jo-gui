@@ -38,7 +38,7 @@ Cypress.Commands.add('login', (email) => {
 });
 
 Cypress.Commands.add('count', (number) => {
-    for(let i = 1; i < number; i++) {
+    for(let i = 1; i <= number; i++) {
       cy.get("#plus-counter").click();
     }
 });
