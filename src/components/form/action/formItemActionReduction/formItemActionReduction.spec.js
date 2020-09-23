@@ -12,8 +12,8 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
 
   const selectDetail = [
     {
-      idAutoIncrement: 1,
-      type: "champ_saisie",
+      index: 1,
+      type: "select",
       firstText: "Chaque jour, privilégiez",
       name: "firstSelect",
       options: [
@@ -25,8 +25,8 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
       secondText: "tasse(s) de café en vrac plutôt qu’en capsule.",
     },
     {
-      idAutoIncrement: 2,
-      type: "deroulant",
+      index: 2,
+      type: "select",
       firstText: "Chaque jour, privilégiez",
       name: "secondSelect",
       options: [
@@ -38,11 +38,11 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
       secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
     },
     {
-      idAutoIncrement: 3,
-      type: "champ_saisie",
+      index: 3,
+      type: "input",
       firstText: "Chaque jour, privilégiez",
       name: "thirdSelect",
-      secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
+      secondText: "tasse(s) de thé.",
     },
   ];
 

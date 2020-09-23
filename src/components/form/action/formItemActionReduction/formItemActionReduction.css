@@ -115,7 +115,7 @@
   width: 55px;
 }
 
-#thirdSelect {
+.input-action .ant-input-number-input {
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: 600;

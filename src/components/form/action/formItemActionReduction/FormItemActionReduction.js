@@ -26,9 +26,9 @@ export function FormItemActionReduction({
 
   useEffect(() => {
     if (!switchValue) {
-      selectDetail.forEach((detail) => {
+      selectDetail.forEach((data) => {
         form.setFieldsValue({
-          [detail.name]: 0,
+          [data.name]: 0,
         });
       });
     }
@@ -66,6 +66,34 @@ export function FormItemActionReduction({
     </div>
   );
 
+  const input = (className, key, data) => (
+    <div className={className} key={key}>
+      <span className="input-detail">{data.firstText}&nbsp;</span>
+      <FormItem className="input-action" name={data.name}>
+        <InputNumber min={0} />
+      </FormItem>
+      {data.secondText.split(" ").map((mot, key) => (
+        <span className="input-detail" key={key}>
+          &nbsp;{mot}
+        </span>
+      ))}
+    </div>
+  );
+
+  const select = (className, key, data) => (
+    <div className={className} key={key}>
+      <span>{data.firstText}&nbsp;</span>
+      <FormItemActionSelect
+        form={form}
+        name={data.name}
+        options={data.options}
+      />
+      {data.secondText.split(" ").map((mot, key) => (
+        <span key={key}>&nbsp;{mot}</span>
+      ))}
+    </div>
+  );
+
   return (
     <Collapse
       className="collapse-custom"
@@ -80,76 +108,52 @@ export function FormItemActionReduction({
       >
         {switchValue && (
           <div>
-            <div className="detail1">
-              <div className="first-para">{FIRST_DETAIL}</div>
-
-              <div className="select-content">
-                <span>{selectDetail[0].firstText}&nbsp;</span>
-                <FormItemActionSelect
-                  form={form}
-                  name={selectDetail[0].name}
-                  options={selectDetail[0].options}
-                />
-                {selectDetail[0].secondText.split(" ").map((mot, key) => (
-                  <span key={key}>&nbsp;{mot}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="info-container">
-              <div className="info-container-icon">
-                <SavierVousIcon />
-              </div>
-
-              <div className="info-container-content">
-                <h2 className="info-savier-vous">Le savier-vous ?</h2>
-                <span>{detail}</span>
-                {showAllDetail && (
-                  <div>
-                    <br />
-                    <span className="showDetail" onClick={resizeDetailHandler}>
-                      {LIRE_MOINS}
-                    </span>
-                  </div>
-                )}
-                {!showAllDetail && (
-                  <span className="showDetail" onClick={resizeDetailHandler}>
-                    {LIRE_PLUS}
-                  </span>
-                )}
-              </div>
-            </div>
-
             {selectDetail.map(
-              (detail, key) =>
-                (detail.idAutoIncrement > 1 && detail.type === "deroulant" && (
-                  <div className="select-content detail2" key={key}>
-                    <span>{detail.firstText}&nbsp;</span>
-                    <FormItemActionSelect
-                      form={form}
-                      name={detail.name}
-                      options={detail.options}
-                    />
-                    {detail.secondText.split(" ").map((mot, key) => (
-                      <span key={key}>&nbsp;{mot}</span>
-                    ))}
+              (data, key) =>
+                (data.index === 1 && (
+                  <div>
+                    <div className="detail1">
+                      <div className="first-para">{FIRST_DETAIL}</div>
+                      {(data.type === "select" &&
+                        select("select-content", key, data)) ||
+                        (data.type === "input" &&
+                          input("select-content", key, data))}
+                    </div>
+                    <div className="info-container">
+                      <div className="info-container-icon">
+                        <SavierVousIcon />
+                      </div>
+
+                      <div className="info-container-content">
+                        <h2 className="info-savier-vous">Le savier-vous ?</h2>
+                        <span>{detail}</span>
+                        {showAllDetail && (
+                          <div>
+                            <br />
+                            <span
+                              className="showDetail"
+                              onClick={resizeDetailHandler}
+                            >
+                              {LIRE_MOINS}
+                            </span>
+                          </div>
+                        )}
+                        {!showAllDetail && (
+                          <span
+                            className="showDetail"
+                            onClick={resizeDetailHandler}
+                          >
+                            {LIRE_PLUS}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 )) ||
-                (detail.idAutoIncrement > 1 && detail.type === "champ_saisie" && (
-                  <div className="select-content detail2" key={key}>
-                    <span className="input-detail">
-                      {detail.firstText}&nbsp;
-                    </span>
-                    <FormItem className="input-action" name={detail.name}>
-                      <InputNumber min={0} />
-                    </FormItem>
-                    {detail.secondText.split(" ").map((mot, key) => (
-                      <span className="input-detail" key={key}>
-                        &nbsp;{mot}
-                      </span>
-                    ))}
-                  </div>
-                ))
+                (data.type === "select" &&
+                  select("select-content detail2", key, data)) ||
+                (data.type === "input" &&
+                  input("select-content detail2", key, data))
             )}
           </div>
         )}
