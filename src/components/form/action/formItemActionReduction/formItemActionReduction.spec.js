@@ -4,7 +4,7 @@ import { FormItemActionReduction } from "./FormItemActionReduction";
 import { Button, Form } from "antd";
 import { Form as ConfiguredForm } from "../../Form";
 
-function ActionReductionForm({ onFinish, onFinishFailed }) {
+function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
   const [form] = Form.useForm();
 
   let savierVous =
@@ -12,8 +12,7 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
 
   const selectDetail = [
     {
-      idAutoIncrement: 1,
-      type: "champ_saisie",
+      type: "select",
       firstText: "Chaque jour, privilégiez",
       name: "firstSelect",
       options: [
@@ -25,8 +24,7 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
       secondText: "tasse(s) de café en vrac plutôt qu’en capsule.",
     },
     {
-      idAutoIncrement: 2,
-      type: "deroulant",
+      type: "select",
       firstText: "Chaque jour, privilégiez",
       name: "secondSelect",
       options: [
@@ -38,11 +36,10 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
       secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
     },
     {
-      idAutoIncrement: 3,
-      type: "champ_saisie",
+      type: "input",
       firstText: "Chaque jour, privilégiez",
       name: "thirdSelect",
-      secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
+      secondText: "tasse(s) de thé.",
     },
   ];
 
@@ -57,6 +54,7 @@ function ActionReductionForm({ onFinish, onFinishFailed }) {
         title="Thé et café"
         savierVous={savierVous}
         selectDetail={selectDetail}
+        isOpened={isOpened}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
@@ -75,6 +73,7 @@ describe("FormItemActionReduction component", () => {
       <ActionReductionForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
+        isOpened={true}
       />,
       {
         style: `body {
@@ -87,8 +86,6 @@ describe("FormItemActionReduction component", () => {
       "contain",
       "ACTIONS DE RÉDUCTION"
     );
-
-    cy.get("#switch-selector").click();
 
     cy.get(".first-para").should(
       "contain",
@@ -103,6 +100,7 @@ describe("FormItemActionReduction component", () => {
       <ActionReductionForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
+        isOpened={true}
       />,
       {
         style: `body {
@@ -110,8 +108,6 @@ describe("FormItemActionReduction component", () => {
             }`,
       }
     );
-
-    cy.get("#switch-selector").click();
 
     cy.get(".showDetail").click();
   });
@@ -122,7 +118,8 @@ describe("FormItemActionReduction component", () => {
     mount(
       <ActionReductionForm
         onFinish={onFinish}
-        onFinishFailed={() => cy.stub()}
+        onFinishFailed={cy.stub()}
+        isOpened={false}
       />,
       {
         style: `body {
@@ -134,9 +131,7 @@ describe("FormItemActionReduction component", () => {
     cy.get("button:contains(Submit)")
       .click({ force: true })
       .then(() =>
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          itemSwitchValue: false,
-        })
+        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({})
       );
   });
 
@@ -147,6 +142,7 @@ describe("FormItemActionReduction component", () => {
       <ActionReductionForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
+        isOpened={true}
       />,
       {
         style: `body {
@@ -155,16 +151,13 @@ describe("FormItemActionReduction component", () => {
       }
     );
 
-    cy.get("#switch-selector").click();
-
     cy.get("button:contains(Submit)")
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          itemSwitchValue: true,
           firstSelect: 2,
           secondSelect: 2,
-          thirdSelect: 0,
+          thirdSelect: undefined,
         })
       );
   });
@@ -176,6 +169,7 @@ describe("FormItemActionReduction component", () => {
       <ActionReductionForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
+        isOpened={true}
       />,
       {
         style: `body {
@@ -183,8 +177,6 @@ describe("FormItemActionReduction component", () => {
             }`,
       }
     );
-
-    cy.get("#switch-selector").click();
 
     cy.selectOption("#firstSelect", 3);
 
@@ -194,7 +186,6 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          itemSwitchValue: true,
           firstSelect: 3,
           secondSelect: 2,
           thirdSelect: 3,

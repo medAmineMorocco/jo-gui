@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import {withKnobs, text, boolean} from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemActionReduction } from '@components/form/action/formItemActionReduction/FormItemActionReduction';
@@ -19,8 +19,7 @@ export const actionReduction = () => {
 
 	const selectDetail = [
 		{
-			idAutoIncrement: 1,
-			type: 'champ_saisie',
+			type: 'select',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'firstSelect',
 			options: [
@@ -32,8 +31,7 @@ export const actionReduction = () => {
 			secondText: 'tasse(s) de café en vrac plutôt qu’en capsule.',
 		},
 		{
-			idAutoIncrement: 2,
-			type: 'deroulant',
+			type: 'select',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'secondSelect',
 			options: [
@@ -45,11 +43,10 @@ export const actionReduction = () => {
 			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
 		},
 		{
-			idAutoIncrement: 3,
-			type: 'champ_saisie',
+			type: 'input',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'thirdSelect',
-			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
+			secondText: 'tasse(s) de thé.',
 		},
 	];
 
@@ -66,6 +63,7 @@ export const actionReduction = () => {
 				title={text('title', 'Thé et café')}
 				savierVous={savierVous}
 				selectDetail={selectDetail}
+				isOpened={boolean('isOpened', true)}
 			/>
 		</ConfiguredForm>
 	);
