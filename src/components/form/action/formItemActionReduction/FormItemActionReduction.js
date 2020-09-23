@@ -18,21 +18,21 @@ export function FormItemActionReduction({
   title,
   savierVous,
   selectDetail,
+  isOpened,
 }) {
   const { Panel } = Collapse;
-  const [switchValue, setSwitchValue] = useState(false);
   const [showAllDetail, setShowAllDetail] = useState(false);
   const [detail, setDetail] = useState(savierVous);
 
   useEffect(() => {
-    if (!switchValue) {
+    if (!isOpened) {
       selectDetail.forEach((data) => {
         form.setFieldsValue({
           [data.name]: 0,
         });
       });
     }
-  }, [form, selectDetail, switchValue]);
+  }, [form, selectDetail, isOpened]);
 
   const resizeDetailHandler = () => {
     setShowAllDetail((prev) => !prev);
@@ -57,12 +57,7 @@ export function FormItemActionReduction({
           <span className="panel-header-span-second-title">{title}</span>
         </div>
       </div>
-      <FormItemSwitch
-        form={form}
-        name="itemSwitchValue"
-        switchValue={switchValue}
-        setSwitchValue={setSwitchValue}
-      />
+      <FormItemSwitch form={form} switchValue={isOpened} />
     </div>
   );
 
@@ -97,21 +92,21 @@ export function FormItemActionReduction({
   return (
     <Collapse
       className="collapse-custom"
-      activeKey={switchValue ? 1 : 0}
+      activeKey={isOpened ? 1 : 0}
       bordered={false}
     >
       <Panel
-        disabled={!switchValue}
+        disabled={!isOpened}
         showArrow={false}
         header={panelHeader}
         key="1"
       >
-        {switchValue && (
+        {isOpened && (
           <div>
             {selectDetail.map(
               (data, key) =>
-                (data.index === 1 && (
-                  <div>
+                (key === 0 && (
+                  <div key={key}>
                     <div className="detail1">
                       <div className="first-para">{FIRST_DETAIL}</div>
                       {(data.type === "select" &&

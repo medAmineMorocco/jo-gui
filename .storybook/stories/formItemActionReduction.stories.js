@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import {withKnobs, text, boolean} from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemActionReduction } from '@components/form/action/formItemActionReduction/FormItemActionReduction';
@@ -19,7 +19,6 @@ export const actionReduction = () => {
 
 	const selectDetail = [
 		{
-			index: 1,
 			type: 'select',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'firstSelect',
@@ -32,7 +31,6 @@ export const actionReduction = () => {
 			secondText: 'tasse(s) de café en vrac plutôt qu’en capsule.',
 		},
 		{
-			index: 2,
 			type: 'select',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'secondSelect',
@@ -45,7 +43,6 @@ export const actionReduction = () => {
 			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
 		},
 		{
-			index: 3,
 			type: 'input',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'thirdSelect',
@@ -66,6 +63,7 @@ export const actionReduction = () => {
 				title={text('title', 'Thé et café')}
 				savierVous={savierVous}
 				selectDetail={selectDetail}
+				isOpened={boolean('isOpened', true)}
 			/>
 		</ConfiguredForm>
 	);
