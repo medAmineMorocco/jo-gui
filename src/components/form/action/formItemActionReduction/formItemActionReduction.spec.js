@@ -54,6 +54,7 @@ function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
         title="Thé et café"
         savierVous={savierVous}
         selectDetail={selectDetail}
+        switchName="switchName"
         isOpened={isOpened}
       />
       <Form.Item>
@@ -131,7 +132,9 @@ describe("FormItemActionReduction component", () => {
     cy.get("button:contains(Submit)")
       .click({ force: true })
       .then(() =>
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({})
+        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+          switchName: false,
+        })
       );
   });
 
@@ -155,6 +158,7 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+          switchName: true,
           firstSelect: 2,
           secondSelect: 2,
           thirdSelect: undefined,
@@ -186,6 +190,7 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+          switchName: true,
           firstSelect: 3,
           secondSelect: 2,
           thirdSelect: 3,

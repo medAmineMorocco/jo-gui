@@ -63,6 +63,7 @@ export const actionReduction = () => {
 				title={text('title', 'Thé et café')}
 				savierVous={savierVous}
 				selectDetail={selectDetail}
+				switchName="switch-name"
 				isOpened={boolean('isOpened', true)}
 			/>
 		</ConfiguredForm>

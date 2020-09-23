@@ -18,6 +18,7 @@ export function FormItemActionReduction({
   title,
   savierVous,
   selectDetail,
+  switchName,
   isOpened,
 }) {
   const { Panel } = Collapse;
@@ -57,7 +58,7 @@ export function FormItemActionReduction({
           <span className="panel-header-span-second-title">{title}</span>
         </div>
       </div>
-      <FormItemSwitch form={form} switchValue={isOpened} />
+      <FormItemSwitch form={form} name={switchName} switchValue={isOpened} />
     </div>
   );
 
