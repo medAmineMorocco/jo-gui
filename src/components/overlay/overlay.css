@@ -1,28 +1,29 @@
 .icon-modal {
   font-size: 30px;
-  float: left;
   color: black;
 }
 
 .custom-btn-modal {
-  width: 480px;
+  width: 100%;
   background-color: var(--main-color);
   border: none;
   height: 50px;
   border-radius: 40px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .modal-close-btn-modal,
 .modal-close-btn-modal:hover {
   z-index: 10001;
-  height: 50px;
-  width: 50px;
+  height: 32px;
+  width: 32px;
   background: var(--main-color);
   border-radius: 40px;
-  position: absolute;
-  top: 1%;
-  right: 1%;
   border-color: var(--main-color);
   color: #000000;
+  position: fixed;
+  right: 8px;
+  top: 8px;
 }
 .custom-btn-modal:hover,
 .custom-btn-modal:focus {
@@ -31,17 +32,9 @@
 }
 .title-button {
   text-transform: lowercase;
-  position: absolute;
-  left: 22.71%;
-  right: 22.5%;
-  top: 34.09%;
-  bottom: 25%;
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 18px;
-  text-align: center;
   color: #000000;
 }
 .ant-btn-primary {
@@ -76,12 +69,6 @@
   background-color: var(--bg-color-shade);
 }
 
-.ant-modal-close-x {
-  background-color: var(--main-color);
-  border-radius: 40px;
-  color: black;
-  font-size: 25px;
-}
 .custom-modal .ant-modal-header {
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -115,7 +102,7 @@
   height: 119px;
 }
 .text-modal {
-  width: 49%;
+  width: 40%;
 }
 .content-style {
   color: black;
@@ -125,14 +112,25 @@
   align-items: center;
   justify-content: space-between;
 }
+.container-flex-overlay {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.container-text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.container-flex-title-modal {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
 
-@media (max-width: 767px) {
-  .custom-btn-modal {
-    width: 100%;
-  }
-  .title-button {
-    font-size: 13px;
-  }
+@media (max-width: 1024px) {
   .title-modal {
     font-size: 15px;
     font-style: italic;
@@ -158,6 +156,13 @@
   }
   .modal-close-btn-modal,
   .modal-close-btn-modal:hover {
-    right: 10%;
+    right: 8px;
+    top: 8px;
+  }
+  .title-button {
+    font-size: 12px;
+  }
+  .ant-modal-wrap {
+    background-color: black;
   }
 }
