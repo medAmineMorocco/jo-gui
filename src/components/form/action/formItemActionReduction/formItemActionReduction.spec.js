@@ -51,10 +51,10 @@ function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
     >
       <FormItemActionReduction
         form={form}
+        switchName="switch_name"
         title="Thé et café"
-        savierVous={savierVous}
         selectDetail={selectDetail}
-        switchName="switchName"
+        savierVous={savierVous}
         isOpened={isOpened}
       />
       <Form.Item>
@@ -113,7 +113,7 @@ describe("FormItemActionReduction component", () => {
     cy.get(".showDetail").click();
   });
 
-  it("should show success when submit with switch is OFF", () => {
+  it("should show success when user submit with switch is OFF", () => {
     const onFinish = cy.stub();
 
     mount(
@@ -133,12 +133,12 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switchName: false,
+          switch_name: undefined,
         })
       );
   });
 
-  it("should show success when submit with default values", () => {
+  it("should show success when user submit with default values", () => {
     const onFinish = cy.stub();
 
     mount(
@@ -158,7 +158,7 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switchName: true,
+          switch_name: undefined,
           firstSelect: 2,
           secondSelect: 2,
           thirdSelect: undefined,
@@ -190,7 +190,7 @@ describe("FormItemActionReduction component", () => {
       .click({ force: true })
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switchName: true,
+          switch_name: undefined,
           firstSelect: 3,
           secondSelect: 2,
           thirdSelect: 3,

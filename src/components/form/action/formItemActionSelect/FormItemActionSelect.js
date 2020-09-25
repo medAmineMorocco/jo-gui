@@ -18,7 +18,7 @@ export function FormItemActionSelect({ form, name, options, onChange }) {
         id={name}
         aria-label="select-action"
         aria-expanded
-        style={{ width: 55 }}
+        style={{ width: "auto" }}
         dropdownClassName="select-action-dropdown"
         defaultValue={options[0].value}
         onChange={onChange}
