@@ -16,10 +16,11 @@ import {
 export function FormItemActionReduction({
   form,
   title,
-  savierVous,
-  selectDetail,
   switchName,
   isOpened,
+  setSwitchValue,
+  selectDetail,
+  savierVous,
 }) {
   const { Panel } = Collapse;
   const [showAllDetail, setShowAllDetail] = useState(false);
@@ -33,7 +34,7 @@ export function FormItemActionReduction({
         });
       });
     }
-  }, [form, selectDetail, isOpened]);
+  }, [form, isOpened, selectDetail]);
 
   const resizeDetailHandler = () => {
     setShowAllDetail((prev) => !prev);
@@ -58,7 +59,11 @@ export function FormItemActionReduction({
           <span className="panel-header-span-second-title">{title}</span>
         </div>
       </div>
-      <FormItemSwitch form={form} name={switchName} switchValue={isOpened} />
+      <FormItemSwitch
+        switchValue={isOpened}
+        setSwitchValue={setSwitchValue}
+        name={switchName}
+      />
     </div>
   );
 
@@ -66,7 +71,7 @@ export function FormItemActionReduction({
     <div className={className} key={key}>
       <span className="input-detail">{data.firstText}&nbsp;</span>
       <FormItem className="input-action" name={data.name}>
-        <InputNumber min={0} />
+        <InputNumber min={0} defaultValue={0} />
       </FormItem>
       {data.secondText.split(" ").map((mot, key) => (
         <span className="input-detail" key={key}>
