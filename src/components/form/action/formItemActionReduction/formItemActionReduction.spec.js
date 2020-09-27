@@ -55,6 +55,7 @@ function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
         title="Thé et café"
         selectDetail={selectDetail}
         savierVous={savierVous}
+        saviezVousPosition={0}
         isOpened={isOpened}
       />
       <Form.Item>

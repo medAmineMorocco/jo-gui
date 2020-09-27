@@ -21,6 +21,7 @@ export function FormItemActionReduction({
   setSwitchValue,
   selectDetail,
   savierVous,
+  saviezVousPosition,
 }) {
   const { Panel } = Collapse;
   const [showAllDetail, setShowAllDetail] = useState(false);
@@ -41,10 +42,12 @@ export function FormItemActionReduction({
   };
 
   useEffect(() => {
-    if (showAllDetail) {
-      setDetail(savierVous);
-    } else {
-      setDetail(detail.substring(0, 55));
+    if (savierVous) {
+      if (showAllDetail) {
+        setDetail(savierVous);
+      } else {
+        setDetail(detail.substring(0, 55));
+      }
     }
   }, [detail, savierVous, showAllDetail]);
 
@@ -109,46 +112,50 @@ export function FormItemActionReduction({
       >
         {isOpened && (
           <div>
+            <div className="detail1">
+              <div className="first-para">{FIRST_DETAIL}</div>
+            </div>
             {selectDetail.map(
               (data, key) =>
-                (key === 0 && (
+                (key === saviezVousPosition && (
                   <div key={key}>
                     <div className="detail1">
-                      <div className="first-para">{FIRST_DETAIL}</div>
                       {(data.type === "select" &&
                         select("select-content", key, data)) ||
                         (data.type === "input" &&
                           input("select-content", key, data))}
                     </div>
-                    <div className="info-container">
-                      <div className="info-container-icon">
-                        <SavierVousIcon />
-                      </div>
+                    {savierVous && (
+                      <div className="info-container">
+                        <div className="info-container-icon">
+                          <SavierVousIcon />
+                        </div>
 
-                      <div className="info-container-content">
-                        <h2 className="info-savier-vous">Le savier-vous ?</h2>
-                        <span>{detail}</span>
-                        {showAllDetail && (
-                          <div>
-                            <br />
+                        <div className="info-container-content">
+                          <h2 className="info-savier-vous">Le savier-vous ?</h2>
+                          <span>{detail}</span>
+                          {showAllDetail && (
+                            <div>
+                              <br />
+                              <span
+                                className="showDetail"
+                                onClick={resizeDetailHandler}
+                              >
+                                {LIRE_MOINS}
+                              </span>
+                            </div>
+                          )}
+                          {!showAllDetail && (
                             <span
                               className="showDetail"
                               onClick={resizeDetailHandler}
                             >
-                              {LIRE_MOINS}
+                              {LIRE_PLUS}
                             </span>
-                          </div>
-                        )}
-                        {!showAllDetail && (
-                          <span
-                            className="showDetail"
-                            onClick={resizeDetailHandler}
-                          >
-                            {LIRE_PLUS}
-                          </span>
-                        )}
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 )) ||
                 (data.type === "select" &&

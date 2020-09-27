@@ -158,7 +158,6 @@ export function PersoStep6({ step, setNextStep }) {
       <FormItemActionReduction
         form={form}
         title="En voiture"
-        savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
         selectDetail={actionReduction1_selectDetail}
         switchName="action-reduction-switch-1"
         setSwitchValue={handleSwitchReductionAction1Change}
@@ -183,7 +182,6 @@ export function PersoStep6({ step, setNextStep }) {
       <FormItemActionReduction
         form={form}
         title="Court courrier"
-        savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
         selectDetail={actionReduction2_selectDetail}
         switchName="action-reduction-switch-2"
         setSwitchValue={handleSwitchReductionAction2Change}
@@ -207,6 +205,7 @@ export function PersoStep6({ step, setNextStep }) {
         form={form}
         title="Vacances lointaines"
         savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
+        saviezVousPosition={0}
         selectDetail={actionReduction3_selectDetail}
         switchName="action-reduction-switch-3"
         setSwitchValue={handleSwitchReductionAction3Change}

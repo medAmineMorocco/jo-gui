@@ -197,6 +197,7 @@ export function PersoStep5({ step, setNextStep }) {
         form={form}
         title="Repas"
         savierVous={ALIMENTATION_SAVIEZ_VOUS}
+        saviezVousPosition={2}
         selectDetail={selectDetail}
         switchName="action-reduction-switch-1"
         setSwitchValue={handleSwitchReductionAction1Change}
@@ -242,7 +243,6 @@ export function PersoStep5({ step, setNextStep }) {
       <FormItemActionReduction
         form={form}
         title="Boissons"
-        savierVous={ALIMENTATION_SAVIEZ_VOUS}
         selectDetail={selectDetail2}
         switchName="action-reduction-switch-2"
         setSwitchValue={handleSwitchReductionAction2Change}
