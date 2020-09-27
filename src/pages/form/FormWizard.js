@@ -14,7 +14,7 @@ export function FormWizard() {
   const isMobile = useWindowSize();
   const history = useHistory();
   const [activeStep, setActiveStep] = useState(
-    sessionStorage.getItem("current-step") || 0
+    Number(sessionStorage.getItem("current-step")) || 0
   );
 
   const setNextStep = () => {

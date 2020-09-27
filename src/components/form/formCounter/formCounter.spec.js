@@ -43,7 +43,7 @@ describe("Counter component", () => {
             }`,
     });
 
-    cy.count(5);
+    cy.count("#countValue", 5);
 
     cy.get("button:contains(Submit)").click();
 

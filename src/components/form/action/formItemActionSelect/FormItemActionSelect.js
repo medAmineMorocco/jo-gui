@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Select } from "antd";
 import { FormItem } from "@components/form/formItem/FormItem";
 import "./formItemActionSelect.css";
 
 export function FormItemActionSelect({ form, name, options, onChange }) {
   const { Option } = Select;
-
-  useEffect(() => {
-    form.setFieldsValue({
-      [name]: options[0].value,
-    });
-  }, [form, name, options]);
 
   return (
     <FormItem className="select-action" name={name}>

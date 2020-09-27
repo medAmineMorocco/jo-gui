@@ -45,9 +45,9 @@ export function FormItemWithTwoInputs({
           color: "white",
         }}
       >
-        {questions.map(({ choice, response, defaultValue }, key) => (
+        {questions.map(({ choice, response, defaultValue }, index) => (
           <div
-            key={key}
+            key={index}
             style={{
               width: "45%",
               display: "flex",
@@ -55,20 +55,35 @@ export function FormItemWithTwoInputs({
               textAlign: "center",
             }}
           >
-            <InputNumber
-              id={response.name}
-              className={
-                incomingChoice === choice
-                  ? "form-two-items-input"
-                  : "form-two-items-input-disabled"
-              }
-              defaultValue={defaultValue}
-              min={1}
-              disabled={incomingChoice !== choice}
-              onChange={(value) => onChange(value, response.name)}
-              onFocus={() => onFocus(response.name)}
-              onBlur={() => onBlur(response.name)}
-            />
+            <Form.Item
+              {...(incomingChoice === choice && {
+                name: response.name,
+              })}
+              initialValue={defaultValue}
+              {...(incomingChoice === choice && {
+                rules: [
+                  {
+                    required: true,
+                    message: `⚠ Veuillez remplir le champs ${response.label}`,
+                  },
+                ],
+              })}
+            >
+              <InputNumber
+                id={response.name}
+                className={
+                  incomingChoice === choice
+                    ? "form-two-items-input"
+                    : "form-two-items-input-disabled"
+                }
+                defaultValue={defaultValue}
+                min={1}
+                disabled={incomingChoice !== choice}
+                onChange={(value) => onChange(value, response.name)}
+                onFocus={() => onFocus(response.name)}
+                onBlur={() => onBlur(response.name)}
+              />
+            </Form.Item>
             <span
               id={`label-${response.name}`}
               className={
@@ -79,19 +94,6 @@ export function FormItemWithTwoInputs({
             >
               {response.label}
             </span>
-            {incomingChoice === choice && (
-              <Form.Item
-                className="hidden-form-two-items"
-                name={response.name}
-                initialValue={defaultValue}
-                rules={[
-                  {
-                    required: true,
-                    message: `⚠ Veuillez remplir le champs ${response.label}`,
-                  },
-                ]}
-              />
-            )}
           </div>
         ))}
       </div>

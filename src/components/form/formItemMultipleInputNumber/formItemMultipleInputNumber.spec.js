@@ -19,6 +19,7 @@ function FormItemMultipleInputNumberForm({
     >
       <FormItemMultipleInputNumber
         form={form}
+        name="multi"
         label="Label with toolitp"
         tooltipTitle="this is a tooltip"
         questions={questions}
@@ -33,29 +34,26 @@ function FormItemMultipleInputNumberForm({
 }
 
 describe("FormItemMultipleInputNumber component", () => {
-  it("should show success when submit questions with default response", () => {
+  it("should show error when submit questions without filling it", () => {
     const questions = [
       {
         name: "eco",
         label: "Économie",
-        defaultValue: 50,
       },
       {
         name: "busi",
         label: "Business",
-        defaultValue: 60,
       },
       {
         name: "prem",
         label: "Première",
-        defaultValue: 70,
       },
     ];
-    const onFinish = cy.stub();
+    const onFinishFailed = cy.stub();
     mount(
       <FormItemMultipleInputNumberForm
-        onFinish={onFinish}
-        onFinishFailed={cy.stub()}
+        onFinish={cy.stub()}
+        onFinishFailed={onFinishFailed}
         questions={questions}
       />,
       {
@@ -65,14 +63,13 @@ describe("FormItemMultipleInputNumber component", () => {
       }
     );
 
-    cy.get("button:contains(Submit)")
-      .click()
+    cy.get("button:contains(Submit)").click();
+
+    cy.get(".ant-form-item-explain > div")
+      .contains("Merci de remplir au moins une réponse")
+      .should("exist")
       .then(() => {
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          eco: 50,
-          busi: 60,
-          prem: 70,
-        });
+        expect(onFinishFailed).to.be.calledOnce;
       });
   });
 
@@ -127,6 +124,7 @@ describe("FormItemMultipleInputNumber component", () => {
           eco: 20,
           busi: 30,
           prem: 40,
+          multi: "40",
         });
       });
   });

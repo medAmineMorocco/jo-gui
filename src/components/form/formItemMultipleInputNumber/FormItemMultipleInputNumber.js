@@ -6,6 +6,7 @@ import "./formItemMultipleInputNumber.css";
 
 export function FormItemMultipleInputNumber({
   form,
+  name,
   label,
   tooltipTitle,
   questions,
@@ -34,8 +35,24 @@ export function FormItemMultipleInputNumber({
     labelById.style.color = color;
   };
 
+  const check = () => {
+    const isAllQuestionsNotFilled = questions
+      .map(({ name }) => form.getFieldValue(name))
+      .filter((questionName) => questionName !== name)
+      .every((value) => value === undefined || value === null);
+    if (isAllQuestionsNotFilled) {
+      return Promise.reject("⚠ Merci de remplir au moins une réponse");
+    }
+    return Promise.resolve();
+  };
+
   return (
-    <FormItem label={label} tooltipTitle={tooltipTitle}>
+    <FormItem
+      label={label}
+      name={name}
+      tooltipTitle={tooltipTitle}
+      rules={[{ validator: check }]}
+    >
       <div
         style={{
           width: "100%",
@@ -44,40 +61,26 @@ export function FormItemMultipleInputNumber({
           color: "white",
         }}
       >
-        {questions.map(({ name, label, defaultValue }, key) => (
-          <div
-            key={key}
-            style={{
-              width: "30%",
-              display: "flex",
-              flexDirection: "column",
-              textAlign: "center",
-            }}
-          >
-            <span className="form-multiple-items-label" id={`label-${name}`}>
-              {label}
-            </span>
-            <InputNumber
-              id={name}
-              className="form-multiple-items-input"
-              defaultValue={defaultValue}
-              onChange={(value) => onChange(value, name)}
-              onFocus={() => onFocus(name)}
-              onBlur={() => onBlur(name)}
-            />
-            <Form.Item
-              className="hidden-form-multiple-items"
-              name={name}
-              initialValue={defaultValue}
-              rules={[
-                {
-                  required: true,
-                  message: `⚠ Veuillez remplir le champs ${label}`,
-                },
-              ]}
-            />
-          </div>
-        ))}
+        {questions.map(({ name, label, defaultValue }, key) => {
+          return (
+            <div key={key} className="multiple-item-child-container">
+              <span className="form-multiple-items-label" id={`label-${name}`}>
+                {label}
+              </span>
+              <Form.Item name={name}>
+                <InputNumber
+                  id={name}
+                  className="form-multiple-items-input"
+                  value={defaultValue}
+                  onChange={(value) => onChange(value, name)}
+                  onFocus={() => onFocus(name)}
+                  onBlur={() => onBlur(name)}
+                  min={0}
+                />
+              </Form.Item>
+            </div>
+          );
+        })}
       </div>
     </FormItem>
   );

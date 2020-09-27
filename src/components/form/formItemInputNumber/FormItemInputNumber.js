@@ -36,7 +36,7 @@ export function FormItemInputNumber({ label, name, rules, tooltipTitle }) {
       rules={rules}
       tooltipTitle={tooltipTitle}
     >
-      <InputNumber ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
+      <InputNumber ref={inputRef} onFocus={onFocus} onBlur={onBlur} min={0} />
     </FormItem>
   );
 }

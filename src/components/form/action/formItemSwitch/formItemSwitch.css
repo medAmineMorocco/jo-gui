@@ -16,8 +16,3 @@
 .ant-switch-checked {
   background-color: black;
 }
-
-.switch-action,
-.ant-form-item {
-  margin-bottom: 5px;
-}

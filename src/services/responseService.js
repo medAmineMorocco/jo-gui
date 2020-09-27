@@ -1,11 +1,10 @@
 export function saveResponsesOfQuestionsStep(stepState, step) {
-  const state = getItem("responses");
-  let newState = {};
-  if (state) {
-    newState = Object.entries(state).filter(([stepKey]) => stepKey !== step);
+  let state = getItem("responses");
+  if (!state) {
+    state = {};
   }
-  newState[step] = stepState;
-  sessionStorage.setItem("responses", JSON.stringify(newState));
+  state[step] = stepState;
+  setItem("responses", state);
 }
 
 export function getResponsesOfQuestionsOfStep(step) {
@@ -14,6 +13,27 @@ export function getResponsesOfQuestionsOfStep(step) {
     return responses[step];
   }
   return null;
+}
+
+export function saveSettingsStep(stepState, step) {
+  let state = getItem("settings");
+  if (!state) {
+    state = {};
+  }
+  state[step] = stepState;
+  setItem("settings", state);
+}
+
+export function getSettingsOfStep(step) {
+  const settings = getItem("settings");
+  if (settings) {
+    return settings[step];
+  }
+  return null;
+}
+
+function setItem(item, state) {
+  sessionStorage.setItem(item, JSON.stringify(state));
 }
 
 function getItem(item) {

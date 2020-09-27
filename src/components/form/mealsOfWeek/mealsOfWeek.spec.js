@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { mount } from "cypress-react-unit-test";
 import { MealsOfWeek } from "./MealsOfWeek";
 import { Button, Form } from "antd";
@@ -11,6 +11,13 @@ const errorMsg = "plz fill meals of all days";
 
 function MealsForm({ onFinish, onFinishFailed }) {
   const [form] = Form.useForm();
+  const [questionState] = useState({
+    monday: null,
+    tuesday: null,
+    wednesday: null,
+    thursday: null,
+    friday: null,
+  });
 
   const questions = [
     {
@@ -37,7 +44,8 @@ function MealsForm({ onFinish, onFinishFailed }) {
         name="meals"
         questions={questions}
         label="meals of week"
-        tooltipTitle="plz fill meals of all days"
+        errorMsg="plz fill meals of all days"
+        state={questionState}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
@@ -81,7 +89,7 @@ describe("MealsOfWeek component", () => {
             }`,
       }
     );
-    cy.checkMeals({
+    cy.checkMeals("#meals", {
       monday: "meat",
       tuesday: "chicken",
       wednesday: "chicken",
@@ -105,7 +113,7 @@ describe("MealsOfWeek component", () => {
                 background-color: var(--bg-color)
             }`,
     });
-    cy.checkMeals({
+    cy.checkMeals("#meals", {
       monday: "meat",
       tuesday: "chicken",
       wednesday: "chicken",
