@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemActionReduction } from '@components/form/action/formItemActionReduction/FormItemActionReduction';
@@ -52,20 +52,20 @@ export const actionReduction = () => {
 
 	return (
 		<ConfiguredForm form={form} onFinish={onFinish}>
-			<Form.Item>
-				<Button type="primary" htmlType="submit">
-					Submit
-				</Button>
-			</Form.Item>
-			<br />
 			<FormItemActionReduction
 				form={form}
 				switchName="switch_name"
 				title={text('title', 'Thé et café')}
 				selectDetail={selectDetail}
 				savierVous={savierVous}
+				saviezVousPosition={number('saviezVousPosition', 1)}
 				isOpened={boolean('isOpened', true)}
 			/>
+			<Form.Item>
+				<Button type="primary" htmlType="submit">
+					Submit
+				</Button>
+			</Form.Item>
 		</ConfiguredForm>
 	);
 };
