@@ -150,7 +150,7 @@
     padding-left: 2%;
     padding-right: 2%;
   }
-  .ant-modal-content {
+  .custom-modal .ant-modal-content {
     top: 60px;
     margin: 5%;
   }

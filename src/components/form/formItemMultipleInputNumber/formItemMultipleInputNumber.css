@@ -1,7 +1,3 @@
-.hidden-form-multiple-items .ant-form-item-control-input {
-  display: none;
-}
-
 .form-multiple-items-label {
   color: var(--main-color);
 }
@@ -20,4 +16,15 @@
 
 .ant-input-number:hover {
   border-color: var(--main-color);
+}
+
+.multiple-item-child-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.multiple-item-child-container .ant-form-item {
+  margin-bottom: 0;
 }

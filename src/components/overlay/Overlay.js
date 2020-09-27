@@ -14,12 +14,12 @@ export function Overlay(props) {
     closeButton: "none",
   });
   const { modalVisible, closeButton } = visible;
-  let { items } = props;
+  let { items, title } = props;
 
   const titleModal = (
     <div className="container-flex-title-modal">
       <BulbOutlined className="icon-modal" />
-      <p className="title-modal">Comment réduire sont empreinte ?</p>
+      <p className="title-modal">{title}</p>
     </div>
   );
 

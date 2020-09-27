@@ -3,7 +3,15 @@ import { FormItem } from "@components/form/formItem/FormItem";
 import { Radio } from "@components/form/radio/Radio";
 import "./mealsOfWeek.css";
 
-export function MealsOfWeek({ form, label, name, questions, tooltipTitle }) {
+export function MealsOfWeek({
+  form,
+  label,
+  name,
+  questions,
+  tooltipTitle,
+  errorMsg,
+  state,
+}) {
   const [selectedOnMonday, setSelectedOnMonday] = useState();
   const [selectedOnTuesday, setSelectedOnTuesday] = useState();
   const [selectedOnWednesday, setSelectedOnWednesday] = useState();
@@ -11,8 +19,30 @@ export function MealsOfWeek({ form, label, name, questions, tooltipTitle }) {
   const [selectedOnFriday, setSelectedOnFriday] = useState();
 
   useEffect(() => {
+    setSelectedOnMonday(state.monday);
+    setSelectedOnTuesday(state.tuesday);
+    setSelectedOnWednesday(state.wednesday);
+    setSelectedOnThursday(state.thursday);
+    setSelectedOnFriday(state.friday);
+  }, [state]);
+
+  useEffect(() => {
+    const triggerChange = () => {
+      form.setFieldsValue({
+        [name]: {
+          monday: selectedOnMonday,
+          tuesday: selectedOnTuesday,
+          wednesday: selectedOnWednesday,
+          thursday: selectedOnThursday,
+          friday: selectedOnFriday,
+        },
+      });
+    };
+
     triggerChange();
   }, [
+    form,
+    name,
     selectedOnMonday,
     selectedOnTuesday,
     selectedOnWednesday,
@@ -20,22 +50,13 @@ export function MealsOfWeek({ form, label, name, questions, tooltipTitle }) {
     selectedOnFriday,
   ]);
 
-  const triggerChange = () => {
-    form.setFieldsValue({
-      [name]: {
-        monday: selectedOnMonday,
-        tuesday: selectedOnTuesday,
-        wednesday: selectedOnWednesday,
-        thursday: selectedOnThursday,
-        friday: selectedOnFriday,
-      },
-    });
-  };
-
   const checkMeals = () => {
     const mealsOfWeek = form.getFieldValue(name);
-    if (Object.values(mealsOfWeek).includes(undefined)) {
-      return Promise.reject(tooltipTitle);
+    if (
+      Object.values(mealsOfWeek).includes(null) ||
+      Object.values(mealsOfWeek).includes(undefined)
+    ) {
+      return Promise.reject(errorMsg);
     }
     return Promise.resolve();
   };

@@ -37,9 +37,10 @@ Cypress.Commands.add('login', (email) => {
     cy.get('form').submit();
 });
 
-Cypress.Commands.add('count', (number) => {
+Cypress.Commands.add('count', (selector, number) => {
+    cy.get(`${selector} > .flex-container-button > #plus-counter`).as('btnSelector');
     for(let i = 1; i <= number; i++) {
-      cy.get("#plus-counter").click();
+        cy.get('@btnSelector').click();
     }
 });
 
@@ -48,7 +49,17 @@ Cypress.Commands.add('typeNumber', (questions) => {
 });
 
 
-Cypress.Commands.add("checkMeals", (mealsByDay) => {
-    Object.entries(mealsByDay).forEach(([day, meal]) => cy.get(`input[data-label="${day}-${meal}"]`).check());
+Cypress.Commands.add("checkMeals", (selector, mealsByDay) => {
+    Object.entries(mealsByDay).forEach(([day, meal]) => cy.get(selector).find(`input[data-label="${day}-${meal}"]`).check());
+});
+
+Cypress.Commands.add("expectToBeChecked", (radios) => {
+    radios.forEach(radio => {
+        cy.get(`input[data-label="${radio}"]`).parent().should('have.class', 'ant-radio-checked');
+    });
+});
+
+Cypress.Commands.add('typeNumberForQuestionWithUnit', (name, value) => {
+    cy.get(`label[for="${name}"]`).parents('.ant-form-item').find('.ant-input-number-input').clear().type(value);
 });
 

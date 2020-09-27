@@ -70,7 +70,8 @@ describe("FormItemInputNumberWithUnit component", () => {
             }`,
       }
     );
-    cy.get(".ant-input-number-input").type("15");
+
+    cy.typeNumberForQuestionWithUnit("distance", "6");
 
     cy.get("button:contains(Submit)").click();
 
@@ -78,7 +79,7 @@ describe("FormItemInputNumberWithUnit component", () => {
       .should("not.exist")
       .then(() => {
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          distance: 15,
+          distance: 6,
         });
       });
   });

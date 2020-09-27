@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Tooltip } from "antd";
 import { QuestionCircleFilled } from "@ant-design/icons";
-import { getColor } from "@utils/cssUtil";
 import "./formItem.css";
 
 export function FormItem(props) {
@@ -12,10 +11,12 @@ export function FormItem(props) {
     name,
     tooltipTitle,
     rules,
+    initialValue,
   } = props;
-  const mainColor = getColor("--main-color");
+
   return (
     <Form.Item
+      {...(initialValue && { initialValue: initialValue })}
       className={className}
       label={
         <span style={labelStyle}>
@@ -24,8 +25,9 @@ export function FormItem(props) {
             <Tooltip
               className="tooltip-icon"
               title={tooltipTitle}
-              color={mainColor}
+              color="white"
               placement="topRight"
+              overlayClassName="tooltip-overlay"
             >
               <QuestionCircleFilled />
             </Tooltip>

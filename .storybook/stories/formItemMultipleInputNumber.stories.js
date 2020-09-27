@@ -38,6 +38,7 @@ export const formItemMultipleInputNumber = () => {
   >
       <FormItemMultipleInputNumber
           form={form}
+          name="multi"
           label={text('label', 'example of question ')}
           tooltipTitle={text('infos', 'example of tooltip')}
           questions={questions}

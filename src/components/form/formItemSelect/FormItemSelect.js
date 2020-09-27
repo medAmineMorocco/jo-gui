@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Select } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
@@ -17,12 +17,6 @@ export function FormItemSelect({
   const mainColor = getColor("--main-color");
   const [color, setColor] = useState(mainColor);
   let selectRef;
-
-  useEffect(() => {
-    form.setFieldsValue({
-      [name]: options[0].value,
-    });
-  }, []);
 
   const onFocus = () => {
     const focusColor = "white";
@@ -61,6 +55,7 @@ export function FormItemSelect({
       labelStyle={{ color: color }}
       name={name}
       tooltipTitle={tooltipTitle}
+      initialValue={options[0].value}
     >
       <Select
         ref={(select) => (selectRef = select)}

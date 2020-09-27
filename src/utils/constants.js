@@ -110,3 +110,63 @@ export const INTRODUCTION_QUESTION2_ERROR_MSG =
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
+
+///////////////////////////////////////
+//   Form - Perso
+//////////////////////////////////////
+
+// alimentation
+export const ALIMENTATION_QUESTION1 = "Nombre de petits déjeuners par semaine";
+export const ALIMENTATION_QUESTION2 =
+  "Vos diners en semaine sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+export const ALIMENTATION_QUESTION3 =
+  "Vos déjeuners en week-end sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+export const ALIMENTATION_QUESTION3_TOOTLTIP =
+  "Les déjeuners en semaine de vacances n'incluent pas les week-ends (comptés ci-dessus)";
+export const ALIMENTATION_QUESTION4 =
+  "Vos déjeuners par semaines sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+export const ALIMENTATION_QUESTION4_TOOTLTIP =
+  "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (ici)";
+export const ALIMENTATION_QUESTION5 =
+  "Litres de jus / sodas consommés par semaine (L)";
+export const ALIMENTATION_QUESTION6 =
+  "Litres d'eau bouteille consommés par semaine (L)";
+export const ALIMENTATION_QUESTION7 = "Litres de vin consommés par semaine (L)";
+export const ALIMENTATION_QUESTION8 =
+  "Litres de bière consommés par semaine (L)";
+export const ALIMENTATION_QUESTION9 =
+  "Litres d'alcool, hors vin et bière, consommés par semaine (L)";
+export const ALIMENATTION_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const POPIN_INFOS =
+  "Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :\n" +
+  "• Apprendre à cuisiner les restes\n" +
+  "• Apprendre à bien conserver les aliments\n" +
+  "• Vérifier régulièrement les dates de péremption\n" +
+  "• Cuisiner la bonne quantité de nourriture\n" +
+  "• Ranger le réfrigérateur pour ne rien oublier dans le fond\n" +
+  "• Faire ses courses avec une liste, et sans avoir faim !";
+
+export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
+export const ALIMENTATION_SAVIEZ_VOUS =
+  "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
+
+// alimentation
+export const DEPLACEMENTS_QUESTION1 =
+  "Distance parcourue en voiture par an (véhicule personnel ou de location)";
+export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
+  "⚠ Merci de saisir votre réponse";
+export const DEPLACEMENTS_QUESTION2 = "Motorisation du véhicule";
+export const DEPLACEMENTS_QUESTION3 =
+  "Consommation moyenne aux 100 km (si connue)";
+export const DEPLACEMENTS_QUESTION4 =
+  "Nombre de trajets AR en train TGV par an";
+export const DEPLACEMENTS_QUESTION5 =
+  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+export const DEPLACEMENTS_QUESTION6 =
+  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+export const DEPLACEMENTS_QUESTION7 =
+  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+
+export const DEPLACEMENTS_SAVIEZ_VOUS =
+  "Un vol Paris-New York, c’est une tonne de CO2 dans l’atmosphère, soit la moitié de l’empreinte\n" +
+  "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";

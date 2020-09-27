@@ -53,4 +53,22 @@ describe("FormItemSelect component", () => {
         })
       );
   });
+
+  it("should show success when submit", () => {
+    const onFinish = cy.stub();
+
+    mount(<SelectForm onFinish={onFinish} onFinishFailed={() => cy.stub()} />, {
+      style: `body {
+                background-color: var(--bg-color)
+            }`,
+    });
+
+    cy.get("button:contains(Submit)")
+      .click()
+      .then(() =>
+        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+          persons: "Jack",
+        })
+      );
+  });
 });

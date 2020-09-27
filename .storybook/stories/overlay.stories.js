@@ -33,4 +33,4 @@ const dataTabs = [
     },
 ];
 
-export const overlay = () => <Overlay items={dataTabs}/>;
+export const overlay = () => <Overlay title="Comment réduire sont empreinte ?" items={dataTabs}/>;
