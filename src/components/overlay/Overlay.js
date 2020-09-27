@@ -25,12 +25,15 @@ export function Overlay(props) {
 
   const tiles = items.map((value) => (
     <div key={value}>
-      <h3 className="content-style">{value.text}</h3>
+      <h3
+        className="content-style"
+        dangerouslySetInnerHTML={{ __html: value.text }}
+      />
       <h4 className="content-style">
         <div
           className="div-image"
           style={{ backgroundImage: "url(" + value.image + ")" }}
-        ></div>
+        />
         <div className="text-modal">{value.sousText}</div>
       </h4>
     </div>
@@ -51,7 +54,6 @@ export function Overlay(props) {
             <span className="title-button">
               Comment réduire sont empreinte ?
             </span>
-            <div></div>
           </div>
         </Button>
         <Button

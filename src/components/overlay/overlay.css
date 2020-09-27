@@ -31,6 +31,7 @@
   color: black;
 }
 .title-button {
+  margin: 0 auto;
   text-transform: lowercase;
   font-family: Source Sans Pro;
   font-style: normal;
@@ -119,9 +120,8 @@
   width: 100%;
 }
 .container-text-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 .container-flex-title-modal {

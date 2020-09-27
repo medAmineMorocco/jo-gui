@@ -137,14 +137,13 @@ export const ALIMENTATION_QUESTION8 =
 export const ALIMENTATION_QUESTION9 =
   "Litres d'alcool, hors vin et bière, consommés par semaine (L)";
 export const ALIMENATTION_ERROR_MSG = "⚠ Merci de saisir votre réponse";
-export const POPIN_INFOS =
-  "Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :\n" +
-  "• Apprendre à cuisiner les restes\n" +
-  "• Apprendre à bien conserver les aliments\n" +
-  "• Vérifier régulièrement les dates de péremption\n" +
-  "• Cuisiner la bonne quantité de nourriture\n" +
-  "• Ranger le réfrigérateur pour ne rien oublier dans le fond\n" +
-  "• Faire ses courses avec une liste, et sans avoir faim !";
+export const POPIN_INFOS = `Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :</br>
+  • Apprendre à cuisiner les restes</br>
+  • Apprendre à bien conserver les aliments</br>
+  • Vérifier régulièrement les dates de péremption</br>
+  • Cuisiner la bonne quantité de nourriture</br>
+  • Ranger le réfrigérateur pour ne rien oublier dans le fond</br>
+  • Faire ses courses avec une liste, et sans avoir faim !`;
 
 export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
