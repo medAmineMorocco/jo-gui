@@ -1,0 +1,42 @@
+.flex-slider-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.flex-slider-item {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  align-self: auto;
+  padding: 1%;
+  width: 100%;
+}
+.slider-container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.flex-container-label {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.svg-logo-slider {
+  margin-right: 7.5px;
+}
+.text-question {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.tooltip-icon-slider {
+  float: right;
+}
