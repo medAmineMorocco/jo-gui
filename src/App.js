@@ -4,6 +4,7 @@ import { LoginPage } from "@pages/login/LoginPage";
 import { HomePage } from "@pages/home/HomePage";
 import { IntroPage } from "@pages/intro/IntroPage";
 import { FormWizard } from "@pages/form/FormWizard";
+import { ResultsPage } from "@pages/results/ResultsPage";
 import { getCurrentUser } from "@services/authService";
 import "./App.css";
 
@@ -26,9 +27,13 @@ function App() {
       <PrivateRoute exact path="/form">
         <FormWizard />
       </PrivateRoute>
+      <PrivateRoute exact path="/results">
+        <ResultsPage />
+      </PrivateRoute>
     </BrowserRouter>
   );
 }
+
 function PrivateRoute({ children, ...rest }) {
   return (
     <Route

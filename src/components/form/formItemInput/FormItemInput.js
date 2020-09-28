@@ -5,7 +5,15 @@ import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
 import "./formItemInput.css";
 
-export function FormItemInput({ label, name, rules, className }) {
+export function FormItemInput({
+  label,
+  name,
+  rules,
+  className,
+  disabled,
+  defaultValue,
+  tooltipTitle,
+}) {
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
   const [labelStyle, setLabelStyle] = useState({ color: mainColor });
@@ -35,8 +43,15 @@ export function FormItemInput({ label, name, rules, className }) {
       labelStyle={labelStyle}
       name={name}
       rules={rules}
+      tooltipTitle={tooltipTitle}
     >
-      <Input ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
+      <Input
+        ref={inputRef}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        {...(disabled && { disabled: disabled })}
+        {...(defaultValue && { defaultValue: defaultValue })}
+      />
     </FormItem>
   );
 }

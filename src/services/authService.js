@@ -7,7 +7,10 @@ export function login(email) {
     body: JSON.stringify({ email: email, password: "TEST" }),
   };
 
-  return fetchWrapper(process.env.REACT_APP_SIGNIN_URL, requestOptions)
+  return fetchWrapper(
+    process.env.REACT_APP_BACKEND_URL + "/auth/signin",
+    requestOptions
+  )
     .then(async (response) => {
       const json = await response.json();
       if (json.token) {

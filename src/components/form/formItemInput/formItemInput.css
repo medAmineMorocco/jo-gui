@@ -15,3 +15,12 @@
 .ant-input:hover {
   border-color: 1px solid var(--main-color);
 }
+
+.ant-input[disabled] {
+  background-color: var(--bg-color-shade-2);
+  color: white;
+}
+
+.ant-input[disabled]:hover {
+  border: 1px solid var(--main-color);
+}
