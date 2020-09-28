@@ -125,7 +125,7 @@
   width: 100%;
 }
 .container-flex-title-modal {
-  display: inline-flex;
+  display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
