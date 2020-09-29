@@ -160,8 +160,8 @@ describe("FormItemActionReduction component", () => {
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
           switch_name: undefined,
-          firstSelect: undefined,
-          secondSelect: undefined,
+          firstSelect: 2,
+          secondSelect: 2,
           thirdSelect: undefined,
         })
       );
@@ -193,7 +193,7 @@ describe("FormItemActionReduction component", () => {
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
           switch_name: undefined,
           firstSelect: 3,
-          secondSelect: undefined,
+          secondSelect: 2,
           thirdSelect: 3,
         })
       );

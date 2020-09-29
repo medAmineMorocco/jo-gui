@@ -40,6 +40,11 @@ function SelectWithDetailsForm({ onFinish, onFinishFailed }) {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
       <FormItemSelectWithDetails
         form={form}
         name="persons"
@@ -52,11 +57,6 @@ function SelectWithDetailsForm({ onFinish, onFinishFailed }) {
         ]}
         subQuestions={subQuestions}
       />
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
     </ConfiguredForm>
   );
 }
@@ -81,8 +81,6 @@ describe("FormItemSelectWithDetails component", () => {
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
           persons: "Jack",
-          question1: 200,
-          question2: 230,
         })
       );
   });
@@ -108,8 +106,6 @@ describe("FormItemSelectWithDetails component", () => {
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
           persons: "Lucy",
-          question1: 100,
-          question2: 130,
         })
       );
   });

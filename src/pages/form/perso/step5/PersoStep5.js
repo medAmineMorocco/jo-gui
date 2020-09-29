@@ -151,6 +151,10 @@ export function PersoStep5({ step, setNextStep }) {
       onFinishFailed={() => console.log("onFinishFailed")}
     >
       <div className="wizard-content-right-form-parent">
+        <div className="pro-step-title-container">
+          <span className="pro-step-title">Alimentation</span>
+        </div>
+
         <FormCounter
           form={form}
           name="alimentation_question1"
