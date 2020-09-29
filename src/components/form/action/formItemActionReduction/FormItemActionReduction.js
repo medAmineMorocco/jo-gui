@@ -74,7 +74,7 @@ export function FormItemActionReduction({
     <div className={className} key={key}>
       <span className="input-detail">{data.firstText}&nbsp;</span>
       <FormItem className="input-action" name={data.name}>
-        <InputNumber min={0} defaultValue={0} />
+        <InputNumber min={0} />
       </FormItem>
       {data.secondText.split(" ").map((mot, key) => (
         <span className="input-detail" key={key}>
@@ -87,11 +87,7 @@ export function FormItemActionReduction({
   const select = (className, key, data) => (
     <div className={className} key={key}>
       <span>{data.firstText}&nbsp;</span>
-      <FormItemActionSelect
-        form={form}
-        name={data.name}
-        options={data.options}
-      />
+      <FormItemActionSelect name={data.name} options={data.options} />
       {data.secondText.split(" ").map((mot, key) => (
         <span key={key}>&nbsp;{mot}</span>
       ))}

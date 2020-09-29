@@ -131,6 +131,10 @@ export function PersoStep6({ step, setNextStep }) {
       onFinishFailed={() => console.log("onFinishFailed")}
     >
       <div className="wizard-content-right-form-parent">
+        <div className="pro-step-title-container">
+          <span className="pro-step-title">Déplacements</span>
+        </div>
+
         <TitleWithHorizontalLine title="En voiture" />
         <FormItemInputNumberWithUnit
           form={form}
@@ -142,11 +146,11 @@ export function PersoStep6({ step, setNextStep }) {
           ]}
         />
         <FormItemSelect
-          form={form}
           name="question_2"
           label={DEPLACEMENTS_QUESTION2}
           options={question2_options}
           onChange={onChangeQuestion2}
+          disabled={false}
         />
         <FormItemWithTwoInputs
           form={form}

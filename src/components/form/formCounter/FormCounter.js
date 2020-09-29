@@ -63,13 +63,15 @@ export function FormCounter({
           <div className="flex-container-text">
             <IconCounter className="large-text" />
             <span className="text-counter">{textCounter}</span>
-            <Tooltip
-              className="tooltip-icon-counter"
-              title={tooltipTitle}
-              placement="topRight"
-            >
-              <QuestionCircleFilled />
-            </Tooltip>
+            {tooltipTitle && (
+              <Tooltip
+                className="tooltip-icon-counter"
+                title={tooltipTitle}
+                placement="topRight"
+              >
+                <QuestionCircleFilled />
+              </Tooltip>
+            )}
           </div>
           <div className="flex-container-button">
             <MinusCircleFilled

@@ -1,14 +1,26 @@
 .hidden-form-item {
   display: none;
 }
+
 .select-with-details-collapse
+  .ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header {
+  padding: 0px;
+}
+
+.select-with-details-collapse
+  .ant-collapse
   > .ant-collapse-item
   > .ant-collapse-header
   .ant-collapse-arrow {
   left: 46px;
 }
 
-.select-with-details-collapse > .ant-collapse-item > .ant-collapse-header {
+.select-with-details-collapse
+  .ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header {
   padding-left: 0;
   color: var(--main-color);
 }
@@ -31,6 +43,10 @@
   text-align: end;
   font-weight: normal;
   color: var(--bg-color-shade-5);
+}
+
+.detail-divider {
+  margin: 10px 0px;
 }
 
 @media (max-width: 767px) {

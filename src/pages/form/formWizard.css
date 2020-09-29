@@ -50,10 +50,29 @@
   padding-top: 48px;
 }
 
+.pro-step-title-container {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.pro-step-title {
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+}
+
+.forms-margin {
+  margin-top: 60px;
+}
+
 @media (max-width: 767px) {
   .mobile-wizard-container {
     margin-bottom: 96px;
   }
+
   .wizard-content-right-form-parent {
     padding-left: 32px;
     padding-right: 32px;

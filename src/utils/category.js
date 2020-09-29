@@ -1,54 +1,54 @@
 export const proItems = [
   {
     title: "Au bureau",
-    description: "X questions",
+    description: "4 questions",
   },
   {
     title: "Empreinte numérique",
-    description: "X questions",
+    description: "5 questions",
   },
   {
     title: "Restauration",
-    description: "X questions",
+    description: "2 questions",
   },
   {
     title: "Trajets",
-    description: "X questions",
+    description: "3 questions",
   },
   {
     title: "Déplacements",
-    description: "X questions",
+    description: "11 questions",
   },
 ];
 
 export const persoItems = [
   {
     title: "A la maison",
-    description: "X questions",
+    description: "12 questions",
   },
   {
     title: "Equipement du logement",
-    description: "X questions",
+    description: "12 questions",
   },
   {
     title: "Biens matériels",
-    description: "X questions",
+    description: "15 questions",
   },
   {
     title: "Numérique",
-    description: "X questions",
+    description: "2 questions",
   },
   {
     title: "Alimentation",
-    description: "X questions",
+    description: "9 questions",
   },
   {
     title: "Déplacements",
-    description: "X questions",
+    description: "7 questions",
   },
   {
     title: "Services publics",
-    description: "X questions",
+    description: "1 questions",
   },
 ];
 

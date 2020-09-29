@@ -111,6 +111,58 @@ export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 
+// trajets
+export const DISTANCE_DOMICILE_TRAVAIL =
+  "Distance entre votre domicile et votre travail (km)";
+export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
+  "⚠ Merci de saisir votre réponse";
+export const MODE_DEPLACEMENT =
+  "Mode de déplacement principal (celui que vous utilisez le plus fréquemment et sur la plus grande partie de votre trajet)";
+export const MOTORISATION = "Motorisation du véhicule";
+export const MOTORISATION_INFOS =
+  "Pour le métro, tramway, train, RER et TGV, la motorisation est électrique !";
+export const SAVIER_VOUS_TRAJETS =
+  "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
+
+// deplacement
+
+export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
+
+export const NBR_KM_VOITURE =
+  "Nombre de km en voiture (location, personnelle, ou taxi)";
+
+export const QUESTION2_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en autres trains grandes lignes (intercités ou TER, à moins de 200 km)";
+
+export const QUESTION3_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en train TGV (à environ 250 km)";
+
+export const QUESTION4_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en train TGV (à environ 500 km) autres qu'au CIO à Lausanne";
+
+export const QUESTION5_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en train TGV (à environ 800 km)";
+
+export const QUESTION6_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en train au CIO à Lausanne";
+
+export const QUESTION7_NBR_TRAJETS_AR =
+  "Nombre de trajets AR en avion au CIO à Lausanne en Economie";
+
+export const QUESTION8_NBR_VOLS_AR =
+  "Nombre de vols AR longs courriers à Tokyo";
+
+export const QUESTION9_NBR_VOLS_AR = "Nombre de vols AR courts courriers (<5h)";
+
+export const QUESTION10_NBR_VOLS_AR =
+  "Nombre de vols AR longs courriers (>5h et < 10h)";
+
+export const QUESTION11_NBR_VOLS_AR =
+  "Nombre de vols AR longs courriers (>10h)";
+
+export const SAVIER_VOUS_DEPLACEMENT =
+  "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
+
 ///////////////////////////////////////
 //   Form - Perso
 //////////////////////////////////////

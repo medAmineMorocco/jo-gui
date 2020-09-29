@@ -6,13 +6,13 @@ import "./formItemSelect.css";
 import { findDOMNode } from "react-dom";
 
 export function FormItemSelect({
-  form,
   label,
   name,
   className,
   tooltipTitle,
   options,
   onChange,
+  disabled,
 }) {
   const mainColor = getColor("--main-color");
   const [color, setColor] = useState(mainColor);
@@ -59,12 +59,12 @@ export function FormItemSelect({
     >
       <Select
         ref={(select) => (selectRef = select)}
-        defaultValue={options[0].value}
         dropdownClassName="select"
         onFocus={onFocus}
         onBlur={onBlur}
         onSelect={onSelect}
         onChange={onChange}
+        disabled={disabled}
       >
         {options.map(({ text, value }, key) => (
           <Select.Option key={key} className="select-option" value={value}>
