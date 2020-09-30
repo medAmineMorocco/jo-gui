@@ -18,6 +18,8 @@ export const step5State = (values) => {
       response: values["alimentation_question1"],
     },
     {
+      type: "calendar",
+      choices: ["sub1", "sub2", "sub3"],
       question: "alimentation_question2",
       response: values["alimentation_question2"],
       actions: [
@@ -32,6 +34,8 @@ export const step5State = (values) => {
       ],
     },
     {
+      type: "calendar",
+      choices: ["sub4", "sub5", "sub6"],
       question: "alimentation_question3",
       response: values["alimentation_question3"],
       actions: [
@@ -46,6 +50,8 @@ export const step5State = (values) => {
       ],
     },
     {
+      type: "calendar",
+      choices: ["sub7", "sub8", "sub9"],
       question: "alimentation_question4",
       response: values["alimentation_question4"],
       actions: [

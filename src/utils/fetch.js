@@ -1,6 +1,4 @@
-import { getCurrentUser } from "@services/authService";
-
-export function fetchWrapper(url, requestOptions = { headers: authHeader() }) {
+export function fetchWrapper(url, requestOptions) {
   return fetch(url, requestOptions)
     .then((response) => {
       if (!response.ok) {
@@ -12,14 +10,4 @@ export function fetchWrapper(url, requestOptions = { headers: authHeader() }) {
       console.error(`Response error for url: ${url}`, error);
       return Promise.reject(error);
     });
-}
-
-function authHeader() {
-  const user = getCurrentUser();
-
-  if (user && user.accessToken) {
-    return { Authorization: `Bearer ${user.accessToken}` };
-  } else {
-    return {};
-  }
 }
