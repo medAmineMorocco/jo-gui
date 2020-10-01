@@ -1,40 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { mount } from "cypress-react-unit-test";
 import { FormSlider } from "./FormSlider";
 import { Button, Form } from "antd";
-import { ReactComponent as TeaSvg } from "@components/form/formSlider/tea.svg";
 import { ReactComponent as CapsuleSvg } from "@components/form/formSlider/capsule.svg";
-import { ReactComponent as CoffeeSvg } from "@components/form/formSlider/coffee.svg";
 import { Form as ConfiguredForm } from "../Form";
 
 function SliderForm({ onFinish }) {
   const [form] = Form.useForm();
-  let questions = [
+
+  const [cafeCapsule, setCafeCapsule] = useState(0);
+
+  const tooltipTitle = "Test";
+  const questions = [
     {
       label: "Café en capsule",
       name: "erf12",
       logo: <CapsuleSvg />,
-    },
-    {
-      label: "Café en vrac",
-      name: "erf13",
-      logo: <CoffeeSvg />,
-    },
-    {
-      label: "Tasse de Thé",
-      name: "erf14",
-      logo: <TeaSvg />,
+      min: 0,
+      max: 10,
+      value: cafeCapsule,
     },
   ];
 
-  const tooltipTitle = "Test";
   return (
     <ConfiguredForm form={form} onFinish={onFinish}>
       <FormSlider
-        labels={"Combien de boissons chaudes prenez-vous par jour ?"}
-        questions={questions}
-        tooltipTitle={tooltipTitle}
         form={form}
+        labels={"Combien de boissons chaudes prenez-vous par jour ?"}
+        tooltipTitle={tooltipTitle}
+        questions={questions}
+        setValue={setCafeCapsule}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
@@ -46,7 +41,7 @@ function SliderForm({ onFinish }) {
 }
 
 describe("Slider component", () => {
-  it("Test data pick 2 in sliderbar", () => {
+  it("Test data pick 5 in sliderbar", () => {
     const onFinish = cy.stub();
 
     mount(<SliderForm onFinish={onFinish} />, {
@@ -56,16 +51,14 @@ describe("Slider component", () => {
     });
 
     cy.get(".ant-slider-with-marks")
-      .eq(1)
+      .eq(0)
       .trigger("mousedown", { which: 1, pageX: 450, pageY: 108 })
       .click();
     cy.get("button:contains(Submit)")
       .click()
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          erf12: 0,
-          erf13: 2,
-          erf14: 0,
+          erf12: 5,
         })
       );
   });
@@ -82,9 +75,7 @@ describe("Slider component", () => {
       .click()
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          erf12: 0,
-          erf13: 0,
-          erf14: 0,
+          erf12: undefined,
         })
       );
   });
