@@ -9,102 +9,23 @@ import {
   DesktopOutlined,
 } from "@ant-design/icons";
 import {
+  TITLE_ORDINATEURS,
+  TITLE_TELEPHONES,
+  TITLE_ECRANS,
+} from "@utils/constants";
+import {
   saveResponsesOfQuestionsStep,
   getResponsesOfQuestionsOfStep,
 } from "@services/responseService";
+import { emplacementBureauOptions, subQuestions } from "./ProStep1Config";
 
 // Au bureau
 export function ProStep1({ step, setNextStep }) {
   const [form] = Form.useForm();
 
-  const title_ordinateurs =
-    "Nombre d'ordinateurs portable professionnels mis à votre disposition";
-  const title_telephones =
-    "Nombre de téléphones portables professionnels mis à votre disposition";
-  const title_ecrans = "Nombre d'écrans additionels mis à votre disposition";
-
-  const emplacementBureauOptions = [
-    {
-      text: "96 Bd Haussmann",
-      value: "96 Bd Haussmann",
-    },
-    {
-      text: "18 Bd Malesherbes",
-      value: "18 Bd Malesherbes",
-    },
-  ];
-
-  const subQuestions = {
-    "96 Bd Haussmann": [
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Energie (kg éq CO2)",
-        name: "emplacement_paris1",
-        defaultResponse: 200,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Eau (kg éq CO2)",
-        name: "emplacement_paris2",
-        defaultResponse: 80,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO2)",
-        name: "emplacement_paris3",
-        defaultResponse: 100,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Consommables et services (kg éq CO2)",
-        name: "emplacement_lyon1",
-        defaultResponse: 1250,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO2)",
-        name: "emplacement_lyon2",
-        defaultResponse: 12.5,
-      },
-    ],
-    "18 Bd Malesherbes": [
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Energie (kg éq CO2)",
-        name: "emplacement_paris1",
-        defaultResponse: 400,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Eau (kg éq CO2)",
-        name: "emplacement_paris2",
-        defaultResponse: 152.7777778,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO2)",
-        name: "emplacement_paris3",
-        defaultResponse: 1833.333333,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux Services Généraux - Consommables et services (kg éq CO2)",
-        name: "emplacement_lyon1",
-        defaultResponse: 1250,
-      },
-      {
-        question:
-          "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO2)",
-        name: "emplacement_lyon2",
-        defaultResponse: 12.5,
-      },
-    ],
-  };
-
   const [emplacementBureau, setEmplacementBureau] = useState(
     emplacementBureauOptions[0].value
   );
-
   const [nbrOrdinateurs, setNbrOrdinateurs] = useState(0);
   const [nbrTelephones, setNbrTelephones] = useState(0);
   const [nbrEcrans, setNbrEcrans] = useState(0);
@@ -188,7 +109,7 @@ export function ProStep1({ step, setNextStep }) {
             form={form}
             name="nombre_ordinateurs"
             iconCounter={LaptopOutlined}
-            textCounter={title_ordinateurs}
+            textCounter={TITLE_ORDINATEURS}
             value={nbrOrdinateurs}
           />
         </div>
@@ -197,7 +118,7 @@ export function ProStep1({ step, setNextStep }) {
           form={form}
           name="nombre_telephones"
           iconCounter={MobileOutlined}
-          textCounter={title_telephones}
+          textCounter={TITLE_TELEPHONES}
           value={nbrTelephones}
         />
 
@@ -205,7 +126,7 @@ export function ProStep1({ step, setNextStep }) {
           form={form}
           name="nombre_ecrans"
           iconCounter={DesktopOutlined}
-          textCounter={title_ecrans}
+          textCounter={TITLE_ECRANS}
           value={nbrEcrans}
         />
       </div>

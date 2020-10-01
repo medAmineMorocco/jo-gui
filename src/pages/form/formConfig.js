@@ -19,7 +19,7 @@ export const config = {
     category: CATEGORY.PRO,
     progress: -1,
     previous: {
-      category: "introduction",
+      category: "Introduction",
       details: "",
     },
     next: {
@@ -33,7 +33,7 @@ export const config = {
     progress: 0,
     previous: {
       category: CATEGORY.PRO,
-      details: "introduction",
+      details: "Introduction",
     },
     next: {
       category: CATEGORY.PRO,

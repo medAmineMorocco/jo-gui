@@ -99,19 +99,43 @@ export const LIRE_PLUS = "... LIRE PLUS";
 // introduction
 export const INTRODUCTION_QUESTION1 = "Nombre de jours travaillés par an";
 export const INTRODUCTION_QUESTION1_INFOS =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur dolor.";
+  "Prends en compte tes jours de télétravail ici.";
 export const INTRODUCTION_QUESTION1_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
-
 export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
 export const INTRODUCTION_QUESTION2_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
-
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 
-// trajets
+// Au bureau
+export const TITLE_ORDINATEURS =
+  "Nombre d'ordinateurs portable professionnels mis à votre disposition";
+export const TITLE_TELEPHONES =
+  "Nombre de téléphones portables professionnels mis à votre disposition";
+export const TITLE_ECRANS =
+  "Nombre d'écrans additionels mis à votre disposition";
+
+// Empreinte numérique
+export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
+export const TAILLE_BOITE_INFO =
+  "Pour trouver cette information, check le « pop-in conseil » plus bas !";
+export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const EMPREINTE_OVERLAY_TITLE =
+  "Comment connaître la taille de ta boîte mail ?";
+export const TAILLE_STOCKAGE =
+  "Taille de votre stockage en ligne, type SharePoint/OneDrive (en Go)";
+export const NBR_RECHERCHE =
+  "Nombre d'heures passées à recherche sur internet à des fins professionnelles (hors streaming) par jour (en moyenne)";
+export const NBR_CONFERENCE =
+  "Nombre d'heures passées en conférence visio par jour (en moyenne)";
+export const NBR_STREAMING =
+  "Nombre d'heures de streaming vidéo dans le cadre professionnel par jour (en moyenne)";
+export const SAVIER_VOUS_EMPREINTE =
+  "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité !";
+
+// Trajets
 export const DISTANCE_DOMICILE_TRAVAIL =
   "Distance entre votre domicile et votre travail (km)";
 export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
@@ -124,42 +148,29 @@ export const MOTORISATION_INFOS =
 export const SAVIER_VOUS_TRAJETS =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
-// deplacement
-
+// Déplacements
 export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
-
 export const NBR_KM_VOITURE =
   "Nombre de km en voiture (location, personnelle, ou taxi)";
-
 export const QUESTION2_NBR_TRAJETS_AR =
   "Nombre de trajets AR en autres trains grandes lignes (intercités ou TER, à moins de 200 km)";
-
 export const QUESTION3_NBR_TRAJETS_AR =
   "Nombre de trajets AR en train TGV (à environ 250 km)";
-
 export const QUESTION4_NBR_TRAJETS_AR =
   "Nombre de trajets AR en train TGV (à environ 500 km) autres qu'au CIO à Lausanne";
-
 export const QUESTION5_NBR_TRAJETS_AR =
   "Nombre de trajets AR en train TGV (à environ 800 km)";
-
 export const QUESTION6_NBR_TRAJETS_AR =
   "Nombre de trajets AR en train au CIO à Lausanne";
-
 export const QUESTION7_NBR_TRAJETS_AR =
   "Nombre de trajets AR en avion au CIO à Lausanne en Economie";
-
 export const QUESTION8_NBR_VOLS_AR =
   "Nombre de vols AR longs courriers à Tokyo";
-
 export const QUESTION9_NBR_VOLS_AR = "Nombre de vols AR courts courriers (<5h)";
-
 export const QUESTION10_NBR_VOLS_AR =
   "Nombre de vols AR longs courriers (>5h et < 10h)";
-
 export const QUESTION11_NBR_VOLS_AR =
   "Nombre de vols AR longs courriers (>10h)";
-
 export const SAVIER_VOUS_DEPLACEMENT =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 

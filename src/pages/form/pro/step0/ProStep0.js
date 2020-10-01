@@ -64,28 +64,36 @@ export function ProStep0({ step, setNextStep }) {
       onFinishFailed={() => console.log("onFinishFailed")}
     >
       <div className="wizard-content-right-form-parent">
-        <FormItemInputNumber
-          name="intro_question1"
-          tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
-          label={INTRODUCTION_QUESTION1}
-          rules={[
-            { required: true, message: INTRODUCTION_QUESTION1_ERROR_MSG },
-          ]}
-        />
-        <FormItemInputNumber
-          name="intro_question2"
-          label={INTRODUCTION_QUESTION2}
-          rules={[
-            { required: true, message: INTRODUCTION_QUESTION2_ERROR_MSG },
-          ]}
-        />
-        <FormItemInputNumber
-          name="intro_question3"
-          label={INTRODUCTION_QUESTION3}
-          rules={[
-            { required: true, message: INTRODUCTION_QUESTION3_ERROR_MSG },
-          ]}
-        />
+        <div className="forms-margin">
+          <FormItemInputNumber
+            name="intro_question1"
+            tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
+            label={INTRODUCTION_QUESTION1}
+            rules={[
+              { required: true, message: INTRODUCTION_QUESTION1_ERROR_MSG },
+            ]}
+          />
+        </div>
+
+        <div className="forms-margin">
+          <FormItemInputNumber
+            name="intro_question2"
+            label={INTRODUCTION_QUESTION2}
+            rules={[
+              { required: true, message: INTRODUCTION_QUESTION2_ERROR_MSG },
+            ]}
+          />
+        </div>
+
+        <div className="forms-margin">
+          <FormItemInputNumber
+            name="intro_question3"
+            label={INTRODUCTION_QUESTION3}
+            rules={[
+              { required: true, message: INTRODUCTION_QUESTION3_ERROR_MSG },
+            ]}
+          />
+        </div>
       </div>
     </ConfiguredForm>
   );

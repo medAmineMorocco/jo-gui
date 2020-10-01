@@ -38,15 +38,6 @@ import {
 export function ProStep5({ step, setNextStep }) {
   const [form] = Form.useForm();
 
-  // vols AR data pour les champs multiples
-  const volsARIndex = [8, 9, 10, 11];
-  const volsARDynamicProps = [
-    { label: QUESTION8_NBR_VOLS_AR, questions: question8options },
-    { label: QUESTION9_NBR_VOLS_AR, questions: question9options },
-    { label: QUESTION10_NBR_VOLS_AR, questions: question10options },
-    { label: QUESTION11_NBR_VOLS_AR, questions: question11options },
-  ];
-
   const [switchValue, setSwitchValue] = useState(false);
   const [question5trajetsAr, setQuestion5trajetsAr] = useState(0);
 
@@ -72,6 +63,15 @@ export function ProStep5({ step, setNextStep }) {
     },
     { label: QUESTION6_NBR_TRAJETS_AR },
     { label: QUESTION7_NBR_TRAJETS_AR },
+  ];
+
+  // vols AR data pour les champs multiples
+  const volsARIndex = [8, 9, 10, 11];
+  const volsARDynamicProps = [
+    { label: QUESTION8_NBR_VOLS_AR, questions: question8options },
+    { label: QUESTION9_NBR_VOLS_AR, questions: question9options },
+    { label: QUESTION10_NBR_VOLS_AR, questions: question10options },
+    { label: QUESTION11_NBR_VOLS_AR, questions: question11options },
   ];
 
   useEffect(() => {
@@ -167,7 +167,7 @@ export function ProStep5({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Déplacement"
+          title="Mode de déplacement"
           savierVous={SAVIER_VOUS_DEPLACEMENT}
           saviezVousPosition={1}
           selectDetail={actionReductionData}
