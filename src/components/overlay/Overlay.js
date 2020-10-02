@@ -30,11 +30,9 @@ export function Overlay(props) {
         dangerouslySetInnerHTML={{ __html: value.text }}
       />
       <h4 className="content-style">
-        <img
+        <div
           className="div-image"
-          src={value.image}
-          alt={value.title}
-          title={value.title}
+          style={{ backgroundImage: "url(" + value.image + ")" }}
         />
         <div className="text-modal">{value.sousText}</div>
       </h4>
@@ -54,7 +52,7 @@ export function Overlay(props) {
           <div className="container-text-button">
             <BulbOutlined className="icon-modal" />
             <span className="title-button">
-              Comment réduire sont empreinte ?
+              Comment réduire son empreinte ?
             </span>
           </div>
         </Button>

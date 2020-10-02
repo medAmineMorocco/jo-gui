@@ -19,12 +19,15 @@ context('Intro page', () => {
     it('should show intro page', () => {
         sizes.forEach(size => {
             cy.viewport(size.device);
-            cy.login('email@paris2024.org');
+            cy.window().then(win=> {
+                win.sessionStorage.clear();
+                cy.login('email@paris2024.org');
 
-            cy.get('button:contains(lancez-vous)').click({force: true});
+                cy.get('button:contains(lancez-vous)').click({force: true});
 
-            cy.url().should('include', '/intro').then(() => {
-                cy.takeSnapshots('intro page', size);
+                cy.url().should('include', '/intro').then(() => {
+                    cy.takeSnapshots('intro page', size);
+                });
             });
         })
     });
@@ -32,15 +35,18 @@ context('Intro page', () => {
     it('should open infos modal', () => {
         sizes.forEach(size => {
             cy.viewport(size.device);
-            cy.login('email@paris2024.org');
+            cy.window().then(win=> {
+                win.sessionStorage.clear();
+                cy.login('email@paris2024.org');
 
-            const openModalBtnSelector = '.header-container > .ant-btn';
-            cy.get(openModalBtnSelector).click();
+                const openModalBtnSelector = '.header-container > .ant-btn';
+                cy.get(openModalBtnSelector).click();
 
-            cy.get('body:contains(à propos)').should('exist')
-                .then(() => {
-                    cy.takeSnapshots('open infos modal', size);
-                });
+                cy.get('body:contains(à propos)').should('exist')
+                    .then(() => {
+                        cy.takeSnapshots('open infos modal', size);
+                    });
+            });
         })
     });
 });

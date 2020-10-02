@@ -63,7 +63,11 @@ export function FormItemMultipleInputNumber({
       >
         {questions.map(({ name, label, defaultValue }, key) => {
           return (
-            <div key={key} className="multiple-item-child-container">
+            <div
+              key={key}
+              style={{ width: 100 / questions.length - 3 + "%" }}
+              className="multiple-item-child-container"
+            >
               <span className="form-multiple-items-label" id={`label-${name}`}>
                 {label}
               </span>

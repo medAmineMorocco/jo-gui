@@ -32,10 +32,11 @@ Cypress.Commands.add('takeSnapshots', (title, size) => {
 
 Cypress.Commands.add('login', (email) => {
 	cy.stubRequest('POST', '**/auth/signin', 200, 'signin.json', 'signinJSON');
-	cy.clearLocalStorage();
-	cy.visit('/');
-	cy.get('#login_email').clear().type(email);
-	cy.get('form').submit();
+	cy.window().then(win=> {
+		cy.visit('/');
+		cy.get('#login_email').clear().type(email);
+		cy.get('form').submit();
+	});
 });
 
 Cypress.Commands.add('count', (selector, number) => {

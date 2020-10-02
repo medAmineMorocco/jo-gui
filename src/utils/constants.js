@@ -242,3 +242,13 @@ export const DEPLACEMENTS_QUESTION7 =
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO2 dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
+
+// Numérique
+export const NUMERIC_QUESTION1_LABEL =
+  "Nombre d'heures passées sur internet (hors streaming vidéo, gaming) par jour";
+export const NUMERIC_QUESTION1_TOOLTIP =
+  "iPhone: Réglages>Données mobiles / Android : Paramètres>Connexion>Utilisation des données";
+export const NUMERIC_QUESTION2_LABEL =
+  "Nombre d'heures de streaming vidéo, gaming par jour";
+export const NUMERIC_SAVIEZ_VOUS =
+  "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité.";

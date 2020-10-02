@@ -39,8 +39,7 @@ export function Login() {
             },
           ]);
         } else {
-          const description = await error.text();
-          notify(description);
+          notify(error.toString());
         }
       });
   };
