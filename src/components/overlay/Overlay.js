@@ -30,7 +30,9 @@ export function Overlay(props) {
         dangerouslySetInnerHTML={{ __html: value.text }}
       />
       <h4 className="content-style">
-        <img className="div-image" src={value.image} alt={value.text} />
+        {value.image && (
+          <img className="div-image" src={value.image} alt={value.text} />
+        )}
         <div className="text-modal">{value.sousText}</div>
       </h4>
     </div>
