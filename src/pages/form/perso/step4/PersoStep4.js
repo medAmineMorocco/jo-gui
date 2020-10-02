@@ -102,7 +102,7 @@ export function PersoStep4({ step, setNextStep }) {
           />
         </div>
         <Overlay
-          title="comment réduire son empreinte ?"
+          title="Consommation électrique en fonction de la connectique"
           items={overlay_items}
         />
         <FormItemMultipleInputNumber

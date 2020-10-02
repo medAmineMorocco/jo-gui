@@ -50,7 +50,6 @@ export const selectDetail = [
 
 export const overlay_items = [
   {
-    text: "Consommation électrique en fonction de la connectique",
-    image: "/images/empreinte-pop-conseils.jpg",
+    image: "/images/consommation-electrique.png",
   },
 ];
