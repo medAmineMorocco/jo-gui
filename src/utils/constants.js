@@ -243,6 +243,43 @@ export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO2 dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
 
+//A la maison
+export const HOUSE_QUESTION1 = "Nombre d'adultes du logement";
+export const HOUSE_QUESTION2 =
+  "Consommation annuelle d'Electricité de votre logement";
+export const HOUSE_QUESTION2_TOOTLTIP =
+  "Affichée sur ta facture ou dans l’espace client de ton fournisseur. En moyenne 1100kwh/an.";
+export const HOUSE_QUESTION3 =
+  "Consommation annuelle de Gaz naturel de votre logement";
+export const HOUSE_QUESTION3_TOOTLTIP =
+  "De même : facture ou espace client ! En moyenne 14000kwh/100m2 pour 4 personnes";
+export const HOUSE_QUESTION4 =
+  "Consommation annuelle de Fioul domestique de votre logement";
+export const HOUSE_QUESTION4_TOOTLTIP =
+  "Calculable en effectuant en relevé de ta cuve à fioul. En moyenne 150L/m2/an.";
+export const HOUSE_QUESTION5 =
+  "Consommation annuelle de bois de chauffage pour votre logement";
+export const HOUSE_QUESTION5_TOOTLTIP = "En fonction de tes achats !";
+export const HOUSE_QUESTION6 = "Consommation mensuelle d'électricité (€/mois)";
+export const HOUSE_QUESTION7 = "Consommation mensuelle de gaz naturel (€/mois)";
+export const HOUSE_QUESTION8 = "Consommation mensuelle de fioul (€/mois)";
+export const HOUSE_QUESTION678_TOOTLTIP = "Sur ta facture mensuelle.";
+export const HOUSE_QUESTION9 = "Surface logement (m²)";
+export const HOUSE_QUESTION9_TOOTLTIP = "Sur ton bail / acte de vente.";
+export const HOUSE_QUESTION10 =
+  "Classe Energie de votre logement, DPE (si vous le connaissez)";
+export const HOUSE_QUESTION10_TOOTLTIP =
+  "Sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
+export const HOUSE_QUESTION11 =
+  "Sinon votre logement a été construit (ou rénové)";
+export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const OVERLAY_TITLE_HOUSE =
+  "Comment optimiser ta consommation d’énergie ?";
+export const OVERLAY_SOUSTEXTE_HOUSE =
+  "Encore plus de conseils pratiques sur : https://www.ademe.fr/sites/default/files/assets/documents/infographie-economiser-eau-energie-2019.pdf (ADEME, 2020)";
+export const HOUSE_SAVIEZ_VOUS =
+  "Adopter les bons gestes au quotidien peut faire économiser jusqu’à 0,5% par geste en moyenne ! Par exemple, aérer son logement quotidiennement rend l'air plus sec et le logement plus facilement chauffable, permettant d'économiser jusqu'à 2% de gaz naturel.";
+  
 // Numérique
 export const NUMERIC_QUESTION1_LABEL =
   "Nombre d'heures passées sur internet (hors streaming vidéo, gaming) par jour";
