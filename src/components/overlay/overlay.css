@@ -101,6 +101,7 @@
 .div-image {
   width: 50%;
   height: 119px;
+  background-size: cover;
 }
 .text-modal {
   width: 40%;
