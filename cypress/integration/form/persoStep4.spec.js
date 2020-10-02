@@ -1,4 +1,4 @@
-context('Home page', () => {
+context('Form | Vie personnelle Numérique step', () => {
 
     const sizes = [
         {
@@ -16,17 +16,21 @@ context('Home page', () => {
     ];
 
 
-    it('should show home page', () => {
+    it('should show Numérique step on form page', () => {
         sizes.forEach(size => {
             cy.viewport(size.device);
             cy.window().then(win=> {
                 win.sessionStorage.clear();
+                win.sessionStorage.setItem('current-step', 9);
                 cy.login('email@paris2024.org');
 
-                cy.url().should('include', '/home').then(() => {
-                    cy.takeSnapshots('home page', size);
+                cy.visit('/form');
+
+                cy.url().should('include', '/form').then(() => {
+                    cy.takeSnapshots('form - Numérique', size);
                 });
             });
         })
     });
+
 });

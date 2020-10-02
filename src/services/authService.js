@@ -14,7 +14,7 @@ export function login(email) {
     .then(async (response) => {
       const json = await response.json();
       if (json.token) {
-        localStorage.setItem("currentUser", JSON.stringify(json));
+        sessionStorage.setItem("currentUser", JSON.stringify(json));
       }
 
       return json;
@@ -25,5 +25,5 @@ export function login(email) {
 }
 
 export function getCurrentUser() {
-  return JSON.parse(localStorage.getItem("currentUser"));
+  return JSON.parse(sessionStorage.getItem("currentUser"));
 }
