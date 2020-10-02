@@ -52,7 +52,8 @@ export function saveResponses() {
     requestOptions
   )
     .then((response) => {
-      sessionStorage.clear();
+      sessionStorage.removeItem("responses");
+      sessionStorage.removeItem("settings");
       return Promise.resolve(response);
     })
     .catch((error) => Promise.reject(error));
