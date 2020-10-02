@@ -134,11 +134,9 @@ export function ProStep2({ step, setNextStep }) {
             questions={curseurQuestions(
               "",
               "nbr_recherche",
-              0,
-              10,
-              nbrRecherche
+              nbrRecherche,
+              setNbrRecherche
             )}
-            setValue={setNbrRecherche}
           />
         </div>
 
@@ -149,11 +147,9 @@ export function ProStep2({ step, setNextStep }) {
             questions={curseurQuestions(
               "",
               "nbr_conference",
-              0,
-              10,
-              nbrConference
+              nbrConference,
+              setNbrConference
             )}
-            setValue={setNbrConference}
           />
         </div>
 
@@ -164,11 +160,9 @@ export function ProStep2({ step, setNextStep }) {
             questions={curseurQuestions(
               "",
               "nbr_streaming",
-              0,
-              10,
-              nbrStreaming
+              nbrStreaming,
+              setNbrStreaming
             )}
-            setValue={setNbrStreaming}
           />
         </div>
       </div>

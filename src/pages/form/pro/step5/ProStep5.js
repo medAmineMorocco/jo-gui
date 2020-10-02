@@ -134,7 +134,7 @@ export function ProStep5({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements</span>
+          <span className="pro-step-title">Déplacements professionnels</span>
         </div>
 
         <FormItemInputNumber

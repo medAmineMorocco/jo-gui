@@ -1,17 +1,103 @@
-import React, { useEffect } from "react";
 import { Form } from "antd";
+import React, { useEffect, useState } from "react";
 import { Form as ConfiguredForm } from "@components/form/Form";
+import { ReactComponent as TeaSvg } from "@components/form/formSlider/tea.svg";
+import { ReactComponent as CapsuleSvg } from "@components/form/formSlider/capsule.svg";
+import { ReactComponent as CoffeeSvg } from "@components/form/formSlider/coffee.svg";
+import { FormSlider } from "@components/form/formSlider/FormSlider";
+import { MealsOfWeek } from "@components/form/mealsOfWeek/MealsOfWeek";
+import { proStep3State, proStep3ActionReductionState } from "./ProStep3State";
+import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
+import {
+  REPAS_QUESTION1,
+  REPAS_QUESTION1_ERROR_MSG,
+  SAVIER_VOUS_RESTAU,
+  REPAS_QUESTION1_INFO,
+  CURSEUR_BOISSONS,
+} from "@utils/constants";
+import {
+  saveResponsesOfQuestionsStep,
+  getResponsesOfQuestionsOfStep,
+  saveSettingsStep,
+  getSettingsOfStep,
+} from "@services/responseService";
+import {
+  question1_subQuestions,
+  actionReductionDataDejeuners,
+  curseurQuestion,
+  actionReductionDataCafe,
+} from "./ProStep3Config";
 
 // Restauration
 export function ProStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
 
-  useEffect(() => {
-    console.log("get storedValues");
-  }, []);
+  const [switch1Value, setSwitch1Value] = useState(false);
+  const [switch2Value, setSwitch2Value] = useState(false);
 
-  const onFinish = () => {
-    console.log("onFinish");
+  const [slider1Value, setSlider1Value] = useState(0);
+  const [slider2Value, setSlider2Value] = useState(0);
+  const [slider3Value, setSlider3Value] = useState(0);
+
+  const [question1State, setQuestion1State] = useState({
+    monday: null,
+    tuesday: null,
+    wednesday: null,
+    thursday: null,
+    friday: null,
+  });
+
+  const handleSwitch1Change = (isChecked) => {
+    setSwitch1Value(isChecked);
+  };
+
+  const handleSwitch2Change = (isChecked) => {
+    setSwitch2Value(isChecked);
+  };
+
+  useEffect(() => {
+    const setReponsesOfStep = (stepState) => {
+      stepState.forEach(({ question, response, actions }) => {
+        form.setFieldsValue({
+          [question]: response,
+        });
+        if (actions) {
+          actions.forEach(({ id, response }) => {
+            form.setFieldsValue({
+              [id]: response,
+            });
+          });
+        }
+      });
+      setQuestion1State(form.getFieldValue("repas_question1"));
+      setSlider1Value(form.getFieldValue("slider_1"));
+      setSlider2Value(form.getFieldValue("slider_2"));
+      setSlider3Value(form.getFieldValue("slider_3"));
+    };
+
+    const setSettingsOfStep = (settingsOfStep) => {
+      settingsOfStep.forEach(({ question, response }) => {
+        form.setFieldsValue({
+          [question]: response,
+        });
+      });
+      setSwitch1Value(form.getFieldValue("restauration-switch-1"));
+      setSwitch2Value(form.getFieldValue("restauration-switch-2"));
+    };
+
+    const stepState = getResponsesOfQuestionsOfStep(step);
+    if (stepState) {
+      setReponsesOfStep(stepState);
+    }
+    const settingsOfStep = getSettingsOfStep(step);
+    if (settingsOfStep) {
+      setSettingsOfStep(settingsOfStep);
+    }
+  }, [form, step]);
+
+  const onFinish = (values) => {
+    saveResponsesOfQuestionsStep(proStep3State(values), step);
+    saveSettingsStep(proStep3ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
     submitButton.blur();
     setNextStep();
@@ -24,7 +110,81 @@ export function ProStep3({ step, setNextStep }) {
       onFinish={onFinish}
       onFinishFailed={() => console.log("onFinishFailed")}
     >
-      ProStep3
+      <div className="wizard-content-right-form-parent">
+        <div className="pro-step-title-container">
+          <span className="pro-step-title">
+            Restauration aux heures de bureau
+          </span>
+        </div>
+
+        <MealsOfWeek
+          form={form}
+          name="repas_question1"
+          questions={question1_subQuestions}
+          label={REPAS_QUESTION1}
+          tooltipTitle={REPAS_QUESTION1_INFO}
+          errorMsg={REPAS_QUESTION1_ERROR_MSG}
+          state={question1State}
+        />
+      </div>
+
+      <div className="forms-margin">
+        <FormItemActionReduction
+          form={form}
+          title="Déjeuners"
+          savierVous={SAVIER_VOUS_RESTAU}
+          saviezVousPosition={-1}
+          selectDetail={actionReductionDataDejeuners}
+          switchName="restauration-switch-1"
+          setSwitchValue={handleSwitch1Change}
+          isOpened={switch1Value}
+        />
+      </div>
+
+      <div className="wizard-content-right-form-parent">
+        <div className="forms-margin">
+          <FormSlider
+            form={form}
+            labels={CURSEUR_BOISSONS}
+            questions={[
+              curseurQuestion(
+                "Café en capsule",
+                "slider_1",
+                <CapsuleSvg />,
+                slider1Value,
+                setSlider1Value
+              ),
+              curseurQuestion(
+                "Café en vrac",
+                "slider_2",
+                <CoffeeSvg />,
+                slider2Value,
+                setSlider2Value
+              ),
+              curseurQuestion(
+                "Thé",
+                "slider_3",
+                <TeaSvg />,
+                slider3Value,
+                setSlider3Value
+              ),
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="forms-margin">
+        <FormItemActionReduction
+          form={form}
+          title="Thé et café"
+          savierVous={SAVIER_VOUS_RESTAU}
+          saviezVousPosition={0}
+          selectDetail={actionReductionDataCafe}
+          switchName="restauration-switch-2"
+          setSwitchValue={handleSwitch2Change}
+          isOpened={switch2Value}
+        />
+      </div>
     </ConfiguredForm>
   );
 }

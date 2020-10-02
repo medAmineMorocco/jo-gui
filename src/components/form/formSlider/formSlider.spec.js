@@ -19,6 +19,7 @@ function SliderForm({ onFinish }) {
       min: 0,
       max: 10,
       value: cafeCapsule,
+      setValue: setCafeCapsule,
     },
   ];
 
@@ -29,7 +30,6 @@ function SliderForm({ onFinish }) {
         labels={"Combien de boissons chaudes prenez-vous par jour ?"}
         tooltipTitle={tooltipTitle}
         questions={questions}
-        setValue={setCafeCapsule}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
