@@ -7,14 +7,15 @@ export const overlayItems = [
   },
 ];
 
-export const curseurQuestions = (label, name, min, max, value) => {
+export const curseurQuestions = (label, name, value, setValue) => {
   return [
     {
       label: label,
       name: name,
-      min: min,
-      max: max,
+      min: 0,
+      max: 10,
       value: value,
+      setValue: setValue,
     },
   ];
 };

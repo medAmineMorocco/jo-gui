@@ -174,6 +174,16 @@ export const QUESTION11_NBR_VOLS_AR =
 export const SAVIER_VOUS_DEPLACEMENT =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
+// Déplacements
+export const REPAS_QUESTION1 = "Vos repas sont plutôt constitués de";
+export const REPAS_QUESTION1_INFO =
+  "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
+export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const SAVIER_VOUS_RESTAU =
+  "Une tasse de café émet presque 5 fois plus de CO2 dans l'atmosphère qu'une tasse de thé. Cela est dû notamment au processus de transformation et au transport nécessaires à la production d'une tasse de café.";
+export const CURSEUR_BOISSONS =
+  "Combien de boissons chaudes prenez-vous par jour ?";
+
 ///////////////////////////////////////
 //   Form - Perso
 //////////////////////////////////////

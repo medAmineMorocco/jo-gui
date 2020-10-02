@@ -6,13 +6,7 @@ import { FormItem } from "@components/form/formItem/FormItem";
 import { QuestionCircleFilled } from "@ant-design/icons";
 import "./formSlider.css";
 
-export function FormSlider({
-  form,
-  labels,
-  tooltipTitle,
-  questions,
-  setValue,
-}) {
+export function FormSlider({ form, labels, tooltipTitle, questions }) {
   const mainColor = getColor("--main-color");
   const shade = getColor("--bg-color-shade-3");
   const [color, setColor] = useState(shade);
@@ -58,16 +52,16 @@ export function FormSlider({
     return marks;
   };
 
-  const Sliders = questions.map((questions, i) => (
-    <FormItem name={questions.name} key={i + 1}>
-      <div>
+  const Sliders = questions.map((question, i) => (
+    <FormItem name={question.name} key={i + 1}>
+      <>
         <div className="flex-slider-container">
           <div className="flex-slider-item">
             <div className="flex-container-label">
-              {questions.logo && (
-                <span className="svg-logo-slider">{questions.logo}</span>
+              {question.logo && (
+                <span className="svg-logo-slider">{question.logo}</span>
               )}
-              <span style={{ color: "white" }}>{questions.label}</span>
+              <span style={{ color: "white" }}>{question.label}</span>
             </div>
           </div>
         </div>
@@ -92,28 +86,28 @@ export function FormSlider({
             }
             marks={
               i === Currentfocus
-                ? marks(questions.min, questions.max)
-                : markshover(questions.min, questions.max)
+                ? marks(question.min, question.max)
+                : markshover(question.min, question.max)
             }
-            defaultValue={questions.min}
-            min={questions.min}
-            max={questions.max}
+            defaultValue={question.min}
+            min={question.min}
+            max={question.max}
             onChange={(e) => {
-              setValue(e);
-              setFieldForm(e, questions.name);
+              question.setValue(e);
+              setFieldForm(e, question.name);
             }}
             onFocus={() => onFocus(i)}
             onBlur={onBlur}
-            value={typeof questions.value === "number" ? questions.value : 0}
+            value={typeof question.value === "number" ? question.value : 0}
           />
         </div>
-      </div>
+      </>
     </FormItem>
   ));
 
   return (
     <>
-      <div className="flex-slider-container">
+      <div className="flex-slider-container title-margin">
         <span
           className="flex-slider-item text-question"
           style={{ color: mainColor }}
