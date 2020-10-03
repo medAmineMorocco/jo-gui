@@ -79,3 +79,10 @@
     padding-right: 32px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wizard-content-right-form-parent {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
