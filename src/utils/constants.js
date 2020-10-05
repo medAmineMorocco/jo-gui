@@ -216,7 +216,8 @@ export const POPIN_INFOS = `Pour réduire le gaspillage alimentaire, plusieurs a
   • Vérifier régulièrement les dates de péremption</br>
   • Cuisiner la bonne quantité de nourriture</br>
   • Ranger le réfrigérateur pour ne rien oublier dans le fond</br>
-  • Faire ses courses avec une liste, et sans avoir faim !`;
+  • Faire ses courses avec une liste, et sans avoir faim !</br></br>
+Prêt à réduire ton gaspillage alimentaire ?`;
 
 export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
@@ -260,11 +261,11 @@ export const HOUSE_QUESTION4_TOOTLTIP =
 export const HOUSE_QUESTION5 =
   "Consommation annuelle de bois de chauffage pour votre logement";
 export const HOUSE_QUESTION5_TOOTLTIP = "En fonction de tes achats !";
-export const HOUSE_QUESTION6 = "Consommation mensuelle d'électricité (€/mois)";
-export const HOUSE_QUESTION7 = "Consommation mensuelle de gaz naturel (€/mois)";
-export const HOUSE_QUESTION8 = "Consommation mensuelle de fioul (€/mois)";
+export const HOUSE_QUESTION6 = "Consommation mensuelle d'électricité";
+export const HOUSE_QUESTION7 = "Consommation mensuelle de gaz naturel";
+export const HOUSE_QUESTION8 = "Consommation mensuelle de fioul";
 export const HOUSE_QUESTION678_TOOTLTIP = "Sur ta facture mensuelle.";
-export const HOUSE_QUESTION9 = "Surface logement (m²)";
+export const HOUSE_QUESTION9 = "Surface logement";
 export const HOUSE_QUESTION9_TOOTLTIP = "Sur ton bail / acte de vente.";
 export const HOUSE_QUESTION10 =
   "Classe Energie de votre logement, DPE (si vous le connaissez)";
@@ -279,7 +280,7 @@ export const OVERLAY_SOUSTEXTE_HOUSE =
   "Encore plus de conseils pratiques sur : https://www.ademe.fr/sites/default/files/assets/documents/infographie-economiser-eau-energie-2019.pdf (ADEME, 2020)";
 export const HOUSE_SAVIEZ_VOUS =
   "Adopter les bons gestes au quotidien peut faire économiser jusqu’à 0,5% par geste en moyenne ! Par exemple, aérer son logement quotidiennement rend l'air plus sec et le logement plus facilement chauffable, permettant d'économiser jusqu'à 2% de gaz naturel.";
-  
+
 // Numérique
 export const NUMERIC_QUESTION1_LABEL =
   "Nombre d'heures passées sur internet (hors streaming vidéo, gaming) par jour";

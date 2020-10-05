@@ -132,7 +132,7 @@ export function PersoStep6({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements</span>
+          <span className="pro-step-title">Déplacements personnels</span>
         </div>
 
         <TitleWithHorizontalLine title="En voiture" />
@@ -230,7 +230,7 @@ export function PersoStep6({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Vacances lointaines"
+          title="Long courrier"
           savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
           saviezVousPosition={0}
           selectDetail={actionReduction3_selectDetail}

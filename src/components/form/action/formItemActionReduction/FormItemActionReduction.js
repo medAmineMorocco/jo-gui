@@ -30,9 +30,11 @@ export function FormItemActionReduction({
   useEffect(() => {
     if (!isOpened) {
       selectDetail.forEach((data) => {
-        form.setFieldsValue({
-          [data.name]: 0,
-        });
+        if (data.type === "input") {
+          form.setFieldsValue({
+            [data.name]: 0,
+          });
+        }
       });
     }
   }, [form, isOpened, selectDetail]);

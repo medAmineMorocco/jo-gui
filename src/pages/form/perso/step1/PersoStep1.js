@@ -35,7 +35,6 @@ import { getColor } from "@utils/cssUtil";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { Overlay } from "@components/overlay/Overlay";
-import { UserOutlined } from "@ant-design/icons";
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import {
@@ -140,7 +139,6 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            iconCounter={UserOutlined}
             name="house_question1"
             textCounter={HOUSE_QUESTION1}
             value={question1Count}
@@ -276,7 +274,7 @@ export function PersoStep1({ step, setNextStep }) {
           form={form}
           title="Dejeuners"
           savierVous={HOUSE_SAVIEZ_VOUS}
-          saviezVousPosition={3}
+          saviezVousPosition={1}
           selectDetail={selectDetailLunch}
           switchName="lunch-switch-1"
           setSwitchValue={handleSwitchReductionActionChange}

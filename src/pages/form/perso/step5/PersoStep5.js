@@ -154,7 +154,7 @@ export function PersoStep5({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Alimentation</span>
+          <span className="pro-step-title">Repas à la maison</span>
         </div>
 
         <FormCounter
@@ -208,7 +208,7 @@ export function PersoStep5({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Repas"
+          title="Déjeuners et dîners"
           savierVous={ALIMENTATION_SAVIEZ_VOUS}
           saviezVousPosition={2}
           selectDetail={selectDetail}

@@ -16,6 +16,7 @@ export function FormCounter({
   form,
   name,
   value,
+  max,
 }) {
   const [counter, setCounter] = useState(value);
   const mainColor = getColor("--main-color");
@@ -37,7 +38,12 @@ export function FormCounter({
   };
 
   const addCounter = () => {
-    setCounter(counter + 1);
+    if (max && counter < max) {
+      setCounter(counter + 1);
+    }
+    if (!max) {
+      setCounter(counter + 1);
+    }
   };
 
   const decreaseCounter = () => {
@@ -61,7 +67,9 @@ export function FormCounter({
           onBlur={onBlur}
         >
           <div className="flex-container-text">
-            <IconCounter width={84} fill={color} className="large-text" />
+            {IconCounter && (
+              <IconCounter width={84} fill={color} className="large-text" />
+            )}
             <span className="text-counter">{textCounter}</span>
             {tooltipTitle && (
               <Tooltip
