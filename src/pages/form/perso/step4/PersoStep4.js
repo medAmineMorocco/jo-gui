@@ -88,9 +88,7 @@ export function PersoStep4({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">
-            Utilisation personnelle du numérique
-          </span>
+          <span className="pro-step-title">Temps passé sur internet</span>
         </div>
         <div className="forms-margin">
           <FormItemMultipleInputNumber

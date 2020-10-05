@@ -97,7 +97,7 @@ export function ProStep1({ step, setNextStep }) {
           form={form}
           name="emplacement_bureau"
           tooltipTitle="Ces émissions concernent les consommations des bâtiments, rapportées à chaque collaborateur."
-          label="Votre bureau est situé …"
+          label="Votre bureau est situé"
           options={emplacementBureauOptions}
           subQuestions={subQuestions}
           selectedValue={emplacementBureau}
@@ -111,6 +111,7 @@ export function ProStep1({ step, setNextStep }) {
             iconCounter={LaptopIcon}
             textCounter={TITLE_ORDINATEURS}
             value={nbrOrdinateurs}
+            max={9}
           />
         </div>
 
@@ -120,6 +121,7 @@ export function ProStep1({ step, setNextStep }) {
           iconCounter={SmartphoneIcon}
           textCounter={TITLE_TELEPHONES}
           value={nbrTelephones}
+          max={9}
         />
 
         <FormCounter
@@ -128,6 +130,7 @@ export function ProStep1({ step, setNextStep }) {
           iconCounter={ScreenIcon}
           textCounter={TITLE_ECRANS}
           value={nbrEcrans}
+          max={9}
         />
       </div>
     </ConfiguredForm>

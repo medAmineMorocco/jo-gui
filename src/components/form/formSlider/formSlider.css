@@ -2,12 +2,6 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.title-margin {
-  margin-bottom: 25px;
 }
 
 .flex-slider-item {
@@ -22,11 +16,6 @@
   width: 100%;
 }
 
-.slider-container {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
 .flex-container-label {
   display: flex;
   align-content: center;
@@ -38,10 +27,7 @@
 }
 
 .text-question {
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 20px;
 }
 

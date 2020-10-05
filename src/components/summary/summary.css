@@ -54,6 +54,11 @@
 }
 
 @media (max-width: 767px) {
+  .summary {
+    width: 80%;
+    margin-bottom: 80px;
+  }
+
   .summary .ant-steps-vertical {
     width: auto;
   }
