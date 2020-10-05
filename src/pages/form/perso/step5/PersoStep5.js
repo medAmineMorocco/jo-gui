@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "antd";
-import { ReactComponent as CoffeeSvg } from "./coffee.svg";
-import { ReactComponent as SodaSvg } from "./soda.svg";
-import { ReactComponent as WaterSvg } from "./water.svg";
-import { ReactComponent as WineSvg } from "./wine.svg";
-import { ReactComponent as BeerSvg } from "./beer.svg";
-import { ReactComponent as whiskySvg } from "./whisky.svg";
+import {
+  CoffeeIcon,
+  SodaIcon,
+  WaterIcon,
+  WineIcon,
+  BeerIcon,
+  WhiskyIcon,
+} from "@components/icons/Icons";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import {
   ALIMENTATION_QUESTION1,
@@ -158,7 +160,7 @@ export function PersoStep5({ step, setNextStep }) {
         <FormCounter
           form={form}
           name="alimentation_question1"
-          iconCounter={CoffeeSvg}
+          iconCounter={CoffeeIcon}
           textCounter={ALIMENTATION_QUESTION1}
           value={question1Count}
         />
@@ -170,88 +172,100 @@ export function PersoStep5({ step, setNextStep }) {
             },
           ]}
         />
-        <MealsOfWeek
+        <div className="forms-margin">
+          <MealsOfWeek
+            form={form}
+            name="alimentation_question2"
+            questions={question2_subQuestions}
+            label={ALIMENTATION_QUESTION2}
+            errorMsg={ALIMENATTION_ERROR_MSG}
+            state={question2State}
+          />
+        </div>
+        <div className="forms-margin">
+          <MealsOfWeek
+            form={form}
+            name="alimentation_question3"
+            questions={question3_subQuestions}
+            label={ALIMENTATION_QUESTION3}
+            tooltipTitle={ALIMENTATION_QUESTION3_TOOTLTIP}
+            errorMsg={ALIMENATTION_ERROR_MSG}
+            state={question3State}
+          />
+        </div>
+        <div className="forms-margin">
+          <MealsOfWeek
+            form={form}
+            name="alimentation_question4"
+            questions={question4_subQuestions}
+            label={ALIMENTATION_QUESTION4}
+            tooltipTitle={ALIMENTATION_QUESTION4_TOOTLTIP}
+            errorMsg={ALIMENATTION_ERROR_MSG}
+            state={question4State}
+          />
+        </div>
+      </div>
+      <div className="forms-margin">
+        <FormItemActionReduction
           form={form}
-          name="alimentation_question2"
-          questions={question2_subQuestions}
-          label={ALIMENTATION_QUESTION2}
-          errorMsg={ALIMENATTION_ERROR_MSG}
-          state={question2State}
-        />
-        <MealsOfWeek
-          form={form}
-          name="alimentation_question3"
-          questions={question3_subQuestions}
-          label={ALIMENTATION_QUESTION3}
-          tooltipTitle={ALIMENTATION_QUESTION3_TOOTLTIP}
-          errorMsg={ALIMENATTION_ERROR_MSG}
-          state={question3State}
-        />
-        <MealsOfWeek
-          form={form}
-          name="alimentation_question4"
-          questions={question4_subQuestions}
-          label={ALIMENTATION_QUESTION4}
-          tooltipTitle={ALIMENTATION_QUESTION4_TOOTLTIP}
-          errorMsg={ALIMENATTION_ERROR_MSG}
-          state={question4State}
+          title="Repas"
+          savierVous={ALIMENTATION_SAVIEZ_VOUS}
+          saviezVousPosition={2}
+          selectDetail={selectDetail}
+          switchName="action-reduction-switch-1"
+          setSwitchValue={handleSwitchReductionAction1Change}
+          isOpened={isReductionAction1Opened}
         />
       </div>
-      <FormItemActionReduction
-        form={form}
-        title="Repas"
-        savierVous={ALIMENTATION_SAVIEZ_VOUS}
-        saviezVousPosition={2}
-        selectDetail={selectDetail}
-        switchName="action-reduction-switch-1"
-        setSwitchValue={handleSwitchReductionAction1Change}
-        isOpened={isReductionAction1Opened}
-      />
       <div className="wizard-content-right-form-parent">
-        <FormCounter
-          form={form}
-          name="alimentation_question5"
-          iconCounter={SodaSvg}
-          textCounter={ALIMENTATION_QUESTION5}
-          value={question5Count}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="alimentation_question5"
+            iconCounter={SodaIcon}
+            textCounter={ALIMENTATION_QUESTION5}
+            value={question5Count}
+          />
+        </div>
         <FormCounter
           form={form}
           name="alimentation_question6"
-          iconCounter={WaterSvg}
+          iconCounter={WaterIcon}
           textCounter={ALIMENTATION_QUESTION6}
           value={question6Count}
         />
         <FormCounter
           form={form}
           name="alimentation_question7"
-          iconCounter={WineSvg}
+          iconCounter={WineIcon}
           textCounter={ALIMENTATION_QUESTION7}
           value={question7Count}
         />
         <FormCounter
           form={form}
           name="alimentation_question8"
-          iconCounter={BeerSvg}
+          iconCounter={BeerIcon}
           textCounter={ALIMENTATION_QUESTION8}
           value={question8Count}
         />
         <FormCounter
           form={form}
           name="alimentation_question9"
-          iconCounter={whiskySvg}
+          iconCounter={WhiskyIcon}
           textCounter={ALIMENTATION_QUESTION9}
           value={question9Count}
         />
       </div>
-      <FormItemActionReduction
-        form={form}
-        title="Boissons"
-        selectDetail={selectDetail2}
-        switchName="action-reduction-switch-2"
-        setSwitchValue={handleSwitchReductionAction2Change}
-        isOpened={isReductionAction2Opened}
-      />
+      <div className="forms-margin">
+        <FormItemActionReduction
+          form={form}
+          title="Boissons"
+          selectDetail={selectDetail2}
+          switchName="action-reduction-switch-2"
+          setSwitchValue={handleSwitchReductionAction2Change}
+          isOpened={isReductionAction2Opened}
+        />
+      </div>
     </ConfiguredForm>
   );
 }

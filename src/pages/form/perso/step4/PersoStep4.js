@@ -105,12 +105,14 @@ export function PersoStep4({ step, setNextStep }) {
           title="Consommation électrique en fonction de la connectique"
           items={overlay_items}
         />
-        <FormItemMultipleInputNumber
-          form={form}
-          name="question_2"
-          label={NUMERIC_QUESTION2_LABEL}
-          questions={question2_questions}
-        />
+        <div className="forms-margin">
+          <FormItemMultipleInputNumber
+            form={form}
+            name="question_2"
+            label={NUMERIC_QUESTION2_LABEL}
+            questions={question2_questions}
+          />
+        </div>
       </div>
       <div className="forms-margin">
         <FormItemActionReduction

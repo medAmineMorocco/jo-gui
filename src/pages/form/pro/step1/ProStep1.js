@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Form } from "antd";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemSelectWithDetails } from "@components/form/formItemSelectWithDetails/FormItemSelectWithDetails";
-import { FormCounter } from "@components/form/formCounter/FormCounter.js";
+import { FormCounter } from "@components/form/formCounter/FormCounter";
 import {
-  LaptopOutlined,
-  MobileOutlined,
-  DesktopOutlined,
-} from "@ant-design/icons";
+  LaptopIcon,
+  ScreenIcon,
+  SmartphoneIcon,
+} from "@components/icons/Icons";
 import {
   TITLE_ORDINATEURS,
   TITLE_TELEPHONES,
@@ -108,7 +108,7 @@ export function ProStep1({ step, setNextStep }) {
           <FormCounter
             form={form}
             name="nombre_ordinateurs"
-            iconCounter={LaptopOutlined}
+            iconCounter={LaptopIcon}
             textCounter={TITLE_ORDINATEURS}
             value={nbrOrdinateurs}
           />
@@ -117,7 +117,7 @@ export function ProStep1({ step, setNextStep }) {
         <FormCounter
           form={form}
           name="nombre_telephones"
-          iconCounter={MobileOutlined}
+          iconCounter={SmartphoneIcon}
           textCounter={TITLE_TELEPHONES}
           value={nbrTelephones}
         />
@@ -125,7 +125,7 @@ export function ProStep1({ step, setNextStep }) {
         <FormCounter
           form={form}
           name="nombre_ecrans"
-          iconCounter={DesktopOutlined}
+          iconCounter={ScreenIcon}
           textCounter={TITLE_ECRANS}
           value={nbrEcrans}
         />

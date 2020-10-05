@@ -61,7 +61,7 @@ export function FormCounter({
           onBlur={onBlur}
         >
           <div className="flex-container-text">
-            <IconCounter className="large-text" />
+            <IconCounter width={84} fill={color} className="large-text" />
             <span className="text-counter">{textCounter}</span>
             {tooltipTitle && (
               <Tooltip

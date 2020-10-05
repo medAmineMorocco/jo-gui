@@ -46,12 +46,13 @@ export const actionReductionDataDejeuners = [
   },
 ];
 
-export const curseurQuestion = (label, name, value, setValue) => {
+export const curseurQuestion = (label, name, logo, value, setValue) => {
   const question = {
     label: label,
     name: name,
     min: 0,
     max: 10,
+    logo: logo,
     value: value,
     setValue: setValue,
   };

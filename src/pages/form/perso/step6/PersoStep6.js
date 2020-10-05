@@ -136,85 +136,109 @@ export function PersoStep6({ step, setNextStep }) {
         </div>
 
         <TitleWithHorizontalLine title="En voiture" />
-        <FormItemInputNumberWithUnit
+        <div className="forms-margin">
+          <FormItemInputNumberWithUnit
+            form={form}
+            name="question_1"
+            label={DEPLACEMENTS_QUESTION1}
+            unit="Km"
+            rules={[
+              { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
+            ]}
+          />
+        </div>
+        <div className="forms-margin">
+          <FormItemSelect
+            name="question_2"
+            label={DEPLACEMENTS_QUESTION2}
+            options={question2_options}
+            onChange={onChangeQuestion2}
+            disabled={false}
+          />
+        </div>
+        <div className="forms-margin">
+          <FormItemWithTwoInputs
+            form={form}
+            label={DEPLACEMENTS_QUESTION3}
+            incomingChoice={question3IncomingChoice}
+            questions={question3_questions}
+          />
+        </div>
+      </div>
+      <div className="forms-margin">
+        <FormItemActionReduction
           form={form}
-          name="question_1"
-          label={DEPLACEMENTS_QUESTION1}
-          unit="Km"
-          rules={[
-            { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
-          ]}
-        />
-        <FormItemSelect
-          name="question_2"
-          label={DEPLACEMENTS_QUESTION2}
-          options={question2_options}
-          onChange={onChangeQuestion2}
-          disabled={false}
-        />
-        <FormItemWithTwoInputs
-          form={form}
-          label={DEPLACEMENTS_QUESTION3}
-          incomingChoice={question3IncomingChoice}
-          questions={question3_questions}
+          title="En voiture"
+          selectDetail={actionReduction1_selectDetail}
+          switchName="action-reduction-switch-1"
+          setSwitchValue={handleSwitchReductionAction1Change}
+          isOpened={isReductionAction1Opened}
         />
       </div>
-      <FormItemActionReduction
-        form={form}
-        title="En voiture"
-        selectDetail={actionReduction1_selectDetail}
-        switchName="action-reduction-switch-1"
-        setSwitchValue={handleSwitchReductionAction1Change}
-        isOpened={isReductionAction1Opened}
-      />
       <div className="wizard-content-right-form-parent">
-        <TitleWithHorizontalLine title="En train" />
-        <FormItemMultipleInputNumber
+        <div className="forms-margin">
+          <TitleWithHorizontalLine title="En train" />
+        </div>
+        <div className="forms-margin">
+          <FormItemMultipleInputNumber
+            form={form}
+            name="multi1"
+            label={DEPLACEMENTS_QUESTION4}
+            questions={question4_questions}
+          />
+        </div>
+        <div className="forms-margin">
+          <TitleWithHorizontalLine title="En avion" />
+        </div>
+        <div className="forms-margin">
+          <FormItemMultipleInputNumber
+            form={form}
+            name="multi2"
+            label={DEPLACEMENTS_QUESTION5}
+            questions={question5_questions}
+          />
+        </div>
+      </div>
+      <div className="forms-margin">
+        <FormItemActionReduction
           form={form}
-          name="multi1"
-          label={DEPLACEMENTS_QUESTION4}
-          questions={question4_questions}
-        />
-        <TitleWithHorizontalLine title="En avion" />
-        <FormItemMultipleInputNumber
-          form={form}
-          name="multi2"
-          label={DEPLACEMENTS_QUESTION5}
-          questions={question5_questions}
+          title="Court courrier"
+          selectDetail={actionReduction2_selectDetail}
+          switchName="action-reduction-switch-2"
+          setSwitchValue={handleSwitchReductionAction2Change}
+          isOpened={isReductionAction2Opened}
         />
       </div>
-      <FormItemActionReduction
-        form={form}
-        title="Court courrier"
-        selectDetail={actionReduction2_selectDetail}
-        switchName="action-reduction-switch-2"
-        setSwitchValue={handleSwitchReductionAction2Change}
-        isOpened={isReductionAction2Opened}
-      />
       <div className="wizard-content-right-form-parent">
-        <FormItemMultipleInputNumber
+        <div className="forms-margin">
+          <FormItemMultipleInputNumber
+            form={form}
+            name="multi3"
+            label={DEPLACEMENTS_QUESTION6}
+            questions={question6_questions}
+          />
+        </div>
+        <div className="forms-margin">
+          <FormItemMultipleInputNumber
+            form={form}
+            name="multi4"
+            label={DEPLACEMENTS_QUESTION7}
+            questions={question7_questions}
+          />
+        </div>
+      </div>
+      <div className="forms-margin">
+        <FormItemActionReduction
           form={form}
-          name="multi3"
-          label={DEPLACEMENTS_QUESTION6}
-          questions={question6_questions}
-        />
-        <FormItemMultipleInputNumber
-          form={form}
-          name="multi4"
-          label={DEPLACEMENTS_QUESTION7}
-          questions={question7_questions}
+          title="Vacances lointaines"
+          savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
+          saviezVousPosition={0}
+          selectDetail={actionReduction3_selectDetail}
+          switchName="action-reduction-switch-3"
+          setSwitchValue={handleSwitchReductionAction3Change}
+          isOpened={isReductionAction3Opened}
         />
       </div>
-      <FormItemActionReduction
-        form={form}
-        title="Vacances lointaines"
-        savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
-        saviezVousPosition={0}
-        selectDetail={actionReduction3_selectDetail}
-        switchName="action-reduction-switch-3"
-        setSwitchValue={handleSwitchReductionAction3Change}
-        isOpened={isReductionAction3Opened}
-      />
     </ConfiguredForm>
   );
 }
