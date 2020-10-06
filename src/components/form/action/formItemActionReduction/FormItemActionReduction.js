@@ -117,7 +117,7 @@ export function FormItemActionReduction({
               (data, key) =>
                 (key === saviezVousPosition && (
                   <div key={key}>
-                    <div className="detail1">
+                    <div className="detail2">
                       {(data.type === "select" &&
                         select("select-content", key, data)) ||
                         (data.type === "input" &&
