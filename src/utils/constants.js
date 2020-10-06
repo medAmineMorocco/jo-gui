@@ -290,3 +290,24 @@ export const NUMERIC_QUESTION2_LABEL =
   "Nombre d'heures de streaming vidéo, gaming par jour";
 export const NUMERIC_SAVIEZ_VOUS =
   "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité.";
+
+//Equipement
+export const EQUIPMENT_QUESTION1 = "Nombre de réfrigérateurs";
+export const EQUIPMENT_QUESTION2 = "Nombre de congélateurs";
+export const EQUIPMENT_QUESTION3 = "Nombre de lave-linge et sèche-linge";
+export const EQUIPMENT_QUESTION4 = "Nombre de lave-vaisselles";
+export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
+export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
+export const EQUIPMENT_QUESTION7 = "Appareils renouvelés en moyenne tous les";
+export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
+export const EQUIPMENT_QUESTION9 = "Appareils renouvelés en moyenne tous les";
+export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
+export const EQUIPMENT_QUESTION11 =
+  "Nombre d'appareils électroniques partagés (chaine hifi, console de jeu vidéo de salon, imprimantes)";
+export const EQUIPMENT_QUESTION12 = "Appareils renouvelés en moyenne tous les";
+export const OVERLAY_TITLE_EQUIPMENT =
+  "Comment optimiser ta consommation d’énergie ?";
+export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const OVERLAY_SOUSTEXTE_EQUIPMENT = "";
+export const EQUIPMENT_SAVIEZ_VOUS =
+  "Attention ! Ne gardez pas non plus de l'électroménager trop ancien, les nouveaux modèles ont une meilleure efficacité énergétique que ceux de nos grands-mères ! (Cela se verra sur votre consommation d'électricité)";
