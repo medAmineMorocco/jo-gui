@@ -31,8 +31,9 @@ export function FormItemActionReduction({
     if (!isOpened) {
       selectDetail.forEach((data) => {
         if (data.type === "input") {
+          const fieldValue = form.getFieldValue(data.name);
           form.setFieldsValue({
-            [data.name]: 0,
+            [data.name]: fieldValue,
           });
         }
       });
