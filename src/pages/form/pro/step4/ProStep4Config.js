@@ -33,7 +33,6 @@ export const actionReductionData = [
     name: "ar_mode_deplacement",
     options: modeDeplacementOptions,
     firstText: "Changer de mode de déplacement pour se rendre au travail",
-    secondText: "",
   },
   {
     type: "input",

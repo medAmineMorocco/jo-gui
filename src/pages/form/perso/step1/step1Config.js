@@ -52,7 +52,7 @@ export const selectDetailLunch = [
       "Réduire sa consommation annuelle de bois de chauffage pour votre logement (kg) de",
     name: "lunch4",
     options: options,
-    secondText: " %",
+    secondText: "%",
   },
   {
     type: "input",

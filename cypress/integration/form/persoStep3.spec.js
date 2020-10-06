@@ -1,4 +1,4 @@
-context('Form | Vie personnelle Numérique step', () => {
+context('Form | Vie personnelle - Biens matériels step', () => {
 	const sizes = [
 		{
 			device: 'iphone-5',
@@ -14,12 +14,12 @@ context('Form | Vie personnelle Numérique step', () => {
 		},
 	];
 
-	it('should show Numérique step on form page', () => {
+	it('should show Biens matériels step on form page', () => {
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
 				win.sessionStorage.clear();
-				win.sessionStorage.setItem('current-step', 9);
+				win.sessionStorage.setItem('current-step', 8);
 				cy.login('email@paris2024.org');
 
 				cy.visit('/form');
@@ -27,7 +27,7 @@ context('Form | Vie personnelle Numérique step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Numérique', size);
+						cy.takeSnapshots('form - Biens matériels', size);
 					});
 			});
 		});

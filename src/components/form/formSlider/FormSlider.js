@@ -53,7 +53,11 @@ export function FormSlider({ form, labels, tooltipTitle, questions }) {
   };
 
   const Sliders = questions.map((question, i) => (
-    <FormItem name={question.name} key={i + 1}>
+    <FormItem
+      className="form-slider-component"
+      name={question.name}
+      key={i + 1}
+    >
       <>
         <div className="flex-slider-container">
           <div className="flex-slider-item">
@@ -107,7 +111,7 @@ export function FormSlider({ form, labels, tooltipTitle, questions }) {
 
   return (
     <>
-      <div className="flex-slider-container title-margin">
+      <div className="flex-slider-container">
         <span
           className="flex-slider-item text-question"
           style={{ color: mainColor }}

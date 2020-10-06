@@ -223,7 +223,7 @@ export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
   "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
 
-// alimentation
+// deplacement
 export const DEPLACEMENTS_QUESTION1 =
   "Distance parcourue en voiture par an (véhicule personnel ou de location)";
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
@@ -244,7 +244,7 @@ export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO2 dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
 
-//A la maison
+// A la maison
 export const HOUSE_QUESTION1 = "Nombre d'adultes du logement";
 export const HOUSE_QUESTION2 =
   "Consommation annuelle d'Electricité de votre logement";
@@ -311,3 +311,27 @@ export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_SOUSTEXTE_EQUIPMENT = "";
 export const EQUIPMENT_SAVIEZ_VOUS =
   "Attention ! Ne gardez pas non plus de l'électroménager trop ancien, les nouveaux modèles ont une meilleure efficacité énergétique que ceux de nos grands-mères ! (Cela se verra sur votre consommation d'électricité)";
+
+// Biens matériels
+export const MATERIELS_QUESTIONS_ERROR_MSG = "⚠ Merci de saisir votre réponse";
+export const MATERIELS_QUESTION1_LABEL =
+  "Nombre de voitures Micro-urbaines, Mini-citadines";
+export const MATERIELS_QUESTION2_LABEL =
+  "Nombre de voitures Polyvalantes, Monospaces Compacts";
+export const MATERIELS_QUESTION3_LABEL =
+  "Nombre de voitures SUV, berlines, monospaces";
+export const MATERIELS_QUESTION4_LABEL = "renouvelés tous les";
+export const MATERIELS_QUESTION5_LABEL = "Nombre d'Ordinateurs fixes";
+export const MATERIELS_QUESTION6_LABEL = "Renouvelés tous les";
+export const MATERIELS_QUESTION7_LABEL = "Nombre d'Ordinateurs portables";
+export const MATERIELS_QUESTION8_LABEL = "Renouvelés tous les";
+export const MATERIELS_QUESTION9_LABEL = "Nombre de Smartphones";
+export const MATERIELS_QUESTION10_LABEL = "Nombre de tablettes";
+export const MATERIELS_QUESTION11_LABEL = "Renouvelés en moyenne tous les";
+export const MATERIELS_QUESTION12_LABEL =
+  "Nombre d'autres petits biens électroniques personnels (appareil photo, liseuse, cadre numérique, radio)";
+export const MATERIELS_QUESTION13_LABEL = "Renouvelés en moyenne tous les";
+export const MATERIELS_QUESTION14_LABEL =
+  "Nombre de vêtements neufs achetés par an (articles)";
+export const MATERIELS_QUESTION15_LABEL =
+  "Nombre de paires de chaussures neuves achetées par an";
