@@ -9,7 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 90px;
+  padding-left: 84px;
+  padding-right: 84px;
   cursor: default;
 }
 
@@ -23,8 +24,8 @@
   display: flex;
   flex-direction: row;
   background-color: #6c633c;
-  padding: 20px 90px;
-  margin: 12px 0px;
+  padding: 20px 84px;
+  margin: 12px 0;
 }
 
 .info-container-content {
@@ -42,7 +43,7 @@
   font-weight: bold;
   color: white;
   font-weight: 500;
-  margin: 0px;
+  margin: 0;
 }
 
 .showDetail {
@@ -53,7 +54,7 @@
 .panel-header-span {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 10px;
+  margin: 0 0 0 10px;
 }
 
 .panel-header-span-first-title {
@@ -77,7 +78,7 @@
 }
 
 .detail1 {
-  margin: 0px 160px 0px 150px;
+  margin: 0 8px 0 142px;
 }
 
 .first-para {
@@ -87,7 +88,7 @@
   font-size: 16px;
   line-height: 20px;
   color: black;
-  margin: 0px 120px 20px 0px;
+  margin: 0 38px 20px 0;
 }
 
 .select-content {
@@ -100,11 +101,11 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 30px;
-  margin: 0px 0px 20px 0px;
+  margin: 0 0 20px 0;
 }
 
 .detail2 {
-  margin: 30px 160px 30px 150px;
+  margin: 0 8px 0 84px;
 }
 
 .input-detail {
@@ -131,7 +132,7 @@
   > .ant-collapse-item.ant-collapse-no-arrow
   > .ant-collapse-header {
   cursor: default;
-  padding: 12px 0px 12px 0px;
+  padding: 12px 0 12px 0;
 }
 
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
@@ -139,15 +140,15 @@
 }
 
 .ant-collapse-borderless > .ant-collapse-item {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .ant-collapse > .ant-collapse-item {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .ant-collapse-content > .ant-collapse-content-box {
-  padding: 0px;
+  padding: 0;
 }
 
 .input-action .ant-input-number-handler-wrap {
@@ -157,15 +158,16 @@
 /* responsive */
 @media (max-width: 767px) {
   .panel-header {
-    margin: 12px 40px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .detail1 {
-    margin: 0px 30px;
+    margin: 0 30px;
   }
 
   .first-para {
-    margin: 0px 0px 20px 60px;
+    margin: 0 0 20px 48px;
   }
 
   .info-container {
@@ -173,10 +175,29 @@
   }
 
   .info-container-icon {
-    margin: 10px 20px 0px 0px;
+    margin: 10px 20px 0 0;
   }
 
   .detail2 {
-    margin: 30px;
+    margin: 32px 32px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .panel-header {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .detail1 {
+    margin: 0 8px 0 78px;
+  }
+
+  .detail2 {
+    margin: 0 38px 0 38px;
+  }
+
+  .info-container {
+    padding: 20px 38px;
   }
 }
