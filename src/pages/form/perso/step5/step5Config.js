@@ -116,7 +116,6 @@ export const selectDetail = [
       { text: "oui", value: true },
       { text: "non", value: false },
     ],
-    secondText: "",
   },
 ];
 
@@ -132,7 +131,6 @@ export const selectDetail2 = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
-    secondText: "",
   },
   {
     type: "select",
@@ -142,7 +140,6 @@ export const selectDetail2 = [
       { text: "oui", value: true },
       { text: "non", value: false },
     ],
-    secondText: "",
   },
   {
     type: "select",
@@ -155,7 +152,6 @@ export const selectDetail2 = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
-    secondText: "",
   },
   {
     type: "select",
@@ -168,7 +164,6 @@ export const selectDetail2 = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
-    secondText: "",
   },
   {
     type: "select",
@@ -181,6 +176,5 @@ export const selectDetail2 = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
-    secondText: "",
   },
 ];

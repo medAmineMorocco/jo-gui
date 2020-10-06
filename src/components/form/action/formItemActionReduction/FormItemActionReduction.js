@@ -90,9 +90,10 @@ export function FormItemActionReduction({
     <div className={className} key={key}>
       <span>{data.firstText}&nbsp;</span>
       <FormItemActionSelect name={data.name} options={data.options} />
-      {data.secondText.split(" ").map((mot, key) => (
-        <span key={key}>&nbsp;{mot}</span>
-      ))}
+      {data.secondText &&
+        data.secondText
+          .split(" ")
+          .map((mot, key) => <span key={key}>&nbsp;{mot}</span>)}
     </div>
   );
 

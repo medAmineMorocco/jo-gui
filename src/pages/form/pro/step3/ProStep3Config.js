@@ -50,9 +50,9 @@ export const curseurQuestion = (label, name, logo, value, setValue) => {
   const question = {
     label: label,
     name: name,
+    logo: logo,
     min: 0,
     max: 10,
-    logo: logo,
     value: value,
     setValue: setValue,
   };

@@ -33,7 +33,6 @@ export const selectDetail = [
       { text: "oui", value: true },
       { text: "non", value: false },
     ],
-    secondText: "",
   },
   {
     type: "select",
@@ -44,7 +43,6 @@ export const selectDetail = [
       { text: "oui", value: true },
       { text: "non", value: false },
     ],
-    secondText: "",
   },
 ];
 

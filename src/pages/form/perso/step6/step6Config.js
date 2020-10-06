@@ -26,7 +26,6 @@ export const actionReduction1_selectDetail = [
     type: "input",
     firstText: "Réduire ses déplacements personnels en voiture de",
     name: "action1",
-    secondText: "",
   },
   {
     type: "select",
@@ -36,7 +35,6 @@ export const actionReduction1_selectDetail = [
       { text: "oui", value: true },
       { text: "non", value: false },
     ],
-    secondText: "",
   },
 ];
 
@@ -88,7 +86,6 @@ export const actionReduction2_selectDetail = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
-    secondText: "",
   },
 ];
 
