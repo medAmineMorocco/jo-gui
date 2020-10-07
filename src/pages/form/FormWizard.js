@@ -76,7 +76,11 @@ export function FormWizard() {
   const [title1, title2] = category.split(" ");
   return (
     <Fragment>
-      <HeaderWithCategory title1={title1} title2={title2} />
+      <HeaderWithCategory
+        className="form-header"
+        title1={title1}
+        title2={title2}
+      />
       {content}
       <FooterWithNavigation
         previous={{
