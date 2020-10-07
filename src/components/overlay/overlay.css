@@ -98,9 +98,13 @@
   bottom: 0;
   top: 100%;
 }
+
+.div-image:only-child {
+  width: 100%;
+}
 .div-image {
   width: 50%;
-  height: 119px;
+  height: 100%;
   background-size: cover;
 }
 .text-modal {
@@ -143,7 +147,7 @@
   }
   .div-image {
     width: 100%;
-    height: 119px;
+    height: 100%;
     margin-bottom: 10px;
   }
   .text-modal {

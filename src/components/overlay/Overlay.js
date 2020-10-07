@@ -25,16 +25,18 @@ export function Overlay(props) {
 
   const tiles = items.map((value) => (
     <div key={value}>
-      <h3
-        className="content-style"
-        dangerouslySetInnerHTML={{ __html: value.text }}
-      />
-      <h4 className="content-style">
+      {value.text && (
+        <h3
+          className="content-style"
+          dangerouslySetInnerHTML={{ __html: value.text }}
+        />
+      )}
+      <div className="content-style">
         {value.image && (
           <img className="div-image" src={value.image} alt={value.text} />
         )}
-        <div className="text-modal">{value.sousText}</div>
-      </h4>
+        {value.sousText && <h4 className="text-modal">{value.sousText}</h4>}
+      </div>
     </div>
   ));
 
