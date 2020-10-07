@@ -41,7 +41,7 @@ function SliderForm({ onFinish }) {
 }
 
 describe("Slider component", () => {
-  it("Test data pick 5 in sliderbar", () => {
+  it("Test data pick value in sliderbar", () => {
     const onFinish = cy.stub();
 
     mount(<SliderForm onFinish={onFinish} />, {
@@ -50,18 +50,17 @@ describe("Slider component", () => {
             }`,
     });
 
-    cy.get(".ant-slider-with-marks")
-      .eq(0)
-      .trigger("mousedown", { which: 1, pageX: 450, pageY: 108 })
-      .click();
+    cy.pickValue("", "6");
+
     cy.get("button:contains(Submit)")
       .click()
       .then(() =>
         expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          erf12: 5,
+          erf12: 6,
         })
       );
   });
+
   it("Test data doesn't picking sliderbar", () => {
     const onFinish = cy.stub();
 

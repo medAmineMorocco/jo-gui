@@ -142,7 +142,7 @@ export function ProStep3({ step, setNextStep }) {
       </div>
 
       <div className="wizard-content-right-form-parent">
-        <div className="forms-margin">
+        <div className="forms-margin boissons-chaudes">
           <FormSlider
             form={form}
             labels={CURSEUR_BOISSONS}
