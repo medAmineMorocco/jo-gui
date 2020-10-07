@@ -14,12 +14,12 @@ import {
 } from "@utils/constants";
 import "./headerWithCategory.css";
 
-export function HeaderWithCategory({ title1, title2 }) {
+export function HeaderWithCategory({ title1, title2, className }) {
   const [isVisible, setVisible] = useState(false);
 
   return (
     <Fragment>
-      <Header>
+      <Header className={className}>
         <div className="home-link">
           <Link to="/">
             <ButtonAntd

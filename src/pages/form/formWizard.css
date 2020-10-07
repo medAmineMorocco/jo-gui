@@ -78,6 +78,10 @@
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  .form-header {
+    margin-bottom: 66px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
