@@ -75,3 +75,9 @@ Cypress.Commands.add('typeNumberForQuestionWithUnit', (name, value) => {
 		.clear()
 		.type(value);
 });
+
+Cypress.Commands.add('pickValue', (selector, value) => {
+	cy.get(`${selector} .ant-slider-mark .ant-slider-mark-text`)
+		.contains(value)
+		.click();
+});

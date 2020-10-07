@@ -127,7 +127,7 @@ export function ProStep2({ step, setNextStep }) {
           />
         </div>
 
-        <div className="forms-margin">
+        <div className="forms-margin nbr-recherche">
           <FormSlider
             form={form}
             labels={NBR_RECHERCHE}
@@ -140,7 +140,7 @@ export function ProStep2({ step, setNextStep }) {
           />
         </div>
 
-        <div className="forms-margin">
+        <div className="forms-margin nbr-conference">
           <FormSlider
             form={form}
             labels={NBR_CONFERENCE}
@@ -153,7 +153,7 @@ export function ProStep2({ step, setNextStep }) {
           />
         </div>
 
-        <div className="forms-margin">
+        <div className="forms-margin nbr-streaming">
           <FormSlider
             form={form}
             labels={NBR_STREAMING}

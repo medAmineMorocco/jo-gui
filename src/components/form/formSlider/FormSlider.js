@@ -69,7 +69,7 @@ export function FormSlider({ form, labels, tooltipTitle, questions }) {
             </div>
           </div>
         </div>
-        <div className="slider-container">
+        <div className={`slider-container-${i}`}>
           <Slider
             dotStyle={{ borderColor: shade, backgroundColor: "black" }}
             activeDotStyle={
