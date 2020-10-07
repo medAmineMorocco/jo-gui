@@ -85,7 +85,7 @@ export const step5State = (values) => {
       actions: [
         {
           id: "action9",
-          response: values["action9"] || 0,
+          response: values["action9"] || false,
         },
       ],
     },

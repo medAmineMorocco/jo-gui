@@ -79,11 +79,12 @@ export function FormItemActionReduction({
       <FormItem className="input-action" name={data.name}>
         <InputNumber min={0} />
       </FormItem>
-      {data.secondText.split(" ").map((mot, key) => (
-        <span className="input-detail" key={key}>
-          &nbsp;{mot}
-        </span>
-      ))}
+      {data.secondText &&
+        data.secondText.split(" ").map((mot, key) => (
+          <span className="input-detail" key={key}>
+            &nbsp;{mot}
+          </span>
+        ))}
     </div>
   );
 
