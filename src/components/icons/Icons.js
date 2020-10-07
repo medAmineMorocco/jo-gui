@@ -1,8 +1,9 @@
 import React from "react";
 
-export const CoffeeIcon = ({ fill, width }) => (
+export const CoffeeIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={{ className }}
     height="32"
     viewBox="0 0 24 32"
     fill="none"
@@ -15,9 +16,10 @@ export const CoffeeIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const SodaIcon = ({ fill, width }) => (
+export const SodaIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="32"
     viewBox="0 0 18 32"
     fill="none"
@@ -30,9 +32,10 @@ export const SodaIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const WaterIcon = ({ fill, width }) => (
+export const WaterIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="32"
     viewBox="0 0 13 32"
     fill="none"
@@ -57,9 +60,10 @@ export const WaterIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const WineIcon = ({ fill, width }) => (
+export const WineIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="32"
     viewBox="0 0 17 32"
     fill="none"
@@ -72,9 +76,10 @@ export const WineIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const BeerIcon = ({ fill, width }) => (
+export const BeerIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="30"
     viewBox="0 0 25 30"
     fill="none"
@@ -95,9 +100,10 @@ export const BeerIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const WhiskyIcon = ({ fill, width }) => (
+export const WhiskyIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="23"
     viewBox="0 0 23 23"
     fill="none"
@@ -118,9 +124,10 @@ export const WhiskyIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const LaptopIcon = ({ fill, width }) => (
+export const LaptopIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="25"
     viewBox="0 0 44 25"
     fill="none"
@@ -133,9 +140,10 @@ export const LaptopIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const ScreenIcon = ({ fill, width }) => (
+export const ScreenIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="31"
     viewBox="0 0 49 31"
     fill="none"
@@ -148,9 +156,10 @@ export const ScreenIcon = ({ fill, width }) => (
   </svg>
 );
 
-export const SmartphoneIcon = ({ fill, width }) => (
+export const SmartphoneIcon = ({ fill, width, className }) => (
   <svg
     width={width}
+    className={className}
     height="41"
     viewBox="0 0 25 41"
     fill="none"

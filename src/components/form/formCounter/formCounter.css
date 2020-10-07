@@ -12,12 +12,15 @@
 }
 
 .text-counter {
-  margin-left: 8px;
   font-size: 14px;
 }
 .tooltip-icon-counter {
   margin-bottom: 20%;
   padding: 5%;
+}
+
+.icon-counter {
+  margin-right: 8px;
 }
 
 .large-text {
