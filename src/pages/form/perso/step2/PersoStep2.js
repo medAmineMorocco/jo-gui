@@ -69,18 +69,18 @@ export function PersoStep2({ step, setNextStep }) {
           });
         }
       });
-      setQuestion1Count(form.getFieldValue("equipment_question1"));
-      setQuestion2Count(form.getFieldValue("equipment_question2"));
-      setQuestion3Count(form.getFieldValue("equipment_question3"));
-      setQuestion4Count(form.getFieldValue("equipment_question4"));
-      setQuestion5Count(form.getFieldValue("equipment_question5"));
-      setQuestion6Count(form.getFieldValue("equipment_question6"));
-      setQuestion7Input(form.getFieldValue("equipment_question7"));
-      setQuestion8Count(form.getFieldValue("equipment_question8"));
-      setQuestion9Input(form.getFieldValue("equipment_question9"));
-      setQuestion10Select(form.getFieldValue("equipment_question10"));
-      setQuestion11Count(form.getFieldValue("equipment_question11"));
-      setQuestion12Input(form.getFieldValue("equipment_question12"));
+      setQuestion1Count(form.getFieldValue("5f556168dab39"));
+      setQuestion2Count(form.getFieldValue("5f5561e5eb854"));
+      setQuestion3Count(form.getFieldValue("5f55664839d67"));
+      setQuestion4Count(form.getFieldValue("5f55667459f85"));
+      setQuestion5Count(form.getFieldValue("5f55669ad8400"));
+      setQuestion6Count(form.getFieldValue("5f5566c7a6e7c"));
+      setQuestion7Input(form.getFieldValue("5f5566d80117c"));
+      setQuestion8Count(form.getFieldValue("5f5566f657df4"));
+      setQuestion9Input(form.getFieldValue("5f5566f868949"));
+      setQuestion10Select(form.getFieldValue("5f556711c1671"));
+      setQuestion11Count(form.getFieldValue("5f55674380953"));
+      setQuestion12Input(form.getFieldValue("5f5567451cb10"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -127,7 +127,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question1"
+            name="5f556168dab39"
             textCounter={EQUIPMENT_QUESTION1}
             value={question1Count}
           />
@@ -136,7 +136,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question2"
+            name="5f5561e5eb854"
             textCounter={EQUIPMENT_QUESTION2}
             value={question2Count}
           />
@@ -145,7 +145,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question3"
+            name="5f55664839d67"
             textCounter={EQUIPMENT_QUESTION3}
             value={question3Count}
           />
@@ -154,7 +154,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question4"
+            name="5f55667459f85"
             textCounter={EQUIPMENT_QUESTION4}
             value={question4Count}
           />
@@ -163,7 +163,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question5"
+            name="5f55669ad8400"
             textCounter={EQUIPMENT_QUESTION5}
             value={question5Count}
           />
@@ -172,7 +172,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question6"
+            name="5f5566c7a6e7c"
             textCounter={EQUIPMENT_QUESTION6}
             value={question6Count}
           />
@@ -180,7 +180,7 @@ export function PersoStep2({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="equipment_question7"
+            name="5f5566d80117c"
             tooltipTitle={false}
             label={EQUIPMENT_QUESTION7}
             rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
@@ -192,7 +192,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question8"
+            name="5f5566f657df4"
             textCounter={EQUIPMENT_QUESTION8}
             value={question8Count}
           />
@@ -200,7 +200,7 @@ export function PersoStep2({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="equipment_question9"
+            name="5f5566f868949"
             tooltipTitle={false}
             label={EQUIPMENT_QUESTION9}
             rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
@@ -211,7 +211,7 @@ export function PersoStep2({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemSelect
             form={form}
-            name="house_question10"
+            name="5f556711c1671"
             label={EQUIPMENT_QUESTION10}
             tooltipTitle={false}
             options={optionsFibre}
@@ -222,7 +222,7 @@ export function PersoStep2({ step, setNextStep }) {
           <FormCounter
             form={form}
             iconCounter={false}
-            name="equipment_question11"
+            name="5f55674380953"
             textCounter={EQUIPMENT_QUESTION11}
             value={question11Count}
           />
@@ -230,7 +230,7 @@ export function PersoStep2({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="equipment_question12"
+            name="5f5567451cb10"
             tooltipTitle={false}
             label={EQUIPMENT_QUESTION12}
             rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}

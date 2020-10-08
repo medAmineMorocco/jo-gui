@@ -49,49 +49,49 @@ context('Form | alimentation step', () => {
             cy.login('email@paris2024.org');
             cy.visit('/form');
 
-            cy.count('#alimentation_question1', 1);
+            cy.count('#5f5570e5d882c', 1);
             cy.checkMeals('#alimentation_question2', {
-                monday: "sub1",
-                tuesday: "sub1",
-                wednesday: "sub2",
-                thursday: "sub2",
-                friday: 'sub3'
+                monday: "5f5570ff217a4",
+                tuesday: "5f5570ff217a4",
+                wednesday: "5f55715960e9a",
+                thursday: "5f55715960e9a",
+                friday: '5f557184101ce'
             });
             cy.checkMeals('#alimentation_question3', {
-                monday: "sub4",
-                tuesday: "sub4",
-                wednesday: "sub4",
-                thursday: "sub4",
-                friday: 'sub4'
+                monday: "5f5572735716e",
+                tuesday: "5f5572735716e",
+                wednesday: "5f5572735716e",
+                thursday: "5f5572735716e",
+                friday: '5f5572735716e'
             });
             cy.checkMeals('#alimentation_question4', {
-                monday: "sub9",
-                tuesday: "sub9",
-                wednesday: "sub9",
-                thursday: "sub9",
-                friday: 'sub9'
+                monday: "5f55732d44ed6",
+                tuesday: "5f55732d44ed6",
+                wednesday: "5f55732d44ed6",
+                thursday: "5f55732d44ed6",
+                friday: '5f55732d44ed6'
             });
-            cy.count('#alimentation_question5', 3);
-            cy.count('#alimentation_question6', 4);
-            cy.count('#alimentation_question7', 2);
-            cy.count('#alimentation_question8', 3);
-            cy.count('#alimentation_question9', 4);
+            cy.count('#5f557459e6c45', 3);
+            cy.count('#5f5574ead218e', 4);
+            cy.count('#5f557508ea4c5', 2);
+            cy.count('#5f557531751f2', 3);
+            cy.count('#5f55754725a12', 4);
             cy.get('button span:contains(suite)').click();
 
             cy.wait(1000);
             cy.get('.footer-navigation-left span').contains('Alimentation').should('exist');
             cy.get('.footer-navigation-right span').contains('Services publics').should('exist');
             cy.get('.footer-buttons-left button').click();
-            cy.get('#alimentation_question1 > .flex-container-button > #result-counter').contains('1').should('exist');
-            cy.expectToBeChecked(['monday-sub1', 'tuesday-sub1', 'wednesday-sub2', 'thursday-sub2', 'friday-sub3',
-                'monday-sub4', 'tuesday-sub4', 'wednesday-sub4', 'thursday-sub4', 'friday-sub4',
-                'monday-sub9', 'tuesday-sub9', 'wednesday-sub9', 'thursday-sub9', 'friday-sub9']);
+            cy.get('#5f5570e5d882c > .flex-container-button > #result-counter').contains('1').should('exist');
+            cy.expectToBeChecked(['monday-5f5570ff217a4', 'tuesday-5f5570ff217a4', 'wednesday-5f55715960e9a', 'thursday-5f55715960e9a', 'friday-5f557184101ce',
+                'monday-5f5572735716e', 'tuesday-5f5572735716e', 'wednesday-5f5572735716e', 'thursday-5f5572735716e', 'friday-5f5572735716e',
+                'monday-5f55732d44ed6', 'tuesday-5f55732d44ed6', 'wednesday-5f55732d44ed6', 'thursday-5f55732d44ed6', 'friday-5f55732d44ed6']);
 
-            cy.get('#alimentation_question5 > .flex-container-button > #result-counter').contains('3').should('exist');
-            cy.get('#alimentation_question6 > .flex-container-button > #result-counter').contains('4').should('exist');
-            cy.get('#alimentation_question7 > .flex-container-button > #result-counter').contains('2').should('exist');
-            cy.get('#alimentation_question8 > .flex-container-button > #result-counter').contains('3').should('exist');
-            cy.get('#alimentation_question9 > .flex-container-button > #result-counter').contains('4').should('exist');
+            cy.get('#5f557459e6c45 > .flex-container-button > #result-counter').contains('3').should('exist');
+            cy.get('#5f5574ead218e > .flex-container-button > #result-counter').contains('4').should('exist');
+            cy.get('#5f557508ea4c5 > .flex-container-button > #result-counter').contains('2').should('exist');
+            cy.get('#5f557531751f2 > .flex-container-button > #result-counter').contains('3').should('exist');
+            cy.get('#5f55754725a12 > .flex-container-button > #result-counter').contains('4').should('exist');
         });
     });
 

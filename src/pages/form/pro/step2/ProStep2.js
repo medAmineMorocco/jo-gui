@@ -45,7 +45,7 @@ export function ProStep2({ step, setNextStep }) {
 
   useEffect(() => {
     form.setFieldsValue({
-      taille_stockage: QUESTION2_DEFAULT_VALUE,
+      "5f554eddc68dd": QUESTION2_DEFAULT_VALUE,
     });
   }, [form]);
 
@@ -63,9 +63,9 @@ export function ProStep2({ step, setNextStep }) {
           });
         }
       });
-      setNbrRecherche(form.getFieldValue("nbr_recherche"));
-      setNbrConference(form.getFieldValue("nbr_conference"));
-      setNbrStreaming(form.getFieldValue("nbr_streaming"));
+      setNbrRecherche(form.getFieldValue("5f554f1127cec"));
+      setNbrConference(form.getFieldValue("5f554f36de849"));
+      setNbrStreaming(form.getFieldValue("5f554fb2238b4"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -109,7 +109,7 @@ export function ProStep2({ step, setNextStep }) {
         </div>
 
         <FormItemInputNumber
-          name="taille_boite"
+          name="5f554eb63be47"
           label={TAILLE_BOITE}
           tooltipTitle={TAILLE_BOITE_INFO}
           rules={[{ required: true, message: TAILLE_BOITE_ERROR_MSG }]}
@@ -121,7 +121,7 @@ export function ProStep2({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
-            name="taille_stockage"
+            name="5f554eddc68dd"
             label={TAILLE_STOCKAGE}
             rules={[{ required: true, message: TAILLE_BOITE_ERROR_MSG }]}
           />
@@ -133,7 +133,7 @@ export function ProStep2({ step, setNextStep }) {
             labels={NBR_RECHERCHE}
             questions={curseurQuestions(
               "",
-              "nbr_recherche",
+              "5f554f1127cec",
               nbrRecherche,
               setNbrRecherche
             )}
@@ -146,7 +146,7 @@ export function ProStep2({ step, setNextStep }) {
             labels={NBR_CONFERENCE}
             questions={curseurQuestions(
               "",
-              "nbr_conference",
+              "5f554f36de849",
               nbrConference,
               setNbrConference
             )}
@@ -159,7 +159,7 @@ export function ProStep2({ step, setNextStep }) {
             labels={NBR_STREAMING}
             questions={curseurQuestions(
               "",
-              "nbr_streaming",
+              "5f554fb2238b4",
               nbrStreaming,
               setNbrStreaming
             )}

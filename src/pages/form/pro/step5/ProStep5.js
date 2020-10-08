@@ -54,24 +54,50 @@ export function ProStep5({ step, setNextStep }) {
   const trajetsARDynamicProps = [
     {
       label: QUESTION2_NBR_TRAJETS_AR,
+      name: "5f5557c81d9d6",
     },
-    { label: QUESTION3_NBR_TRAJETS_AR },
-    { label: QUESTION4_NBR_TRAJETS_AR },
+    {
+      label: QUESTION3_NBR_TRAJETS_AR,
+      name: "5f5557ec74a11",
+    },
+    {
+      label: QUESTION4_NBR_TRAJETS_AR,
+      name: "5f555809e50b5",
+    },
     {
       label: QUESTION5_NBR_TRAJETS_AR,
+      name: "5f5558209ce59",
       onChange: handleQuestion5trajetsArChange,
     },
-    { label: QUESTION6_NBR_TRAJETS_AR },
-    { label: QUESTION7_NBR_TRAJETS_AR },
+    {
+      label: QUESTION6_NBR_TRAJETS_AR,
+      name: "5f55582edaeda",
+    },
+    {
+      label: QUESTION7_NBR_TRAJETS_AR,
+      name: "5f55584be6d5b",
+    },
   ];
 
   // vols AR data pour les champs multiples
   const volsARIndex = [8, 9, 10, 11];
   const volsARDynamicProps = [
-    { label: QUESTION8_NBR_VOLS_AR, questions: question8options },
-    { label: QUESTION9_NBR_VOLS_AR, questions: question9options },
-    { label: QUESTION10_NBR_VOLS_AR, questions: question10options },
-    { label: QUESTION11_NBR_VOLS_AR, questions: question11options },
+    {
+      label: QUESTION8_NBR_VOLS_AR,
+      questions: question8options,
+    },
+    {
+      label: QUESTION9_NBR_VOLS_AR,
+      questions: question9options,
+    },
+    {
+      label: QUESTION10_NBR_VOLS_AR,
+      questions: question10options,
+    },
+    {
+      label: QUESTION11_NBR_VOLS_AR,
+      questions: question11options,
+    },
   ];
 
   useEffect(() => {
@@ -138,7 +164,7 @@ export function ProStep5({ step, setNextStep }) {
         </div>
 
         <FormItemInputNumber
-          name="nbrKmVoiture"
+          name="5f5557936a4cd"
           label={NBR_KM_VOITURE}
           rules={[{ required: true, message: DEPLACEMENT_MSG_ERROR }]}
         />
@@ -146,7 +172,6 @@ export function ProStep5({ step, setNextStep }) {
         {trajetsARIndex.map((index, key) => (
           <div className="forms-margin" key={key}>
             <FormItemInputNumber
-              name={`question${index}_NbrTrajetsAr`}
               rules={[{ required: true, message: DEPLACEMENT_MSG_ERROR }]}
               {...trajetsARDynamicProps[key]}
             />

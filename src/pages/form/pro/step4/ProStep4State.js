@@ -10,51 +10,51 @@ export const proStep4ActionReductionState = (values) => {
 export const proStep4State = (values) => {
   const stepState = [
     {
-      question: "distance",
-      response: values["distance"],
+      question: "5f55554022dc3",
+      response: values["5f55554022dc3"],
       actions: [
         {
-          id: "ar_mode_deplacement",
-          response: values["ar_mode_deplacement"],
+          id: "5f60a09bc059e",
+          response: values["5f60a09bc059e"],
         },
         {
-          id: "ar_nbr_jours_travail_domicile",
-          response: values["ar_nbr_jours_travail_domicile"] || 0,
+          id: "5f60a0ad1f52f",
+          response: values["5f60a0ad1f52f"] || 0,
         },
       ],
     },
     {
-      question: "mode_deplacement",
-      response: values["mode_deplacement"],
+      question: "5f55561b34276",
+      response: values["5f55561b34276"],
       actions: [
         {
-          id: "ar_mode_deplacement",
-          response: values["ar_mode_deplacement"],
+          id: "5f60a09bc059e",
+          response: values["5f60a09bc059e"],
         },
         {
-          id: "ar_nbr_jours_travail_domicile",
-          response: values["ar_nbr_jours_travail_domicile"] || 0,
+          id: "5f60a0ad1f52f",
+          response: values["5f60a0ad1f52f"] || 0,
         },
       ],
     },
   ];
 
   if (
-    values["mode_deplacement"] !== "metro-tramway" &&
-    values["mode_deplacement"] !== "train-rer" &&
-    values["mode_deplacement"] !== "tgv"
+    values["5f55561b34276"] !== "metro-tramway" &&
+    values["5f55561b34276"] !== "train-rer" &&
+    values["5f55561b34276"] !== "tgv"
   ) {
     stepState.push({
-      question: "motorisation",
-      response: values["motorisation"],
+      question: "5f555681b8e00",
+      response: values["5f555681b8e00"],
       actions: [
         {
-          id: "ar_mode_deplacement",
-          response: values["ar_mode_deplacement"],
+          id: "5f60a09bc059e",
+          response: values["5f60a09bc059e"],
         },
         {
-          id: "ar_nbr_jours_travail_domicile",
-          response: values["ar_nbr_jours_travail_domicile"] || 0,
+          id: "5f60a0ad1f52f",
+          response: values["5f60a0ad1f52f"] || 0,
         },
       ],
     });

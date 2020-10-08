@@ -14,31 +14,31 @@ export const subQuestions = {
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Energie (kg éq CO2)",
-      name: "emplacement_paris1",
+      name: "5f5542755502a",
       defaultResponse: 200,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Eau (kg éq CO2)",
-      name: "emplacement_paris2",
+      name: "5f55429e6196b",
       defaultResponse: 80,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO2)",
-      name: "emplacement_paris3",
+      name: "5f5542b40b8c1",
       defaultResponse: 100,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Consommables et services (kg éq CO2)",
-      name: "emplacement_lyon1",
+      name: "5f5542ce0b5ae",
       defaultResponse: 1250,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO2)",
-      name: "emplacement_lyon2",
+      name: "5f5542e9d7d95",
       defaultResponse: 12.5,
     },
   ],
@@ -46,31 +46,31 @@ export const subQuestions = {
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Energie (kg éq CO2)",
-      name: "emplacement_paris1",
+      name: "5f5542755502a",
       defaultResponse: 400,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Eau (kg éq CO2)",
-      name: "emplacement_paris2",
+      name: "5f55429e6196b",
       defaultResponse: 152.7777778,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO2)",
-      name: "emplacement_paris3",
+      name: "5f5542b40b8c1",
       defaultResponse: 1833.333333,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Consommables et services (kg éq CO2)",
-      name: "emplacement_lyon1",
+      name: "5f5542ce0b5ae",
       defaultResponse: 1250,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO2)",
-      name: "emplacement_lyon2",
+      name: "5f5542e9d7d95",
       defaultResponse: 12.5,
     },
   ],

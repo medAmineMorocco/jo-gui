@@ -15,43 +15,43 @@ export const proStep3State = (values) => {
   const stepState = [
     {
       type: "calendar",
-      choices: ["sub1", "sub2", "sub3"],
+      choices: ["5f55500f273e7", "5f5550293a164", "5f5550530eaf3"],
       question: "repas_question1",
       response: values["repas_question1"],
       actions: [
         {
-          id: "restauration-action1",
-          response: values["restauration-action1"] || 0,
+          id: "5f60a03929c5e",
+          response: values["5f60a03929c5e"] || 0,
         },
         {
-          id: "restauration-action2",
-          response: values["restauration-action2"] || 0,
+          id: "5f60a04cb2a94",
+          response: values["5f60a04cb2a94"] || 0,
         },
       ],
     },
     {
-      question: "slider_1",
-      response: values["slider_1"],
+      question: "5f5550724626b",
+      response: values["5f5550724626b"],
       actions: [
         {
-          id: "restauration-action3",
-          response: values["restauration-action3"] || 0,
+          id: "5f60a05e206d2",
+          response: values["5f60a05e206d2"] || 0,
         },
       ],
     },
     {
-      question: "slider_2",
-      response: values["slider_2"],
+      question: "5f55508b92e6c",
+      response: values["5f55508b92e6c"],
       actions: [
         {
-          id: "restauration-action4",
-          response: values["restauration-action4"] || 0,
+          id: "5f60a06d650a3",
+          response: values["5f60a06d650a3"] || 0,
         },
       ],
     },
     {
-      question: "slider_3",
-      response: values["slider_3"],
+      question: "5f5550b00730d",
+      response: values["5f5550b00730d"],
     },
   ];
   return stepState;

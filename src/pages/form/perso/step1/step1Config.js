@@ -26,7 +26,7 @@ export const selectDetailLunch = [
     type: "select",
     firstText:
       "Réduire sa consommation annuelle d'Electricité de votre logement (kWh) de ",
-    name: "lunch1",
+    name: "5f60a1229564b",
     options: options,
     secondText: "%",
   },
@@ -34,7 +34,7 @@ export const selectDetailLunch = [
     type: "select",
     firstText:
       "Réduire sa consommation annuelle de Gaz naturel de votre logement (kWh PCS) de",
-    name: "lunch2",
+    name: "5f7f26f4b6606",
     options: options,
     secondText: "%",
   },
@@ -42,7 +42,7 @@ export const selectDetailLunch = [
     type: "select",
     firstText:
       "Réduire sa consommation annuelle de Fioul domestique de votre logement (L) de ",
-    name: "lunch3",
+    name: "5f7f271841ce5",
     options: options,
     secondText: "%",
   },
@@ -50,14 +50,14 @@ export const selectDetailLunch = [
     type: "select",
     firstText:
       "Réduire sa consommation annuelle de bois de chauffage pour votre logement (kg) de",
-    name: "lunch4",
+    name: "5f7f2742cdf84",
     options: options,
     secondText: "%",
   },
   {
     type: "input",
     firstText: "Améliorer la performance énergétique du logement de ",
-    name: "lunch5",
+    name: "5f60a1399f5ab",
     secondText:
       "% grâce à des travaux de rénovation énergétique (isolation, chauffage …)",
   },

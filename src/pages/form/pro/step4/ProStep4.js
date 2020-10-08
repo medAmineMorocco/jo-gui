@@ -62,7 +62,7 @@ export function ProStep4({ step, setNextStep }) {
           });
         }
       });
-      setModeDeplacement(form.getFieldValue("mode_deplacement"));
+      setModeDeplacement(form.getFieldValue("5f55561b34276"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -106,7 +106,7 @@ export function ProStep4({ step, setNextStep }) {
         </div>
 
         <FormItemInputNumber
-          name="distance"
+          name="5f55554022dc3"
           label={DISTANCE_DOMICILE_TRAVAIL}
           rules={[
             { required: true, message: DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG },
@@ -115,7 +115,7 @@ export function ProStep4({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemSelect
-            name="mode_deplacement"
+            name="5f55561b34276"
             label={MODE_DEPLACEMENT}
             options={modeDeplacementOptions}
             onChange={handleModeDeplacementChange}
@@ -125,7 +125,7 @@ export function ProStep4({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemSelect
-            name="motorisation"
+            name="5f555681b8e00"
             label={MOTORISATION}
             tooltipTitle={MOTORISATION_INFOS}
             options={motorisationOptions}

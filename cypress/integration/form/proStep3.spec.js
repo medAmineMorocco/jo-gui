@@ -41,11 +41,11 @@ context("Form | Vie professionnelle - Restauration step3", () => {
       cy.visit("/form");
 
       cy.checkMeals("#repas_question1", {
-        monday: "sub1",
-        tuesday: "sub1",
-        wednesday: "sub2",
-        thursday: "sub2",
-        friday: "sub3",
+        monday: "5f55500f273e7",
+        tuesday: "5f55500f273e7",
+        wednesday: "5f5550293a164",
+        thursday: "5f5550293a164",
+        friday: "5f5550530eaf3",
       });
 
       cy.pickValue('.boissons-chaudes .slider-container-0', '1');
@@ -68,11 +68,11 @@ context("Form | Vie professionnelle - Restauration step3", () => {
       cy.get(".footer-buttons-left button").click();
 
       cy.expectToBeChecked([
-        "monday-sub1",
-        "tuesday-sub1",
-        "wednesday-sub2",
-        "thursday-sub2",
-        "friday-sub3",
+        "monday-5f55500f273e7",
+        "tuesday-5f55500f273e7",
+        "wednesday-5f5550293a164",
+        "thursday-5f5550293a164",
+        "friday-5f5550530eaf3",
       ]);
 
       cy.get(".boissons-chaudes .slider-container-0 .ant-slider-handle").should(

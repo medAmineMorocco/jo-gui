@@ -4,15 +4,15 @@ import { ReactComponent as VegetablesSvg } from "@components/form/mealsOfWeek/ve
 
 export const question1_subQuestions = [
   {
-    name: "sub1",
+    name: "5f55500f273e7",
     icon: MeatSvg,
   },
   {
-    name: "sub2",
+    name: "5f5550293a164",
     icon: ChickenSvg,
   },
   {
-    name: "sub3",
+    name: "5f5550530eaf3",
     icon: VegetablesSvg,
   },
 ];
@@ -20,7 +20,7 @@ export const question1_subQuestions = [
 export const actionReductionDataDejeuners = [
   {
     type: "select",
-    name: "restauration-action1",
+    name: "5f60a03929c5e",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },
@@ -33,7 +33,7 @@ export const actionReductionDataDejeuners = [
   },
   {
     type: "select",
-    name: "restauration-action2",
+    name: "5f60a04cb2a94",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },
@@ -62,7 +62,7 @@ export const curseurQuestion = (label, name, logo, value, setValue) => {
 export const actionReductionDataCafe = [
   {
     type: "select",
-    name: "restauration-action3",
+    name: "5f60a05e206d2",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },
@@ -74,7 +74,7 @@ export const actionReductionDataCafe = [
   },
   {
     type: "select",
-    name: "restauration-action4",
+    name: "5f60a06d650a3",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },

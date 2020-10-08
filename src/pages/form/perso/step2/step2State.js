@@ -10,110 +10,110 @@ export const equipment2ActionReductionState = (values) => {
 export const equipmentstep2State = (values) => {
   return [
     {
-      question: "equipment_question1",
-      response: values["equipment_question1"] || 0,
+      question: "5f556168dab39",
+      response: values["5f556168dab39"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question2",
-      response: values["equipment_question2"] || 0,
+      question: "5f5561e5eb854",
+      response: values["5f5561e5eb854"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question3",
-      response: values["equipment_question3"] || 0,
+      question: "5f55664839d67",
+      response: values["5f55664839d67"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question4",
-      response: values["equipment_question4"] || 0,
+      question: "5f55667459f85",
+      response: values["5f55667459f85"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question5",
-      response: values["equipment_question5"] || 0,
+      question: "5f55669ad8400",
+      response: values["5f55669ad8400"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question6",
-      response: values["equipment_question6"] || 0,
+      question: "5f5566c7a6e7c",
+      response: values["5f5566c7a6e7c"] || 0,
       actions: [
         {
-          id: "equipment1",
-          response: values["equipment1"] || 0,
+          id: "5f60a14ebb9b6",
+          response: values["5f60a14ebb9b6"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question7",
-      response: values["equipment_question7"] || 0,
+      question: "5f5566d80117c",
+      response: values["5f5566d80117c"] || 0,
     },
     {
-      question: "equipment_question8",
-      response: values["equipment_question8"] || 0,
+      question: "5f5566f657df4",
+      response: values["5f5566f657df4"] || 0,
       actions: [
         {
-          id: "equipment2",
-          response: values["equipment2"] || 0,
+          id: "5f7f1f2367bd7",
+          response: values["5f7f1f2367bd7"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question9",
-      response: values["equipment_question9"] || 0,
+      question: "5f5566f868949",
+      response: values["5f5566f868949"] || 0,
       actions: [
         {
-          id: "equipment2",
-          response: values["equipment2"] || 0,
+          id: "5f7f1f2367bd7",
+          response: values["5f7f1f2367bd7"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question10",
-      response: values["equipment_question10"] || 0,
+      question: "5f556711c1671",
+      response: values["5f556711c1671"] || 0,
     },
     {
-      question: "equipment_question11",
-      response: values["equipment_question11"] || 0,
+      question: "5f55674380953",
+      response: values["5f55674380953"] || 0,
       actions: [
         {
-          id: "equipment2",
-          response: values["equipment2"] || 0,
+          id: "5f7f1f2367bd7",
+          response: values["5f7f1f2367bd7"] || 0,
         },
       ],
     },
     {
-      question: "equipment_question12",
-      response: values["equipment_question12"] || 0,
+      question: "5f5567451cb10",
+      response: values["5f5567451cb10"] || 0,
       actions: [
         {
-          id: "equipment3",
-          response: values["equipment3"] || 0,
+          id: "5f7f1f5c96681",
+          response: values["5f7f1f5c96681"] || 0,
         },
       ],
     },

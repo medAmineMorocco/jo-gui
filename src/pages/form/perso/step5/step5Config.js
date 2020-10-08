@@ -4,45 +4,45 @@ import { ReactComponent as VegetablesSvg } from "@components/form/mealsOfWeek/ve
 
 export const question2_subQuestions = [
   {
-    name: "sub1",
+    name: "5f5570ff217a4",
     icon: MeatSvg,
   },
   {
-    name: "sub2",
+    name: "5f55715960e9a",
     icon: ChickenSvg,
   },
   {
-    name: "sub3",
+    name: "5f557184101ce",
     icon: VegetablesSvg,
   },
 ];
 
 export const question3_subQuestions = [
   {
-    name: "sub4",
+    name: "5f5572735716e",
     icon: MeatSvg,
   },
   {
-    name: "sub5",
+    name: "5f5572b1b9be9",
     icon: ChickenSvg,
   },
   {
-    name: "sub6",
+    name: "5f5572cda4e57",
     icon: VegetablesSvg,
   },
 ];
 
 export const question4_subQuestions = [
   {
-    name: "sub7",
+    name: "5f5572e23ac37",
     icon: MeatSvg,
   },
   {
-    name: "sub8",
+    name: "5f5572f94a692",
     icon: ChickenSvg,
   },
   {
-    name: "sub9",
+    name: "5f55732d44ed6",
     icon: VegetablesSvg,
   },
 ];
@@ -64,14 +64,14 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer chaque semaine",
-    name: "action1",
+    name: "5f60a1d33da5f",
     options: options,
     secondText: "diners à base de légumes plutôt que de viande issue de bétail",
   },
   {
     type: "select",
     firstText: "Consommer chaque semaine",
-    name: "action2",
+    name: "5f60a1e56f9be",
     options: options,
     secondText:
       "diners à base de légumes plutôt que de viande de volaille ou de poisson",
@@ -79,7 +79,7 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer le week-end",
-    name: "action3",
+    name: "5f60a1f6aa5d9",
     options: options,
     secondText:
       "déjeuners à base de légumes plutôt que de viande issue de bétail",
@@ -87,7 +87,7 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer le week-end",
-    name: "action4",
+    name: "5f60a209470be",
     options: options,
     secondText:
       "déjeuners à base de légumes plutôt que de viande de volaille ou de poisson",
@@ -95,7 +95,7 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer en vacances",
-    name: "action5",
+    name: "5f60a21ef0fe9",
     options: options,
     secondText:
       "déjeuners à base de légumes plutôt que de viande issue de bétail",
@@ -103,7 +103,7 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer en vacances",
-    name: "action6",
+    name: "5f60a24828ffa",
     options: options,
     secondText:
       "déjeuners à base de légumes plutôt que de viande de volaille ou de poisson",
@@ -111,7 +111,7 @@ export const selectDetail = [
   {
     type: "select",
     firstText: "Réduire le gaspillage alimentaire",
-    name: "action7",
+    name: "5f60aa257b035",
     options: [
       { text: "oui", value: true },
       { text: "non", value: false },
@@ -123,7 +123,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire de jus/sodas de",
-    name: "action8",
+    name: "5f60aa4172f98",
     options: [
       { text: "0", value: 0 },
       { text: "25", value: 25 },
@@ -135,7 +135,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Consommer l’eau du robinet",
-    name: "action9",
+    name: "5f60aa533bca6",
     options: [
       { text: "oui", value: true },
       { text: "non", value: false },
@@ -144,7 +144,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire de vin de",
-    name: "action10",
+    name: "5f60aa6244f4d",
     options: [
       { text: "0", value: 0 },
       { text: "25", value: 25 },
@@ -156,7 +156,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: " Réduire sa consommation hebdomadaire de bière de",
-    name: "action11",
+    name: "5f60aa7235bfe",
     options: [
       { text: "0", value: 0 },
       { text: "25", value: 25 },
@@ -168,7 +168,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire d’alcool de",
-    name: "action12",
+    name: "5f60aa83e4aad",
     options: [
       { text: "0", value: 0 },
       { text: "25", value: 25 },

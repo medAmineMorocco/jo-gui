@@ -10,78 +10,78 @@ export const house1ActionReductionState = (values) => {
 export const housestep1State = (values) => {
   return [
     {
-      question: "house_question1",
-      response: values["house_question1"] || 0,
+      question: "5f555eea00a7c",
+      response: values["5f555eea00a7c"] || 0,
     },
     {
-      question: "house_question2",
-      response: values["house_question2"] || 0,
+      question: "5f555f180a442",
+      response: values["5f555f180a442"] || 0,
       actions: [
         {
-          id: "lunch1",
-          response: values["lunch1"] || 0,
+          id: "5f60a1229564b",
+          response: values["5f60a1229564b"] || 0,
         },
       ],
     },
     {
-      question: "house_question3",
-      response: values["house_question3"] || 0,
+      question: "5f555f8af3776",
+      response: values["5f555f8af3776"] || 0,
       actions: [
         {
-          id: "lunch2",
-          response: values["lunch2"] || 0,
+          id: "5f7f26f4b6606",
+          response: values["5f7f26f4b6606"] || 0,
         },
       ],
     },
     {
-      question: "house_question4",
-      response: values["house_question4"] || 0,
+      question: "5f555faf640d3",
+      response: values["5f555faf640d3"] || 0,
       actions: [
         {
-          id: "lunch3",
-          response: values["lunch3"] || 0,
+          id: "5f7f271841ce5",
+          response: values["5f7f271841ce5"] || 0,
         },
       ],
     },
     {
-      question: "house_question5",
-      response: values["house_question5"] || 0,
+      question: "5f55600ed2c60",
+      response: values["5f55600ed2c60"] || 0,
       actions: [
         {
-          id: "lunch4",
-          response: values["lunch4"] || 0,
+          id: "5f7f2742cdf84",
+          response: values["5f7f2742cdf84"] || 0,
         },
       ],
     },
     {
-      question: "house_question6",
-      response: values["house_question6"] || 0,
+      question: "5f7f230d75c78",
+      response: values["5f7f230d75c78"] || 0,
       actions: [
         {
-          id: "lunch5",
-          response: values["lunch5"] || 0,
+          id: "5f60a1399f5ab",
+          response: values["5f60a1399f5ab"] || 0,
         },
       ],
     },
     {
-      question: "house_question7",
-      response: values["house_question7"] || 0,
+      question: "5f7f2382ba8a0",
+      response: values["5f7f2382ba8a0"] || 0,
     },
     {
-      question: "house_question8",
-      response: values["house_question8"] || 0,
+      question: "5f7f23ce239c1",
+      response: values["5f7f23ce239c1"] || 0,
     },
     {
-      question: "house_question9",
-      response: values["house_question9"] || 0,
+      question: "5f556050d0a88",
+      response: values["5f556050d0a88"] || 0,
     },
     {
-      question: "house_question10",
-      response: values["house_question10"] || 0,
+      question: "5f55608002862",
+      response: values["5f55608002862"] || 0,
     },
     {
-      question: "house_question11",
-      response: values["house_question11"] || 0,
+      question: "5f55609bdcaae",
+      response: values["5f55609bdcaae"] || 0,
     },
   ];
 };

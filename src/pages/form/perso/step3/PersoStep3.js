@@ -78,19 +78,19 @@ export function PersoStep3({ step, setNextStep }) {
           });
         }
       });
-      setQuestion1(form.getFieldValue("materiels_question1"));
-      setQuestion2(form.getFieldValue("materiels_question2"));
-      setQuestion3(form.getFieldValue("materiels_question3"));
-      setQuestion4(form.getFieldValue("materiels_question4"));
-      setQuestion5(form.getFieldValue("materiels_question5"));
-      setQuestion6(form.getFieldValue("materiels_question6"));
-      setQuestion7(form.getFieldValue("materiels_question7"));
-      setQuestion8(form.getFieldValue("materiels_question8"));
-      setQuestion9(form.getFieldValue("materiels_question9"));
-      setQuestion10(form.getFieldValue("materiels_question10"));
-      setQuestion11(form.getFieldValue("materiels_question11"));
-      setQuestion12(form.getFieldValue("materiels_question12"));
-      setQuestion13(form.getFieldValue("materiels_question13"));
+      setQuestion1(form.getFieldValue("5f5568d39449f"));
+      setQuestion2(form.getFieldValue("5f5568e651349"));
+      setQuestion3(form.getFieldValue("5f5568f49b63c"));
+      setQuestion4(form.getFieldValue("5f55692a73b55"));
+      setQuestion5(form.getFieldValue("5f5569516acd3"));
+      setQuestion6(form.getFieldValue("5f5569587abe3"));
+      setQuestion7(form.getFieldValue("5f55697727f39"));
+      setQuestion8(form.getFieldValue("5f55697f50057"));
+      setQuestion9(form.getFieldValue("5f55699e36c16"));
+      setQuestion10(form.getFieldValue("5f556b379a8d1"));
+      setQuestion11(form.getFieldValue("5f556b3b7aeaf"));
+      setQuestion12(form.getFieldValue("5f556b6b5abc8"));
+      setQuestion13(form.getFieldValue("5f556b6cefd5a"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -135,7 +135,7 @@ export function PersoStep3({ step, setNextStep }) {
 
         <FormCounter
           form={form}
-          name="materiels_question1"
+          name="5f5568d39449f"
           textCounter={MATERIELS_QUESTION1_LABEL}
           value={question1}
         />
@@ -143,21 +143,21 @@ export function PersoStep3({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            name="materiels_question2"
+            name="5f5568e651349"
             textCounter={MATERIELS_QUESTION2_LABEL}
             value={question2}
           />
 
           <FormCounter
             form={form}
-            name="materiels_question3"
+            name="5f5568f49b63c"
             textCounter={MATERIELS_QUESTION3_LABEL}
             value={question3}
           />
 
           <FormItemInputNumberWithUnit
             form={form}
-            name="materiels_question4"
+            name="5f55692a73b55"
             label={MATERIELS_QUESTION4_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
@@ -166,14 +166,14 @@ export function PersoStep3({ step, setNextStep }) {
 
           <FormCounter
             form={form}
-            name="materiels_question5"
+            name="5f5569516acd3"
             textCounter={MATERIELS_QUESTION5_LABEL}
             value={question5}
           />
 
           <FormItemInputNumberWithUnit
             form={form}
-            name="materiels_question6"
+            name="5f5569587abe3"
             label={MATERIELS_QUESTION6_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
@@ -182,14 +182,14 @@ export function PersoStep3({ step, setNextStep }) {
 
           <FormCounter
             form={form}
-            name="materiels_question7"
+            name="5f55697727f39"
             textCounter={MATERIELS_QUESTION7_LABEL}
             value={question7}
           />
 
           <FormItemInputNumberWithUnit
             form={form}
-            name="materiels_question8"
+            name="5f55697f50057"
             label={MATERIELS_QUESTION8_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
@@ -198,21 +198,21 @@ export function PersoStep3({ step, setNextStep }) {
 
           <FormCounter
             form={form}
-            name="materiels_question9"
+            name="5f55699e36c16"
             textCounter={MATERIELS_QUESTION9_LABEL}
             value={question9}
           />
 
           <FormCounter
             form={form}
-            name="materiels_question10"
+            name="5f556b379a8d1"
             textCounter={MATERIELS_QUESTION10_LABEL}
             value={question10}
           />
 
           <FormItemInputNumberWithUnit
             form={form}
-            name="materiels_question11"
+            name="5f556b3b7aeaf"
             label={MATERIELS_QUESTION11_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
@@ -221,14 +221,14 @@ export function PersoStep3({ step, setNextStep }) {
 
           <FormCounter
             form={form}
-            name="materiels_question12"
+            name="5f556b6b5abc8"
             textCounter={MATERIELS_QUESTION12_LABEL}
             value={question12}
           />
 
           <FormItemInputNumberWithUnit
             form={form}
-            name="materiels_question13"
+            name="5f556b6cefd5a"
             label={MATERIELS_QUESTION13_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
@@ -251,13 +251,13 @@ export function PersoStep3({ step, setNextStep }) {
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <FormItemInputNumber
-            name="materiels_question14"
+            name="5f556b94d465c"
             label={MATERIELS_QUESTION14_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
           />
 
           <FormItemInputNumber
-            name="materiels_question15"
+            name="5f556baea779b"
             label={MATERIELS_QUESTION15_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
           />

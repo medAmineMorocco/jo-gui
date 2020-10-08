@@ -9,42 +9,42 @@ export const step4ActionReductionState = (values) => {
 export const step4State = (values) => {
   return [
     {
-      question: "question1_sub1",
-      response: values["question1_sub1"],
+      question: "5f556f699d325",
+      response: values["5f556f699d325"],
       actions: [
         {
-          id: "action1",
-          response: values["action1"] || false,
+          id: "5f60a1b0cce8c",
+          response: values["5f60a1b0cce8c"] || false,
         },
       ],
     },
     {
-      question: "question1_sub2",
-      response: values["question1_sub2"],
+      question: "5f556f8dc0a47",
+      response: values["5f556f8dc0a47"],
       actions: [
         {
-          id: "action1",
-          response: values["action1"] || false,
+          id: "5f60a1b0cce8c",
+          response: values["5f60a1b0cce8c"] || false,
         },
       ],
     },
     {
-      question: "question2_sub1",
-      response: values["question2_sub1"],
+      question: "5f556fa608550",
+      response: values["5f556fa608550"],
       actions: [
         {
-          id: "action2",
-          response: values["action2"] || false,
+          id: "5f60a1bf061d4",
+          response: values["5f60a1bf061d4"] || false,
         },
       ],
     },
     {
-      question: "question2_sub2",
-      response: values["question2_sub2"],
+      question: "5f556fc57b862",
+      response: values["5f556fc57b862"],
       actions: [
         {
-          id: "action2",
-          response: values["action2"] || false,
+          id: "5f60a1bf061d4",
+          response: values["5f60a1bf061d4"] || false,
         },
       ],
     },

@@ -38,16 +38,16 @@ export function ProStep0({ step, setNextStep }) {
   const onFinish = (values) => {
     const stepState = [
       {
-        question: "intro_question1",
-        response: values["intro_question1"],
+        question: "5f554172a13c7",
+        response: values["5f554172a13c7"],
       },
       {
-        question: "intro_question2",
-        response: values["intro_question2"],
+        question: "5f5541a7845e0",
+        response: values["5f5541a7845e0"],
       },
       {
-        question: "intro_question3",
-        response: values["intro_question3"],
+        question: "5f5541ba9b096",
+        response: values["5f5541ba9b096"],
       },
     ];
     saveResponsesOfQuestionsStep(stepState, step);
@@ -66,7 +66,7 @@ export function ProStep0({ step, setNextStep }) {
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <FormItemInputNumber
-            name="intro_question1"
+            name="5f554172a13c7"
             tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
             label={INTRODUCTION_QUESTION1}
             rules={[
@@ -77,7 +77,7 @@ export function ProStep0({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
-            name="intro_question2"
+            name="5f5541a7845e0"
             label={INTRODUCTION_QUESTION2}
             rules={[
               { required: true, message: INTRODUCTION_QUESTION2_ERROR_MSG },
@@ -87,7 +87,7 @@ export function ProStep0({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
-            name="intro_question3"
+            name="5f5541ba9b096"
             label={INTRODUCTION_QUESTION3}
             rules={[
               { required: true, message: INTRODUCTION_QUESTION3_ERROR_MSG },

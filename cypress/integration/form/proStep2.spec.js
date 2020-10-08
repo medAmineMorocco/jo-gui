@@ -39,7 +39,7 @@ context("Form | Vie professionnelle - Empreinte numérique step2", () => {
       cy.login("email@paris2024.org");
       cy.visit("/form");
 
-      cy.get("#taille_boite").clear().type("99");
+      cy.get("#5f554eb63be47").clear().type("99");
 
       cy.pickValue('.nbr-recherche', '1');
 
@@ -60,7 +60,7 @@ context("Form | Vie professionnelle - Empreinte numérique step2", () => {
 
       cy.get(".footer-buttons-left button").click();
 
-      cy.get(`label[for="taille_boite"]`)
+      cy.get(`label[for="5f554eb63be47"]`)
         .parents(".ant-form-item")
         .find(".ant-input-number-input")
         .should("have.attr", "value", "99");

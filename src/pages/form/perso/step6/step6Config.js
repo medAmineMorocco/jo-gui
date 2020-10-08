@@ -8,14 +8,14 @@ export const question3_questions = [
   {
     choice: "gasoline",
     response: {
-      name: "litre",
+      name: "5f55763a2d2b1",
       label: "L/100 km",
     },
   },
   {
     choice: "electric",
     response: {
-      name: "kilowatt",
+      name: "5f55776c56494",
       label: "kWh/100 km",
     },
   },
@@ -25,12 +25,12 @@ export const actionReduction1_selectDetail = [
   {
     type: "input",
     firstText: "Réduire ses déplacements personnels en voiture de",
-    name: "action1",
+    name: "5f60aa994d161",
   },
   {
     type: "select",
     firstText: "Eco-conduite",
-    name: "action2",
+    name: "5f60aaad99c98",
     options: [
       { text: "oui", value: true },
       { text: "non", value: false },
@@ -40,17 +40,17 @@ export const actionReduction1_selectDetail = [
 
 export const question4_questions = [
   {
-    name: "question1_sub4",
+    name: "5f557851c481e",
     label: "≈ 250 km",
     defaultValue: 0,
   },
   {
-    name: "question2_sub4",
+    name: "5f5578d055227",
     label: "≈ 500 km",
     defaultValue: 0,
   },
   {
-    name: "question3_sub4",
+    name: "5f5578e039aea",
     label: "≈ 800 km",
     defaultValue: 0,
   },
@@ -58,17 +58,17 @@ export const question4_questions = [
 
 export const question5_questions = [
   {
-    name: "question1_sub5",
+    name: "5f55791c16575",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question2_sub5",
+    name: "5f55797b8b5f2",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question3_sub5",
+    name: "5f55799ed06a0",
     label: "Première",
     defaultValue: 0,
   },
@@ -78,7 +78,7 @@ export const actionReduction2_selectDetail = [
   {
     type: "select",
     firstText: "Prendre le TGV plutôt que l'avion pour",
-    name: "action3",
+    name: "5f60aac6c60bf",
     options: [
       { text: "0", value: 0 },
       { text: "25", value: 25 },
@@ -91,17 +91,17 @@ export const actionReduction2_selectDetail = [
 
 export const question6_questions = [
   {
-    name: "question1_sub6",
+    name: "5f5579c25b653",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question2_sub6",
+    name: "5f5579df87f62",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question3_sub6",
+    name: "5f5579f265cce",
     label: "Première",
     defaultValue: 0,
   },
@@ -109,17 +109,17 @@ export const question6_questions = [
 
 export const question7_questions = [
   {
-    name: "question1_sub7",
+    name: "5f557a0b076f3",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question2_sub7",
+    name: "5f557a34ea334",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question3_sub7",
+    name: "5f557a44eafc4",
     label: "Première",
     defaultValue: 0,
   },
@@ -129,7 +129,7 @@ export const actionReduction3_selectDetail = [
   {
     type: "input",
     firstText: "Annuler",
-    name: "action4",
+    name: "5f60aadf53101",
     secondText:
       "des vols long courrier et privilégier les destinations accessibles en train",
   },
