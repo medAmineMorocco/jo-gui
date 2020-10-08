@@ -37,6 +37,7 @@
   font-style: normal;
   font-weight: 600;
   color: #000000;
+  font-size: 12px;
 }
 .ant-btn-primary {
   border-color: transparent;
@@ -135,7 +136,7 @@
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 720px) {
   .title-modal {
     font-size: 15px;
     font-style: italic;
