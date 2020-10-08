@@ -14,108 +14,108 @@ export const step5ActionReductionState = (values) => {
 export const step5State = (values) => {
   return [
     {
-      question: "alimentation_question1",
-      response: values["alimentation_question1"],
+      question: "5f5570e5d882c",
+      response: values["5f5570e5d882c"],
     },
     {
       type: "calendar",
-      choices: ["sub1", "sub2", "sub3"],
+      choices: ["5f5570ff217a4", "5f55715960e9a", "5f557184101ce"],
       question: "alimentation_question2",
       response: values["alimentation_question2"],
       actions: [
         {
-          id: "action1",
-          response: values["action1"] || 0,
+          id: "5f60a1d33da5f",
+          response: values["5f60a1d33da5f"] || 0,
         },
         {
-          id: "action2",
-          response: values["action2"] || 0,
+          id: "5f60a1e56f9be",
+          response: values["5f60a1e56f9be"] || 0,
         },
       ],
     },
     {
       type: "calendar",
-      choices: ["sub4", "sub5", "sub6"],
+      choices: ["5f5572735716e", "5f5572b1b9be9", "5f5572cda4e57"],
       question: "alimentation_question3",
       response: values["alimentation_question3"],
       actions: [
         {
-          id: "action3",
-          response: values["action3"] || 0,
+          id: "5f60a1f6aa5d9",
+          response: values["5f60a1f6aa5d9"] || 0,
         },
         {
-          id: "action4",
-          response: values["action4"] || 0,
+          id: "5f60a209470be",
+          response: values["5f60a209470be"] || 0,
         },
       ],
     },
     {
       type: "calendar",
-      choices: ["sub7", "sub8", "sub9"],
+      choices: ["5f5572e23ac37", "5f5572f94a692", "5f55732d44ed6"],
       question: "alimentation_question4",
       response: values["alimentation_question4"],
       actions: [
         {
-          id: "action5",
-          response: values["action5"] || 0,
+          id: "5f60a21ef0fe9",
+          response: values["5f60a21ef0fe9"] || 0,
         },
         {
-          id: "action6",
-          response: values["action6"] || 0,
+          id: "5f60a24828ffa",
+          response: values["5f60a24828ffa"] || 0,
         },
         {
-          id: "action7",
-          response: values["action7"],
-        },
-      ],
-    },
-    {
-      question: "alimentation_question5",
-      response: values["alimentation_question5"],
-      actions: [
-        {
-          id: "action8",
-          response: values["action8"] || 0,
+          id: "5f60aa257b035",
+          response: values["5f60aa257b035"],
         },
       ],
     },
     {
-      question: "alimentation_question6",
-      response: values["alimentation_question6"],
+      question: "5f557459e6c45",
+      response: values["5f557459e6c45"],
       actions: [
         {
-          id: "action9",
-          response: values["action9"] || false,
+          id: "5f60aa4172f98",
+          response: values["5f60aa4172f98"] || 0,
         },
       ],
     },
     {
-      question: "alimentation_question7",
-      response: values["alimentation_question7"],
+      question: "5f5574ead218e",
+      response: values["5f5574ead218e"],
       actions: [
         {
-          id: "action10",
-          response: values["action10"] || 0,
+          id: "5f60aa533bca6",
+          response: values["5f60aa533bca6"] || false,
         },
       ],
     },
     {
-      question: "alimentation_question8",
-      response: values["alimentation_question8"],
+      question: "5f557508ea4c5",
+      response: values["5f557508ea4c5"],
       actions: [
         {
-          id: "action11",
-          response: values["action11"] || 0,
+          id: "5f60aa6244f4d",
+          response: values["5f60aa6244f4d"] || 0,
         },
       ],
     },
     {
-      question: "alimentation_question9",
-      response: values["alimentation_question9"],
+      question: "5f557531751f2",
+      response: values["5f557531751f2"],
       actions: [
         {
-          id: "action12",
-          response: values["action12"] || 0,
+          id: "5f60aa7235bfe",
+          response: values["5f60aa7235bfe"] || 0,
+        },
+      ],
+    },
+    {
+      question: "5f55754725a12",
+      response: values["5f55754725a12"],
+      actions: [
+        {
+          id: "5f60aa83e4aad",
+          response: values["5f60aa83e4aad"] || 0,
         },
       ],
     },

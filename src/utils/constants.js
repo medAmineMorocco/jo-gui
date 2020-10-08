@@ -234,11 +234,11 @@ export const DEPLACEMENTS_QUESTION3 =
 export const DEPLACEMENTS_QUESTION4 =
   "Nombre de trajets AR en train TGV par an";
 export const DEPLACEMENTS_QUESTION5 =
-  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+  "Nombre de vols AR courts courriers (<5h)";
 export const DEPLACEMENTS_QUESTION6 =
-  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+  "Nombre de vols AR longs courriers (>5h et <10h)";
 export const DEPLACEMENTS_QUESTION7 =
-  "Nombre de vols AR courts courriers (moins de 5 h) par an";
+  "Nombre de vols AR longs courriers (>10h)";
 
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO2 dans l’atmosphère, soit la moitié de l’empreinte\n" +

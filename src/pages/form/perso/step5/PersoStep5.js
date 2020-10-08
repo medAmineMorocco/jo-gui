@@ -101,12 +101,12 @@ export function PersoStep5({ step, setNextStep }) {
         }
       });
 
-      setQuestion1Count(form.getFieldValue("alimentation_question1"));
-      setQuestion5Count(form.getFieldValue("alimentation_question5"));
-      setQuestion6Count(form.getFieldValue("alimentation_question6"));
-      setQuestion7Count(form.getFieldValue("alimentation_question7"));
-      setQuestion8Count(form.getFieldValue("alimentation_question8"));
-      setQuestion9Count(form.getFieldValue("alimentation_question9"));
+      setQuestion1Count(form.getFieldValue("5f5570e5d882c"));
+      setQuestion5Count(form.getFieldValue("5f557459e6c45"));
+      setQuestion6Count(form.getFieldValue("5f5574ead218e"));
+      setQuestion7Count(form.getFieldValue("5f557508ea4c5"));
+      setQuestion8Count(form.getFieldValue("5f557531751f2"));
+      setQuestion9Count(form.getFieldValue("5f55754725a12"));
 
       setQuestion2State(form.getFieldValue("alimentation_question2"));
       setQuestion3State(form.getFieldValue("alimentation_question3"));
@@ -159,7 +159,7 @@ export function PersoStep5({ step, setNextStep }) {
 
         <FormCounter
           form={form}
-          name="alimentation_question1"
+          name="5f5570e5d882c"
           iconCounter={CoffeeIcon}
           textCounter={ALIMENTATION_QUESTION1}
           value={question1Count}
@@ -221,7 +221,7 @@ export function PersoStep5({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            name="alimentation_question5"
+            name="5f557459e6c45"
             iconCounter={SodaIcon}
             textCounter={ALIMENTATION_QUESTION5}
             value={question5Count}
@@ -229,28 +229,28 @@ export function PersoStep5({ step, setNextStep }) {
         </div>
         <FormCounter
           form={form}
-          name="alimentation_question6"
+          name="5f5574ead218e"
           iconCounter={WaterIcon}
           textCounter={ALIMENTATION_QUESTION6}
           value={question6Count}
         />
         <FormCounter
           form={form}
-          name="alimentation_question7"
+          name="5f557508ea4c5"
           iconCounter={WineIcon}
           textCounter={ALIMENTATION_QUESTION7}
           value={question7Count}
         />
         <FormCounter
           form={form}
-          name="alimentation_question8"
+          name="5f557531751f2"
           iconCounter={BeerIcon}
           textCounter={ALIMENTATION_QUESTION8}
           value={question8Count}
         />
         <FormCounter
           form={form}
-          name="alimentation_question9"
+          name="5f55754725a12"
           iconCounter={WhiskyIcon}
           textCounter={ALIMENTATION_QUESTION9}
           value={question9Count}

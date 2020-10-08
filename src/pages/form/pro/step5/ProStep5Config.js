@@ -1,16 +1,16 @@
 export const question8options = [
   {
-    name: "question8_eco",
+    name: "5f55587eaf0e1",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question8_busi",
+    name: "5f555897f3a7b",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question8_prem",
+    name: "5f5558b32689d",
     label: "Première",
     defaultValue: 0,
   },
@@ -18,17 +18,17 @@ export const question8options = [
 
 export const question9options = [
   {
-    name: "question9_eco",
+    name: "5f5558d002ef1",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question9_busi",
+    name: "5f5558f29483f",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question9_prem",
+    name: "5f5559164e7c5",
     label: "Première",
     defaultValue: 0,
   },
@@ -36,17 +36,17 @@ export const question9options = [
 
 export const question10options = [
   {
-    name: "question10_eco",
+    name: "5f55597082002",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question10_busi",
+    name: "5f55598f84ab3",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question10_prem",
+    name: "5f555a0999cae",
     label: "Première",
     defaultValue: 0,
   },
@@ -54,17 +54,17 @@ export const question10options = [
 
 export const question11options = [
   {
-    name: "question11_eco",
+    name: "5f555a4459b35",
     label: "Économie",
     defaultValue: 0,
   },
   {
-    name: "question11_busi",
+    name: "5f555c744517e",
     label: "Business",
     defaultValue: 0,
   },
   {
-    name: "question11_prem",
+    name: "5f555d17a49a0",
     label: "Première",
     defaultValue: 0,
   },
@@ -74,25 +74,25 @@ export const question11options = [
 export const actionReductionData = [
   {
     type: "input",
-    name: "input1",
+    name: "5f60a0c685332",
     firstText: "Prendre le TGV plutôt que la voiture pour",
     secondText: "km parcourus lors des trajets en voiture",
   },
   {
     type: "input",
-    name: "input2",
+    name: "5f60a0d990f4e",
     firstText: "Prendre le TGV plutôt que l'avion pour",
     secondText: "des trajets en avion au CIO à Lausanne",
   },
   {
     type: "input",
-    name: "input3",
+    name: "5f60a0f2df4e3",
     firstText: "Prendre le TGV plutôt que l'avion pour",
     secondText: "des distances en vol court courrier",
   },
   {
     type: "input",
-    name: "input4",
+    name: "5f60a102140c9",
     firstText: "Réduire de",
     secondText:
       "les distances professionnelles parcourues annuellement grâce à la visioconférence notamment",

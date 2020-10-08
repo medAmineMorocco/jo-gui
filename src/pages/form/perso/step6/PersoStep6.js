@@ -77,9 +77,9 @@ export function PersoStep6({ step, setNextStep }) {
           });
         }
       });
-      setQuestion1DefaultValue(form.getFieldValue("question_1"));
+      setQuestion1DefaultValue(form.getFieldValue("5f5575ba93b32"));
       setQuestion3IncomingChoice(
-        getNewChoice(form.getFieldValue("question_2"))
+        getNewChoice(form.getFieldValue("5f5575dc9b4ac"))
       );
     };
 
@@ -139,7 +139,7 @@ export function PersoStep6({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="question_1"
+            name="5f5575ba93b32"
             label={DEPLACEMENTS_QUESTION1}
             unit="Km"
             rules={[
@@ -149,7 +149,7 @@ export function PersoStep6({ step, setNextStep }) {
         </div>
         <div className="forms-margin">
           <FormItemSelect
-            name="question_2"
+            name="5f5575dc9b4ac"
             label={DEPLACEMENTS_QUESTION2}
             options={question2_options}
             onChange={onChangeQuestion2}

@@ -80,17 +80,17 @@ export function PersoStep1({ step, setNextStep }) {
           });
         }
       });
-      setQuestion1Count(form.getFieldValue("house_question1"));
-      setQuestion2Input(form.getFieldValue("house_question2"));
-      setQuestion3Input(form.getFieldValue("house_question3"));
-      setQuestion4Input(form.getFieldValue("house_question4"));
-      setQuestion5Input(form.getFieldValue("house_question5"));
-      setQuestion6Input(form.getFieldValue("house_question6"));
-      setQuestion7Input(form.getFieldValue("house_question7"));
-      setQuestion8Input(form.getFieldValue("house_question8"));
-      setQuestion9Input(form.getFieldValue("house_question9"));
-      setQuestion10Select(form.getFieldValue("house_question10"));
-      setQuestion11Select(form.getFieldValue("house_question11"));
+      setQuestion1Count(form.getFieldValue("5f555eea00a7c"));
+      setQuestion2Input(form.getFieldValue("5f555f180a442"));
+      setQuestion3Input(form.getFieldValue("5f555f8af3776"));
+      setQuestion4Input(form.getFieldValue("5f555faf640d3"));
+      setQuestion5Input(form.getFieldValue("5f55600ed2c60"));
+      setQuestion6Input(form.getFieldValue("5f7f230d75c78"));
+      setQuestion7Input(form.getFieldValue("5f7f2382ba8a0"));
+      setQuestion8Input(form.getFieldValue("5f7f23ce239c1"));
+      setQuestion9Input(form.getFieldValue("5f556050d0a88"));
+      setQuestion10Select(form.getFieldValue("5f55608002862"));
+      setQuestion11Select(form.getFieldValue("5f55609bdcaae"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -101,7 +101,6 @@ export function PersoStep1({ step, setNextStep }) {
       });
 
       setReductionActionOpened(form.getFieldValue("lunch-switch-1"));
-      console.log(form.getFieldValue("lunch1"));
     };
 
     const stepState = getResponsesOfQuestionsOfStep(step);
@@ -139,7 +138,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            name="house_question1"
+            name="5f555eea00a7c"
             textCounter={HOUSE_QUESTION1}
             value={question1Count}
           />
@@ -158,7 +157,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question2"
+            name="5f555f180a442"
             tooltipTitle={HOUSE_QUESTION2_TOOTLTIP}
             label={HOUSE_QUESTION2}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -169,7 +168,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question3"
+            name="5f555f8af3776"
             tooltipTitle={HOUSE_QUESTION3_TOOTLTIP}
             label={HOUSE_QUESTION3}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -180,7 +179,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question4"
+            name="5f555faf640d3"
             tooltipTitle={HOUSE_QUESTION4_TOOTLTIP}
             label={HOUSE_QUESTION4}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -191,7 +190,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question5"
+            name="5f55600ed2c60"
             tooltipTitle={HOUSE_QUESTION5_TOOTLTIP}
             label={HOUSE_QUESTION5}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -207,7 +206,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question6"
+            name="5f7f230d75c78"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION6}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -218,7 +217,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question7"
+            name="5f7f2382ba8a0"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION7}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -229,7 +228,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question8"
+            name="5f7f23ce239c1"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION8}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -240,7 +239,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
-            name="house_question9"
+            name="5f556050d0a88"
             tooltipTitle={HOUSE_QUESTION9_TOOTLTIP}
             label={HOUSE_QUESTION9}
             rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
@@ -251,7 +250,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemSelect
             form={form}
-            name="house_question10"
+            name="5f55608002862"
             label={HOUSE_QUESTION10}
             tooltipTitle={HOUSE_QUESTION10_TOOTLTIP}
             options={optionsClasses}
@@ -261,7 +260,7 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemSelect
             form={form}
-            name="house_question11"
+            name="5f55609bdcaae"
             label={HOUSE_QUESTION11}
             tooltipTitle={false}
             options={optionsLogement}

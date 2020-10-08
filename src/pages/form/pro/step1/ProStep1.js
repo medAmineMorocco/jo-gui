@@ -37,10 +37,10 @@ export function ProStep1({ step, setNextStep }) {
           [question]: response,
         });
       });
-      setEmplacementBureau(form.getFieldValue("emplacement_bureau"));
-      setNbrOrdinateurs(form.getFieldValue("nombre_ordinateurs"));
-      setNbrTelephones(form.getFieldValue("nombre_telephones"));
-      setNbrEcrans(form.getFieldValue("nombre_ecrans"));
+      setEmplacementBureau(form.getFieldValue("5f554229451a5"));
+      setNbrOrdinateurs(form.getFieldValue("5f55433101b1e"));
+      setNbrTelephones(form.getFieldValue("5f554354aa382"));
+      setNbrEcrans(form.getFieldValue("5f55437711711"));
     };
     const stepState = getResponsesOfQuestionsOfStep(step);
     if (stepState) {
@@ -51,24 +51,24 @@ export function ProStep1({ step, setNextStep }) {
   const onFinish = (values) => {
     const stepState = [
       {
-        question: "emplacement_bureau",
-        response: values["emplacement_bureau"],
+        question: "5f554229451a5",
+        response: values["5f554229451a5"],
       },
       {
-        question: "nombre_ordinateurs",
-        response: values["nombre_ordinateurs"],
+        question: "5f55433101b1e",
+        response: values["5f55433101b1e"],
       },
       {
-        question: "nombre_telephones",
-        response: values["nombre_telephones"],
+        question: "5f554354aa382",
+        response: values["5f554354aa382"],
       },
       {
-        question: "nombre_ecrans",
-        response: values["nombre_ecrans"],
+        question: "5f55437711711",
+        response: values["5f55437711711"],
       },
     ];
 
-    subQuestions[values["emplacement_bureau"]].forEach((res) => {
+    subQuestions[values["5f554229451a5"]].forEach((res) => {
       stepState.push({
         question: res.name,
         response: res.defaultResponse,
@@ -95,7 +95,7 @@ export function ProStep1({ step, setNextStep }) {
 
         <FormItemSelectWithDetails
           form={form}
-          name="emplacement_bureau"
+          name="5f554229451a5"
           tooltipTitle="Ces émissions concernent les consommations des bâtiments, rapportées à chaque collaborateur."
           label="Votre bureau est situé"
           options={emplacementBureauOptions}
@@ -107,7 +107,7 @@ export function ProStep1({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            name="nombre_ordinateurs"
+            name="5f55433101b1e"
             iconCounter={LaptopIcon}
             textCounter={TITLE_ORDINATEURS}
             value={nbrOrdinateurs}
@@ -117,7 +117,7 @@ export function ProStep1({ step, setNextStep }) {
 
         <FormCounter
           form={form}
-          name="nombre_telephones"
+          name="5f554354aa382"
           iconCounter={SmartphoneIcon}
           textCounter={TITLE_TELEPHONES}
           value={nbrTelephones}
@@ -126,7 +126,7 @@ export function ProStep1({ step, setNextStep }) {
 
         <FormCounter
           form={form}
-          name="nombre_ecrans"
+          name="5f55437711711"
           iconCounter={ScreenIcon}
           textCounter={TITLE_ECRANS}
           value={nbrEcrans}

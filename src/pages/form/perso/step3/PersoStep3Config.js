@@ -1,7 +1,7 @@
 export const actionReduction1Data = [
   {
     type: "select",
-    name: "materiels_action1",
+    name: "5f60a1676ff16",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -18,7 +18,7 @@ export const actionReduction1Data = [
   },
   {
     type: "select",
-    name: "materiels_action2",
+    name: "5f60a1760597b",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -35,7 +35,7 @@ export const actionReduction1Data = [
   },
   {
     type: "select",
-    name: "materiels_action3",
+    name: "5f7ef2e5cfc27",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -52,7 +52,7 @@ export const actionReduction1Data = [
   },
   {
     type: "select",
-    name: "materiels_action4",
+    name: "5f7ef314bc87c",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -69,7 +69,7 @@ export const actionReduction1Data = [
   },
   {
     type: "select",
-    name: "materiels_action5",
+    name: "5f7ef33245f27",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -86,7 +86,7 @@ export const actionReduction1Data = [
   },
   {
     type: "select",
-    name: "materiels_action6",
+    name: "5f7ef357156a3",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -106,7 +106,7 @@ export const actionReduction1Data = [
 export const actionReduction2Data = [
   {
     type: "select",
-    name: "materiels_action7",
+    name: "5f60a199c4870",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },
@@ -124,7 +124,7 @@ export const actionReduction2Data = [
   },
   {
     type: "select",
-    name: "materiels_action8",
+    name: "5f60a186aee7d",
     options: [
       { text: "0", value: 0 },
       { text: "1", value: 1 },

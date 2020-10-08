@@ -23,7 +23,7 @@ export const curseurQuestions = (label, name, value, setValue) => {
 export const actionReductionData = [
   {
     type: "select",
-    name: "ar_reduction_boite",
+    name: "5f60a00c2ead6",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },
@@ -34,7 +34,7 @@ export const actionReductionData = [
   },
   {
     type: "select",
-    name: "ar_reduction_stockage",
+    name: "5f60a01a6dc3a",
     options: [
       { text: "1", value: 1 },
       { text: "2", value: 2 },

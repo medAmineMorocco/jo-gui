@@ -10,36 +10,36 @@ export const proStep2ActionReductionState = (values) => {
 export const proStep2State = (values) => {
   const stepState = [
     {
-      question: "taille_boite",
-      response: values["taille_boite"],
+      question: "5f554eb63be47",
+      response: values["5f554eb63be47"],
       actions: [
         {
-          id: "ar_reduction_boite",
-          response: values["ar_reduction_boite"],
+          id: "5f60a00c2ead6",
+          response: values["5f60a00c2ead6"],
         },
       ],
     },
     {
-      question: "taille_stockage",
-      response: values["taille_stockage"],
+      question: "5f554eddc68dd",
+      response: values["5f554eddc68dd"],
       actions: [
         {
-          id: "ar_reduction_stockage",
-          response: values["ar_reduction_stockage"],
+          id: "5f60a01a6dc3a",
+          response: values["5f60a01a6dc3a"],
         },
       ],
     },
     {
-      question: "nbr_recherche",
-      response: values["nbr_recherche"],
+      question: "5f554f1127cec",
+      response: values["5f554f1127cec"],
     },
     {
-      question: "nbr_conference",
-      response: values["nbr_conference"],
+      question: "5f554f36de849",
+      response: values["5f554f36de849"],
     },
     {
-      question: "nbr_streaming",
-      response: values["nbr_streaming"],
+      question: "5f554fb2238b4",
+      response: values["5f554fb2238b4"],
     },
   ];
   return stepState;

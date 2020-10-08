@@ -30,13 +30,13 @@ export const motorisationOptions = [
 export const actionReductionData = [
   {
     type: "select",
-    name: "ar_mode_deplacement",
+    name: "5f60a09bc059e",
     options: modeDeplacementOptions,
     firstText: "Changer de mode de déplacement pour se rendre au travail",
   },
   {
     type: "input",
-    name: "ar_nbr_jours_travail_domicile",
+    name: "5f60a0ad1f52f",
     firstText: "Travailler à domicile",
     secondText: "jours par mois en plus du télétravail actuel",
   },

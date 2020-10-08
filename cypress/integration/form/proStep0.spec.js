@@ -41,9 +41,9 @@ context('Form | introduction step', () => {
 			cy.visit('/form');
 			win.sessionStorage.clear();
 
-			cy.get('#intro_question1').clear().type('15');
-			cy.get('#intro_question2').clear().type('16');
-			cy.get('#intro_question3').clear().type('17');
+			cy.get('#5f554172a13c7').clear().type('15');
+			cy.get('#5f5541a7845e0').clear().type('16');
+			cy.get('#5f5541ba9b096').clear().type('17');
 			cy.get('button span:contains(suite)').click();
 
 			cy.wait(1000);
@@ -54,9 +54,9 @@ context('Form | introduction step', () => {
 				.contains('Empreinte numérique')
 				.should('exist');
 			cy.get('.footer-buttons-left button').click();
-			cy.get('#intro_question1').should('have.attr', 'value', '15');
-			cy.get('#intro_question2').should('have.attr', 'value', '16');
-			cy.get('#intro_question3').should('have.attr', 'value', '17');
+			cy.get('#5f554172a13c7').should('have.attr', 'value', '15');
+			cy.get('#5f5541a7845e0').should('have.attr', 'value', '16');
+			cy.get('#5f5541ba9b096').should('have.attr', 'value', '17');
 		});
 	});
 

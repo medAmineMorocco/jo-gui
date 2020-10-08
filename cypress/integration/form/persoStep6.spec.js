@@ -40,67 +40,67 @@ context('Form | Déplacements step', () => {
             cy.login('email@paris2024.org');
             cy.visit('/form');
 
-            cy.typeNumberForQuestionWithUnit('question_1', 9);
-            cy.selectOption("#question_2", "Electrique");
-            cy.get('#kilowatt').clear().type('22');
+            cy.typeNumberForQuestionWithUnit('5f5575ba93b32', 9);
+            cy.selectOption("#5f5575dc9b4ac", "Electrique");
+            cy.get('#5f55776c56494').clear().type('22');
             cy.typeNumber([
                 {
-                    name: "question1_sub4",
+                    name: "5f557851c481e",
                     value: 20,
                 },
                 {
-                    name: "question2_sub4",
+                    name: "5f5578d055227",
                     value: 30,
                 },
                 {
-                    name: "question3_sub4",
+                    name: "5f5578e039aea",
                     value: 40,
                 },
             ]);
             cy.typeNumber([
                 {
-                    name: "question1_sub5",
+                    name: "5f55791c16575",
                     value: 20,
                 },
                 {
-                    name: "question2_sub5",
+                    name: "5f55797b8b5f2",
                     value: 30,
                 },
                 {
-                    name: "question3_sub5",
+                    name: "5f55799ed06a0",
                     value: 40,
                 },
             ]);
             cy.typeNumber([
                 {
-                    name: "question1_sub6",
+                    name: "5f5579c25b653",
                     value: 20,
                 },
                 {
-                    name: "question2_sub6",
+                    name: "5f5579df87f62",
                     value: 30,
                 },
                 {
-                    name: "question3_sub6",
+                    name: "5f5579f265cce",
                     value: 40,
                 },
             ]);
             cy.typeNumber([
                 {
-                    name: "question1_sub7",
+                    name: "5f557a0b076f3",
                     value: 20,
                 },
                 {
-                    name: "question2_sub7",
+                    name: "5f557a34ea334",
                     value: 30,
                 },
                 {
-                    name: "question3_sub7",
+                    name: "5f557a44eafc4",
                     value: 40,
                 },
             ]);
             cy.get('.ant-switch').eq(2).click();
-            cy.get('#action4').clear().type('5');
+            cy.get('#5f60aadf53101').clear().type('5');
 
             cy.get('button span:contains(suite)').click();
 
@@ -108,25 +108,25 @@ context('Form | Déplacements step', () => {
             cy.get('.footer-navigation-left span').contains('Déplacements').should('exist');
             cy.get('.footer-navigation-right span').contains('résultats').should('exist');
             cy.get('.footer-buttons-left button').click();
-            cy.get(`label[for="question_1"]`)
+            cy.get(`label[for="5f5575ba93b32"]`)
                 .parents('.ant-form-item')
                 .find('.ant-input-number-input')
                 .should('have.attr', 'value', '9');
-            cy.get('#kilowatt').should('have.attr', 'value', '22');
-            cy.get('#litre').should('have.attr', 'disabled');
-            cy.get('#question1_sub4').should('have.attr', 'value', '20');
-            cy.get('#question2_sub4').should('have.attr', 'value', '30');
-            cy.get('#question3_sub4').should('have.attr', 'value', '40');
-            cy.get('#question1_sub5').should('have.attr', 'value', '20');
-            cy.get('#question2_sub5').should('have.attr', 'value', '30');
-            cy.get('#question3_sub5').should('have.attr', 'value', '40');
-            cy.get('#question1_sub6').should('have.attr', 'value', '20');
-            cy.get('#question2_sub6').should('have.attr', 'value', '30');
-            cy.get('#question3_sub6').should('have.attr', 'value', '40');
-            cy.get('#question1_sub7').should('have.attr', 'value', '20');
-            cy.get('#question2_sub7').should('have.attr', 'value', '30');
-            cy.get('#question3_sub7').should('have.attr', 'value', '40');
-            cy.get('#action4').should('have.attr', 'value', '5');
+            cy.get('#5f55776c56494').should('have.attr', 'value', '22');
+            cy.get('#5f55763a2d2b1').should('have.attr', 'disabled');
+            cy.get('#5f557851c481e').should('have.attr', 'value', '20');
+            cy.get('#5f5578d055227').should('have.attr', 'value', '30');
+            cy.get('#5f5578e039aea').should('have.attr', 'value', '40');
+            cy.get('#5f55791c16575').should('have.attr', 'value', '20');
+            cy.get('#5f55797b8b5f2').should('have.attr', 'value', '30');
+            cy.get('#5f55799ed06a0').should('have.attr', 'value', '40');
+            cy.get('#5f5579c25b653').should('have.attr', 'value', '20');
+            cy.get('#5f5579df87f62').should('have.attr', 'value', '30');
+            cy.get('#5f5579f265cce').should('have.attr', 'value', '40');
+            cy.get('#5f557a0b076f3').should('have.attr', 'value', '20');
+            cy.get('#5f557a34ea334').should('have.attr', 'value', '30');
+            cy.get('#5f557a44eafc4').should('have.attr', 'value', '40');
+            cy.get('#5f60aadf53101').should('have.attr', 'value', '5');
         });
     });
 

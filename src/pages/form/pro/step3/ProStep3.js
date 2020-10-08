@@ -70,9 +70,9 @@ export function ProStep3({ step, setNextStep }) {
         }
       });
       setQuestion1State(form.getFieldValue("repas_question1"));
-      setSlider1Value(form.getFieldValue("slider_1"));
-      setSlider2Value(form.getFieldValue("slider_2"));
-      setSlider3Value(form.getFieldValue("slider_3"));
+      setSlider1Value(form.getFieldValue("5f5550724626b"));
+      setSlider2Value(form.getFieldValue("5f55508b92e6c"));
+      setSlider3Value(form.getFieldValue("5f5550b00730d"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -149,21 +149,21 @@ export function ProStep3({ step, setNextStep }) {
             questions={[
               curseurQuestion(
                 "Café en capsule",
-                "slider_1",
+                "5f5550724626b",
                 <CapsuleSvg />,
                 slider1Value,
                 setSlider1Value
               ),
               curseurQuestion(
                 "Café en vrac",
-                "slider_2",
+                "5f55508b92e6c",
                 <CoffeeSvg />,
                 slider2Value,
                 setSlider2Value
               ),
               curseurQuestion(
                 "Thé",
-                "slider_3",
+                "5f5550b00730d",
                 <TeaSvg />,
                 slider3Value,
                 setSlider3Value
