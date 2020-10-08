@@ -48,11 +48,11 @@ context("Form | Vie professionnelle - Restauration step3", () => {
         friday: "5f5550530eaf3",
       });
 
-      cy.pickValue('.boissons-chaudes .slider-container-0', '1');
+      cy.pickValue(".boissons-chaudes .slider-container-0", "1");
 
-      cy.pickValue('.boissons-chaudes .slider-container-1', '5');
+      cy.pickValue(".boissons-chaudes .slider-container-1", "5");
 
-      cy.pickValue('.boissons-chaudes .slider-container-2', '9');
+      cy.pickValue(".boissons-chaudes .slider-container-2", "9");
 
       cy.get("button span:contains(suite)").click();
 

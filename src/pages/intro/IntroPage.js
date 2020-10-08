@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { InfoOutlined } from "@ant-design/icons";
 import { Header } from "@components/header/Header";
 import { BoxSides } from "@components/box/BoxSides";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
+import { getUserProgess } from "@services/userService";
 import { StyledTitle } from "@components/title/StyledTitle";
 import { Summary } from "@components/summary/Summary";
 import { Modal } from "@components/modal/Modal";
@@ -16,18 +17,43 @@ import {
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
   NAVIGATION_HOME,
-  NAVIGATION_PROFESSIONAL,
 } from "@utils/constants";
 import { Button as ButtonAntd } from "antd";
 import "./introPage.css";
 import { useHistory } from "react-router-dom";
 
 export function IntroPage() {
+  let content;
   const history = useHistory();
   const [isVisible, setVisible] = useState(false);
+  const [userProgress, setUserProgress] = useState("");
+  const [path, setPath] = useState("");
   const isMobile = useWindowSize();
 
-  let content;
+  useEffect(() => {
+    getUserProgess()
+      .then((response) => {
+        setUserProgress(response.progress);
+        if (response.progress === "VIE_PROFESIONAL") {
+          setPath("vie professionnelle");
+        } else if (response.progress === "RESULTATS") {
+          setPath("résultats");
+        }
+      })
+      .catch(() => {
+        setUserProgress("error");
+      });
+  }, []);
+
+  const getRoute = () => {
+    if (userProgress === "VIE_PROFESIONAL") {
+      return "/form";
+    } else if (userProgress === "RESULTATS") {
+      return "/results";
+    } else if (userProgress === "error") {
+      return "/intro";
+    }
+  };
 
   if (isMobile) {
     content = (
@@ -83,8 +109,8 @@ export function IntroPage() {
           onClick: () => history.push("/"),
         }}
         next={{
-          category: NAVIGATION_PROFESSIONAL,
-          onClick: () => history.push("/form"),
+          category: path,
+          onClick: () => history.push(getRoute()),
         }}
       />
     </Fragment>

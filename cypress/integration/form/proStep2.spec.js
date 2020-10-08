@@ -21,6 +21,7 @@ context("Form | Vie professionnelle - Empreinte numérique step2", () => {
         win.sessionStorage.clear();
         win.sessionStorage.setItem("current-step", 2);
         cy.login("email@paris2024.org");
+
         cy.visit("/form");
 
         cy.url()
@@ -37,15 +38,16 @@ context("Form | Vie professionnelle - Empreinte numérique step2", () => {
       win.sessionStorage.clear();
       win.sessionStorage.setItem("current-step", 2);
       cy.login("email@paris2024.org");
+
       cy.visit("/form");
 
       cy.get("#5f554eb63be47").clear().type("99");
 
-      cy.pickValue('.nbr-recherche', '1');
+      cy.pickValue(".nbr-recherche", "1");
 
-      cy.pickValue('.nbr-conference', '5');
+      cy.pickValue(".nbr-conference", "5");
 
-      cy.pickValue('.nbr-streaming', '9');
+      cy.pickValue(".nbr-streaming", "9");
 
       cy.get("button span:contains(suite)").click();
 
