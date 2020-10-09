@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { InfoOutlined, HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined } from "@ant-design/icons";
 import { Button as ButtonAntd } from "antd";
 import { Header } from "./Header";
 import { StyledTitle } from "@components/title/StyledTitle";
@@ -35,9 +35,18 @@ export function HeaderWithCategory({ title1, title2, className }) {
           className="show-modal-btn"
           type="primary"
           shape="circle"
-          icon={<InfoOutlined />}
           onClick={() => setVisible(true)}
-        />
+        >
+          <span
+            style={{
+              fontStyle: "italic",
+              fontFamily: "Paris2024",
+              fontSize: "16px",
+            }}
+          >
+            i
+          </span>
+        </ButtonAntd>
         <StyledTitle
           className="styled-title-form"
           title1={title1}
