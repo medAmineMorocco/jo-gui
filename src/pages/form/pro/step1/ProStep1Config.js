@@ -53,13 +53,13 @@ export const subQuestions = {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Eau (kg éq CO2)",
       name: "5f55429e6196b",
-      defaultResponse: 152.7777778,
+      defaultResponse: 153,
     },
     {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO2)",
       name: "5f5542b40b8c1",
-      defaultResponse: 1833.333333,
+      defaultResponse: 1833,
     },
     {
       question:
