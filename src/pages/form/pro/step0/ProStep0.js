@@ -64,16 +64,14 @@ export function ProStep0({ step, setNextStep }) {
       onFinishFailed={() => console.log("onFinishFailed")}
     >
       <div className="wizard-content-right-form-parent">
-        <div className="forms-margin">
-          <FormItemInputNumber
-            name="5f554172a13c7"
-            tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
-            label={INTRODUCTION_QUESTION1}
-            rules={[
-              { required: true, message: INTRODUCTION_QUESTION1_ERROR_MSG },
-            ]}
-          />
-        </div>
+        <FormItemInputNumber
+          name="5f554172a13c7"
+          tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
+          label={INTRODUCTION_QUESTION1}
+          rules={[
+            { required: true, message: INTRODUCTION_QUESTION1_ERROR_MSG },
+          ]}
+        />
 
         <div className="forms-margin">
           <FormItemInputNumber
