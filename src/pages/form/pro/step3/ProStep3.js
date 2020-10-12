@@ -31,7 +31,7 @@ import {
 // Restauration
 export function ProStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
-
+  const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
 
@@ -103,12 +103,17 @@ export function ProStep3({ step, setNextStep }) {
     setNextStep();
   };
 
+  const onFieldsChange = () => {
+    setRender(Math.random);
+  };
+
   return (
     <ConfiguredForm
       id={step}
       form={form}
       onFinish={onFinish}
       onFinishFailed={() => console.log("onFinishFailed")}
+      onFieldsChange={onFieldsChange}
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
@@ -183,6 +188,7 @@ export function ProStep3({ step, setNextStep }) {
           switchName="restauration-switch-2"
           setSwitchValue={handleSwitch2Change}
           isOpened={switch2Value}
+          render={render}
         />
       </div>
     </ConfiguredForm>

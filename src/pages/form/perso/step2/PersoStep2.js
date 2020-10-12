@@ -35,6 +35,7 @@ import {
 // Equipement du logement
 export function PersoStep2({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const [render, setRender] = useState(0);
   const [isReductionActionOpened, setReductionActionOpened] = useState(false);
   const [question1Count, setQuestion1Count] = useState(0);
   const [question2Count, setQuestion2Count] = useState(0);
@@ -108,6 +109,10 @@ export function PersoStep2({ step, setNextStep }) {
     const submitButton = document.querySelector('[type="submit"]');
     submitButton.blur();
     setNextStep();
+  };
+
+  const onChange = () => {
+    setRender(Math.random);
   };
 
   return (
@@ -184,6 +189,7 @@ export function PersoStep2({ step, setNextStep }) {
             rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
             value={question7Input}
             unit={"ans"}
+            onChange={onChange}
           />
         </div>
         <div className="forms-margin">
@@ -204,6 +210,7 @@ export function PersoStep2({ step, setNextStep }) {
             rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
             value={question9Input}
             unit={"ans"}
+            onChange={onChange}
           />
         </div>
         <div className="forms-margin">
@@ -233,6 +240,7 @@ export function PersoStep2({ step, setNextStep }) {
           rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
           value={question12Input}
           unit={"ans"}
+          onChange={onChange}
         />
       </div>
       <div className="forms-margin">
@@ -245,6 +253,7 @@ export function PersoStep2({ step, setNextStep }) {
           switchName="equipment-switch-1"
           setSwitchValue={handleSwitchReductionActionChange}
           isOpened={isReductionActionOpened}
+          render={render}
         />
       </div>
     </ConfiguredForm>

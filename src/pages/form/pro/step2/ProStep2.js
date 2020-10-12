@@ -33,7 +33,7 @@ import {
 // Empreinte numérique
 export function ProStep2({ step, setNextStep }) {
   const [form] = Form.useForm();
-
+  const [render, setRender] = useState(0);
   const [switchValue, setSwitchValue] = useState(false);
   const [nbrRecherche, setNbrRecherche] = useState(0);
   const [nbrConference, setNbrConference] = useState(0);
@@ -96,12 +96,17 @@ export function ProStep2({ step, setNextStep }) {
     setNextStep();
   };
 
+  const onFieldsChange = () => {
+    setRender(Math.random);
+  };
+
   return (
     <ConfiguredForm
       id={step}
       form={form}
       onFinish={onFinish}
       onFinishFailed={() => console.log("onFinishFailed")}
+      onFieldsChange={onFieldsChange}
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
@@ -177,6 +182,7 @@ export function ProStep2({ step, setNextStep }) {
           switchName="empreinte-switch-1"
           setSwitchValue={handleSwitchChange}
           isOpened={switchValue}
+          render={render}
         />
       </div>
     </ConfiguredForm>

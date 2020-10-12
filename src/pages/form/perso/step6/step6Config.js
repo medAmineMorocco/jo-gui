@@ -26,6 +26,7 @@ export const actionReduction1_selectDetail = [
     type: "input",
     firstText: "Réduire ses déplacements personnels en voiture de",
     name: "5f60aa994d161",
+    questionName: "5f5575ba93b32",
   },
   {
     type: "select",

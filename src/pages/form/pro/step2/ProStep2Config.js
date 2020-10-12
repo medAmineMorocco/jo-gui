@@ -31,6 +31,7 @@ export const actionReductionData = [
       { text: "4", value: 4 },
     ],
     firstText: "Réduction du volume de la boîte mail de",
+    questionName: "5f554eb63be47",
   },
   {
     type: "select",
@@ -42,5 +43,6 @@ export const actionReductionData = [
       { text: "4", value: 4 },
     ],
     firstText: "Réduction du volume de stockage en ligne de",
+    questionName: "5f554eddc68dd",
   },
 ];

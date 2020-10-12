@@ -1,7 +1,7 @@
 import { Form } from "antd";
 import React, { useEffect, useState } from "react";
 import { Form as ConfiguredForm } from "@components/form/Form";
-import { FormCounter } from "@components/form/formCounter/FormCounter.js";
+import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
@@ -38,6 +38,7 @@ import { actionReduction1Data, actionReduction2Data } from "./PersoStep3Config";
 // Biens matériels
 export function PersoStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const [render, setRender] = useState(0);
 
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
@@ -121,12 +122,21 @@ export function PersoStep3({ step, setNextStep }) {
     setNextStep();
   };
 
+  const onchange = () => {
+    setRender(Math.random);
+  };
+
+  const onFieldsChange = () => {
+    setRender(Math.random);
+  };
+
   return (
     <ConfiguredForm
       id={step}
       form={form}
       onFinish={onFinish}
       onFinishFailed={() => console.log("onFinishFailed")}
+      onFieldsChange={onFieldsChange}
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
@@ -162,6 +172,7 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
             value={question4}
+            onChange={onchange}
           />
 
           <FormCounter
@@ -178,6 +189,7 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
             value={question6}
+            onChange={onchange}
           />
 
           <FormCounter
@@ -194,6 +206,7 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
             value={question8}
+            onChange={onchange}
           />
 
           <FormCounter
@@ -217,6 +230,7 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
             value={question11}
+            onChange={onchange}
           />
 
           <FormCounter
@@ -233,6 +247,7 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             unit="ans"
             value={question13}
+            onChange={onchange}
           />
         </div>
       </div>
@@ -245,6 +260,7 @@ export function PersoStep3({ step, setNextStep }) {
           switchName="materiels_switch1"
           setSwitchValue={handleSwitch1Change}
           isOpened={switch1Value}
+          render={render}
         />
       </div>
 
@@ -272,6 +288,7 @@ export function PersoStep3({ step, setNextStep }) {
           switchName="materiels_switch2"
           setSwitchValue={handleSwitch2Change}
           isOpened={switch2Value}
+          render={render}
         />
       </div>
     </ConfiguredForm>
