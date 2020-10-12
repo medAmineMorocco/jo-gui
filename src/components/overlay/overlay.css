@@ -22,9 +22,9 @@
 .modal-close-btn-modal:hover {
   z-index: 10001;
   font-size: 1.5vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 1.5vw;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
   background: var(--main-color);
   border-color: var(--main-color);
   color: #000000;
@@ -223,7 +223,7 @@
 
   .custom-modal .icon-modal {
     font-size: 6.5vw;
-    margin: 40px 0px 0px 22px;
+    margin: 32px 0px 0px 22px;
   }
 
   .icon-modal {
@@ -236,7 +236,7 @@
     font-size: 4vw;
     line-height: 4vw;
     margin: 3vw 12vw 0vw 0vw;
-    width: 38vw;
+    width: 44vw;
   }
 
   .custom-modal {
@@ -270,7 +270,7 @@
 
   .text-modal {
     width: 45%;
-    font-size: 1.6vw;
+    font-size: 16px;
   }
 
   .content-style {
