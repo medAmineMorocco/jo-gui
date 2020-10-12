@@ -37,3 +37,22 @@
 .form-slider-component {
   margin-bottom: 0px;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .slider-container .ant-slider-mark {
+    font-size: 22px;
+  }
+
+  .flex-slider-item {
+    font-size: var(--tablet-input-font-size);
+    line-height: 40px;
+  }
+
+  .flex-slider-container {
+    margin-bottom: 24px;
+  }
+
+  .form-slider-component {
+    margin-bottom: 18px;
+  }
+}

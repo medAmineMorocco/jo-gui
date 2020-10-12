@@ -15,8 +15,6 @@ import {
   EQUIPMENT_QUESTION10,
   EQUIPMENT_QUESTION11,
   EQUIPMENT_QUESTION12,
-  // OVERLAY_TITLE_EQUIPMENT,
-  // OVERLAY_SOUSTEXTE_EQUIPMENT,
   EQUIPMENT_ERROR_MSG,
   EQUIPMENT_SAVIEZ_VOUS,
 } from "@utils/constants";
@@ -227,17 +225,15 @@ export function PersoStep2({ step, setNextStep }) {
             value={question11Count}
           />
         </div>
-        <div className="forms-margin">
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f5567451cb10"
-            tooltipTitle={false}
-            label={EQUIPMENT_QUESTION12}
-            rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
-            value={question12Input}
-            unit={"ans"}
-          />
-        </div>
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f5567451cb10"
+          tooltipTitle={false}
+          label={EQUIPMENT_QUESTION12}
+          rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
+          value={question12Input}
+          unit={"ans"}
+        />
       </div>
       <div className="forms-margin">
         <FormItemActionReduction

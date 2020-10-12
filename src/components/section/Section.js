@@ -1,5 +1,5 @@
 import React from "react";
-import { useWindowSize } from "@hooks/window";
+import { useTabletOrMobileSize } from "@hooks/window";
 import { BoxSides } from "@components/box/BoxSides";
 import { Accordion } from "@components/accordion/Accordion";
 import "./section.css";
@@ -12,7 +12,7 @@ export function Section({
   imgPosition,
   source,
 }) {
-  const isMobile = useWindowSize();
+  const isMobileOrTablet = useTabletOrMobileSize();
 
   const renderedParagraphs = [];
   paragraphs.forEach((paragraph, index) => {
@@ -23,7 +23,7 @@ export function Section({
     );
   });
 
-  if (isMobile) {
+  if (isMobileOrTablet) {
     return (
       <div>
         <Accordion

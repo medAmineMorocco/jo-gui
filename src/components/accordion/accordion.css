@@ -58,3 +58,26 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.2vw;
 }
+
+@media (max-width: 767px) {
+  .panel-section-source {
+    font-size: 4vw;
+    word-wrap: break-word;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .panel-section-source {
+    font-size: 3vw;
+    word-wrap: break-word;
+  }
+
+  .accordion > h3 {
+    font-family: Paris2024;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+  }
+}

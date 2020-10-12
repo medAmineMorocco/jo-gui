@@ -24,14 +24,13 @@
 
 .wizard-content-right-form-container {
   padding-top: 64px;
-  padding-bottom: 64px;
-  margin-bottom: 94px;
+  padding-bottom: 2vw;
+  margin-bottom: 11vw;
   background-color: black;
 }
 
 .wizard-content-right-form-parent {
-  padding-left: 84px;
-  padding-right: 84px;
+  padding: 0vw 84px;
 }
 
 .form-questions-title {
@@ -82,11 +81,28 @@
   .form-header {
     margin-bottom: 66px;
   }
+
+  .form-questions-title {
+    font-weight: normal;
+    font-size: 4vw;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .pro-step-title {
+    font-size: 42px;
+  }
+
   .wizard-content-right-form-parent {
-    padding-left: 38px;
-    padding-right: 38px;
+    padding: 0px 50px;
+  }
+
+  .mobile-wizard-container {
+    margin-bottom: 27vw;
+  }
+
+  .form-questions-title {
+    font-weight: normal;
+    font-size: 3vw;
   }
 }

@@ -9,9 +9,9 @@
 }
 
 .right-side-login {
-  width: 60%;
+  width: 50%;
   height: 100%;
-  margin-left: 20%;
+  margin-left: 25%;
   position: absolute;
   left: 0;
   top: 0;
@@ -21,27 +21,44 @@
 }
 
 .login-container-mobile {
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 30px 30px 0px 30px;
 }
 
 .email-input,
 .login-submit {
-  width: 70%;
-  margin-left: 15%;
+  width: 100%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 @media (max-width: 767px) {
   .login-styled-title {
     margin-bottom: 60px;
   }
-  .email-input,
-  .login-submit {
-    width: 100%;
-    margin-left: 0;
-  }
+
   #login {
     padding-top: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .login-styled-title {
+    margin-bottom: 60px;
+  }
+
+  #login {
+    padding-top: 50px;
+  }
+
+  .login-container-mobile .ant-form-item {
+    margin-bottom: 45px;
+  }
+
+  .login-container-mobile .custom-btn {
+    font-size: var(--tablet-input-font-size);
+    height: 59px;
   }
 }

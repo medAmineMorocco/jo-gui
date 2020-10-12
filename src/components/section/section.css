@@ -15,8 +15,7 @@
 }
 
 .section-container-full {
-  width: 92.2%;
-  margin: 0 auto;
+  margin: 0vh 8vh;
   position: relative;
   max-width: 100%;
 }
@@ -68,10 +67,9 @@
 }
 
 .section-source {
-  margin-top: 40vh;
-  margin-left: 2vw;
-  height: 10%;
-  text-align: left;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2vw;
+  font-size: 2vw;
+  word-wrap: break-word;
+  margin: 16vw 4vw 0vw 4vw;
+  text-align: left;
 }

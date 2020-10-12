@@ -2,8 +2,8 @@
   color: var(--main-color);
   font-family: Paris2024Bold;
   font-weight: bolder;
-  font-size: 2.5vw;
-  line-height: 2vw;
+  font-size: 3.6vw;
+  line-height: 2.8vw;
   text-align: center;
   text-transform: uppercase;
 }
@@ -14,9 +14,19 @@
 
 @media (max-width: 767px) {
   .styled-title-container {
-    font-size: 12vw;
+    font-size: 13vw;
+    line-height: 11vw;
+    font-weight: 900;
+    margin-block-end: 0em;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .styled-title-container {
+    font-size: 11vw;
     line-height: 10vw;
     font-weight: 900;
     margin-block-end: 0em;
+    margin-bottom: 50px;
   }
 }

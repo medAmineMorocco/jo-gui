@@ -26,3 +26,30 @@
 .ant-form-item-has-error {
   border-color: var(--error-color);
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .ant-form-item-label > label {
+    font-size: var(--tablet-input-font-size);
+  }
+
+  .ant-form-item-explain,
+  .ant-form-item-extra {
+    font-size: 20px;
+  }
+
+  .ant-input-lg {
+    font-size: var(--tablet-input-font-size);
+  }
+
+  input,
+  button,
+  select,
+  optgroup,
+  textarea {
+    font-size: 20px;
+  }
+
+  .ant-tooltip {
+    font-size: 16px;
+  }
+}

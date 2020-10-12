@@ -1,14 +1,15 @@
 import React from "react";
 import "./styledTitle.css";
 import { Row, Col } from "antd";
-import { useWindowSize } from "@hooks/window";
+import { useTabletOrMobileSize } from "@hooks/window";
 
 export function StyledTitle({ className, title1, title2, style }) {
-  const isMobile = useWindowSize();
+  const isMobileOrTablet = useTabletOrMobileSize();
+
   return (
     <Row justify="center" align="middle">
       <h1
-        style={!isMobile ? style : {}}
+        style={isMobileOrTablet ? {} : style}
         className={`${className} styled-title-container`}
       >
         <Col span={24}>{title1}</Col>

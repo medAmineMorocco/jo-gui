@@ -59,7 +59,7 @@ export function FormCounter({
 
   return (
     <>
-      <FormItem name={name}>
+      <FormItem className="counter-form-item" name={name}>
         <div
           className="back-to-card"
           style={{ color: color }}

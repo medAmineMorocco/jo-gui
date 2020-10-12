@@ -9,9 +9,9 @@
 }
 
 .right-side-menu {
-  width: 60%;
+  width: 100%;
   height: 100%;
-  margin-left: 20%;
+  margin: 0px auto;
   position: absolute;
   left: 0;
   top: 0;
@@ -21,11 +21,22 @@
 }
 
 .show-modal-btn {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 1.5vw;
   position: fixed;
-  top: 8px;
-  right: 8px;
-  color: black;
+  top: 1.5vw;
+  right: 1.5vw;
   z-index: 1000;
+}
+
+.intro-page-title {
+  font-size: 2.5vw;
+  line-height: 2.5vw;
 }
 
 .show-modal-btn:hover,
@@ -37,6 +48,7 @@
 .intro-menu-description {
   text-align: center;
   font-family: Source Sans Pro;
+  margin: 0vw 7vw 1.5vw;
 }
 
 .description-container {
@@ -54,4 +66,43 @@
   padding-bottom: 16px;
   text-align: center;
   font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+@media (max-width: 767px) {
+  .show-modal-btn {
+    font-size: 4vw;
+    width: 9vw;
+    height: 9vw;
+    border-radius: 4.5vw;
+    top: 2vw;
+    right: 2vw;
+  }
+
+  .description {
+    padding: 16vw 14vw 10vw 14vw;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 1.5715;
+  }
+
+  .description-container {
+    margin-bottom: 14vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .description {
+    padding: 5vw 14vw 5vw 14vw;
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 1.5715;
+  }
+
+  .description-container {
+    margin-bottom: 16vw;
+  }
 }

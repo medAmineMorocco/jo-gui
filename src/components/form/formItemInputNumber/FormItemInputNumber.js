@@ -3,9 +3,11 @@ import { findDOMNode } from "react-dom";
 import { InputNumber } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
+import { useTabletSize } from "@hooks/window";
 import "./formItemInputNumber.css";
 
 export function FormItemInputNumber({ label, name, rules, tooltipTitle }) {
+  const isTablet = useTabletSize();
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
   const [color, setColor] = useState(mainColor);
@@ -36,7 +38,13 @@ export function FormItemInputNumber({ label, name, rules, tooltipTitle }) {
       rules={rules}
       tooltipTitle={tooltipTitle}
     >
-      <InputNumber ref={inputRef} onFocus={onFocus} onBlur={onBlur} min={0} />
+      <InputNumber
+        size={isTablet ? "large" : "default"}
+        ref={inputRef}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        min={0}
+      />
     </FormItem>
   );
 }
