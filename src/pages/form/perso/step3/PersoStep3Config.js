@@ -15,6 +15,7 @@ export const actionReduction1Data = [
       { text: "9", value: 9 },
     ],
     firstText: "Prolonger la durée de vie de ses voitures de",
+    questionName: "5f55692a73b55",
   },
   {
     type: "select",
@@ -32,6 +33,7 @@ export const actionReduction1Data = [
       { text: "9", value: 9 },
     ],
     firstText: "Prolonger la durée de vie de son ordinateur fixe de",
+    questionName: "5f5569587abe3",
   },
   {
     type: "select",
@@ -49,6 +51,7 @@ export const actionReduction1Data = [
       { text: "9", value: 9 },
     ],
     firstText: "Prolonger la durée de vie de son ordinateur portable de",
+    questionName: "5f55697f50057",
   },
   {
     type: "select",
@@ -83,6 +86,7 @@ export const actionReduction1Data = [
       { text: "9", value: 9 },
     ],
     firstText: "Prolonger la durée de vie de ses tablettes de",
+    questionName: "5f556b3b7aeaf",
   },
   {
     type: "select",
@@ -100,6 +104,7 @@ export const actionReduction1Data = [
       { text: "9", value: 9 },
     ],
     firstText: "Prolonger la durée de vie des petits bien électroniques de",
+    questionName: "5f556b6cefd5a",
   },
 ];
 
@@ -121,6 +126,7 @@ export const actionReduction2Data = [
     ],
     firstText: "Remplacer",
     secondText: "paires neuves par des paires de seconde main",
+    questionName: "5f556baea779b",
   },
   {
     type: "select",
@@ -139,5 +145,6 @@ export const actionReduction2Data = [
     ],
     firstText: "Remplacer",
     secondText: "articles neufs par des articles de seconde main",
+    questionName: "5f556b94d465c",
   },
 ];

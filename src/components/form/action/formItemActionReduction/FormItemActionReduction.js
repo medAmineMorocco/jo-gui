@@ -22,6 +22,7 @@ export function FormItemActionReduction({
   selectDetail,
   savierVous,
   saviezVousPosition,
+  render,
 }) {
   const { Panel } = Collapse;
   const [showAllDetail, setShowAllDetail] = useState(false);
@@ -77,7 +78,7 @@ export function FormItemActionReduction({
     <div className={className} key={key}>
       <span className="input-detail">{data.firstText}&nbsp;</span>
       <FormItem className="input-action" name={data.name}>
-        <InputNumber min={0} />
+        <InputNumber min={0} max={form.getFieldValue(data.questionName)} />
       </FormItem>
       {data.secondText &&
         data.secondText.split(" ").map((mot, key) => (
@@ -88,16 +89,47 @@ export function FormItemActionReduction({
     </div>
   );
 
-  const select = (className, key, data) => (
-    <div className={className} key={key}>
-      <span>{data.firstText}&nbsp;</span>
-      <FormItemActionSelect name={data.name} options={data.options} />
-      {data.secondText &&
-        data.secondText
-          .split(" ")
-          .map((mot, key) => <span key={key}>&nbsp;{mot}</span>)}
-    </div>
-  );
+  const select = (className, key, data) => {
+    const options = data.questionName ? getOptions(data) : data.options;
+    return (
+      <div className={className} key={key}>
+        <span>{data.firstText}&nbsp;</span>
+        <FormItemActionSelect name={data.name} options={options} />
+        {data.secondText &&
+          data.secondText
+            .split(" ")
+            .map((mot, key) => <span key={key}>&nbsp;{mot}</span>)}
+      </div>
+    );
+  };
+
+  const getOptions = (data) => {
+    const getValueLessThanQuestionValue = (options, questionValue) => {
+      return options.reverse().find(({ value }) => value <= questionValue)
+        .value;
+    };
+
+    let options = [];
+    if (!form.getFieldValue(data.questionName)) {
+      options = [data.options[0]];
+    } else {
+      options = data.options.filter(
+        (option) => option["value"] <= form.getFieldValue(data.questionName)
+      );
+      if (
+        form.getFieldValue(data.questionName) < form.getFieldValue(data.name)
+      ) {
+        const value = getValueLessThanQuestionValue(
+          data.options,
+          form.getFieldValue(data.questionName)
+        );
+        form.setFieldsValue({
+          [data.name]: value,
+        });
+      }
+    }
+    return options;
+  };
 
   return (
     <Collapse

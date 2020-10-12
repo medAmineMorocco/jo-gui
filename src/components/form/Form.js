@@ -10,6 +10,7 @@ export function Form({
   onFinishFailed,
   children,
   basicInputs = [],
+  onFieldsChange,
 }) {
   const errorColor = getColor("--error-color");
   const mainColor = getColor("--main-color");
@@ -48,6 +49,7 @@ export function Form({
       validateTrigger="onSubmit"
       onFinish={onFinish}
       onFinishFailed={onDefaultFinishFailed}
+      onFieldsChange={onFieldsChange}
     >
       {children}
     </FormAntd>

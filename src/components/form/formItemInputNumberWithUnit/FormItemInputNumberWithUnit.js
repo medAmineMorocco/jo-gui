@@ -12,6 +12,7 @@ export function FormItemInputNumberWithUnit({
   rules,
   tooltipTitle,
   unit,
+  onChange,
 }) {
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
@@ -38,11 +39,14 @@ export function FormItemInputNumberWithUnit({
     unitElement.style.color = color;
   };
 
-  const onChange = (newValue) => {
+  const onDefaultChange = (newValue) => {
     form.setFieldsValue({
       [name]: newValue,
     });
     inputRef.current.blur();
+    if (onChange) {
+      onChange();
+    }
   };
 
   return (
@@ -58,7 +62,7 @@ export function FormItemInputNumberWithUnit({
         className="input-number-with-unit"
         onFocus={onFocus}
         onBlur={onBlur}
-        onChange={onChange}
+        onChange={onDefaultChange}
         value={form.getFieldValue(name)}
         min={0}
       />

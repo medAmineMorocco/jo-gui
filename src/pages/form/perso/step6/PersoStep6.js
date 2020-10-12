@@ -41,6 +41,8 @@ import {
 // Déplacements
 export function PersoStep6({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const [render, setRender] = useState(0);
+
   const [, setQuestion1DefaultValue] = useState();
   const [question3IncomingChoice, setQuestion3IncomingChoice] = useState(
     "gasoline"
@@ -123,6 +125,10 @@ export function PersoStep6({ step, setNextStep }) {
     setQuestion3IncomingChoice(getNewChoice(value));
   };
 
+  const onChange = () => {
+    setRender(Math.random);
+  };
+
   return (
     <ConfiguredForm
       id={step}
@@ -145,6 +151,7 @@ export function PersoStep6({ step, setNextStep }) {
             rules={[
               { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
             ]}
+            onChange={onChange}
           />
         </div>
         <div className="forms-margin">
@@ -173,6 +180,7 @@ export function PersoStep6({ step, setNextStep }) {
           switchName="action-reduction-switch-1"
           setSwitchValue={handleSwitchReductionAction1Change}
           isOpened={isReductionAction1Opened}
+          render={render}
         />
       </div>
       <div className="wizard-content-right-form-parent">
