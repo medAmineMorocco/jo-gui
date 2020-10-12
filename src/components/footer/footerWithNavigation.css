@@ -5,39 +5,105 @@
   top: 0;
   left: 0;
 }
+
 .footer-buttons-left {
   float: left;
   margin-left: 5%;
-  margin-top: -16px;
+  margin-top: -1.5vw;
 }
+
 .footer-buttons-right {
   float: right;
   margin-right: 5%;
   margin-top: -16px;
 }
+
 .footer-navigation-container {
   position: absolute;
   width: 100%;
   height: auto;
-  top: 36px;
+  top: 2.9vw;
   left: 0;
 }
+
 .footer-navigation-left {
   float: left;
   margin-left: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
 }
+
 .footer-navigation-right {
   float: right;
   margin-right: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
 }
+
 .footer-navigation-details-container {
   position: absolute;
   width: 100%;
   height: auto;
-  top: 52px;
+  top: 4.3vw;
   left: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-buttons-left {
+    margin-top: -4.5vw;
+  }
+
+  .footer-navigation-container {
+    top: 40px;
+    font-size: 16px;
+  }
+
+  .footer-navigation-details-container {
+    font-size: 16px;
+    top: 60px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .footer-buttons-left {
+    font-size: var(--tablet-input-font-size);
+    margin-right: 5%;
+    margin-top: -30px;
+  }
+
+  .footer-buttons-right {
+    font-size: var(--tablet-input-font-size);
+    margin-right: 7%;
+    margin-top: -30px;
+  }
+
+  .footer-navigation-container {
+    top: 6vw;
+  }
+
+  .footer-navigation-details-container {
+    top: 8vw;
+  }
+
+  .footer-navigation-container .footer-navigation-left {
+    font-size: var(--tablet-input-font-size);
+    margin-top: 0px;
+  }
+
+  .footer-navigation-container .footer-navigation-right {
+    font-size: var(--tablet-input-font-size);
+    margin-left: 5%;
+    margin-top: 0px;
+  }
+
+  .footer-navigation-details-container .footer-navigation-left {
+    font-size: var(--tablet-input-font-size);
+    margin-top: 16px;
+  }
+
+  .footer-navigation-details-container .footer-navigation-right {
+    font-size: var(--tablet-input-font-size);
+    margin-left: 5%;
+    margin-top: 16px;
+  }
 }

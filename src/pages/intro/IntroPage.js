@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { InfoOutlined } from "@ant-design/icons";
 import { Header } from "@components/header/Header";
 import { BoxSides } from "@components/box/BoxSides";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
@@ -7,7 +6,7 @@ import { getUserProgess } from "@services/userService";
 import { StyledTitle } from "@components/title/StyledTitle";
 import { Summary } from "@components/summary/Summary";
 import { Modal } from "@components/modal/Modal";
-import { useWindowSize } from "@hooks/window";
+import { useTabletOrMobileSize } from "@hooks/window";
 import {
   INTRO_TITLE1,
   INTRO_TITLE2,
@@ -28,7 +27,7 @@ export function IntroPage() {
   const [isVisible, setVisible] = useState(false);
   const [userProgress, setUserProgress] = useState("");
   const [path, setPath] = useState("");
-  const isMobile = useWindowSize();
+  const isMobileOrTablet = useTabletOrMobileSize();
 
   useEffect(() => {
     getUserProgess()
@@ -55,13 +54,15 @@ export function IntroPage() {
     }
   };
 
-  if (isMobile) {
+  if (isMobileOrTablet) {
     content = (
       <Fragment>
         <StyledTitle title1={INTRO_TITLE1} title2={INTRO_TITLE2} />
         <div className="description-container">
           <p className="description">{MENU_DESCRIPTION}</p>
-          <Summary />
+          <div style={{ margin: "0px auto" }}>
+            <Summary />
+          </div>
         </div>
       </Fragment>
     );
@@ -69,9 +70,13 @@ export function IntroPage() {
     const left = <div className="left-side-menu" />;
     const right = (
       <div className="right-side-menu">
-        <StyledTitle title1={INTRO_TITLE1} title2={INTRO_TITLE2} />
+        <StyledTitle
+          className="intro-page-title"
+          title1={INTRO_TITLE1}
+          title2={INTRO_TITLE2}
+        />
         <p className="intro-menu-description">{MENU_DESCRIPTION}</p>
-        <div style={{ marginLeft: "20%" }}>
+        <div style={{ margin: "0px auto" }}>
           <Summary />
         </div>
       </div>
@@ -92,9 +97,10 @@ export function IntroPage() {
           className="show-modal-btn"
           type="primary"
           shape="circle"
-          icon={<InfoOutlined />}
           onClick={() => setVisible(true)}
-        />
+        >
+          <span>i</span>
+        </ButtonAntd>
       </Header>
       <Modal
         title={ABOUT_TITLE}

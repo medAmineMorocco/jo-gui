@@ -1,5 +1,11 @@
+.ant-modal-content .icon-modal {
+  margin: 15px 0px 0px 0px;
+  font-size: 2.9vw;
+  color: black;
+}
+
 .icon-modal {
-  font-size: 30px;
+  font-size: 1.9vw;
   color: black;
 }
 
@@ -15,15 +21,16 @@
 .modal-close-btn-modal,
 .modal-close-btn-modal:hover {
   z-index: 10001;
-  height: 32px;
-  width: 32px;
+  font-size: 1.5vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 1.5vw;
   background: var(--main-color);
-  border-radius: 40px;
   border-color: var(--main-color);
   color: #000000;
   position: fixed;
-  right: 8px;
-  top: 8px;
+  right: 1.5vw;
+  top: 1.5vw;
 }
 .custom-btn-modal:hover,
 .custom-btn-modal:focus {
@@ -37,7 +44,7 @@
   font-style: normal;
   font-weight: 600;
   color: #000000;
-  font-size: 12px;
+  font-size: 18px;
 }
 .ant-btn-primary {
   border-color: transparent;
@@ -60,12 +67,15 @@
 }
 
 .title-modal {
-  text-transform: lowercase;
   font-family: Source Sans Pro;
-  font-size: 20px;
-  font-style: italic;
+  text-transform: lowercase;
   text-align: center;
-  color: #000000;
+  font-style: italic;
+  color: black;
+  font-size: 1.7vw;
+  line-height: 1.7vw;
+  margin: 1vw 5vw 0vw 0vw;
+  width: 24vw;
 }
 .ant-modal-wrap {
   background-color: var(--bg-color-shade);
@@ -79,8 +89,9 @@
   background-color: var(--main-color);
 }
 .custom-modal .ant-modal-content {
-  border-radius: 40px;
   background-color: var(--main-color);
+  border-radius: 32px;
+  height: 28vw;
 }
 .custom-modal .ant-carousel .slick-dots li.slick-active button {
   width: 50%;
@@ -101,7 +112,8 @@
 }
 
 .div-image:only-child {
-  width: 100%;
+  width: 82%;
+  margin: auto;
 }
 .div-image {
   width: 50%;
@@ -113,11 +125,12 @@
 }
 .content-style {
   color: black;
-  padding: 5% 5% 0% 5%;
+  padding: 2% 1% 0% 2%;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  font-size: 15px;
 }
 .container-flex-overlay {
   display: inline-flex;
@@ -132,11 +145,11 @@
 }
 .container-flex-title-modal {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   .title-modal {
     font-size: 15px;
     font-style: italic;
@@ -157,18 +170,110 @@
     padding-right: 2%;
   }
   .custom-modal .ant-modal-content {
-    top: 60px;
-    margin: 5%;
+    margin: 10%;
+    top: 6vw;
+    height: 140vw;
   }
   .modal-close-btn-modal,
   .modal-close-btn-modal:hover {
-    right: 8px;
-    top: 8px;
+    right: 2vw;
+    top: 2vw;
+    font-size: 1.5vw;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
   }
   .title-button {
-    font-size: 12px;
+    font-size: 4vw;
   }
   .ant-modal-wrap {
     background-color: black;
+  }
+
+  .icon-modal {
+    font-size: 6vw;
+    color: black;
+  }
+
+  .custom-modal .icon-modal {
+    font-size: 7vw;
+    margin: 20px 0px 0px 8px;
+  }
+
+  .custom-modal .title-modal {
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+    margin: 4vw 8vw 0vw 0vw;
+    width: 44vw;
+  }
+
+  .div-image:only-child {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .custom-btn-modal {
+    height: 70px;
+  }
+
+  .title-button {
+    font-size: var(--tablet-input-font-size);
+  }
+
+  .custom-modal .icon-modal {
+    font-size: 6.5vw;
+    margin: 40px 0px 0px 22px;
+  }
+
+  .icon-modal {
+    font-size: 4vw;
+    color: black;
+    margin-left: 2vw;
+  }
+
+  .custom-modal .title-modal {
+    font-size: 4vw;
+    line-height: 4vw;
+    margin: 3vw 12vw 0vw 0vw;
+    width: 38vw;
+  }
+
+  .custom-modal {
+    width: 80%;
+    height: 80%;
+  }
+
+  .modal-close-btn-modal,
+  .modal-close-btn-modal:hover {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    right: 28px;
+    top: 28px;
+  }
+
+  .ant-modal-wrap {
+    background-color: black;
+  }
+
+  .custom-modal .ant-modal-content {
+    margin: 0%;
+    top: 6vw;
+    height: 100vw;
+    border-radius: 55px;
+  }
+
+  .div-image:only-child {
+    width: 100%;
+  }
+
+  .text-modal {
+    width: 45%;
+    font-size: 1.6vw;
+  }
+
+  .content-style {
+    font-size: 26px;
   }
 }

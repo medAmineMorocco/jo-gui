@@ -3,6 +3,7 @@ import { findDOMNode } from "react-dom";
 import { Input } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
+import { useTabletSize } from "@hooks/window";
 import "./formItemInput.css";
 
 export function FormItemInput({
@@ -14,6 +15,7 @@ export function FormItemInput({
   defaultValue,
   tooltipTitle,
 }) {
+  const isTablet = useTabletSize();
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
   const [labelStyle, setLabelStyle] = useState({ color: mainColor });
@@ -46,6 +48,7 @@ export function FormItemInput({
       tooltipTitle={tooltipTitle}
     >
       <Input
+        size={isTablet ? "large" : "default"}
         ref={inputRef}
         onFocus={onFocus}
         onBlur={onBlur}

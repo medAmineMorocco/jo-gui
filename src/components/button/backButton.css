@@ -2,7 +2,6 @@
   color: black;
   border: none;
   background-color: var(--bg-color-shade-4);
-  margin-left: 5px;
 }
 
 .back-btn:hover {

@@ -113,14 +113,12 @@ export function FormItemActionReduction({
       >
         {isOpened && (
           <div>
-            <div className="detail1">
-              <div className="first-para">{FIRST_DETAIL}</div>
-            </div>
+            <div className="first-para">{FIRST_DETAIL}</div>
             {selectDetail.map(
               (data, key) =>
                 (key === saviezVousPosition && (
                   <div key={key}>
-                    <div className="detail2">
+                    <div className="detail">
                       {(data.type === "select" &&
                         select("select-content", key, data)) ||
                         (data.type === "input" &&
@@ -134,7 +132,7 @@ export function FormItemActionReduction({
 
                         <div className="info-container-content">
                           <h2 className="info-savier-vous">Le savier-vous ?</h2>
-                          <span>{detail}</span>
+                          <span className="savier-vous-detail">{detail}</span>
                           {showAllDetail && (
                             <div>
                               <br />
@@ -158,11 +156,14 @@ export function FormItemActionReduction({
                       </div>
                     )}
                   </div>
-                )) ||
-                (data.type === "select" &&
-                  select("select-content detail2", key, data)) ||
-                (data.type === "input" &&
-                  input("select-content detail2", key, data))
+                )) || (
+                  <div className="detail">
+                    {(data.type === "select" &&
+                      select("select-content", key, data)) ||
+                      (data.type === "input" &&
+                        input("select-content", key, data))}
+                  </div>
+                )
             )}
           </div>
         )}

@@ -6,9 +6,11 @@ import {
   RightOutlined,
   CloseOutlined,
 } from "@ant-design/icons";
+import { useTabletOrMobileSize } from "@hooks/window";
 import "./overlay.css";
 
 export function Overlay(props) {
+  const isMobileOrTablet = useTabletOrMobileSize();
   const [visible, SetVisible] = useState({
     modalVisible: false,
     closeButton: "none",
@@ -75,6 +77,7 @@ export function Overlay(props) {
             SetVisible({ modalVisible: false, closeButton: "none" })
           }
           className="custom-modal"
+          width={isMobileOrTablet ? 800 : 550}
           footer={null}
           centered
           closable={false}

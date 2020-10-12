@@ -1,11 +1,11 @@
 import React from "react";
 import { Modal as ModalAntd, Button, Drawer } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
-import { useWindowSize } from "@hooks/window";
+import { useTabletOrMobileSize } from "@hooks/window";
 import "./modal.css";
 
 export function Modal({ title, content, isVisible, hideOverlay }) {
-  const isMobile = useWindowSize();
+  const isMobileOrTablet = useTabletOrMobileSize();
 
   const closeButton = (
     <Button
@@ -20,7 +20,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
   content.forEach((element, index) => {
     paragraphs.push(<p key={"modal-parag-" + index}>{element}</p>);
   });
-  if (isMobile) {
+  if (isMobileOrTablet) {
     return (
       <ModalAntd
         title={title}
@@ -30,7 +30,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
         closeIcon={closeButton}
         width="100%"
         style={{ top: "0", height: "100%" }}
-        bodyStyle={{ color: "white", textAlign: "center" }}
+        bodyStyle={{ color: "white", textAlign: "left" }}
       >
         <p>{paragraphs}</p>
       </ModalAntd>

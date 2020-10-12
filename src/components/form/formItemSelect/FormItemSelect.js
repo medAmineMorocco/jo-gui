@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Select } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
-import "./formItemSelect.css";
 import { findDOMNode } from "react-dom";
+import { useTabletSize } from "@hooks/window";
+import "./formItemSelect.css";
 
 export function FormItemSelect({
   label,
@@ -14,6 +15,7 @@ export function FormItemSelect({
   onChange,
   disabled,
 }) {
+  const isTablet = useTabletSize();
   const mainColor = getColor("--main-color");
   const [color, setColor] = useState(mainColor);
   let selectRef;
@@ -58,6 +60,7 @@ export function FormItemSelect({
       initialValue={options[0].value}
     >
       <Select
+        size={isTablet ? "large" : "default"}
         ref={(select) => (selectRef = select)}
         dropdownClassName="select"
         onFocus={onFocus}

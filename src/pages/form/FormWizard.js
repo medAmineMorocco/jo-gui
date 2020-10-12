@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useWindowSize } from "@hooks/window";
+import { useTabletOrMobileSize } from "@hooks/window";
 import { getCategoryItems } from "@utils/category";
 import { BoxSides } from "@components/box/BoxSides";
 import { DynamicSummary } from "@components/dynamicSummary/DynamicSummary";
@@ -11,7 +11,7 @@ import { config } from "./formConfig";
 import "./formWizard.css";
 
 export function FormWizard() {
-  const isMobile = useWindowSize();
+  const isMobileOrTablet = useTabletOrMobileSize();
   const history = useHistory();
   const [activeStep, setActiveStep] = useState(
     Number(sessionStorage.getItem("current-step")) || 0
@@ -31,7 +31,7 @@ export function FormWizard() {
   const summaryItems = getCategoryItems(category);
   let content;
 
-  if (isMobile) {
+  if (isMobileOrTablet) {
     content = (
       <div className="mobile-wizard-container">
         <MobileDynamicSummary size={summaryItems.length} current={progress} />

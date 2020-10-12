@@ -54,3 +54,25 @@
     vertical-align: initial;
   }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .select-with-details-collapse .ant-collapse {
+    font-size: 24px;
+  }
+
+  .select-with-details-collapse
+    .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-arrow {
+    left: 80px;
+  }
+
+  .select-with-details-collapse
+    .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-arrow {
+    font-size: 20px;
+  }
+}

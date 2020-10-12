@@ -9,8 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 84px;
-  padding-right: 84px;
+  padding: 0 7vw;
   cursor: default;
 }
 
@@ -24,7 +23,7 @@
   display: flex;
   flex-direction: row;
   background-color: #6c633c;
-  padding: 20px 84px;
+  padding: 20px 7vw;
   margin: 12px 0;
 }
 
@@ -77,10 +76,6 @@
   color: black;
 }
 
-.detail1 {
-  margin: 0 8px 0 142px;
-}
-
 .first-para {
   font-family: Source Sans Pro;
   font-style: normal;
@@ -88,10 +83,11 @@
   font-size: 16px;
   line-height: 20px;
   color: black;
-  margin: 0 38px 20px 0;
+  margin: 0px 38px 20px 154px;
 }
 
 .select-content {
+  color: black;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -104,8 +100,8 @@
   margin: 0 0 20px 0;
 }
 
-.detail2 {
-  margin: 0 8px 0 84px;
+.detail {
+  margin: 0 7vw;
 }
 
 .input-detail {
@@ -155,19 +151,14 @@
   display: none;
 }
 
-/* responsive */
 @media (max-width: 767px) {
   .panel-header {
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  .detail1 {
-    margin: 0 30px;
-  }
-
   .first-para {
-    margin: 0 0 20px 48px;
+    margin: 0 32px 20px 80px;
   }
 
   .info-container {
@@ -178,26 +169,50 @@
     margin: 10px 20px 0 0;
   }
 
-  .detail2 {
+  .detail {
     margin: 32px 32px 0;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .panel-header {
     padding-left: 38px;
     padding-right: 38px;
   }
 
-  .detail1 {
-    margin: 0 8px 0 78px;
+  .select-content {
+    font-size: 24px;
+    line-height: 18px;
   }
 
-  .detail2 {
-    margin: 0 38px 0 38px;
+  .detail {
+    margin: 0px 50px 30px 50px;
   }
 
   .info-container {
     padding: 20px 38px;
+  }
+
+  .panel-header-span-first-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .panel-header-span-second-title {
+    font-size: 36px;
+  }
+
+  .first-para {
+    font-size: 23px;
+    line-height: 30px;
+    margin: 12px 38px 20px 98px;
+  }
+
+  .info-savier-vous {
+    font-size: var(--tablet-input-font-size);
+  }
+
+  .savier-vous-detail {
+    font-size: 22px;
   }
 }

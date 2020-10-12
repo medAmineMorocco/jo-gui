@@ -22,6 +22,7 @@
   background-color: var(--main-color);
   color: black;
 }
+
 .custom-btn:hover {
   color: black;
 }
@@ -29,5 +30,17 @@
 @media (max-width: 767px) {
   .custom-btn {
     width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .custom-btn {
+    width: 100%;
+    font-size: 22px;
+    height: 45px;
+  }
+
+  .ant-btn-round {
+    border-radius: 35px;
   }
 }

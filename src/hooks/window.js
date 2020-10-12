@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useWindowSize() {
+export function useMobileSize() {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -11,5 +11,33 @@ export function useWindowSize() {
     window.addEventListener("resize", handleWidthChange);
   }, []);
 
-  return width <= 500;
+  return width <= 767;
+}
+
+export function useTabletSize() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWidthChange = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWidthChange);
+  }, []);
+
+  return width >= 768 && width <= 1024;
+}
+
+export function useTabletOrMobileSize() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWidthChange = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWidthChange);
+  }, []);
+
+  return width <= 1024;
 }

@@ -1,7 +1,14 @@
 .show-overlay-btn {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 1.5vw;
   position: fixed;
-  top: 8px;
-  right: 8px;
+  top: 1.5vw;
+  right: 1.5vw;
   z-index: 1000;
 }
 
@@ -54,7 +61,7 @@
   text-align: center;
   font-family: Source Sans Pro;
   width: 80%;
-  height: 20vh;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -66,17 +73,16 @@
 }
 
 .section-footer {
-  background: url("/images/section-end.jpg");
   mix-blend-mode: normal;
   opacity: 0.8;
   width: 100%;
-  height: 60vh;
+  height: auto;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
 .website-info {
-  margin: 0 auto;
+  margin: 6vh auto 0vh auto;
   position: relative;
   width: 50%;
   font-family: Source Sans Pro;
@@ -100,29 +106,29 @@
 }
 
 .website-invite {
-  margin: 0 auto;
+  font-family: Paris2024;
   width: 20%;
   position: relative;
-  font-family: Paris2024;
   font-style: normal;
   font-weight: 600;
   text-align: center;
   line-height: 5vh;
   font-size: 2vw;
-  margin-top: 5vh;
+  margin: 5vh auto;
 }
 
 .contacts {
-  background: url("/images/contact-background.png");
+  background-color: #323232;
   width: 100%;
-  height: 14vh;
+  height: auto;
   background-size: 100% auto;
   background-repeat: no-repeat;
   text-align: center;
-  padding-top: 6vh;
+  padding: 6vh 0;
 }
 
 .contacts-urls {
+  font-family: Source Sans Pro;
   margin: 0 auto;
   width: 80%;
   position: relative;
@@ -136,7 +142,7 @@
 .footer-picture {
   background: url("/images/footer-picture.png");
   width: 100%;
-  height: 120vh;
+  height: 126vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -162,7 +168,6 @@
     font-size: 5vw;
     text-align: left;
     font-weight: 400;
-    height: 70vh;
     margin-top: 4vh;
   }
 
@@ -170,7 +175,6 @@
     mix-blend-mode: normal;
     opacity: 0.8;
     width: 100%;
-    height: 32vh;
     background: none;
   }
 
@@ -211,18 +215,19 @@
   }
 
   .website-invite {
-    margin-top: 2vh;
     width: 80%;
     font-size: 8vw;
+    margin: 9vw auto;
   }
 
   .contacts {
     background: url("/images/contact-background.png");
-    width: 100%;
-    height: 20%;
     background-size: 100% auto;
+    font-size: 16px;
     text-align: center;
-    padding-top: 0;
+    width: 100%;
+    height: auto;
+    padding: 2vh 0;
   }
 
   .contacts-urls {
@@ -239,5 +244,72 @@
 
   .footer-picture {
     height: 42vh;
+  }
+
+  .show-overlay-btn {
+    font-size: 4vw;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    top: 2vw;
+    right: 2vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .show-overlay-btn {
+    font-size: 4vw;
+    width: 82px;
+    height: 82px;
+    border-radius: 100%;
+    top: 2vw;
+    right: 2vw;
+  }
+
+  .footer-picture {
+    height: 50vh;
+  }
+
+  .hero-description {
+    padding: 0px 80px;
+    font-size: 47px;
+  }
+
+  .main-description {
+    font-size: 32px;
+    text-align: left;
+    width: 70%;
+  }
+
+  .website-info {
+    width: 70%;
+    font-size: 5vw;
+    line-height: 4vh;
+  }
+
+  .website-url {
+    width: 80%;
+    font-size: 4.1vw;
+  }
+
+  .website-invite {
+    width: 70%;
+    position: relative;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 7vw;
+    margin: 9vw auto;
+  }
+
+  .contacts {
+    height: auto;
+    padding: 4vh 0;
+  }
+
+  .contacts-urls {
+    font-size: 34px;
+    width: 70%;
   }
 }

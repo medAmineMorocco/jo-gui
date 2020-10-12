@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Button } from "antd";
-import { ArrowRightOutlined, InfoOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import { Modal } from "@components/modal/Modal";
 import { Header } from "@components/header/Header";
 import { Footer } from "@components/footer/Footer";
@@ -69,9 +69,10 @@ export function HomePage(props) {
           className="show-overlay-btn"
           type="primary"
           shape="circle"
-          icon={<InfoOutlined />}
           onClick={() => setVisible(true)}
-        />
+        >
+          <span>i</span>
+        </Button>
       </Header>
       <Modal
         title={ABOUT_TITLE}
@@ -90,8 +91,8 @@ export function HomePage(props) {
             title1={HERO_TITLE1}
             title2={HERO_TITLE2}
           />
+          <div className="hero-description">{HERO_DESCRIPTION}</div>
         </div>
-        <div className="hero-description">{HERO_DESCRIPTION}</div>
       </div>
       <div className="main-description">
         <p>{MAIN_DESC1}</p>
@@ -133,7 +134,6 @@ export function HomePage(props) {
       ></Section>
 
       <div className="section-footer">
-        <div className="section-divider"></div>
         <div className="website-info">{WEBSITE_INFO_MSG}</div>
         <div className="website-url">
           <a href="#0">{WEBSITE_URL}</a>
@@ -143,11 +143,12 @@ export function HomePage(props) {
 
       <div className="contacts">
         <div className="contacts-urls">
-          <a href="#0">{CONTACT_LEGAL_MENTION}</a>-
-          <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>-
-          <a href="#0">{CONTACT_PRIVACY_POLICY}</a>-
-          <a href="#0">{CONTACT_COOKIES}</a>-
-          <a href="#0">{CONTACT_CALL_TENDER}</a>-
+          <a href="#0">{CONTACT_LEGAL_MENTION}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+          <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          <a href="#0">{CONTACT_PRIVACY_POLICY}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+          <a href="#0">{CONTACT_COOKIES}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+          <a href="#0">{CONTACT_CALL_TENDER}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
           <a href="#0">{CONTACT_TERMS_PURCHASE}</a>
         </div>
       </div>
