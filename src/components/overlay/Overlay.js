@@ -77,7 +77,7 @@ export function Overlay(props) {
             SetVisible({ modalVisible: false, closeButton: "none" })
           }
           className="custom-modal"
-          width={isMobileOrTablet ? 800 : 550}
+          width={isMobileOrTablet ? 650 : 550}
           footer={null}
           centered
           closable={false}

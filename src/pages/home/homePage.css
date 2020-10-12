@@ -3,9 +3,9 @@
   font-style: italic;
   font-weight: bold;
   font-size: 1.5vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 1.5vw;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
   position: fixed;
   top: 1.5vw;
   right: 1.5vw;
@@ -259,8 +259,8 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .show-overlay-btn {
     font-size: 4vw;
-    width: 82px;
-    height: 82px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     top: 2vw;
     right: 2vw;
@@ -309,7 +309,7 @@
   }
 
   .contacts-urls {
-    font-size: 34px;
-    width: 70%;
+    font-size: 26px;
+    width: 80%;
   }
 }
