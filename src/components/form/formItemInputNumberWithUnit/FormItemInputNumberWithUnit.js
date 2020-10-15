@@ -65,6 +65,7 @@ export function FormItemInputNumberWithUnit({
         onChange={onDefaultChange}
         value={form.getFieldValue(name)}
         min={0}
+        id={name}
       />
       <span ref={inputUnitRef} className="input-unit">
         {unit}
