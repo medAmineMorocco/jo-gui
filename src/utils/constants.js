@@ -286,7 +286,7 @@ export const HOUSE_SAVIEZ_VOUS =
 export const NUMERIC_QUESTION1_LABEL =
   "Nombre d'heures passées sur internet (hors streaming vidéo, gaming) par jour";
 export const NUMERIC_QUESTION1_TOOLTIP =
-  "iPhone: Réglages>Données mobiles / Android : Paramètres>Connexion>Utilisation des données";
+  "iPhone: Réglages>Données mobiles Android : Paramètres>Connexion>Utilisation des données";
 export const NUMERIC_QUESTION2_LABEL =
   "Nombre d'heures de streaming vidéo, gaming par jour";
 export const NUMERIC_SAVIEZ_VOUS =
