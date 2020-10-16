@@ -173,7 +173,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555f180a442"
             tooltipTitle={HOUSE_QUESTION2_TOOTLTIP}
             label={HOUSE_QUESTION2}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question2Input}
             unit={"kWh"}
           />
@@ -184,7 +184,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555f8af3776"
             tooltipTitle={HOUSE_QUESTION3_TOOTLTIP}
             label={HOUSE_QUESTION3}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question3Input}
             unit={"kWh PCS"}
           />
@@ -195,7 +195,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555faf640d3"
             tooltipTitle={HOUSE_QUESTION4_TOOTLTIP}
             label={HOUSE_QUESTION4}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question4Input}
             unit={"L"}
           />
@@ -206,7 +206,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f55600ed2c60"
             tooltipTitle={HOUSE_QUESTION5_TOOTLTIP}
             label={HOUSE_QUESTION5}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question5Input}
             unit={"kg"}
           />
@@ -222,7 +222,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f230d75c78"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION6}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question6Input}
             unit={"€/mois"}
           />
@@ -233,7 +233,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f2382ba8a0"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION7}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question7Input}
             unit={"€/mois"}
           />
@@ -244,7 +244,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f23ce239c1"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION8}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question8Input}
             unit={"€/mois"}
           />
@@ -255,7 +255,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f556050d0a88"
             tooltipTitle={HOUSE_QUESTION9_TOOTLTIP}
             label={HOUSE_QUESTION9}
-            rules={[{ required: false, message: HOUSE_ERROR_MSG }]}
+            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question9Input}
             unit={"m²"}
           />
