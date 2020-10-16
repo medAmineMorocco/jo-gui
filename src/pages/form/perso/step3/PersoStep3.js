@@ -1,5 +1,6 @@
 import { Form } from "antd";
 import React, { useEffect, useState } from "react";
+import { scrollToTopOfThePage } from "@hooks/window";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
@@ -66,7 +67,7 @@ export function PersoStep3({ step, setNextStep }) {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
       stepState.forEach(({ question, response, actions }) => {
         form.setFieldsValue({

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "antd";
+import { scrollToTopOfThePage } from "@hooks/window";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import {
   HOUSE_QUESTION1,
@@ -67,7 +68,7 @@ export function PersoStep1({ step, setNextStep }) {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
       stepState.forEach(({ question, response, actions }) => {
         form.setFieldsValue({
