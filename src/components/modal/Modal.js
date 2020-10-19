@@ -40,6 +40,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
     <Drawer
       title={title}
       placement="right"
+      getContainer={false}
       onClose={hideOverlay}
       visible={isVisible}
       closeIcon={closeButton}
