@@ -28,6 +28,7 @@
   flex-direction: row;
   background-color: #6c633c;
   padding: 20px 7vw;
+  margin-top: 10px;
 }
 
 .info-container-content {
@@ -103,11 +104,7 @@
 }
 
 .detail {
-  margin: 0 7vw;
-}
-
-.input-detail {
-  margin-top: 4px;
+  margin: 24px 7vw 0 7vw;
 }
 
 .input-action {
@@ -157,6 +154,16 @@
   margin-bottom: 18px;
 }
 
+.action-reduction-container .ant-form-item {
+  margin-bottom: 0px;
+}
+
+.action-reduction-container .ant-form-vertical .ant-form-item-label,
+.action-reduction-container .ant-col-24.ant-form-item-label,
+.action-reduction-container .ant-col-xl-24.ant-form-item-label {
+  padding: 0px;
+}
+
 @media (max-width: 767px) {
   .panel-header {
     margin: 0 32px;
@@ -168,6 +175,7 @@
 
   .info-container {
     padding: 20px 32px;
+    margin-top: 16px;
   }
 
   .info-container-icon {
@@ -175,7 +183,7 @@
   }
 
   .detail {
-    margin: 0px 32px;
+    margin: 22px 32px 0px 32px;
   }
 }
 
@@ -186,11 +194,7 @@
 
   .select-content {
     font-size: 24px;
-    line-height: 18px;
-  }
-
-  .detail {
-    margin: 0px 7vw;
+    line-height: 40px;
   }
 
   .info-container {
@@ -219,10 +223,5 @@
 
   .savier-vous-detail {
     font-size: 22px;
-  }
-
-  .collapse-custom .ant-form-item {
-    margin-bottom: 24px;
-    margin-top: 16px;
   }
 }
