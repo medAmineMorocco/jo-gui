@@ -88,7 +88,7 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .pro-step-title {
     font-size: 42px;
   }
@@ -98,7 +98,7 @@
   }
 
   .mobile-wizard-container {
-    margin-bottom: 27vw;
+    margin-bottom: 20vw;
   }
 
   .form-questions-title {
