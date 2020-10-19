@@ -27,13 +27,14 @@
 }
 
 .styled-title-form {
-  margin-top: 3vw;
+  margin-top: 25%;
   font-size: 4vw;
   line-height: 4vw;
 }
 
 @media (max-width: 767px) {
   .styled-title-form {
+    margin-top: 50%;
     font-size: 9vw;
     line-height: 7.5vw;
   }
@@ -62,7 +63,7 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .styled-title-form {
-    margin-top: 10vw;
+    margin-top: 25%;
     font-size: 9vw;
     line-height: 7.5vw;
   }
