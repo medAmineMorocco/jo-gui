@@ -40,10 +40,8 @@ import { actionReduction1Data, actionReduction2Data } from "./PersoStep3Config";
 export function PersoStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [render, setRender] = useState(0);
-
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
-
   const [question1, setQuestion1] = useState(0);
   const [question2, setQuestion2] = useState(0);
   const [question3, setQuestion3] = useState(0);
@@ -66,6 +64,62 @@ export function PersoStep3({ step, setNextStep }) {
     setSwitch2Value(isChecked);
   };
 
+  const onchangeQuestion4 = () => {
+    setRender(Math.random);
+    actionReduction1Data[0].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f55692a73b55"); i++) {
+      actionReduction1Data[0].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion6 = () => {
+    setRender(Math.random);
+    actionReduction1Data[1].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f5569587abe3"); i++) {
+      actionReduction1Data[1].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion8 = () => {
+    setRender(Math.random);
+    actionReduction1Data[2].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f55697f50057"); i++) {
+      actionReduction1Data[2].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion11 = () => {
+    setRender(Math.random);
+    actionReduction1Data[3].options = [{ text: "0", value: 0 }];
+    actionReduction1Data[4].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f556b3b7aeaf"); i++) {
+      actionReduction1Data[3].options.push({ text: `${i}`, value: i });
+      actionReduction1Data[4].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion13 = () => {
+    setRender(Math.random);
+    actionReduction1Data[5].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f556b6cefd5a"); i++) {
+      actionReduction1Data[5].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion14 = (value) => {
+    actionReduction2Data[1].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= value; i++) {
+      actionReduction2Data[1].options.push({ text: `${i}`, value: i });
+    }
+  };
+
+  const onchangeQuestion15 = (value) => {
+    actionReduction2Data[0].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= value; i++) {
+      actionReduction2Data[0].options.push({ text: `${i}`, value: i });
+    }
+  };
+
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
@@ -81,6 +135,8 @@ export function PersoStep3({ step, setNextStep }) {
           });
         }
       });
+      onchangeQuestion14(form.getFieldValue("5f556b94d465c"));
+      onchangeQuestion15(form.getFieldValue("5f556baea779b"));
       setQuestion1(form.getFieldValue("5f5568d39449f"));
       setQuestion2(form.getFieldValue("5f5568e651349"));
       setQuestion3(form.getFieldValue("5f5568f49b63c"));
@@ -122,10 +178,6 @@ export function PersoStep3({ step, setNextStep }) {
     const submitButton = document.querySelector('[type="submit"]');
     submitButton.blur();
     setNextStep();
-  };
-
-  const onchange = () => {
-    setRender(Math.random);
   };
 
   const onFieldsChange = () => {
@@ -173,7 +225,7 @@ export function PersoStep3({ step, setNextStep }) {
             label={MATERIELS_QUESTION4_LABEL}
             unit="ans"
             value={question4}
-            onChange={onchange}
+            onChange={onchangeQuestion4}
           />
 
           <FormCounter
@@ -189,7 +241,7 @@ export function PersoStep3({ step, setNextStep }) {
             label={MATERIELS_QUESTION6_LABEL}
             unit="ans"
             value={question6}
-            onChange={onchange}
+            onChange={onchangeQuestion6}
           />
 
           <FormCounter
@@ -205,7 +257,7 @@ export function PersoStep3({ step, setNextStep }) {
             label={MATERIELS_QUESTION8_LABEL}
             unit="ans"
             value={question8}
-            onChange={onchange}
+            onChange={onchangeQuestion8}
           />
 
           <FormCounter
@@ -228,7 +280,7 @@ export function PersoStep3({ step, setNextStep }) {
             label={MATERIELS_QUESTION11_LABEL}
             unit="ans"
             value={question11}
-            onChange={onchange}
+            onChange={onchangeQuestion11}
           />
 
           <FormCounter
@@ -244,7 +296,7 @@ export function PersoStep3({ step, setNextStep }) {
             label={MATERIELS_QUESTION13_LABEL}
             unit="ans"
             value={question13}
-            onChange={onchange}
+            onChange={onchangeQuestion13}
           />
         </div>
       </div>
@@ -267,12 +319,14 @@ export function PersoStep3({ step, setNextStep }) {
             name="5f556b94d465c"
             label={MATERIELS_QUESTION14_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
+            onChange={onchangeQuestion14}
           />
 
           <FormItemInputNumber
             name="5f556baea779b"
             label={MATERIELS_QUESTION15_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
+            onChange={onchangeQuestion15}
           />
         </div>
       </div>

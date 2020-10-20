@@ -44,6 +44,13 @@ export function ProStep2({ step, setNextStep }) {
     setSwitchValue(isChecked);
   };
 
+  const handleTailleBoite = (taille) => {
+    actionReductionData[0].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= taille; i++) {
+      actionReductionData[0].options.push({ text: `${i}`, value: i });
+    }
+  };
+
   useEffect(() => {
     form.setFieldsValue({
       "5f554eddc68dd": QUESTION2_DEFAULT_VALUE,
@@ -65,6 +72,7 @@ export function ProStep2({ step, setNextStep }) {
           });
         }
       });
+      handleTailleBoite(form.getFieldValue("5f554eb63be47"));
       setNbrRecherche(form.getFieldValue("5f554f1127cec"));
       setNbrConference(form.getFieldValue("5f554f36de849"));
       setNbrStreaming(form.getFieldValue("5f554fb2238b4"));
@@ -120,6 +128,7 @@ export function ProStep2({ step, setNextStep }) {
           label={TAILLE_BOITE}
           tooltipTitle={TAILLE_BOITE_INFO}
           rules={[{ required: true, message: TAILLE_BOITE_ERROR_MSG }]}
+          onChange={handleTailleBoite}
         />
 
         <div className="forms-margin">
