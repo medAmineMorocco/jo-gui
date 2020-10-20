@@ -92,7 +92,6 @@ export function PersoStep2({ step, setNextStep }) {
       });
 
       setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
-      console.log(form.getFieldValue("equipment"));
     };
 
     const stepState = getResponsesOfQuestionsOfStep(step);

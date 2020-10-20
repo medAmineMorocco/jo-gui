@@ -12,6 +12,7 @@ export function FormItemInputNumber({
   rules,
   tooltipTitle,
   disabled,
+  onChange,
 }) {
   const isTablet = useTabletSize();
   const mainColor = getColor("--main-color");
@@ -51,6 +52,7 @@ export function FormItemInputNumber({
         onBlur={onBlur}
         min={0}
         {...(disabled && { disabled: disabled })}
+        onChange={onChange}
       />
     </FormItem>
   );

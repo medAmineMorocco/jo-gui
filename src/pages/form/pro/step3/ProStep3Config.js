@@ -77,7 +77,7 @@ export const actionReductionDataCafe = [
     ],
     firstText: "Chaque jour privilégier",
     secondText: "tasses de café en vrac plutôt que de café en capsule",
-    questionName: "5f55508b92e6c",
+    questionName: "5f5550724626b",
   },
   {
     type: "select",
@@ -96,6 +96,6 @@ export const actionReductionDataCafe = [
     ],
     firstText: "Chaque jour privilégier",
     secondText: "tasses de thé plutôt que de café en vrac",
-    questionName: "5f5550b00730d",
+    questionName: "5f55508b92e6c",
   },
 ];
