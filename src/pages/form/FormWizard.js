@@ -7,6 +7,7 @@ import { DynamicSummary } from "@components/dynamicSummary/DynamicSummary";
 import { MobileDynamicSummary } from "@components/dynamicSummary/MobileDynamicSummary";
 import { HeaderWithCategory } from "@components/header/HeaderWithCategory";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
+import { CATEGORY } from "@utils/category";
 import { config } from "./formConfig";
 import "./formWizard.css";
 
@@ -41,6 +42,8 @@ export function FormWizard() {
       </div>
     );
   } else {
+    const imgMenu =
+      category === CATEGORY.PRO ? "questions_pro.png" : "questions_perso.png";
     content = (
       <BoxSides
         left={
@@ -54,7 +57,7 @@ export function FormWizard() {
                 <div>questions</div>
               </div>
               <img
-                src="/images/questions.png"
+                src={`/images/${imgMenu}`}
                 alt="questions"
                 width="84px"
                 height="84px"
