@@ -17,13 +17,13 @@ export function Summary() {
         key={0}
         icon={<ProSvg />}
         title={PROFESSIONAL_MENU_ITEM}
-        description="5 rubriques"
+        description="5 Thématiques"
       />
       <Steps.Step
         key={1}
         icon={<PersoSvg />}
         title={PERSONAL_MENU_ITEM}
-        description="7 rubriques"
+        description="7 Thématiques"
       />
       <Steps.Step key={2} icon={<ResultsSvg />} title={RESULTS_MENU_ITEM} />
     </Steps>

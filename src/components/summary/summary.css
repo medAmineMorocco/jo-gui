@@ -12,7 +12,7 @@
   font-family: Paris2024;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 22px;
 }
 
@@ -81,12 +81,12 @@
     > .ant-steps-item-container
     > .ant-steps-item-content
     > .ant-steps-item-description {
-    font-size: 4vw;
+    font-size: 6vw;
     line-height: 6vw;
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .summary
     > .ant-steps-item-finish
     > .ant-steps-item-container
@@ -100,7 +100,7 @@
     font-family: Paris2024;
     font-style: normal;
     font-weight: 600;
-    font-size: 6vw;
+    font-size: 3vw;
     line-height: 30px;
     padding-bottom: 25px;
   }

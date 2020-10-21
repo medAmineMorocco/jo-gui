@@ -14,7 +14,7 @@ context("Login page", () => {
     },
   ];
 
-  const IDENTIFIER_REQUIRED = "Veuillez renseigner votre émail";
+  const IDENTIFIER_REQUIRED = "Adresse email non valide";
   const IDENTIFIER_NOT_VALID =
     "Veuillez respecter le format d’émail (exemple@paris2024.org)";
 
