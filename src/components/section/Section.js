@@ -17,9 +17,11 @@ export function Section({
   const renderedParagraphs = [];
   paragraphs.forEach((paragraph, index) => {
     renderedParagraphs.push(
-      <p className="section-paragraph" key={"section-parag-" + index}>
-        {paragraph}
-      </p>
+      <p
+        className="section-paragraph"
+        key={"section-parag-" + index}
+        dangerouslySetInnerHTML={{ __html: paragraph }}
+      ></p>
     );
   });
 

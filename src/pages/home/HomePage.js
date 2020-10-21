@@ -22,11 +22,10 @@ import {
   SECTION1_PARAG1,
   SECTION1_PARAG2,
   SECTION1_PARAG3,
-  SECTION1_PARAG4,
-  SECTION1_PARAG5,
   SECTION2_TITLE,
   SECTION2_PARAG1,
   SECTION2_PARAG2,
+  SECTION2_PARAG3,
   SECTION3_TITLE,
   SECTION3_PARAG1,
   SECTION3_PARAG2,
@@ -100,20 +99,14 @@ export function HomePage(props) {
 
       <Section
         title={SECTION1_TITLE}
-        paragraphs={[
-          SECTION1_PARAG1,
-          SECTION1_PARAG2,
-          SECTION1_PARAG3,
-          SECTION1_PARAG4,
-          SECTION1_PARAG5,
-        ]}
+        paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3]}
         style={{ background: "#009494" }}
         imgStyle={{ backgroundImage: 'url("/images/section-1.jpg")' }}
         imgPosition="right"
       ></Section>
       <Section
         title={SECTION2_TITLE}
-        paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2]}
+        paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2, SECTION2_PARAG3]}
         style={{ background: "#FF8675" }}
         imgStyle={{ backgroundImage: 'url("/images/section-2.jpg")' }}
         imgPosition="left"
