@@ -75,7 +75,7 @@
   }
 
   .text-counter {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     padding-bottom: 0;
     padding-right: 0;
   }

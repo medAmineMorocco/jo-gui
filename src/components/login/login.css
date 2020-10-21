@@ -58,7 +58,7 @@
   }
 
   .login-container-mobile .custom-btn {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     height: 59px;
   }
 }

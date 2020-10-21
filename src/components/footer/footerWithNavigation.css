@@ -71,13 +71,13 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .footer-buttons-left {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-right: 5%;
     margin-top: -30px;
   }
 
   .footer-buttons-right {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-right: 5%;
     margin-top: -30px;
     width: 160px;
@@ -92,23 +92,23 @@
   }
 
   .footer-navigation-container .footer-navigation-left {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-top: 0px;
   }
 
   .footer-navigation-container .footer-navigation-right {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-left: 5%;
     margin-top: 0px;
   }
 
   .footer-navigation-details-container .footer-navigation-left {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-top: 16px;
   }
 
   .footer-navigation-details-container .footer-navigation-right {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     margin-left: 5%;
     margin-top: 16px;
   }
