@@ -1,9 +1,8 @@
 /* Login Page */
 export const IDENTIFIER = "E-mail";
 export const LOGIN = "ok";
-export const IDENTIFIER_REQUIRED = "⚠ Adresse email non valide";
-export const IDENTIFIER_NOT_VALID =
-  "⚠  Veuillez respecter le format d’émail (exemple@paris2024.org)";
+export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre émail";
+export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
 /* Home Page */
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";
