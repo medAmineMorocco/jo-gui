@@ -39,12 +39,11 @@
 }
 .title-button {
   margin: 0 auto;
-  text-transform: lowercase;
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: 600;
   color: #000000;
-  font-size: 18px;
+  font-size: 1.3vw;
 }
 .ant-btn-primary {
   border-color: transparent;
@@ -68,7 +67,6 @@
 
 .title-modal {
   font-family: Source Sans Pro;
-  text-transform: lowercase;
   text-align: center;
   font-style: italic;
   color: black;
@@ -76,6 +74,7 @@
   line-height: 1.7vw;
   margin: 1vw 5vw 0vw 0vw;
   width: 24vw;
+  text-transform: none;
 }
 .ant-modal-wrap {
   background-color: var(--bg-color-shade);
@@ -184,7 +183,7 @@
     border-radius: 100%;
   }
   .title-button {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
   .ant-modal-wrap {
     background-color: black;
@@ -215,10 +214,6 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .custom-btn-modal {
     height: 70px;
-  }
-
-  .title-button {
-    font-size: var(--tablet-input-font-size);
   }
 
   .custom-modal .icon-modal {

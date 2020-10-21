@@ -29,7 +29,7 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .ant-form-item-label > label {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
   }
 
   .ant-form-item-explain,
@@ -38,7 +38,7 @@
   }
 
   .ant-input-lg {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
   }
 
   input,

@@ -44,7 +44,7 @@
   }
 
   .flex-slider-item {
-    font-size: var(--tablet-input-font-size);
+    font-size: var(--tablet-font-size);
     line-height: 40px;
   }
 
