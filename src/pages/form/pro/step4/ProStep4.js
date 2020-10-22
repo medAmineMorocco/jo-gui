@@ -44,6 +44,7 @@ export function ProStep4({ step, setNextStep }) {
 
   const handleModeDeplacementChange = (mode) => {
     const motorisationName = "5f555681b8e00";
+    const actionDeplacement = "5f60a09bc059e";
     setModeDeplacement(mode);
     if (electricTravelModes.includes(mode)) {
       setMotorisationOptionsState([
@@ -52,18 +53,27 @@ export function ProStep4({ step, setNextStep }) {
       form.setFieldsValue({
         [motorisationName]: "electrique",
       });
+      actionReductionData[0].disabled = false;
+    } else if (mode === "pied-velo") {
+      actionReductionData[0].disabled = true;
+      form.setFieldsValue({
+        [actionDeplacement]: "pied-velo",
+      });
     } else {
       setMotorisationOptionsState(motorisationOptions);
+      actionReductionData[0].disabled = false;
     }
   };
 
   useEffect(() => {
     if (modeDeplacement === "pied-velo") {
       setSwitchValue(true);
+      actionReductionData[0].disabled = true;
     } else if (electricTravelModes.includes(modeDeplacement)) {
       setMotorisationOptionsState([
         { text: "Électrique", value: "electrique" },
       ]);
+      actionReductionData[0].disabled = false;
     }
   }, [modeDeplacement]);
 

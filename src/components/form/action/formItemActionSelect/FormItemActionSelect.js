@@ -4,7 +4,7 @@ import { FormItem } from "@components/form/formItem/FormItem";
 import { useTabletSize } from "@hooks/window";
 import "./formItemActionSelect.css";
 
-export function FormItemActionSelect({ name, options, onChange }) {
+export function FormItemActionSelect({ name, options, onChange, disabled }) {
   const isTablet = useTabletSize();
   const { Option } = Select;
 
@@ -22,6 +22,7 @@ export function FormItemActionSelect({ name, options, onChange }) {
         style={{ width: "auto" }}
         dropdownClassName="select-action-dropdown"
         onChange={onChange}
+        {...(disabled && { disabled: disabled })}
       >
         {options.map(({ text, value }, key) => (
           <Option key={key} value={value}>

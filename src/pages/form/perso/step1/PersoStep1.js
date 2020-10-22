@@ -135,7 +135,7 @@ export function PersoStep1({ step, setNextStep }) {
           <span className="pro-step-title">À la maison</span>
         </div>
         <span className="form-questions-title" style={{ color: mainColor }}>
-          Indique tes consommations si tu les connais :
+          Si tu les connais, indique tes consommations :
         </span>
         <div className="forms-margin">
           <FormCounter

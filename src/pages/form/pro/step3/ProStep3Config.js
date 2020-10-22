@@ -28,8 +28,7 @@ export const actionReductionDataDejeuners = [
       { text: "4", value: 4 },
     ],
     firstText: "Consommer chaque semaine",
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande issue de bétail",
+    secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
@@ -41,8 +40,7 @@ export const actionReductionDataDejeuners = [
       { text: "4", value: 4 },
     ],
     firstText: "Consommer chaque semaine",
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande issue de volaille",
+    secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
 ];
 

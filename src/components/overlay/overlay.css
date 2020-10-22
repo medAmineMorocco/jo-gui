@@ -266,4 +266,8 @@
   .content-style {
     font-size: 26px;
   }
+
+  .title-button {
+    font-size: 3.5vw;
+  }
 }

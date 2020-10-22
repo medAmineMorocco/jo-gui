@@ -159,7 +159,9 @@ export function ProStep5({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements professionnels</span>
+          <span className="pro-step-title">
+            Déplacements professionnels sur l'année
+          </span>
         </div>
 
         <TitleWithHorizontalLine title="En voiture" />
