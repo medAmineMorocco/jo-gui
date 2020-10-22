@@ -39,7 +39,7 @@
 }
 .title-button {
   margin: 0 auto;
-  font-family: Source Sans Pro;
+  font-family: Paris2024;
   font-style: normal;
   font-weight: 600;
   color: #000000;
@@ -66,7 +66,7 @@
 }
 
 .title-modal {
-  font-family: Source Sans Pro;
+  font-family: Paris2024;
   text-align: center;
   font-style: italic;
   color: black;
@@ -130,6 +130,8 @@
   align-items: center;
   justify-content: space-between;
   font-size: 15px;
+  font-family: Paris2024;
+  width: 100%;
 }
 .container-flex-overlay {
   display: inline-flex;

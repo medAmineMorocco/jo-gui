@@ -129,7 +129,7 @@ export const question7_questions = [
 export const actionReduction3_selectDetail = [
   {
     type: "input",
-    firstText: "Annuler",
+    firstText: "Éviter",
     name: "5f60aadf53101",
     secondText:
       "des vols long courrier et privilégier les destinations accessibles en train",

@@ -66,47 +66,42 @@ export const selectDetail = [
     firstText: "Consommer chaque semaine",
     name: "5f60a1d33da5f",
     options: options,
-    secondText: "diners à base de légumes plutôt que de viande issue de bétail",
+    secondText: "dîners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer chaque semaine",
     name: "5f60a1e56f9be",
     options: options,
-    secondText:
-      "diners à base de légumes plutôt que de viande de volaille ou de poisson",
+    secondText: "dîners à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",
     firstText: "Consommer le week-end",
     name: "5f60a1f6aa5d9",
     options: options,
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande issue de bétail",
+    secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer le week-end",
     name: "5f60a209470be",
     options: options,
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande de volaille ou de poisson",
+    secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",
     firstText: "Consommer en vacances",
     name: "5f60a21ef0fe9",
     options: options,
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande issue de bétail",
+    secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer en vacances",
     name: "5f60a24828ffa",
     options: options,
-    secondText:
-      "déjeuners à base de légumes plutôt que de viande de volaille ou de poisson",
+    secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",
