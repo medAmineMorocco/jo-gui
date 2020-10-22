@@ -15,7 +15,7 @@ export const housestep1State = (values) => {
     },
     {
       question: "5f555f180a442",
-      response: values["5f555f180a442"] || 0,
+      response: values["5f555f180a442"],
       actions: [
         {
           id: "5f60a1229564b",
@@ -25,7 +25,7 @@ export const housestep1State = (values) => {
     },
     {
       question: "5f555f8af3776",
-      response: values["5f555f8af3776"] || 0,
+      response: values["5f555f8af3776"],
       actions: [
         {
           id: "5f7f26f4b6606",
@@ -35,7 +35,7 @@ export const housestep1State = (values) => {
     },
     {
       question: "5f555faf640d3",
-      response: values["5f555faf640d3"] || 0,
+      response: values["5f555faf640d3"],
       actions: [
         {
           id: "5f7f271841ce5",
@@ -55,7 +55,7 @@ export const housestep1State = (values) => {
     },
     {
       question: "5f7f230d75c78",
-      response: values["5f7f230d75c78"] || 0,
+      response: values["5f7f230d75c78"],
       actions: [
         {
           id: "5f60a1399f5ab",
@@ -65,11 +65,11 @@ export const housestep1State = (values) => {
     },
     {
       question: "5f7f2382ba8a0",
-      response: values["5f7f2382ba8a0"] || 0,
+      response: values["5f7f2382ba8a0"],
     },
     {
       question: "5f7f23ce239c1",
-      response: values["5f7f23ce239c1"] || 0,
+      response: values["5f7f23ce239c1"],
     },
     {
       question: "5f556050d0a88",

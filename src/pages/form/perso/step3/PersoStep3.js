@@ -6,6 +6,7 @@ import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
+import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
 import {
   persoStep3State,
   persoStep3ActionReductionState,
@@ -197,6 +198,8 @@ export function PersoStep3({ step, setNextStep }) {
           <span className="pro-step-title">Biens matériels</span>
         </div>
 
+        <TitleWithHorizontalLine title="Véhicules" />
+
         <FormCounter
           form={form}
           name="5f5568d39449f"
@@ -204,101 +207,103 @@ export function PersoStep3({ step, setNextStep }) {
           value={question1}
         />
 
+        <FormCounter
+          form={form}
+          name="5f5568e651349"
+          textCounter={MATERIELS_QUESTION2_LABEL}
+          value={question2}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f5568f49b63c"
+          textCounter={MATERIELS_QUESTION3_LABEL}
+          value={question3}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f55692a73b55"
+          label={MATERIELS_QUESTION4_LABEL}
+          unit="ans"
+          value={question4}
+          onChange={onchangeQuestion4}
+        />
+
         <div className="forms-margin">
-          <FormCounter
-            form={form}
-            name="5f5568e651349"
-            textCounter={MATERIELS_QUESTION2_LABEL}
-            value={question2}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f5568f49b63c"
-            textCounter={MATERIELS_QUESTION3_LABEL}
-            value={question3}
-          />
-
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f55692a73b55"
-            label={MATERIELS_QUESTION4_LABEL}
-            unit="ans"
-            value={question4}
-            onChange={onchangeQuestion4}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f5569516acd3"
-            textCounter={MATERIELS_QUESTION5_LABEL}
-            value={question5}
-          />
-
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f5569587abe3"
-            label={MATERIELS_QUESTION6_LABEL}
-            unit="ans"
-            value={question6}
-            onChange={onchangeQuestion6}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f55697727f39"
-            textCounter={MATERIELS_QUESTION7_LABEL}
-            value={question7}
-          />
-
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f55697f50057"
-            label={MATERIELS_QUESTION8_LABEL}
-            unit="ans"
-            value={question8}
-            onChange={onchangeQuestion8}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f55699e36c16"
-            textCounter={MATERIELS_QUESTION9_LABEL}
-            value={question9}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f556b379a8d1"
-            textCounter={MATERIELS_QUESTION10_LABEL}
-            value={question10}
-          />
-
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f556b3b7aeaf"
-            label={MATERIELS_QUESTION11_LABEL}
-            unit="ans"
-            value={question11}
-            onChange={onchangeQuestion11}
-          />
-
-          <FormCounter
-            form={form}
-            name="5f556b6b5abc8"
-            textCounter={MATERIELS_QUESTION12_LABEL}
-            value={question12}
-          />
-
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f556b6cefd5a"
-            label={MATERIELS_QUESTION13_LABEL}
-            unit="ans"
-            value={question13}
-            onChange={onchangeQuestion13}
-          />
+          <TitleWithHorizontalLine title="Électroniques" />
         </div>
+
+        <FormCounter
+          form={form}
+          name="5f5569516acd3"
+          textCounter={MATERIELS_QUESTION5_LABEL}
+          value={question5}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f5569587abe3"
+          label={MATERIELS_QUESTION6_LABEL}
+          unit="ans"
+          value={question6}
+          onChange={onchangeQuestion6}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f55697727f39"
+          textCounter={MATERIELS_QUESTION7_LABEL}
+          value={question7}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f55697f50057"
+          label={MATERIELS_QUESTION8_LABEL}
+          unit="ans"
+          value={question8}
+          onChange={onchangeQuestion8}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f55699e36c16"
+          textCounter={MATERIELS_QUESTION9_LABEL}
+          value={question9}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f556b379a8d1"
+          textCounter={MATERIELS_QUESTION10_LABEL}
+          value={question10}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f556b3b7aeaf"
+          label={MATERIELS_QUESTION11_LABEL}
+          unit="ans"
+          value={question11}
+          onChange={onchangeQuestion11}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f556b6b5abc8"
+          textCounter={MATERIELS_QUESTION12_LABEL}
+          value={question12}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f556b6cefd5a"
+          label={MATERIELS_QUESTION13_LABEL}
+          unit="ans"
+          value={question13}
+          onChange={onchangeQuestion13}
+        />
       </div>
 
       <div className="forms-margin">
@@ -314,6 +319,8 @@ export function PersoStep3({ step, setNextStep }) {
       </div>
 
       <div className="wizard-content-right-form-parent">
+        <TitleWithHorizontalLine title="Dressing" />
+
         <div className="forms-margin">
           <FormItemInputNumber
             name="5f556b94d465c"
