@@ -192,33 +192,31 @@ export const CURSEUR_BOISSONS =
 // alimentation
 export const ALIMENTATION_QUESTION1 = "Nombre de petits déjeuners par semaine";
 export const ALIMENTATION_QUESTION2 =
-  "Vos diners en semaine sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+  "Vos dîners en semaine sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
 export const ALIMENTATION_QUESTION3 =
   "Vos déjeuners en week-end sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
-  "Les déjeuners en semaine de vacances n'incluent pas les week-ends (comptés ci-dessus)";
-export const ALIMENTATION_QUESTION4 =
-  "Vos déjeuners par semaines sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
-export const ALIMENTATION_QUESTION4_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (ici)";
-export const ALIMENTATION_QUESTION5 =
-  "Litres de jus / sodas consommés par semaine (L)";
+export const ALIMENTATION_QUESTION4 =
+  "Vos déjeuners en vacances par semaines sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+export const ALIMENTATION_QUESTION4_TOOTLTIP =
+  "Les déjeuners en semaine de vacances n'incluent pas les week-ends (comptés ci-dessus)";
+export const ALIMENTATION_QUESTION5 = "Jus / Sodas consommés par semaine (L)";
 export const ALIMENTATION_QUESTION6 =
-  "Litres d'eau bouteille consommés par semaine (L)";
-export const ALIMENTATION_QUESTION7 = "Litres de vin consommés par semaine (L)";
-export const ALIMENTATION_QUESTION8 =
-  "Litres de bière consommés par semaine (L)";
+  "Eau en bouteille consommés par semaine (L)";
+export const ALIMENTATION_QUESTION7 = "Vin consommés par semaine (L)";
+export const ALIMENTATION_QUESTION8 = "Bière consommés par semaine (L)";
 export const ALIMENTATION_QUESTION9 =
-  "Litres d'alcool, hors vin et bière, consommés par semaine (L)";
+  "Alcool, hors vin et bière, consommés par semaine (L)";
 export const ALIMENATTION_ERROR_MSG = "⚠ Merci de saisir votre réponse";
-export const POPIN_INFOS = `Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :</br>
+export const POPIN_INFOS = `<div style="width:100%"><p style="text-align:center">Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :</p></br>
   • Apprendre à cuisiner les restes</br>
   • Apprendre à bien conserver les aliments</br>
   • Vérifier régulièrement les dates de péremption</br>
   • Cuisiner la bonne quantité de nourriture</br>
   • Ranger le réfrigérateur pour ne rien oublier dans le fond</br>
   • Faire ses courses avec une liste, et sans avoir faim !</br></br>
-Prêt à réduire ton gaspillage alimentaire ?`;
+  <p style="text-align:center">Prêt à réduire ton gaspillage alimentaire ?</p></div>`;
 
 export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
