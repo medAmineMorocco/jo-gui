@@ -43,7 +43,8 @@
 .intro-menu-description {
   text-align: center;
   font-family: Source Sans Pro;
-  margin: 0vw 7vw 1.5vw;
+  margin: 0vw 4vw 1vw;
+  font-size: 1vw;
 }
 
 .description-container {
@@ -55,10 +56,7 @@
 }
 
 .description {
-  padding-left: 10vw;
-  padding-right: 10vw;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  margin: 16px 10vw;
   text-align: center;
   font-family: Source Sans Pro;
   font-style: normal;
@@ -78,8 +76,8 @@
   }
 
   .description {
-    padding: 16vw 14vw 10vw 14vw;
-    font-size: 22px;
+    margin: 10vw 12vw;
+    font-size: 5.5vw;
     font-weight: 200;
     line-height: 1.5715;
   }
@@ -91,8 +89,8 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .description {
-    padding: 5vw 14vw 5vw 14vw;
-    font-size: 3vw;
+    margin: 7vw 12vw;
+    font-size: 4vw;
     font-weight: 200;
     line-height: 1.5715;
   }

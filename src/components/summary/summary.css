@@ -12,8 +12,8 @@
   font-family: Paris2024;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 22px;
+  font-size: 1.6vw;
+  line-height: 2vw;
 }
 
 .summary
@@ -25,8 +25,8 @@
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 1vw;
+  line-height: 1vw;
 }
 
 .summary
@@ -72,8 +72,8 @@
     > .ant-steps-item-container
     > .ant-steps-item-content
     > .ant-steps-item-title {
-    font-size: 6vw;
-    line-height: 6vw;
+    font-size: 7vw;
+    line-height: 7vw;
   }
 
   .summary
@@ -81,7 +81,7 @@
     > .ant-steps-item-container
     > .ant-steps-item-content
     > .ant-steps-item-description {
-    font-size: 6vw;
+    font-size: 4vw;
     line-height: 6vw;
   }
 }
@@ -100,8 +100,8 @@
     font-family: Paris2024;
     font-style: normal;
     font-weight: 600;
-    font-size: 3vw;
-    line-height: 30px;
+    font-size: 6vw;
+    line-height: 5vw;
     padding-bottom: 25px;
   }
 
@@ -113,8 +113,8 @@
     font-family: Source Sans Pro;
     font-style: normal;
     font-weight: normal;
-    font-size: var(--tablet-font-size);
-    line-height: 20px;
+    font-size: 3.6vw;
+    line-height: 2vw;
   }
 
   .ant-steps-vertical .ant-steps-item-description {

@@ -101,7 +101,11 @@ export function FormItemActionReduction({
         {data.firstText.split(" ").map((mot, key) => (
           <span key={key}>{mot}&nbsp;</span>
         ))}
-        <FormItemActionSelect name={data.name} options={options} />
+        <FormItemActionSelect
+          name={data.name}
+          options={options}
+          {...(data.disabled !== undefined && { disabled: data.disabled })}
+        />
         {data.secondText &&
           data.secondText
             .split(" ")

@@ -41,6 +41,7 @@ export const actionReductionData = [
     name: "5f60a09bc059e",
     options: modeDeplacementOptions,
     firstText: "Changer de mode de déplacement pour se rendre au travail",
+    disabled: false,
   },
   {
     type: "input",

@@ -69,7 +69,7 @@ export const CONTACT_TERMS_PURCHASE = "Conditions Générales d'Achat";
 
 /* Menu Page */
 export const MENU_DESCRIPTION =
-  "Le coach carbone te propose un parcours en 3 temps, d’une durée approximative de 30min. A la fin de chaque thématique, tu pourras choisir quelles actions de réduction concrètes tu aimerais mettre en place pour l’année prochaine.A vos marques, prêts, calculez !";
+  "Le coach carbone te propose un parcours en 3 temps, d’une durée approximative de 30min. A la fin de chaque thématique, tu pourras choisir quelles actions de réduction concrètes tu aimerais mettre en place pour l’année prochaine. A vos marques, prêts, calculez !";
 
 export const PROFESSIONAL_MENU_ITEM = "Vie Professionnelle";
 export const PERSONAL_MENU_ITEM = "Vie Personnelle";
@@ -153,7 +153,7 @@ export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
 export const NBR_KM_VOITURE =
   "Nombre de km en voiture (location, personnelle, ou taxi)";
 export const QUESTION2_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en autres trains grandes lignes (intercités ou TER, à moins de 200 km)";
+  "Nombre d'aller-retours en intercités ou TER (<200 km)";
 export const QUESTION3_NBR_TRAJETS_AR =
   "Nombre de trajets AR en train TGV (à environ 250 km)";
 export const QUESTION4_NBR_TRAJETS_AR =
@@ -254,7 +254,7 @@ export const HOUSE_QUESTION2_TOOTLTIP =
 export const HOUSE_QUESTION3 =
   "Consommation annuelle de Gaz naturel de votre logement";
 export const HOUSE_QUESTION3_TOOTLTIP =
-  "De même : facture ou espace client ! En moyenne 14000kwh/100m2 pour 4 personnes";
+  "De même : facture ou espace client ! En moyenne 14000kwh/100 m² pour 4 personnes";
 export const HOUSE_QUESTION4 =
   "Consommation annuelle de Fioul domestique de votre logement";
 export const HOUSE_QUESTION4_TOOTLTIP =
