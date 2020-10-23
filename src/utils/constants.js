@@ -228,8 +228,9 @@ export const DEPLACEMENTS_QUESTION1 =
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const DEPLACEMENTS_QUESTION2 = "Motorisation du véhicule";
-export const DEPLACEMENTS_QUESTION3 =
-  "Consommation moyenne aux 100 km (si connue)";
+export const DEPLACEMENTS_QUESTION3 = "Consommation moyenne aux 100 km";
+export const DEPLACEMENTS_QUESTION3_INFO =
+  "Un simple calcul à faire en comparant la distance parcourue entre 2 pleins !";
 export const DEPLACEMENTS_QUESTION4 =
   "Nombre de trajets AR en train TGV par an";
 export const DEPLACEMENTS_QUESTION5 =
@@ -263,13 +264,14 @@ export const HOUSE_QUESTION5_TOOTLTIP = "En fonction de tes achats !";
 export const HOUSE_QUESTION6 = "Consommation mensuelle d'électricité";
 export const HOUSE_QUESTION7 = "Consommation mensuelle de gaz naturel";
 export const HOUSE_QUESTION8 = "Consommation mensuelle de fioul";
-export const HOUSE_QUESTION678_TOOTLTIP = "Sur ta facture mensuelle.";
+export const HOUSE_QUESTION678_TOOTLTIP = "Indiquée sur ta facture mensuelle.";
 export const HOUSE_QUESTION9 = "Surface logement";
-export const HOUSE_QUESTION9_TOOTLTIP = "Sur ton bail / acte de vente.";
+export const HOUSE_QUESTION9_TOOTLTIP =
+  "Indiquée sur ton bail / acte de vente.";
 export const HOUSE_QUESTION10 =
   "Classe Energie de ton logement, DPE (si vous le connaissez)";
 export const HOUSE_QUESTION10_TOOTLTIP =
-  "Sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
+  "Indiquée sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
 export const HOUSE_QUESTION11 =
   "Sinon ton logement a été construit (ou rénové)";
 export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";

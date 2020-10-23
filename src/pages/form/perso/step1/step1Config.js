@@ -15,45 +15,33 @@ export const optionsLogement = [
   { text: "Après 2012", value: "Après 2012" },
 ];
 
-const options = [
-  { text: "0", value: 0 },
-  { text: "20", value: 20 },
-  { text: "40", value: 40 },
-  { text: "60", value: 60 },
-  { text: "80", value: 80 },
-];
-
 export const selectDetailLunch = [
   {
-    type: "select",
+    type: "input",
     firstText:
       "Réduire sa consommation annuelle d'Electricité de votre logement (kWh) de ",
     name: "5f60a1229564b",
-    options: options,
     secondText: "%",
   },
   {
-    type: "select",
+    type: "input",
     firstText:
       "Réduire sa consommation annuelle de Gaz naturel de votre logement (kWh PCS) de",
     name: "5f7f26f4b6606",
-    options: options,
     secondText: "%",
   },
   {
-    type: "select",
+    type: "input",
     firstText:
       "Réduire sa consommation annuelle de Fioul domestique de votre logement (L) de ",
     name: "5f7f271841ce5",
-    options: options,
     secondText: "%",
   },
   {
-    type: "select",
+    type: "input",
     firstText:
       "Réduire sa consommation annuelle de bois de chauffage pour votre logement (kg) de",
     name: "5f7f2742cdf84",
-    options: options,
     secondText: "%",
   },
   {

@@ -18,6 +18,7 @@ import {
   DEPLACEMENTS_QUESTION1,
   DEPLACEMENTS_QUESTION2,
   DEPLACEMENTS_QUESTION3,
+  DEPLACEMENTS_QUESTION3_INFO,
   DEPLACEMENTS_QUESTION4,
   DEPLACEMENTS_QUESTION5,
   DEPLACEMENTS_QUESTION6,
@@ -170,6 +171,7 @@ export function PersoStep6({ step, setNextStep }) {
             label={DEPLACEMENTS_QUESTION3}
             incomingChoice={question3IncomingChoice}
             questions={question3_questions}
+            tooltipTitle={DEPLACEMENTS_QUESTION3_INFO}
           />
         </div>
       </div>
