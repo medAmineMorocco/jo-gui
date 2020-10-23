@@ -302,7 +302,7 @@
     font-weight: 600;
     text-align: center;
     line-height: 5vh;
-    font-size: 7vw;
+    font-size: 5vw;
     margin: 9vw auto;
   }
 
@@ -314,5 +314,11 @@
   .contacts-urls {
     font-size: 26px;
     width: 80%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .website-info {
+    line-height: 6.5vh;
   }
 }
