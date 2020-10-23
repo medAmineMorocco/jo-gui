@@ -134,6 +134,8 @@ export const NBR_STREAMING =
   "Nombre d'heures de streaming vidéo dans le cadre professionnel par jour (en moyenne)";
 export const SAVIER_VOUS_EMPREINTE =
   "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité !";
+export const EMREINTE_OVERLAY_IMAGE =
+  "Pour connaître la taille de ta boîte mail, ouvre l’application mail Outlook. En haut à gauche, ouvre l’onglet Fichiers. Dans le sous-onglet Informations où te trouves, en 3e position et en face d’outils, tu trouveras Paramètres de la boîte au lettres. Une jauge indique ton espace disponible par rapport à l’espace total. Soustrait l’un à l’autre et tu connaîtras la taille de ta boîte mail.";
 
 // Trajets
 export const DISTANCE_DOMICILE_TRAVAIL =
@@ -192,13 +194,13 @@ export const CURSEUR_BOISSONS =
 // alimentation
 export const ALIMENTATION_QUESTION1 = "Nombre de petits déjeuners par semaine";
 export const ALIMENTATION_QUESTION2 =
-  "Vos dîners en semaine sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+  "De quoi sont composés majoritairement tes dîners en semaine ?";
 export const ALIMENTATION_QUESTION3 =
-  "Vos déjeuners en week-end sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+  "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (ici)";
 export const ALIMENTATION_QUESTION4 =
-  "Vos déjeuners en vacances par semaines sont plutôt constitués de viandes rouges viandes blanches /poissons végétariens";
+  "De quoi sont composés majoritairement tes repas en vacances ?";
 export const ALIMENTATION_QUESTION4_TOOTLTIP =
   "Les déjeuners en semaine de vacances n'incluent pas les week-ends (comptés ci-dessus)";
 export const ALIMENTATION_QUESTION5 = "Jus / Sodas consommés par semaine (L)";
@@ -281,6 +283,15 @@ export const OVERLAY_SOUSTEXTE_HOUSE =
   "https://www.ademe.fr/sites/default/files/assets/documents/infographie-economiser-eau-energie-2019.pdf";
 export const HOUSE_SAVIEZ_VOUS =
   "Adopter les bons gestes au quotidien peut faire économiser jusqu’à 0,5% par geste en moyenne ! Par exemple, aérer son logement quotidiennement rend l'air plus sec et le logement plus facilement chauffable, permettant d'économiser jusqu'à 2% de gaz naturel.";
+export const OVERLAY_IMAGE_ALT =
+  "Pour optimiser ta consommation d’énergie à la maison, plein de conseils et pratiques sont disponibles sur le site de l’ADEME !\n" +
+  "Quelques exemples :\n" +
+  "Eteindre les veilles dès que possible réduit de 10% l’électricité consommée ;\n" +
+  "Baisser le chauffage de 1°C réduit de 7% l’énergie consommée\n" +
+  "Couvrir les casseroles pendant la cuisson consomme 4 fois moins en électricité ou gaz ;\n" +
+  "Privilégier le programme éco de son lave-linge réduit de 45% l’énergie consommée ;\n" +
+  "Laver son linge à 30°C consomme 3 fois moins d’électricité qu’à 90°C\n" +
+  "Et bien plus encore !";
 
 // Numérique
 export const NUMERIC_QUESTION1_LABEL =

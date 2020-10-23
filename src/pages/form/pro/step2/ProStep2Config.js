@@ -1,10 +1,14 @@
-import { EMPREINTE_OVERLAY_TITLE } from "@utils/constants";
+import {
+  EMPREINTE_OVERLAY_TITLE,
+  EMREINTE_OVERLAY_IMAGE,
+} from "@utils/constants";
 
 export const QUESTION2_DEFAULT_VALUE = 16.5;
 
 export const overlayItems = [
   {
     image: "/images/empreinte-pop-conseils.jpg",
+    alt: EMREINTE_OVERLAY_IMAGE,
     title: EMPREINTE_OVERLAY_TITLE,
   },
 ];

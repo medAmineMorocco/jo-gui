@@ -27,6 +27,8 @@ export const actionReduction1_selectDetail = [
     firstText: "Réduire ses déplacements personnels en voiture de",
     name: "5f60aa994d161",
     questionName: "5f5575ba93b32",
+    secondText:
+      "km en favorisant les achats plus proches, des destinations plus proches et privilégiant la marche à pied",
   },
   {
     type: "select",
@@ -87,6 +89,7 @@ export const actionReduction2_selectDetail = [
       { text: "75", value: 75 },
       { text: "100", value: 100 },
     ],
+    secondText: "des distances en vol court courrier",
   },
 ];
 
