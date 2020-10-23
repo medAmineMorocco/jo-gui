@@ -25,7 +25,7 @@ export const MAIN_DESC3 =
 
 export const SECTION1_TITLE = "Comment ça marche ?";
 export const SECTION1_PARAG1 = `<b>1. Mesure ton impact</b></br>
-  Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans ta vie quotidienne au bureau, et à la maison, tu vas pouvoir mesurer tes émissions de CO2 et identifier les principales sources.
+  Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans ta vie quotidienne au bureau, et à la maison, tu vas pouvoir mesurer tes émissions de CO₂ et identifier les principales sources.
   Si tu ne sais pas répondre, pas de panique ! On se réfèrera à la valeur d’un français moyen indiquée dans les info-bulles qui t’accompagneront, même si on sait que tu es exceptionnel…
   Tes informations sont strictement confidentielles 😉`;
 export const SECTION1_PARAG2 = `<b>2. Choisis tes actions de réduction</b></br>
