@@ -267,11 +267,11 @@ export const HOUSE_QUESTION678_TOOTLTIP = "Sur ta facture mensuelle.";
 export const HOUSE_QUESTION9 = "Surface logement";
 export const HOUSE_QUESTION9_TOOTLTIP = "Sur ton bail / acte de vente.";
 export const HOUSE_QUESTION10 =
-  "Classe Energie de votre logement, DPE (si vous le connaissez)";
+  "Classe Energie de ton logement, DPE (si vous le connaissez)";
 export const HOUSE_QUESTION10_TOOTLTIP =
   "Sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
 export const HOUSE_QUESTION11 =
-  "Sinon votre logement a été construit (ou rénové)";
+  "Sinon ton logement a été construit (ou rénové)";
 export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_TITLE_HOUSE =
   "Comment optimiser ta consommation d’énergie ?";
@@ -302,7 +302,7 @@ export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
 export const EQUIPMENT_QUESTION9 = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
-  "Nombre d'appareils électroniques partagés (chaine hifi, console de jeu vidéo de salon, imprimantes)";
+  "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
 export const EQUIPMENT_QUESTION12 = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_SOUSTEXTE_EQUIPMENT = "";

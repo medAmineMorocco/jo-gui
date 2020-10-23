@@ -13,6 +13,7 @@ export function FormItemInputNumberWithUnit({
   tooltipTitle,
   unit,
   onChange,
+  disabled,
 }) {
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
@@ -65,6 +66,7 @@ export function FormItemInputNumberWithUnit({
         value={form.getFieldValue(name)}
         min={0}
         id={name}
+        {...(disabled && { disabled: disabled })}
       />
       <span ref={inputUnitRef} className="input-unit">
         {unit}

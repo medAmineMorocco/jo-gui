@@ -49,6 +49,7 @@ import { housestep1State, house1ActionReductionState } from "./step1State";
 export function PersoStep1({ step, setNextStep }) {
   const mainColor = getColor("--main-color");
   const [form] = Form.useForm();
+  const [render, setRender] = useState(0);
   const [question1Count, setQuestion1Count] = useState(0);
   const [question2Input, setQuestion2Input] = useState(0);
   const [question3Input, setQuestion3Input] = useState(0);
@@ -60,11 +61,60 @@ export function PersoStep1({ step, setNextStep }) {
   const [question9Input, setQuestion9Input] = useState(0);
   const [question10Select, setQuestion10Select] = useState(0);
   const [question11Select, setQuestion11Select] = useState(0);
-
   const [isReductionActionOpened, setReductionActionOpened] = useState(false);
+  const [isFirstInsertDisabled, setIsFirstInsertDisabled] = useState(false);
+  const [isSecondInsertDisabled, setIsSecondInsertDisabled] = useState(false);
 
   const handleSwitchReductionActionChange = (isChecked) => {
     setReductionActionOpened(isChecked);
+  };
+
+  const onChange = () => {
+    setRender(Math.random);
+  };
+
+  const isFirstInsertValid = () => {
+    const question2 = form.getFieldValue("5f555f180a442");
+    const question3 = form.getFieldValue("5f555f8af3776");
+    const question4 = form.getFieldValue("5f555faf640d3");
+    return (
+      (question2 === null || question2 === undefined) &&
+      (question3 === null || question3 === undefined) &&
+      (question4 === null || question4 === undefined)
+    );
+  };
+
+  const isSecondInsertValid = () => {
+    const question6 = form.getFieldValue("5f7f230d75c78");
+    const question7 = form.getFieldValue("5f7f2382ba8a0");
+    const question8 = form.getFieldValue("5f7f23ce239c1");
+    return (
+      (question6 === null || question6 === undefined) &&
+      (question7 === null || question7 === undefined) &&
+      (question8 === null || question8 === undefined)
+    );
+  };
+
+  const onchangeFirstInsert = () => {
+    onChange();
+    if (isFirstInsertValid() && isSecondInsertValid()) {
+      setIsFirstInsertDisabled(false);
+      setIsSecondInsertDisabled(false);
+    } else if (!isFirstInsertValid() && isSecondInsertValid()) {
+      setIsFirstInsertDisabled(false);
+      setIsSecondInsertDisabled(true);
+    }
+  };
+
+  const onchangeSecondInsert = () => {
+    onChange();
+    if (isFirstInsertValid() && isSecondInsertValid()) {
+      setIsFirstInsertDisabled(false);
+      setIsSecondInsertDisabled(false);
+    } else if (isFirstInsertValid() && !isSecondInsertValid()) {
+      setIsFirstInsertDisabled(true);
+      setIsSecondInsertDisabled(false);
+    }
   };
 
   useEffect(() => {
@@ -93,6 +143,40 @@ export function PersoStep1({ step, setNextStep }) {
       setQuestion9Input(form.getFieldValue("5f556050d0a88"));
       setQuestion10Select(form.getFieldValue("5f55608002862"));
       setQuestion11Select(form.getFieldValue("5f55609bdcaae"));
+
+      const question2 = form.getFieldValue("5f555f180a442");
+      const question3 = form.getFieldValue("5f555f8af3776");
+      const question4 = form.getFieldValue("5f555faf640d3");
+      const question6 = form.getFieldValue("5f7f230d75c78");
+      const question7 = form.getFieldValue("5f7f2382ba8a0");
+      const question8 = form.getFieldValue("5f7f23ce239c1");
+
+      if (
+        (question2 === null || question2 === undefined) &&
+        (question3 === null || question3 === undefined) &&
+        (question4 === null || question4 === undefined) &&
+        (question6 === null || question6 === undefined) &&
+        (question7 === null || question7 === undefined) &&
+        (question8 === null || question8 === undefined)
+      ) {
+        setIsFirstInsertDisabled(false);
+        setIsSecondInsertDisabled(false);
+      } else if (
+        !(
+          (question2 === null || question2 === undefined) &&
+          (question3 === null || question3 === undefined) &&
+          (question4 === null || question4 === undefined)
+        ) &&
+        (question6 === null || question6 === undefined) &&
+        (question7 === null || question7 === undefined) &&
+        (question8 === null || question8 === undefined)
+      ) {
+        setIsFirstInsertDisabled(false);
+        setIsSecondInsertDisabled(true);
+      } else {
+        setIsFirstInsertDisabled(true);
+        setIsSecondInsertDisabled(false);
+      }
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -175,9 +259,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555f180a442"
             tooltipTitle={HOUSE_QUESTION2_TOOTLTIP}
             label={HOUSE_QUESTION2}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question2Input}
             unit={"kWh"}
+            onChange={onchangeFirstInsert}
+            disabled={isFirstInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -186,9 +274,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555f8af3776"
             tooltipTitle={HOUSE_QUESTION3_TOOTLTIP}
             label={HOUSE_QUESTION3}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question3Input}
             unit={"kWh PCS"}
+            onChange={onchangeFirstInsert}
+            disabled={isFirstInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -197,9 +289,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555faf640d3"
             tooltipTitle={HOUSE_QUESTION4_TOOTLTIP}
             label={HOUSE_QUESTION4}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question4Input}
             unit={"L"}
+            onChange={onchangeFirstInsert}
+            disabled={isFirstInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -211,6 +307,7 @@ export function PersoStep1({ step, setNextStep }) {
             rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question5Input}
             unit={"kg"}
+            onChange={onChange}
           />
         </div>
         <div className="forms-margin">
@@ -224,9 +321,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f230d75c78"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION6}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question6Input}
             unit={"€/mois"}
+            onChange={onchangeSecondInsert}
+            disabled={isSecondInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -235,9 +336,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f2382ba8a0"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION7}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question7Input}
             unit={"€/mois"}
+            onChange={onchangeSecondInsert}
+            disabled={isSecondInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -246,9 +351,13 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f7f23ce239c1"
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION8}
-            rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
+            rules={[
+              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+            ]}
             value={question8Input}
             unit={"€/mois"}
+            onChange={onchangeSecondInsert}
+            disabled={isSecondInsertDisabled}
           />
         </div>
         <div className="forms-margin">
@@ -260,6 +369,7 @@ export function PersoStep1({ step, setNextStep }) {
             rules={[{ required: true, message: HOUSE_ERROR_MSG }]}
             value={question9Input}
             unit={"m²"}
+            onChange={onChange}
           />
         </div>
         <div className="forms-margin">
@@ -293,6 +403,7 @@ export function PersoStep1({ step, setNextStep }) {
           switchName="lunch-switch-1"
           setSwitchValue={handleSwitchReductionActionChange}
           isOpened={isReductionActionOpened}
+          render={render}
         />
       </div>
     </ConfiguredForm>
