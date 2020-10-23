@@ -35,7 +35,12 @@ export function Overlay(props) {
       )}
       <div className="content-style">
         {value.image && (
-          <img className="div-image" src={value.image} alt={value.text} />
+          <img
+            className="div-image"
+            src={value.image}
+            alt={value.alt}
+            title={value.alt}
+          />
         )}
         {value.sousText && <h4 className="text-modal">{value.sousText}</h4>}
       </div>

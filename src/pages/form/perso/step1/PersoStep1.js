@@ -25,6 +25,7 @@ import {
   HOUSE_QUESTION9_TOOTLTIP,
   HOUSE_QUESTION10_TOOTLTIP,
   HOUSE_SAVIEZ_VOUS,
+  OVERLAY_IMAGE_ALT,
 } from "@utils/constants";
 import {
   saveResponsesOfQuestionsStep,
@@ -236,6 +237,7 @@ export function PersoStep1({ step, setNextStep }) {
               items={[
                 {
                   image: "/images/conseil.png",
+                  alt: OVERLAY_IMAGE_ALT,
                   sousText: [
                     "Encore plus de conseils pratiques sur : ",
                     <a
