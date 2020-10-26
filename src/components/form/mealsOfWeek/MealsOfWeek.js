@@ -11,12 +11,32 @@ export function MealsOfWeek({
   tooltipTitle,
   errorMsg,
   state,
+  onChange,
 }) {
   const [selectedOnMonday, setSelectedOnMonday] = useState();
   const [selectedOnTuesday, setSelectedOnTuesday] = useState();
   const [selectedOnWednesday, setSelectedOnWednesday] = useState();
   const [selectedOnThursday, setSelectedOnThursday] = useState();
   const [selectedOnFriday, setSelectedOnFriday] = useState();
+
+  useEffect(() => {
+    if (onChange) {
+      onChange({
+        monday: selectedOnMonday,
+        tuesday: selectedOnTuesday,
+        wednesday: selectedOnWednesday,
+        thursday: selectedOnThursday,
+        friday: selectedOnFriday,
+      });
+    }
+  }, [
+    onChange,
+    selectedOnFriday,
+    selectedOnMonday,
+    selectedOnThursday,
+    selectedOnTuesday,
+    selectedOnWednesday,
+  ]);
 
   useEffect(() => {
     setSelectedOnMonday(state.monday);
@@ -38,16 +58,15 @@ export function MealsOfWeek({
         },
       });
     };
-
     triggerChange();
   }, [
     form,
     name,
+    selectedOnFriday,
     selectedOnMonday,
+    selectedOnThursday,
     selectedOnTuesday,
     selectedOnWednesday,
-    selectedOnThursday,
-    selectedOnFriday,
   ]);
 
   const checkMeals = () => {

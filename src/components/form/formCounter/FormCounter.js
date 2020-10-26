@@ -17,11 +17,18 @@ export function FormCounter({
   name,
   value,
   max,
+  onChange,
 }) {
   const [counter, setCounter] = useState(value);
   const mainColor = getColor("--main-color");
   const shade = getColor("--bg-color-shade-3");
   const [color, setColor] = useState(mainColor);
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(counter);
+    }
+  }, [counter, onChange]);
 
   useEffect(() => {
     setCounter(value);
@@ -51,6 +58,7 @@ export function FormCounter({
       setCounter(counter - 1);
     }
   };
+
   useEffect(() => {
     form.setFieldsValue({
       [name]: counter,
@@ -58,47 +66,45 @@ export function FormCounter({
   }, [form, name, counter]);
 
   return (
-    <>
-      <FormItem className="counter-form-item" name={name}>
-        <div
-          className="back-to-card"
-          style={{ color: color }}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        >
-          <div className="flex-container-text">
-            {IconCounter && (
-              <IconCounter width={84} fill={color} className="icon-counter" />
-            )}
-            <span className="text-counter">{textCounter}</span>
-            {tooltipTitle && (
-              <Tooltip
-                className="tooltip-icon-counter"
-                title={tooltipTitle}
-                placement="topRight"
-              >
-                <QuestionCircleFilled />
-              </Tooltip>
-            )}
-          </div>
-          <div className="flex-container-button">
-            <MinusCircleFilled
-              id="minus-counter"
-              className="large-text"
-              onClick={decreaseCounter}
-              style={counter === 0 ? { color: shade } : { color: color }}
-            />
-            <span id="result-counter" className="large-text">
-              {counter}
-            </span>
-            <PlusCircleFilled
-              id="plus-counter"
-              className="large-text"
-              onClick={addCounter}
-            />
-          </div>
+    <FormItem className="counter-form-item" name={name}>
+      <div
+        className="back-to-card"
+        style={{ color: color }}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      >
+        <div className="flex-container-text">
+          {IconCounter && (
+            <IconCounter width={84} fill={color} className="icon-counter" />
+          )}
+          <span className="text-counter">{textCounter}</span>
+          {tooltipTitle && (
+            <Tooltip
+              className="tooltip-icon-counter"
+              title={tooltipTitle}
+              placement="topRight"
+            >
+              <QuestionCircleFilled />
+            </Tooltip>
+          )}
         </div>
-      </FormItem>
-    </>
+        <div className="flex-container-button">
+          <MinusCircleFilled
+            id="minus-counter"
+            className="large-text"
+            onClick={decreaseCounter}
+            style={counter === 0 ? { color: shade } : { color: color }}
+          />
+          <span id="result-counter" className="large-text">
+            {counter}
+          </span>
+          <PlusCircleFilled
+            id="plus-counter"
+            className="large-text"
+            onClick={addCounter}
+          />
+        </div>
+      </div>
+    </FormItem>
   );
 }

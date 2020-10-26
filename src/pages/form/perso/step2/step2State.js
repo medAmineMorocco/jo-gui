@@ -71,7 +71,7 @@ export const equipmentstep2State = (values) => {
     },
     {
       question: "5f5566d80117c",
-      response: values["5f5566d80117c"] || 0,
+      response: values["5f5566d80117c"],
     },
     {
       question: "5f5566f657df4",
@@ -85,7 +85,7 @@ export const equipmentstep2State = (values) => {
     },
     {
       question: "5f5566f868949",
-      response: values["5f5566f868949"] || 0,
+      response: values["5f5566f868949"],
       actions: [
         {
           id: "5f7f1f2367bd7",
@@ -109,7 +109,7 @@ export const equipmentstep2State = (values) => {
     },
     {
       question: "5f5567451cb10",
-      response: values["5f5567451cb10"] || 0,
+      response: values["5f5567451cb10"],
       actions: [
         {
           id: "5f7f1f5c96681",
