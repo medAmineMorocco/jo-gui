@@ -33,6 +33,7 @@ import {
   equipmentstep2State,
   equipment2ActionReductionState,
 } from "./step2State";
+
 // Équipement du logement
 export function PersoStep2({ step, setNextStep }) {
   const [form] = Form.useForm();
@@ -53,6 +54,56 @@ export function PersoStep2({ step, setNextStep }) {
 
   const handleSwitchReductionActionChange = (isChecked) => {
     setReductionActionOpened(isChecked);
+  };
+
+  const checkIfQuestion7Required = (
+    value1,
+    value2,
+    value3,
+    value4,
+    value5,
+    value6
+  ) => {
+    return (
+      value1 > 0 ||
+      value2 > 0 ||
+      value3 > 0 ||
+      value4 > 0 ||
+      value5 > 0 ||
+      value6 > 0
+    );
+  };
+
+  const onChangeQuestion1Count = (value) => {
+    setQuestion1Count(value);
+  };
+
+  const onChangeQuestion2Count = (value) => {
+    setQuestion2Count(value);
+  };
+
+  const onChangeQuestion3Count = (value) => {
+    setQuestion3Count(value);
+  };
+
+  const onChangeQuestion4Count = (value) => {
+    setQuestion4Count(value);
+  };
+
+  const onChangeQuestion5Count = (value) => {
+    setQuestion5Count(value);
+  };
+
+  const onChangeQuestion6Count = (value) => {
+    setQuestion6Count(value);
+  };
+
+  const onChangeQuestion8Count = (value) => {
+    setQuestion8Count(value);
+  };
+
+  const onChangeQuestion11Count = (value) => {
+    setQuestion11Count(value);
   };
 
   useEffect(() => {
@@ -90,7 +141,6 @@ export function PersoStep2({ step, setNextStep }) {
           [question]: response,
         });
       });
-
       setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
     };
 
@@ -127,6 +177,7 @@ export function PersoStep2({ step, setNextStep }) {
         <div className="pro-step-title-container">
           <span className="pro-step-title">Équipement du logement</span>
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -134,8 +185,10 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f556168dab39"
             textCounter={EQUIPMENT_QUESTION1}
             value={question1Count}
+            onChange={onChangeQuestion1Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -143,8 +196,10 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5561e5eb854"
             textCounter={EQUIPMENT_QUESTION2}
             value={question2Count}
+            onChange={onChangeQuestion2Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -152,8 +207,10 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55664839d67"
             textCounter={EQUIPMENT_QUESTION3}
             value={question3Count}
+            onChange={onChangeQuestion3Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -161,8 +218,10 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55667459f85"
             textCounter={EQUIPMENT_QUESTION4}
             value={question4Count}
+            onChange={onChangeQuestion4Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -170,8 +229,10 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55669ad8400"
             textCounter={EQUIPMENT_QUESTION5}
             value={question5Count}
+            onChange={onChangeQuestion5Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -179,20 +240,35 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5566c7a6e7c"
             textCounter={EQUIPMENT_QUESTION6}
             value={question6Count}
+            onChange={onChangeQuestion6Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
             name="5f5566d80117c"
             tooltipTitle={false}
             label={EQUIPMENT_QUESTION7}
-            rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
+            rules={[
+              {
+                required: checkIfQuestion7Required(
+                  question1Count,
+                  question2Count,
+                  question3Count,
+                  question4Count,
+                  question5Count,
+                  question6Count
+                ),
+                message: EQUIPMENT_ERROR_MSG,
+              },
+            ]}
             value={question7Input}
             unit={"ans"}
             onChange={onChange}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -200,20 +276,25 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5566f657df4"
             textCounter={EQUIPMENT_QUESTION8}
             value={question8Count}
+            onChange={onChangeQuestion8Count}
           />
         </div>
+
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
             name="5f5566f868949"
             tooltipTitle={false}
             label={EQUIPMENT_QUESTION9}
-            rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
+            rules={[
+              { required: question8Count > 0, message: EQUIPMENT_ERROR_MSG },
+            ]}
             value={question9Input}
             unit={"ans"}
             onChange={onChange}
           />
         </div>
+
         <div className="forms-margin">
           <FormItemSelect
             form={form}
@@ -224,6 +305,7 @@ export function PersoStep2({ step, setNextStep }) {
             value={question10Select}
           />
         </div>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -231,19 +313,24 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55674380953"
             textCounter={EQUIPMENT_QUESTION11}
             value={question11Count}
+            onChange={onChangeQuestion11Count}
           />
         </div>
+
         <FormItemInputNumberWithUnit
           form={form}
           name="5f5567451cb10"
           tooltipTitle={false}
           label={EQUIPMENT_QUESTION12}
-          rules={[{ required: false, message: EQUIPMENT_ERROR_MSG }]}
+          rules={[
+            { required: question11Count > 0, message: EQUIPMENT_ERROR_MSG },
+          ]}
           value={question12Input}
           unit={"ans"}
           onChange={onChange}
         />
       </div>
+
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}

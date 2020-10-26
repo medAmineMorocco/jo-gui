@@ -32,14 +32,18 @@ import {
 // Restauration
 export function ProStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
+
+  const mealBetail = "5f55500f273e7";
+  const mealPoulet = "5f5550293a164";
+  const actionBetail = "5f60a03929c5e";
+  const actionPoulet = "5f60a04cb2a94";
+
   const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
-
   const [slider1Value, setSlider1Value] = useState(0);
   const [slider2Value, setSlider2Value] = useState(0);
   const [slider3Value, setSlider3Value] = useState(0);
-
   const [question1State, setQuestion1State] = useState({
     monday: null,
     tuesday: null,
@@ -47,6 +51,10 @@ export function ProStep3({ step, setNextStep }) {
     thursday: null,
     friday: null,
   });
+
+  const getValueLessThanQuestionValue = (options, questionValue) => {
+    return options.reverse().find(({ value }) => value <= questionValue).value;
+  };
 
   const handleSwitch1Change = (isChecked) => {
     setSwitch1Value(isChecked);
@@ -75,6 +83,35 @@ export function ProStep3({ step, setNextStep }) {
       setSlider1Value(form.getFieldValue("5f5550724626b"));
       setSlider2Value(form.getFieldValue("5f55508b92e6c"));
       setSlider3Value(form.getFieldValue("5f5550b00730d"));
+
+      let nbrBetail = 0;
+      let nbrPoulet = 0;
+
+      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
+        async (day) => {
+          if (form.getFieldValue("repas_question1")[day] === mealBetail) {
+            nbrBetail++;
+          } else if (
+            form.getFieldValue("repas_question1")[day] === mealPoulet
+          ) {
+            nbrPoulet++;
+          }
+        }
+      );
+
+      for (let i = 1; i <= nbrBetail; i++) {
+        actionReductionDataDejeuners[0].options.push({
+          text: `${i}`,
+          value: i,
+        });
+      }
+
+      for (let i = 1; i <= nbrPoulet; i++) {
+        actionReductionDataDejeuners[1].options.push({
+          text: `${i}`,
+          value: i,
+        });
+      }
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
@@ -109,6 +146,54 @@ export function ProStep3({ step, setNextStep }) {
     setRender(Math.random);
   };
 
+  const onChangeMealsOfWeek = (data) => {
+    let nbrBetail = 0;
+    let nbrPoulet = 0;
+
+    ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
+      async (day) => {
+        if (data[day] === mealBetail) {
+          nbrBetail++;
+        } else if (data[day] === mealPoulet) {
+          nbrPoulet++;
+        }
+      }
+    );
+
+    actionReductionDataDejeuners[0].options = [{ text: "0", value: 0 }];
+    actionReductionDataDejeuners[1].options = [{ text: "0", value: 0 }];
+
+    for (let i = 1; i <= nbrBetail; i++) {
+      actionReductionDataDejeuners[0].options.push({ text: `${i}`, value: i });
+    }
+
+    for (let i = 1; i <= nbrPoulet; i++) {
+      actionReductionDataDejeuners[1].options.push({ text: `${i}`, value: i });
+    }
+
+    if (data.monday) {
+      if (nbrBetail < form.getFieldValue(actionBetail)) {
+        const value = getValueLessThanQuestionValue(
+          actionReductionDataDejeuners[0].options,
+          nbrBetail
+        );
+        form.setFieldsValue({
+          [actionBetail]: value,
+        });
+      }
+
+      if (nbrPoulet < form.getFieldValue(actionPoulet)) {
+        const value = getValueLessThanQuestionValue(
+          actionReductionDataDejeuners[1].options,
+          nbrPoulet
+        );
+        form.setFieldsValue({
+          [actionPoulet]: value,
+        });
+      }
+    }
+  };
+
   return (
     <ConfiguredForm
       id={step}
@@ -132,6 +217,7 @@ export function ProStep3({ step, setNextStep }) {
           tooltipTitle={REPAS_QUESTION1_INFO}
           errorMsg={REPAS_QUESTION1_ERROR_MSG}
           state={question1State}
+          onChange={onChangeMealsOfWeek}
         />
       </div>
 

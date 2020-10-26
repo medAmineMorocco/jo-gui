@@ -21,24 +21,14 @@ export const actionReductionDataDejeuners = [
   {
     type: "select",
     name: "5f60a03929c5e",
-    options: [
-      { text: "1", value: 1 },
-      { text: "2", value: 2 },
-      { text: "3", value: 3 },
-      { text: "4", value: 4 },
-    ],
+    options: [{ text: "0", value: 0 }],
     firstText: "Consommer chaque semaine",
     secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     name: "5f60a04cb2a94",
-    options: [
-      { text: "1", value: 1 },
-      { text: "2", value: 2 },
-      { text: "3", value: 3 },
-      { text: "4", value: 4 },
-    ],
+    options: [{ text: "0", value: 0 }],
     firstText: "Consommer chaque semaine",
     secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
