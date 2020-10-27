@@ -157,15 +157,15 @@ export const NBR_KM_VOITURE =
 export const QUESTION2_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en intercités ou TER (<200 km)";
 export const QUESTION3_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en train TGV (à environ 250 km)";
+  "Nombre d'aller-retours en train TGV (à environ 250 km)";
 export const QUESTION4_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en train TGV (à environ 500 km) autres qu'au CIO à Lausanne";
+  "Nombre d'aller-retours en train TGV (à environ 500 km) autres qu'au CIO à Lausanne";
 export const QUESTION5_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en train TGV (à environ 800 km)";
+  "Nombre d'aller-retours en train TGV (à environ 800 km)";
 export const QUESTION6_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en train au CIO à Lausanne";
+  "Nombre d'aller-retours en train au CIO à Lausanne";
 export const QUESTION7_NBR_TRAJETS_AR =
-  "Nombre de trajets AR en avion au CIO à Lausanne en Economie";
+  "Nombre d'aller-retours en avion au CIO à Lausanne en Economie";
 export const QUESTION8_NBR_VOLS_AR =
   "Nombre de vols AR longs courriers à Tokyo";
 export const QUESTION9_NBR_VOLS_AR = "Nombre de vols AR courts courriers (<5h)";

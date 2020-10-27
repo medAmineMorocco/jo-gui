@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Select } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
 import { findDOMNode } from "react-dom";
-import { useTabletSize } from "@hooks/window";
+import { useTabletSize, useMobileSize } from "@hooks/window";
 import "./formItemSelect.css";
 
 export function FormItemSelect({
@@ -14,11 +14,24 @@ export function FormItemSelect({
   options,
   onChange,
   disabled,
+  suffix,
 }) {
   const isTablet = useTabletSize();
+  const isMobile = useMobileSize();
   const mainColor = getColor("--main-color");
   const [color, setColor] = useState(mainColor);
   let selectRef;
+
+  useEffect(() => {
+    if (isMobile && suffix) {
+      setTimeout(() => {
+        const element = findDOMNode(selectRef.selectRef.current).querySelector(
+          ".ant-select-selection-item"
+        );
+        element.style.textAlign = "left";
+      });
+    }
+  }, [selectRef, isMobile, suffix]);
 
   const onFocus = () => {
     const focusColor = "white";
@@ -68,6 +81,7 @@ export function FormItemSelect({
         onSelect={onSelect}
         onChange={onChange}
         disabled={disabled}
+        {...(suffix && { suffixIcon: suffix })}
       >
         {options.map(({ text, value }, key) => (
           <Select.Option key={key} className="select-option" value={value}>
