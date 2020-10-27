@@ -228,6 +228,7 @@ export function PersoStep3({ step, setNextStep }) {
           unit="ans"
           value={question4}
           onChange={onchangeQuestion4}
+          oneLineInput={true}
         />
 
         <div className="forms-margin">
@@ -248,6 +249,7 @@ export function PersoStep3({ step, setNextStep }) {
           unit="ans"
           value={question6}
           onChange={onchangeQuestion6}
+          oneLineInput={true}
         />
 
         <FormCounter
@@ -264,6 +266,7 @@ export function PersoStep3({ step, setNextStep }) {
           unit="ans"
           value={question8}
           onChange={onchangeQuestion8}
+          oneLineInput={true}
         />
 
         <FormCounter
@@ -287,6 +290,7 @@ export function PersoStep3({ step, setNextStep }) {
           unit="ans"
           value={question11}
           onChange={onchangeQuestion11}
+          oneLineInput={true}
         />
 
         <FormCounter
@@ -303,6 +307,7 @@ export function PersoStep3({ step, setNextStep }) {
           unit="ans"
           value={question13}
           onChange={onchangeQuestion13}
+          oneLineInput={true}
         />
       </div>
 
