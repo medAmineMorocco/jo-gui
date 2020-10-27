@@ -9,12 +9,10 @@ import {
   EQUIPMENT_QUESTION4,
   EQUIPMENT_QUESTION5,
   EQUIPMENT_QUESTION6,
-  EQUIPMENT_QUESTION7,
+  EQUIPMENT_QUESTION,
   EQUIPMENT_QUESTION8,
-  EQUIPMENT_QUESTION9,
   EQUIPMENT_QUESTION10,
   EQUIPMENT_QUESTION11,
-  EQUIPMENT_QUESTION12,
   EQUIPMENT_ERROR_MSG,
   EQUIPMENT_SAVIEZ_VOUS,
 } from "@utils/constants";
@@ -249,7 +247,7 @@ export function PersoStep2({ step, setNextStep }) {
             form={form}
             name="5f5566d80117c"
             tooltipTitle={false}
-            label={EQUIPMENT_QUESTION7}
+            label={EQUIPMENT_QUESTION}
             rules={[
               {
                 required: checkIfQuestion7Required(
@@ -266,6 +264,7 @@ export function PersoStep2({ step, setNextStep }) {
             value={question7Input}
             unit={"ans"}
             onChange={onChange}
+            oneLineInput={true}
           />
         </div>
 
@@ -285,13 +284,14 @@ export function PersoStep2({ step, setNextStep }) {
             form={form}
             name="5f5566f868949"
             tooltipTitle={false}
-            label={EQUIPMENT_QUESTION9}
+            label={EQUIPMENT_QUESTION}
             rules={[
               { required: question8Count > 0, message: EQUIPMENT_ERROR_MSG },
             ]}
             value={question9Input}
             unit={"ans"}
             onChange={onChange}
+            oneLineInput={true}
           />
         </div>
 
@@ -321,13 +321,14 @@ export function PersoStep2({ step, setNextStep }) {
           form={form}
           name="5f5567451cb10"
           tooltipTitle={false}
-          label={EQUIPMENT_QUESTION12}
+          label={EQUIPMENT_QUESTION}
           rules={[
             { required: question11Count > 0, message: EQUIPMENT_ERROR_MSG },
           ]}
           value={question12Input}
           unit={"ans"}
           onChange={onChange}
+          oneLineInput={true}
         />
       </div>
 

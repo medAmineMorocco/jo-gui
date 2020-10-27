@@ -74,7 +74,7 @@
 
 @media (max-width: 767px) {
   .mobile-wizard-container {
-    margin-bottom: 96px;
+    margin-bottom: 28vw;
   }
 
   .wizard-content-right-form-parent {
@@ -110,7 +110,7 @@
   }
 
   .mobile-wizard-container {
-    margin-bottom: 20vw;
+    margin-bottom: 26vw;
   }
 
   .form-questions-title {

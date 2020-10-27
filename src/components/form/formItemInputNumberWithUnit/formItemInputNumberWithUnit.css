@@ -6,13 +6,20 @@
   color: var(--main-color);
 }
 
+.input-number-with-unit-phrase-trou {
+  width: 30%;
+  background-color: var(--bg-color-shade-3);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
 .ant-input-number-input {
   text-align: center;
 }
 
 .input-unit {
   color: var(--main-color);
-  margin-left: 8px;
 }
 
 .ant-form-item-has-error .ant-input-number,
@@ -27,6 +34,10 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .input-unit {
-    font-size: 22px;
+    font-size: var(--tablet-font-size);
+  }
+
+  .input-number-with-unit-phrase-trou {
+    width: 26%;
   }
 }

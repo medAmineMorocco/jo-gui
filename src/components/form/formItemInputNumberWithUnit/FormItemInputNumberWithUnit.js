@@ -3,6 +3,7 @@ import { findDOMNode } from "react-dom";
 import { InputNumber } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
+import { useTabletSize, useMobileSize } from "@hooks/window";
 import "./formItemInputNumberWithUnit.css";
 
 export function FormItemInputNumberWithUnit({
@@ -14,7 +15,10 @@ export function FormItemInputNumberWithUnit({
   unit,
   onChange,
   disabled,
+  oneLineInput,
 }) {
+  const isTablet = useTabletSize();
+  const isMobile = useMobileSize();
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
   const inputUnitRef = useRef();
@@ -51,15 +55,25 @@ export function FormItemInputNumberWithUnit({
 
   return (
     <FormItem
-      label={label}
+      {...((!oneLineInput || isMobile) && { label: label })}
       labelStyle={{ color: color }}
       name={name}
       rules={rules}
       tooltipTitle={tooltipTitle}
     >
+      {oneLineInput && !isMobile && (
+        <span ref={inputUnitRef} className="input-unit">
+          {label}&nbsp;&nbsp;
+        </span>
+      )}
       <InputNumber
         ref={inputRef}
-        className="input-number-with-unit"
+        className={
+          oneLineInput && !isMobile
+            ? "input-number-with-unit-phrase-trou"
+            : "input-number-with-unit"
+        }
+        size={isTablet ? "large" : "middle"}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onDefaultChange}
@@ -69,7 +83,7 @@ export function FormItemInputNumberWithUnit({
         {...(disabled && { disabled: disabled })}
       />
       <span ref={inputUnitRef} className="input-unit">
-        {unit}
+        &nbsp;&nbsp;{unit}
       </span>
     </FormItem>
   );

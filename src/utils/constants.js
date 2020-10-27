@@ -310,13 +310,11 @@ export const EQUIPMENT_QUESTION3 = "Nombre de lave-linge et sèche-linge";
 export const EQUIPMENT_QUESTION4 = "Nombre de lave-vaisselles";
 export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
 export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
-export const EQUIPMENT_QUESTION7 = "Appareils renouvelés en moyenne tous les";
+export const EQUIPMENT_QUESTION = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
-export const EQUIPMENT_QUESTION9 = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
   "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
-export const EQUIPMENT_QUESTION12 = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_SOUSTEXTE_EQUIPMENT = "";
 export const EQUIPMENT_SAVIEZ_VOUS =
