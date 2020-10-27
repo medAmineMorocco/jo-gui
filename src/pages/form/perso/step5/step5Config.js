@@ -47,60 +47,47 @@ export const question4_subQuestions = [
   },
 ];
 
-const options = [
-  { text: "0", value: 0 },
-  { text: "1", value: 1 },
-  { text: "2", value: 2 },
-  { text: "3", value: 3 },
-  { text: "4", value: 4 },
-  { text: "5", value: 5 },
-  { text: "6", value: 6 },
-  { text: "7", value: 7 },
-  { text: "8", value: 8 },
-  { text: "9", value: 9 },
-];
-
 export const selectDetail = [
   {
     type: "select",
     firstText: "Consommer chaque semaine",
     name: "5f60a1d33da5f",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "dîners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer chaque semaine",
     name: "5f60a1e56f9be",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "dîners à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",
     firstText: "Consommer le week-end",
     name: "5f60a1f6aa5d9",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer le week-end",
     name: "5f60a209470be",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",
     firstText: "Consommer en vacances",
     name: "5f60a21ef0fe9",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "déjeuners à base de légumes plutôt que de viande rouge",
   },
   {
     type: "select",
     firstText: "Consommer en vacances",
     name: "5f60a24828ffa",
-    options: options,
+    options: [{ text: "0", value: 0 }],
     secondText: "déjeuners à base de légumes plutôt que de viande blanche",
   },
   {

@@ -2,7 +2,7 @@ export const proStep4ActionReductionState = (values) => {
   return [
     {
       question: "trajets-switch-1",
-      response: values["trajets-switch-1"] || true,
+      response: values["trajets-switch-1"] || false,
     },
   ];
 };
