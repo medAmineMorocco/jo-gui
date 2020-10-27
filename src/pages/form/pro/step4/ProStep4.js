@@ -30,7 +30,7 @@ import {
 // Trajets
 export function ProStep4({ step, setNextStep }) {
   const [form] = Form.useForm();
-  const [switchValue, setSwitchValue] = useState(true);
+  const [switchValue, setSwitchValue] = useState(false);
   const [modeDeplacement, setModeDeplacement] = useState(
     modeDeplacementOptions[0].value
   );
@@ -67,7 +67,6 @@ export function ProStep4({ step, setNextStep }) {
 
   useEffect(() => {
     if (modeDeplacement === "pied-velo") {
-      setSwitchValue(true);
       actionReductionData[0].disabled = true;
     } else if (electricTravelModes.includes(modeDeplacement)) {
       setMotorisationOptionsState([

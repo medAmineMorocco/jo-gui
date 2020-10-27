@@ -41,14 +41,9 @@ export function ProStep5({ step, setNextStep }) {
   const [form] = Form.useForm();
 
   const [switchValue, setSwitchValue] = useState(false);
-  const [question5trajetsAr, setQuestion5trajetsAr] = useState(0);
 
   const handleSwitchChange = (isChecked) => {
     setSwitchValue(isChecked);
-  };
-
-  const handleQuestion5trajetsArChange = (value) => {
-    setQuestion5trajetsAr(value);
   };
 
   // tarjets AR data pour les champs de saisies
@@ -69,7 +64,6 @@ export function ProStep5({ step, setNextStep }) {
     {
       label: QUESTION5_NBR_TRAJETS_AR,
       name: "5f5558209ce59",
-      onChange: handleQuestion5trajetsArChange,
     },
     {
       label: QUESTION6_NBR_TRAJETS_AR,
@@ -99,12 +93,6 @@ export function ProStep5({ step, setNextStep }) {
   ];
 
   useEffect(() => {
-    if (question5trajetsAr === 0) {
-      setSwitchValue(true);
-    }
-  }, [question5trajetsAr]);
-
-  useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
       stepState.forEach(({ question, response, actions }) => {
@@ -119,7 +107,6 @@ export function ProStep5({ step, setNextStep }) {
           });
         }
       });
-      setQuestion5trajetsAr(form.getFieldValue("question5_NbrTrajetsAr"));
     };
 
     const setSettingsOfStep = (settingsOfStep) => {
