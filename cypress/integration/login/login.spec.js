@@ -14,7 +14,7 @@ context("Login page", () => {
     },
   ];
 
-  const IDENTIFIER_REQUIRED = "Veuillez renseigner votre émail";
+  const IDENTIFIER_REQUIRED = "Veuillez renseigner votre email";
   const IDENTIFIER_NOT_VALID = "Adresse email non valide";
 
   it("should show email required when not enter email", () => {

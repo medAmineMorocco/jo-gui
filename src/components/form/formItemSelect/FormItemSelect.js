@@ -25,13 +25,15 @@ export function FormItemSelect({
   useEffect(() => {
     if (isMobile && suffix) {
       setTimeout(() => {
-        const element = findDOMNode(selectRef.selectRef.current).querySelector(
-          ".ant-select-selection-item"
-        );
+        const element = Array.from(
+          document.querySelectorAll(".ant-select-arrow")
+        )
+          .find((el) => el.innerText === suffix)
+          .parentNode.querySelector(".ant-select-selection-item");
         element.style.textAlign = "left";
       });
     }
-  }, [selectRef, isMobile, suffix]);
+  }, [isMobile, suffix]);
 
   const onFocus = () => {
     const focusColor = "white";
