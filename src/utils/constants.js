@@ -1,7 +1,7 @@
 /* Login Page */
 export const IDENTIFIER = "E-mail";
 export const LOGIN = "ok";
-export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre émail";
+export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre email";
 export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
 /* Home Page */
 export const HERO_TITLE1 = "Ton coach";
