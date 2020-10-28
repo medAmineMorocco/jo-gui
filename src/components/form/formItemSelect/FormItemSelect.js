@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Select } from "antd";
 import { getColor } from "@utils/cssUtil";
 import { FormItem } from "@components/form/formItem/FormItem";
 import { findDOMNode } from "react-dom";
-import { useTabletSize, useMobileSize } from "@hooks/window";
+import { useTabletSize } from "@hooks/window";
 import "./formItemSelect.css";
 
 export function FormItemSelect({
@@ -17,23 +17,9 @@ export function FormItemSelect({
   suffix,
 }) {
   const isTablet = useTabletSize();
-  const isMobile = useMobileSize();
   const mainColor = getColor("--main-color");
   const [color, setColor] = useState(mainColor);
   let selectRef;
-
-  useEffect(() => {
-    if (isMobile && suffix) {
-      setTimeout(() => {
-        const element = Array.from(
-          document.querySelectorAll(".ant-select-arrow")
-        )
-          .find((el) => el.innerText === suffix)
-          .parentNode.querySelector(".ant-select-selection-item");
-        element.style.textAlign = "left";
-      });
-    }
-  }, [isMobile, suffix]);
 
   const onFocus = () => {
     const focusColor = "white";

@@ -382,7 +382,7 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION10_TOOTLTIP}
             options={optionsClasses}
             value={question10Select}
-            suffix={"kW EP/ m2 (le 2 en exposant)"}
+            suffix={"kW EP/ m2"}
           />
         </div>
         <div className="forms-margin">
