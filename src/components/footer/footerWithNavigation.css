@@ -68,6 +68,21 @@
     width: 112px;
   }
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .footer-navigation-left {
+    margin-top: 16px;
+  }
+
+  .footer-navigation-right {
+    margin-top: 16px;
+  }
+  .footer-navigation-details-container .footer-navigation-left {
+    margin-top: 16px;
+  }
+  .footer-navigation-details-container .footer-navigation-right {
+    margin-top: 16px;
+  }
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .footer-buttons-left {
