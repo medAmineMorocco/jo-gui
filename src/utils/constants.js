@@ -165,12 +165,13 @@ export const QUESTION6_NBR_TRAJETS_AR =
 export const QUESTION7_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en avion au CIO à Lausanne en Economie";
 export const QUESTION8_NBR_VOLS_AR =
-  "Nombre de vols AR longs courriers à Tokyo";
-export const QUESTION9_NBR_VOLS_AR = "Nombre de vols AR courts courriers (<5h)";
+  "Nombre d'aller-retours longs courriers à Tokyo";
+export const QUESTION9_NBR_VOLS_AR =
+  "Nombre d'aller-retours courts courriers (<5h)";
 export const QUESTION10_NBR_VOLS_AR =
-  "Nombre de vols AR longs courriers (>5h et < 10h)";
+  "Nombre d'aller-retours longs courriers (>5h et < 10h)";
 export const QUESTION11_NBR_VOLS_AR =
-  "Nombre de vols AR longs courriers (>10h)";
+  "Nombre d'aller-retours longs courriers (>10h)";
 export const SAVIER_VOUS_DEPLACEMENT =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
