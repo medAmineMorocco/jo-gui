@@ -32,7 +32,6 @@ import {
   SECTION3_PARAG3,
   SECTION3_PARAG4,
   SECTION3_PARAG5,
-  SECTION3_SOURCE,
   WEBSITE_INFO_MSG,
   WEBSITE_URL,
   WEBSITE_INVITATION_MSG,
@@ -103,14 +102,14 @@ export function HomePage(props) {
         style={{ background: "#009494" }}
         imgStyle={{ backgroundImage: 'url("/images/section-1.jpg")' }}
         imgPosition="right"
-      ></Section>
+      />
       <Section
         title={SECTION2_TITLE}
         paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2, SECTION2_PARAG3]}
         style={{ background: "#FF8675" }}
         imgStyle={{ backgroundImage: 'url("/images/section-2.jpg")' }}
         imgPosition="left"
-      ></Section>
+      />
       <Section
         title={SECTION3_TITLE}
         paragraphs={[
@@ -121,8 +120,7 @@ export function HomePage(props) {
           SECTION3_PARAG5,
         ]}
         style={{ background: "#003B55" }}
-        source={SECTION3_SOURCE}
-      ></Section>
+      />
 
       <div className="section-footer">
         <div className="website-info">{WEBSITE_INFO_MSG}</div>

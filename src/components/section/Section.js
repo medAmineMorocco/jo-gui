@@ -21,7 +21,7 @@ export function Section({
         className="section-paragraph"
         key={"section-parag-" + index}
         dangerouslySetInnerHTML={{ __html: paragraph }}
-      ></p>
+      />
     );
   });
 
@@ -33,7 +33,7 @@ export function Section({
           renderedParagraphs={renderedParagraphs}
           style={style}
           source={source}
-        ></Accordion>
+        />
       </div>
     );
   } else {
@@ -46,9 +46,11 @@ export function Section({
               <div className="section-paragraphs-container-full">
                 {renderedParagraphs}
               </div>
-              <div className="section-source">
-                Source : <a href={source}>{source}</a>
-              </div>
+              {source && (
+                <div className="section-source">
+                  Source : <a href={source}>{source}</a>
+                </div>
+              )}
             </div>
           </div>
         </div>

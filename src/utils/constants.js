@@ -52,8 +52,6 @@ export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz</b>(
 export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence.<b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties.`;
 export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre ta vie professionnelle et personnelle</b> pour une meilleure lecture`;
 export const SECTION3_PARAG5 = `<b>Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions</b>. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.`;
-export const SECTION3_SOURCE =
-  "https://www.geo.fr/environnement/quest-ce-que-le-bilan-carbone-et-comment-est-il-calcule-193832";
 
 export const WEBSITE_INFO_MSG =
   "Plus d’informations ? Consulte notre page dédiée :";
