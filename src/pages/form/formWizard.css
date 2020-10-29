@@ -47,7 +47,7 @@
 }
 
 .mobile-wizard-form-container {
-  padding-top: 48px;
+  padding-top: 10vh;
 }
 
 .pro-step-title-container {
@@ -74,16 +74,13 @@
 
 @media (max-width: 767px) {
   .mobile-wizard-container {
-    margin-bottom: 28vw;
+    height: 60vh;
+    overflow-y: scroll;
   }
 
   .wizard-content-right-form-parent {
     padding-left: 32px;
     padding-right: 32px;
-  }
-
-  .form-header {
-    margin-bottom: 66px;
   }
 
   .form-questions-title {
@@ -110,7 +107,8 @@
   }
 
   .mobile-wizard-container {
-    margin-bottom: 26vw;
+    height: 60vh;
+    overflow-y: scroll;
   }
 
   .form-questions-title {
