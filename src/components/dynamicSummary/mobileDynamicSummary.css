@@ -3,6 +3,12 @@
   display: flex;
   padding-left: 8px;
   padding-right: 8px;
+  background-color: #1b1b1b;
+  position: absolute;
+  z-index: 999;
+  margin-top: -1px;
+  margin-bottom: 5px;
+  height: 5%;
 }
 
 [data-status="wait"].mobile-dynamic-summary-icon {
