@@ -63,8 +63,13 @@ export function PersoStep1({ step, setNextStep }) {
   const [question10Select, setQuestion10Select] = useState(0);
   const [question11Select, setQuestion11Select] = useState(0);
   const [isReductionActionOpened, setReductionActionOpened] = useState(false);
-  const [isFirstInsertDisabled, setIsFirstInsertDisabled] = useState(false);
-  const [isSecondInsertDisabled, setIsSecondInsertDisabled] = useState(false);
+
+  const [isQuestion2Disabled, setIsQuestion2Disabled] = useState(false);
+  const [isQuestion3Disabled, setIsQuestion3Disabled] = useState(false);
+  const [isQuestion4Disabled, setIsQuestion4Disabled] = useState(false);
+  const [isQuestion6Disabled, setIsQuestion6Disabled] = useState(false);
+  const [isQuestion7Disabled, setIsQuestion7Disabled] = useState(false);
+  const [isQuestion8Disabled, setIsQuestion8Disabled] = useState(false);
 
   const handleSwitchReductionActionChange = (isChecked) => {
     setReductionActionOpened(isChecked);
@@ -74,52 +79,70 @@ export function PersoStep1({ step, setNextStep }) {
     setRender(Math.random);
   };
 
-  const isFirstInsertValid = () => {
-    const question2 = form.getFieldValue("5f555f180a442");
-    const question3 = form.getFieldValue("5f555f8af3776");
-    const question4 = form.getFieldValue("5f555faf640d3");
-    return (
-      (question2 === null || question2 === undefined) &&
-      (question3 === null || question3 === undefined) &&
-      (question4 === null || question4 === undefined)
-    );
+  const isQuestionValid = (questionId) => {
+    const question = form.getFieldValue(questionId);
+    return question === null || question === undefined;
   };
 
-  const isSecondInsertValid = () => {
-    const question6 = form.getFieldValue("5f7f230d75c78");
-    const question7 = form.getFieldValue("5f7f2382ba8a0");
-    const question8 = form.getFieldValue("5f7f23ce239c1");
-    return (
-      (question6 === null || question6 === undefined) &&
-      (question7 === null || question7 === undefined) &&
-      (question8 === null || question8 === undefined)
-    );
-  };
-
-  const onchangeFirstInsert = () => {
+  const onchangeQuestion2And6Value = () => {
     onChange();
-    if (isFirstInsertValid() && isSecondInsertValid()) {
-      setIsFirstInsertDisabled(false);
-      setIsSecondInsertDisabled(false);
-    } else if (!isFirstInsertValid() && isSecondInsertValid()) {
-      setIsFirstInsertDisabled(false);
-      setIsSecondInsertDisabled(true);
+    if (isQuestionValid("5f555f180a442") && isQuestionValid("5f7f230d75c78")) {
+      setIsQuestion2Disabled(false);
+      setIsQuestion6Disabled(false);
+    } else if (
+      isQuestionValid("5f555f180a442") &&
+      !isQuestionValid("5f7f230d75c78")
+    ) {
+      setIsQuestion2Disabled(true);
+      setIsQuestion6Disabled(false);
+    } else {
+      setIsQuestion2Disabled(false);
+      setIsQuestion6Disabled(true);
     }
   };
 
-  const onchangeSecondInsert = () => {
+  const onchangeQuestion3And7Value = () => {
     onChange();
-    if (isFirstInsertValid() && isSecondInsertValid()) {
-      setIsFirstInsertDisabled(false);
-      setIsSecondInsertDisabled(false);
-    } else if (isFirstInsertValid() && !isSecondInsertValid()) {
-      setIsFirstInsertDisabled(true);
-      setIsSecondInsertDisabled(false);
+    if (isQuestionValid("5f555f8af3776") && isQuestionValid("5f7f2382ba8a0")) {
+      setIsQuestion3Disabled(false);
+      setIsQuestion7Disabled(false);
+    } else if (
+      isQuestionValid("5f555f8af3776") &&
+      !isQuestionValid("5f7f2382ba8a0")
+    ) {
+      setIsQuestion3Disabled(true);
+      setIsQuestion7Disabled(false);
+    } else {
+      setIsQuestion3Disabled(false);
+      setIsQuestion7Disabled(true);
+    }
+  };
+
+  const onchangeQuestion4And8Value = () => {
+    onChange();
+    if (isQuestionValid("5f555faf640d3") && isQuestionValid("5f7f23ce239c1")) {
+      setIsQuestion4Disabled(false);
+      setIsQuestion8Disabled(false);
+    } else if (
+      isQuestionValid("5f555faf640d3") &&
+      !isQuestionValid("5f7f23ce239c1")
+    ) {
+      setIsQuestion4Disabled(true);
+      setIsQuestion8Disabled(false);
+    } else {
+      setIsQuestion4Disabled(false);
+      setIsQuestion8Disabled(true);
     }
   };
 
   useEffect(() => {
     scrollToTopOfThePage();
+
+    const isQuestionValid = (questionId) => {
+      const question = form.getFieldValue(questionId);
+      return question === null || question === undefined;
+    };
+
     const setReponsesOfStep = (stepState) => {
       stepState.forEach(({ question, response, actions }) => {
         form.setFieldsValue({
@@ -145,38 +168,46 @@ export function PersoStep1({ step, setNextStep }) {
       setQuestion10Select(form.getFieldValue("5f55608002862"));
       setQuestion11Select(form.getFieldValue("5f55609bdcaae"));
 
-      const question2 = form.getFieldValue("5f555f180a442");
-      const question3 = form.getFieldValue("5f555f8af3776");
-      const question4 = form.getFieldValue("5f555faf640d3");
-      const question6 = form.getFieldValue("5f7f230d75c78");
-      const question7 = form.getFieldValue("5f7f2382ba8a0");
-      const question8 = form.getFieldValue("5f7f23ce239c1");
+      if (
+        isQuestionValid("5f555f180a442") &&
+        !isQuestionValid("5f7f230d75c78")
+      ) {
+        setIsQuestion2Disabled(true);
+        setIsQuestion6Disabled(false);
+      } else if (
+        !isQuestionValid("5f555f180a442") &&
+        isQuestionValid("5f7f230d75c78")
+      ) {
+        setIsQuestion2Disabled(false);
+        setIsQuestion6Disabled(true);
+      }
 
       if (
-        (question2 === null || question2 === undefined) &&
-        (question3 === null || question3 === undefined) &&
-        (question4 === null || question4 === undefined) &&
-        (question6 === null || question6 === undefined) &&
-        (question7 === null || question7 === undefined) &&
-        (question8 === null || question8 === undefined)
+        isQuestionValid("5f555f8af3776") &&
+        !isQuestionValid("5f7f2382ba8a0")
       ) {
-        setIsFirstInsertDisabled(false);
-        setIsSecondInsertDisabled(false);
+        setIsQuestion3Disabled(true);
+        setIsQuestion7Disabled(false);
       } else if (
-        !(
-          (question2 === null || question2 === undefined) &&
-          (question3 === null || question3 === undefined) &&
-          (question4 === null || question4 === undefined)
-        ) &&
-        (question6 === null || question6 === undefined) &&
-        (question7 === null || question7 === undefined) &&
-        (question8 === null || question8 === undefined)
+        !isQuestionValid("5f555f8af3776") &&
+        isQuestionValid("5f7f2382ba8a0")
       ) {
-        setIsFirstInsertDisabled(false);
-        setIsSecondInsertDisabled(true);
-      } else {
-        setIsFirstInsertDisabled(true);
-        setIsSecondInsertDisabled(false);
+        setIsQuestion3Disabled(false);
+        setIsQuestion7Disabled(true);
+      }
+
+      if (
+        isQuestionValid("5f555faf640d3") &&
+        !isQuestionValid("5f7f23ce239c1")
+      ) {
+        setIsQuestion4Disabled(true);
+        setIsQuestion8Disabled(false);
+      } else if (
+        !isQuestionValid("5f555faf640d3") &&
+        isQuestionValid("5f7f23ce239c1")
+      ) {
+        setIsQuestion4Disabled(false);
+        setIsQuestion8Disabled(true);
       }
     };
 
@@ -262,12 +293,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION2_TOOTLTIP}
             label={HOUSE_QUESTION2}
             rules={[
-              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion2Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question2Input}
             unit={"kWh"}
-            onChange={onchangeFirstInsert}
-            disabled={isFirstInsertDisabled}
+            onChange={onchangeQuestion2And6Value}
+            disabled={isQuestion2Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -277,12 +308,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION3_TOOTLTIP}
             label={HOUSE_QUESTION3}
             rules={[
-              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion3Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question3Input}
             unit={"kWh PCS"}
-            onChange={onchangeFirstInsert}
-            disabled={isFirstInsertDisabled}
+            onChange={onchangeQuestion3And7Value}
+            disabled={isQuestion3Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -292,12 +323,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION4_TOOTLTIP}
             label={HOUSE_QUESTION4}
             rules={[
-              { required: !isFirstInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion4Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question4Input}
             unit={"L"}
-            onChange={onchangeFirstInsert}
-            disabled={isFirstInsertDisabled}
+            onChange={onchangeQuestion4And8Value}
+            disabled={isQuestion4Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -324,12 +355,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION6}
             rules={[
-              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion6Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question6Input}
             unit={"€/mois"}
-            onChange={onchangeSecondInsert}
-            disabled={isSecondInsertDisabled}
+            onChange={onchangeQuestion2And6Value}
+            disabled={isQuestion6Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -339,12 +370,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION7}
             rules={[
-              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion7Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question7Input}
             unit={"€/mois"}
-            onChange={onchangeSecondInsert}
-            disabled={isSecondInsertDisabled}
+            onChange={onchangeQuestion3And7Value}
+            disabled={isQuestion7Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -354,12 +385,12 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION678_TOOTLTIP}
             label={HOUSE_QUESTION8}
             rules={[
-              { required: !isSecondInsertDisabled, message: HOUSE_ERROR_MSG },
+              { required: !isQuestion8Disabled, message: HOUSE_ERROR_MSG },
             ]}
             value={question8Input}
             unit={"€/mois"}
-            onChange={onchangeSecondInsert}
-            disabled={isSecondInsertDisabled}
+            onChange={onchangeQuestion4And8Value}
+            disabled={isQuestion8Disabled}
           />
         </div>
         <div className="forms-margin">
@@ -382,7 +413,7 @@ export function PersoStep1({ step, setNextStep }) {
             tooltipTitle={HOUSE_QUESTION10_TOOTLTIP}
             options={optionsClasses}
             value={question10Select}
-            suffix={"kW EP/ m2"}
+            suffix={"kW EP/m²"}
           />
         </div>
         <div className="forms-margin">
