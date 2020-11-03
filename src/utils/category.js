@@ -12,11 +12,11 @@ export const proItems = [
     description: "2 questions",
   },
   {
-    title: "Trajets",
+    title: "Trajets Domicile-travail",
     description: "3 questions",
   },
   {
-    title: "Déplacements",
+    title: "Déplacements professionnels",
     description: "11 questions",
   },
 ];
@@ -27,11 +27,11 @@ export const persoItems = [
     description: "12 questions",
   },
   {
-    title: "Équipement du logement",
+    title: "Appareils et électroménager",
     description: "12 questions",
   },
   {
-    title: "Biens matériels",
+    title: "Véhicules et électronique",
     description: "15 questions",
   },
   {

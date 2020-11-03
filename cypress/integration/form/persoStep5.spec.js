@@ -13,37 +13,36 @@ context('Form | alimentation step', () => {
 			width: 1280,
 		},
 	];
-	//Rework
-	// it('should show alimentation step on form page', () => {
-	// 	sizes.forEach((size) => {
-	// 		cy.viewport(size.device);
-	// 		cy.window().then((win) => {
-	// 			win.sessionStorage.clear();
-	// 			win.sessionStorage.setItem('current-step', 10);
-	// 			cy.login('email@paris2024.org');
+	it('should show alimentation step on form page', () => {
+		sizes.forEach((size) => {
+			cy.viewport(size.device);
+			cy.window().then((win) => {
+				win.sessionStorage.clear();
+				win.sessionStorage.setItem('current-step', 10);
+				cy.login('email@paris2024.org');
 
-	// 			cy.visit('/form');
+				cy.visit('/form');
 
-	// 			cy.url()
-	// 				.should('include', '/form')
-	// 				.then(() => {
-	// 					cy.takeSnapshots('form - alimentation', size).then(() => {
-	// 						cy.get('.custom-btn-modal')
-	// 							.click()
-	// 							.then(() =>
-	// 								cy.takeSnapshots('form - alimentation conseils', size).then(() => {
-	// 									cy.get('.modal-close-btn-modal').click();
-	// 									cy.get('.ant-switch')
-	// 										.eq(0)
-	// 										.click()
-	// 										.then(() => cy.takeSnapshots('form - alimentation actions de réduction', size));
-	// 								})
-	// 							);
-	// 					});
-	// 				});
-	// 		});
-	// 	});
-	// });
+				cy.url()
+					.should('include', '/form')
+					.then(() => {
+						cy.takeSnapshots('form - alimentation', size).then(() => {
+							cy.get('.custom-btn-modal')
+								.click({force: true})
+								.then(() =>
+									cy.takeSnapshots('form - alimentation conseils', size).then(() => {
+										cy.get('.modal-close-btn-modal').click();
+										cy.get('.ant-switch')
+											.eq(0)
+											.click({force: true})
+											.then(() => cy.takeSnapshots('form - alimentation actions de réduction', size));
+									})
+								);
+						});
+					});
+			});
+		});
+	});
 
 	it('should submit form', () => {
 		cy.window().then((win) => {

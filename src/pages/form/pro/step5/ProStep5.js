@@ -164,10 +164,7 @@ export function ProStep5({ step, setNextStep }) {
         </div>
         {trajetsARIndex.map((index, key) => (
           <div className="forms-margin" key={key}>
-            <FormItemInputNumber
-              rules={[{ required: true, message: DEPLACEMENT_MSG_ERROR }]}
-              {...trajetsARDynamicProps[key]}
-            />
+            <FormItemInputNumber {...trajetsARDynamicProps[key]} />
           </div>
         ))}
         <div className="forms-margin">
@@ -175,7 +172,6 @@ export function ProStep5({ step, setNextStep }) {
         </div>
         <div className="forms-margin">
           <FormItemInputNumber
-            rules={[{ required: true, message: DEPLACEMENT_MSG_ERROR }]}
             label={QUESTION7_NBR_TRAJETS_AR}
             name="5f55584be6d5b"
           />
@@ -183,6 +179,7 @@ export function ProStep5({ step, setNextStep }) {
         {volsARIndex.map((index, key) => (
           <div className="forms-margin" key={key}>
             <FormItemMultipleInputNumber
+              isRequired={false}
               form={form}
               name={`deplacement-multi-${index}`}
               {...volsARDynamicProps[key]}

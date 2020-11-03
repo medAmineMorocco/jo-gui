@@ -34,7 +34,6 @@ import {
   SECTION3_PARAG5,
   WEBSITE_INFO_MSG,
   WEBSITE_URL,
-  WEBSITE_INVITATION_MSG,
   CONTACT_LEGAL_MENTION,
   CONTACT_ACCESSIBILITY_SITES,
   CONTACT_PRIVACY_POLICY,
@@ -133,7 +132,6 @@ export function HomePage(props) {
             {WEBSITE_URL}
           </a>
         </div>
-        <div className="website-invite">{WEBSITE_INVITATION_MSG}</div>
       </div>
 
       <div className="contacts">

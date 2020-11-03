@@ -53,7 +53,7 @@ export function FormWizard() {
             </div>
             <div className="wizard-content-left-questions-container">
               <div className="form-questions-title">
-                <div>les</div>
+                <div>Les</div>
                 <div>questions</div>
               </div>
               <img
