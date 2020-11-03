@@ -7,6 +7,7 @@
 .wizard-content-left-summary-container {
   float: right;
   width: 50%;
+  font-family: Source Sans Pro;
 }
 
 .wizard-content-left-questions-container {
@@ -74,7 +75,7 @@
 
 @media (max-width: 767px) {
   .mobile-wizard-container {
-    height: 60vh;
+    height: 55vh;
     overflow-y: scroll;
   }
 

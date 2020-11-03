@@ -10,6 +10,7 @@ export function FormItemMultipleInputNumber({
   label,
   tooltipTitle,
   questions,
+  isRequired,
 }) {
   const mainColor = getColor("--main-color");
 
@@ -51,7 +52,7 @@ export function FormItemMultipleInputNumber({
       label={label}
       name={name}
       tooltipTitle={tooltipTitle}
-      rules={[{ validator: check }]}
+      {...(isRequired && { rules: [{ validator: check }] })}
     >
       <div
         style={{

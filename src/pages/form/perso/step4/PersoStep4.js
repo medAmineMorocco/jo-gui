@@ -103,7 +103,7 @@ export function PersoStep4({ step, setNextStep }) {
         </div>
         <div className="overlay-consommation">
           <Overlay
-            title="Consommation électrique en fonction de la connectique"
+            title="Consommation en fonction du réseau"
             items={overlay_items}
           />
         </div>

@@ -446,7 +446,7 @@ export function PersoStep5({ step, setNextStep }) {
           form={form}
           title="Déjeuners et dîners"
           savierVous={ALIMENTATION_SAVIEZ_VOUS}
-          saviezVousPosition={2}
+          saviezVousPosition={3}
           selectDetail={selectDetail}
           switchName="action-reduction-switch-1"
           setSwitchValue={handleSwitchReductionAction1Change}

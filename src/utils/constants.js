@@ -56,7 +56,6 @@ export const SECTION3_PARAG5 = `<b>Toutes ces données seront ensuite traduites 
 export const WEBSITE_INFO_MSG =
   "Plus d’informations ? Consulte notre page dédiée :";
 export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
-export const WEBSITE_INVITATION_MSG = "Prêt à prendre le départ";
 
 export const CONTACT_LEGAL_MENTION = "Mentions légales";
 export const CONTACT_ACCESSIBILITY_SITES = "Accéssibilité Sites";
@@ -197,7 +196,7 @@ export const ALIMENTATION_QUESTION2 =
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
-  "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (ici)";
+  "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
   "De quoi sont composés majoritairement tes repas en vacances ?";
 export const ALIMENTATION_QUESTION4_TOOTLTIP =

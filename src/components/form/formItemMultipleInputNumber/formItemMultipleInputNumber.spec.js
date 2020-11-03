@@ -23,6 +23,7 @@ function FormItemMultipleInputNumberForm({
         label="Label with toolitp"
         tooltipTitle="this is a tooltip"
         questions={questions}
+        isRequired={true}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
