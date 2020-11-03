@@ -9,13 +9,13 @@
 .footer-buttons-left {
   float: left;
   margin-left: 5%;
-  margin-top: -1.5vw;
+  margin-top: -20px;
 }
 
 .footer-buttons-right {
   float: right;
   margin-right: 5%;
-  margin-top: -16px;
+  margin-top: -20px;
 }
 
 .footer-navigation-container {
