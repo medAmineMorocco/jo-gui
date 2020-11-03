@@ -1,5 +1,13 @@
+.meals-of-week {
+  width: 100%;
+}
+
+.last-day {
+  width: auto !important;
+}
+
 .meals-of-week td {
-  width: 5.4vw;
+  width: 19%;
   height: 50px;
   color: white;
   font-weight: bold;

@@ -126,9 +126,9 @@ export function MealsOfWeek({
             {!weekend && <td>Mar</td>}
             {!weekend && <td>Mer</td>}
             {!weekend && <td>Jeu</td>}
-            {!weekend && <td>Ven</td>}
+            {!weekend && <td className="last-day">Ven</td>}
             {weekend && <td>Sam</td>}
-            {weekend && <td>Dim</td>}
+            {weekend && <td className="last-day">Dim</td>}
           </tr>
         </thead>
         <tbody>
@@ -183,7 +183,7 @@ export function MealsOfWeek({
                   </td>
                 )}
                 {!weekend && (
-                  <td>
+                  <td className="last-day">
                     <Radio
                       type="radio"
                       name="friday"
@@ -205,7 +205,7 @@ export function MealsOfWeek({
                   </td>
                 )}
                 {weekend && (
-                  <td>
+                  <td className="last-day">
                     <Radio
                       type="radio"
                       name="sunday"

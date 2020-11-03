@@ -3,14 +3,14 @@
 }
 
 .ant-btn-icon-only {
-  font-size: 1.5vw;
+  font-size: 20px;
   width: 40px;
   height: 40px;
   border-radius: 100%;
 }
 
 .ant-btn-icon-only > * {
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 .modal-close-btn:hover {
