@@ -82,6 +82,20 @@
   .footer-navigation-details-container .footer-navigation-right {
     margin-top: 16px;
   }
+  .footer-navigation-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  .footer-navigation-details-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 2.3vw;
+    left: 0;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
