@@ -14,13 +14,20 @@ import {
   INTRODUCTION_QUESTION2,
   INTRODUCTION_QUESTION2_ERROR_MSG,
   INTRODUCTION_QUESTION3,
-  INTRODUCTION_QUESTION3_INFOS,
   INTRODUCTION_QUESTION3_ERROR_MSG,
 } from "@utils/constants";
 
 // introduction
 export function ProStep0({ step, setNextStep }) {
   const [form] = Form.useForm();
+
+  const spanWithEmoji = () => {
+    return (
+      <span role="img" aria-label="emojis">
+        Pour une année "type" &#128521;
+      </span>
+    );
+  };
 
   useEffect(() => {
     scrollToTopOfThePage();
@@ -89,7 +96,7 @@ export function ProStep0({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemInputNumber
             name="5f5541ba9b096"
-            tooltipTitle={INTRODUCTION_QUESTION3_INFOS}
+            tooltipTitle={spanWithEmoji}
             label={INTRODUCTION_QUESTION3}
             rules={[
               { required: true, message: INTRODUCTION_QUESTION3_ERROR_MSG },

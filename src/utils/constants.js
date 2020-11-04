@@ -101,8 +101,6 @@ export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
 export const INTRODUCTION_QUESTION2_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
-export const INTRODUCTION_QUESTION3_INFOS =
-  "10 jours avec le système d'équipe.";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 
@@ -115,14 +113,14 @@ export const TITLE_ECRANS =
   "Nombre d'écrans additionels mis à votre disposition";
 
 // Empreinte numérique
-export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
+export const TAILLE_BOITE = "Taille de ta boîte mail (en Go)";
 export const TAILLE_BOITE_INFO =
   "Pour trouver cette information, check le « pop-in conseil » plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const EMPREINTE_OVERLAY_TITLE =
   "Comment connaître la taille de ta boîte mail ?";
 export const TAILLE_STOCKAGE =
-  "Taille de votre stockage en ligne, type SharePoint/OneDrive (en Go)";
+  "Taille de ton stockage en ligne, type SharePoint/OneDrive (en Go)";
 export const NBR_RECHERCHE =
   "Nombre d'heures passées à faire des recherches sur internet à des fins professionnelles (hors streaming) par jour (en moyenne)";
 export const NBR_CONFERENCE =
@@ -136,11 +134,11 @@ export const EMREINTE_OVERLAY_IMAGE =
 
 // Trajets
 export const DISTANCE_DOMICILE_TRAVAIL =
-  "Distance entre votre domicile et votre travail (km)";
+  "Distance entre ton domicile et votre travail (km)";
 export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const MODE_DEPLACEMENT =
-  "Mode de déplacement principal (celui que vous utilisez le plus fréquemment et sur la plus grande partie de votre trajet)";
+  "Mode de déplacement principal (celui que tu utilises le plus fréquemment et sur la plus grande partie de votre trajet)";
 export const MOTORISATION = "Motorisation du véhicule";
 export const MOTORISATION_INFOS =
   "Pour le métro, tramway, train, RER et TGV, la motorisation est électrique !";
@@ -176,14 +174,14 @@ export const SAVIER_VOUS_DEPLACEMENT =
 
 // Déplacements
 export const REPAS_QUESTION1 =
-  "De quoi sont majoritairement composés vos repas au bureau ?";
+  "De quoi sont majoritairement composés tes repas au bureau ?";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const SAVIER_VOUS_RESTAU =
   "Une tasse de café émet presque 5 fois plus de CO₂ dans l'atmosphère qu'une tasse de thé. Cela est dû notamment au processus de transformation et au transport nécessaires à la production d'une tasse de café.";
 export const CURSEUR_BOISSONS =
-  "Combien de boissons chaudes prenez-vous par jour ?";
+  "Combien de boissons chaudes prends-tu par jour ?";
 
 ///////////////////////////////////////
 //   Form - Perso
@@ -311,7 +309,7 @@ export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
 export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
 export const EQUIPMENT_QUESTION = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
-export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
+export const EQUIPMENT_QUESTION10 = "As-tu la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
   "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";

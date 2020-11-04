@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Form } from "antd";
+import { Form, Tooltip } from "antd";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Form as ConfiguredForm } from "@components/form/Form";
+import { QuestionCircleFilled } from "@ant-design/icons";
 import {
   HOUSE_QUESTION1,
   HOUSE_QUESTION2,
@@ -250,9 +251,23 @@ export function PersoStep1({ step, setNextStep }) {
         <div className="pro-step-title-container">
           <span className="pro-step-title">À la maison</span>
         </div>
+
+        <span className="form-questions-tooltip" style={{ color: mainColor }}>
+          <Tooltip
+            className="tooltip-icon"
+            title="Possibilité d'entrer sa facture plus bas !"
+            color="white"
+            placement="topRight"
+            overlayClassName="tooltip-overlay"
+          >
+            <QuestionCircleFilled />
+          </Tooltip>
+        </span>
+        <br />
         <span className="form-questions-title" style={{ color: mainColor }}>
           Si tu les connais, indique tes consommations :
         </span>
+
         <div className="forms-margin">
           <FormCounter
             form={form}
@@ -261,31 +276,7 @@ export function PersoStep1({ step, setNextStep }) {
             value={question1Count}
           />
         </div>
-        <div className="forms-margin">
-          <div className="overlay-house">
-            <Overlay
-              title={OVERLAY_TITLE_HOUSE}
-              items={[
-                {
-                  image: "/images/conseil.png",
-                  alt: OVERLAY_IMAGE_ALT,
-                  sousText: [
-                    "Encore plus de conseils pratiques sur : ",
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "black" }}
-                      href={OVERLAY_SOUSTEXTE_HOUSE}
-                    >
-                      {OVERLAY_SOUSTEXTE_HOUSE}
-                    </a>,
-                    " (ADEME, 2020)",
-                  ],
-                },
-              ]}
-            />
-          </div>
-        </div>
+
         <div className="forms-margin">
           <FormItemInputNumberWithUnit
             form={form}
@@ -425,6 +416,31 @@ export function PersoStep1({ step, setNextStep }) {
             options={optionsLogement}
             value={question11Select}
           />
+        </div>
+        <div className="forms-margin">
+          <div className="overlay-house">
+            <Overlay
+              title={OVERLAY_TITLE_HOUSE}
+              items={[
+                {
+                  image: "/images/conseil.png",
+                  alt: OVERLAY_IMAGE_ALT,
+                  sousText: [
+                    "Encore plus de conseils pratiques sur : ",
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "black" }}
+                      href={OVERLAY_SOUSTEXTE_HOUSE}
+                    >
+                      {OVERLAY_SOUSTEXTE_HOUSE}
+                    </a>,
+                    " (ADEME, 2020)",
+                  ],
+                },
+              ]}
+            />
+          </div>
         </div>
       </div>
       <div className="forms-margin">
