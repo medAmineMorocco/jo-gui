@@ -178,7 +178,6 @@ export function PersoStep6({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="En voiture"
           selectDetail={actionReduction1_selectDetail}
           switchName="action-reduction-switch-1"
           setSwitchValue={handleSwitchReductionAction1Change}
@@ -213,7 +212,6 @@ export function PersoStep6({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Court-courrier"
           selectDetail={actionReduction2_selectDetail}
           switchName="action-reduction-switch-2"
           setSwitchValue={handleSwitchReductionAction2Change}
@@ -241,7 +239,6 @@ export function PersoStep6({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Long-courrier"
           savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
           saviezVousPosition={0}
           selectDetail={actionReduction3_selectDetail}

@@ -7,16 +7,16 @@ import { ReactComponent as SavierVousIcon } from "@theme/icons/savier-vous-icon.
 import { FormItem } from "@components/form/formItem/FormItem";
 import { useTabletSize } from "@hooks/window";
 import {
-  ACTIONS_REDUCTION,
+  SUR_TITLE_ACTION,
   FIRST_DETAIL,
   LIRE_MOINS,
   LIRE_PLUS,
+  TITLE_ACTION,
 } from "@utils/constants";
 import "./formItemActionReduction.css";
 
 export function FormItemActionReduction({
   form,
-  title,
   switchName,
   isOpened,
   setSwitchValue,
@@ -62,9 +62,9 @@ export function FormItemActionReduction({
         <ActionReductionIcon />
         <div className="panel-header-span">
           <span className="panel-header-span-first-title">
-            {ACTIONS_REDUCTION}
+            {SUR_TITLE_ACTION}
           </span>
-          <span className="panel-header-span-second-title">{title}</span>
+          <span className="panel-header-span-second-title">{TITLE_ACTION}</span>
         </div>
       </div>
       <FormItemSwitch

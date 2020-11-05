@@ -52,7 +52,6 @@ function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
       <FormItemActionReduction
         form={form}
         switchName="switch_name"
-        title="Thé et café"
         selectDetail={selectDetail}
         savierVous={savierVous}
         saviezVousPosition={0}
@@ -86,7 +85,7 @@ describe("FormItemActionReduction component", () => {
 
     cy.get(".panel-header-span-first-title").should(
       "contain",
-      "ACTIONS DE RÉDUCTION"
+      "À remplir à la fin du test si c’est la première fois !"
     );
 
     cy.get(".first-para").should(
