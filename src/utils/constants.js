@@ -83,7 +83,7 @@ export const INTRO_TITLE2 = "cette année";
 /* Action de reduction */
 export const ACTIONS_REDUCTION = "ACTIONS DE RÉDUCTION";
 export const FIRST_DETAIL =
-  "Calculez de combien votre empreinte pourrait baisser en mettant en place ces changements.";
+  "Remplis ici les actions que tu aimerais effectuer pour l’année prochaine, et calcule ton potentiel de réduction !";
 export const LIRE_MOINS = "LIRE MOINS";
 export const LIRE_PLUS = "... LIRE PLUS";
 
