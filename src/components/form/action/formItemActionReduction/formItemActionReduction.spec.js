@@ -91,7 +91,7 @@ describe("FormItemActionReduction component", () => {
 
     cy.get(".first-para").should(
       "contain",
-      "Calculez de combien votre empreinte pourrait baisser en mettant en place ces changements."
+      "Remplis ici les actions que tu aimerais effectuer pour l’année prochaine, et calcule ton potentiel de réduction !"
     );
   });
 

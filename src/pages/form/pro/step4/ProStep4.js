@@ -166,7 +166,7 @@ export function ProStep4({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Mode de déplacement"
+          title="Trajets domicile – travail"
           savierVous={SAVIER_VOUS_TRAJETS}
           saviezVousPosition={0}
           selectDetail={actionReductionData}

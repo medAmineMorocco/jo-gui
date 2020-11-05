@@ -314,7 +314,7 @@ export function PersoStep3({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Appareils électroniques"
+          title="Véhicules et appareils électroniques"
           selectDetail={actionReduction1Data}
           switchName="materiels_switch1"
           setSwitchValue={handleSwitch1Change}
@@ -346,7 +346,7 @@ export function PersoStep3({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Vêtements et chaussures"
+          title="Véhicules et appareils électroniques"
           selectDetail={actionReduction2Data}
           switchName="materiels_switch2"
           setSwitchValue={handleSwitch2Change}

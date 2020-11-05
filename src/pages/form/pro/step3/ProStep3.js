@@ -224,7 +224,7 @@ export function ProStep3({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Déjeuners"
+          title="Déjeuners au travail"
           savierVous={SAVIER_VOUS_RESTAU}
           saviezVousPosition={-1}
           selectDetail={actionReductionDataDejeuners}
@@ -269,7 +269,7 @@ export function ProStep3({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Thé et café"
+          title="Thé et café au travail"
           savierVous={SAVIER_VOUS_RESTAU}
           saviezVousPosition={0}
           selectDetail={actionReductionDataCafe}
