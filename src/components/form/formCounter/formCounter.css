@@ -19,16 +19,26 @@
 }
 
 .text-counter {
+  width: 77%;
   font-size: 14px;
   padding-right: 12px;
 }
+
+.full-width-text-counter {
+  width: 100%;
+  font-size: 14px;
+  padding-right: 12px;
+}
+
 .tooltip-icon-counter {
   margin-bottom: 20%;
   padding: 5%;
 }
 
 .icon-counter {
-  margin-right: 8px;
+  width: 23%;
+  display: inline-flex;
+  justify-content: flex-start;
 }
 
 .large-text {
@@ -47,6 +57,7 @@
   justify-content: flex-start;
   width: 50%;
 }
+
 .flex-container-button {
   display: inline-flex;
   align-items: center;
@@ -58,14 +69,16 @@
   .flex-container-button {
     width: 100%;
   }
+
   .flex-container-text {
     width: 100%;
     padding-bottom: 0;
   }
+
   .text-counter {
-    padding-bottom: 0;
     padding-right: 0;
   }
+
   .back-to-card {
     flex-direction: column;
   }
@@ -83,7 +96,11 @@
 
   .text-counter {
     font-size: var(--tablet-font-size);
-    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .full-width-text-counter {
+    font-size: var(--tablet-font-size);
     padding-right: 0;
   }
 

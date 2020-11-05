@@ -75,9 +75,15 @@ export function FormCounter({
       >
         <div className="flex-container-text">
           {IconCounter && (
-            <IconCounter width={84} fill={color} className="icon-counter" />
+            <div className="icon-counter">
+              <IconCounter fill={color} />
+            </div>
           )}
-          <span className="text-counter">{textCounter}</span>
+          <span
+            className={IconCounter ? "text-counter" : "full-width-text-counter"}
+          >
+            {textCounter}
+          </span>
           {tooltipTitle && (
             <Tooltip
               className="tooltip-icon-counter"
