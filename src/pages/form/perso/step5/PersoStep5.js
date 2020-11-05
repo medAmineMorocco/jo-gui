@@ -396,14 +396,7 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION1}
           value={question1Count}
         />
-        <Overlay
-          title={OVERLAY_TITLE}
-          items={[
-            {
-              text: POPIN_INFOS,
-            },
-          ]}
-        />
+
         <div className="forms-margin">
           <MealsOfWeek
             form={form}
@@ -415,6 +408,7 @@ export function PersoStep5({ step, setNextStep }) {
             onChange={onChangeMealsOfWeek1}
           />
         </div>
+
         <div className="forms-margin">
           <MealsOfWeek
             form={form}
@@ -428,6 +422,7 @@ export function PersoStep5({ step, setNextStep }) {
             onChange={onChangeMealsOfWeekend}
           />
         </div>
+
         <div className="forms-margin">
           <MealsOfWeek
             form={form}
@@ -441,6 +436,7 @@ export function PersoStep5({ step, setNextStep }) {
           />
         </div>
       </div>
+
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
@@ -454,6 +450,7 @@ export function PersoStep5({ step, setNextStep }) {
           render={render}
         />
       </div>
+
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <FormCounter
@@ -464,6 +461,7 @@ export function PersoStep5({ step, setNextStep }) {
             value={question5Count}
           />
         </div>
+
         <FormCounter
           form={form}
           name="5f5574ead218e"
@@ -471,6 +469,7 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION6}
           value={question6Count}
         />
+
         <FormCounter
           form={form}
           name="5f557508ea4c5"
@@ -478,6 +477,7 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION7}
           value={question7Count}
         />
+
         <FormCounter
           form={form}
           name="5f557531751f2"
@@ -485,6 +485,7 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION8}
           value={question8Count}
         />
+
         <FormCounter
           form={form}
           name="5f55754725a12"
@@ -492,7 +493,17 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION9}
           value={question9Count}
         />
+
+        <Overlay
+          title={OVERLAY_TITLE}
+          items={[
+            {
+              text: POPIN_INFOS,
+            },
+          ]}
+        />
       </div>
+
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}

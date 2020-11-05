@@ -43,6 +43,14 @@
   color: white;
 }
 
+.form-questions-tooltip {
+  font-size: 1.2vw;
+}
+
+.tooltip-icon {
+  float: right;
+}
+
 .form-questions-title:first-letter {
   text-transform: uppercase;
 }

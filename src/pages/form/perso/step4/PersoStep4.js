@@ -93,6 +93,7 @@ export function PersoStep4({ step, setNextStep }) {
         <div className="pro-step-title-container">
           <span className="pro-step-title">Temps passé sur internet</span>
         </div>
+
         <div className="forms-margin">
           <FormItemMultipleInputNumber
             form={form}
@@ -100,12 +101,6 @@ export function PersoStep4({ step, setNextStep }) {
             label={NUMERIC_QUESTION1_LABEL}
             questions={question1_questions}
             tooltipTitle={NUMERIC_QUESTION1_TOOLTIP}
-          />
-        </div>
-        <div className="overlay-consommation">
-          <Overlay
-            title="Consommation en fonction du réseau"
-            items={overlay_items}
           />
         </div>
 
@@ -118,7 +113,15 @@ export function PersoStep4({ step, setNextStep }) {
             questions={question2_questions}
           />
         </div>
+
+        <div className="overlay-consommation">
+          <Overlay
+            title="Consommation en fonction du réseau"
+            items={overlay_items}
+          />
+        </div>
       </div>
+
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}

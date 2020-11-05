@@ -27,7 +27,7 @@ function SliderForm({ onFinish }) {
     <ConfiguredForm form={form} onFinish={onFinish}>
       <FormSlider
         form={form}
-        labels={"Combien de boissons chaudes prenez-vous par jour ?"}
+        labels={"Combien de boissons chaudes prends-tu par jour ?"}
         tooltipTitle={tooltipTitle}
         questions={questions}
       />
