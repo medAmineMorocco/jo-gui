@@ -293,11 +293,12 @@ export const OVERLAY_IMAGE_ALT =
 
 // Numérique
 export const NUMERIC_QUESTION1_LABEL =
-  "Nombre d'heures passées sur internet (hors streaming vidéo, gaming) par jour";
+  "Nombre d'heures passées sur internet (hors streaming vidéo, et gaming) par jour (tout appareil confondu)";
 export const NUMERIC_QUESTION1_TOOLTIP =
   "iPhone: Réglages>Données mobiles Android : Paramètres>Connexion>Utilisation des données";
 export const NUMERIC_QUESTION2_LABEL =
-  "Nombre d'heures de streaming vidéo, gaming par jour";
+  "Nombre d'heures de streaming vidéo, et gaming par jour";
+export const NUMERIC_QUESTION2_TOOLTIP = "Netflix par exemple…";
 export const NUMERIC_SAVIEZ_VOUS =
   "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité.";
 

@@ -21,6 +21,7 @@ import {
   NUMERIC_QUESTION1_LABEL,
   NUMERIC_QUESTION1_TOOLTIP,
   NUMERIC_QUESTION2_LABEL,
+  NUMERIC_QUESTION2_TOOLTIP,
   NUMERIC_SAVIEZ_VOUS,
 } from "@utils/constants";
 import { step4ActionReductionState, step4State } from "./step4State";
@@ -113,6 +114,7 @@ export function PersoStep4({ step, setNextStep }) {
             form={form}
             name="question_2"
             label={NUMERIC_QUESTION2_LABEL}
+            tooltipTitle={NUMERIC_QUESTION2_TOOLTIP}
             questions={question2_questions}
           />
         </div>
