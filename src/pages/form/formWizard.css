@@ -1,3 +1,7 @@
+.questions-first-title::first-letter {
+  text-transform: uppercase;
+}
+
 .wizard-content-left-container {
   position: fixed;
   width: 40%;

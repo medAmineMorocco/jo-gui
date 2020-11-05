@@ -11,6 +11,13 @@
   justify-content: flex-start;
 }
 
+#result-counter {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .text-counter {
   font-size: 14px;
   padding-right: 12px;
