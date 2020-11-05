@@ -35,11 +35,4 @@ export const actionReductionData = [
     questionName: "5f554eb63be47",
     secondText: "Go",
   },
-  {
-    type: "input",
-    name: "5f60a01a6dc3a",
-    firstText: "Réduction du volume de stockage en ligne de",
-    questionName: "5f554eddc68dd",
-    secondText: "Mo",
-  },
 ];
