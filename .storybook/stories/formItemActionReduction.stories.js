@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemActionReduction } from '@components/form/action/formItemActionReduction/FormItemActionReduction';
-import {FormItemInputNumber} from "@components/form/formItemInputNumber/FormItemInputNumber";
+import { FormItemInputNumber } from '@components/form/formItemInputNumber/FormItemInputNumber';
 import './stories.css';
 
 export default { title: 'FormItemActionReduction', decorators: [withKnobs] };
@@ -24,40 +24,40 @@ export const actionReduction = () => {
 			firstText: 'Chaque jour, privilégiez',
 			name: 'firstSelect',
 			options: [
-				{ text: "0", value: 0 },
-				{ text: "1", value: 1 },
-				{ text: "2", value: 2 },
-				{ text: "3", value: 3 },
-				{ text: "4", value: 4 },
-				{ text: "5", value: 5 },
-				{ text: "6", value: 6 },
-				{ text: "7", value: 7 },
-				{ text: "8", value: 8 },
-				{ text: "9", value: 9 },
+				{ text: '0', value: 0 },
+				{ text: '1', value: 1 },
+				{ text: '2', value: 2 },
+				{ text: '3', value: 3 },
+				{ text: '4', value: 4 },
+				{ text: '5', value: 5 },
+				{ text: '6', value: 6 },
+				{ text: '7', value: 7 },
+				{ text: '8', value: 8 },
+				{ text: '9', value: 9 },
 			],
 			secondText: 'tasse(s) de café en vrac plutôt qu’en capsule.',
-			questionName: 'question1'
+			questionName: 'question1',
 		},
 		{
 			type: 'select',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'secondSelect',
 			options: [
-			 { text: "0", value: 0 },
-		  { text: "20", value: 20 },
-		  { text: "40", value: 40 },
-		  { text: "60", value: 60 },
-		  { text: "80", value: 80 },
+				{ text: '0', value: 0 },
+				{ text: '20', value: 20 },
+				{ text: '40', value: 40 },
+				{ text: '60', value: 60 },
+				{ text: '80', value: 80 },
 			],
 			secondText: "tasse(s) de thé plutôt qu'un café en vrac.",
-			questionName: 'question1'
+			questionName: 'question1',
 		},
 		{
 			type: 'input',
 			firstText: 'Chaque jour, privilégiez',
 			name: 'thirdSelect',
 			secondText: 'tasse(s) de thé.',
-			questionName: 'question1'
+			questionName: 'question1',
 		},
 	];
 
@@ -73,12 +73,11 @@ export const actionReduction = () => {
 				form={form}
 				name="question1"
 				label={'example of question'}
-				rules={[{required: true, message: "⚠ Please input your number!"}]}
+				rules={[{ required: true, message: '⚠ Please input your number!' }]}
 			/>
 			<FormItemActionReduction
 				form={form}
 				switchName="switch_name"
-				title={text('title', 'Thé et café')}
 				selectDetail={selectDetail}
 				savierVous={savierVous}
 				saviezVousPosition={number('saviezVousPosition', 1)}

@@ -125,7 +125,6 @@ export function PersoStep4({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Consommation numérique"
           savierVous={NUMERIC_SAVIEZ_VOUS}
           saviezVousPosition={0}
           selectDetail={selectDetail}

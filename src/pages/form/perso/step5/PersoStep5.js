@@ -440,7 +440,6 @@ export function PersoStep5({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Alimentation chez soi"
           savierVous={ALIMENTATION_SAVIEZ_VOUS}
           saviezVousPosition={3}
           selectDetail={selectDetail}
@@ -507,7 +506,6 @@ export function PersoStep5({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Alimentation chez soi"
           selectDetail={selectDetail2}
           switchName="action-reduction-switch-2"
           setSwitchValue={handleSwitchReductionAction2Change}

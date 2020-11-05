@@ -81,7 +81,9 @@ export const INTRO_TITLE1 = "Tes consommations";
 export const INTRO_TITLE2 = "cette année";
 
 /* Action de reduction */
-export const ACTIONS_REDUCTION = "ACTIONS DE RÉDUCTION";
+export const SUR_TITLE_ACTION =
+  "À remplir à la fin du test si c’est la première fois !";
+export const TITLE_ACTION = "Action de réduction";
 export const FIRST_DETAIL =
   "Remplis ici les actions que tu aimerais effectuer pour l’année prochaine, et calcule ton potentiel de réduction !";
 export const LIRE_MOINS = "LIRE MOINS";

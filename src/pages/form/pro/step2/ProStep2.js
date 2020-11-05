@@ -186,7 +186,6 @@ export function ProStep2({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          title="Empreinte numérique"
           savierVous={SAVIER_VOUS_EMPREINTE}
           saviezVousPosition={0}
           selectDetail={actionReductionData}
