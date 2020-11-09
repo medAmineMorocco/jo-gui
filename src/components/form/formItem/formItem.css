@@ -6,6 +6,7 @@
 .ant-form-item-label label {
   display: block;
   color: var(--main-color);
+  font-family: Source Sans Pro;
 }
 
 .tooltip-icon {

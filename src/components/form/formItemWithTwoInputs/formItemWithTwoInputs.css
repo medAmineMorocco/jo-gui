@@ -4,10 +4,12 @@
 
 .form-two-items-label {
   color: var(--main-color);
+  font-family: Source Sans Pro;
 }
 
 .form-two-items-label-disabled {
   color: rgba(215, 195, 120, 0.4);
+  font-family: Source Sans Pro;
 }
 
 .form-two-items-input {

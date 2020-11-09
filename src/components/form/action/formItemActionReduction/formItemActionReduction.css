@@ -19,6 +19,10 @@
   cursor: default;
 }
 
+.savier-vous-detail {
+  font-family: Source Sans Pro;
+}
+
 .panel-header-content {
   display: flex;
   justify-content: row;
