@@ -1,5 +1,6 @@
 .form-multiple-items-label {
   color: var(--main-color);
+  font-family: Source Sans Pro;
 }
 
 .form-multiple-items-input {

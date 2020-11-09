@@ -22,12 +22,14 @@
   width: 77%;
   font-size: 14px;
   padding-right: 12px;
+  font-family: Source Sans Pro;
 }
 
 .full-width-text-counter {
   width: 100%;
   font-size: 14px;
   padding-right: 12px;
+  font-family: Source Sans Pro;
 }
 
 .tooltip-icon-counter {
