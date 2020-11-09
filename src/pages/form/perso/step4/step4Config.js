@@ -48,6 +48,6 @@ export const selectDetail = [
 
 export const overlay_items = [
   {
-    image: "/images/consommation-electrique.png",
+    image: "/images/conso-electrique.png",
   },
 ];
