@@ -74,7 +74,7 @@ export function Section({
 
       return (
         <div className="section-container">
-          <BoxSides left={leftContent} right={rightContent} height="150vh" />
+          <BoxSides left={leftContent} right={rightContent} height="154vh" />
         </div>
       );
     }

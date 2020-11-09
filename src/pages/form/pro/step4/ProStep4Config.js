@@ -7,7 +7,7 @@ export const electricTravelModes = [
 ];
 
 export const modeDeplacementOptions = [
-  { text: "A pied / en vélo", value: "pied-velo" },
+  { text: "À pied / en vélo", value: "pied-velo" },
   { text: "En vélo électrique", value: "velo-electrique" },
   {
     text: "En trottinette électrique",

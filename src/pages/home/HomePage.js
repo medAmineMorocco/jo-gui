@@ -19,6 +19,7 @@ import {
   MAIN_DESC2,
   MAIN_DESC3,
   SECTION1_TITLE,
+  SECTION1_PARAG0,
   SECTION1_PARAG1,
   SECTION1_PARAG2,
   SECTION1_PARAG3,
@@ -31,9 +32,7 @@ import {
   SECTION3_PARAG2,
   SECTION3_PARAG3,
   SECTION3_PARAG4,
-  SECTION3_PARAG5,
   WEBSITE_INFO_MSG,
-  WEBSITE_URL,
   CONTACT_LEGAL_MENTION,
   CONTACT_ACCESSIBILITY_SITES,
   CONTACT_PRIVACY_POLICY,
@@ -97,11 +96,17 @@ export function HomePage(props) {
 
       <Section
         title={SECTION1_TITLE}
-        paragraphs={[SECTION1_PARAG1, SECTION1_PARAG2, SECTION1_PARAG3]}
+        paragraphs={[
+          SECTION1_PARAG0,
+          SECTION1_PARAG1,
+          SECTION1_PARAG2,
+          SECTION1_PARAG3,
+        ]}
         style={{ background: "#009494" }}
         imgStyle={{ backgroundImage: 'url("/images/section-1.jpg")' }}
         imgPosition="right"
       />
+
       <Section
         title={SECTION2_TITLE}
         paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2, SECTION2_PARAG3]}
@@ -109,29 +114,19 @@ export function HomePage(props) {
         imgStyle={{ backgroundImage: 'url("/images/section-2.jpg")' }}
         imgPosition="left"
       />
-      <Section
-        title={SECTION3_TITLE}
-        paragraphs={[
-          SECTION3_PARAG1,
-          SECTION3_PARAG2,
-          SECTION3_PARAG3,
-          SECTION3_PARAG4,
-          SECTION3_PARAG5,
-        ]}
-        style={{ background: "#003B55" }}
-      />
 
-      <div className="section-footer">
-        <div className="website-info">{WEBSITE_INFO_MSG}</div>
-        <div className="website-url">
-          <a
-            href="https://www.paris2024.org/fr/methode-carbone"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {WEBSITE_URL}
-          </a>
-        </div>
+      <div className="intro-last-section">
+        <Section
+          title={SECTION3_TITLE}
+          paragraphs={[
+            SECTION3_PARAG1,
+            SECTION3_PARAG2,
+            SECTION3_PARAG3,
+            SECTION3_PARAG4,
+            WEBSITE_INFO_MSG,
+          ]}
+          style={{ background: "#003B55" }}
+        />
       </div>
 
       <div className="contacts">
