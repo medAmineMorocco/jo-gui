@@ -7,7 +7,7 @@ export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";
 export const HERO_DESCRIPTION =
-  "Réduis tes émissions de CO₂ pour contribuer à la neutralité carbone des Jeux !";
+  "Réduis tes émissions de CO2 pour contribuer à la neutralité carbone des Jeux !";
 export const FOOTER_START_ACTION = "Prêt à prendre le départ ?";
 export const ABOUT_TITLE = "à propos";
 export const ABOUT_CONTENT1 =
@@ -24,38 +24,37 @@ export const MAIN_DESC3 =
   "Il distingue les émissions liées à ta vie professionnelle des émissions liées à ta vie personnelle pour te permettre de visualiser l'impact concret de tes actions, et te donner des moyens pour le réduire.";
 
 export const SECTION1_TITLE = "Comment ça marche ?";
-export const SECTION1_PARAG1 = `<b>1. Mesure ton impact</b></br>
+export const SECTION1_PARAG0 = `<b><i>1. Navigue en tout sécurité</i></b></br>
+  Toutes les informations saisies sont strictement confidentielles et tu es la seule personne à y avoir accès 😉`;
+export const SECTION1_PARAG1 = `<b><i>2. Mesure ton impact</i></b></br>
   Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans ta vie quotidienne au bureau, et à la maison, tu vas pouvoir mesurer tes émissions de CO₂ et identifier les principales sources.
   Si tu ne sais pas répondre, pas de panique ! On se réfèrera à la valeur d’un français moyen indiquée dans les info-bulles qui t’accompagneront, même si on sait que tu es exceptionnel…
   Tes informations sont strictement confidentielles 😉`;
-export const SECTION1_PARAG2 = `<b>2. Choisis tes actions de réduction</b></br>
+export const SECTION1_PARAG2 = `<b><i>3. Choisis tes actions de réduction</i></b></br>
 Pour chaque poste d’émission, passe à l’action ! Au fur et à mesure, le Coach Carbone te proposera des actions de réduction concrètes et applicables au quotidien. Choisis celles qui te paraissent atteignables et deviens un champion du climat.`;
-export const SECTION1_PARAG3 = `<b>3. Découvre les résultats</b></br>
+export const SECTION1_PARAG3 = `<b><i>4. Découvre les résultats</i></b></br>
 Quels sont les postes où tu émets le plus, et quel sera l’impact de tes actions de réductions ? Le Coach Carbone te donne les clefs pour devenir un véritable champion du climat, à toi de jouer !`;
 
 export const SECTION2_TITLE =
   "Qu’est-ce que l’impact carbone et pourquoi le calculer ?";
-export const SECTION2_PARAG1 = `<b>1. Qu’est ce-ce que l’impact carbone ?</b></br>
+export const SECTION2_PARAG1 = `<b><i>1. Qu’est ce-ce que l’impact carbone ?</i></b></br>
 La plupart des activités humaines émettent des Gaz à effet de serre qui ont pour effet d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de tes émissions de Gaz à Effet de Serre (GES) ramenées en tonne équivalent CO₂ (teqCO₂). Agir sur tes émissions de GES, c’est contribuer à la lutte contre le changement climatique. 
 `;
-export const SECTION2_PARAG2 = `<b>2. Pourquoi le calculer ?</b></br>
+export const SECTION2_PARAG2 = `<b><i>2. Pourquoi le calculer ?</i></b></br>
 Calculer son impact carbone, c'est la première étape pour devenir un acteur de la lutte contre le changement climatique en se fixant des objectifs pour réduire son impact carbone individuel.
 Cela fait partie de la méthode AERCM (Anticiper, Eviter, Réduire, Compenser, et Mobiliser) adoptée par Paris 2024, afin de respecter ses engagements, et atteindre la neutralité carbone.
 `;
-export const SECTION2_PARAG3 = `<b>3. Est-ce que ça sert VRAIMENT à quelque chose que je fasse des efforts à mon niveau ?</b></br>
-Oui.  En réduisant ton impact carbone d’une tonne, tu évites les émissions du chauffage d’un appartement 3 pièces à Paris pendant 1 an ! A l’échelle des collaborateurs des Jeux, c’est le chauffage de 250 appartements que tu économises !  
+export const SECTION2_PARAG3 = `<b><i>3. Est-ce que ça sert VRAIMENT à quelque chose que je fasse des efforts à mon niveau ?</i></b></br>
+Oui.  En réduisant ton impact carbone d’une tonne, tu évites les émissions du chauffage d’un appartement 3 pièces à Paris pendant 1 an ! À l’échelle des collaborateurs des Jeux, c’est le chauffage de 250 appartements que tu économises !  
 `;
 
 export const SECTION3_TITLE = "Comment est-il calculé ?";
-export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME,<b>cet outil de diagnostic estime tes émissions carbones</b> en associant les postes d'émissions de tes activités avec des facteurs d'émissions.`;
-export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz</b>(CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques`;
-export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence.<b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties.`;
-export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre ta vie professionnelle et personnelle</b> pour une meilleure lecture`;
-export const SECTION3_PARAG5 = `<b>Toutes ces données seront ensuite traduites sous forme d'émissions grâce aux facteurs d'émissions</b>. Ce dernier est un coefficient qui assurera aux acteurs publics et privés de convertir leurs données en kilos ou tonnes équivalent CO₂.`;
+export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME, <b>cet outil de diagnostic estime tes émissions carbone</b> en associant tes activités à la moyenne des émissions qu’elles impliquent, appelée « facteur d’émission »`;
+export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz </b>(CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques`;
+export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence. <b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties grâce aux facteurs d’émissions.`;
+export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre ta vie professionnelle et personnelle</b> pour une meilleure lecture.`;
 
-export const WEBSITE_INFO_MSG =
-  "Plus d’informations ? Consulte notre page dédiée :";
-export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
+export const WEBSITE_INFO_MSG = `<b>Plus d’informations ?</b> Consulte notre page dédiée : <div className="website-url"><a href="https://www.paris2024.org/fr/methode-carbone" target="_blank" rel="noreferrer noopener">https://www.paris2024.org/fr/methode-carbone</a></div>`;
 
 export const CONTACT_LEGAL_MENTION = "Mentions légales";
 export const CONTACT_ACCESSIBILITY_SITES = "Accéssibilité Sites";
@@ -66,7 +65,7 @@ export const CONTACT_TERMS_PURCHASE = "Conditions Générales d'Achat";
 
 /* Menu Page */
 export const MENU_DESCRIPTION =
-  "Le coach carbone te propose un parcours en 3 temps, d’une durée approximative de 30min. A la fin de chaque thématique, tu pourras choisir quelles actions de réduction concrètes tu aimerais mettre en place pour l’année prochaine. A vos marques, prêts, calculez !";
+  "Le coach carbone te propose un parcours en 3 temps, qui dure entre 15 et 30min. <br/>À la fin de chaque thématique, tu pourras choisir quelles actions de réduction concrètes tu aimerais mettre en place pour l’année prochaine. <br/>À vos marques, prêts, calculez !";
 
 export const PROFESSIONAL_MENU_ITEM = "Vie Professionnelle";
 export const PERSONAL_MENU_ITEM = "Vie Personnelle";
@@ -77,8 +76,8 @@ export const NAVIGATION_HOME = "Accueil";
 export const NAVIGATION_PROFESSIONAL = "Vie professionnelle";
 
 /* Intro Page */
-export const INTRO_TITLE1 = "Tes consommations";
-export const INTRO_TITLE2 = "cette année";
+export const INTRO_TITLE1 = "Ton empreinte carbone";
+export const INTRO_TITLE2 = "sur une année";
 
 /* Action de reduction */
 export const SUR_TITLE_ACTION =

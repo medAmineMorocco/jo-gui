@@ -61,7 +61,10 @@ export function IntroPage() {
       <Fragment>
         <StyledTitle title1={INTRO_TITLE1} title2={INTRO_TITLE2} />
         <div className="description-container">
-          <p className="description">{MENU_DESCRIPTION}</p>
+          <p
+            className="description"
+            dangerouslySetInnerHTML={{ __html: MENU_DESCRIPTION }}
+          />
           <div style={{ margin: "0px auto" }}>
             <Summary />
           </div>
@@ -77,7 +80,10 @@ export function IntroPage() {
           title1={INTRO_TITLE1}
           title2={INTRO_TITLE2}
         />
-        <p className="intro-menu-description">{MENU_DESCRIPTION}</p>
+        <p
+          className="intro-menu-description"
+          dangerouslySetInnerHTML={{ __html: MENU_DESCRIPTION }}
+        />
         <div style={{ margin: "0px auto" }}>
           <Summary />
         </div>
