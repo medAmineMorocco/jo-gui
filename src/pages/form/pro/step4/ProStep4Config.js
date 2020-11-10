@@ -42,6 +42,7 @@ export const actionReductionData = [
     options: modeDeplacementOptions,
     firstText: "Changer de mode de déplacement pour se rendre au travail",
     disabled: false,
+    size: 300,
   },
   {
     type: "input",

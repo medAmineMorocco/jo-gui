@@ -4,7 +4,13 @@ import { FormItem } from "@components/form/formItem/FormItem";
 import { useTabletSize } from "@hooks/window";
 import "./formItemActionSelect.css";
 
-export function FormItemActionSelect({ name, options, onChange, disabled }) {
+export function FormItemActionSelect({
+  name,
+  options,
+  onChange,
+  disabled,
+  size,
+}) {
   const isTablet = useTabletSize();
   const { Option } = Select;
 
@@ -19,7 +25,7 @@ export function FormItemActionSelect({ name, options, onChange, disabled }) {
         id={name}
         aria-label="select-action"
         aria-expanded
-        style={{ width: "auto" }}
+        style={size ? { width: size } : { width: 80 }}
         dropdownClassName="select-action-dropdown"
         onChange={onChange}
         {...(disabled && { disabled: disabled })}

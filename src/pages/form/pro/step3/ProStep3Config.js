@@ -52,6 +52,7 @@ export const actionReductionDataCafe = [
     type: "select",
     name: "5f60a05e206d2",
     options: [
+      { text: "0", value: 0 },
       { text: "1", value: 1 },
       { text: "2", value: 2 },
       { text: "3", value: 3 },
@@ -71,6 +72,7 @@ export const actionReductionDataCafe = [
     type: "select",
     name: "5f60a06d650a3",
     options: [
+      { text: "0", value: 0 },
       { text: "1", value: 1 },
       { text: "2", value: 2 },
       { text: "3", value: 3 },
