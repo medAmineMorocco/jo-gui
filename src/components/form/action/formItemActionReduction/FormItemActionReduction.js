@@ -105,6 +105,7 @@ export function FormItemActionReduction({
           name={data.name}
           options={options}
           {...(data.disabled !== undefined && { disabled: data.disabled })}
+          {...(data.size && { size: data.size })}
         />
         {data.secondText &&
           data.secondText

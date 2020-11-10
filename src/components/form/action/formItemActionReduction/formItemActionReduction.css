@@ -1,9 +1,7 @@
 .action-reduction-container {
   margin: 16px 0;
 }
-.action-reduction-container .ant-form-item {
-  width: 80px;
-}
+
 .collapse-custom {
   width: 100%;
   background: var(--main-color);
