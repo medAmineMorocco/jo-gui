@@ -1,12 +1,11 @@
 import React from 'react';
 import {MemoryRouter} from "react-router-dom";
-import {withKnobs} from "@storybook/addon-knobs";
 import {Header} from '@components/header/Header';
 import {HeaderWithCategory} from "@components/header/HeaderWithCategory";
 import "./stories.css";
 
 
-export default {title: 'Header', decorators: [withKnobs]};
+export default {title: 'Layout/Header'};
 
 
 export const header = () => <Header>

@@ -7,7 +7,7 @@ import {Form , Button} from "antd";
 import "./stories.css";
 
 
-export default { title: 'Counter', decorators: [withKnobs]};
+export default { title: 'Data Entry/Counter', decorators: [withKnobs]};
 
 
 let textCounter = "Nombre d'ordinateurs portable professionnels mis à votre disposition";

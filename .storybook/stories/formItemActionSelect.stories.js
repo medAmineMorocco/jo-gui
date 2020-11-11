@@ -1,11 +1,10 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { FormItemActionSelect } from '@components/form/action/formItemActionSelect/FormItemActionSelect';
 import { Form, Button } from 'antd';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import './stories.css';
 
-export default { title: 'FormItemActionSelect', decorators: [withKnobs] };
+export default { title: 'Data Entry/Reduction Action/FormItemActionSelect'};
 
 const onFinish = (values) => {
 	console.log('success', values);

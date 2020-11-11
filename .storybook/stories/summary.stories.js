@@ -4,7 +4,7 @@ import {Summary} from "@components/summary/Summary";
 import {DynamicSummary} from "@components/dynamicSummary/DynamicSummary";
 import {persoItems} from '@utils/category';
 
-export default { title: 'Summary & DynamicSummary', decorators: [withKnobs]};
+export default { title: 'Summary/Summary & DynamicSummary', decorators: [withKnobs]};
 
 export const summary = () => <Summary items={persoItems} />;
 

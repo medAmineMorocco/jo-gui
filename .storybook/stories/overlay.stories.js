@@ -1,10 +1,9 @@
 import React from 'react';
-import { withKnobs } from "@storybook/addon-knobs";
-import { Overlay } from '@components/overlay/Overlay.js';
+import { Overlay } from '@components/overlay/Overlay';
 import "./stories.css";
 
 
-export default { title: 'Overlay', decorators: [withKnobs]};
+export default { title: 'Feedback/Overlay'};
 
 const dataTabs = [
     {

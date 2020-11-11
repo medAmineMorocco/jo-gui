@@ -6,7 +6,7 @@ import {FormItemSelectWithDetails} from '@components/form/formItemSelectWithDeta
 import "./stories.css";
 
 
-export default {title: 'FormItemSelectWithDetails', decorators: [withKnobs]};
+export default {title: 'Data Entry/FormItemSelectWithDetails', decorators: [withKnobs]};
 
 const onFinish = (values) => {
     console.log('success', values);

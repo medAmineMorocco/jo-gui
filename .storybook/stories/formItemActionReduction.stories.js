@@ -6,7 +6,7 @@ import { FormItemActionReduction } from '@components/form/action/formItemActionR
 import { FormItemInputNumber } from '@components/form/formItemInputNumber/FormItemInputNumber';
 import './stories.css';
 
-export default { title: 'FormItemActionReduction', decorators: [withKnobs] };
+export default { title: 'Data Entry/Reduction Action/FormItemActionReduction', decorators: [withKnobs] };
 
 const onFinish = (values) => {
 	console.log('success', values);

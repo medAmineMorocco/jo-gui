@@ -1,10 +1,9 @@
 import React from 'react';
-import { withKnobs } from "@storybook/addon-knobs";
 import { BoxSides } from '@components/box/BoxSides';
 import "./stories.css";
 
 
-export default { title: 'BoxSides', decorators: [withKnobs]};
+export default { title: 'Layout/BoxSides'};
 
 const DivWithText = ({color, text}) => <div style={{backgroundColor: color, height:"100%"}}>{text}</div>;
 

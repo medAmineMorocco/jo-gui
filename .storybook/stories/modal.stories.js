@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {withKnobs} from "@storybook/addon-knobs";
-import "./stories.css";
 import {Button} from "antd";
 import { InfoOutlined } from "@ant-design/icons";
 import {Modal} from "@components/modal/Modal";
+import "./stories.css";
 
 
-export default {title: 'Modal', decorators: [withKnobs]};
+export default {title: 'Feedback/Modal'};
 
 export const modal = () => {
     const [isVisible, setVisible] = useState(false);

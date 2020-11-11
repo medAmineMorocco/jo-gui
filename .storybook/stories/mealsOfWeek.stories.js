@@ -9,7 +9,7 @@ import {ReactComponent as VegetablesSvg} from "@components/form/mealsOfWeek/vege
 import "./stories.css";
 
 
-export default {title: 'MealsOfWeek', decorators: [withKnobs]};
+export default {title: 'Data Entry/MealsOfWeek', decorators: [withKnobs]};
 
 const onFinishFailed = ({_, errorFields}) => {
     console.log('failed', errorFields);

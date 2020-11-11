@@ -6,7 +6,7 @@ import { Form as ConfiguredForm } from '@components/form/Form';
 import './stories.css';
 
 export default {
-	title: 'FormItemSwitch',
+	title: 'Data Entry/Reduction Action/FormItemSwitch',
 	decorators: [withKnobs],
 };
 

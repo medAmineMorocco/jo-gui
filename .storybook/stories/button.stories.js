@@ -1,12 +1,11 @@
 import React from 'react';
-import { withKnobs } from "@storybook/addon-knobs";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import { Button } from '@components/button/Button';
 import { BackButton } from '@components/button/BackButton';
 import "./stories.css";
 
 
-export default { title: 'Button', decorators: [withKnobs]};
+export default { title: 'General/Button'};
 
 
 export const simpleButton = () => <Button text="ok"/>;

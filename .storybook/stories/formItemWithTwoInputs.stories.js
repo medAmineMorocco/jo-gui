@@ -5,7 +5,7 @@ import { Form as ConfiguredForm } from '@components/form/Form';
 import { FormItemWithTwoInputs } from '@components/form/formItemWithTwoInputs/FormItemWithTwoInputs';
 import './stories.css';
 
-export default { title: 'FormItemWithTwoInputs', decorators: [withKnobs] };
+export default { title: 'Data Entry/FormItemWithTwoInputs', decorators: [withKnobs] };
 
 const onFinish = (values) => {
 	console.log('success', values);

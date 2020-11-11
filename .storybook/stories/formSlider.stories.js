@@ -1,5 +1,4 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { FormSlider } from '@components/form/formSlider/FormSlider';
 import { Form as ConfiguredForm } from '@components/form/Form';
 import { ReactComponent as TeaSvg } from '@components/form/formSlider/tea.svg';
@@ -8,7 +7,7 @@ import { ReactComponent as CoffeeSvg } from '@components/form/formSlider/coffee.
 import { Form, Button } from 'antd';
 import './stories.css';
 
-export default { title: 'Slider', decorators: [withKnobs] };
+export default { title: 'Data Entry/Slider'};
 
 let questions = [
 	{

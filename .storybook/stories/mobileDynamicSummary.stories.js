@@ -4,7 +4,7 @@ import {MobileDynamicSummary} from "@components/dynamicSummary/MobileDynamicSumm
 import "./stories.css";
 
 
-export default {title: 'MobileDynamicSummary', decorators: [withKnobs]};
+export default {title: 'Summary/MobileDynamicSummary', decorators: [withKnobs]};
 
 
 export const summary = () => <div style={{marginTop: '50px'}}>

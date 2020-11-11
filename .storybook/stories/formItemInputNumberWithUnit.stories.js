@@ -6,7 +6,7 @@ import {FormItemInputNumberWithUnit} from '@components/form/formItemInputNumberW
 import "./stories.css";
 
 
-export default {title: 'FormItemInputNumberWithUnit', decorators: [withKnobs]};
+export default {title: 'Data Entry/FormItemInputNumberWithUnit', decorators: [withKnobs]};
 
 const onFinish = (values) => {
     console.log('success', values);

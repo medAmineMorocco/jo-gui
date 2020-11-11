@@ -6,7 +6,7 @@ import {FormItemInput} from '@components/form/formItemInput/FormItemInput';
 import "./stories.css";
 
 
-export default {title: 'FormItemInput', decorators: [withKnobs]};
+export default {title: 'Data Entry/FormItemInput', decorators: [withKnobs]};
 
 const onFinish = (values) => {
     console.log('success', values);

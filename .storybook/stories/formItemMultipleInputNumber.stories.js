@@ -6,7 +6,7 @@ import {FormItemMultipleInputNumber} from '@components/form/formItemMultipleInpu
 import "./stories.css";
 
 
-export default {title: 'FormItemMultipleInputNumber', decorators: [withKnobs]};
+export default {title: 'Data Entry/FormItemMultipleInputNumber', decorators: [withKnobs]};
 
 const onFinish = (values) => {
     console.log('success', values);
