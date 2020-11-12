@@ -84,7 +84,7 @@ export function FormItemActionReduction({
         <InputNumber
           size={isTablet ? "large" : "middle"}
           min={0}
-          max={form.getFieldValue(data.questionName)}
+          max={data.percentage ? 100 : form.getFieldValue(data.questionName)}
         />
       </FormItem>
       {data.secondText &&
