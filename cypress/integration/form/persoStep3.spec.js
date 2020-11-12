@@ -33,7 +33,7 @@ context('Form | Vie personnelle - Biens matériels step', () => {
 		});
 	});
 
-	it.only('should not exceed question value in its reduction action', () => {
+	it('should not exceed question value in its reduction action', () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			win.sessionStorage.setItem('current-step', 8);

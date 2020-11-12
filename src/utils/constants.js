@@ -23,7 +23,7 @@ export const MAIN_DESC2 =
 export const MAIN_DESC3 =
   "Il distingue les émissions liées à ta vie professionnelle des émissions liées à ta vie personnelle pour te permettre de visualiser l'impact concret de tes actions, et te donner des moyens pour le réduire.";
 
-export const SECTION1_TITLE = "Comment ça marche ?";
+export const SECTION1_TITLE = "1/3 Comment ça marche ?";
 export const SECTION1_PARAG0 = `<b><i>1. Navigue en tout sécurité</i></b></br>
   Toutes les informations saisies sont strictement confidentielles et tu es la seule personne à y avoir accès 😉`;
 export const SECTION1_PARAG1 = `<b><i>2. Mesure ton impact</i></b></br>
@@ -36,7 +36,7 @@ export const SECTION1_PARAG3 = `<b><i>4. Découvre les résultats</i></b></br>
 Quels sont les postes où tu émets le plus, et quel sera l’impact de tes actions de réductions ? Le Coach Carbone te donne les clefs pour devenir un véritable champion du climat, à toi de jouer !`;
 
 export const SECTION2_TITLE =
-  "Qu’est-ce que l’impact carbone et pourquoi le calculer ?";
+  "2/3 Qu’est-ce que l’impact carbone et pourquoi le calculer ?";
 export const SECTION2_PARAG1 = `<b><i>1. Qu’est ce-ce que l’impact carbone ?</i></b></br>
 La plupart des activités humaines émettent des Gaz à effet de serre qui ont pour effet d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de tes émissions de Gaz à Effet de Serre (GES) ramenées en tonne équivalent CO₂ (teqCO₂). Agir sur tes émissions de GES, c’est contribuer à la lutte contre le changement climatique. 
 `;
@@ -48,7 +48,7 @@ export const SECTION2_PARAG3 = `<b><i>3. Est-ce que ça sert VRAIMENT à quelque
 Oui.  En réduisant ton impact carbone d’une tonne, tu évites les émissions du chauffage d’un appartement 3 pièces à Paris pendant 1 an ! À l’échelle des collaborateurs des Jeux, c’est le chauffage de 250 appartements que tu économises !  
 `;
 
-export const SECTION3_TITLE = "Comment est-il calculé ?";
+export const SECTION3_TITLE = "3/3 Comment est-il calculé ?";
 export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME, <b>cet outil de diagnostic estime tes émissions carbone</b> en associant tes activités à la moyenne des émissions qu’elles impliquent, appelée « facteur d’émission »`;
 export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz </b>(CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques`;
 export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence. <b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties grâce aux facteurs d’émissions.`;

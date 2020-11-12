@@ -173,7 +173,7 @@ export function PersoStep2({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Équipement du logement</span>
+          <span className="pro-step-title">Appareils et électroménager</span>
         </div>
 
         <div className="forms-margin">
