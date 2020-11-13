@@ -33,6 +33,7 @@ import {
   SECTION3_PARAG3,
   SECTION3_PARAG4,
   WEBSITE_INFO_MSG,
+  WEBSITE_URL,
   CONTACT_LEGAL_MENTION,
   CONTACT_ACCESSIBILITY_SITES,
   CONTACT_PRIVACY_POLICY,
@@ -123,10 +124,17 @@ export function HomePage(props) {
             SECTION3_PARAG2,
             SECTION3_PARAG3,
             SECTION3_PARAG4,
-            WEBSITE_INFO_MSG,
           ]}
           style={{ background: "#003B55" }}
         />
+      </div>
+
+      <div className="section-footer">
+        <div className="section-divider"></div>
+        <div className="website-info">{WEBSITE_INFO_MSG}</div>
+        <div className="website-url">
+          <a href="#0">{WEBSITE_URL}</a>
+        </div>
       </div>
 
       <div className="contacts">

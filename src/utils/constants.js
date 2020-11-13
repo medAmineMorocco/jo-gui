@@ -54,7 +54,9 @@ export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz </b>
 export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence. <b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties grâce aux facteurs d’émissions.`;
 export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre ta vie professionnelle et personnelle</b> pour une meilleure lecture.`;
 
-export const WEBSITE_INFO_MSG = `<b>Plus d’informations ?</b> Consulte notre page dédiée : <div className="website-url"><a href="https://www.paris2024.org/fr/methode-carbone" target="_blank" rel="noreferrer noopener">https://www.paris2024.org/fr/methode-carbone</a></div>`;
+export const WEBSITE_INFO_MSG =
+  "Plus d’information ? Consulte notre page dédiée :";
+export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
 
 export const CONTACT_LEGAL_MENTION = "Mentions légales";
 export const CONTACT_ACCESSIBILITY_SITES = "Accéssibilité Sites";
@@ -283,7 +285,7 @@ export const HOUSE_SAVIEZ_VOUS =
 export const OVERLAY_IMAGE_ALT =
   "Pour optimiser ta consommation d’énergie à la maison, plein de conseils et pratiques sont disponibles sur le site de l’ADEME !\n" +
   "Quelques exemples :\n" +
-  "Eteindre les veilles dès que possible réduit de 10% l’électricité consommée ;\n" +
+  "Eteindre les veilles dès que possible réduit de 10% l’WEBSITE_INFO_MSGélectricité consommée ;\n" +
   "Baisser le chauffage de 1°C réduit de 7% l’énergie consommée\n" +
   "Couvrir les casseroles pendant la cuisson consomme 4 fois moins en électricité ou gaz ;\n" +
   "Privilégier le programme éco de son lave-linge réduit de 45% l’énergie consommée ;\n" +

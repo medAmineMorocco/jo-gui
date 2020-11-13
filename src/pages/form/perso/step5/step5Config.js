@@ -105,7 +105,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire de jus/sodas de",
-    secondText: "%",
+    secondText: "litre(s)",
     name: "5f60aa4172f98",
     options: [
       { text: "0", value: 0 },
@@ -127,7 +127,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire de vin de",
-    secondText: "%",
+    secondText: "litre(s)",
     name: "5f60aa6244f4d",
     options: [
       { text: "0", value: 0 },
@@ -140,7 +140,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: " Réduire sa consommation hebdomadaire de bière de",
-    secondText: "%",
+    secondText: "litre(s)",
     name: "5f60aa7235bfe",
     options: [
       { text: "0", value: 0 },
@@ -153,7 +153,7 @@ export const selectDetail2 = [
   {
     type: "select",
     firstText: "Réduire sa consommation hebdomadaire d’alcool de",
-    secondText: "%",
+    secondText: "litre(s)",
     name: "5f60aa83e4aad",
     options: [
       { text: "0", value: 0 },
