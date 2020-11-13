@@ -82,19 +82,19 @@
 }
 
 .website-info {
-  margin: 6vh auto 0vh auto;
+  margin: 0 auto;
   position: relative;
   width: 50%;
   font-family: Source Sans Pro;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 1.5vw;
   line-height: 8vh;
   text-align: center;
 }
 
 .website-url {
-  margin: 0 auto;
+  margin: 0vw auto 2vw auto;
   position: relative;
   width: 50%;
   font-family: Source Sans Pro;
@@ -184,14 +184,9 @@
 
   .website-info {
     margin: 0 auto;
-    position: relative;
     width: 80%;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 400;
     font-size: 5vw;
     line-height: 4vh;
-    text-align: center;
   }
 
   .website-info > p {
@@ -203,14 +198,9 @@
 
   .website-url {
     margin: 0 auto;
-    position: relative;
     width: 90%;
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 400;
     font-size: 5vw;
     line-height: 8vh;
-    text-align: center;
     margin-top: 1vh;
   }
 
