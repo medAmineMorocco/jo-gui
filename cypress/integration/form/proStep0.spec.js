@@ -1,21 +1,22 @@
 context("Form | introduction step", () => {
   const sizes = [
-    {
-      device: "iphone-5",
-      width: 320,
-    },
+    // {
+    //   device: "iphone-5",
+    //   width: 320,
+    // },
     {
       device: "ipad-2",
       width: 768,
     },
-    {
-      device: "macbook-13",
-      width: 1280,
-    },
+    // {
+    //   device: "macbook-13",
+    //   width: 1280,
+    // },
   ];
 
   it("should show introduction step on form page", () => {
     sizes.forEach((size) => {
+      cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
@@ -34,6 +35,9 @@ context("Form | introduction step", () => {
   });
 
   it("should submit form", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
+    cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/proStep0/state.json', 'getResponsesOfStep0');
+    cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();
       win.sessionStorage.setItem("current-step", 0);
@@ -62,6 +66,7 @@ context("Form | introduction step", () => {
 
   it("should not submit form when questions are not filled", () => {
     sizes.forEach((size) => {
+      cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
@@ -69,6 +74,7 @@ context("Form | introduction step", () => {
         cy.login("email@paris2024.org");
         cy.visit("/form");
 
+        cy.wait(500);
         cy.get("button span:contains(suite)").click();
 
         cy.get(

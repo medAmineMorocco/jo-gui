@@ -3,8 +3,8 @@ import { Form } from "antd";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -16,6 +16,7 @@ import {
   INTRODUCTION_QUESTION3,
   INTRODUCTION_QUESTION3_ERROR_MSG,
 } from "@utils/constants";
+import { notify } from "@utils/notification";
 
 // introduction
 export function ProStep0({ step, setNextStep }) {
@@ -32,38 +33,49 @@ export function ProStep0({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
       });
     };
 
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
+    getResponsesOfStep("GENERAL")
+      .then((stepState) => {
+        if (stepState) {
+          setReponsesOfStep(stepState);
+        }
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    const stepState = [
-      {
-        question: "5f554172a13c7",
-        response: values["5f554172a13c7"],
-      },
-      {
-        question: "5f5541a7845e0",
-        response: values["5f5541a7845e0"],
-      },
-      {
-        question: "5f5541ba9b096",
-        response: values["5f5541ba9b096"],
-      },
-    ];
-    saveResponsesOfQuestionsStep(stepState, step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    const stepState = {
+      category: "GENERAL",
+      questions: [
+        {
+          question: "5f554172a13c7",
+          response: values["5f554172a13c7"],
+        },
+        {
+          question: "5f5541a7845e0",
+          response: values["5f5541a7845e0"],
+        },
+        {
+          question: "5f5541ba9b096",
+          response: values["5f5541ba9b096"],
+        },
+      ],
+      actions: [],
+      settings: [],
+    };
+    saveResponsesOfStep(stepState)
+      .then(() => {
+        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   };
 
   return (
