@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Spin } from "antd";
 import { useTabletOrMobileSize } from "@hooks/window";
 import { getCategoryItems } from "@utils/category";
 import { BoxSides } from "@components/box/BoxSides";
@@ -8,6 +9,8 @@ import { MobileDynamicSummary } from "@components/dynamicSummary/MobileDynamicSu
 import { HeaderWithCategory } from "@components/header/HeaderWithCategory";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
 import { CATEGORY } from "@utils/category";
+import { getUserProgess } from "@services/userService";
+import { notify } from "@utils/notification";
 import { config } from "./formConfig";
 import "./formWizard.css";
 
@@ -17,6 +20,34 @@ export function FormWizard() {
   const [activeStep, setActiveStep] = useState(
     Number(sessionStorage.getItem("current-step")) || 0
   );
+  const [isLoading, setLoading] = useState(true);
+
+  const getCurrentStep = useCallback(() => {
+    getUserProgess()
+      .then((response) => {
+        if (response.progress === "VIE_PROFESIONAL") {
+          setTimeout(() => {
+            setLoading(false);
+            setActiveStep(response.step);
+          }, 500);
+        } else if (response.progress === "RESULTATS") {
+          history.push("/intro");
+        }
+      })
+      .catch(() => {
+        setTimeout(() => {
+          setLoading(false);
+          notify(
+            "ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
+          );
+          setActiveStep(0);
+        }, 500);
+      });
+  }, [history]);
+
+  useEffect(() => {
+    getCurrentStep();
+  }, [getCurrentStep]);
 
   const setNextStep = () => {
     setActiveStep(activeStep + 1);
@@ -36,8 +67,15 @@ export function FormWizard() {
     content = (
       <div className="mobile-wizard-container">
         <MobileDynamicSummary size={summaryItems.length} current={progress} />
-        <div className="mobile-wizard-form-container">
-          <FormStep step={activeStep} setNextStep={setNextStep} />
+        <div
+          className="mobile-wizard-form-container"
+          style={isLoading ? { display: "flex", justifyContent: "center" } : {}}
+        >
+          {isLoading ? (
+            <Spin />
+          ) : (
+            <FormStep step={activeStep} setNextStep={setNextStep} />
+          )}
         </div>
       </div>
     );
@@ -68,8 +106,17 @@ export function FormWizard() {
         }
         right={
           <div className="wizard-content-right-container">
-            <div className="wizard-content-right-form-container">
-              <FormStep step={activeStep} setNextStep={setNextStep} />
+            <div
+              className="wizard-content-right-form-container"
+              style={
+                isLoading ? { display: "flex", justifyContent: "center" } : {}
+              }
+            >
+              {isLoading ? (
+                <Spin />
+              ) : (
+                <FormStep step={activeStep} setNextStep={setNextStep} />
+              )}
             </div>
           </div>
         }
