@@ -15,10 +15,11 @@ import {
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { emplacementBureauOptions, subQuestions } from "./ProStep1Config";
+import { notify } from "@utils/notification";
 
 // Au bureau
 export function ProStep1({ step, setNextStep }) {
@@ -34,7 +35,7 @@ export function ProStep1({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
@@ -44,43 +45,54 @@ export function ProStep1({ step, setNextStep }) {
       setNbrTelephones(form.getFieldValue("5f554354aa382"));
       setNbrEcrans(form.getFieldValue("5f55437711711"));
     };
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
+    getResponsesOfStep("AU_BUREAU")
+      .then((stepState) => {
+        if (stepState) {
+          setReponsesOfStep(stepState);
+        }
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    const stepState = [
-      {
-        question: "5f554229451a5",
-        response: values["5f554229451a5"],
-      },
-      {
-        question: "5f55433101b1e",
-        response: values["5f55433101b1e"],
-      },
-      {
-        question: "5f554354aa382",
-        response: values["5f554354aa382"],
-      },
-      {
-        question: "5f55437711711",
-        response: values["5f55437711711"],
-      },
-    ];
+    const stepState = {
+      category: "AU_BUREAU",
+      questions: [
+        {
+          question: "5f554229451a5",
+          response: values["5f554229451a5"],
+        },
+        {
+          question: "5f55433101b1e",
+          response: values["5f55433101b1e"],
+        },
+        {
+          question: "5f554354aa382",
+          response: values["5f554354aa382"],
+        },
+        {
+          question: "5f55437711711",
+          response: values["5f55437711711"],
+        },
+      ],
+      actions: [],
+      settings: [],
+    };
 
     subQuestions[values["5f554229451a5"]].forEach((res) => {
-      stepState.push({
+      stepState.questions.push({
         question: res.name,
         response: res.defaultResponse / 1000000,
       });
     });
 
-    saveResponsesOfQuestionsStep(stepState, step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    saveResponsesOfStep(stepState)
+      .then(() => {
+        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   };
 
   return (
