@@ -2,6 +2,40 @@ import { fetchWrapper } from "../utils/fetch";
 import { getCurrentUser } from "./authService";
 import { getBackendUrl } from "./config";
 
+//new logic
+export function saveResponsesOfStep(stepState) {
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${getCurrentUser().token}`,
+    },
+    body: JSON.stringify(stepState),
+  };
+
+  return fetchWrapper(
+    process.env.REACT_APP_BACKEND_URL + "/api/response/thematic",
+    requestOptions
+  );
+}
+
+export function getResponsesOfStep(thematic) {
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getCurrentUser().token}`,
+    },
+  };
+
+  return fetchWrapper(
+    process.env.REACT_APP_BACKEND_URL + "/api/response/thematic",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .catch((error) => Promise.reject(error));
+}
+
+//old logic
 export function saveResponsesOfQuestionsStep(stepState, step) {
   let state = getItem("responses");
   if (!state) {
