@@ -7,7 +7,7 @@ import { LaptopOutlined } from "@ant-design/icons";
 
 function CounterForm({ onFinish, onFinishFailed }) {
   const [form] = Form.useForm();
-  const [count] = useState(0);
+  const [count, setCount] = useState(0);
   let textCounter =
     "Nombre d'ordinateurs portable professionnels mis à votre disposition";
   let title = "Test";
@@ -25,6 +25,7 @@ function CounterForm({ onFinish, onFinishFailed }) {
         form={form}
         name={name}
         value={count}
+        setValue={setCount}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">

@@ -205,6 +205,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f5568d39449f"
           textCounter={MATERIELS_QUESTION1_LABEL}
           value={question1}
+          setValue={setQuestion1}
         />
 
         <FormCounter
@@ -212,6 +213,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f5568e651349"
           textCounter={MATERIELS_QUESTION2_LABEL}
           value={question2}
+          setValue={setQuestion2}
         />
 
         <FormCounter
@@ -219,6 +221,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f5568f49b63c"
           textCounter={MATERIELS_QUESTION3_LABEL}
           value={question3}
+          setValue={setQuestion3}
         />
 
         <FormItemInputNumberWithUnit
@@ -240,6 +243,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f5569516acd3"
           textCounter={MATERIELS_QUESTION5_LABEL}
           value={question5}
+          setValue={setQuestion5}
         />
 
         <FormItemInputNumberWithUnit
@@ -257,6 +261,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f55697727f39"
           textCounter={MATERIELS_QUESTION7_LABEL}
           value={question7}
+          setValue={setQuestion7}
         />
 
         <FormItemInputNumberWithUnit
@@ -274,6 +279,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f55699e36c16"
           textCounter={MATERIELS_QUESTION9_LABEL}
           value={question9}
+          setValue={setQuestion9}
         />
 
         <FormCounter
@@ -281,6 +287,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f556b379a8d1"
           textCounter={MATERIELS_QUESTION10_LABEL}
           value={question10}
+          setValue={setQuestion10}
         />
 
         <FormItemInputNumberWithUnit
@@ -298,6 +305,7 @@ export function PersoStep3({ step, setNextStep }) {
           name="5f556b6b5abc8"
           textCounter={MATERIELS_QUESTION12_LABEL}
           value={question12}
+          setValue={setQuestion12}
         />
 
         <FormItemInputNumberWithUnit
