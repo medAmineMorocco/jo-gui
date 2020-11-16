@@ -65,6 +65,11 @@ export function PersoStep5({ step, setNextStep }) {
   const actionBetail3 = "5f60a21ef0fe9";
   const actionPoulet3 = "5f60a24828ffa";
 
+  const actionSoda = "5f60aa4172f98";
+  const actionVin = "5f60aa6244f4d";
+  const actionBiere = "5f60aa7235bfe";
+  const actionAlcool = "5f60aa83e4aad";
+
   const [render, setRender] = useState(0);
   const [isReductionAction1Opened, setReductionAction1Opened] = useState(false);
   const [isReductionAction2Opened, setReductionAction2Opened] = useState(false);
@@ -104,6 +109,66 @@ export function PersoStep5({ step, setNextStep }) {
   const getValueLessThanQuestionValue = (options, questionValue) => {
     return options.reverse().find(({ value }) => value <= questionValue).value;
   };
+
+  // change ActionSoda Value
+  selectDetail2[0].options = [{ text: "0", value: 0 }];
+  for (let i = 1; i <= question5Count; i++) {
+    selectDetail2[0].options.push({ text: `${i}`, value: i });
+  }
+  if (question5Count < form.getFieldValue(actionSoda)) {
+    const resultat = getValueLessThanQuestionValue(
+      selectDetail2[0].options,
+      form.getFieldValue(actionSoda)
+    );
+    form.setFieldsValue({
+      [actionSoda]: resultat,
+    });
+  }
+
+  // change ActionVin Value
+  selectDetail2[2].options = [{ text: "0", value: 0 }];
+  for (let i = 1; i <= question7Count; i++) {
+    selectDetail2[2].options.push({ text: `${i}`, value: i });
+  }
+  if (question7Count < form.getFieldValue(actionVin)) {
+    const resultat = getValueLessThanQuestionValue(
+      selectDetail2[2].options,
+      form.getFieldValue(actionVin)
+    );
+    form.setFieldsValue({
+      [actionVin]: resultat,
+    });
+  }
+
+  // change ActionBiere Value
+  selectDetail2[3].options = [{ text: "0", value: 0 }];
+  for (let i = 1; i <= question8Count; i++) {
+    selectDetail2[3].options.push({ text: `${i}`, value: i });
+  }
+  if (question8Count < form.getFieldValue(actionBiere)) {
+    const resultat = getValueLessThanQuestionValue(
+      selectDetail2[3].options,
+      form.getFieldValue(actionBiere)
+    );
+    form.setFieldsValue({
+      [actionBiere]: resultat,
+    });
+  }
+
+  // change ActionAlcool Value
+  selectDetail2[4].options = [{ text: "0", value: 0 }];
+  for (let i = 1; i <= question9Count; i++) {
+    selectDetail2[4].options.push({ text: `${i}`, value: i });
+  }
+  if (question9Count < form.getFieldValue(actionAlcool)) {
+    const resultat = getValueLessThanQuestionValue(
+      selectDetail2[4].options,
+      form.getFieldValue(actionAlcool)
+    );
+    form.setFieldsValue({
+      [actionAlcool]: resultat,
+    });
+  }
 
   useEffect(() => {
     scrollToTopOfThePage();
@@ -395,6 +460,7 @@ export function PersoStep5({ step, setNextStep }) {
           iconCounter={CoffeeIcon}
           textCounter={ALIMENTATION_QUESTION1}
           value={question1Count}
+          setValue={setQuestion1Count}
         />
 
         <div className="forms-margin">
@@ -458,6 +524,7 @@ export function PersoStep5({ step, setNextStep }) {
             iconCounter={SodaIcon}
             textCounter={ALIMENTATION_QUESTION5}
             value={question5Count}
+            setValue={setQuestion5Count}
           />
         </div>
 
@@ -467,6 +534,7 @@ export function PersoStep5({ step, setNextStep }) {
           iconCounter={WaterIcon}
           textCounter={ALIMENTATION_QUESTION6}
           value={question6Count}
+          setValue={setQuestion6Count}
         />
 
         <FormCounter
@@ -475,6 +543,7 @@ export function PersoStep5({ step, setNextStep }) {
           iconCounter={WineIcon}
           textCounter={ALIMENTATION_QUESTION7}
           value={question7Count}
+          setValue={setQuestion7Count}
         />
 
         <FormCounter
@@ -483,6 +552,7 @@ export function PersoStep5({ step, setNextStep }) {
           iconCounter={BeerIcon}
           textCounter={ALIMENTATION_QUESTION8}
           value={question8Count}
+          setValue={setQuestion8Count}
         />
 
         <FormCounter
@@ -491,6 +561,7 @@ export function PersoStep5({ step, setNextStep }) {
           iconCounter={WhiskyIcon}
           textCounter={ALIMENTATION_QUESTION9}
           value={question9Count}
+          setValue={setQuestion9Count}
         />
 
         <Overlay

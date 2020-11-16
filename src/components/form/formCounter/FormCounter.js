@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Tooltip } from "antd";
 import {
   PlusCircleFilled,
   MinusCircleFilled,
@@ -7,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import { FormItem } from "@components/form/formItem/FormItem";
 import { getColor } from "@utils/cssUtil";
+import { Tooltip } from "antd";
 import "./formCounter.css";
 
 export function FormCounter({
@@ -15,24 +15,23 @@ export function FormCounter({
   iconCounter: IconCounter,
   form,
   name,
-  value,
   max,
-  onChange,
+  value,
+  setValue,
 }) {
-  const [counter, setCounter] = useState(value);
   const mainColor = getColor("--main-color");
   const shade = getColor("--bg-color-shade-3");
   const [color, setColor] = useState(mainColor);
 
-  useEffect(() => {
-    if (onChange) {
-      onChange(counter);
-    }
-  }, [counter, onChange]);
+  const onChange = (value) => {
+    setValue(value);
+  };
 
   useEffect(() => {
-    setCounter(value);
-  }, [value]);
+    form.setFieldsValue({
+      [name]: value,
+    });
+  }, [form, name, value]);
 
   const onFocus = () => {
     const focusColor = "white";
@@ -45,25 +44,22 @@ export function FormCounter({
   };
 
   const addCounter = () => {
-    if (max && counter < max) {
-      setCounter(counter + 1);
+    if (max && value < max) {
+      setValue(value + 1);
+      onChange(value + 1);
     }
     if (!max) {
-      setCounter(counter + 1);
+      setValue(value + 1);
+      onChange(value + 1);
     }
   };
 
   const decreaseCounter = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
+    if (value > 0) {
+      setValue(value - 1);
+      onChange(value - 1);
     }
   };
-
-  useEffect(() => {
-    form.setFieldsValue({
-      [name]: counter,
-    });
-  }, [form, name, counter]);
 
   return (
     <FormItem className="counter-form-item" name={name}>
@@ -99,10 +95,10 @@ export function FormCounter({
             id="minus-counter"
             className="large-text"
             onClick={decreaseCounter}
-            style={counter === 0 ? { color: shade } : { color: color }}
+            style={value === 0 ? { color: shade } : { color: color }}
           />
           <span id="result-counter" className="large-text">
-            {counter}
+            {value}
           </span>
           <PlusCircleFilled
             id="plus-counter"

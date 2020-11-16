@@ -274,6 +274,7 @@ export function PersoStep1({ step, setNextStep }) {
             name="5f555eea00a7c"
             textCounter={HOUSE_QUESTION1}
             value={question1Count}
+            setValue={setQuestion1Count}
           />
         </div>
 

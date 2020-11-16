@@ -72,38 +72,6 @@ export function PersoStep2({ step, setNextStep }) {
     );
   };
 
-  const onChangeQuestion1Count = (value) => {
-    setQuestion1Count(value);
-  };
-
-  const onChangeQuestion2Count = (value) => {
-    setQuestion2Count(value);
-  };
-
-  const onChangeQuestion3Count = (value) => {
-    setQuestion3Count(value);
-  };
-
-  const onChangeQuestion4Count = (value) => {
-    setQuestion4Count(value);
-  };
-
-  const onChangeQuestion5Count = (value) => {
-    setQuestion5Count(value);
-  };
-
-  const onChangeQuestion6Count = (value) => {
-    setQuestion6Count(value);
-  };
-
-  const onChangeQuestion8Count = (value) => {
-    setQuestion8Count(value);
-  };
-
-  const onChangeQuestion11Count = (value) => {
-    setQuestion11Count(value);
-  };
-
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
@@ -183,7 +151,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f556168dab39"
             textCounter={EQUIPMENT_QUESTION1}
             value={question1Count}
-            onChange={onChangeQuestion1Count}
+            setValue={setQuestion1Count}
           />
         </div>
 
@@ -194,7 +162,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5561e5eb854"
             textCounter={EQUIPMENT_QUESTION2}
             value={question2Count}
-            onChange={onChangeQuestion2Count}
+            setValue={setQuestion2Count}
           />
         </div>
 
@@ -205,7 +173,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55664839d67"
             textCounter={EQUIPMENT_QUESTION3}
             value={question3Count}
-            onChange={onChangeQuestion3Count}
+            setValue={setQuestion3Count}
           />
         </div>
 
@@ -216,7 +184,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55667459f85"
             textCounter={EQUIPMENT_QUESTION4}
             value={question4Count}
-            onChange={onChangeQuestion4Count}
+            setValue={setQuestion4Count}
           />
         </div>
 
@@ -227,7 +195,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55669ad8400"
             textCounter={EQUIPMENT_QUESTION5}
             value={question5Count}
-            onChange={onChangeQuestion5Count}
+            setValue={setQuestion5Count}
           />
         </div>
 
@@ -238,7 +206,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5566c7a6e7c"
             textCounter={EQUIPMENT_QUESTION6}
             value={question6Count}
-            onChange={onChangeQuestion6Count}
+            setValue={setQuestion6Count}
           />
         </div>
 
@@ -275,7 +243,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f5566f657df4"
             textCounter={EQUIPMENT_QUESTION8}
             value={question8Count}
-            onChange={onChangeQuestion8Count}
+            setValue={setQuestion8Count}
           />
         </div>
 
@@ -313,7 +281,7 @@ export function PersoStep2({ step, setNextStep }) {
             name="5f55674380953"
             textCounter={EQUIPMENT_QUESTION11}
             value={question11Count}
-            onChange={onChangeQuestion11Count}
+            setValue={setQuestion11Count}
           />
         </div>
 

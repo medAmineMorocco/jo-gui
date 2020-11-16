@@ -113,6 +113,7 @@ export function ProStep1({ step, setNextStep }) {
             iconCounter={LaptopIcon}
             textCounter={TITLE_ORDINATEURS}
             value={nbrOrdinateurs}
+            setValue={setNbrOrdinateurs}
             max={9}
           />
         </div>
@@ -123,6 +124,7 @@ export function ProStep1({ step, setNextStep }) {
           iconCounter={SmartphoneIcon}
           textCounter={TITLE_TELEPHONES}
           value={nbrTelephones}
+          setValue={setNbrTelephones}
           max={9}
         />
 
@@ -132,6 +134,7 @@ export function ProStep1({ step, setNextStep }) {
           iconCounter={ScreenIcon}
           textCounter={TITLE_ECRANS}
           value={nbrEcrans}
+          setValue={setNbrEcrans}
           max={9}
         />
       </div>
