@@ -15,6 +15,7 @@ context("Form | Vie professionnelle - Deplacements step", () => {
   ];
 
   it("should show Deplacements step on form page", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep5/progress.json', 'progressJSON');
     sizes.forEach((size) => {
       cy.viewport(size.device);
       cy.window().then((win) => {

@@ -5,7 +5,7 @@ import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormIt
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
-import { proStep5State, proStep5ActionReductionState } from "./ProStep5State";
+import { stepState } from "./ProStep5State";
 import {
   NBR_KM_VOITURE,
   QUESTION2_NBR_TRAJETS_AR,
@@ -21,10 +21,8 @@ import {
   DEPLACEMENT_MSG_ERROR,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -34,6 +32,7 @@ import {
   question11options,
   actionReductionData,
 } from "./ProStep5Config";
+import { notify } from "@utils/notification";
 
 // Déplacements
 export function ProStep5({ step, setNextStep }) {
@@ -94,46 +93,37 @@ export function ProStep5({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
-    };
-
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) =>
+      stepState.actions.forEach(({ action, response }) => {
         form.setFieldsValue({
-          [question]: response,
-        })
-      );
+          [action]: response,
+        });
+      });
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
       setSwitchValue(form.getFieldValue("deplacement-switch-1"));
     };
 
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("DEPLACEMENTS_PROFESSIONNELS")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(proStep5State(values), step);
-    saveSettingsStep(proStep5ActionReductionState(values), step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    saveResponsesOfStep(stepState(values))
+      .then(() => {
+        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   };
 
   return (

@@ -97,7 +97,7 @@ export function ProStep4({ step, setNextStep }) {
       setSwitchValue(form.getFieldValue("trajets-switch-1"));
     };
 
-    getResponsesOfStep("EMPREINTE_NUMERIQUE")
+    getResponsesOfStep("TRAJETS_DOMICILE_TRAVAIL")
       .then((stepState) => setReponsesOfStep(stepState))
       .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
