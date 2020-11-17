@@ -1,4 +1,4 @@
-context("Form | Vie professionnelle - Trajets step", () => {
+context("Form | Vie professionnelle - Trajets Domicile-travail step", () => {
   const sizes = [
     {
       device: "iphone-5",
@@ -15,6 +15,7 @@ context("Form | Vie professionnelle - Trajets step", () => {
   ];
 
   it("should show Trajets step on form page", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep4/progress.json', 'progressJSON');
     sizes.forEach((size) => {
       cy.viewport(size.device);
       cy.window().then((win) => {
