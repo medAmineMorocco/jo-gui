@@ -105,6 +105,7 @@ context('Form | Déplacements step', () => {
 			cy.get('button span:contains(suite)').click();
 
 			cy.wait(1000);
+
 			cy.get('.footer-navigation-left span').contains('Déplacements').should('exist');
 			cy.get('.footer-navigation-right span').contains('Résultats').should('exist');
 			cy.get('.footer-buttons-left button').click();
@@ -139,7 +140,7 @@ context('Form | Déplacements step', () => {
 				cy.login('email@paris2024.org');
 				cy.visit('/form');
 
-				cy.get('button span:contains(suite)').click({force: true});
+				cy.get('button span:contains(suite)').click({ force: true });
 
 				cy.get('.ant-form-item-explain div:contains("⚠ Merci de saisir votre réponse")')
 					.should(($el) => {
@@ -149,6 +150,42 @@ context('Form | Déplacements step', () => {
 						cy.takeSnapshots('form - Déplacements errors', size);
 					});
 			});
+		});
+	});
+
+	it('should not exceed question value in its reduction action', () => {
+		cy.window().then((win) => {
+			win.sessionStorage.clear();
+			win.sessionStorage.setItem('current-step', 11);
+			cy.login('email@paris2024.org');
+			cy.visit('/form');
+
+			cy.get('.ant-switch').eq(1).click({ force: true });
+
+			cy.typeNumber([
+				{
+					name: '5f55791c16575',
+					value: 1,
+				},
+				{
+					name: '5f55797b8b5f2',
+					value: 2,
+				},
+				{
+					name: '5f55799ed06a0',
+					value: 3,
+				},
+			]);
+
+			cy.get('#5f60aac6c60bf')
+				.parents('.ant-select-selector')
+				.click({ force: true })
+				.then(() => {
+					[0, 1, 2, 3, 4, 5, 6].forEach((value) => cy.get('.ant-select-item-option-content').should('contain', value));
+					cy.get('.ant-select-item-option-content').should('not.contain', '7');
+					cy.get('.ant-select-item-option-content').should('not.contain', '8');
+					cy.get('.ant-select-item-option-content').should('not.contain', '9');
+				});
 		});
 	});
 });
