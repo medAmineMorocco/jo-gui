@@ -52,6 +52,36 @@ export function PersoStep6({ step, setNextStep }) {
   const [isReductionAction2Opened, setReductionAction2Opened] = useState(false);
   const [isReductionAction3Opened, setReductionAction3Opened] = useState(false);
 
+  const getValueLessThanQuestionValue = (options, questionValue) => {
+    return options.reverse().find(({ value }) => value <= questionValue).value;
+  };
+
+  const sumFieldsValuesQuestion5 = (value1, value2, value3) => {
+    return value1 + value2 + value3;
+  };
+
+  const sum = sumFieldsValuesQuestion5(
+    Number(form.getFieldValue("5f55791c16575")) || 0,
+    Number(form.getFieldValue("5f55797b8b5f2")) || 0,
+    Number(form.getFieldValue("5f55799ed06a0")) || 0
+  );
+
+  actionReduction2_selectDetail[0].options = [{ text: "0", value: 0 }];
+  for (let i = 1; i <= sum; i++) {
+    actionReduction2_selectDetail[0].options.push({ text: `${i}`, value: i });
+  }
+
+  const actionAvion = "5f60aac6c60bf";
+  if (sum < form.getFieldValue(actionAvion)) {
+    const resultat = getValueLessThanQuestionValue(
+      actionReduction2_selectDetail[0].options,
+      form.getFieldValue(actionAvion)
+    );
+    form.setFieldsValue({
+      [actionAvion]: resultat,
+    });
+  }
+
   const handleSwitchReductionAction1Change = (isChecked) => {
     setReductionAction1Opened(isChecked);
   };
@@ -206,6 +236,7 @@ export function PersoStep6({ step, setNextStep }) {
             name="multi2"
             label={DEPLACEMENTS_QUESTION5}
             questions={question5_questions}
+            onChange={onChange}
           />
         </div>
       </div>

@@ -82,13 +82,7 @@ export const actionReduction2_selectDetail = [
     type: "select",
     firstText: "Prendre le TGV plutôt que l'avion pour",
     name: "5f60aac6c60bf",
-    options: [
-      { text: "0", value: 0 },
-      { text: "25", value: 25 },
-      { text: "50", value: 50 },
-      { text: "75", value: 75 },
-      { text: "100", value: 100 },
-    ],
+    options: [{ text: "0", value: 0 }],
     secondText: "des distances en vol court courrier",
   },
 ];

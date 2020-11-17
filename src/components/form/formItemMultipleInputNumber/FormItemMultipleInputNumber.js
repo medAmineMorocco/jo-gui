@@ -11,13 +11,17 @@ export function FormItemMultipleInputNumber({
   tooltipTitle,
   questions,
   isRequired,
+  onChange,
 }) {
   const mainColor = getColor("--main-color");
 
-  const onChange = (value, name) => {
+  const onChangeFieldValue = (value, name) => {
     form.setFieldsValue({
       [name]: value,
     });
+    if (onChange) {
+      onChange();
+    }
   };
 
   const onFocus = (name) => {
@@ -77,7 +81,7 @@ export function FormItemMultipleInputNumber({
                   id={name}
                   className="form-multiple-items-input"
                   value={defaultValue}
-                  onChange={(value) => onChange(value, name)}
+                  onChange={(value) => onChangeFieldValue(value, name)}
                   onFocus={() => onFocus(name)}
                   onBlur={() => onBlur(name)}
                   min={0}
