@@ -41,11 +41,7 @@ export function ProStep0({ step, setNextStep }) {
     };
 
     getResponsesOfStep("GENERAL")
-      .then((stepState) => {
-        if (stepState) {
-          setReponsesOfStep(stepState);
-        }
-      })
+      .then((stepState) => setReponsesOfStep(stepState))
       .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 

@@ -15,6 +15,7 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 	];
 
 	it('should show Empreinte numérique step on form page', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
@@ -34,6 +35,9 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 	});
 
 	it('should submit form', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');
+		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/proStep2/state.json', 'getResponsesOfStep2');
+		cy.stubRequest('POST', '**/api/response/thematic', 200);
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			win.sessionStorage.setItem('current-step', 2);

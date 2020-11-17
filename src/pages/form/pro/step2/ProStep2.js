@@ -5,7 +5,7 @@ import { Overlay } from "@components/overlay/Overlay";
 import { FormSlider } from "@components/form/formSlider/FormSlider";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import { proStep2State, proStep2ActionReductionState } from "./ProStep2State";
+import { stepState } from "./ProStep2State";
 import {
   TAILLE_BOITE,
   TAILLE_BOITE_INFO,
@@ -18,10 +18,8 @@ import {
   SAVIER_VOUS_EMPREINTE,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -30,6 +28,7 @@ import {
   curseurQuestions,
   actionReductionData,
 } from "./ProStep2Config";
+import { notify } from "@utils/notification";
 
 // Empreinte numérique
 export function ProStep2({ step, setNextStep }) {
@@ -60,50 +59,41 @@ export function ProStep2({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+      stepState.actions.forEach(({ action, response }) => {
+        form.setFieldsValue({
+          [action]: response,
+        });
+      });
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
+      setSwitchValue(form.getFieldValue("empreinte-switch-1"));
       handleTailleBoite(form.getFieldValue("5f554eb63be47"));
       setNbrRecherche(form.getFieldValue("5f554f1127cec"));
       setNbrConference(form.getFieldValue("5f554f36de849"));
       setNbrStreaming(form.getFieldValue("5f554fb2238b4"));
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) =>
-        form.setFieldsValue({
-          [question]: response,
-        })
-      );
-      setSwitchValue(form.getFieldValue("empreinte-switch-1"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("EMPREINTE_NUMERIQUE")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(proStep2State(values), step);
-    saveSettingsStep(proStep2ActionReductionState(values), step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    saveResponsesOfStep(stepState(values))
+      .then(() => {
+        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   };
 
   const onFieldsChange = () => {

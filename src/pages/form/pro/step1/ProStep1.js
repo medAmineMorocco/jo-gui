@@ -46,11 +46,7 @@ export function ProStep1({ step, setNextStep }) {
       setNbrEcrans(form.getFieldValue("5f55437711711"));
     };
     getResponsesOfStep("AU_BUREAU")
-      .then((stepState) => {
-        if (stepState) {
-          setReponsesOfStep(stepState);
-        }
-      })
+      .then((stepState) => setReponsesOfStep(stepState))
       .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
