@@ -20,7 +20,6 @@ context("Form | Vie professionnelle - Au bureau step", () => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 1);
         cy.login("email@paris2024.org");
 
         cy.visit("/form");

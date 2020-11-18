@@ -1,17 +1,17 @@
 context("Form | introduction step", () => {
   const sizes = [
-    // {
-    //   device: "iphone-5",
-    //   width: 320,
-    // },
+    {
+      device: "iphone-5",
+      width: 320,
+    },
     {
       device: "ipad-2",
       width: 768,
     },
-    // {
-    //   device: "macbook-13",
-    //   width: 1280,
-    // },
+    {
+      device: "macbook-13",
+      width: 1280,
+    },
   ];
 
   it("should show introduction step on form page", () => {
@@ -20,7 +20,6 @@ context("Form | introduction step", () => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 0);
         cy.login("email@paris2024.org");
 
         cy.visit("/form");
@@ -40,7 +39,6 @@ context("Form | introduction step", () => {
     cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();
-      win.sessionStorage.setItem("current-step", 0);
       cy.login("email@paris2024.org");
       cy.visit("/form");
       win.sessionStorage.clear();
@@ -70,7 +68,6 @@ context("Form | introduction step", () => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 0);
         cy.login("email@paris2024.org");
         cy.visit("/form");
 

@@ -20,7 +20,6 @@ context("Form | Vie professionnelle - Restauration step3", () => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 3);
         cy.login("email@paris2024.org");
 
         cy.visit("/form");
@@ -40,7 +39,6 @@ context("Form | Vie professionnelle - Restauration step3", () => {
     cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();
-      win.sessionStorage.setItem("current-step", 3);
       cy.login("email@paris2024.org");
       cy.visit("/form");
 

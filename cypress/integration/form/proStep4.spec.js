@@ -20,7 +20,6 @@ context("Form | Vie professionnelle - Trajets Domicile-travail step", () => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 4);
         cy.login("email@paris2024.org");
 
         cy.visit("/form");
