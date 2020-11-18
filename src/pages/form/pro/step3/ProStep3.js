@@ -1,5 +1,5 @@
 import { Form } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { ReactComponent as TeaSvg } from "@components/form/formSlider/tea.svg";
@@ -7,7 +7,7 @@ import { ReactComponent as CapsuleSvg } from "@components/form/formSlider/capsul
 import { ReactComponent as CoffeeSvg } from "@components/form/formSlider/coffee.svg";
 import { FormSlider } from "@components/form/formSlider/FormSlider";
 import { MealsOfWeek } from "@components/form/mealsOfWeek/MealsOfWeek";
-import { proStep3State, proStep3ActionReductionState } from "./ProStep3State";
+import { stepState } from "./ProStep3State";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import {
   REPAS_QUESTION1,
@@ -17,10 +17,8 @@ import {
   CURSEUR_BOISSONS,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import {
   question1_subQuestions,
@@ -28,6 +26,7 @@ import {
   curseurQuestion,
   actionReductionDataCafe,
 } from "./ProStep3Config";
+import { notify } from "@utils/notification";
 
 // Restauration
 export function ProStep3({ step, setNextStep }) {
@@ -64,21 +63,50 @@ export function ProStep3({ step, setNextStep }) {
     setSwitch2Value(isChecked);
   };
 
+  const setResponsesToMealsOfWeek = useCallback(
+    (mainQuestion, choices, questionsResponses) => {
+      const mainQuestionResponse = {};
+      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
+        (day) => {
+          const { question } = questionsResponses.find(({ response }) =>
+            response.includes(day)
+          );
+          mainQuestionResponse[day] = question;
+        }
+      );
+      form.setFieldsValue({
+        [mainQuestion]: mainQuestionResponse,
+      });
+    },
+    [form]
+  );
+
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+      stepState.actions.forEach(({ action, response }) => {
+        form.setFieldsValue({
+          [action]: response,
+        });
+      });
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
+
+      const choices = ["5f55500f273e7", "5f5550293a164", "5f5550530eaf3"];
+      setResponsesToMealsOfWeek(
+        "repas_question1",
+        choices,
+        stepState.questions.filter(({ question }) => choices.includes(question))
+      );
+
       setQuestion1State(form.getFieldValue("repas_question1"));
       setSlider1Value(form.getFieldValue("5f5550724626b"));
       setSlider2Value(form.getFieldValue("5f55508b92e6c"));
@@ -112,34 +140,23 @@ export function ProStep3({ step, setNextStep }) {
           value: i,
         });
       }
-    };
-
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
       setSwitch1Value(form.getFieldValue("restauration-switch-1"));
       setSwitch2Value(form.getFieldValue("restauration-switch-2"));
     };
 
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
-  }, [form, step]);
+    getResponsesOfStep("RESTAURATION")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+  }, [form, step, setResponsesToMealsOfWeek]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(proStep3State(values), step);
-    saveSettingsStep(proStep3ActionReductionState(values), step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    saveResponsesOfStep(stepState(values))
+      .then(() => {
+        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   };
 
   const onFieldsChange = () => {

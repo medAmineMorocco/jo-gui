@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FormItem } from "@components/form/formItem/FormItem";
 import { Radio } from "@components/form/radio/Radio";
+import invertBy from "lodash/invertBy";
 import "./mealsOfWeek.css";
+import { Form } from "antd";
 
 export function MealsOfWeek({
   form,
@@ -83,7 +85,14 @@ export function MealsOfWeek({
         },
       });
     }
+    questions.forEach((question) => {
+      const value = invertBy(form.getFieldValue(name))[question.name];
+      form.setFieldsValue({
+        [question.name]: value,
+      });
+    });
   }, [
+    questions,
     form,
     name,
     selectedOnFriday,
@@ -135,6 +144,9 @@ export function MealsOfWeek({
           {questions.map(({ name, icon: Icon }, index) => {
             return (
               <tr key={index}>
+                <td>
+                  <Form.Item name={name} hidden={true} />
+                </td>
                 <td>
                   <Icon />
                 </td>

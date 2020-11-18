@@ -13,6 +13,10 @@
   font-weight: bold;
 }
 
+.meals-of-week td:first-child {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .meals-of-week td {
     width: 13.8vw;
