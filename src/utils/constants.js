@@ -56,7 +56,7 @@ export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes c
 
 //export const WEBSITE_INFO_MSG = `<b>Plus d’informations ?</b> Consulte notre page dédiée : <div className="website-url"><a href="https://www.paris2024.org/fr/methode-carbone" target="_blank" rel="noreferrer noopener">https://www.paris2024.org/fr/methode-carbone</a></div>`;
 export const WEBSITE_INFO_MSG =
-  "Plus d’information ? Consulte notre page dédiée :";
+  "Plus d'informations ? Consulte notre page dédiée :";
 export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
 
 export const CONTACT_LEGAL_MENTION = "Mentions légales";
