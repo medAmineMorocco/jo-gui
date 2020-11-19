@@ -32,7 +32,7 @@ context("Login page", () => {
     });
   });
 
-  it.only("should show email not valid when enter email not valid", () => {
+  it("should show email not valid when enter email not valid", () => {
     const notValidMails = [" ", "email", "email@gmail.com", "Id@paris2024/org"];
     cy.visit("/");
 

@@ -18,7 +18,6 @@ import {
   QUESTION9_NBR_VOLS_AR,
   QUESTION10_NBR_VOLS_AR,
   QUESTION11_NBR_VOLS_AR,
-  SAVIER_VOUS_DEPLACEMENT,
   DEPLACEMENT_MSG_ERROR,
 } from "@utils/constants";
 import {
@@ -191,8 +190,6 @@ export function ProStep5({ step, setNextStep }) {
       <div className="forms-margin">
         <FormItemActionReduction
           form={form}
-          savierVous={SAVIER_VOUS_DEPLACEMENT}
-          saviezVousPosition={1}
           selectDetail={actionReductionData}
           switchName="deplacement-switch-1"
           setSwitchValue={handleSwitchChange}
