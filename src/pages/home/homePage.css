@@ -2,14 +2,15 @@
   font-family: Paris2024;
   font-style: italic;
   font-weight: bold;
-  font-size: 1.5vw;
+  font-size: 20px;
   width: 40px;
   height: 40px;
   border-radius: 100%;
   position: fixed;
-  top: 1.5vw;
-  right: 1.5vw;
   z-index: 1000;
+  top: 2vw;
+  right: 2vw;
+  color: black;
 }
 
 .show-overlay-btn:hover,
@@ -235,27 +236,13 @@
   .footer-picture {
     height: 42vh;
   }
-
-  .show-overlay-btn {
-    position: absolute;
-    font-size: 4vw;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    top: 2vw;
-    right: 2vw;
-  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .show-overlay-btn {
-    position: absolute;
-    font-size: 4vw;
+    font-size: 35px;
     width: 70px;
     height: 70px;
-    border-radius: 100%;
-    top: 2vw;
-    right: 2vw;
   }
 
   .footer-picture {

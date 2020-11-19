@@ -20,20 +20,6 @@
   justify-content: center;
 }
 
-.show-modal-btn {
-  font-family: Paris2024;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  position: fixed;
-  top: 1.5vw;
-  right: 1.5vw;
-  z-index: 1000;
-}
-
 .show-modal-btn:hover,
 .show-modal-btn:focus {
   background-color: white;
@@ -66,15 +52,6 @@
 }
 
 @media (max-width: 767px) {
-  .show-modal-btn {
-    font-size: 4vw;
-    width: 9vw;
-    height: 9vw;
-    border-radius: 4.5vw;
-    top: 2vw;
-    right: 2vw;
-  }
-
   .description {
     margin: 10vw 12vw;
     font-size: 7vw;
