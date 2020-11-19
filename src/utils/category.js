@@ -35,11 +35,11 @@ export const persoItems = [
     description: "15 questions",
   },
   {
-    title: "Temps passé sur internet",
+    title: "Consommation internet",
     description: "2 questions",
   },
   {
-    title: "Repas à la maison",
+    title: "Alimentation",
     description: "9 questions",
   },
   {

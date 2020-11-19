@@ -54,7 +54,7 @@ export const actionReduction2Data = [
     name: "5f60a199c4870",
     options: [{ text: "0", value: 0 }],
     firstText: "Remplacer",
-    secondText: "paires neuves par des paires de seconde main",
+    secondText: "paire(s) neuve(s) par des paires de seconde main",
     questionName: "5f556baea779b",
   },
   {
@@ -62,7 +62,7 @@ export const actionReduction2Data = [
     name: "5f60a186aee7d",
     options: [{ text: "0", value: 0 }],
     firstText: "Remplacer",
-    secondText: "articles neufs par des articles de seconde main",
+    secondText: "article(s) neuf(s) par des articles de seconde main",
     questionName: "5f556b94d465c",
   },
 ];

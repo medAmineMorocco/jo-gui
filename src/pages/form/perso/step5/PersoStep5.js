@@ -451,7 +451,7 @@ export function PersoStep5({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Repas à la maison</span>
+          <span className="pro-step-title">Alimentation</span>
         </div>
 
         <FormCounter
