@@ -3,12 +3,10 @@
   font-size: 2.9vw;
   color: black;
 }
-
 .icon-modal {
   font-size: 1.9vw;
   color: black;
 }
-
 .custom-btn-modal {
   width: 100%;
   background-color: var(--main-color);
@@ -21,7 +19,7 @@
 .modal-close-btn-modal,
 .modal-close-btn-modal:hover {
   z-index: 10001;
-  font-size: 1.5vw;
+  font-size: 20px;
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -179,10 +177,6 @@
   .modal-close-btn-modal:hover {
     right: 2vw;
     top: 2vw;
-    font-size: 1.5vw;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
   }
   .title-button {
     font-size: 3.5vw;
@@ -238,9 +232,9 @@
 
   .modal-close-btn-modal,
   .modal-close-btn-modal:hover {
-    height: 70px;
+    font-size: 35px;
     width: 70px;
-    border-radius: 35px;
+    height: 70px;
     right: 28px;
     top: 28px;
   }

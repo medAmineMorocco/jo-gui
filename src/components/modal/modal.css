@@ -87,16 +87,6 @@
     word-wrap: break-word;
   }
 
-  .ant-btn-icon-only {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-  }
-
-  .ant-btn-icon-only > * {
-    font-size: 3.5vw;
-  }
-
   .div-image:only-child {
     width: 100%;
   }
@@ -124,9 +114,14 @@
   }
 
   .ant-btn-icon-only {
+    font-size: 35px;
     width: 70px;
     height: 70px;
     border-radius: 100%;
+  }
+
+  .ant-btn-icon-only > * {
+    font-size: 30px;
   }
 
   .ant-modal-close {
@@ -137,10 +132,6 @@
   .ant-modal-close-x {
     width: 9vw;
     height: 9vw;
-  }
-
-  .ant-btn-icon-only > * {
-    font-size: var(--tablet-font-size);
   }
 
   .ant-modal-header {
