@@ -64,7 +64,7 @@ export function Login() {
           rules={[
             { required: true, message: IDENTIFIER_REQUIRED },
             {
-              pattern: new RegExp(/^\w+([.-]?\w+)+@paris2024.org/g),
+              pattern: new RegExp(/^\w+([.-]?\w+)+@paris2024\.org/g),
               message: IDENTIFIER_NOT_VALID,
             },
           ]}

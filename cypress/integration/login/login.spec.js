@@ -32,8 +32,8 @@ context("Login page", () => {
     });
   });
 
-  it("should show email not valid when enter email not valid", () => {
-    const notValidMails = [" ", "email", "email@gmail.com"];
+  it.only("should show email not valid when enter email not valid", () => {
+    const notValidMails = [" ", "email", "email@gmail.com", "Id@paris2024/org"];
     cy.visit("/");
 
     notValidMails.forEach((notValidMail) => {
@@ -41,6 +41,7 @@ context("Login page", () => {
 
       cy.get("form").submit();
 
+      cy.wait(500);
       cy.get(`body:contains("${IDENTIFIER_NOT_VALID}")`).should("exist");
     });
   });
