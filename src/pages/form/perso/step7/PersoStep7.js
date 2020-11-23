@@ -13,7 +13,7 @@ export function PersoStep7({ step }) {
 
   const QUESTION1_LABEL =
     "Quote-part des émissions liées aux Services de l'Etat et des collectivités\n" +
-    "                          (Santé, Education, Justice, Défense, etc.) (kg éq CO2)";
+    "                          (Santé, Education, Justice, Défense, etc.) (kg éq CO₂)";
   const QUESTION1_TOOLTIP =
     "Les émissions du service public dont nous disposons sont réparties\n" +
     "                                  entre tous les français.";
