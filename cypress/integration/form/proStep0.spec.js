@@ -15,8 +15,8 @@ context("Form | introduction step", () => {
   ];
 
   it("should show introduction step on form page", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
     sizes.forEach((size) => {
-      cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
@@ -63,8 +63,8 @@ context("Form | introduction step", () => {
   });
 
   it("should not submit form when questions are not filled", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
     sizes.forEach((size) => {
-      cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();

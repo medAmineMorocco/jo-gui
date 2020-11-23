@@ -150,13 +150,19 @@ export function ProStep3({ step, setNextStep }) {
   }, [form, step, setResponsesToMealsOfWeek]);
 
   const onFinish = (values) => {
+    const submitButton = document.querySelector('[type="submit"]');
+    submitButton.disabled = true;
+
     saveResponsesOfStep(stepState(values))
       .then(() => {
-        const submitButton = document.querySelector('[type="submit"]');
+        submitButton.disabled = false;
         submitButton.blur();
         setNextStep();
       })
-      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onFieldsChange = () => {
