@@ -97,6 +97,11 @@ export const FIRST_DETAIL =
 export const LIRE_MOINS = "LIRE MOINS";
 export const LIRE_PLUS = "... LIRE PLUS";
 
+/* Results Page */
+
+export const RESULT_TITLE1 = "Mon Impact";
+export const RESULT_TITLE2 = "Carbone";
+
 ///////////////////////////////////////
 //   Form - Pro
 //////////////////////////////////////

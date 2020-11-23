@@ -1,0 +1,108 @@
+.navbar-result .ant-radio-group {
+  border: 1px solid rgba(215, 195, 120, 0.4);
+  border-radius: 22px;
+  background-color: rgba(215, 195, 120, 0.4);
+  width: 620px;
+  height: 44px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navbar-result .ant-radio-button-wrapper:first-child {
+  border-radius: 22px;
+  border-left: none;
+}
+
+.navbar-result .ant-radio-button-wrapper,
+.navbar-result .ant-radio-button-wrapper:last-child {
+  border: none;
+  box-sizing: border-box;
+  border-radius: 22px;
+  color: rgba(215, 195, 120, 0.4);
+  font-family: Source Sans Pro;
+  background-color: rgba(215, 195, 120, 0);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.navbar-result .ant-radio-button-wrapper:not(:first-child)::before {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar-result
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+  background-color: none;
+}
+
+.navbar-result
+  .ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child {
+  background: #d7c378;
+  border: 1px solid #d7c378;
+  box-sizing: border-box;
+  border-radius: 22px;
+}
+
+.navbar-result .ant-radio-button-wrapper {
+  padding-right: 45px;
+  padding-left: 45px;
+}
+
+.navbar-result .ant-radio-button-wrapper-checked {
+  color: black !important;
+}
+.navbar-result {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  height: 10vh;
+}
+.content-result {
+  height: 50vh;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-result .ant-btn-round.ant-btn-icon-only {
+  width: 45px;
+  padding: 28%;
+  padding-top: 10px;
+}
+@media only screen and (max-device-width: 767px) {
+  .navbar-result .ant-radio-group {
+    width: 330px;
+    height: 44px;
+    justify-content: space-evenly;
+  }
+  .navbar-result .ant-radio-button-wrapper {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 75px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .navbar-result .ant-radio-button-wrapper,
+  .navbar-result .ant-radio-button-wrapper:last-child {
+    font-size: 12px;
+  }
+  .footer-result .ant-btn-round.ant-btn-icon-only {
+    width: 40px;
+    padding: 0%;
+    padding-top: 0px;
+    padding-right: 15px;
+    float: right;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .footer-result .ant-btn-round.ant-btn-icon-only {
+    width: 70px;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 25px;
+    float: right;
+  }
+}
