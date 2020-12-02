@@ -1,4 +1,5 @@
 import { fetchWrapper } from "@utils/fetch";
+import { getBackendUrl } from "./config";
 
 export function login(email) {
   const requestOptions = {
@@ -7,10 +8,7 @@ export function login(email) {
     body: JSON.stringify({ email: email, password: "TEST" }),
   };
 
-  return fetchWrapper(
-    process.env.REACT_APP_BACKEND_URL + "/auth/signin",
-    requestOptions
-  )
+  return fetchWrapper(getBackendUrl() + "/auth/signin", requestOptions)
     .then(async (response) => {
       const json = await response.json();
       if (json.token) {
