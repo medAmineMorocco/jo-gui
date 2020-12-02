@@ -56,7 +56,7 @@ context("Form | Vie professionnelle - Restauration step3", () => {
 
       cy.pickValue(".boissons-chaudes .slider-container-2", "9");
 
-      cy.get("button span:contains(suite)").click();
+      cy.submitForm();
 
       cy.wait(1000);
 

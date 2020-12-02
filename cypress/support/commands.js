@@ -90,3 +90,7 @@ Cypress.Commands.add('pickValue', (selector, value) => {
 		.contains(value)
 		.click();
 });
+
+Cypress.Commands.add('submitForm', () => {
+	cy.get("button span").contains("Suite").click();
+});

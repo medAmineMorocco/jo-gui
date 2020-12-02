@@ -146,23 +146,4 @@ context("Login page", () => {
     });
   });
 
-  it("should redirect to login page if token is expired", () => {
-    cy.window().then((win) => {
-      cy.stubRequest(
-        "POST",
-        "**/auth/signin",
-        200,
-        "signin.json",
-        "signinJSON"
-      );
-      win.sessionStorage.clear();
-      win.sessionStorage.setItem("current-step", 12);
-      win.sessionStorage.setItem("responses", JSON.stringify([]));
-      cy.login("email@paris2024.org", "password");
-
-      cy.visit("/form");
-      cy.stubRequest("POST", "**/api/response", 401);
-      cy.get("button span:contains(suite)").click();
-    });
-  });
 });

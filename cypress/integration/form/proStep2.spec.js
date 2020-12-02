@@ -51,7 +51,7 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 
 			cy.pickValue('.nbr-streaming', '9');
 
-			cy.get('button span:contains(suite)').click();
+			cy.submitForm();
 
 			cy.wait(1000);
 
