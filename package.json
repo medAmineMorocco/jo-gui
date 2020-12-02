@@ -21,7 +21,6 @@
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "env-cmd": "^10.1.0",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.4",
@@ -71,7 +70,6 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build:re7": "env-cmd -f .env.re7 npm run build",
     "test": "yarn cypress open",
     "test:run": "yarn cypress run",
     "cypress:run:chrome": "yarn cypress run --browser chrome",

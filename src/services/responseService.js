@@ -1,5 +1,6 @@
 import { fetchWrapper } from "../utils/fetch";
 import { getCurrentUser } from "./authService";
+import { getBackendUrl } from "./config";
 
 export function saveResponsesOfQuestionsStep(stepState, step) {
   let state = getItem("responses");
@@ -47,10 +48,7 @@ export function saveResponses() {
     },
     body: JSON.stringify(finalResponses),
   };
-  return fetchWrapper(
-    process.env.REACT_APP_BACKEND_URL + "/api/response",
-    requestOptions
-  )
+  return fetchWrapper(getBackendUrl() + "/api/response", requestOptions)
     .then((response) => {
       sessionStorage.removeItem("responses");
       sessionStorage.removeItem("settings");

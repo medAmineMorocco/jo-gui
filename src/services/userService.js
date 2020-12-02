@@ -1,4 +1,5 @@
 import { getCurrentUser } from "./authService";
+import { getBackendUrl } from "./config";
 
 export async function getUserProgess() {
   const requestOptions = {
@@ -7,10 +8,7 @@ export async function getUserProgess() {
       Authorization: `Bearer ${getCurrentUser().token}`,
     },
   };
-  return fetch(
-    process.env.REACT_APP_BACKEND_URL + "/api/user/progress",
-    requestOptions
-  )
+  return fetch(getBackendUrl() + "/api/user/progress", requestOptions)
     .then((response) => response.json())
     .catch((error) => Promise.reject(error));
 }
