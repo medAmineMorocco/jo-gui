@@ -6,7 +6,7 @@
   line-height: 3vw;
   text-align: center;
   text-transform: uppercase;
-  margin: 1vw 0;
+  margin: 1vw 0 0;
 }
 
 .styled-title-container::first-line {

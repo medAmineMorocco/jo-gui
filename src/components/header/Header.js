@@ -1,10 +1,10 @@
 import React from "react";
 import "./header.css";
 
-export function Header(props) {
+export function Header({ className, children, height = "25vh" }) {
   return (
-    <div className={`${props.className} header-container`}>
-      <div className="size-picture">{props.children}</div>
+    <div className={`${className} header-container`} style={{ height }}>
+      <div className="size-picture">{children}</div>
     </div>
   );
 }

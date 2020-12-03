@@ -50,7 +50,7 @@
 }
 
 .summary .ant-steps-item-container {
-  margin-bottom: 15px;
+  margin-bottom: 0.5vw;
 }
 
 @media (max-width: 767px) {
