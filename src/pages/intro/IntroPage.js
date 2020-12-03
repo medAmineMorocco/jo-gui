@@ -89,7 +89,7 @@ export function IntroPage() {
         </div>
       </div>
     );
-    content = <BoxSides left={left} right={right} height="55vh" />;
+    content = <BoxSides left={left} right={right} height="60vh" />;
   }
   return (
     <Fragment>
