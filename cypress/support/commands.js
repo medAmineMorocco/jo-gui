@@ -30,11 +30,13 @@ Cypress.Commands.add('takeSnapshots', (title, size) => {
 	cy.percySnapshot(`${title} | on ${size.device}`, { widths: [size.width] });
 });
 
-Cypress.Commands.add('login', (email) => {
+Cypress.Commands.add('login', (email, password = "password") => {
 	cy.stubRequest('POST', '**/auth/signin', 200, 'signin.json', 'signinJSON');
 	cy.window().then(win=> {
 		cy.visit('/');
 		cy.get('#login_email').clear().type(email);
+		cy.get('#login_password').clear().type(password);
+		cy.get('.ant-checkbox-input').check();
 		cy.get('form').submit();
 	});
 });

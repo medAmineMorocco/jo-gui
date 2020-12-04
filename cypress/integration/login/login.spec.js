@@ -15,15 +15,22 @@ context("Login page", () => {
   ];
 
   const IDENTIFIER_REQUIRED = "Veuillez renseigner votre email";
+  const PASSWORD_REQUIRED = "Veuillez renseigner votre Mot de passe";
+  const CGU_ACCEPTATION_REQUIRED = "Vous devez accepter avant de soumettre";
+
   const IDENTIFIER_NOT_VALID = "Adresse email non valide";
 
-  it("should show email required when not enter email", () => {
+  it("should show email and password and CGU required when not enter any field", () => {
     sizes.forEach((size) => {
       cy.viewport(size.device);
       cy.visit("/");
 
       cy.get("form").submit();
 
+      cy.get(`body:contains("${PASSWORD_REQUIRED}")`)
+          .should("exist");
+      cy.get(`body:contains("${CGU_ACCEPTATION_REQUIRED}")`)
+          .should("exist");
       cy.get(`body:contains("${IDENTIFIER_REQUIRED}")`)
         .should("exist")
         .then(() => {
@@ -38,6 +45,8 @@ context("Login page", () => {
 
     notValidMails.forEach((notValidMail) => {
       cy.get("#login_email").clear().type(notValidMail);
+      cy.get('#login_password').clear().type("password");
+      cy.get('.ant-checkbox-input').check();
 
       cy.get("form").submit();
 
@@ -52,6 +61,8 @@ context("Login page", () => {
       win.sessionStorage.clear();
       cy.visit("/");
       cy.get("#login_email").clear().type("email@paris2024.org");
+      cy.get('#login_password').clear().type("password");
+      cy.get('.ant-checkbox-input').check();
 
       cy.get("form").submit();
 
@@ -66,6 +77,8 @@ context("Login page", () => {
       win.sessionStorage.clear();
       cy.visit("/");
       cy.get("#login_email").clear().type("email@paris2024.org");
+      cy.get('#login_password').clear().type("password");
+      cy.get('.ant-checkbox-input').check();
 
       cy.get("form").submit();
 
@@ -92,6 +105,8 @@ context("Login page", () => {
         win.sessionStorage.clear();
         cy.visit("/");
         cy.get("#login_email").clear().type(validMail);
+        cy.get('#login_password').clear().type("password");
+        cy.get('.ant-checkbox-input').check();
 
         cy.get("form").submit();
 
@@ -143,7 +158,7 @@ context("Login page", () => {
       win.sessionStorage.clear();
       win.sessionStorage.setItem("current-step", 12);
       win.sessionStorage.setItem("responses", JSON.stringify([]));
-      cy.login("email@paris2024.org");
+      cy.login("email@paris2024.org", "password");
 
       cy.visit("/form");
       cy.stubRequest("POST", "**/api/response", 401);
