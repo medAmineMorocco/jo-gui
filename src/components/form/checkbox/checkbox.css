@@ -1,0 +1,9 @@
+.cojo-checkbox .ant-checkbox-inner {
+  background-color: black;
+  border-color: var(--main-color);
+  border-radius: 0;
+}
+
+.cojo-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: var(--main-color);
+}

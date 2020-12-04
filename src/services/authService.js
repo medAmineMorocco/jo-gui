@@ -1,11 +1,11 @@
 import { fetchWrapper } from "@utils/fetch";
 import { getBackendUrl } from "./config";
 
-export function login(email) {
+export function login(email, password) {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: email, password: "TEST" }),
+    body: JSON.stringify({ email, password }),
   };
 
   return fetchWrapper(getBackendUrl() + "/auth/signin", requestOptions)

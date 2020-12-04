@@ -1,8 +1,14 @@
 /* Login Page */
 export const IDENTIFIER = "E-mail";
+export const PASSWORD = "Mot de passe";
 export const LOGIN = "ok";
 export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre email";
+export const PASSWORD_REQUIRED = "⚠ Veuillez renseigner votre Mot de passe";
 export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
+export const TERMS_DESCRIPTION =
+  "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
+export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
+
 /* Home Page */
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";

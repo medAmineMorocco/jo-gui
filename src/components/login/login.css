@@ -34,6 +34,21 @@
   line-height: 23px;
 }
 
+.CGU-container {
+  display: flex;
+}
+
+.CGU-description {
+  margin-left: 8px;
+  margin-top: 4px;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.CGU-msg-error {
+  color: var(--error-color);
+}
+
 @media (max-width: 767px) {
   .login-styled-title {
     margin-bottom: 60px;
@@ -60,5 +75,9 @@
   .login-container-mobile .custom-btn {
     font-size: var(--tablet-font-size);
     height: 59px;
+  }
+
+  .CGU-description {
+    margin-top: 6px;
   }
 }
