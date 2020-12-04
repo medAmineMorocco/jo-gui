@@ -1,0 +1,26 @@
+.ant-form-item-control-input-content input {
+  background-color: var(--bg-color-shade-3);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.ant-form-item-control-input-content input:focus {
+  background-color: var(--bg-color-shade);
+  color: white;
+  border: 1px solid white;
+}
+
+.ant-input:hover {
+  border-color: 1px solid var(--main-color);
+}
+
+.ant-input[disabled] {
+  background-color: var(--bg-color-shade-2);
+  color: white;
+}
+
+.ant-input[disabled]:hover {
+  border: 1px solid var(--main-color);
+}

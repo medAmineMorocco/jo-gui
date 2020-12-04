@@ -1,0 +1,77 @@
+.show-modal-btn {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: bold;
+  position: fixed;
+  top: 2vw;
+  right: 2vw;
+  color: black;
+  z-index: 1000;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.paris2024-title {
+  margin-left: 10px;
+  font-size: 1.5vw;
+}
+
+.link-to-home-icon {
+  color: black;
+}
+
+.home-link {
+  font-family: Paris2024;
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
+  color: var(--main-color);
+}
+
+.styled-title-form {
+  margin-top: 25%;
+  font-size: 4vw;
+  line-height: 4vw;
+}
+
+@media (max-width: 767px) {
+  .styled-title-form {
+    margin-top: 50%;
+    font-size: 9vw;
+    line-height: 7.5vw;
+  }
+
+  .paris2024-title {
+    font-size: 4vw;
+    margin-left: 10px;
+  }
+
+  .home-link {
+    position: absolute;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .styled-title-form {
+    margin-top: 25%;
+    font-size: 9vw;
+    line-height: 7.5vw;
+  }
+
+  .paris2024-title {
+    font-size: 3.5vw;
+    margin-left: 10px;
+  }
+
+  .show-modal-btn {
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .home-link {
+    position: absolute;
+  }
+}

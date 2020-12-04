@@ -1,0 +1,28 @@
+image: cypress/browsers:node12.14.1-chrome83-ff77
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm
+    - cache/Cypress
+    - node_modules
+
+functional & visual tests:
+  before_script:
+    - export PERCY_TOKEN=$PERCY_TOKEN
+  script:
+    - yarn install
+    - npx cypress cache path
+    - npx cypress cache list
+    - yarn test:ci
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+  only:
+    - web

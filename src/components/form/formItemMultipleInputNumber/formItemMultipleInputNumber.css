@@ -1,0 +1,36 @@
+.form-multiple-items-label {
+  color: var(--main-color);
+  font-family: Source Sans Pro;
+}
+
+.form-multiple-items-input {
+  width: 100%;
+  background-color: var(--bg-color-shade-3);
+  border-color: var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.form-multiple-items-input input {
+  text-align: center;
+}
+
+.ant-input-number:hover {
+  border-color: var(--main-color);
+}
+
+.multiple-item-child-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.multiple-item-child-container .ant-form-item {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .form-multiple-items-label {
+    font-size: 22px;
+  }
+}

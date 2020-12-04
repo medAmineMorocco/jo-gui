@@ -1,0 +1,131 @@
+.summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title,
+.summary
+  > .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: #d7c378;
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6vw;
+  line-height: 2vw;
+}
+
+.summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-description {
+  color: white;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1vw;
+  line-height: 1vw;
+}
+
+.summary
+  > .ant-steps-item-finish
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot,
+.summary
+  > .ant-steps-item-process
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background-color: #d7c378;
+}
+
+.summary
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: #d7c378;
+}
+
+.summary .ant-steps-item-container {
+  margin-bottom: 0.5vw;
+}
+
+@media (max-width: 767px) {
+  .summary {
+    margin-bottom: 9vw;
+  }
+
+  .summary .ant-steps-vertical {
+    width: auto;
+  }
+
+  .summary
+    > .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title,
+  .summary
+    > .ant-steps-item-process
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title {
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  .summary
+    > .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-description {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .summary
+    > .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title,
+  .summary
+    > .ant-steps-item-process
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-title {
+    font-family: Paris2024;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 6vw;
+    line-height: 5vw;
+    padding-bottom: 25px;
+  }
+
+  .summary
+    > .ant-steps-item-finish
+    > .ant-steps-item-container
+    > .ant-steps-item-content
+    > .ant-steps-item-description {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.6vw;
+    line-height: 2vw;
+  }
+
+  .ant-steps-vertical .ant-steps-item-description {
+    padding-bottom: 50px;
+  }
+
+  .summary {
+    margin-bottom: 80px;
+  }
+
+  .summary .ant-steps-vertical {
+    width: auto;
+  }
+}

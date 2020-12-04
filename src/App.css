@@ -1,3 +1,33 @@
+@import "./theme/global_styles.css";
+@font-face {
+  font-family: Paris2024;
+  src: url(/fonts/Paris2024-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Paris2024;
+  src: url(/fonts/Paris2024-BlackItalic.otf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/fonts/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: Paris2024Bold;
+  src: url(/fonts/Paris2024-BlackItalic.otf);
+}
+
+body {
+  background-color: var(--bg-color-shade-2);
+  color: white;
+}
+
 .App {
   text-align: center;
 }

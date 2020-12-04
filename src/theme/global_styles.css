@@ -1,0 +1,11 @@
+:root {
+  --main-color: #d7c378;
+  --bg-color: #2c2c2c;
+  --bg-color-shade: #4a4a4a;
+  --bg-color-shade-2: #1b1b1b;
+  --bg-color-shade-3: #323232;
+  --bg-color-shade-4: #707070;
+  --bg-color-shade-5: #c4c4c4;
+  --error-color: #ffcc00;
+  --tablet-font-size: 2.5vw;
+}

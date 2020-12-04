@@ -1,0 +1,231 @@
+.action-reduction-container {
+  margin: 16px 0;
+}
+
+.collapse-custom {
+  width: 100%;
+  background: var(--main-color);
+  border: 1px solid #707070;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 7vw;
+  cursor: default;
+}
+
+.savier-vous-detail {
+  font-family: Source Sans Pro;
+}
+
+.panel-header-content {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #6c633c;
+  padding: 20px 7vw;
+  margin-top: 10px;
+}
+
+.info-container-content {
+  width: 100%;
+  color: white;
+}
+
+.info-container-icon {
+  margin: 10px 10px 0px 0px;
+}
+
+.info-saviez-vous {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+.showDetail {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.panel-header-span {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 10px;
+}
+
+.panel-header-span-first-title {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: black;
+}
+
+.panel-header-span-second-title {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 25px;
+  color: black;
+}
+
+.first-para {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  margin: 0 7vw 1vw 10vw;
+}
+
+.select-content {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.detail {
+  margin: 24px 7vw 0 7vw;
+}
+
+.input-action {
+  width: 60px;
+}
+
+.input-action .ant-input-number-input {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  color: black;
+  background: #bcab69;
+  border: 1px solid black;
+}
+
+/* deep classes */
+.ant-collapse
+  > .ant-collapse-item.ant-collapse-no-arrow
+  > .ant-collapse-header {
+  cursor: default;
+  padding: 12px 0 12px 0;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding: 12px 80px 12px 80px;
+}
+
+.ant-collapse-borderless > .ant-collapse-item {
+  border-bottom: 0;
+}
+
+.ant-collapse > .ant-collapse-item {
+  border-bottom: 0;
+}
+
+.ant-collapse-content > .ant-collapse-content-box {
+  padding: 0;
+}
+
+.input-action .ant-input-number-handler-wrap {
+  display: none;
+}
+
+.collapse-custom .ant-form-item {
+  margin-bottom: 18px;
+}
+
+.action-reduction-container .ant-form-item {
+  margin-bottom: 0px;
+}
+
+.action-reduction-container .ant-form-vertical .ant-form-item-label,
+.action-reduction-container .ant-col-24.ant-form-item-label,
+.action-reduction-container .ant-col-xl-24.ant-form-item-label {
+  padding: 0px;
+}
+
+@media (max-width: 767px) {
+  .panel-header {
+    margin: 0 32px;
+  }
+
+  .first-para {
+    margin: 0 32px 20px 82px;
+  }
+
+  .info-container {
+    padding: 20px 32px;
+    margin-top: 16px;
+  }
+
+  .info-container-icon {
+    margin: 10px 20px 0 0;
+  }
+
+  .detail {
+    margin: 22px 32px 0px 32px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .panel-header {
+    margin: 0 7vw;
+  }
+
+  .select-content {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .info-container {
+    padding: 20px 7vw;
+    margin-top: 16px;
+  }
+
+  .panel-header-span-first-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .panel-header-span-second-title {
+    font-size: 36px;
+  }
+
+  .first-para {
+    font-size: 23px;
+    line-height: 30px;
+    margin: 12px 38px 20px 114px;
+  }
+
+  .info-savier-vous {
+    font-size: var(--tablet-font-size);
+  }
+
+  .savier-vous-detail {
+    font-size: 22px;
+  }
+}

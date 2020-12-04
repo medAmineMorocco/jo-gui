@@ -1,0 +1,301 @@
+.show-overlay-btn {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 2vw;
+  right: 2vw;
+  color: black;
+}
+
+.show-overlay-btn:hover,
+.show-overlay-btn:focus {
+  background-color: white;
+  color: black;
+}
+
+.hero-container {
+  height: 68vh;
+  position: relative;
+  background-image: url("/images/hero.jpg");
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 94.31%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-description {
+  position: absolute;
+  width: 100%;
+  bottom: 10vh;
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.hero-description::first-letter {
+  text-transform: capitalize;
+}
+
+.main-description {
+  position: relative;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1.5vw;
+  text-align: center;
+  font-family: Source Sans Pro;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.section-divider {
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 97.15%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.section-footer {
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.website-info {
+  margin: 0 auto;
+  position: relative;
+  width: 50%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 8vh;
+  text-align: center;
+}
+
+.website-url {
+  margin: 0vw auto 2vw auto;
+  position: relative;
+  width: 50%;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 8vh;
+  text-align: center;
+}
+
+.website-invite {
+  font-family: Paris2024;
+  width: 20%;
+  position: relative;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  line-height: 5vh;
+  font-size: 2vw;
+  margin: 5vh auto;
+}
+
+.contacts {
+  background-color: #323232;
+  width: 100%;
+  height: auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 6vh 0;
+}
+
+.contacts-urls {
+  font-family: Source Sans Pro;
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
+}
+
+.contacts-urls a {
+  color: #ffffff;
+  margin: 0.5vw;
+}
+
+.footer-picture {
+  background: url("/images/footer-picture.png");
+  width: 100%;
+  height: 126vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .hero-container {
+    background-position: 50% 50%;
+    height: 60vh;
+  }
+
+  .hero-description {
+    font-size: 7vw;
+    line-height: 10vw;
+    bottom: 1vh;
+    width: 90%;
+    margin-left: 5vw;
+  }
+
+  .main-description {
+    width: auto;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    font-size: 5vw;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 4vh;
+  }
+
+  .section-footer {
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    width: 100%;
+    background: none;
+  }
+
+  .section-divider {
+    display: none;
+  }
+
+  .website-info {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 5vw;
+    line-height: 4vh;
+  }
+
+  .website-info > p {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 3vh;
+    font-size: 4vw;
+  }
+
+  .website-url {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 5vw;
+    line-height: 8vh;
+    margin-top: 1vh;
+  }
+
+  .website-invite {
+    width: 80%;
+    font-size: 8vw;
+    margin: 9vw auto;
+  }
+
+  .contacts {
+    background: url("/images/contact-background.png");
+    background-size: 100% auto;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 2vh 0;
+  }
+
+  .contacts-urls {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    line-height: 8vw;
+  }
+
+  .contacts-urls > a {
+    margin: 2vw;
+    font-size: 3vw;
+  }
+
+  .footer-picture {
+    height: 42vh;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .show-overlay-btn {
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer-picture {
+    height: 50vh;
+  }
+
+  .hero-description {
+    padding: 0px 80px;
+    font-size: 4vw;
+    bottom: 5vh;
+  }
+
+  .main-description {
+    font-size: 32px;
+    text-align: left;
+    width: 70%;
+  }
+
+  .website-info {
+    width: 70%;
+    font-size: 5vw;
+    line-height: 4vh;
+  }
+
+  .website-url {
+    width: 80%;
+    font-size: 4.1vw;
+  }
+
+  .website-invite {
+    width: 70%;
+    position: relative;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 5vw;
+    margin: 9vw auto;
+  }
+
+  .contacts {
+    height: auto;
+    padding: 4vh 0;
+  }
+
+  .contacts-urls {
+    font-size: 26px;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .website-info {
+    line-height: 6.5vh;
+  }
+}

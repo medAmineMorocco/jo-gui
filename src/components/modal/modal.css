@@ -1,0 +1,140 @@
+.modal-close-btn {
+  color: black;
+}
+
+.ant-btn-icon-only {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.ant-btn-icon-only > * {
+  font-size: 20px;
+}
+
+.modal-close-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.ant-modal {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.ant-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: black;
+}
+
+.ant-modal-header {
+  padding-top: 126px;
+  border-bottom: 0;
+  background-color: black;
+}
+
+.ant-modal-title {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.ant-drawer-header {
+  padding-top: 90px;
+  background-color: var(--bg-color-shade);
+  border-bottom: 0;
+}
+
+.ant-drawer-title {
+  font-family: Paris2024;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.ant-drawer-body {
+  background-color: var(--bg-color-shade);
+}
+
+.ant-drawer-content {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+@media (max-width: 767px) {
+  .ant-modal {
+    max-width: 100%;
+  }
+
+  .ant-modal-body {
+    font-size: 18px;
+    padding: 7% 12%;
+    line-height: 1.5715;
+    word-wrap: break-word;
+  }
+
+  .div-image:only-child {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .ant-modal {
+    max-width: 100%;
+  }
+
+  .ant-modal-title {
+    font-size: 85px;
+    line-height: 60px;
+  }
+
+  .ant-modal-body {
+    font-size: var(--tablet-font-size);
+    padding: 7% 7%;
+    line-height: 1.5715;
+    word-wrap: break-word;
+  }
+
+  .div-image:only-child {
+    width: 100%;
+  }
+
+  .ant-btn-icon-only {
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+
+  .ant-btn-icon-only > * {
+    font-size: 30px;
+  }
+
+  .ant-modal-close {
+    top: 2vw;
+    right: 2vw;
+  }
+
+  .ant-modal-close-x {
+    width: 9vw;
+    height: 9vw;
+  }
+
+  .ant-modal-header {
+    padding-top: 170px;
+  }
+}

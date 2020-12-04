@@ -1,25 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Redirect, BrowserRouter } from "react-router-dom";
+import { LoginPage } from "@pages/login/LoginPage";
+import { HomePage } from "@pages/home/HomePage";
+import { IntroPage } from "@pages/intro/IntroPage";
+import { FormWizard } from "@pages/form/FormWizard";
+import { ResultsPage } from "@pages/results/ResultsPage";
+import { getCurrentUser } from "@services/authService";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route
+        exact
+        path="/login"
+        component={() =>
+          !getCurrentUser() ? <LoginPage /> : <Redirect to="/home" />
+        }
+      />
+      <PrivateRoute exact path={["/", "/home"]}>
+        <HomePage />
+      </PrivateRoute>
+      <PrivateRoute exact path="/intro">
+        <IntroPage />
+      </PrivateRoute>
+      <PrivateRoute exact path="/form">
+        <FormWizard />
+      </PrivateRoute>
+      <PrivateRoute exact path="/results">
+        <ResultsPage />
+      </PrivateRoute>
+    </BrowserRouter>
+  );
+}
+
+function PrivateRoute({ children, ...rest }) {
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        getCurrentUser() ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 }
 

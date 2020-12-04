@@ -1,0 +1,32 @@
+.title-section {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+  padding: 0px 16px 0px 0px;
+}
+
+.divider-section,
+.ant-divider-inner-text {
+  display: inline-block;
+  padding: 0;
+}
+
+.divider-section,
+.ant-divider-horizontal.ant-divider-with-text-left::before {
+  top: 50%;
+  width: 0%;
+}
+
+.divider-section,
+.ant-divider-horizontal.ant-divider-with-text::after {
+  border-top: 2px solid #f0f0f0;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .title-section {
+    font-size: 30px;
+  }
+}

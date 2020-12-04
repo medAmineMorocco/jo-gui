@@ -1,0 +1,44 @@
+.input-number-with-unit {
+  width: 75%;
+  background-color: var(--bg-color-shade-3);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.input-number-with-unit-phrase-trou {
+  width: 30%;
+  background-color: var(--bg-color-shade-3);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+}
+
+.ant-input-number-input {
+  text-align: center;
+}
+
+.input-unit {
+  color: var(--main-color);
+  font-family: Source Sans Pro;
+}
+
+.ant-form-item-has-error .ant-input-number,
+.ant-form-item-has-error .ant-picker {
+  border-color: var(--error-color);
+}
+
+.ant-form-item-has-error .ant-input-number:not([disabled]):hover,
+.ant-form-item-has-error .ant-picker:not([disabled]):hover {
+  border-color: var(--error-color);
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .input-unit {
+    font-size: var(--tablet-font-size);
+  }
+
+  .input-number-with-unit-phrase-trou {
+    width: 26%;
+  }
+}

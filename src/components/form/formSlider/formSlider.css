@@ -1,0 +1,58 @@
+.flex-slider-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.flex-slider-item {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  align-self: auto;
+  width: 100%;
+}
+
+.flex-container-label {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.svg-logo-slider {
+  margin-right: 7.5px;
+}
+
+.text-question {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tooltip-icon-slider {
+  float: right;
+}
+
+.form-slider-component {
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .slider-container .ant-slider-mark {
+    font-size: 22px;
+  }
+
+  .flex-slider-item {
+    font-size: var(--tablet-font-size);
+    line-height: 40px;
+  }
+
+  .flex-slider-container {
+    margin-bottom: 24px;
+  }
+
+  .form-slider-component {
+    margin-bottom: 18px;
+  }
+}

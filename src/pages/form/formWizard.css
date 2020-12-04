@@ -1,0 +1,143 @@
+.questions-first-title::first-letter {
+  text-transform: uppercase;
+}
+
+.wizard-content-left-container {
+  position: fixed;
+  width: 40%;
+  margin-top: 20px;
+}
+
+.wizard-content-left-summary-container {
+  float: right;
+  width: 50%;
+  font-family: Source Sans Pro;
+}
+
+.wizard-content-left-questions-container {
+  float: right;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wizard-content-right-container {
+  position: absolute;
+  width: 100%;
+}
+
+.wizard-content-right-form-container {
+  padding-top: 20px;
+  padding-bottom: 2vw;
+  margin-bottom: 11vw;
+  background-color: black;
+}
+
+.wizard-content-right-form-parent {
+  padding: 0vw 84px;
+}
+
+.form-questions-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: Paris2024;
+  font-size: 1.5vw;
+  line-height: 1.8vw;
+  color: white;
+}
+
+.form-questions-tooltip {
+  font-size: 1.2vw;
+}
+
+.tooltip-icon {
+  float: right;
+}
+
+.form-questions-title:first-letter {
+  text-transform: uppercase;
+}
+
+.mobile-wizard-form-container {
+  padding-top: 10vh;
+}
+
+.pro-step-title-container {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.pro-step-title {
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+}
+
+.forms-margin {
+  margin-top: 40px;
+}
+
+.overlay-consommation .title-button {
+  font-size: 1.1vw;
+}
+
+@media (max-width: 767px) {
+  .mobile-wizard-container {
+    height: 55vh;
+    overflow-y: scroll;
+  }
+
+  .wizard-content-right-form-parent {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .form-questions-title {
+    font-weight: normal;
+    font-size: 4vw;
+  }
+
+  .overlay-house .title-button {
+    font-size: 3.3vw;
+  }
+
+  .overlay-consommation .title-button {
+    font-size: 2.9vw;
+  }
+
+  .form-questions-tooltip {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .pro-step-title {
+    font-size: 42px;
+  }
+
+  .wizard-content-right-form-parent {
+    padding: 0px 50px;
+  }
+
+  .mobile-wizard-container {
+    height: 60vh;
+    overflow-y: scroll;
+  }
+
+  .form-questions-title {
+    font-weight: normal;
+    font-size: var(--tablet-font-size);
+  }
+
+  .overlay-consommation .title-button {
+    font-size: var(--tablet-font-size);
+  }
+
+  .form-questions-tooltip {
+    font-size: var(--tablet-font-size);
+  }
+}
