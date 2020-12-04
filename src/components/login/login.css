@@ -34,6 +34,10 @@
   line-height: 23px;
 }
 
+.login-submit {
+  margin-top: 8px;
+}
+
 .CGU-container {
   display: flex;
 }
