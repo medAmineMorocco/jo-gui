@@ -92,5 +92,5 @@ Cypress.Commands.add('pickValue', (selector, value) => {
 });
 
 Cypress.Commands.add('submitForm', () => {
-	cy.get("button span").contains("Suite").click();
+	cy.get("button span").contains("Suite", {matchCase: false}).click();
 });

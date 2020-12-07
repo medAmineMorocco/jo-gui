@@ -183,15 +183,17 @@ export function ProStep5({ step, setNextStep }) {
         ))}
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReductionData}
-          switchName="deplacement-switch-1"
-          setSwitchValue={handleSwitchChange}
-          isOpened={switchValue}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={actionReductionData}
+            switchName="deplacement-switch-1"
+            setSwitchValue={handleSwitchChange}
+            isOpened={switchValue}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

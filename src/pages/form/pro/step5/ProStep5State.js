@@ -79,29 +79,33 @@ export const stepState = (values) => {
         response: values["5f555d17a49a0"],
       },
     ],
-    actions: [
-      {
-        action: "5f60a0c685332",
-        response: values["5f60a0c685332"],
-      },
-      {
-        action: "5f60a0d990f4e",
-        response: values["5f60a0d990f4e"],
-      },
-      {
-        action: "5f60a0f2df4e3",
-        response: values["5f60a0f2df4e3"],
-      },
-      {
-        action: "5f60a102140c9",
-        response: values["5f60a102140c9"],
-      },
-    ],
-    settings: [
-      {
-        setting: "deplacement-switch-1",
-        response: values["deplacement-switch-1"] || false,
-      },
-    ],
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      actions: [
+        {
+          action: "5f60a0c685332",
+          response: values["5f60a0c685332"],
+        },
+        {
+          action: "5f60a0d990f4e",
+          response: values["5f60a0d990f4e"],
+        },
+        {
+          action: "5f60a0f2df4e3",
+          response: values["5f60a0f2df4e3"],
+        },
+        {
+          action: "5f60a102140c9",
+          response: values["5f60a102140c9"],
+        },
+      ],
+    }),
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      settings: [
+        {
+          setting: "deplacement-switch-1",
+          response: values["deplacement-switch-1"] || false,
+        },
+      ],
+    }),
   };
 };

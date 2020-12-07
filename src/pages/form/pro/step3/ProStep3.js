@@ -244,17 +244,19 @@ export function ProStep3({ step, setNextStep }) {
         />
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={SAVIER_VOUS_RESTAU}
-          saviezVousPosition={-1}
-          selectDetail={actionReductionDataDejeuners}
-          switchName="restauration-switch-1"
-          setSwitchValue={handleSwitch1Change}
-          isOpened={switch1Value}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={SAVIER_VOUS_RESTAU}
+            saviezVousPosition={-1}
+            selectDetail={actionReductionDataDejeuners}
+            switchName="restauration-switch-1"
+            setSwitchValue={handleSwitch1Change}
+            isOpened={switch1Value}
+          />
+        </div>
+      )}
 
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin boissons-chaudes">
@@ -288,18 +290,20 @@ export function ProStep3({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={SAVIER_VOUS_RESTAU}
-          saviezVousPosition={0}
-          selectDetail={actionReductionDataCafe}
-          switchName="restauration-switch-2"
-          setSwitchValue={handleSwitch2Change}
-          isOpened={switch2Value}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={SAVIER_VOUS_RESTAU}
+            saviezVousPosition={0}
+            selectDetail={actionReductionDataCafe}
+            switchName="restauration-switch-2"
+            setSwitchValue={handleSwitch2Change}
+            isOpened={switch2Value}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

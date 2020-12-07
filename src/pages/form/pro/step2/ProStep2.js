@@ -179,18 +179,20 @@ export function ProStep2({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={SAVIER_VOUS_EMPREINTE}
-          saviezVousPosition={0}
-          selectDetail={actionReductionData}
-          switchName="empreinte-switch-1"
-          setSwitchValue={handleSwitchChange}
-          isOpened={switchValue}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={SAVIER_VOUS_EMPREINTE}
+            saviezVousPosition={0}
+            selectDetail={actionReductionData}
+            switchName="empreinte-switch-1"
+            setSwitchValue={handleSwitchChange}
+            isOpened={switchValue}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

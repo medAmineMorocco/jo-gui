@@ -23,17 +23,21 @@ export const stepState = (values) => {
         response: values["5f554fb2238b4"],
       },
     ],
-    actions: [
-      {
-        action: "5f60a00c2ead6",
-        response: values["5f60a00c2ead6"],
-      },
-    ],
-    settings: [
-      {
-        setting: "empreinte-switch-1",
-        response: values["empreinte-switch-1"] || false,
-      },
-    ],
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      actions: [
+        {
+          action: "5f60a00c2ead6",
+          response: values["5f60a00c2ead6"],
+        },
+      ],
+    }),
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      settings: [
+        {
+          setting: "empreinte-switch-1",
+          response: values["empreinte-switch-1"] || false,
+        },
+      ],
+    }),
   };
 };
