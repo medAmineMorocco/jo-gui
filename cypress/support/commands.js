@@ -88,7 +88,7 @@ Cypress.Commands.add('typeNumberForQuestionWithUnit', (name, value) => {
 Cypress.Commands.add('pickValue', (selector, value) => {
 	cy.get(`${selector} .ant-slider-mark .ant-slider-mark-text`)
 		.contains(value)
-		.click();
+		.click({force: true});
 });
 
 Cypress.Commands.add('submitForm', () => {
