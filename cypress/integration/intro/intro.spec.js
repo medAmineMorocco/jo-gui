@@ -57,9 +57,9 @@ context('Intro page', () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			cy.login('email@paris2024.org');
+
 			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-			cy.get('button span:contains(suite)').click();
-			cy.url().should('include', '/intro');
+			cy.url().should('include', '/home');
 		});
 	});
 
@@ -71,11 +71,7 @@ context('Intro page', () => {
 			cy.login('email@paris2024.org');
 
 			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-
-			cy.get('.footer-navigation-right span').contains('Résultats').should('exist');
-
-			cy.get('button span:contains(suite)').click();
-			cy.url().should('include', '/results');
+			cy.url().should('include', '/home');
 		});
 	});
 
@@ -87,10 +83,7 @@ context('Intro page', () => {
 			cy.login('email@paris2024.org');
 
 			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-
-			cy.get('.footer-navigation-right span').contains('Vie professionnelle').should('exist');
-
-			cy.get('button span:contains(suite)').click();
+			cy.get('button span:contains(FAIRE LE TEST)').click();
 			cy.url().should('include', '/form');
 		});
 	});

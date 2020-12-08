@@ -114,6 +114,22 @@ export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 
+// new page introduction
+export const INTRODUCTION_TITLE1 = "Temps du formulaire :";
+export const INTRODUCTION_DESCRIPTION2 =
+  "Idéalement, se munir de ses factures énergétiques et se péparer à se remémorer ses voyages !";
+export const INTRODUCTION_TITLE2 = "Documents :";
+export const INTRODUCTION_DESCRIPTION3 =
+  "Afin de se projeter d'abord dans sa vie professionnelle, puis dans sa vie personnelle.";
+export const INTRODUCTION_TITLE3 = "Questionnaire en 2 temps :";
+export const INTRODUCTION_DESCRIPTION4 =
+  'Le coach climat conseille de se référer à une année "classique", comme 2019 pour calculer une empreinte de référance à partir de laquelle de fixer des objectifs.';
+export const INTRODUCTION_TITLE4 = "Empreinte de référance :";
+export const INTRODUCTION_DESCRIPTION1 =
+  "Prévoir 15 minutes de son emploi du temps.";
+export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
+export const LINK_HOME_ICON = "PARIS2024";
+
 // Au bureau
 export const TITLE_ORDINATEURS =
   "Nombre d'ordinateurs portable professionnels mis à votre disposition";
