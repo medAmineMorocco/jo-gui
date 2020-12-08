@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect, BrowserRouter } from "react-router-dom";
 import { LoginPage } from "@pages/login/LoginPage";
 import { HomePage } from "@pages/home/HomePage";
-import { IntroPage } from "@pages/intro/IntroPage";
+import { NewIntroPage } from "@pages/intro/NewIntroPage";
 import { FormWizard } from "@pages/form/FormWizard";
 import { ResultsPage } from "@pages/results/ResultsPage";
 import { getCurrentUser } from "@services/authService";
@@ -22,7 +22,7 @@ function App() {
         <HomePage />
       </PrivateRoute>
       <PrivateRoute exact path="/intro">
-        <IntroPage />
+        <NewIntroPage />
       </PrivateRoute>
       <PrivateRoute exact path="/form">
         <FormWizard />
