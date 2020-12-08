@@ -108,7 +108,7 @@ describe("MealsOfWeek component", () => {
 
   it("should not show error msg when all days are filled", () => {
     const onFinish = cy.stub();
-    mount(<MealsForm onFinish={onFinish} onFinishFailed={() => cy.stub()} />, {
+    mount(<MealsForm onFinish={onFinish} onFinishFailed={cy.stub()} />, {
       style: `body {
                 background-color: var(--bg-color)
             }`,
@@ -134,6 +134,9 @@ describe("MealsOfWeek component", () => {
             thursday: "chicken",
             friday: "vegetables",
           },
+          meat: ["monday"],
+          chicken: ["tuesday", "wednesday", "thursday"],
+          vegetables: ["friday"],
         });
       });
   });
