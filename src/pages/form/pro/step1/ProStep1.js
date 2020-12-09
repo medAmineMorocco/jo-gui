@@ -52,7 +52,7 @@ export function ProStep1({ step, setNextStep }) {
 
   const onFinish = (values) => {
     const stepState = {
-      category: "AU_BUREAU",
+      thematic: "AU_BUREAU",
       questions: [
         {
           question: "5f554229451a5",

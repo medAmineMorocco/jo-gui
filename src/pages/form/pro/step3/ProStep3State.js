@@ -1,6 +1,6 @@
 export const stepState = (values) => {
   return {
-    category: "RESTAURATION",
+    thematic: "RESTAURATION",
     questions: [
       {
         question: "5f55500f273e7",

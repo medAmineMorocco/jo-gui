@@ -1,6 +1,6 @@
 export const persostep3State = (values) => {
   const data = {
-    category: "VEHICULES",
+    thematic: "VEHICULES",
     questions: [
       {
         question: "5f5568d39449f",

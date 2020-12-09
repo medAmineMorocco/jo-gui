@@ -1,7 +1,7 @@
 export const persostep7State = (values) => {
   return [
     {
-      category: "SERVICES",
+      thematic: "SERVICES",
       questions: [
         {
           question: "5f557a78e938b",

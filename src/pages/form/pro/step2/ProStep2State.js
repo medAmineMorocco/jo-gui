@@ -1,6 +1,6 @@
 export const stepState = (values) => {
   return {
-    category: "EMPREINTE_NUMERIQUE",
+    thematic: "EMPREINTE_NUMERIQUE",
     questions: [
       {
         question: "5f554eb63be47",

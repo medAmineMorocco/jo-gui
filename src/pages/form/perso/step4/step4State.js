@@ -1,6 +1,6 @@
 export const persostep4State = (values) => {
   const data = {
-    category: "NUMERIQUE",
+    thematic: "NUMERIQUE",
     questions: [
       {
         question: "5f556f699d325",
