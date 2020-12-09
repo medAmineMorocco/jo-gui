@@ -29,10 +29,8 @@ import {
   OVERLAY_IMAGE_ALT,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { getColor } from "@utils/cssUtil";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
@@ -45,7 +43,8 @@ import {
   optionsLogement,
   selectDetailLunch,
 } from "./step1Config";
-import { housestep1State, house1ActionReductionState } from "./step1State";
+import { persostep1State } from "./step1State";
+import { notify } from "@utils/notification";
 
 // À la maison
 export function PersoStep1({ step, setNextStep }) {
@@ -145,18 +144,24 @@ export function PersoStep1({ step, setNextStep }) {
     };
 
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      stepState.actions.forEach(({ action, response }) => {
+        form.setFieldsValue({
+          [action]: response,
+        });
+      });
+
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
+
       setQuestion1Count(form.getFieldValue("5f555eea00a7c"));
       setQuestion2Input(form.getFieldValue("5f555f180a442"));
       setQuestion3Input(form.getFieldValue("5f555f8af3776"));
@@ -168,6 +173,7 @@ export function PersoStep1({ step, setNextStep }) {
       setQuestion9Input(form.getFieldValue("5f556050d0a88"));
       setQuestion10Select(form.getFieldValue("5f55608002862"));
       setQuestion11Select(form.getFieldValue("5f55609bdcaae"));
+      setReductionActionOpened(form.getFieldValue("lunch-switch-1"));
 
       if (
         isQuestionValid("5f555f180a442") &&
@@ -212,32 +218,25 @@ export function PersoStep1({ step, setNextStep }) {
       }
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-
-      setReductionActionOpened(form.getFieldValue("lunch-switch-1"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("MAISON")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(housestep1State(values), step);
-    saveSettingsStep(house1ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep1State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   return (
@@ -444,18 +443,20 @@ export function PersoStep1({ step, setNextStep }) {
           </div>
         </div>
       </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={HOUSE_SAVIEZ_VOUS}
-          saviezVousPosition={1}
-          selectDetail={selectDetailLunch}
-          switchName="lunch-switch-1"
-          setSwitchValue={handleSwitchReductionActionChange}
-          isOpened={isReductionActionOpened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={HOUSE_SAVIEZ_VOUS}
+            saviezVousPosition={1}
+            selectDetail={selectDetailLunch}
+            switchName="lunch-switch-1"
+            setSwitchValue={handleSwitchReductionActionChange}
+            isOpened={isReductionActionOpened}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

@@ -8,13 +8,6 @@ import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { FormItemWithTwoInputs } from "@components/form/formItemWithTwoInputs/FormItemWithTwoInputs";
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
-} from "@services/responseService";
-import { step6State, step6ActionReductionState } from "./step6State";
-import {
   DEPLACEMENTS_QUESTION1,
   DEPLACEMENTS_QUESTION2,
   DEPLACEMENTS_QUESTION3,
@@ -38,6 +31,12 @@ import {
   actionReduction3_selectDetail,
   question3_questions,
 } from "./step6Config";
+import {
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep6State } from "./step6State";
+import { notify } from "@utils/notification";
 
 // Déplacements
 export function PersoStep6({ step, setNextStep }) {
@@ -99,31 +98,28 @@ export function PersoStep6({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      stepState.actions.forEach(({ action, response }) => {
+        form.setFieldsValue({
+          [action]: response,
+        });
+      });
+
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
+
       setQuestion1DefaultValue(form.getFieldValue("5f5575ba93b32"));
       setQuestion3IncomingChoice(
         getNewChoice(form.getFieldValue("5f5575dc9b4ac"))
       );
-    };
-
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-
       setReductionAction1Opened(
         form.getFieldValue("action-reduction-switch-1")
       );
@@ -135,22 +131,25 @@ export function PersoStep6({ step, setNextStep }) {
       );
     };
 
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
+    getResponsesOfStep("DEPLACEMENT")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(step6State(values), step);
-    saveSettingsStep(step6ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep6State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onChangeQuestion2 = (value) => {
@@ -205,16 +204,18 @@ export function PersoStep6({ step, setNextStep }) {
           />
         </div>
       </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction1_selectDetail}
-          switchName="action-reduction-switch-1"
-          setSwitchValue={handleSwitchReductionAction1Change}
-          isOpened={isReductionAction1Opened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={actionReduction1_selectDetail}
+            switchName="action-reduction-switch-1"
+            setSwitchValue={handleSwitchReductionAction1Change}
+            isOpened={isReductionAction1Opened}
+            render={render}
+          />
+        </div>
+      )}
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <TitleWithHorizontalLine title="En train" />
@@ -240,15 +241,17 @@ export function PersoStep6({ step, setNextStep }) {
           />
         </div>
       </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction2_selectDetail}
-          switchName="action-reduction-switch-2"
-          setSwitchValue={handleSwitchReductionAction2Change}
-          isOpened={isReductionAction2Opened}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={actionReduction2_selectDetail}
+            switchName="action-reduction-switch-2"
+            setSwitchValue={handleSwitchReductionAction2Change}
+            isOpened={isReductionAction2Opened}
+          />
+        </div>
+      )}
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <FormItemMultipleInputNumber
@@ -267,17 +270,19 @@ export function PersoStep6({ step, setNextStep }) {
           />
         </div>
       </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
-          saviezVousPosition={0}
-          selectDetail={actionReduction3_selectDetail}
-          switchName="action-reduction-switch-3"
-          setSwitchValue={handleSwitchReductionAction3Change}
-          isOpened={isReductionAction3Opened}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
+            saviezVousPosition={0}
+            selectDetail={actionReduction3_selectDetail}
+            switchName="action-reduction-switch-3"
+            setSwitchValue={handleSwitchReductionAction3Change}
+            isOpened={isReductionAction3Opened}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

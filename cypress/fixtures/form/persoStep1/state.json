@@ -1,0 +1,77 @@
+{
+      "category": "MAISON",
+      "questions": [
+        {
+          "question": "5f555eea00a7c",
+          "response": 1
+        },
+        {
+          "question": "5f555f180a442",
+          "response": 2
+        },
+        {
+          "question": "5f555f8af3776",
+          "response": 3
+        },
+        {
+          "question": "5f555faf640d3",
+          "response": 4
+        },
+        {
+          "question": "5f55600ed2c60",
+          "response": 5
+        },
+        {
+          "question": "5f7f230d75c78",
+          "response": null
+        },
+        {
+          "question": "5f7f2382ba8a0",
+          "response": null
+        },
+        {
+          "question": "5f7f23ce239c1",
+          "response": null
+        },
+        {
+          "question": "5f556050d0a88",
+          "response": 6
+        },
+        {
+          "question": "5f55608002862",
+          "response": "B"
+        },
+        {
+          "question": "5f55609bdcaae",
+          "response": "Entre 1980 et 2005"
+        }
+      ],
+      "actions": [
+        {
+          "action": "5f60a1229564b",
+          "response": 1
+        },
+        {
+          "action": "5f7f26f4b6606",
+          "response": 2
+        },
+        {
+          "action": "5f7f271841ce5",
+          "response": 3
+        },
+        {
+          "action": "5f7f2742cdf84",
+          "response": 4
+        },
+        {
+          "action": "5f60a1399f5ab",
+          "response": 5
+        }
+      ],
+      "settings": [
+        {
+          "setting": "lunch-switch-1",
+          "response": true
+        }
+      ]
+    }

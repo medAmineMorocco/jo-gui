@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Form } from "antd";
 import {
   CoffeeIcon,
@@ -30,14 +30,7 @@ import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { MealsOfWeek } from "@components/form/mealsOfWeek/MealsOfWeek";
 import { Overlay } from "@components/overlay/Overlay";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
-} from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
-import { step5State, step5ActionReductionState } from "./step5State";
 import {
   question2_subQuestions,
   question3_subQuestions,
@@ -45,6 +38,12 @@ import {
   selectDetail,
   selectDetail2,
 } from "./step5Config";
+import {
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep5State } from "./step5State";
+import { notify } from "@utils/notification";
 
 // Alimentation
 export function PersoStep5({ step, setNextStep }) {
@@ -170,21 +169,83 @@ export function PersoStep5({ step, setNextStep }) {
     });
   }
 
-  useEffect(() => {
-    scrollToTopOfThePage();
-    const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+  const setResponsesToMealsOfWeek = useCallback(
+    (mainQuestion, questionsResponses) => {
+      const mainQuestionResponse = {};
+      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
+        (day) => {
+          const { question } = questionsResponses.find(({ response }) =>
+            response.includes(day)
+          );
+          mainQuestionResponse[day] = question;
+        }
+      );
+
+      form.setFieldsValue({
+        [mainQuestion]: mainQuestionResponse,
+      });
+    },
+    [form]
+  );
+
+  const setResponsesToMealsOfWeekEnd = useCallback(
+    (mainQuestion, questionsResponses) => {
+      const mainQuestionResponse = {};
+      ["saturday", "sunday"].forEach((day) => {
+        const { question } = questionsResponses.find(({ response }) =>
+          response.includes(day)
+        );
+        mainQuestionResponse[day] = question;
+      });
+
+      form.setFieldsValue({
+        [mainQuestion]: mainQuestionResponse,
+      });
+    },
+    [form]
+  );
+
+  const setReponsesOfStep = useCallback(
+    (stepState) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+      stepState.actions.forEach(({ action, response }) => {
+        form.setFieldsValue({
+          [action]: response,
+        });
+      });
+      stepState.settings.forEach(({ setting, response }) => {
+        form.setFieldsValue({
+          [setting]: response,
+        });
+      });
+
+      const choices2 = ["5f5570ff217a4", "5f55715960e9a", "5f557184101ce"];
+      setResponsesToMealsOfWeek(
+        "alimentation_question2",
+        stepState.questions.filter(({ question }) =>
+          choices2.includes(question)
+        )
+      );
+
+      const choices3 = ["5f5572735716e", "5f5572b1b9be9", "5f5572cda4e57"];
+      setResponsesToMealsOfWeekEnd(
+        "alimentation_question3",
+        stepState.questions.filter(({ question }) =>
+          choices3.includes(question)
+        )
+      );
+
+      const choices4 = ["5f5572e23ac37", "5f5572f94a692", "5f55732d44ed6"];
+      setResponsesToMealsOfWeek(
+        "alimentation_question4",
+        stepState.questions.filter(({ question }) =>
+          choices4.includes(question)
+        )
+      );
 
       setQuestion1Count(form.getFieldValue("5f5570e5d882c"));
       setQuestion5Count(form.getFieldValue("5f557459e6c45"));
@@ -196,6 +257,13 @@ export function PersoStep5({ step, setNextStep }) {
       setQuestion2State(form.getFieldValue("alimentation_question2"));
       setQuestion3State(form.getFieldValue("alimentation_question3"));
       setQuestion4State(form.getFieldValue("alimentation_question4"));
+
+      setReductionAction1Opened(
+        form.getFieldValue("action-reduction-switch-1")
+      );
+      setReductionAction2Opened(
+        form.getFieldValue("action-reduction-switch-2")
+      );
 
       // Calendar 1
       let nbrBetail1 = 0;
@@ -279,38 +347,32 @@ export function PersoStep5({ step, setNextStep }) {
           value: i,
         });
       }
-    };
+    },
+    [form, setResponsesToMealsOfWeek, setResponsesToMealsOfWeekEnd]
+  );
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-      setReductionAction2Opened(
-        form.getFieldValue("action-reduction-switch-2")
-      );
-    };
+  useEffect(() => {
+    scrollToTopOfThePage();
 
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
-  }, [form, step]);
+    getResponsesOfStep("ALIMENTATIONS")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+  }, [form, setReponsesOfStep, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(step5State(values), step);
-    saveSettingsStep(step5ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep5State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onFieldsChange = () => {
@@ -503,18 +565,20 @@ export function PersoStep5({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={ALIMENTATION_SAVIEZ_VOUS}
-          saviezVousPosition={3}
-          selectDetail={selectDetail}
-          switchName="action-reduction-switch-1"
-          setSwitchValue={handleSwitchReductionAction1Change}
-          isOpened={isReductionAction1Opened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={ALIMENTATION_SAVIEZ_VOUS}
+            saviezVousPosition={3}
+            selectDetail={selectDetail}
+            switchName="action-reduction-switch-1"
+            setSwitchValue={handleSwitchReductionAction1Change}
+            isOpened={isReductionAction1Opened}
+            render={render}
+          />
+        </div>
+      )}
 
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
@@ -574,16 +638,18 @@ export function PersoStep5({ step, setNextStep }) {
         />
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={selectDetail2}
-          switchName="action-reduction-switch-2"
-          setSwitchValue={handleSwitchReductionAction2Change}
-          isOpened={isReductionAction2Opened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={selectDetail2}
+            switchName="action-reduction-switch-2"
+            setSwitchValue={handleSwitchReductionAction2Change}
+            isOpened={isReductionAction2Opened}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }
