@@ -1,0 +1,36 @@
+.form-item-checkboxes .ant-form-item-label label {
+  color: var(--main-color);
+}
+
+.checkboxes-container {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.form-item-checkboxes
+  .ant-form-item-control
+  .ant-form-item-control-input
+  .ant-checkbox-group {
+  width: 100%;
+  display: flex;
+}
+
+.form-item-checkboxes-item-container {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.form-item-checkboxes-label {
+  margin-right: 8px;
+  color: var(--main-color);
+}
+
+.form-item-checkbox .ant-checkbox-inner {
+  background-color: black;
+  border-color: var(--main-color);
+  border-radius: 0;
+}
+
+.form-item-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: var(--main-color);
+}
