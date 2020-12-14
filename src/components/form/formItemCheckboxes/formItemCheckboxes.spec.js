@@ -21,14 +21,23 @@ function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
     {
       label: "Voiture",
       value: "Voiture",
+      onChange: (isChecked) => {
+        console.log(isChecked);
+      },
     },
     {
       label: "Train",
       value: "Train",
+      onChange: (isChecked) => {
+        console.log(isChecked);
+      },
     },
     {
       label: "Avion",
       value: "Avion",
+      onChange: (isChecked) => {
+        console.log(isChecked);
+      },
     },
   ];
 

@@ -17,15 +17,24 @@ export const formItemCheckboxes = () => {
     const options = [
         {
             label: 'Voiture',
-            value: 'Voiture'
+            value: 'Voiture',
+            onChange: (isChecked) => {
+                console.log(isChecked);
+            }
         },
         {
             label: 'Train',
-            value: 'Train'
+            value: 'Train',
+            onChange: (isChecked) => {
+                console.log(isChecked);
+            }
         },
         {
             label: 'Avion',
-            value: 'Avion'
+            value: 'Avion',
+            onChange: (isChecked) => {
+                console.log(isChecked);
+            }
         }
     ]
 

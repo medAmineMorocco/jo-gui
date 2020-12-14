@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Checkbox } from "antd";
+import { Form, Checkbox as CheckboxAntd } from "antd";
+import { Checkbox } from "@components/form/checkbox/Checkbox";
 import "./formItemCheckboxes.css";
 
 export function FormItemCheckboxes({ name, text, options }) {
@@ -14,18 +15,17 @@ export function FormItemCheckboxes({ name, text, options }) {
           ]}
           className="form-item-checkboxes"
         >
-          <Checkbox.Group>
-            {options.map(({ label, value }, index) => (
+          <CheckboxAntd.Group>
+            {options.map(({ label, value, onChange }, index) => (
               <div key={index} className="form-item-checkboxes-item-container">
                 <span className="form-item-checkboxes-label">{label}</span>
                 <Checkbox
-                  className="form-item-checkbox"
                   value={value}
-                  style={{ lineHeight: "32px" }}
+                  onChange={(checked) => onChange(checked)}
                 />
               </div>
             ))}
-          </Checkbox.Group>
+          </CheckboxAntd.Group>
         </Form.Item>
       </div>
     </div>

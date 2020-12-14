@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { findDOMNode } from "react-dom";
 import { InputNumber } from "antd";
 import { getColor } from "@utils/cssUtil";
@@ -23,6 +23,14 @@ export function FormItemInputNumberWithUnit({
   const inputRef = useRef();
   const inputUnitRef = useRef();
   const [color, setColor] = useState(mainColor);
+
+  useEffect(() => {
+    return () => {
+      form.setFieldsValue({
+        [name]: null,
+      });
+    };
+  }, [form, name]);
 
   const onFocus = () => {
     const focusColor = "white";

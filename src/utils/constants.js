@@ -244,6 +244,8 @@ export const ALIMENTATION_SAVIEZ_VOUS =
   "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
 
 // deplacement
+export const TRANSPORTATION_LABEL =
+  "Effectuez-vous des déplacements personnels en ?";
 export const DEPLACEMENTS_QUESTION1 =
   "Distance parcourue en voiture par an (véhicule personnel ou de location)";
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =

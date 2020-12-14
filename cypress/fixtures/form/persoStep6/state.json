@@ -1,10 +1,14 @@
 {
       "thematic": "DEPLACEMENT",
       "questions": [
-        {
-					"question": "5f5575ba93b32",
-					"response": 1
+        		{
+					"question": "to-insert",
+					"response": ["Voiture", "Train", "Avion"]
 				},
+			    {
+				  "question": "5f5575ba93b32",
+				  "response": 1
+			    },
 				{
 					"question": "5f5575dc9b4ac",
 					"response": "Electrique"

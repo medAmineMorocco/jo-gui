@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, InputNumber } from "antd";
 import { FormItem } from "@components/form/formItem/FormItem";
 import { getColor } from "@utils/cssUtil";
@@ -12,6 +12,16 @@ export function FormItemWithTwoInputs({
   questions,
 }) {
   const mainColor = getColor("--main-color");
+
+  useEffect(() => {
+    return () => {
+      questions.forEach(({ response }) => {
+        form.setFieldsValue({
+          [response.name]: null,
+        });
+      });
+    };
+  }, [form, questions]);
 
   const onChange = (value, name) => {
     form.setFieldsValue({

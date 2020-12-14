@@ -1,4 +1,4 @@
-context('Form | Déplacements step', () => {
+context('Form | Déplacements personnels step', () => {
 	const sizes = [
 		{
 			device: 'iphone-5',
@@ -16,6 +16,7 @@ context('Form | Déplacements step', () => {
 
 	it('should show Déplacements step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
+		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -28,7 +29,8 @@ context('Form | Déplacements step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Déplacements', size);
+						cy.wait(1000);
+						cy.takeSnapshots('form - Déplacements personnels', size);
 					});
 			});
 		});
@@ -151,12 +153,13 @@ context('Form | Déplacements step', () => {
 				cy.wait(1000);
 
 				cy.submitForm();
-				cy.get('.ant-form-item-explain div:contains("⚠ Merci de saisir votre réponse")')
+				cy.get('.ant-form-item-explain div:contains("⚠ Veuillez sélectionner une option")')
 					.should(($el) => {
 						expect($el).to.have.length(1);
 					})
 					.then(() => {
-						cy.takeSnapshots('form - Déplacements errors', size);
+						cy.wait(1000);
+						cy.takeSnapshots('form - Déplacements personnels errors', size);
 					});
 			});
 		});

@@ -1,3 +1,27 @@
+export const transportation_options = (
+  onCarChange,
+  onTrainChange,
+  onPlaneChange
+) => {
+  return [
+    {
+      label: "Voiture",
+      value: "Voiture",
+      onChange: onCarChange,
+    },
+    {
+      label: "Train",
+      value: "Train",
+      onChange: onTrainChange,
+    },
+    {
+      label: "Avion",
+      value: "Avion",
+      onChange: onPlaneChange,
+    },
+  ];
+};
+
 export const question2_options = [
   { text: "Essence", value: "Essence" },
   { text: "Diesel", value: "Diesel" },
