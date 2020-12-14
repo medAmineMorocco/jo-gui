@@ -4,7 +4,6 @@ context("Form wizard", () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
         cy.window().then((win) => {
             win.sessionStorage.clear();
-            win.sessionStorage.setItem("current-step", 0);
             cy.login("email@paris2024.org");
 
             cy.visit("/form");
@@ -19,12 +18,11 @@ context("Form wizard", () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
         cy.window().then((win) => {
             win.sessionStorage.clear();
-            win.sessionStorage.setItem("current-step", 0);
             cy.login("email@paris2024.org");
 
             cy.visit("/form");
 
-            cy.url().should("include", "/intro");
+            cy.url().should("include", "/home");
         });
     });
 
@@ -32,7 +30,6 @@ context("Form wizard", () => {
         cy.stubRequest('GET', '**/api/user/progress', 400);
         cy.window().then((win) => {
             win.sessionStorage.clear();
-            win.sessionStorage.setItem("current-step", 0);
             cy.login("email@paris2024.org");
 
             cy.visit("/form");

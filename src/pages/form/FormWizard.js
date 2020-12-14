@@ -31,7 +31,7 @@ export function FormWizard() {
             setActiveStep(response.step);
           }, 500);
         } else if (response.progress === "RESULTATS") {
-          history.push("/intro");
+          history.push("/home");
         }
       })
       .catch(() => {
