@@ -12,6 +12,7 @@ import { Header } from "@components/header/Header";
 import { Modal } from "@components/modal/Modal";
 import { Link } from "react-router-dom";
 import { HomeOutlined } from "@ant-design/icons";
+import { FooterWithDetails } from "@components/footer/FooterWithDetails";
 import {
   ABOUT_TITLE,
   ABOUT_CONTENT1,
@@ -46,7 +47,7 @@ export function NewIntroPage() {
   }, [history]);
 
   return (
-    <div>
+    <div className="new-intro-page">
       <Header>
         <div className="home-link">
           <Link to="/">
@@ -138,6 +139,8 @@ export function NewIntroPage() {
           <span>{INTRODUCTION_BTN_DESCRIPTION}</span>
         </Button>
       </div>
+
+      <FooterWithDetails />
     </div>
   );
 }

@@ -13,17 +13,17 @@
 }
 
 .intro-parag {
-  height: 16vh;
+  height: 13vh;
   width: 50%;
   font-family: Paris2024;
-  font-size: 2vw;
-  line-height: 2vw;
+  font-size: 1.6vw;
+  line-height: 1.6vw;
   display: table-cell;
   vertical-align: middle;
 }
 
 .intro-icon {
-  height: 16vh;
+  height: 13vh;
   width: 6%;
   display: table-cell;
   vertical-align: middle;
@@ -50,7 +50,7 @@
 }
 
 .center-items-container {
-  height: 12vh;
+  height: 22vh;
   display: flex;
   justify-content: center;
 }
@@ -67,6 +67,10 @@
   .intro-parag {
     font-size: 4vw;
     line-height: 5vw;
+  }
+
+  .center-items-container {
+    height: 12vh;
   }
 }
 
@@ -86,5 +90,9 @@
   .intro-parag {
     font-size: 4vw;
     line-height: 4vw;
+  }
+
+  .center-items-container {
+    height: 12vh;
   }
 }
