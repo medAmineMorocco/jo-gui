@@ -192,6 +192,7 @@ export function PersoStep6({ step, setNextStep }) {
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
           <FormItemCheckboxes
+            form={form}
             name="to-insert"
             text={TRANSPORTATION_LABEL}
             options={transportation_options(

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Checkbox as CheckboxAntd } from "antd";
 import { Checkbox } from "@components/form/checkbox/Checkbox";
 import "./formItemCheckboxes.css";
 
-export function FormItemCheckboxes({ name, text, options }) {
+export function FormItemCheckboxes({ form, name, text, options }) {
+  useEffect(() => {
+    return () => {
+      form.setFieldsValue({
+        [name]: null,
+      });
+    };
+  }, [form, name]);
+
   return (
     <div style={{ display: "flex" }}>
       <div className="checkboxes-container">

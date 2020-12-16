@@ -120,6 +120,7 @@ export function ProStep2({ step, setNextStep }) {
         </div>
 
         <FormItemInputNumber
+          form={form}
           name="5f554eb63be47"
           label={TAILLE_BOITE}
           tooltipTitle={TAILLE_BOITE_INFO}
@@ -133,6 +134,7 @@ export function ProStep2({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f554eddc68dd"
             label={TAILLE_STOCKAGE}
             disabled={true}

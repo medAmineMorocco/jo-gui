@@ -90,6 +90,7 @@ export function ProStep0({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <FormItemInputNumber
+          form={form}
           name="5f554172a13c7"
           tooltipTitle={INTRODUCTION_QUESTION1_INFOS}
           label={INTRODUCTION_QUESTION1}
@@ -100,6 +101,7 @@ export function ProStep0({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f5541a7845e0"
             label={INTRODUCTION_QUESTION2}
             rules={[
@@ -110,6 +112,7 @@ export function ProStep0({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f5541ba9b096"
             tooltipTitle={spanWithEmoji}
             label={INTRODUCTION_QUESTION3}

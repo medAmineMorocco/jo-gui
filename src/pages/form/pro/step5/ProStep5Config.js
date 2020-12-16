@@ -1,3 +1,38 @@
+export const make_transportation_options = [
+  {
+    label: "Oui",
+    value: true,
+  },
+  {
+    label: "Non",
+    value: false,
+  },
+];
+
+export const transportation_options = (
+  onCarChange,
+  onTrainChange,
+  onPlaneChange
+) => {
+  return [
+    {
+      label: "Voiture",
+      value: "Voiture",
+      onChange: onCarChange,
+    },
+    {
+      label: "Train",
+      value: "Train",
+      onChange: onTrainChange,
+    },
+    {
+      label: "Avion",
+      value: "Avion",
+      onChange: onPlaneChange,
+    },
+  ];
+};
+
 export const question8options = [
   {
     name: "5f55587eaf0e1",

@@ -15,6 +15,7 @@ export const formItemInputNumber = () => {
         form={form}
     >
         <FormItemInputNumber
+            form={form}
             name="without"
             tooltipTitle={text('infos', 'example of tooltip')}
             label={text('label', 'example of question')}

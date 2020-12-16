@@ -334,6 +334,7 @@ export function PersoStep3({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f556b94d465c"
             label={MATERIELS_QUESTION14_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
@@ -341,6 +342,7 @@ export function PersoStep3({ step, setNextStep }) {
           />
 
           <FormItemInputNumber
+            form={form}
             name="5f556baea779b"
             label={MATERIELS_QUESTION15_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}

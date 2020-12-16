@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { findDOMNode } from "react-dom";
 import { InputNumber } from "antd";
 import { getColor } from "@utils/cssUtil";
@@ -7,6 +7,7 @@ import { useTabletSize } from "@hooks/window";
 import "./formItemInputNumber.css";
 
 export function FormItemInputNumber({
+  form,
   label,
   name,
   rules,
@@ -18,6 +19,14 @@ export function FormItemInputNumber({
   const mainColor = getColor("--main-color");
   const inputRef = useRef();
   const [color, setColor] = useState(mainColor);
+
+  useEffect(() => {
+    return () => {
+      form.setFieldsValue({
+        [name]: null,
+      });
+    };
+  }, [form, name]);
 
   const onFocus = () => {
     const focusColor = "white";

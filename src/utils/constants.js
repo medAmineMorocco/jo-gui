@@ -171,6 +171,9 @@ export const SAVIER_VOUS_TRAJETS =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
 // Déplacements
+export const MAKE_TRANSPORTATION_LABEL =
+  "Effectuez-vous des déplacements professionels ?";
+export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
 export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
 export const NBR_KM_VOITURE =
   "Nombre de km en voiture (location, personnelle, ou taxi)";
@@ -195,7 +198,7 @@ export const QUESTION10_NBR_VOLS_AR =
 export const QUESTION11_NBR_VOLS_AR =
   "Nombre d'aller-retours longs courriers (>10h)";
 
-// Déplacements
+// Restauration
 export const REPAS_QUESTION1 =
   "De quoi sont majoritairement composés tes repas au bureau ?";
 export const REPAS_QUESTION1_INFO =

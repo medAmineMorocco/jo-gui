@@ -131,6 +131,7 @@ export function ProStep4({ step, setNextStep }) {
         </div>
 
         <FormItemInputNumber
+          form={form}
           name="5f55554022dc3"
           label={DISTANCE_DOMICILE_TRAVAIL}
           rules={[

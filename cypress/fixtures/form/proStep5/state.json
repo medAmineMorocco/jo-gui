@@ -2,6 +2,14 @@
   "thematic": "DEPLACEMENTS_PROFESSIONNELS",
   "questions": [
     {
+      "question": "to-insert2",
+      "response": true
+    },
+    {
+      "question": "to-insert3",
+      "response": ["Voiture", "Train", "Avion"]
+    },
+    {
       "question": "5f5557936a4cd",
       "response": 1
     },

@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { mount } from "cypress-react-unit-test";
-import { FormItemCheckboxes } from "./FormItemCheckboxes";
 import { Button, Form } from "antd";
 import { Form as ConfiguredForm } from "../Form";
+import { FormItemRadioButtons } from "./FormItemRadioButtons";
 
 const errorMsg = "Veuillez sélectionner une option";
 
-function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
+function FormItemRadioButtonsForm({
+  onFinish,
+  onFinishFailed,
+  isMultipleSelection,
+  initialValues,
+}) {
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -21,23 +26,14 @@ function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
     {
       label: "Voiture",
       value: "Voiture",
-      onChange: (isChecked) => {
-        console.log(isChecked);
-      },
     },
     {
       label: "Train",
       value: "Train",
-      onChange: (isChecked) => {
-        console.log(isChecked);
-      },
     },
     {
       label: "Avion",
       value: "Avion",
-      onChange: (isChecked) => {
-        console.log(isChecked);
-      },
     },
   ];
 
@@ -47,11 +43,12 @@ function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <FormItemCheckboxes
+      <FormItemRadioButtons
         form={form}
         name="country"
-        text="quel moyen de transport ?"
+        label="quel moyen de transport ?"
         options={options}
+        isMultipleSelection={isMultipleSelection}
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
@@ -62,13 +59,14 @@ function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
   );
 }
 
-describe("FormItemCheckboxes component", () => {
+describe("FormItemRadioButtons component", () => {
   it("should show error when any option is checked", () => {
     const onFinishFailed = cy.stub();
     mount(
-      <FormItemCheckboxesForm
+      <FormItemRadioButtonsForm
         onFinish={() => cy.stub()}
         onFinishFailed={onFinishFailed}
+        isMultipleSelection={false}
       />,
       {
         style: `body {
@@ -90,9 +88,10 @@ describe("FormItemCheckboxes component", () => {
   it("should not show error when check some options", () => {
     const onFinish = cy.stub();
     mount(
-      <FormItemCheckboxesForm
+      <FormItemRadioButtonsForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
+        isMultipleSelection={true}
       />,
       {
         style: `body {
@@ -100,8 +99,8 @@ describe("FormItemCheckboxes component", () => {
             }`,
       }
     );
-    cy.get('input[value="Voiture"]').check();
-    cy.get('input[value="Avion"]').check();
+    cy.get('input[value="Voiture"]').check({ force: true });
+    cy.get('input[value="Avion"]').check({ force: true });
 
     cy.get("button:contains(Submit)").click();
 
@@ -114,13 +113,14 @@ describe("FormItemCheckboxes component", () => {
       });
   });
 
-  it("should set initial values when render the component", () => {
+  it("should set initial value when render the component", () => {
     const onFinish = cy.stub();
     mount(
-      <FormItemCheckboxesForm
+      <FormItemRadioButtonsForm
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
-        initialValues={["Voiture", "Train"]}
+        initialValues="Voiture"
+        isMultipleSelection={false}
       />,
       {
         style: `body {
@@ -130,6 +130,5 @@ describe("FormItemCheckboxes component", () => {
     );
 
     cy.get('input[value="Voiture"]').should("be.checked");
-    cy.get('input[value="Train"]').should("be.checked");
   });
 });

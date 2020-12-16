@@ -40,7 +40,9 @@ export const formItemCheckboxes = () => {
 
     return (
         <ConfiguredForm form={form} onFinish={onFinish}>
-            <FormItemCheckboxes name="country"
+            <FormItemCheckboxes
+                form={form}
+                name="country"
                                 text={text('text', "quel moyen de transport ?")}
                                 options={object('options', options)}/>
             <Form.Item>

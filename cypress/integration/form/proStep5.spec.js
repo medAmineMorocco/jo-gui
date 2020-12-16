@@ -1,4 +1,4 @@
-context("Form | Vie professionnelle - Deplacements step", () => {
+context("Form | Vie professionnelle - Deplacements professionnels step", () => {
   const sizes = [
     {
       device: "iphone-5",
@@ -27,7 +27,12 @@ context("Form | Vie professionnelle - Deplacements step", () => {
         cy.url()
           .should("include", "/form")
           .then(() => {
-            cy.takeSnapshots("form - Deplacements", size);
+            cy.get('input[value="true"]').check({force: true});
+            cy.get('input[value="Voiture"]').check();
+            cy.get('input[value="Train"]').check();
+            cy.get('input[value="Avion"]').check();
+            cy.wait(1000);
+            cy.takeSnapshots("form - Deplacements professionnels", size);
           });
       });
     });
