@@ -5,7 +5,9 @@ import { HomePage } from "@pages/home/HomePage";
 import { NewIntroPage } from "@pages/intro/NewIntroPage";
 import { FormWizard } from "@pages/form/FormWizard";
 import { ResultsPage } from "@pages/results/ResultsPage";
+import { MethoPage } from "@pages/methodologie/MethoPage";
 import { getCurrentUser } from "@services/authService";
+
 import "./App.css";
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
       </PrivateRoute>
       <PrivateRoute exact path="/intro">
         <NewIntroPage />
+      </PrivateRoute>
+      <PrivateRoute exact path="/metho">
+        <MethoPage />
       </PrivateRoute>
       <PrivateRoute exact path="/form">
         <FormWizard />

@@ -1,14 +1,16 @@
 import React from "react";
 import { Footer } from "@components/footer/Footer";
+import { useHistory } from "react-router-dom";
 import "./footerWithDetails.css";
 
 export function FooterWithDetails() {
+  const history = useHistory();
   return (
     <Footer style={{ display: "flex", justifyContent: "center" }}>
       <div className="footer-details-container">
         <div
           className="footer-details"
-          onClick={() => window.open("/home", "_blank")}
+          onClick={() => history.push("/metho", "_blank")}
         >
           <span className="footer-detail">Méthodologie</span>
         </div>
