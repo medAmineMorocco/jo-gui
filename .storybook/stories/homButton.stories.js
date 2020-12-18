@@ -13,6 +13,6 @@ export const homeButton = () => {
 
     return(
 
-    <HomeButton isFinish={boolean('brightness', false)}/>
+    <HomeButton DoesUserFinishAllForms={boolean('brightness', false)}/>
 
     )}

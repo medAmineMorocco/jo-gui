@@ -9,10 +9,6 @@ export const TERMS_DESCRIPTION =
   "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
 export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
 
-/* Home  Page */
-export const HEADTITLE1 = `La neutralité carbone des Jeux, c’est l’affaire de tous.`;
-export const HEADTITLE2 = `Paris 2024 a créé le COACH CLIMAT pour vous aider à mesurer et réduire votre empreinte carbone. 3 étapes pour estimer, comprendre & réduire, et s’engager `;
-
 /* Méthologie Page */
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";

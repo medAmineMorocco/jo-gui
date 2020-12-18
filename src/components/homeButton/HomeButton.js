@@ -3,10 +3,9 @@ import { Button } from "antd";
 import { RightCircleFilled } from "@ant-design/icons";
 import "./homeButton.css";
 
-export function HomeButton({ isFinish }) {
+export function HomeButton({ doesUserFinishAllForms }) {
   const styleBrightnessUp = "brightness(100%)";
   const styleBrightnessDown = "brightness(20%)";
-
   return (
     <>
       <div className="container-button-home">
@@ -34,7 +33,7 @@ export function HomeButton({ isFinish }) {
         <div
           className="container-single-button"
           style={
-            isFinish === true
+            doesUserFinishAllForms === true
               ? { filter: styleBrightnessUp }
               : { filter: styleBrightnessDown }
           }
@@ -43,6 +42,7 @@ export function HomeButton({ isFinish }) {
             className="size-image-home"
             href="/results"
             style={{ backgroundImage: "url(/images/section-1.jpg)" }}
+            disabled={!doesUserFinishAllForms}
           >
             <div className="text-button-home">2</div>
             <div className="text-button-home-hover">
@@ -61,7 +61,7 @@ export function HomeButton({ isFinish }) {
         <div
           className="container-single-button"
           style={
-            isFinish === true
+            doesUserFinishAllForms === true
               ? { filter: styleBrightnessUp }
               : { filter: styleBrightnessDown }
           }
@@ -70,6 +70,7 @@ export function HomeButton({ isFinish }) {
             className="size-image-home"
             href="/results"
             style={{ backgroundImage: "url(/images/section-2.jpg)" }}
+            disabled={!doesUserFinishAllForms}
           >
             <div className="text-button-home">3</div>
             <div className="text-button-home-hover">

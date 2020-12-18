@@ -36,8 +36,12 @@
 .title-container-home .hero-container {
   height: 5vh;
   position: relative;
-  max-width: 99%;
   background-image: none;
+}
+
+.title-container-home .styled-title-container {
+  color: white;
+  text-transform: none;
 }
 
 .title-container-home .hero-wrapper {
@@ -76,7 +80,7 @@
     margin-block-end: 0em;
   }
   .title-container-home .hero-wrapper {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 }
 
