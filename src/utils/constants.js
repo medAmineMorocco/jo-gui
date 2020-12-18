@@ -170,7 +170,8 @@ export const MOTORISATION_INFOS =
 export const SAVIER_VOUS_TRAJETS =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
-// Déplacements
+// Déplacements professionnels
+export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_TITLE = "Cartes des distances";
 export const MAKE_TRANSPORTATION_LABEL =
   "Effectuez-vous des déplacements professionels ?";
 export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
@@ -246,7 +247,7 @@ export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
   "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
 
-// deplacement
+// deplacement personnels
 export const TRANSPORTATION_LABEL =
   "Effectuez-vous des déplacements personnels en ?";
 export const DEPLACEMENTS_QUESTION1 =

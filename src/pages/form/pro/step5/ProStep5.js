@@ -7,9 +7,10 @@ import { FormItemActionReduction } from "@components/form/action/formItemActionR
 import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
 import { FormItemRadioButtons } from "@components/form/formItemRadioButtons/FormItemRadioButtons";
 import { FormItemCheckboxes } from "@components/form/formItemCheckboxes/FormItemCheckboxes";
-
+import { Overlay } from "@components/overlay/Overlay";
 import { stepState } from "./ProStep5State";
 import {
+  DEPLACEMENTS_PROFESSIONNEL_OVERLAY_TITLE,
   MAKE_TRANSPORTATION_LABEL,
   TRANSPORTATION_PRO_LABEL,
   NBR_KM_VOITURE,
@@ -31,6 +32,7 @@ import {
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
+  overlay_items,
   make_transportation_options,
   transportation_options,
   question8options,
@@ -206,6 +208,10 @@ export function ProStep5({ step, setNextStep }) {
                   setPlaneQuestionsVisible(isChecked);
                 }
               )}
+            />
+            <Overlay
+              title={DEPLACEMENTS_PROFESSIONNEL_OVERLAY_TITLE}
+              items={overlay_items}
             />
           </div>
         )}

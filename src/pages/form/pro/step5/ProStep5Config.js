@@ -135,3 +135,12 @@ export const actionReductionData = [
     percentage: true,
   },
 ];
+
+export const overlay_items = [
+  {
+    image: "/images/conso-electrique.png",
+  },
+  {
+    image: "/images/conso-electrique.png",
+  },
+];
