@@ -9,8 +9,6 @@ import { HomeButton } from "@components/homeButton/HomeButton";
 import { getUserProgess } from "@services/userService";
 import { notify } from "@utils/notification";
 import {
-  HEADTITLE1,
-  HEADTITLE2,
   ABOUT_TITLE,
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
@@ -20,15 +18,28 @@ import "./homePage.css";
 
 export function HomePage(props) {
   const [isVisible, setVisible] = useState(false);
-  const [isFinish, setFinish] = useState();
+  const [doesUserFinishAllForms, setDoesUserFinishAllForms] = useState();
+  const MainColor = "var(--main-color)";
 
+  const texteTitle1 = (
+    <div>La neutralité carbone des Jeux, c’est l’affaire de tous.</div>
+  );
+  const texetTitle2 = (
+    <div>
+      Paris 2024 a créé le
+      <span style={{ color: MainColor }}> COACH CLIMAT </span> pour vous aider à
+      mesurer et réduire votre
+      <span style={{ color: MainColor }}> empreinte carbone. 3 étapes </span>
+      pour estimer, comprendre & réduire, et s’engager
+    </div>
+  );
   useEffect(() => {
     getUserProgess()
       .then((response) => {
         if (response.progress === "RESULTATS") {
-          setFinish(true);
+          setDoesUserFinishAllForms(true);
         } else {
-          setFinish(false);
+          setDoesUserFinishAllForms(false);
         }
       })
       .catch(() => {
@@ -67,15 +78,16 @@ export function HomePage(props) {
                 fontSize: "30px",
                 lineHeight: "2vw",
                 fontFamily: "Paris2024",
+                textTransform: "none",
               }}
-              title1={HEADTITLE1}
-              title2={HEADTITLE2}
+              title1={texteTitle1}
+              title2={texetTitle2}
             />
           </div>
         </div>
       </div>
       <div className="content-container-home">
-        <HomeButton isFinish={isFinish} />
+        <HomeButton doesUserFinishAllForms={doesUserFinishAllForms} />
       </div>
       <div className="footer-container-home">
         <FooterWithDetails />
