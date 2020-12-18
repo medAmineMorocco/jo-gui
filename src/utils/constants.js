@@ -9,7 +9,11 @@ export const TERMS_DESCRIPTION =
   "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
 export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
 
-/* Home Page */
+/* Home  Page */
+export const HEADTITLE1 = `La neutralité carbone des Jeux, c’est l’affaire de tous.`;
+export const HEADTITLE2 = `Paris 2024 a créé le COACH CLIMAT pour vous aider à mesurer et réduire votre empreinte carbone. 3 étapes pour estimer, comprendre & réduire, et s’engager `;
+
+/* Méthologie Page */
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";
 export const HERO_DESCRIPTION =
@@ -123,8 +127,8 @@ export const INTRODUCTION_DESCRIPTION3 =
   "Afin de se projeter d'abord dans sa vie professionnelle, puis dans sa vie personnelle.";
 export const INTRODUCTION_TITLE3 = "Questionnaire en 2 temps :";
 export const INTRODUCTION_DESCRIPTION4 =
-  'Le coach climat conseille de se référer à une année "classique", comme 2019 pour calculer une empreinte de référance à partir de laquelle de fixer des objectifs.';
-export const INTRODUCTION_TITLE4 = "Empreinte de référance :";
+  'Le coach climat conseille de se référer à une année "classique", comme 2019 pour calculer une empreinte de référence à partir de laquelle de fixer des objectifs.';
+export const INTRODUCTION_TITLE4 = "Empreinte de référence :";
 export const INTRODUCTION_DESCRIPTION1 =
   "Prévoir 15 minutes de son emploi du temps.";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
