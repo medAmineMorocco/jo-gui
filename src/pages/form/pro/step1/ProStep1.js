@@ -78,7 +78,7 @@ export function ProStep1({ step, setNextStep }) {
     subQuestions[values["5f554229451a5"]].forEach((res) => {
       stepState.questions.push({
         question: res.name,
-        response: res.defaultResponse / 1000000,
+        response: res.defaultResponse,
       });
     });
 
