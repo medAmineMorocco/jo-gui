@@ -8,6 +8,7 @@ import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { FormItemWithTwoInputs } from "@components/form/formItemWithTwoInputs/FormItemWithTwoInputs";
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
 import { FormItemCheckboxes } from "@components/form/formItemCheckboxes/FormItemCheckboxes";
+import { Overlay } from "@components/overlay/Overlay";
 import {
   DEPLACEMENTS_QUESTION1,
   DEPLACEMENTS_QUESTION2,
@@ -20,6 +21,7 @@ import {
   DEPLACEMENTS_QUESTION1_ERROR_MSG,
   DEPLACEMENTS_SAVIEZ_VOUS,
   TRANSPORTATION_LABEL,
+  DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE,
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -33,6 +35,7 @@ import {
   question7_questions,
   actionReduction3_selectDetail,
   question3_questions,
+  overlay_items,
 } from "./step6Config";
 import {
   saveResponsesOfStep,
@@ -208,6 +211,10 @@ export function PersoStep6({ step, setNextStep }) {
             )}
           />
         </div>
+        <Overlay
+          title={DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE}
+          items={overlay_items}
+        />
       </div>
 
       {areCarQuestionsVisible && (

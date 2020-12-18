@@ -156,3 +156,12 @@ export const actionReduction3_selectDetail = [
       "des vols long courrier et privilégier les destinations accessibles en train",
   },
 ];
+
+export const overlay_items = [
+  {
+    image: "/images/conso-electrique.png",
+  },
+  {
+    image: "/images/conso-electrique.png",
+  },
+];

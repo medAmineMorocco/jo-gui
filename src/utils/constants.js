@@ -265,10 +265,10 @@ export const DEPLACEMENTS_QUESTION6 =
   "Nombre de vols AR longs courriers (>5h et <10h)";
 export const DEPLACEMENTS_QUESTION7 =
   "Nombre de vols AR longs courriers (>10h)";
-
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO₂ dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE = "Cartes des distances";
 
 // À la maison
 export const HOUSE_QUESTION1 = "Nombre d'adultes du logement";
