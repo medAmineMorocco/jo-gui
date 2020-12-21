@@ -50,11 +50,11 @@ export function FormWizard() {
   }, [getCurrentStep]);
 
   const setNextStep = () => {
-    setActiveStep(activeStep + 1);
+    setActiveStep(Number(activeStep) + 1);
   };
 
   const handlePreviousStep = () => {
-    setActiveStep(activeStep - 1);
+    setActiveStep(Number(activeStep) - 1);
   };
 
   const { component: FormStep, progress, category, previous, next } = config[

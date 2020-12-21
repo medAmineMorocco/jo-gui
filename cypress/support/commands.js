@@ -3,12 +3,14 @@ import '@percy/cypress';
 Cypress.Commands.add('stubRequest', (method, path, status, fixture, alias) => {
 	cy.server();
 	if (status === 200) {
-		cy.fixture(fixture).as(alias);
+		if(fixture) {
+			cy.fixture(fixture).as(alias);
+		}
 		cy.route({
 			method,
 			url: path,
 			status,
-			response: `@${alias}`,
+			response: fixture ? `@${alias}`: 'some-response',
 		});
 	}
 	else {
