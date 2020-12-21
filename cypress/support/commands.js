@@ -2,16 +2,23 @@ import '@percy/cypress';
 
 Cypress.Commands.add('stubRequest', (method, path, status, fixture, alias) => {
 	cy.server();
-	if (fixture) {
+	if (status === 200) {
 		cy.fixture(fixture).as(alias);
+		cy.route({
+			method,
+			url: path,
+			status,
+			response: `@${alias}`,
+		});
 	}
-	const response = alias ? `@${alias}` : `${status} error`;
-	cy.route({
-		method,
-		url: path,
-		status,
-		response: response,
-	});
+	else {
+		cy.route({
+			method,
+			url: path,
+			status,
+			response: `${status} error`,
+		});
+	}
 });
 
 Cypress.Commands.add('selectOption', (selector, value) => {

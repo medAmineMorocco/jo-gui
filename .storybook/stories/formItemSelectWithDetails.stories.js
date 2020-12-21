@@ -1,19 +1,16 @@
 import React from 'react';
 import {text, withKnobs} from "@storybook/addon-knobs";
-import {Form, Button} from "antd";
-import {Form as ConfiguredForm} from "@components/form/Form";
+import {Form} from "antd";
+import {ConfiguredForm} from "../ConfiguredForm";
 import {FormItemSelectWithDetails} from '@components/form/formItemSelectWithDetails/FormItemSelectWithDetails';
 import "./stories.css";
 
 
 export default {title: 'Data Entry/FormItemSelectWithDetails', decorators: [withKnobs]};
 
-const onFinish = (values) => {
-    console.log('success', values);
-};
-
 export const formItemSelectWithDetails = () => {
     const [form] = Form.useForm();
+
     const subQuestions = {
         Jack: [
             {
@@ -43,8 +40,6 @@ export const formItemSelectWithDetails = () => {
 
     return <ConfiguredForm
         form={form}
-        onFinish={onFinish}
-        basicInputs={["without"]}
     >
         <FormItemSelectWithDetails
             form={form}
@@ -57,10 +52,5 @@ export const formItemSelectWithDetails = () => {
             }]}
             subQuestions={subQuestions}
         />
-        <Form.Item>
-            <Button type="primary" htmlType="submit">
-                Click here to see the error state
-            </Button>
-        </Form.Item>
     </ConfiguredForm>;
 };
