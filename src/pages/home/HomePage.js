@@ -4,7 +4,6 @@ import { FooterWithDetails } from "@components/footer/FooterWithDetails";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Modal } from "@components/modal/Modal";
 import { Header } from "@components/header/Header";
-import { StyledTitle } from "@components/title/StyledTitle";
 import { HomeButton } from "@components/homeButton/HomeButton";
 import { getUserProgess } from "@services/userService";
 import { notify } from "@utils/notification";
@@ -21,18 +20,6 @@ export function HomePage(props) {
   const [doesUserFinishAllForms, setDoesUserFinishAllForms] = useState();
   const MainColor = "var(--main-color)";
 
-  const texteTitle1 = (
-    <div>La neutralité carbone des Jeux, c’est l’affaire de tous.</div>
-  );
-  const texetTitle2 = (
-    <div>
-      Paris 2024 a créé le
-      <span style={{ color: MainColor }}> COACH CLIMAT </span> pour vous aider à
-      mesurer et réduire votre
-      <span style={{ color: MainColor }}> empreinte carbone. 3 étapes </span>
-      pour estimer, comprendre & réduire, et s’engager
-    </div>
-  );
   useEffect(() => {
     getUserProgess()
       .then((response) => {
@@ -72,17 +59,16 @@ export function HomePage(props) {
       <div className="title-container-home">
         <div className="hero-container">
           <div className="hero-wrapper">
-            <StyledTitle
-              style={{
-                fontWeight: "bolder",
-                fontSize: "30px",
-                lineHeight: "2vw",
-                fontFamily: "Paris2024",
-                textTransform: "none",
-              }}
-              title1={texteTitle1}
-              title2={texetTitle2}
-            />
+            <div className="styled-title-container-home">
+              La neutralité carbone des Jeux, c’est l’affaire de tous. Paris
+              2024 a créé le
+              <span style={{ color: MainColor }}> COACH CLIMAT </span> pour vous
+              aider à mesurer et réduire votre
+              <span style={{ color: MainColor }}>
+                empreinte carbone. 3 étapes
+              </span>
+              pour estimer, comprendre & réduire, et s’engager
+            </div>
           </div>
         </div>
       </div>

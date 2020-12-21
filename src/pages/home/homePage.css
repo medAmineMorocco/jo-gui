@@ -39,9 +39,13 @@
   background-image: none;
 }
 
-.title-container-home .styled-title-container {
+.title-container-home .styled-title-container-home {
   color: white;
   text-transform: none;
+  font-size: 30px;
+  font-family: Paris2024Bold;
+  line-height: 3vw;
+  text-align: center;
 }
 
 .title-container-home .hero-wrapper {
@@ -73,7 +77,7 @@
   .footer-container-home .footer-container {
     height: 20vh;
   }
-  .title-container-home .styled-title-container {
+  .title-container-home .styled-title-container-home {
     font-size: 14px;
     line-height: 6vw;
     font-weight: 900;
@@ -96,7 +100,7 @@
   .footer-container-home .footer-container {
     height: 20vh;
   }
-  .title-container-home .styled-title-container {
+  .title-container-home .styled-title-container-home {
     font-size: 25px;
     line-height: 5vw;
     font-weight: 900;
