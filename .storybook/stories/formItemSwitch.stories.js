@@ -1,8 +1,8 @@
 import React from 'react';
+import { Form } from 'antd';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { ConfiguredForm } from '../ConfiguredForm';
 import { FormItemSwitch } from '@components/form/action/formItemSwitch/FormItemSwitch';
-import { Form, Button } from 'antd';
-import { Form as ConfiguredForm } from '@components/form/Form';
 import './stories.css';
 
 export default {
@@ -10,26 +10,17 @@ export default {
 	decorators: [withKnobs],
 };
 
-const onFinish = (values) => {
-	console.log('success', values);
-};
-
 export const formItemSwitch = () => {
 	const [form] = Form.useForm();
 
 	return (
-		<ConfiguredForm form={form} onFinish={onFinish}>
+		<ConfiguredForm form={form}>
 			<FormItemSwitch
 				form={form}
 				name="itemSwitchValue"
 				switchValue={boolean('disabled', false)}
 				setSwitchValue={() => {}}
 			/>
-			<Form.Item>
-				<Button type="primary" htmlType="submit">
-					Submit
-				</Button>
-			</Form.Item>
 		</ConfiguredForm>
 	);
 };

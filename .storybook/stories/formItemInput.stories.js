@@ -1,30 +1,22 @@
 import React from 'react';
 import {withKnobs, text} from "@storybook/addon-knobs";
-import {Form, Button} from "antd";
-import {Form as ConfiguredForm} from "@components/form/Form";
+import {Form} from "antd";
+import {ConfiguredForm} from "../ConfiguredForm";
 import {FormItemInput} from '@components/form/formItemInput/FormItemInput';
 import "./stories.css";
 
 
 export default {title: 'Data Entry/FormItemInput', decorators: [withKnobs]};
 
-const onFinish = (values) => {
-    console.log('success', values);
-};
+export const formItemInput = () => {
+    const [form] = Form.useForm();
 
-export const formItemInput = () =>
-    <ConfiguredForm
-        onFinish={onFinish}
-        basicInputs={["without"]}
-    >
+    return <ConfiguredForm
+        form={form}>
         <FormItemInput
             name="without"
             label={text('label', 'example of question')}
             rules={[{required: true, message: "⚠ Please input your password!"}]}
         />
-        <Form.Item>
-            <Button type="primary" htmlType="submit">
-                Click here to see the error state
-            </Button>
-        </Form.Item>
     </ConfiguredForm>;
+}

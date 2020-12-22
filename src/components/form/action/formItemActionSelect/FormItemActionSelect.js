@@ -23,7 +23,6 @@ export function FormItemActionSelect({
       <Select
         size={isTablet ? "large" : "middle"}
         id={name}
-        aria-label="select-action"
         aria-expanded
         style={size ? { width: size } : { width: 80 }}
         dropdownClassName="select-action-dropdown"

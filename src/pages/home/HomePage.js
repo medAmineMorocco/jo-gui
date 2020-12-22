@@ -1,166 +1,83 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { FooterWithDetails } from "@components/footer/FooterWithDetails";
+import { scrollToTopOfThePage } from "@hooks/window";
 import { Modal } from "@components/modal/Modal";
 import { Header } from "@components/header/Header";
-import { Footer } from "@components/footer/Footer";
-import { StyledTitle } from "@components/title/StyledTitle";
-import { Section } from "@components/section/Section";
+import { HomeButton } from "@components/homeButton/HomeButton";
+import { getUserProgess } from "@services/userService";
+import { notify } from "@utils/notification";
 import {
-  HERO_TITLE1,
-  HERO_TITLE2,
-  HERO_DESCRIPTION,
-  FOOTER_START_ACTION,
   ABOUT_TITLE,
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
-  MAIN_DESC1,
-  MAIN_DESC2,
-  MAIN_DESC3,
-  SECTION1_TITLE,
-  SECTION1_PARAG0,
-  SECTION1_PARAG1,
-  SECTION1_PARAG2,
-  SECTION1_PARAG3,
-  SECTION2_TITLE,
-  SECTION2_PARAG1,
-  SECTION2_PARAG2,
-  SECTION2_PARAG3,
-  SECTION3_TITLE,
-  SECTION3_PARAG1,
-  SECTION3_PARAG2,
-  SECTION3_PARAG3,
-  SECTION3_PARAG4,
-  WEBSITE_INFO_MSG,
-  WEBSITE_URL,
-  CONTACT_LEGAL_MENTION,
-  CONTACT_ACCESSIBILITY_SITES,
-  CONTACT_PRIVACY_POLICY,
-  CONTACT_COOKIES,
-  CONTACT_CALL_TENDER,
-  CONTACT_TERMS_PURCHASE,
 } from "@utils/constants";
-import { scrollToTopOfThePage } from "@hooks/window";
-import { useHistory } from "react-router-dom";
 import "./homePage.css";
 
 export function HomePage(props) {
   const [isVisible, setVisible] = useState(false);
-  const history = useHistory();
+  const [doesUserFinishAllForms, setDoesUserFinishAllForms] = useState();
+  const MainColor = "var(--main-color)";
 
-  const onStart = () => {
-    history.push("/intro");
-  };
   useEffect(() => {
+    getUserProgess()
+      .then((response) => {
+        if (response.progress === "RESULTATS") {
+          setDoesUserFinishAllForms(true);
+        } else {
+          setDoesUserFinishAllForms(false);
+        }
+      })
+      .catch(() => {
+        notify("Il y a une erreur , veuillez réesayer ultérieurement");
+      });
     scrollToTopOfThePage();
   }, []);
 
   return (
-    <Fragment>
-      <Header>
-        <img className="logo" src="/images/paris-2024.png" alt="paris-2024" />
-        <Button
-          className="show-overlay-btn"
-          type="primary"
-          shape="circle"
-          onClick={() => setVisible(true)}
-        >
-          <span>i</span>
-        </Button>
-      </Header>
+    <>
+      <div className="header-container-home">
+        <Header>
+          <img className="logo" src="/images/paris-2024.png" alt="paris-2024" />
+          <Button
+            className="show-overlay-btn"
+            type="primary"
+            shape="circle"
+            onClick={() => setVisible(true)}
+          >
+            <span>i</span>
+          </Button>
+        </Header>
+      </div>
       <Modal
         title={ABOUT_TITLE}
         content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />
-      <div className="hero-container">
-        <div className="hero-wrapper">
-          <StyledTitle
-            style={{
-              fontWeight: "bolder",
-              fontSize: "5vw",
-              lineHeight: "4vw",
-            }}
-            title1={HERO_TITLE1}
-            title2={HERO_TITLE2}
-          />
-          <div className="hero-description">{HERO_DESCRIPTION}</div>
+      <div className="title-container-home">
+        <div className="hero-container">
+          <div className="hero-wrapper">
+            <div className="styled-title-container-home">
+              La neutralité carbone des Jeux, c’est l’affaire de tous. Paris
+              2024 a créé le
+              <span style={{ color: MainColor }}> COACH CLIMAT </span> pour vous
+              aider à mesurer et réduire votre
+              <span style={{ color: MainColor }}>
+                empreinte carbone. 3 étapes
+              </span>
+              pour estimer, comprendre & réduire, et s’engager
+            </div>
+          </div>
         </div>
       </div>
-      <div className="main-description">
-        <p>{MAIN_DESC1}</p>
-        <p>{MAIN_DESC2}</p>
-        <p>{MAIN_DESC3}</p>
+      <div className="content-container-home">
+        <HomeButton doesUserFinishAllForms={doesUserFinishAllForms} />
       </div>
-
-      <Section
-        title={SECTION1_TITLE}
-        paragraphs={[
-          SECTION1_PARAG0,
-          SECTION1_PARAG1,
-          SECTION1_PARAG2,
-          SECTION1_PARAG3,
-        ]}
-        style={{ background: "#009494" }}
-        imgStyle={{ backgroundImage: 'url("/images/section-1.jpg")' }}
-        imgPosition="right"
-      />
-
-      <Section
-        title={SECTION2_TITLE}
-        paragraphs={[SECTION2_PARAG1, SECTION2_PARAG2, SECTION2_PARAG3]}
-        style={{ background: "#FF8675" }}
-        imgStyle={{ backgroundImage: 'url("/images/section-2.jpg")' }}
-        imgPosition="left"
-      />
-
-      <div className="intro-last-section">
-        <Section
-          title={SECTION3_TITLE}
-          paragraphs={[
-            SECTION3_PARAG1,
-            SECTION3_PARAG2,
-            SECTION3_PARAG3,
-            SECTION3_PARAG4,
-          ]}
-          style={{ background: "#003B55" }}
-        />
+      <div className="footer-container-home">
+        <FooterWithDetails />
       </div>
-
-      <div className="section-footer">
-        <div className="section-divider"></div>
-        <div className="website-info">{WEBSITE_INFO_MSG}</div>
-        <div className="website-url">
-          <a href="#0">{WEBSITE_URL}</a>
-        </div>
-      </div>
-
-      <div className="contacts">
-        <div className="contacts-urls">
-          <a href="#0">{CONTACT_LEGAL_MENTION}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_PRIVACY_POLICY}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_COOKIES}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_CALL_TENDER}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_TERMS_PURCHASE}</a>
-        </div>
-      </div>
-
-      <div className="footer-picture"></div>
-
-      <Footer style={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          className="footer-action-start"
-          type="primary"
-          shape="round"
-          onClick={onStart}
-        >
-          {FOOTER_START_ACTION} <ArrowRightOutlined />
-        </Button>
-      </Footer>
-    </Fragment>
+    </>
   );
 }

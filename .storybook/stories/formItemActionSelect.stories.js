@@ -1,16 +1,13 @@
 import React from 'react';
+import {Form} from "antd";
+import { ConfiguredForm } from '../ConfiguredForm';
 import { FormItemActionSelect } from '@components/form/action/formItemActionSelect/FormItemActionSelect';
-import { Form, Button } from 'antd';
-import { Form as ConfiguredForm } from '@components/form/Form';
 import './stories.css';
 
 export default { title: 'Data Entry/Reduction Action/FormItemActionSelect'};
 
-const onFinish = (values) => {
-	console.log('success', values);
-};
-
 export const formItemActionSelect = () => {
+
 	const [form] = Form.useForm();
 
 	const options = [
@@ -20,13 +17,8 @@ export const formItemActionSelect = () => {
 		{ text: '4', value: 4 },
 	];
 	return (
-		<ConfiguredForm form={form} onFinish={onFinish}>
+		<ConfiguredForm form={form}>
 			<FormItemActionSelect form={form} name="firstSelect" options={options} />
-			<Form.Item>
-				<Button type="primary" htmlType="submit">
-					Submit
-				</Button>
-			</Form.Item>
 		</ConfiguredForm>
 	);
 };

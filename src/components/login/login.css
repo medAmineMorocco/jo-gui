@@ -34,6 +34,24 @@
   line-height: 23px;
 }
 
+.login-submit {
+  margin-top: 8px;
+}
+
+.CGU-container {
+  display: flex;
+}
+
+.CGU-description {
+  margin-left: 8px;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.CGU-msg-error {
+  color: var(--error-color);
+}
+
 @media (max-width: 767px) {
   .login-styled-title {
     margin-bottom: 60px;

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Form } from "antd";
 import { StyledTitle } from "@components/title/StyledTitle";
 import { BoxSides } from "@components/box/BoxSides";
@@ -8,14 +8,20 @@ import { useHistory } from "react-router-dom";
 import { FormItemInput } from "@components/form/formItemInput/FormItemInput";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { Button } from "@components/button/Button";
+import { FormItemPassword } from "@components/form/formItemPassword/FormItemPassword";
+import { Checkbox } from "@components/form/checkbox/Checkbox";
 
 import {
   HERO_TITLE1,
   HERO_TITLE2,
   IDENTIFIER,
+  PASSWORD,
   LOGIN,
   IDENTIFIER_REQUIRED,
+  PASSWORD_REQUIRED,
   IDENTIFIER_NOT_VALID,
+  TERMS_DESCRIPTION,
+  CGU_MSG_ERROR,
 } from "@utils/constants";
 import { notify } from "@utils/notification";
 import "./login.css";
@@ -24,24 +30,49 @@ export function Login() {
   const isMobileOrTablet = useTabletOrMobileSize();
   const history = useHistory();
   const [form] = Form.useForm();
+  const [isCGUchecked, setCGUchecked] = useState(false);
+  const [isCGUmsgErrorShown, setShowCGUmsgError] = useState(false);
 
   const onFinish = (values) => {
-    login(values.email)
-      .then(() => {
-        history.push("/home");
-      })
-      .catch(async (error) => {
-        if (error.status === 400) {
-          form.setFields([
-            {
-              name: "email",
-              errors: [IDENTIFIER_NOT_VALID],
-            },
-          ]);
-        } else {
-          notify(error.toString());
-        }
-      });
+    if (isCGUchecked) {
+      setShowCGUmsgError(false);
+      login(values.email, values.password)
+        .then(() => {
+          history.push("/home");
+        })
+        .catch(async (error) => {
+          if (error.status === 400) {
+            form.setFields([
+              {
+                name: "email",
+                errors: [IDENTIFIER_NOT_VALID],
+              },
+            ]);
+          } else {
+            notify(error.toString());
+          }
+        });
+    } else {
+      setShowCGUmsgError(true);
+    }
+  };
+
+  const onFinishFailed = () => {
+    if (isCGUchecked) {
+      setShowCGUmsgError(false);
+    } else {
+      setShowCGUmsgError(true);
+    }
+  };
+
+  const onCGUcheckChange = (value) => {
+    setCGUchecked(value);
+  };
+
+  const openCGU = () => {
+    const CGU_DOCUMENT_URL =
+      "https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf";
+    window.open(CGU_DOCUMENT_URL);
   };
 
   const titleWithForm = (
@@ -55,6 +86,7 @@ export function Login() {
         name="login"
         form={form}
         onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
         basicInputs={["login_email"]}
       >
         <FormItemInput
@@ -69,6 +101,18 @@ export function Login() {
             },
           ]}
         />
+        <FormItemPassword
+          label={PASSWORD}
+          name="password"
+          rules={[{ required: true, message: PASSWORD_REQUIRED }]}
+        />
+        <div className="CGU-container">
+          <Checkbox value={isCGUchecked} onChange={onCGUcheckChange} />
+          <span className="CGU-description" onClick={openCGU}>
+            {TERMS_DESCRIPTION}
+          </span>
+        </div>
+        {isCGUmsgErrorShown && <p className="CGU-msg-error">{CGU_MSG_ERROR}</p>}
 
         <Form.Item className="login-submit">
           <Button text={LOGIN} htmlType="submit" style={{ float: "right" }} />
