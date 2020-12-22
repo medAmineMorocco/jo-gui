@@ -27,7 +27,7 @@ export function getResponsesOfStep(thematic) {
   };
 
   return fetchWrapper(
-    getBackendUrl() + "/api/response/thematic",
+    getBackendUrl() + `/api/response/thematic/${thematic}`,
     requestOptions
   )
     .then((response) => response.json())

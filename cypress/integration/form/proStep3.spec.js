@@ -35,7 +35,7 @@ context("Form | Vie professionnelle - Restauration step3", () => {
 
   it("should submit form", () => {
     cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep3/progress.json', 'progressJSON');
-    cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/proStep3/state.json', 'getResponsesOfStep3');
+    cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/proStep3/state.json', 'getResponsesOfStep3');
     cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();

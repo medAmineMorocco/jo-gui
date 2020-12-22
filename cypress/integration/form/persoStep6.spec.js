@@ -16,7 +16,7 @@ context('Form | Déplacements personnels step', () => {
 
 	it('should show Déplacements step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -38,7 +38,7 @@ context('Form | Déplacements personnels step', () => {
 
 	it('should submit form', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
 		cy.stubRequest('POST', '**/api/response/thematic', 200);
 
 		cy.window().then((win) => {
@@ -142,7 +142,7 @@ context('Form | Déplacements personnels step', () => {
 
 	it('should not submit form when questions are not filled', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep6/empty-state.json', 'getResponsesOfStep6');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/empty-state.json', 'getResponsesOfStep6');
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -168,7 +168,7 @@ context('Form | Déplacements personnels step', () => {
 	if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
 		it('should not exceed question value in its reduction action', () => {
 			cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
-			cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
+			cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');
 
 			cy.window().then((win) => {
 				win.sessionStorage.clear();

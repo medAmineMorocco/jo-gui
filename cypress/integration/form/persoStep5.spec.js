@@ -16,7 +16,7 @@ context('Form | alimentation step', () => {
 
 	it('should show alimentation step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep5/state.json', 'getResponsesOfStep5');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep5/state.json', 'getResponsesOfStep5');
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -52,7 +52,7 @@ context('Form | alimentation step', () => {
 
 	it('should submit form', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep5/state.json', 'getResponsesOfStep5');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep5/state.json', 'getResponsesOfStep5');
 		cy.stubRequest('POST', '**/api/response/thematic', 200);
 
 		cy.window().then((win) => {
@@ -125,7 +125,7 @@ context('Form | alimentation step', () => {
 
 	it('should not submit form when questions are not filled', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/persoStep5/empty-state.json', 'getResponsesOfStep5');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep5/empty-state.json', 'getResponsesOfStep5');
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);

@@ -35,7 +35,7 @@ context("Form | introduction step", () => {
 
   it("should submit form", () => {
     cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
-    cy.stubRequest('GET', '**/api/response/thematic', 200, 'form/proStep0/state.json', 'getResponsesOfStep0');
+    cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/proStep0/state.json', 'getResponsesOfStep0');
     cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();
