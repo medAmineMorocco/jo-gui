@@ -65,7 +65,7 @@ export function Overlay(props) {
         className="modal-close-btn-modal"
         type="primary"
         shape="circle"
-        icon={<CloseOutlined />}
+        icon={<CloseOutlined aria-label="bouton de fermeture" />}
         onClick={() => SetVisible({ modalVisible: false, closeButton: "none" })}
         style={{ display: closeButton }}
       />

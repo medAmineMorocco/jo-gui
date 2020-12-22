@@ -28,7 +28,7 @@ export function BackButton({ onClick }) {
       ref={backButtonRef}
       className="back-btn"
       shape="circle"
-      icon={<ArrowLeftOutlined />}
+      icon={<ArrowLeftOutlined aria-label="flèche précédente" />}
       onClick={onDefaultClick}
       onFocus={onFocus}
       onBlur={onBlur}

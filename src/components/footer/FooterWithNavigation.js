@@ -27,7 +27,7 @@ export function FooterWithNavigation({ previous, next, step }) {
             onClick={onNextClick}
             form={step}
             text="suite"
-            icon={<ArrowRightOutlined />}
+            icon={<ArrowRightOutlined aria-label="flèche suivante" />}
           />
         </div>
       </div>
