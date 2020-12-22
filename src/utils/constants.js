@@ -1,9 +1,15 @@
 /* Login Page */
 export const IDENTIFIER = "E-mail";
+export const PASSWORD = "Mot de passe";
 export const LOGIN = "ok";
 export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre email";
+export const PASSWORD_REQUIRED = "⚠ Veuillez renseigner votre Mot de passe";
 export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
-/* Home Page */
+export const TERMS_DESCRIPTION =
+  "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
+export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
+
+/* Méthologie Page */
 export const HERO_TITLE1 = "Ton coach";
 export const HERO_TITLE2 = "carbone";
 export const HERO_DESCRIPTION =
@@ -107,6 +113,22 @@ export const INTRODUCTION_QUESTION2_ERROR_MSG =
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
+
+// new page introduction
+export const INTRODUCTION_TITLE1 = "Temps du formulaire :";
+export const INTRODUCTION_DESCRIPTION2 =
+  "Idéalement, se munir de ses factures énergétiques et se péparer à se remémorer ses voyages !";
+export const INTRODUCTION_TITLE2 = "Documents :";
+export const INTRODUCTION_DESCRIPTION3 =
+  "Afin de se projeter d'abord dans sa vie professionnelle, puis dans sa vie personnelle.";
+export const INTRODUCTION_TITLE3 = "Questionnaire en 2 temps :";
+export const INTRODUCTION_DESCRIPTION4 =
+  'Le coach climat conseille de se référer à une année "classique", comme 2019 pour calculer une empreinte de référence à partir de laquelle de fixer des objectifs.';
+export const INTRODUCTION_TITLE4 = "Empreinte de référence :";
+export const INTRODUCTION_DESCRIPTION1 =
+  "Prévoir 15 minutes de son emploi du temps.";
+export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
+export const LINK_HOME_ICON = "PARIS2024";
 
 // Au bureau
 export const TITLE_ORDINATEURS =

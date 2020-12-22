@@ -15,12 +15,13 @@ context('Intro page', () => {
 	];
 
 	it('should show intro page', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
 				win.sessionStorage.clear();
 				cy.login('email@paris2024.org');
-
+                cy.visit("/metho");
 				cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
 
 				cy.url()
@@ -33,12 +34,14 @@ context('Intro page', () => {
 	});
 
 	it('should open infos modal', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
 				win.sessionStorage.clear();
 				cy.login('email@paris2024.org');
-
+				cy.visit("/intro");
+				
 				const openModalBtnSelector = '.header-container > .size-picture > .ant-btn';
 				cy.get(openModalBtnSelector).click();
 
@@ -57,9 +60,9 @@ context('Intro page', () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			cy.login('email@paris2024.org');
-			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-			cy.get('button span:contains(suite)').click();
-			cy.url().should('include', '/intro');
+			cy.visit("/intro");
+
+			cy.url().should('include', '/home');
 		});
 	});
 
@@ -69,13 +72,9 @@ context('Intro page', () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			cy.login('email@paris2024.org');
-
-			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-
-			cy.get('.footer-navigation-right span').contains('Résultats').should('exist');
-
-			cy.get('button span:contains(suite)').click();
-			cy.url().should('include', '/results');
+			cy.visit("/intro");
+			
+			cy.url().should('include', '/home');
 		});
 	});
 
@@ -85,12 +84,9 @@ context('Intro page', () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			cy.login('email@paris2024.org');
+			cy.visit("/intro");
 
-			cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
-
-			cy.get('.footer-navigation-right span').contains('Vie professionnelle').should('exist');
-
-			cy.get('button span:contains(suite)').click();
+			cy.get('button span:contains(FAIRE LE TEST)').click();
 			cy.url().should('include', '/form');
 		});
 	});

@@ -19,9 +19,11 @@
   font-weight: bold;
   line-height: 16px;
   text-transform: uppercase;
+  margin-right: 50px;
 }
 
-.footer-action-start:hover {
+.footer-action-start:hover,
+.footer-action-return:hover {
   color: black;
 }
 

@@ -23,7 +23,7 @@ export function ProStep0({ step, setNextStep }) {
 
   const spanWithEmoji = () => {
     return (
-      <span role="img" aria-label="emojis">
+      <span role="img" aria-label="emoji du clin d'oeil">
         Pour une année "type" &#128521;
       </span>
     );

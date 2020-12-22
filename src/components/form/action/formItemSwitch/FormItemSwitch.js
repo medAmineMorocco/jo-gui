@@ -10,12 +10,7 @@ export function FormItemSwitch({ name, switchValue, setSwitchValue }) {
 
   return (
     <FormItem className="switch-action" name={name}>
-      <Switch
-        id="switch-selector"
-        aria-label="action"
-        onChange={onChange}
-        checked={switchValue}
-      />
+      <Switch id="switch-selector" onChange={onChange} checked={switchValue} />
     </FormItem>
   );
 }

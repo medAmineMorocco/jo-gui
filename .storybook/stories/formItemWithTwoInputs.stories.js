@@ -1,15 +1,12 @@
 import React from 'react';
 import {withKnobs, select, text} from '@storybook/addon-knobs';
-import { Form, Button } from 'antd';
-import { Form as ConfiguredForm } from '@components/form/Form';
+import { Form } from 'antd';
+import { ConfiguredForm } from '../ConfiguredForm';
 import { FormItemWithTwoInputs } from '@components/form/formItemWithTwoInputs/FormItemWithTwoInputs';
 import './stories.css';
 
 export default { title: 'Data Entry/FormItemWithTwoInputs', decorators: [withKnobs] };
 
-const onFinish = (values) => {
-	console.log('success', values);
-};
 
 export const formItemWithTwoInputs = () => {
 	const [form] = Form.useForm();
@@ -42,8 +39,6 @@ export const formItemWithTwoInputs = () => {
 	return (
 		<ConfiguredForm
 			form={form}
-			onFinish={onFinish}
-			onFinishFailed={() => console.log('failed')}
 		>
 			<FormItemWithTwoInputs
 				form={form}
@@ -52,11 +47,6 @@ export const formItemWithTwoInputs = () => {
 				incomingChoice={incomingChoice}
 				questions={questions}
 			/>
-			<Form.Item>
-				<Button type="primary" htmlType="submit">
-					Click here to see the error state
-				</Button>
-			</Form.Item>
 		</ConfiguredForm>
 	);
 };
