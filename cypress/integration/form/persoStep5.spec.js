@@ -63,26 +63,10 @@ context('Form | alimentation step', () => {
 
 			cy.count('#5f5570e5d882c', 1);
 
-			cy.checkMeals('#alimentation_question2', {
-				monday: '5f5570ff217a4',
-				tuesday: '5f5570ff217a4',
-				wednesday: '5f55715960e9a',
-				thursday: '5f55715960e9a',
-				friday: '5f55715960e9a',
-			});
-
-			cy.checkMeals('#alimentation_question3', {
-				saturday: '5f5572735716e',
-				sunday: '5f5572735716e',
-			});
-
-			cy.checkMeals('#alimentation_question4', {
-				monday: '5f5572e23ac37',
-				tuesday: '5f5572e23ac37',
-				wednesday: '5f5572f94a692',
-				thursday: '5f5572f94a692',
-				friday: '5f55732d44ed6',
-			});
+			cy.pickValue('.nombres-repas .slider-container-0', '1');
+			cy.pickValue('.nombres-repas .slider-container-1', '4');
+			cy.pickValue('.nombres-repas .slider-container-2', '3');
+			cy.pickValue('.nombres-repas .slider-container-3', '1');
 
 			cy.count('#5f557459e6c45', 2);
 			cy.count('#5f5574ead218e', 3);
@@ -91,59 +75,24 @@ context('Form | alimentation step', () => {
 			cy.count('#5f55754725a12', 4);
 
 			cy.submitForm();
+
 			cy.get('.footer-navigation-left span').contains('Alimentation').should('exist');
 			cy.get('.footer-navigation-right span').contains('Services publics').should('exist');
 			cy.get('.footer-buttons-left button').click();
 
 			cy.get('#5f5570e5d882c > .flex-container-button > #result-counter').contains('1').should('exist');
 
-			cy.expectToBeChecked([
-				'monday-5f5570ff217a4',
-				'tuesday-5f5570ff217a4',
-
-				'wednesday-5f55715960e9a',
-				'thursday-5f55715960e9a',
-				'friday-5f55715960e9a',
-
-				'saturday-5f5572735716e',
-				'sunday-5f5572735716e',
-
-				'monday-5f5572e23ac37',
-				'tuesday-5f5572e23ac37',
-				'wednesday-5f5572f94a692',
-				'thursday-5f5572f94a692',
-				'friday-5f55732d44ed6',
-			]);
+			cy.get('.nombres-repas .slider-container-0 .ant-slider-handle').should('have.attr', 'aria-valuenow', '1');
+			cy.get('.nombres-repas .slider-container-1 .ant-slider-handle').should('have.attr', 'aria-valuenow', '4');
+			cy.get('.nombres-repas .slider-container-2 .ant-slider-handle').should('have.attr', 'aria-valuenow', '3');
+			cy.get('.nombres-repas .slider-container-3 .ant-slider-handle').should('have.attr', 'aria-valuenow', '1');
+			cy.get('.nombres-repas .slider-container-4 .ant-slider-handle').should('have.attr', 'aria-valuenow', '0');
 
 			cy.get('#5f557459e6c45 > .flex-container-button > #result-counter').contains('2').should('exist');
 			cy.get('#5f5574ead218e > .flex-container-button > #result-counter').contains('3').should('exist');
 			cy.get('#5f557508ea4c5 > .flex-container-button > #result-counter').contains('4').should('exist');
 			cy.get('#5f557531751f2 > .flex-container-button > #result-counter').contains('3').should('exist');
 			cy.get('#5f55754725a12 > .flex-container-button > #result-counter').contains('4').should('exist');
-		});
-	});
-
-	it('should not submit form when questions are not filled', () => {
-		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep5/empty-state.json', 'getResponsesOfStep5');
-
-		sizes.forEach((size) => {
-			cy.viewport(size.device);
-			cy.window().then((win) => {
-				win.sessionStorage.clear();
-				cy.login('email@paris2024.org');
-				cy.visit('/form');
-				cy.wait(1000);
-
-				cy.submitForm();
-				cy.get('.ant-form-item-explain div:contains("⚠ Merci de saisir votre réponse")')
-					.should(($el) => {
-						expect($el).to.have.length(3);
-					})
-					.then(() => {
-						cy.takeSnapshots('form - alimentation errors', size);
-					});
-			});
 		});
 	});
 });

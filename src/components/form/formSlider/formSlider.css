@@ -1,3 +1,7 @@
+.slider-container {
+  width: 100%;
+}
+
 .flex-slider-container {
   display: flex;
   align-items: flex-start;
@@ -36,6 +40,10 @@
 
 .form-slider-component {
   margin-bottom: 0px;
+}
+
+.slider-component {
+  display: flex;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {

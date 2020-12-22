@@ -7,39 +7,23 @@
 				},
 				{
 					"question": "5f5570ff217a4",
-					"response": ["monday", "tuesday"]
+					"response": 1
 				},
 				{
 					"question": "5f55715960e9a",
-					"response": ["wednesday", "thursday", "friday"]
+					"response": 4
 				},
 				{
 					"question": "5f557184101ce",
-					"response": []
+					"response": 3
 				},
 				{
-					"question": "5f5572735716e",
-					"response": ["sunday", "saturday"]
+					"question": "5f5550724627d",
+					"response": 1
 				},
 				{
-					"question": "5f5572b1b9be9",
-					"response": []
-				},
-				{
-					"question": "5f5572cda4e57",
-					"response": []
-				},
-				{
-					"question": "5f5572e23ac37",
-					"response": ["monday", "tuesday"]
-				},
-				{
-					"question": "5f5572f94a692",
-					"response": ["wednesday", "thursday"]
-				},
-				{
-					"question": "5f55732d44ed6",
-					"response": ["friday"]
+					"question": "5f5550724638h",
+					"response": 0
 				},
 				{
 					"question": "5f557459e6c45",

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { Slider } from "antd";
-import { Tooltip } from "antd";
-import { getColor } from "@utils/cssUtil";
-import { FormItem } from "@components/form/formItem/FormItem";
+import { Slider, Tooltip } from "antd";
 import { QuestionCircleFilled } from "@ant-design/icons";
+import { FormItem } from "@components/form/formItem/FormItem";
+import { getColor } from "@utils/cssUtil";
 import "./formSlider.css";
 
-export function FormSlider({ form, labels, tooltipTitle, questions }) {
+export function FormSlider({
+  form,
+  labels,
+  tooltipTitle,
+  questions,
+  isInline,
+}) {
   const mainColor = getColor("--main-color");
   const shade = getColor("--bg-color-shade-3");
   const [color, setColor] = useState(shade);
@@ -58,17 +63,20 @@ export function FormSlider({ form, labels, tooltipTitle, questions }) {
       name={question.name}
       key={i + 1}
     >
-      <>
+      <div className={isInline ? "slider-component" : ""}>
         <div className="flex-slider-container">
           <div className="flex-slider-item">
             <div className="flex-container-label">
               {question.logo && (
                 <span className="svg-logo-slider">{question.logo}</span>
               )}
-              <span style={{ color: "white" }}>{question.label}</span>
+              {!isInline && (
+                <span style={{ color: "white" }}>{question.label}</span>
+              )}
             </div>
           </div>
         </div>
+
         <div className={`slider-container slider-container-${i}`}>
           <Slider
             dotStyle={{ borderColor: shade, backgroundColor: "black" }}
@@ -105,7 +113,7 @@ export function FormSlider({ form, labels, tooltipTitle, questions }) {
             value={typeof question.value === "number" ? question.value : 0}
           />
         </div>
-      </>
+      </div>
     </FormItem>
   ));
 

@@ -19,28 +19,12 @@ export const persostep5State = (values) => {
         response: values["5f557184101ce"],
       },
       {
-        question: "5f5572735716e",
-        response: values["5f5572735716e"],
+        question: "5f5550724627d",
+        response: values["5f5550724627d"],
       },
       {
-        question: "5f5572b1b9be9",
-        response: values["5f5572b1b9be9"],
-      },
-      {
-        question: "5f5572cda4e57",
-        response: values["5f5572cda4e57"],
-      },
-      {
-        question: "5f5572e23ac37",
-        response: values["5f5572e23ac37"],
-      },
-      {
-        question: "5f5572f94a692",
-        response: values["5f5572f94a692"],
-      },
-      {
-        question: "5f55732d44ed6",
-        response: values["5f55732d44ed6"],
+        question: "5f5550724638h",
+        response: values["5f5550724638h"],
       },
       {
         question: "5f557459e6c45",

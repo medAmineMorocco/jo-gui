@@ -1,19 +1,21 @@
 import { Form } from "antd";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { ReactComponent as TeaSvg } from "@components/form/formSlider/tea.svg";
 import { ReactComponent as CapsuleSvg } from "@components/form/formSlider/capsule.svg";
 import { ReactComponent as CoffeeSvg } from "@components/form/formSlider/coffee.svg";
+import { ReactComponent as MeatSvg } from "@components/form/formSlider/meat.svg";
+import { ReactComponent as ChickenSvg } from "@components/form/formSlider/chicken.svg";
+import { ReactComponent as VegetablesSvg } from "@components/form/formSlider/vegetables.svg";
+import { ReactComponent as FishSvg } from "@components/form/formSlider/fish.svg";
+import { ReactComponent as EggSvg } from "@components/form/formSlider/egg.svg";
 import { FormSlider } from "@components/form/formSlider/FormSlider";
-import { MealsOfWeek } from "@components/form/mealsOfWeek/MealsOfWeek";
 import { stepState } from "./ProStep3State";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import {
   REPAS_QUESTION1,
-  REPAS_QUESTION1_ERROR_MSG,
   SAVIER_VOUS_RESTAU,
-  REPAS_QUESTION1_INFO,
   CURSEUR_BOISSONS,
 } from "@utils/constants";
 import {
@@ -21,7 +23,6 @@ import {
   getResponsesOfStep,
 } from "@services/responseService";
 import {
-  question1_subQuestions,
   actionReductionDataDejeuners,
   curseurQuestion,
   actionReductionDataCafe,
@@ -32,28 +33,24 @@ import { notify } from "@utils/notification";
 export function ProStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
 
-  const mealBetail = "5f55500f273e7";
-  const mealPoulet = "5f5550293a164";
-  const actionBetail = "5f60a03929c5e";
-  const actionPoulet = "5f60a04cb2a94";
-
   const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
-  const [slider1Value, setSlider1Value] = useState(0);
-  const [slider2Value, setSlider2Value] = useState(0);
-  const [slider3Value, setSlider3Value] = useState(0);
-  const [question1State, setQuestion1State] = useState({
-    monday: null,
-    tuesday: null,
-    wednesday: null,
-    thursday: null,
-    friday: null,
-  });
 
-  const getValueLessThanQuestionValue = (options, questionValue) => {
-    return options.reverse().find(({ value }) => value <= questionValue).value;
-  };
+  const [slider1Value, setSlider1Value] = useState(0);
+  const [slider1Max, setSlider1Max] = useState(5);
+  const [slider2Value, setSlider2Value] = useState(0);
+  const [slider2Max, setSlider2Max] = useState(5);
+  const [slider3Value, setSlider3Value] = useState(0);
+  const [slider3Max, setSlider3Max] = useState(5);
+  const [slider4Value, setSlider4Value] = useState(0);
+  const [slider4Max, setSlider4Max] = useState(5);
+  const [slider5Value, setSlider5Value] = useState(0);
+  const [slider5Max, setSlider5Max] = useState(5);
+
+  const [slider6Value, setSlider6Value] = useState(0);
+  const [slider7Value, setSlider7Value] = useState(0);
+  const [slider8Value, setSlider8Value] = useState(0);
 
   const handleSwitch1Change = (isChecked) => {
     setSwitch1Value(isChecked);
@@ -63,23 +60,28 @@ export function ProStep3({ step, setNextStep }) {
     setSwitch2Value(isChecked);
   };
 
-  const setResponsesToMealsOfWeek = useCallback(
-    (mainQuestion, choices, questionsResponses) => {
-      const mainQuestionResponse = {};
-      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-        (day) => {
-          const { question } = questionsResponses.find(({ response }) =>
-            response.includes(day)
-          );
-          mainQuestionResponse[day] = question;
-        }
-      );
-      form.setFieldsValue({
-        [mainQuestion]: mainQuestionResponse,
-      });
-    },
-    [form]
-  );
+  useEffect(() => {
+    const getSliderMaxValues = (val1, val2, val3, val4) => {
+      const result = 9 - val1 - val2 - val3 - val4;
+      return result < 0 ? 0 : result;
+    };
+
+    setSlider1Max(
+      getSliderMaxValues(slider2Value, slider3Value, slider4Value, slider5Value)
+    );
+    setSlider2Max(
+      getSliderMaxValues(slider1Value, slider3Value, slider4Value, slider5Value)
+    );
+    setSlider3Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider4Value, slider5Value)
+    );
+    setSlider4Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider5Value)
+    );
+    setSlider5Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider4Value)
+    );
+  }, [slider1Value, slider2Value, slider3Value, slider4Value, slider5Value]);
 
   useEffect(() => {
     scrollToTopOfThePage();
@@ -100,46 +102,16 @@ export function ProStep3({ step, setNextStep }) {
         });
       });
 
-      const choices = ["5f55500f273e7", "5f5550293a164", "5f5550530eaf3"];
-      setResponsesToMealsOfWeek(
-        "repas_question1",
-        choices,
-        stepState.questions.filter(({ question }) => choices.includes(question))
-      );
+      setSlider1Value(form.getFieldValue("5f55500f273e7"));
+      setSlider2Value(form.getFieldValue("5f5550293a164"));
+      setSlider3Value(form.getFieldValue("5f5550530eaf3"));
+      setSlider4Value(form.getFieldValue("5f5550724627c"));
+      setSlider5Value(form.getFieldValue("5f5550724638g"));
 
-      setQuestion1State(form.getFieldValue("repas_question1"));
-      setSlider1Value(form.getFieldValue("5f5550724626b"));
-      setSlider2Value(form.getFieldValue("5f55508b92e6c"));
-      setSlider3Value(form.getFieldValue("5f5550b00730d"));
+      setSlider6Value(form.getFieldValue("5f5550724626b"));
+      setSlider7Value(form.getFieldValue("5f55508b92e6c"));
+      setSlider8Value(form.getFieldValue("5f5550b00730d"));
 
-      let nbrBetail = 0;
-      let nbrPoulet = 0;
-
-      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-        async (day) => {
-          if (form.getFieldValue("repas_question1")[day] === mealBetail) {
-            nbrBetail++;
-          } else if (
-            form.getFieldValue("repas_question1")[day] === mealPoulet
-          ) {
-            nbrPoulet++;
-          }
-        }
-      );
-
-      for (let i = 1; i <= nbrBetail; i++) {
-        actionReductionDataDejeuners[0].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-
-      for (let i = 1; i <= nbrPoulet; i++) {
-        actionReductionDataDejeuners[1].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
       setSwitch1Value(form.getFieldValue("restauration-switch-1"));
       setSwitch2Value(form.getFieldValue("restauration-switch-2"));
     };
@@ -147,7 +119,7 @@ export function ProStep3({ step, setNextStep }) {
     getResponsesOfStep("RESTAURATION")
       .then((stepState) => setReponsesOfStep(stepState))
       .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
-  }, [form, step, setResponsesToMealsOfWeek]);
+  }, [form, step]);
 
   const onFinish = (values) => {
     const submitButton = document.querySelector('[type="submit"]');
@@ -169,54 +141,6 @@ export function ProStep3({ step, setNextStep }) {
     setRender(Math.random);
   };
 
-  const onChangeMealsOfWeek = (data) => {
-    let nbrBetail = 0;
-    let nbrPoulet = 0;
-
-    ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-      async (day) => {
-        if (data[day] === mealBetail) {
-          nbrBetail++;
-        } else if (data[day] === mealPoulet) {
-          nbrPoulet++;
-        }
-      }
-    );
-
-    actionReductionDataDejeuners[0].options = [{ text: "0", value: 0 }];
-    actionReductionDataDejeuners[1].options = [{ text: "0", value: 0 }];
-
-    for (let i = 1; i <= nbrBetail; i++) {
-      actionReductionDataDejeuners[0].options.push({ text: `${i}`, value: i });
-    }
-
-    for (let i = 1; i <= nbrPoulet; i++) {
-      actionReductionDataDejeuners[1].options.push({ text: `${i}`, value: i });
-    }
-
-    if (data.monday) {
-      if (nbrBetail < form.getFieldValue(actionBetail)) {
-        const value = getValueLessThanQuestionValue(
-          actionReductionDataDejeuners[0].options,
-          nbrBetail
-        );
-        form.setFieldsValue({
-          [actionBetail]: value,
-        });
-      }
-
-      if (nbrPoulet < form.getFieldValue(actionPoulet)) {
-        const value = getValueLessThanQuestionValue(
-          actionReductionDataDejeuners[1].options,
-          nbrPoulet
-        );
-        form.setFieldsValue({
-          [actionPoulet]: value,
-        });
-      }
-    }
-  };
-
   return (
     <ConfiguredForm
       id={step}
@@ -232,16 +156,55 @@ export function ProStep3({ step, setNextStep }) {
           </span>
         </div>
 
-        <MealsOfWeek
-          form={form}
-          name="repas_question1"
-          questions={question1_subQuestions}
-          label={REPAS_QUESTION1}
-          tooltipTitle={REPAS_QUESTION1_INFO}
-          errorMsg={REPAS_QUESTION1_ERROR_MSG}
-          state={question1State}
-          onChange={onChangeMealsOfWeek}
-        />
+        <div className="nombres-repas">
+          <FormSlider
+            form={form}
+            labels={REPAS_QUESTION1}
+            questions={[
+              curseurQuestion(
+                "",
+                "5f55500f273e7",
+                <MeatSvg />,
+                slider1Max,
+                slider1Value,
+                setSlider1Value
+              ),
+              curseurQuestion(
+                "",
+                "5f5550293a164",
+                <ChickenSvg />,
+                slider2Max,
+                slider2Value,
+                setSlider2Value
+              ),
+              curseurQuestion(
+                "",
+                "5f5550724627c",
+                <FishSvg />,
+                slider3Max,
+                slider3Value,
+                setSlider3Value
+              ),
+              curseurQuestion(
+                "",
+                "5f5550724638g",
+                <EggSvg />,
+                slider4Max,
+                slider4Value,
+                setSlider4Value
+              ),
+              curseurQuestion(
+                "",
+                "5f5550530eaf3",
+                <VegetablesSvg />,
+                slider5Max,
+                slider5Value,
+                setSlider5Value
+              ),
+            ]}
+            isInline={true}
+          />
+        </div>
       </div>
 
       {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
@@ -268,22 +231,25 @@ export function ProStep3({ step, setNextStep }) {
                 "Café en capsule",
                 "5f5550724626b",
                 <CapsuleSvg />,
-                slider1Value,
-                setSlider1Value
+                10,
+                slider6Value,
+                setSlider6Value
               ),
               curseurQuestion(
                 "Café en vrac",
                 "5f55508b92e6c",
                 <CoffeeSvg />,
-                slider2Value,
-                setSlider2Value
+                10,
+                slider7Value,
+                setSlider7Value
               ),
               curseurQuestion(
                 "Thé",
                 "5f5550b00730d",
                 <TeaSvg />,
-                slider3Value,
-                setSlider3Value
+                10,
+                slider8Value,
+                setSlider8Value
               ),
             ]}
           />
