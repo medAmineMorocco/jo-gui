@@ -139,15 +139,9 @@ export function PersoStep6({ step, setNextStep }) {
       setQuestion3IncomingChoice(
         getNewChoice(form.getFieldValue("5f5575dc9b4ac"))
       );
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-      setReductionAction2Opened(
-        form.getFieldValue("action-reduction-switch-2")
-      );
-      setReductionAction3Opened(
-        form.getFieldValue("action-reduction-switch-3")
-      );
+      setReductionAction1Opened(form.getFieldValue("deplacement-switch-1"));
+      setReductionAction2Opened(form.getFieldValue("deplacement-switch-2"));
+      setReductionAction3Opened(form.getFieldValue("deplacement-switch-3"));
     };
 
     getResponsesOfStep("DEPLACEMENT")
@@ -257,7 +251,7 @@ export function PersoStep6({ step, setNextStep }) {
               <FormItemActionReduction
                 form={form}
                 selectDetail={actionReduction1_selectDetail}
-                switchName="action-reduction-switch-1"
+                switchName="deplacement-switch-1"
                 setSwitchValue={handleSwitchReductionAction1Change}
                 isOpened={isReductionAction1Opened}
                 render={render}
@@ -302,7 +296,7 @@ export function PersoStep6({ step, setNextStep }) {
               <FormItemActionReduction
                 form={form}
                 selectDetail={actionReduction2_selectDetail}
-                switchName="action-reduction-switch-2"
+                switchName="deplacement-switch-2"
                 setSwitchValue={handleSwitchReductionAction2Change}
                 isOpened={isReductionAction2Opened}
               />
@@ -333,7 +327,7 @@ export function PersoStep6({ step, setNextStep }) {
                 savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
                 saviezVousPosition={0}
                 selectDetail={actionReduction3_selectDetail}
-                switchName="action-reduction-switch-3"
+                switchName="deplacement-switch-3"
                 setSwitchValue={handleSwitchReductionAction3Change}
                 isOpened={isReductionAction3Opened}
               />

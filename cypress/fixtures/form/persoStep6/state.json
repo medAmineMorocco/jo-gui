@@ -90,15 +90,15 @@
       ],
       "settings": [
         {
-					"setting": "action-reduction-switch-1",
+					"setting": "deplacement-switch-1",
 					"response": true
 				},
 				{
-					"setting": "action-reduction-switch-2",
+					"setting": "deplacement-switch-2",
 					"response": true
 				},
 				{
-					"setting": "action-reduction-switch-3",
+					"setting": "deplacement-switch-3",
 					"response": true
 				}
       ]

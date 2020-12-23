@@ -98,11 +98,11 @@
       ],
       "settings": [
                 {
-					"setting": "action-reduction-switch-1",
+					"setting": "alimentation-switch-1",
 					"response": true
                 },
                 {
-					"setting": "action-reduction-switch-2",
+					"setting": "alimentation-switch-2",
 					"response": true
 				}
       ]

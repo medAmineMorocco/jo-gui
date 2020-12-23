@@ -134,7 +134,7 @@ export function ProStep5({ step, setNextStep }) {
       setPlaneQuestionsVisible(
         form.getFieldValue("5fe088aa8d674").includes("Avion")
       );
-      setSwitchValue(form.getFieldValue("deplacement-switch-1"));
+      setSwitchValue(form.getFieldValue("deplcament-pro-switch-1"));
     };
 
     getResponsesOfStep("DEPLACEMENTS_PROFESSIONNELS")
@@ -276,7 +276,7 @@ export function ProStep5({ step, setNextStep }) {
               <FormItemActionReduction
                 form={form}
                 selectDetail={actionReductionData}
-                switchName="deplacement-switch-1"
+                switchName="deplcament-pro-switch-1"
                 setSwitchValue={handleSwitchChange}
                 isOpened={switchValue}
               />

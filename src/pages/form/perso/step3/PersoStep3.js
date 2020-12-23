@@ -153,8 +153,8 @@ export function PersoStep3({ step, setNextStep }) {
       setQuestion11(form.getFieldValue("5f556b3b7aeaf"));
       setQuestion12(form.getFieldValue("5f556b6b5abc8"));
       setQuestion13(form.getFieldValue("5f556b6cefd5a"));
-      setSwitch1Value(form.getFieldValue("materiels_switch1"));
-      setSwitch2Value(form.getFieldValue("materiels_switch2"));
+      setSwitch1Value(form.getFieldValue("materiels-switch-1"));
+      setSwitch2Value(form.getFieldValue("materiels-switch-2"));
     };
 
     getResponsesOfStep("VEHICULES")
@@ -321,7 +321,7 @@ export function PersoStep3({ step, setNextStep }) {
           <FormItemActionReduction
             form={form}
             selectDetail={actionReduction1Data}
-            switchName="materiels_switch1"
+            switchName="materiels-switch-1"
             setSwitchValue={handleSwitch1Change}
             isOpened={switch1Value}
             render={render}
@@ -356,7 +356,7 @@ export function PersoStep3({ step, setNextStep }) {
           <FormItemActionReduction
             form={form}
             selectDetail={actionReduction2Data}
-            switchName="materiels_switch2"
+            switchName="materiels-switch-2"
             setSwitchValue={handleSwitch2Change}
             isOpened={switch2Value}
             render={render}

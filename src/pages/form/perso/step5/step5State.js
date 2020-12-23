@@ -103,12 +103,12 @@ export const persostep5State = (values) => {
       ],
       settings: [
         {
-          setting: "action-reduction-switch-1",
-          response: values["action-reduction-switch-1"] || false,
+          setting: "alimentation-switch-1",
+          response: values["alimentation-switch-1"] || false,
         },
         {
-          setting: "action-reduction-switch-2",
-          response: values["action-reduction-switch-2"] || false,
+          setting: "alimentation-switch-2",
+          response: values["alimentation-switch-2"] || false,
         },
       ],
     };

@@ -55,9 +55,7 @@ export function PersoStep4({ step, setNextStep }) {
         });
       });
 
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
+      setReductionAction1Opened(form.getFieldValue("numerique-switch-1"));
     };
 
     getResponsesOfStep("NUMERIQUE")
@@ -128,7 +126,7 @@ export function PersoStep4({ step, setNextStep }) {
             savierVous={NUMERIC_SAVIEZ_VOUS}
             saviezVousPosition={0}
             selectDetail={selectDetail}
-            switchName="action-reduction-switch-1"
+            switchName="numerique-switch-1"
             setSwitchValue={handleSwitchReductionAction1Change}
             isOpened={isReductionAction1Opened}
           />

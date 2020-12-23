@@ -35,8 +35,8 @@ export const persostep4State = (values) => {
       ],
       settings: [
         {
-          setting: "action-reduction-switch-1",
-          response: values["action-reduction-switch-1"] || false,
+          setting: "numerique-switch-1",
+          response: values["numerique-switch-1"] || false,
         },
       ],
     };

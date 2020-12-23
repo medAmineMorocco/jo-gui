@@ -195,12 +195,8 @@ export function PersoStep5({ step, setNextStep }) {
       setQuestion8Count(form.getFieldValue("5f557531751f2"));
       setQuestion9Count(form.getFieldValue("5f55754725a12"));
 
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-      setReductionAction2Opened(
-        form.getFieldValue("action-reduction-switch-2")
-      );
+      setReductionAction1Opened(form.getFieldValue("alimentation-switch-1"));
+      setReductionAction2Opened(form.getFieldValue("alimentation-switch-2"));
     },
     [form]
   );
@@ -308,7 +304,7 @@ export function PersoStep5({ step, setNextStep }) {
             savierVous={ALIMENTATION_SAVIEZ_VOUS}
             saviezVousPosition={3}
             selectDetail={selectDetail}
-            switchName="action-reduction-switch-1"
+            switchName="alimentation-switch-1"
             setSwitchValue={handleSwitchReductionAction1Change}
             isOpened={isReductionAction1Opened}
             render={render}
@@ -379,7 +375,7 @@ export function PersoStep5({ step, setNextStep }) {
           <FormItemActionReduction
             form={form}
             selectDetail={selectDetail2}
-            switchName="action-reduction-switch-2"
+            switchName="alimentation-switch-2"
             setSwitchValue={handleSwitchReductionAction2Change}
             isOpened={isReductionAction2Opened}
             render={render}

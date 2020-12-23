@@ -3,6 +3,14 @@ export const stepState = (values) => {
     thematic: "DEPLACEMENTS_PROFESSIONNELS",
     questions: [
       {
+        question: "5fe088069900b",
+        response: values["5fe088069900b"],
+      },
+      {
+        question: "5fe088aa8d674",
+        response: values["5fe088aa8d674"],
+      },
+      {
         question: "5f5557936a4cd",
         response: values["5f5557936a4cd"],
       },
@@ -102,8 +110,8 @@ export const stepState = (values) => {
     ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
       settings: [
         {
-          setting: "deplacement-switch-1",
-          response: values["deplacement-switch-1"] || false,
+          setting: "deplcament-pro-switch-1",
+          response: values["deplcament-pro-switch-1"] || false,
         },
       ],
     }),

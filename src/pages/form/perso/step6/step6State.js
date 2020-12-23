@@ -3,6 +3,10 @@ export const persostep6State = (values) => {
     thematic: "DEPLACEMENT",
     questions: [
       {
+        question: "5fe09867744e9",
+        response: values["5fe09867744e9"],
+      },
+      {
         question: "5f5575ba93b32",
         response: values["5f5575ba93b32"],
       },
@@ -91,16 +95,16 @@ export const persostep6State = (values) => {
       ],
       settings: [
         {
-          setting: "action-reduction-switch-1",
-          response: values["action-reduction-switch-1"] || false,
+          setting: "deplacement-switch-1",
+          response: values["deplacement-switch-1"] || false,
         },
         {
-          setting: "action-reduction-switch-2",
-          response: values["action-reduction-switch-2"] || false,
+          setting: "deplacement-switch-2",
+          response: values["deplacement-switch-2"] || false,
         },
         {
-          setting: "action-reduction-switch-3",
-          response: values["action-reduction-switch-3"] || false,
+          setting: "deplacement-switch-3",
+          response: values["deplacement-switch-3"] || false,
         },
       ],
     };

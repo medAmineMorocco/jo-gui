@@ -103,12 +103,12 @@ export const persostep3State = (values) => {
       ],
       settings: [
         {
-          setting: "materiels_switch1",
-          response: values["materiels_switch1"] || false,
+          setting: "materiels-switch-1",
+          response: values["materiels-switch-1"] || false,
         },
         {
-          setting: "materiels_switch2",
-          response: values["materiels_switch2"] || false,
+          setting: "materiels-switch-2",
+          response: values["materiels-switch-2"] || false,
         },
       ],
     };

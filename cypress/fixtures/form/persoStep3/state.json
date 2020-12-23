@@ -98,11 +98,11 @@
       ],
       "settings": [
         {
-					"setting": "materiels_switch1",
+					"setting": "materiels-switch-1",
 					"response": true
 				},
 				{
-					"setting": "materiels_switch2",
+					"setting": "materiels-switch-2",
 					"response": true
 				}
       ]
