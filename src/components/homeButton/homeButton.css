@@ -2,26 +2,27 @@
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .container-single-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2%;
 }
 .text-button-home {
-  font-family: Paris2024;
-  font-size: 144px;
+  font-size: 13vh;
   font-weight: 700;
   text-align: center;
   color: white;
-  padding-top: 100px;
+  padding-top: 50%;
+  font-style: italic;
 }
 .container-single-button:hover .text-button-home-hover {
   display: flex;
   flex-direction: column;
-  padding-top: 120px;
+  padding-top: 100px;
 }
 .container-single-button:hover .text-button-home {
   display: none;
@@ -32,24 +33,21 @@
 .container-single-button:hover .text-decoration-home-button {
   display: none;
 }
-.arrow-circle-home-button {
-  font-size: 50px;
-  color: var(--main-color);
-  padding-top: 15px;
-}
+
 .text-decoration-home {
   font-family: Paris2024;
-  font-size: 18px;
+  font-size: 3vh;
   font-style: italic;
   font-weight: 600;
   color: white;
   text-align: center;
   white-space: pre-wrap;
+  line-height: 4vh;
 }
 
 .sous-text-decoration-home {
   font-family: Paris2024;
-  font-size: 18px;
+  font-size: 3vh;
   font-style: italic;
   font-weight: 600;
   color: white;
@@ -57,19 +55,19 @@
 }
 .text-decoration-home-button {
   font-family: Paris2024;
-  font-size: 38px;
+  font-size: 4vh;
   font-style: italic;
   font-weight: 700;
   text-align: center;
   color: white;
-  padding-top: 50px;
+  padding-top: 10vh;
   white-space: pre-wrap;
 }
 .size-image-home {
-  width: 300px;
-  height: 300px;
+  width: 30vh;
+  height: 40vh;
   background-size: cover !important;
-  border-radius: 150px;
+  border-radius: 50px 50px 0px 0px;
 }
 
 .container-single-button .ant-btn:hover,
@@ -94,12 +92,12 @@
     padding-bottom: 35px;
   }
   .text-button-home {
-    padding-top: 60px;
+    padding-top: 80px;
   }
   .size-image-home {
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
+    width: 190px;
+    height: 265px;
+    border-radius: 50px 50px 0px 0px;
   }
 }
 

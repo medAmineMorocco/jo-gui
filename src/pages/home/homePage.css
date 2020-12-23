@@ -17,6 +17,8 @@
 }
 .title-container-home {
   height: 20vh;
+  padding-left: 160px;
+  padding-right: 160px;
 }
 .title-container-home .hero-container {
   height: 100%;
@@ -41,10 +43,8 @@
 
 .title-container-home .styled-title-container-home {
   color: white;
-  text-transform: none;
-  font-size: 30px;
-  font-family: Paris2024Bold;
-  line-height: 3vw;
+  font-size: 3vh;
+  font-family: Paris2024;
   text-align: center;
 }
 
@@ -53,10 +53,13 @@
   width: 100%;
   height: 100%;
   top: 0;
-  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 94.31%);
   display: flex;
   align-items: baseline;
   justify-content: center;
+}
+.text-title-bold {
+  color: var(--main-color);
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
@@ -65,6 +68,8 @@
   }
   .title-container-home {
     height: 20vh;
+    padding-left: 0;
+    padding-right: 0;
   }
   .title-container-home .hero-container {
     height: 100%;
@@ -79,7 +84,7 @@
   }
   .title-container-home .styled-title-container-home {
     font-size: 14px;
-    line-height: 6vw;
+    line-height: 5vw;
     font-weight: 900;
     margin-block-end: 0em;
   }
@@ -96,13 +101,17 @@
     height: 40vh;
     overflow-y: scroll;
   }
+  .title-container-home {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .footer-container-home,
   .footer-container-home .footer-container {
     height: 20vh;
   }
   .title-container-home .styled-title-container-home {
     font-size: 25px;
-    line-height: 5vw;
+    line-height: 2vw;
     font-weight: 900;
     margin-block-end: 0em;
   }
