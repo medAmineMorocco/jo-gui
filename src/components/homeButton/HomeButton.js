@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "antd";
-import { RightCircleFilled } from "@ant-design/icons";
 import "./homeButton.css";
 
 export function HomeButton({ doesUserFinishAllForms }) {
@@ -20,11 +19,11 @@ export function HomeButton({ doesUserFinishAllForms }) {
           >
             <div className="text-button-home">1</div>
             <div className="text-button-home-hover">
+              <span className="text-decoration-home">Faire le test</span>
               <span className="text-decoration-home">
-                Calculer son empreinte carbone
+                pour calculer votre empreinte carbone{" "}
               </span>
               <span className="sous-text-decoration-home">(15 minutes)</span>
-              <RightCircleFilled className="arrow-circle-home-button" />
             </div>
             <span className="text-decoration-home-button">Estimer</span>
           </Button>
@@ -50,10 +49,9 @@ export function HomeButton({ doesUserFinishAllForms }) {
                 Visualiser les résultats et tester l’impact de nouvelles actions
               </span>
               <span className="sous-text-decoration-home">(10 minutes)</span>
-              <RightCircleFilled className="arrow-circle-home-button" />
             </div>
             <span className="text-decoration-home-button">
-              comprendre et réduire
+              Comprendre et réduire
             </span>
           </Button>
         </div>
@@ -78,7 +76,6 @@ export function HomeButton({ doesUserFinishAllForms }) {
                 Aller plus loin pour compenser et mobiliser
               </span>
               <span className="sous-text-decoration-home">(5 minutes)</span>
-              <RightCircleFilled className="arrow-circle-home-button" />
             </div>
             <span className="text-decoration-home-button">S'engager</span>
           </Button>

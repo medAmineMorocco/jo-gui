@@ -18,7 +18,6 @@ import "./homePage.css";
 export function HomePage(props) {
   const [isVisible, setVisible] = useState(false);
   const [doesUserFinishAllForms, setDoesUserFinishAllForms] = useState();
-  const MainColor = "var(--main-color)";
 
   useEffect(() => {
     getUserProgess()
@@ -60,14 +59,15 @@ export function HomePage(props) {
         <div className="hero-container">
           <div className="hero-wrapper">
             <div className="styled-title-container-home">
-              La neutralité carbone des Jeux, c’est l’affaire de tous. Paris
-              2024 a créé le
-              <span style={{ color: MainColor }}> COACH CLIMAT </span> pour vous
-              aider à mesurer et réduire votre
-              <span style={{ color: MainColor }}>
-                empreinte carbone. 3 étapes
-              </span>
-              pour estimer, comprendre & réduire, et s’engager
+              <p>La neutralité carbone des Jeux, c’est l’affaire de tous.</p>
+              <p>
+                Paris 2024 a créé le{" "}
+                <span className="text-title-bold"> COACH CLIMAT </span>
+                pour vous aider à mesurer et réduire votre{" "}
+                <span className="text-title-bold"> empreinte carbone.</span>
+              </p>{" "}
+              <span className="text-title-bold">3 étapes </span>
+              pour estimer, comprendre & réduire, et s’engager.
             </div>
           </div>
         </div>
