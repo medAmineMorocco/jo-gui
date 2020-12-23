@@ -126,13 +126,13 @@ export function PersoStep6({ step, setNextStep }) {
       });
 
       setCarQuestionsVisible(
-        form.getFieldValue("to-insert").includes("Voiture")
+        form.getFieldValue("5fe09867744e9").includes("Voiture")
       );
       setTrainQuestionsVisible(
-        form.getFieldValue("to-insert").includes("Train")
+        form.getFieldValue("5fe09867744e9").includes("Train")
       );
       setPlaneQuestionsVisible(
-        form.getFieldValue("to-insert").includes("Avion")
+        form.getFieldValue("5fe09867744e9").includes("Avion")
       );
 
       setQuestion1DefaultValue(form.getFieldValue("5f5575ba93b32"));
@@ -196,7 +196,7 @@ export function PersoStep6({ step, setNextStep }) {
         <div className="forms-margin">
           <FormItemCheckboxes
             form={form}
-            name="to-insert"
+            name="5fe09867744e9"
             text={TRANSPORTATION_LABEL}
             options={transportation_options(
               (isChecked) => {
