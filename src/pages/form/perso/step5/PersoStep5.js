@@ -184,9 +184,9 @@ export function PersoStep5({ step, setNextStep }) {
 
       setSlider1Value(form.getFieldValue("5f5570ff217a4"));
       setSlider2Value(form.getFieldValue("5f55715960e9a"));
-      setSlider3Value(form.getFieldValue("5f557184101ce"));
-      setSlider4Value(form.getFieldValue("5f5550724627d"));
-      setSlider5Value(form.getFieldValue("5f5550724638h"));
+      setSlider3Value(form.getFieldValue("5f5550724627d"));
+      setSlider4Value(form.getFieldValue("5f5550724638h"));
+      setSlider5Value(form.getFieldValue("5f557184101ce"));
 
       setQuestion1Count(form.getFieldValue("5f5570e5d882c"));
       setQuestion5Count(form.getFieldValue("5f557459e6c45"));

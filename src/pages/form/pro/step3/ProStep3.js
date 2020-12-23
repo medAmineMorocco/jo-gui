@@ -62,7 +62,7 @@ export function ProStep3({ step, setNextStep }) {
 
   useEffect(() => {
     const getSliderMaxValues = (val1, val2, val3, val4) => {
-      const result = 9 - val1 - val2 - val3 - val4;
+      const result = 5 - val1 - val2 - val3 - val4;
       return result < 0 ? 0 : result;
     };
 
@@ -104,9 +104,9 @@ export function ProStep3({ step, setNextStep }) {
 
       setSlider1Value(form.getFieldValue("5f55500f273e7"));
       setSlider2Value(form.getFieldValue("5f5550293a164"));
-      setSlider3Value(form.getFieldValue("5f5550530eaf3"));
-      setSlider4Value(form.getFieldValue("5f5550724627c"));
-      setSlider5Value(form.getFieldValue("5f5550724638g"));
+      setSlider3Value(form.getFieldValue("5f5550724627c"));
+      setSlider4Value(form.getFieldValue("5f5550724638g"));
+      setSlider5Value(form.getFieldValue("5f5550530eaf3"));
 
       setSlider6Value(form.getFieldValue("5f5550724626b"));
       setSlider7Value(form.getFieldValue("5f55508b92e6c"));
@@ -118,7 +118,9 @@ export function ProStep3({ step, setNextStep }) {
 
     getResponsesOfStep("RESTAURATION")
       .then((stepState) => setReponsesOfStep(stepState))
-      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+      .catch(() =>
+        notify("Erreur serveur, veuillez réessayer ultérieurement :(")
+      );
   }, [form, step]);
 
   const onFinish = (values) => {

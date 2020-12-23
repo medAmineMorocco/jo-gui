@@ -64,9 +64,9 @@ context('Form | alimentation step', () => {
 			cy.count('#5f5570e5d882c', 1);
 
 			cy.pickValue('.nombres-repas .slider-container-0', '1');
-			cy.pickValue('.nombres-repas .slider-container-1', '4');
+			cy.pickValue('.nombres-repas .slider-container-1', '2');
 			cy.pickValue('.nombres-repas .slider-container-2', '3');
-			cy.pickValue('.nombres-repas .slider-container-3', '1');
+			cy.pickValue('.nombres-repas .slider-container-3', '3');
 
 			cy.count('#5f557459e6c45', 2);
 			cy.count('#5f5574ead218e', 3);
@@ -83,9 +83,9 @@ context('Form | alimentation step', () => {
 			cy.get('#5f5570e5d882c > .flex-container-button > #result-counter').contains('1').should('exist');
 
 			cy.get('.nombres-repas .slider-container-0 .ant-slider-handle').should('have.attr', 'aria-valuenow', '1');
-			cy.get('.nombres-repas .slider-container-1 .ant-slider-handle').should('have.attr', 'aria-valuenow', '4');
+			cy.get('.nombres-repas .slider-container-1 .ant-slider-handle').should('have.attr', 'aria-valuenow', '2');
 			cy.get('.nombres-repas .slider-container-2 .ant-slider-handle').should('have.attr', 'aria-valuenow', '3');
-			cy.get('.nombres-repas .slider-container-3 .ant-slider-handle').should('have.attr', 'aria-valuenow', '1');
+			cy.get('.nombres-repas .slider-container-3 .ant-slider-handle').should('have.attr', 'aria-valuenow', '3');
 			cy.get('.nombres-repas .slider-container-4 .ant-slider-handle').should('have.attr', 'aria-valuenow', '0');
 
 			cy.get('#5f557459e6c45 > .flex-container-button > #result-counter').contains('2').should('exist');

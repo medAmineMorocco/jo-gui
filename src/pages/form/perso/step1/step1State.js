@@ -50,8 +50,6 @@ export const persostep1State = (values) => {
   };
 
   if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
-    return data;
-  } else {
     const actionsData = {
       actions: [
         {
@@ -86,5 +84,7 @@ export const persostep1State = (values) => {
       ...data,
       ...actionsData,
     };
+  } else {
+    return data;
   }
 };
