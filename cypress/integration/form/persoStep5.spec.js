@@ -71,8 +71,8 @@ context('Form | alimentation step', () => {
 			cy.count('#5f557459e6c45', 2);
 			cy.count('#5f5574ead218e', 3);
 			cy.count('#5f557508ea4c5', 4);
-			cy.count('#5f557531751f2', 3);
-			cy.count('#5f55754725a12', 4);
+			cy.count('#5f557531751f2', 5);
+			cy.count('#5f55754725a12', 6);
 
 			cy.submitForm();
 
@@ -91,8 +91,8 @@ context('Form | alimentation step', () => {
 			cy.get('#5f557459e6c45 > .flex-container-button > #result-counter').contains('2').should('exist');
 			cy.get('#5f5574ead218e > .flex-container-button > #result-counter').contains('3').should('exist');
 			cy.get('#5f557508ea4c5 > .flex-container-button > #result-counter').contains('4').should('exist');
-			cy.get('#5f557531751f2 > .flex-container-button > #result-counter').contains('3').should('exist');
-			cy.get('#5f55754725a12 > .flex-container-button > #result-counter').contains('4').should('exist');
+			cy.get('#5f557531751f2 > .flex-container-button > #result-counter').contains('5').should('exist');
+			cy.get('#5f55754725a12 > .flex-container-button > #result-counter').contains('6').should('exist');
 		});
 	});
 });

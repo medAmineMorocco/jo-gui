@@ -15,16 +15,16 @@ export const persostep5State = (values) => {
         response: values["5f55715960e9a"],
       },
       {
+        question: "5fe086093c517",
+        response: values["5fe086093c517"],
+      },
+      {
         question: "5f557184101ce",
         response: values["5f557184101ce"],
       },
       {
-        question: "5f5550724627d",
-        response: values["5f5550724627d"],
-      },
-      {
-        question: "5f5550724638h",
-        response: values["5f5550724638h"],
+        question: "5fe085c49e973",
+        response: values["5fe085c49e973"],
       },
       {
         question: "5f557459e6c45",

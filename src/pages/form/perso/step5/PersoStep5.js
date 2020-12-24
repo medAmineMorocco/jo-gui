@@ -82,7 +82,7 @@ export function PersoStep5({ step, setNextStep }) {
   };
 
   useEffect(() => {
-    const getSliderMaxValues = (val1, val2, val3, val4) => {
+    const getSliderMaxValues = (val1 = 0, val2 = 0, val3 = 0, val4 = 0) => {
       const result = 9 - val1 - val2 - val3 - val4;
       return result < 0 ? 0 : result;
     };
@@ -184,9 +184,9 @@ export function PersoStep5({ step, setNextStep }) {
 
       setSlider1Value(form.getFieldValue("5f5570ff217a4"));
       setSlider2Value(form.getFieldValue("5f55715960e9a"));
-      setSlider3Value(form.getFieldValue("5f5550724627d"));
-      setSlider4Value(form.getFieldValue("5f5550724638h"));
-      setSlider5Value(form.getFieldValue("5f557184101ce"));
+      setSlider3Value(form.getFieldValue("5fe086093c517"));
+      setSlider4Value(form.getFieldValue("5f557184101ce"));
+      setSlider5Value(form.getFieldValue("5fe085c49e973"));
 
       setQuestion1Count(form.getFieldValue("5f5570e5d882c"));
       setQuestion5Count(form.getFieldValue("5f557459e6c45"));
@@ -271,21 +271,21 @@ export function PersoStep5({ step, setNextStep }) {
                 setSlider2Value
               ),
               curseurQuestion(
-                "5f5550724627d",
+                "5fe086093c517",
                 <FishSvg />,
                 slider3Max,
                 slider3Value,
                 setSlider3Value
               ),
               curseurQuestion(
-                "5f5550724638h",
+                "5f557184101ce",
                 <EggSvg />,
                 slider4Max,
                 slider4Value,
                 setSlider4Value
               ),
               curseurQuestion(
-                "5f557184101ce",
+                "5fe085c49e973",
                 <VegetablesSvg />,
                 slider5Max,
                 slider5Value,
