@@ -125,15 +125,17 @@ export function PersoStep6({ step, setNextStep }) {
         });
       });
 
-      setCarQuestionsVisible(
-        form.getFieldValue("5fe09867744e9").includes("Voiture")
-      );
-      setTrainQuestionsVisible(
-        form.getFieldValue("5fe09867744e9").includes("Train")
-      );
-      setPlaneQuestionsVisible(
-        form.getFieldValue("5fe09867744e9").includes("Avion")
-      );
+      if (form.getFieldValue("5fe09867744e9")) {
+        setCarQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Voiture")
+        );
+        setTrainQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Train")
+        );
+        setPlaneQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Avion")
+        );
+      }
 
       setQuestion1DefaultValue(form.getFieldValue("5f5575ba93b32"));
       setQuestion3IncomingChoice(
