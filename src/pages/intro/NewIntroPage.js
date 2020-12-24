@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "antd";
 import { Button as ButtonAntd } from "antd";
-import { ReactComponent as WorkFromHome } from "@theme/icons/col-work-home.svg";
 import { ReactComponent as Calendar } from "@theme/icons/col-calendar.svg";
 import { ReactComponent as Folder } from "@theme/icons/col-folder.svg";
 import { ReactComponent as StopWatch } from "@theme/icons/col-stopwatch.svg";
@@ -20,11 +19,10 @@ import {
   ABOUT_CONTENT3,
   INTRODUCTION_TITLE1,
   INTRODUCTION_TITLE2,
-  INTRODUCTION_TITLE3,
   INTRODUCTION_TITLE4,
   INTRODUCTION_DESCRIPTION1,
-  INTRODUCTION_DESCRIPTION2,
-  INTRODUCTION_DESCRIPTION3,
+  INTRODUCTION_DESCRIPTION21,
+  INTRODUCTION_DESCRIPTION22,
   INTRODUCTION_DESCRIPTION4,
   INTRODUCTION_BTN_DESCRIPTION,
   LINK_HOME_ICON,
@@ -82,52 +80,60 @@ export function NewIntroPage() {
       />
 
       <div className="into-container">
+        <div className="into-titles">
+          <div>
+            <span>DANS LES STARTING-BLOCKS</span>
+          </div>
+          <div className="second-title">
+            <span>Avant de commencer, il vous faut...</span>
+          </div>
+        </div>
+
         <div className="item-container">
           <div className="intro-icon">
             <StopWatch />
           </div>
-          <span className="intro-parag">
+          <div className="into-title">
             <span className="intro-parag-title">
               {INTRODUCTION_TITLE1}&nbsp;
             </span>
-            {INTRODUCTION_DESCRIPTION1}
-          </span>
+          </div>
+          <div className="intro-parag">
+            <span>{INTRODUCTION_DESCRIPTION1}</span>
+          </div>
         </div>
 
         <div className="item-container">
           <div className="intro-icon">
             <Folder />
           </div>
-          <span className="intro-parag">
+          <div className="into-title">
             <span className="intro-parag-title">
               {INTRODUCTION_TITLE2}&nbsp;
             </span>
-            {INTRODUCTION_DESCRIPTION2}
-          </span>
-        </div>
-
-        <div className="item-container">
-          <div className="intro-icon">
-            <WorkFromHome />
           </div>
-          <span className="intro-parag">
-            <span className="intro-parag-title">
-              {INTRODUCTION_TITLE3}&nbsp;
-            </span>
-            {INTRODUCTION_DESCRIPTION3}
-          </span>
+          <div className="intro-parag">
+            <div>
+              <span>{INTRODUCTION_DESCRIPTION21}</span>
+            </div>
+            <div>
+              <span>{INTRODUCTION_DESCRIPTION22}</span>
+            </div>
+          </div>
         </div>
 
         <div className="item-container">
           <div className="intro-icon">
             <Calendar />
           </div>
-          <span className="intro-parag">
+          <div className="into-title">
             <span className="intro-parag-title">
               {INTRODUCTION_TITLE4}&nbsp;
             </span>
-            {INTRODUCTION_DESCRIPTION4}
-          </span>
+          </div>
+          <div className="intro-parag">
+            <span>{INTRODUCTION_DESCRIPTION4}</span>
+          </div>
         </div>
       </div>
 

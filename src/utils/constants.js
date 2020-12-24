@@ -115,18 +115,17 @@ export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 
 // new page introduction
-export const INTRODUCTION_TITLE1 = "Temps du formulaire :";
-export const INTRODUCTION_DESCRIPTION2 =
-  "Idéalement, se munir de ses factures énergétiques et se péparer à se remémorer ses voyages !";
-export const INTRODUCTION_TITLE2 = "Documents :";
-export const INTRODUCTION_DESCRIPTION3 =
-  "Afin de se projeter d'abord dans sa vie professionnelle, puis dans sa vie personnelle.";
-export const INTRODUCTION_TITLE3 = "Questionnaire en 2 temps :";
-export const INTRODUCTION_DESCRIPTION4 =
-  'Le coach climat conseille de se référer à une année "classique", comme 2019 pour calculer une empreinte de référence à partir de laquelle de fixer des objectifs.';
-export const INTRODUCTION_TITLE4 = "Empreinte de référence :";
+export const INTRODUCTION_TITLE1 = "Environ 25 min";
 export const INTRODUCTION_DESCRIPTION1 =
-  "Prévoir 15 minutes de son emploi du temps.";
+  "Eh oui, il y a quelques questions à se poser avant de connaître son empreinte carbonne !";
+export const INTRODUCTION_TITLE2 = "Quelques données";
+export const INTRODUCTION_DESCRIPTION21 =
+  "Pour votre vie perso : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...";
+export const INTRODUCTION_DESCRIPTION22 =
+  "Pour votre vie pro : laissez-vous guider.";
+export const INTRODUCTION_TITLE4 = "Une année de référence";
+export const INTRODUCTION_DESCRIPTION4 =
+  "On vous recommande de vous référer à l'année 2019 afin de pouvoir comparer par la suite à l'année 2020 moins standard, puis 2021 !";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
 export const LINK_HOME_ICON = "PARIS2024";
 
