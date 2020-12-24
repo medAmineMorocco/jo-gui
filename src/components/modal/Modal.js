@@ -12,7 +12,7 @@ export function Modal({ title, content, isVisible, hideOverlay }) {
       className="modal-close-btn"
       type="primary"
       shape="circle"
-      icon={<CloseOutlined />}
+      icon={<CloseOutlined aria-label="bouton de fermeture" />}
     />
   );
 

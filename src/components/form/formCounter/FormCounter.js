@@ -96,6 +96,7 @@ export function FormCounter({
             className="large-text"
             onClick={decreaseCounter}
             style={value === 0 ? { color: shade } : { color: color }}
+            aria-label="Button moins"
           />
           <span id="result-counter" className="large-text">
             {value}
@@ -104,6 +105,7 @@ export function FormCounter({
             id="plus-counter"
             className="large-text"
             onClick={addCounter}
+            aria-label="Button plus"
           />
         </div>
       </div>

@@ -61,6 +61,7 @@ export function FormWizard() {
                 alt="questions"
                 width="84px"
                 height="84px"
+                aria-label="Les questions"
               />
             </div>
           </div>

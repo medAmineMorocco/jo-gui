@@ -165,7 +165,8 @@ export function MethoPage(props) {
           shape="round"
           onClick={onIntro}
         >
-          {FOOTER_START_ACTION} <ArrowRightOutlined />
+          {FOOTER_START_ACTION}{" "}
+          <ArrowRightOutlined aria-label="flèche suivante" />
         </Button>
       </Footer>
     </Fragment>
