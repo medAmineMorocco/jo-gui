@@ -4,8 +4,21 @@
   width: 100%;
 }
 
+.into-titles {
+  height: 10vh;
+  width: 100%;
+  font-size: 2vw;
+  line-height: 2vw;
+  text-align: center;
+}
+
+.second-title {
+  font-weight: bolder;
+}
+
 .into-container {
   margin: 0vh 10vh;
+  font-family: Paris2024;
 }
 
 .item-container {
@@ -14,24 +27,34 @@
 
 .intro-parag {
   height: 13vh;
-  width: 50%;
-  font-family: Paris2024;
   font-size: 1.6vw;
-  line-height: 1.6vw;
+  line-height: 2vw;
   display: table-cell;
   vertical-align: middle;
+  padding-right: 6vw;
+}
+
+.into-title {
+  height: 13vh;
+  width: 28vw;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0vw 7vw;
+}
+
+.intro-parag-title {
+  font-size: 2vw;
+  line-height: 2vw;
+  font-weight: bolder;
+  letter-spacing: 1px;
 }
 
 .intro-icon {
   height: 13vh;
-  width: 6%;
   display: table-cell;
   vertical-align: middle;
-}
-
-.intro-parag-title {
-  font-weight: bold;
-  letter-spacing: 1px;
+  padding-left: 5vw;
 }
 
 .custom-btn-intro {
@@ -50,14 +73,31 @@
 }
 
 .center-items-container {
-  height: 22vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
+  margin-top: 3vh;
 }
 
 @media (max-width: 767px) {
   .into-container {
-    margin: 5vw 10vw;
+    margin: 0vw 0vw;
+  }
+
+  .into-titles {
+    height: 7vh;
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+  }
+
+  .into-title {
+    height: 18vh;
+    padding: 0vw 2vw;
+  }
+
+  .intro-parag-title {
+    font-size: 4vw;
+    line-height: 4vw;
   }
 
   .intro-logo {
@@ -65,18 +105,42 @@
   }
 
   .intro-parag {
+    height: 18vh;
     font-size: 4vw;
     line-height: 5vw;
+    padding-right: 4vw;
   }
 
   .center-items-container {
     height: 12vh;
   }
+
+  .intro-icon {
+    height: 18vh;
+    padding-left: 4vw;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .into-container {
-    margin: 5vw 10vw;
+    margin: 0vw 0vw;
+  }
+
+  .into-titles {
+    height: 7vh;
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+    margin-top: 2vh;
+  }
+
+  .into-title {
+    height: 22vh;
+    padding: 0vw 2vw;
+  }
+
+  .intro-parag-title {
+    font-size: 4vw;
+    line-height: 4vw;
   }
 
   .custom-btn-intro {
@@ -88,8 +152,15 @@
   }
 
   .intro-parag {
+    height: 22vh;
     font-size: 4vw;
-    line-height: 4vw;
+    line-height: 5vw;
+    padding-right: 3vw;
+  }
+
+  .intro-icon {
+    height: 22vh;
+    padding-left: 3vw;
   }
 
   .center-items-container {
