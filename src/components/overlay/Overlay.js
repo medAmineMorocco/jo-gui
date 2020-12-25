@@ -85,8 +85,8 @@ export function Overlay(props) {
         <Carousel
           draggable={true}
           arrows={true}
-          prevArrow={<LeftOutlined />}
-          nextArrow={<RightOutlined />}
+          prevArrow={<LeftOutlined aria-label="flèche précédente" />}
+          nextArrow={<RightOutlined aria-label="flèche suivante" />}
         >
           {tiles}
         </Carousel>

@@ -26,7 +26,7 @@ export function HeaderWithCategory({ title1, title2, className }) {
               className="link-to-home-icon"
               type="primary"
               shape="circle"
-              icon={<HomeOutlined />}
+              icon={<HomeOutlined aria-label="Revenir à la page d'accueil" />}
             />
             <span className="paris2024-title">PARIS2024</span>
           </Link>
