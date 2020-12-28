@@ -77,17 +77,19 @@ export function PersoStep2({ step, setNextStep }) {
         });
       });
 
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
+      }
 
       setQuestion1Count(form.getFieldValue("5f556168dab39"));
       setQuestion2Count(form.getFieldValue("5f5561e5eb854"));
@@ -101,7 +103,6 @@ export function PersoStep2({ step, setNextStep }) {
       setQuestion10Select(form.getFieldValue("5f556711c1671"));
       setQuestion11Count(form.getFieldValue("5f55674380953"));
       setQuestion12Input(form.getFieldValue("5f5567451cb10"));
-      setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
     };
 
     getResponsesOfStep("APPAREILS")

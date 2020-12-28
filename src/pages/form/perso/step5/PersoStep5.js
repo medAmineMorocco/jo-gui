@@ -171,16 +171,21 @@ export function PersoStep5({ step, setNextStep }) {
           [question]: response,
         });
       });
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setReductionAction1Opened(form.getFieldValue("alimentation-switch-1"));
+        setReductionAction2Opened(form.getFieldValue("alimentation-switch-2"));
+      }
 
       setSlider1Value(form.getFieldValue("5f5570ff217a4"));
       setSlider2Value(form.getFieldValue("5f55715960e9a"));
@@ -194,9 +199,6 @@ export function PersoStep5({ step, setNextStep }) {
       setQuestion7Count(form.getFieldValue("5f557508ea4c5"));
       setQuestion8Count(form.getFieldValue("5f557531751f2"));
       setQuestion9Count(form.getFieldValue("5f55754725a12"));
-
-      setReductionAction1Opened(form.getFieldValue("alimentation-switch-1"));
-      setReductionAction2Opened(form.getFieldValue("alimentation-switch-2"));
     },
     [form]
   );

@@ -91,29 +91,30 @@ export function ProStep3({ step, setNextStep }) {
           [question]: response,
         });
       });
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setSwitch1Value(form.getFieldValue("restauration-switch-1"));
+        setSwitch2Value(form.getFieldValue("restauration-switch-2"));
+      }
 
       setSlider1Value(form.getFieldValue("5f55500f273e7"));
       setSlider2Value(form.getFieldValue("5f5550293a164"));
       setSlider3Value(form.getFieldValue("5fe08273352c1"));
       setSlider4Value(form.getFieldValue("5f5550530eaf3"));
       setSlider5Value(form.getFieldValue("5fe08462b666d"));
-
       setSlider6Value(form.getFieldValue("5f5550724626b"));
       setSlider7Value(form.getFieldValue("5f55508b92e6c"));
       setSlider8Value(form.getFieldValue("5f5550b00730d"));
-
-      setSwitch1Value(form.getFieldValue("restauration-switch-1"));
-      setSwitch2Value(form.getFieldValue("restauration-switch-2"));
     };
 
     getResponsesOfStep("RESTAURATION")

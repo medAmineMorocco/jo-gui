@@ -1,8 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import {withKnobs, boolean, text, object} from "@storybook/addon-knobs";
+import { withKnobs, boolean, text, object } from '@storybook/addon-knobs';
 import { FormSlider } from '@components/form/formSlider/FormSlider';
-import { Form } from 'antd';
 import { ConfiguredForm } from '../ConfiguredForm';
 import { ReactComponent as TeaSvg } from '@components/form/formSlider/tea.svg';
 import { ReactComponent as CapsuleSvg } from '@components/form/formSlider/capsule.svg';

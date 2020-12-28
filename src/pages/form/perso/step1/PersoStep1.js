@@ -150,17 +150,19 @@ export function PersoStep1({ step, setNextStep }) {
         });
       });
 
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setReductionActionOpened(form.getFieldValue("lunch-switch-1"));
+      }
 
       setQuestion1Count(form.getFieldValue("5f555eea00a7c"));
       setQuestion2Input(form.getFieldValue("5f555f180a442"));
@@ -173,7 +175,6 @@ export function PersoStep1({ step, setNextStep }) {
       setQuestion9Input(form.getFieldValue("5f556050d0a88"));
       setQuestion10Select(form.getFieldValue("5f55608002862"));
       setQuestion11Select(form.getFieldValue("5f55609bdcaae"));
-      setReductionActionOpened(form.getFieldValue("lunch-switch-1"));
 
       if (
         isQuestionValid("5f555f180a442") &&

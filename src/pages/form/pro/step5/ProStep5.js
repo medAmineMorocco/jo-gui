@@ -113,16 +113,20 @@ export function ProStep5({ step, setNextStep }) {
           [question]: response,
         });
       });
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setSwitchValue(form.getFieldValue("deplcament-pro-switch-1"));
+      }
 
       setTransportationQuestionShown(form.getFieldValue("5fe088069900b"));
 
@@ -137,7 +141,6 @@ export function ProStep5({ step, setNextStep }) {
           form.getFieldValue("5fe088aa8d674").includes("Avion")
         );
       }
-      setSwitchValue(form.getFieldValue("deplcament-pro-switch-1"));
     };
 
     getResponsesOfStep("DEPLACEMENTS_PROFESSIONNELS")

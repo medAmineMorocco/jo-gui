@@ -113,17 +113,21 @@ export function PersoStep6({ step, setNextStep }) {
         });
       });
 
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setReductionAction1Opened(form.getFieldValue("deplacement-switch-1"));
+        setReductionAction2Opened(form.getFieldValue("deplacement-switch-2"));
+        setReductionAction3Opened(form.getFieldValue("deplacement-switch-3"));
+      }
 
       if (form.getFieldValue("5fe09867744e9")) {
         setCarQuestionsVisible(
@@ -141,9 +145,6 @@ export function PersoStep6({ step, setNextStep }) {
       setQuestion3IncomingChoice(
         getNewChoice(form.getFieldValue("5f5575dc9b4ac"))
       );
-      setReductionAction1Opened(form.getFieldValue("deplacement-switch-1"));
-      setReductionAction2Opened(form.getFieldValue("deplacement-switch-2"));
-      setReductionAction3Opened(form.getFieldValue("deplacement-switch-3"));
     };
 
     getResponsesOfStep("DEPLACEMENT")

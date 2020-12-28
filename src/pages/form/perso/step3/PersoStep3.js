@@ -126,17 +126,20 @@ export function PersoStep3({ step, setNextStep }) {
         });
       });
 
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setSwitch1Value(form.getFieldValue("materiels-switch-1"));
+        setSwitch2Value(form.getFieldValue("materiels-switch-2"));
+      }
 
       onchangeQuestion14(form.getFieldValue("5f556b94d465c"));
       onchangeQuestion15(form.getFieldValue("5f556baea779b"));
@@ -153,8 +156,6 @@ export function PersoStep3({ step, setNextStep }) {
       setQuestion11(form.getFieldValue("5f556b3b7aeaf"));
       setQuestion12(form.getFieldValue("5f556b6b5abc8"));
       setQuestion13(form.getFieldValue("5f556b6cefd5a"));
-      setSwitch1Value(form.getFieldValue("materiels-switch-1"));
-      setSwitch2Value(form.getFieldValue("materiels-switch-2"));
     };
 
     getResponsesOfStep("VEHICULES")

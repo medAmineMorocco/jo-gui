@@ -43,19 +43,19 @@ export function PersoStep4({ step, setNextStep }) {
         });
       });
 
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
-
-      setReductionAction1Opened(form.getFieldValue("numerique-switch-1"));
+        setReductionAction1Opened(form.getFieldValue("numerique-switch-1"));
+      }
     };
 
     getResponsesOfStep("NUMERIQUE")

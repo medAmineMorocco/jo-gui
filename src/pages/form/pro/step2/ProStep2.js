@@ -64,17 +64,21 @@ export function ProStep2({ step, setNextStep }) {
           [question]: response,
         });
       });
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
-      setSwitchValue(form.getFieldValue("empreinte-switch-1"));
+        setSwitchValue(form.getFieldValue("empreinte-switch-1"));
+      }
+
       handleTailleBoite(form.getFieldValue("5f554eb63be47"));
       setNbrRecherche(form.getFieldValue("5f554f1127cec"));
       setNbrConference(form.getFieldValue("5f554f36de849"));

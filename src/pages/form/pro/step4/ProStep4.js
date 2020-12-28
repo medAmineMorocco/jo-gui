@@ -83,18 +83,22 @@ export function ProStep4({ step, setNextStep }) {
           [question]: response,
         });
       });
-      stepState.actions.forEach(({ action, response }) => {
-        form.setFieldsValue({
-          [action]: response,
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
         });
-      });
-      stepState.settings.forEach(({ setting, response }) => {
-        form.setFieldsValue({
-          [setting]: response,
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
         });
-      });
+        setSwitchValue(form.getFieldValue("trajets-switch-1"));
+      }
+
       setModeDeplacement(form.getFieldValue("5f55561b34276"));
-      setSwitchValue(form.getFieldValue("trajets-switch-1"));
     };
 
     getResponsesOfStep("TRAJETS_DOMICILE_TRAVAIL")

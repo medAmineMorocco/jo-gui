@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Modal, Button, Carousel } from "antd";
-import { BulbOutlined, CloseOutlined } from "@ant-design/icons";
+import {
+  BulbOutlined,
+  CloseOutlined,
+  LeftOutlined,
+  RightOutlined,
+} from "@ant-design/icons";
 import "./overlay.css";
 
 export function Overlay(props) {
