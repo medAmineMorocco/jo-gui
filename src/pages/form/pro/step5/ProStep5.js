@@ -189,6 +189,7 @@ export function ProStep5({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemRadioButtons
+            form={form}
             label={MAKE_TRANSPORTATION_LABEL}
             name="5fe088069900b"
             options={make_transportation_options}

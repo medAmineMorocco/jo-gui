@@ -30,7 +30,9 @@ export const formItemRadioButtons = () => {
 	const [form] = Form.useForm();
 
 	return <ConfiguredForm form={form} onFinish={onFinish}>
-		<FormItemRadioButtons label={text('label', 'Effectuez-vous des déplacements professionels ?')}
+		<FormItemRadioButtons
+			form={form}
+			label={text('label', 'Effectuez-vous des déplacements professionels ?')}
 							  name="response"
 							  options={object('options', options)}
 							  isMultipleSelection={boolean('isMultipleSelection', false)}
