@@ -30,7 +30,7 @@ context('Form | Déplacements personnels step', () => {
 					.should('include', '/form')
 					.then(() => {
 						cy.wait(1000);
-						cy.takeSnapshots('form - Déplacements personnels', size);
+						cy.takeSnapshots('form - Déplacements Personnels', size);
 					});
 			});
 		});
@@ -142,7 +142,13 @@ context('Form | Déplacements personnels step', () => {
 
 	it('should not submit form when questions are not filled', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
-		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/empty-state.json', 'getResponsesOfStep6');
+		cy.stubRequest(
+			'GET',
+			'**/api/response/thematic/**',
+			200,
+			'form/persoStep6/empty-state.json',
+			'getResponsesOfStep6'
+		);
 
 		sizes.forEach((size) => {
 			cy.viewport(size.device);

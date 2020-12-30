@@ -27,7 +27,7 @@ context('Form | Services publics step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - services publics', size);
+						cy.takeSnapshots('form - Services Publics', size);
 					});
 			});
 		});

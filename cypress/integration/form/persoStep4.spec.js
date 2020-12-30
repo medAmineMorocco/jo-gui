@@ -27,7 +27,7 @@ context('Form | Vie personnelle Numérique step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Numérique', size);
+						cy.takeSnapshots('form - Utilisation du numérique (perso)', size);
 					});
 			});
 		});

@@ -61,22 +61,6 @@ export const persostep5State = (values) => {
           response: values["5f60a1e56f9be"],
         },
         {
-          action: "5f60a1f6aa5d9",
-          response: values["5f60a1f6aa5d9"],
-        },
-        {
-          action: "5f60a209470be",
-          response: values["5f60a209470be"],
-        },
-        {
-          action: "5f60a21ef0fe9",
-          response: values["5f60a21ef0fe9"],
-        },
-        {
-          action: "5f60a24828ffa",
-          response: values["5f60a24828ffa"],
-        },
-        {
           action: "5f60aa257b035",
           response: values["5f60aa257b035"],
         },
