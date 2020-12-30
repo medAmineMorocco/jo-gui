@@ -110,18 +110,20 @@ export function PersoStep1({ step, setNextStep }) {
       setQuestion10Select(form.getFieldValue("5f55608002862"));
 
       setConsommationQuestionsVisible(form.getFieldValue("5fe30bac50656"));
-      setElectriqueQuestionsVisible(
-        form.getFieldValue("5fe30b3a5a6b4").includes("Electrique")
-      );
-      setGazQuestionsVisible(
-        form.getFieldValue("5fe30b3a5a6b4").includes("Gaz")
-      );
-      setFioulQuestionsVisible(
-        form.getFieldValue("5fe30b3a5a6b4").includes("Fioul")
-      );
-      setBoisQuestionsVisible(
-        form.getFieldValue("5fe30b3a5a6b4").includes("Bois")
-      );
+      if (form.getFieldValue("5fe30b3a5a6b4")) {
+        setElectriqueQuestionsVisible(
+          form.getFieldValue("5fe30b3a5a6b4").includes("Electrique")
+        );
+        setGazQuestionsVisible(
+          form.getFieldValue("5fe30b3a5a6b4").includes("Gaz")
+        );
+        setFioulQuestionsVisible(
+          form.getFieldValue("5fe30b3a5a6b4").includes("Fioul")
+        );
+        setBoisQuestionsVisible(
+          form.getFieldValue("5fe30b3a5a6b4").includes("Bois")
+        );
+      }
 
       setSelectedChauffage(form.getFieldValue("5fe468b6e6a06"));
     };
