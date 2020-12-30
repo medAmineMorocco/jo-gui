@@ -123,7 +123,7 @@ export function PersoStep1({ step, setNextStep }) {
         form.getFieldValue("5fe30b3a5a6b4").includes("Bois")
       );
 
-      setSelectedChauffage(form.getFieldValue("to-insert-6"));
+      setSelectedChauffage(form.getFieldValue("5fe468b6e6a06"));
     };
 
     getResponsesOfStep("MAISON")
@@ -275,7 +275,7 @@ export function PersoStep1({ step, setNextStep }) {
                 <FormItemRadioButtons
                   form={form}
                   label={HOUSE_QUESTION16}
-                  name="to-insert-6"
+                  name="5fe468b6e6a06"
                   options={chauffage_options}
                   isMultipleSelection={false}
                   onChange={(checked) => setSelectedChauffage(checked)}
@@ -288,7 +288,7 @@ export function PersoStep1({ step, setNextStep }) {
                   <FormItemRadioButtons
                     form={form}
                     label={HOUSE_QUESTION17}
-                    name="5fe468b6e6a06"
+                    name="5fec50d0b6047"
                     options={energy_type_options}
                     isMultipleSelection={false}
                     onChange={() => console.log("change")}
@@ -302,7 +302,7 @@ export function PersoStep1({ step, setNextStep }) {
                   <FormItemRadioButtons
                     form={form}
                     label={HOUSE_QUESTION18}
-                    name="5fe46920114b1"
+                    name="5fec531f4416c"
                     options={eau_chaude_energy_type_options}
                     isMultipleSelection={false}
                     onChange={() => console.log("change")}

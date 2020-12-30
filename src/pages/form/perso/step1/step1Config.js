@@ -146,10 +146,6 @@ export const energy_type_options = [
     label: "Fioul",
     value: "Fioul",
   },
-  {
-    label: "Bois",
-    value: "Bois",
-  },
 ];
 
 export const eau_chaude_energy_type_options = [
@@ -164,9 +160,5 @@ export const eau_chaude_energy_type_options = [
   {
     label: "Fioul",
     value: "Fioul",
-  },
-  {
-    label: "Bois",
-    value: "Bois",
   },
 ];

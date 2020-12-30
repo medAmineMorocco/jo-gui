@@ -59,16 +59,16 @@ export const persostep1State = (values) => {
         response: values["5f55600ed2c60"],
       },
       {
-        question: "to-insert-6",
-        response: values["to-insert-6"],
-      },
-      {
         question: "5fe468b6e6a06",
         response: values["5fe468b6e6a06"],
       },
       {
-        question: "5fe46920114b1",
-        response: values["5fe46920114b1"],
+        question: "5fec50d0b6047",
+        response: values["5fec50d0b6047"],
+      },
+      {
+        question: "5fec531f4416c",
+        response: values["5fec531f4416c"],
       },
     ],
   };

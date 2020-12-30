@@ -104,11 +104,11 @@ context('Form | Logement step', () => {
 			cy.get('#5f555faf640d3').should('have.attr', 'value', 4);
 			cy.get('#5f55600ed2c60').should('have.attr', 'value', 5);
 
-			cy.get('#to-insert-6')
+			cy.get('#5fe468b6e6a06')
 				.find('label.ant-radio-button-wrapper-checked')
 				.contains('Chauffage collectif')
 				.should('exist');
-			cy.get('#5fe468b6e6a06').find('label.ant-radio-button-wrapper-checked').contains('Fioul').should('exist');
+			cy.get('#5fec50d0b6047').find('label.ant-radio-button-wrapper-checked').contains('Fioul').should('exist');
 
 			cy.get(`body:contains("Votre électricité et gaz sont-ils renouvelables ?")`).should('not.exist');
 		});
