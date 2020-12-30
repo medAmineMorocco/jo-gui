@@ -131,7 +131,7 @@ export function ProStep4({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Trajets domicile - travail</span>
+          <span className="pro-step-title">Déplacements Domicile-Travail</span>
         </div>
 
         <FormItemInputNumber

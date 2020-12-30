@@ -81,6 +81,12 @@
   font-size: 1.1vw;
 }
 
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 50% 0;
+}
+
 @media (max-width: 767px) {
   .mobile-wizard-container {
     height: 55vh;

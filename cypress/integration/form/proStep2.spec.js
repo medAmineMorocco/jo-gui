@@ -27,7 +27,7 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Empreinte numérique', size);
+						cy.takeSnapshots('form - Utilisation du numérique (pro)', size);
 					});
 			});
 		});

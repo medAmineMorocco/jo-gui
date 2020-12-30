@@ -193,7 +193,7 @@ export function PersoStep3({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Véhicules et électronique</span>
+          <span className="pro-step-title">Biens personnels</span>
         </div>
 
         <TitleWithHorizontalLine title="Véhicules" />

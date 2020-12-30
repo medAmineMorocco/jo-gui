@@ -185,7 +185,7 @@ export function PersoStep6({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements personnels</span>
+          <span className="pro-step-title">Déplacements Personnels</span>
         </div>
       </div>
 

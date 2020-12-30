@@ -28,19 +28,19 @@ context('Form | alimentation step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - alimentation', size).then(() => {
+						cy.takeSnapshots('form - Alimentation personnelle', size).then(() => {
 							cy.get('.custom-btn-modal')
 								.click({ force: true })
 								.then(() =>
-									cy.takeSnapshots('form - alimentation conseils', size).then(() => {
+									cy.takeSnapshots('form - Alimentation personnelle conseils', size).then(() => {
 										cy.get('.modal-close-btn-modal').click();
 										if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
 											cy.get('.ant-switch')
 												.eq(0)
 												.click({ force: true })
-												.then(() => cy.takeSnapshots('form - alimentation actions de réduction', size));
+												.then(() => cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size));
 										} else {
-											cy.takeSnapshots('form - alimentation actions de réduction', size);
+											cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size);
 										}
 									})
 								);

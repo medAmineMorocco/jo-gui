@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Spin } from "antd";
 import { useTabletOrMobileSize } from "@hooks/window";
@@ -17,18 +17,16 @@ import "./formWizard.css";
 export function FormWizard() {
   const isMobileOrTablet = useTabletOrMobileSize();
   const history = useHistory();
-  const [activeStep, setActiveStep] = useState(
-    Number(sessionStorage.getItem("current-step")) || 0
-  );
-  const [isLoading, setLoading] = useState(true);
+  const [activeStep, setActiveStep] = useState();
+  const [pageState, setPageState] = useState("loading");
 
   const getCurrentStep = useCallback(() => {
     getUserProgess()
       .then((response) => {
         if (response.progress === "VIE_PROFESIONAL") {
           setTimeout(() => {
-            setLoading(false);
-            setActiveStep(response.step);
+            setActiveStep(Number(response.step));
+            setPageState("success");
           }, 500);
         } else if (response.progress === "RESULTATS") {
           history.push("/home");
@@ -36,11 +34,10 @@ export function FormWizard() {
       })
       .catch(() => {
         setTimeout(() => {
-          setLoading(false);
+          setPageState("error");
           notify(
-            "ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
+            "Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
           );
-          setActiveStep(0);
         }, 500);
       });
   }, [history]);
@@ -57,97 +54,91 @@ export function FormWizard() {
     setActiveStep(Number(activeStep) - 1);
   };
 
-  const { component: FormStep, progress, category, previous, next } = config[
-    activeStep
-  ];
-  const summaryItems = getCategoryItems(category);
-  let content;
+  if (pageState === "success") {
+    const { component: FormStep, progress, category, previous, next } = config[
+      activeStep
+    ];
+    const summaryItems = getCategoryItems(category);
+    const [title1, title2] = category.split(" ");
+    let content;
 
-  if (isMobileOrTablet) {
-    content = (
-      <div className="mobile-wizard-container">
-        <MobileDynamicSummary size={summaryItems.length} current={progress} />
-        <div
-          className="mobile-wizard-form-container"
-          style={isLoading ? { display: "flex", justifyContent: "center" } : {}}
-        >
-          {isLoading ? (
-            <Spin />
-          ) : (
+    if (isMobileOrTablet) {
+      content = (
+        <div className="mobile-wizard-container">
+          <MobileDynamicSummary size={summaryItems.length} current={progress} />
+          <div className="mobile-wizard-form-container">
             <FormStep step={activeStep} setNextStep={setNextStep} />
-          )}
+          </div>
         </div>
+      );
+    } else {
+      const imgMenu =
+        category === CATEGORY.PRO ? "questions_pro.png" : "questions_perso.png";
+      content = (
+        <BoxSides
+          left={
+            <div className="wizard-content-left-container">
+              <div className="wizard-content-left-summary-container">
+                <DynamicSummary items={summaryItems} current={progress} />
+              </div>
+              <div className="wizard-content-left-questions-container">
+                <div className="form-questions-title">
+                  <div className="questions-first-title">Les</div>
+                  <div>questions</div>
+                </div>
+                <img
+                  src={`/images/${imgMenu}`}
+                  alt="questions"
+                  width="84px"
+                  height="84px"
+                  aria-label="Les questions"
+                />
+              </div>
+            </div>
+          }
+          right={
+            <div className="wizard-content-right-container">
+              <div className="wizard-content-right-form-container">
+                <FormStep step={activeStep} setNextStep={setNextStep} />
+              </div>
+            </div>
+          }
+        />
+      );
+    }
+
+    return (
+      <>
+        <HeaderWithCategory
+          className="form-header"
+          title1={title1}
+          title2={title2}
+        />
+        {content}
+        <FooterWithNavigation
+          previous={{
+            category: previous.category,
+            details: previous.details,
+            onClick:
+              activeStep === 0
+                ? () => history.push("/intro")
+                : handlePreviousStep,
+          }}
+          next={{
+            category: next.category,
+            details: next.details,
+          }}
+          step={activeStep}
+        />
+      </>
+    );
+  } else if (pageState === "loading") {
+    return (
+      <div className="loading-spinner">
+        <Spin />
       </div>
     );
   } else {
-    const imgMenu =
-      category === CATEGORY.PRO ? "questions_pro.png" : "questions_perso.png";
-    content = (
-      <BoxSides
-        left={
-          <div className="wizard-content-left-container">
-            <div className="wizard-content-left-summary-container">
-              <DynamicSummary items={summaryItems} current={progress} />
-            </div>
-            <div className="wizard-content-left-questions-container">
-              <div className="form-questions-title">
-                <div className="questions-first-title">Les</div>
-                <div>questions</div>
-              </div>
-              <img
-                src={`/images/${imgMenu}`}
-                alt="questions"
-                width="84px"
-                height="84px"
-                aria-label="Les questions"
-              />
-            </div>
-          </div>
-        }
-        right={
-          <div className="wizard-content-right-container">
-            <div
-              className="wizard-content-right-form-container"
-              style={
-                isLoading ? { display: "flex", justifyContent: "center" } : {}
-              }
-            >
-              {isLoading ? (
-                <Spin />
-              ) : (
-                <FormStep step={activeStep} setNextStep={setNextStep} />
-              )}
-            </div>
-          </div>
-        }
-      />
-    );
+    return <></>;
   }
-
-  const [title1, title2] = category.split(" ");
-  return (
-    <Fragment>
-      <HeaderWithCategory
-        className="form-header"
-        title1={title1}
-        title2={title2}
-      />
-      {content}
-      <FooterWithNavigation
-        previous={{
-          category: previous.category,
-          details: previous.details,
-          onClick:
-            activeStep === 0
-              ? () => history.push("/intro")
-              : handlePreviousStep,
-        }}
-        next={{
-          category: next.category,
-          details: next.details,
-        }}
-        step={activeStep}
-      />
-    </Fragment>
-  );
 }

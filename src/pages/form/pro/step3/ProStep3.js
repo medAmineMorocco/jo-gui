@@ -154,9 +154,7 @@ export function ProStep3({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">
-            Restauration aux heures de bureaux
-          </span>
+          <span className="pro-step-title">Restauration au bureau</span>
         </div>
 
         <div className="nombres-repas">

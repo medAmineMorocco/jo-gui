@@ -27,7 +27,7 @@ context('Form | Vie personnelle - Biens matériels step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Biens matériels', size);
+						cy.takeSnapshots('form - Biens personnels', size);
 					});
 			});
 		});

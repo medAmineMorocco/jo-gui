@@ -27,7 +27,7 @@ context('Form | Equipement du logement step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Equipement du logement', size);
+						cy.takeSnapshots('form - Biens du foyer', size);
 					});
 			});
 		});

@@ -27,7 +27,7 @@ context('Form | Vie professionnelle - Restauration step3', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Restauration', size);
+						cy.takeSnapshots('form - Restauration au bureau', size);
 					});
 			});
 		});

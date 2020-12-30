@@ -120,7 +120,7 @@ export function ProStep2({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Empreinte numérique</span>
+          <span className="pro-step-title">Utilisation du numérique (pro)</span>
         </div>
 
         <FormItemInputNumber

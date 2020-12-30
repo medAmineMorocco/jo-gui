@@ -27,34 +27,6 @@ export const selectDetail = [
   },
   {
     type: "select",
-    firstText: "Consommer le week-end",
-    name: "5f60a1f6aa5d9",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande rouge",
-  },
-  {
-    type: "select",
-    firstText: "Consommer le week-end",
-    name: "5f60a209470be",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande blanche",
-  },
-  {
-    type: "select",
-    firstText: "Consommer en vacances",
-    name: "5f60a21ef0fe9",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande rouge",
-  },
-  {
-    type: "select",
-    firstText: "Consommer en vacances",
-    name: "5f60a24828ffa",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande blanche",
-  },
-  {
-    type: "select",
     firstText: "Réduire le gaspillage alimentaire",
     name: "5f60aa257b035",
     options: [
