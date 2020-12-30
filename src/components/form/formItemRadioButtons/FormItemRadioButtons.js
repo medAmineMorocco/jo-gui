@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Checkbox, Form, Radio } from "antd";
 import "./formItemRadioButtons.css";
 
 export function FormItemRadioButtons({
+  form,
   label,
   name,
   options,
   isMultipleSelection,
   onChange,
 }) {
+  useEffect(() => {
+    return () => {
+      form.setFieldsValue({
+        [name]: null,
+      });
+    };
+  }, [form, name]);
+
   const onChangeCheckbox = (checkedValues) => {
     onChange(checkedValues);
   };

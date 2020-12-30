@@ -7,8 +7,8 @@
 .form-item-radio-buttons label.ant-checkbox-group-item.ant-checkbox-wrapper {
   height: 36px;
   padding-top: 4px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 44px;
+  padding-right: 44px;
   margin-right: 16px;
   background-color: var(--bg-color-shade-4);
   border: 1px solid var(--main-color);
@@ -28,8 +28,9 @@
 .form-item-radio-buttons .ant-radio-button-wrapper {
   height: 36px;
   padding-top: 0;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 8px;
   margin-right: 16px;
   background-color: var(--bg-color-shade-4);
   color: var(--main-color);
@@ -50,7 +51,14 @@
 
 @media (max-width: 767px) {
   .form-item-radio-buttons .ant-radio-button-wrapper {
+    margin-bottom: 16px;
     padding-left: 36px;
     padding-right: 36px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .form-item-radio-buttons .ant-radio-button-wrapper {
+    margin-bottom: 16px;
   }
 }
