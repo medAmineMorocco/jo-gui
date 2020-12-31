@@ -8,6 +8,7 @@ import { DynamicSummary } from "@components/dynamicSummary/DynamicSummary";
 import { MobileDynamicSummary } from "@components/dynamicSummary/MobileDynamicSummary";
 import { HeaderWithCategory } from "@components/header/HeaderWithCategory";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
+import { Footer } from "@components/footer/Footer";
 import { CATEGORY } from "@utils/category";
 import { getUserProgess } from "@services/userService";
 import { notify } from "@utils/notification";
@@ -134,11 +135,32 @@ export function FormWizard() {
     );
   } else if (pageState === "loading") {
     return (
-      <div className="loading-spinner">
-        <Spin />
-      </div>
+      <>
+        <HeaderWithCategory className="form-header" title1="" title2="">
+          <img
+            className="intro-logo"
+            src="/images/paris-2024.png"
+            alt="paris-2024"
+          />
+        </HeaderWithCategory>
+        <div className="loading-spinner">
+          <Spin />
+        </div>
+        <Footer />
+      </>
     );
   } else {
-    return <></>;
+    return (
+      <>
+        <HeaderWithCategory className="form-header" title1="" title2="">
+          <img
+            className="intro-logo"
+            src="/images/paris-2024.png"
+            alt="paris-2024"
+          />
+        </HeaderWithCategory>
+        <Footer />
+      </>
+    );
   }
 }

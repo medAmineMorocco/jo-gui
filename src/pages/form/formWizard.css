@@ -84,7 +84,7 @@
 .loading-spinner {
   display: flex;
   justify-content: center;
-  margin: 50% 0;
+  margin: 20vh 0;
 }
 
 @media (max-width: 767px) {
