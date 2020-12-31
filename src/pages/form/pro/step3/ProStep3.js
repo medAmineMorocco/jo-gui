@@ -32,6 +32,7 @@ import { notify } from "@utils/notification";
 // Restauration
 export function ProStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const NUMBER_OF_MEALS_TO_BE_ENTERED = 5;
 
   const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
@@ -52,6 +53,8 @@ export function ProStep3({ step, setNextStep }) {
   const [slider7Value, setSlider7Value] = useState(0);
   const [slider8Value, setSlider8Value] = useState(0);
 
+  const [isQuestion1Valide, setIsQuestion1Valide] = useState(true);
+
   const handleSwitch1Change = (isChecked) => {
     setSwitch1Value(isChecked);
   };
@@ -60,9 +63,15 @@ export function ProStep3({ step, setNextStep }) {
     setSwitch2Value(isChecked);
   };
 
+  const getNombreOfMeals = () => {
+    return (
+      slider1Value + slider2Value + slider3Value + slider4Value + slider5Value
+    );
+  };
+
   useEffect(() => {
     const getSliderMaxValues = (val1 = 0, val2 = 0, val3 = 0, val4 = 0) => {
-      const result = 5 - val1 - val2 - val3 - val4;
+      const result = NUMBER_OF_MEALS_TO_BE_ENTERED - val1 - val2 - val3 - val4;
       return result < 0 ? 0 : result;
     };
 
@@ -125,19 +134,24 @@ export function ProStep3({ step, setNextStep }) {
   }, [form, step]);
 
   const onFinish = (values) => {
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.disabled = true;
+    if (getNombreOfMeals() === NUMBER_OF_MEALS_TO_BE_ENTERED) {
+      setIsQuestion1Valide(true);
+      const submitButton = document.querySelector('[type="submit"]');
+      submitButton.disabled = true;
 
-    saveResponsesOfStep(stepState(values))
-      .then(() => {
-        submitButton.disabled = false;
-        submitButton.blur();
-        setNextStep();
-      })
-      .catch(() => {
-        submitButton.disabled = false;
-        notify("Erreur serveur, veuillez réessayer ultérieurement");
-      });
+      saveResponsesOfStep(stepState(values))
+        .then(() => {
+          submitButton.disabled = false;
+          submitButton.blur();
+          setNextStep();
+        })
+        .catch(() => {
+          submitButton.disabled = false;
+          notify("Erreur serveur, veuillez réessayer ultérieurement");
+        });
+    } else {
+      setIsQuestion1Valide(false);
+    }
   };
 
   const onFieldsChange = () => {
@@ -205,6 +219,11 @@ export function ProStep3({ step, setNextStep }) {
             ]}
             isInline={true}
           />
+          {!isQuestion1Valide && (
+            <span style={{ color: "var(--main-color)" }}>
+              Veuillez renseigner au moins 5 repas
+            </span>
+          )}
         </div>
       </div>
 
