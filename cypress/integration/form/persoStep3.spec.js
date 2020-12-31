@@ -33,7 +33,7 @@ context('Form | Vie personnelle - Biens matériels step', () => {
 		});
 	});
 
-	if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
+	if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
 		it('should not exceed question value in its reduction action', () => {
 			cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep3/progress.json', 'progressJSON');
 			cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep3/state.json', 'getResponsesOfStep3');

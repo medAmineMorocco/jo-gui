@@ -107,7 +107,7 @@ context('Form | Déplacements personnels step', () => {
 				},
 			]);
 
-			if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
+			if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
 				cy.get('#5f60aadf53101').clear().type('75');
 			}
 
@@ -134,7 +134,7 @@ context('Form | Déplacements personnels step', () => {
 			cy.get('#5f557a34ea334').should('have.attr', 'value', '15');
 			cy.get('#5f557a44eafc4').should('have.attr', 'value', '16');
 
-			if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
+			if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
 				cy.get('#5f60aadf53101').should('have.attr', 'value', '75');
 			}
 		});
@@ -171,7 +171,7 @@ context('Form | Déplacements personnels step', () => {
 		});
 	});
 
-	if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
+	if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
 		it('should not exceed question value in its reduction action', () => {
 			cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep6/progress.json', 'progressJSON');
 			cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep6/state.json', 'getResponsesOfStep6');

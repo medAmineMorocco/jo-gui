@@ -34,7 +34,7 @@ context('Form | alimentation step', () => {
 								.then(() =>
 									cy.takeSnapshots('form - Alimentation personnelle conseils', size).then(() => {
 										cy.get('.modal-close-btn-modal').click();
-										if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === 'true') {
+										if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
 											cy.get('.ant-switch')
 												.eq(0)
 												.click({ force: true })

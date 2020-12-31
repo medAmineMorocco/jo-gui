@@ -61,7 +61,7 @@ Cypress.Commands.add('count', (selector, number) => {
 
 Cypress.Commands.add('typeNumber', (questions) => {
 	questions.forEach(({ name, value }) =>
-		cy.get(`#${name}`).clear().type(`${value}`)
+		cy.get(`#${name}`).clear({force: true}).type(`${value}`)
 	);
 });
 
