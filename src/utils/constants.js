@@ -107,7 +107,8 @@ export const INTRODUCTION_QUESTION1_INFOS =
   "Prends en compte tes jours de télétravail ici. (≈ 218 jours)";
 export const INTRODUCTION_QUESTION1_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
-export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
+export const INTRODUCTION_QUESTION2 =
+  "Ancienneté dans le COJO par rapport à l'année de référence choisie (en mois)";
 export const INTRODUCTION_QUESTION2_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
@@ -274,7 +275,8 @@ export const DEPLACEMENTS_SAVIEZ_VOUS =
 export const DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE = "Cartes des distances";
 
 // À la maison
-export const HOUSE_QUESTION1 = "Nombre d'adultes du logement";
+export const HOUSE_QUESTION1 =
+  "Nombre de personnes adultes résidant dans le logement";
 export const HOUSE_QUESTION2 = "Surface logement";
 export const HOUSE_QUESTION2_TOOLTIP = "Indiquée sur ton bail / acte de vente.";
 export const HOUSE_QUESTION3 = "Vous vivez en ?";
@@ -382,3 +384,5 @@ export const MATERIELS_QUESTION14_LABEL =
   "Nombre de vêtements neufs achetés par an (articles)";
 export const MATERIELS_QUESTION15_LABEL =
   "Nombre de paires de chaussures neuves achetées par an";
+export const MATERIELS_QUESTION16_LABEL =
+  "Nombre de vêtements achetés de seconde main par an";
