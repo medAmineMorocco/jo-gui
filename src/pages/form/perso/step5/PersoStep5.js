@@ -42,6 +42,7 @@ import { notify } from "@utils/notification";
 // Alimentation
 export function PersoStep5({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const NUMBER_OF_MEALS_TO_BE_ENTERED = 9;
 
   const [slider1Value, setSlider1Value] = useState(0);
   const [slider1Max, setSlider1Max] = useState(5);
@@ -69,6 +70,8 @@ export function PersoStep5({ step, setNextStep }) {
   const [question8Count, setQuestion8Count] = useState(0);
   const [question9Count, setQuestion9Count] = useState(0);
 
+  const [isQuestion2Valide, setIsQuestion2Valide] = useState(true);
+
   const handleSwitchReductionAction1Change = (isChecked) => {
     setReductionAction1Opened(isChecked);
   };
@@ -81,9 +84,15 @@ export function PersoStep5({ step, setNextStep }) {
     return options.reverse().find(({ value }) => value <= questionValue).value;
   };
 
+  const getNombreOfMeals = () => {
+    return (
+      slider1Value + slider2Value + slider3Value + slider4Value + slider5Value
+    );
+  };
+
   useEffect(() => {
     const getSliderMaxValues = (val1 = 0, val2 = 0, val3 = 0, val4 = 0) => {
-      const result = 9 - val1 - val2 - val3 - val4;
+      const result = NUMBER_OF_MEALS_TO_BE_ENTERED - val1 - val2 - val3 - val4;
       return result < 0 ? 0 : result;
     };
 
@@ -212,19 +221,25 @@ export function PersoStep5({ step, setNextStep }) {
   }, [form, setReponsesOfStep, step]);
 
   const onFinish = (values) => {
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.disabled = true;
+    if (getNombreOfMeals() === NUMBER_OF_MEALS_TO_BE_ENTERED) {
+      setIsQuestion2Valide(true);
 
-    saveResponsesOfStep(persostep5State(values))
-      .then(() => {
-        submitButton.disabled = false;
-        submitButton.blur();
-        setNextStep();
-      })
-      .catch(() => {
-        submitButton.disabled = false;
-        notify("Erreur serveur, veuillez réessayer ultérieurement");
-      });
+      const submitButton = document.querySelector('[type="submit"]');
+      submitButton.disabled = true;
+
+      saveResponsesOfStep(persostep5State(values))
+        .then(() => {
+          submitButton.disabled = false;
+          submitButton.blur();
+          setNextStep();
+        })
+        .catch(() => {
+          submitButton.disabled = false;
+          notify("Erreur serveur, veuillez réessayer ultérieurement");
+        });
+    } else {
+      setIsQuestion2Valide(false);
+    }
   };
 
   const onFieldsChange = () => {
@@ -296,6 +311,11 @@ export function PersoStep5({ step, setNextStep }) {
             ]}
             isInline={true}
           />
+          {!isQuestion2Valide && (
+            <span style={{ color: "var(--main-color)" }}>
+              Veuillez renseigner au moins 9 repas
+            </span>
+          )}
         </div>
       </div>
 
