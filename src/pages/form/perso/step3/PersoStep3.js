@@ -24,6 +24,7 @@ import {
   MATERIELS_QUESTION13_LABEL,
   MATERIELS_QUESTION14_LABEL,
   MATERIELS_QUESTION15_LABEL,
+  MATERIELS_QUESTION16_LABEL,
 } from "@utils/constants";
 import {
   saveResponsesOfStep,
@@ -33,7 +34,7 @@ import { actionReduction1Data, actionReduction2Data } from "./step3Config";
 import { persostep3State } from "./step3State";
 import { notify } from "@utils/notification";
 
-// Biens matériels
+// Biens personnels
 export function PersoStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [render, setRender] = useState(0);
@@ -341,7 +342,12 @@ export function PersoStep3({ step, setNextStep }) {
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             onChange={onchangeQuestion14}
           />
-
+          <FormItemInputNumber
+            form={form}
+            name="to-insert"
+            label={MATERIELS_QUESTION16_LABEL}
+            rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
+          />
           <FormItemInputNumber
             form={form}
             name="5f556baea779b"
