@@ -9,10 +9,6 @@ import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumbe
 import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
 import {
   MATERIELS_QUESTIONS_ERROR_MSG,
-  MATERIELS_QUESTION1_LABEL,
-  MATERIELS_QUESTION2_LABEL,
-  MATERIELS_QUESTION3_LABEL,
-  MATERIELS_QUESTION4_LABEL,
   MATERIELS_QUESTION5_LABEL,
   MATERIELS_QUESTION6_LABEL,
   MATERIELS_QUESTION7_LABEL,
@@ -40,10 +36,6 @@ export function PersoStep3({ step, setNextStep }) {
   const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
-  const [question1, setQuestion1] = useState(0);
-  const [question2, setQuestion2] = useState(0);
-  const [question3, setQuestion3] = useState(0);
-  const [question4, setQuestion4] = useState(0);
   const [question5, setQuestion5] = useState(0);
   const [question6, setQuestion6] = useState(0);
   const [question7, setQuestion7] = useState(0);
@@ -60,14 +52,6 @@ export function PersoStep3({ step, setNextStep }) {
 
   const handleSwitch2Change = (isChecked) => {
     setSwitch2Value(isChecked);
-  };
-
-  const onchangeQuestion4 = () => {
-    setRender(Math.random);
-    actionReduction1Data[0].options = [{ text: "0", value: 0 }];
-    for (let i = 1; i <= form.getFieldValue("5f55692a73b55"); i++) {
-      actionReduction1Data[0].options.push({ text: `${i}`, value: i });
-    }
   };
 
   const onchangeQuestion6 = () => {
@@ -144,10 +128,6 @@ export function PersoStep3({ step, setNextStep }) {
 
       onchangeQuestion14(form.getFieldValue("5f556b94d465c"));
       onchangeQuestion15(form.getFieldValue("5f556baea779b"));
-      setQuestion1(form.getFieldValue("5f5568d39449f"));
-      setQuestion2(form.getFieldValue("5f5568e651349"));
-      setQuestion3(form.getFieldValue("5f5568f49b63c"));
-      setQuestion4(form.getFieldValue("5f55692a73b55"));
       setQuestion5(form.getFieldValue("5f5569516acd3"));
       setQuestion6(form.getFieldValue("5f5569587abe3"));
       setQuestion7(form.getFieldValue("5f55697727f39"));
@@ -196,42 +176,6 @@ export function PersoStep3({ step, setNextStep }) {
         <div className="pro-step-title-container">
           <span className="pro-step-title">Biens personnels</span>
         </div>
-
-        <TitleWithHorizontalLine title="Véhicules" />
-
-        <FormCounter
-          form={form}
-          name="5f5568d39449f"
-          textCounter={MATERIELS_QUESTION1_LABEL}
-          value={question1}
-          setValue={setQuestion1}
-        />
-
-        <FormCounter
-          form={form}
-          name="5f5568e651349"
-          textCounter={MATERIELS_QUESTION2_LABEL}
-          value={question2}
-          setValue={setQuestion2}
-        />
-
-        <FormCounter
-          form={form}
-          name="5f5568f49b63c"
-          textCounter={MATERIELS_QUESTION3_LABEL}
-          value={question3}
-          setValue={setQuestion3}
-        />
-
-        <FormItemInputNumberWithUnit
-          form={form}
-          name="5f55692a73b55"
-          label={MATERIELS_QUESTION4_LABEL}
-          unit="ans"
-          value={question4}
-          onChange={onchangeQuestion4}
-          oneLineInput={true}
-        />
 
         <div className="forms-margin">
           <TitleWithHorizontalLine title="Électroniques" />
