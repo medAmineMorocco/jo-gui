@@ -162,3 +162,22 @@ export const eau_chaude_energy_type_options = [
     value: "Fioul",
   },
 ];
+
+export const are_gaz_or_electricity_renewable_options = [
+  {
+    label: "Electricité renouvelable",
+    value: "electricite_renouvelable",
+  },
+  {
+    label: "Gaz renouvelable",
+    value: "gaz_renouvelable",
+  },
+  {
+    label: "Les deux",
+    value: "les_deux",
+  },
+  {
+    label: "Aucun des deux",
+    value: "aucun_des_deux",
+  },
+];

@@ -316,6 +316,8 @@ export const HOUSE_QUESTION17 =
   "A quel type d'énergie fonctionne votre système de chauffage collectif ?";
 export const HOUSE_QUESTION18 =
   "A quel type d'énergie fonctionne votre système d'eau chaude collective ?";
+export const HOUSE_QUESTION19 =
+  "Votre électricité et gaz sont-ils renouvelables ?";
 export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_TITLE_HOUSE =
   "Comment optimiser ta consommation d’énergie ?";

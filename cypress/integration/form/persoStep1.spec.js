@@ -109,8 +109,7 @@ context('Form | Logement step', () => {
 				.contains('Chauffage collectif')
 				.should('exist');
 			cy.get('#5fec50d0b6047').find('label.ant-radio-button-wrapper-checked').contains('Fioul').should('exist');
-
-			cy.get(`body:contains("Votre électricité et gaz sont-ils renouvelables ?")`).should('not.exist');
+			cy.get('#to-insert-19').find('label.ant-radio-button-wrapper-checked').contains('Gaz renouvelable').should('exist');
 		});
 	});
 });
