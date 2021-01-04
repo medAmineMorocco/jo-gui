@@ -1,4 +1,4 @@
-context('Form | Vie personnelle - Biens matériels step', () => {
+context('Form | Vie personnelle - Biens personnels step', () => {
 	const sizes = [
 		{
 			device: 'iphone-5',
@@ -14,7 +14,7 @@ context('Form | Vie personnelle - Biens matériels step', () => {
 		},
 	];
 
-	it('should show Biens matériels step on form page', () => {
+	it('should show Biens personnels step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep3/progress.json', 'progressJSON');
 
 		sizes.forEach((size) => {

@@ -39,7 +39,7 @@ export const subQuestions = {
       question:
         "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO₂)",
       name: "5f5542e9d7d95",
-      defaultResponse: 12.5,
+      defaultResponse: 13,
     },
   ],
   "18 Bd Malesherbes": [
@@ -59,7 +59,7 @@ export const subQuestions = {
       question:
         "Quote-part individuelle des émissions liées aux Services Généraux - Déchets (kg éq CO₂)",
       name: "5f5542b40b8c1",
-      defaultResponse: 1833,
+      defaultResponse: 186,
     },
     {
       question:
@@ -71,7 +71,7 @@ export const subQuestions = {
       question:
         "Quote-part individuelle des émissions liées aux immobilisations (kg éq CO₂)",
       name: "5f5542e9d7d95",
-      defaultResponse: 12.5,
+      defaultResponse: 13,
     },
   ],
 };

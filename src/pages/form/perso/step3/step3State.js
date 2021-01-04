@@ -3,22 +3,6 @@ export const persostep3State = (values) => {
     thematic: "VEHICULES",
     questions: [
       {
-        question: "5f5568d39449f",
-        response: values["5f5568d39449f"],
-      },
-      {
-        question: "5f5568e651349",
-        response: values["5f5568e651349"],
-      },
-      {
-        question: "5f5568f49b63c",
-        response: values["5f5568f49b63c"],
-      },
-      {
-        question: "5f55692a73b55",
-        response: values["5f55692a73b55"],
-      },
-      {
         question: "5f5569516acd3",
         response: values["5f5569516acd3"],
       },

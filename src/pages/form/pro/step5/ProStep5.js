@@ -63,6 +63,10 @@ export function ProStep5({ step, setNextStep }) {
   const trajetsARIndex = [2, 3, 4, 5, 6];
   const trajetsARDynamicProps = [
     {
+      label: QUESTION6_NBR_TRAJETS_AR,
+      name: "5f55582edaeda",
+    },
+    {
       label: QUESTION2_NBR_TRAJETS_AR,
       name: "5f5557c81d9d6",
     },
@@ -77,10 +81,6 @@ export function ProStep5({ step, setNextStep }) {
     {
       label: QUESTION5_NBR_TRAJETS_AR,
       name: "5f5558209ce59",
-    },
-    {
-      label: QUESTION6_NBR_TRAJETS_AR,
-      name: "5f55582edaeda",
     },
   ];
 
