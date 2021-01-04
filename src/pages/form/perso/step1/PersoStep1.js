@@ -13,6 +13,7 @@ import {
   HOUSE_QUESTION16,
   HOUSE_QUESTION17,
   HOUSE_QUESTION18,
+  HOUSE_QUESTION19,
   OVERLAY_TITLE_HOUSE,
   OVERLAY_SOUSTEXTE_HOUSE,
   HOUSE_ERROR_MSG,
@@ -46,6 +47,7 @@ import {
   chauffage_options,
   energy_type_options,
   eau_chaude_energy_type_options,
+  are_gaz_or_electricity_renewable_options,
 } from "./step1Config";
 import { persostep1State } from "./step1State";
 import { notify } from "@utils/notification";
@@ -311,6 +313,16 @@ export function PersoStep1({ step, setNextStep }) {
                   />
                 </div>
               )}
+              <div className="forms-margin">
+                <FormItemRadioButtons
+                  form={form}
+                  label={HOUSE_QUESTION19}
+                  name="to-insert-19"
+                  options={are_gaz_or_electricity_renewable_options}
+                  isMultipleSelection={false}
+                  onChange={() => console.log("change")}
+                />
+              </div>
             </Fragment>
           </Fragment>
         )}
