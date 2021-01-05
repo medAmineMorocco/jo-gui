@@ -62,8 +62,12 @@ export function ProStep0({ step, setNextStep }) {
           response: values["5f5541ba9b096"],
         },
       ],
-      actions: [],
-      settings: [],
+      ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+        actions: [],
+      }),
+      ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+        settings: [],
+      }),
     };
 
     const submitButton = document.querySelector('[type="submit"]');

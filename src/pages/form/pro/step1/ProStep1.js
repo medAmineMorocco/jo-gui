@@ -71,8 +71,12 @@ export function ProStep1({ step, setNextStep }) {
           response: values["5f55437711711"],
         },
       ],
-      actions: [],
-      settings: [],
+      ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+        actions: [],
+      }),
+      ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+        settings: [],
+      }),
     };
 
     subQuestions[values["5f554229451a5"]].forEach((res) => {
