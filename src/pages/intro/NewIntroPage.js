@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "antd";
 import { Button as ButtonAntd } from "antd";
 import { ReactComponent as Calendar } from "@theme/icons/col-calendar.svg";
@@ -9,7 +9,6 @@ import { getUserProgess } from "@services/userService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Header } from "@components/header/Header";
 import { Modal } from "@components/modal/Modal";
-import { Link } from "react-router-dom";
 import { HomeOutlined } from "@ant-design/icons";
 import { FooterWithDetails } from "@components/footer/FooterWithDetails";
 import {
@@ -138,12 +137,9 @@ export function NewIntroPage() {
       </div>
 
       <div className="center-items-container">
-        <Button
-          className="custom-btn-intro"
-          onClick={() => history.push("/form")}
-        >
-          <span>{INTRODUCTION_BTN_DESCRIPTION}</span>
-        </Button>
+        <Link to="/form" className="custom-btn-intro">
+          {INTRODUCTION_BTN_DESCRIPTION}
+        </Link>
       </div>
 
       <FooterWithDetails />

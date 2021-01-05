@@ -58,6 +58,10 @@
 }
 
 .custom-btn-intro {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
   border: 4px solid var(--main-color);
   height: 9vh;
   background-color: var(--bg-color-shade-2);

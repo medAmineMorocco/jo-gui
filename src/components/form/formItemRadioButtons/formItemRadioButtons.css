@@ -25,6 +25,10 @@
 
 /* -------------------------------radio-buttons---------------------------------------- */
 
+.form-item-radio-buttons .ant-radio-button-wrapper::before {
+  display: none;
+}
+
 .form-item-radio-buttons .ant-radio-button-wrapper {
   height: 36px;
   padding-top: 0;

@@ -16,6 +16,7 @@ context('Home page', () => {
     ];
 
     it('should show home page', () => {
+        cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
         sizes.forEach(size => {
             cy.viewport(size.device);
             cy.window().then(win=> {
