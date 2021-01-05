@@ -71,7 +71,7 @@ context("Form | introduction step", () => {
         cy.login("email@paris2024.org");
         cy.visit("/form");
 
-        cy.wait(500);
+        cy.wait(1000);
         cy.submitForm();
 
         cy.get(

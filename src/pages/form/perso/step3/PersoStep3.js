@@ -10,6 +10,7 @@ import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLi
 import {
   MATERIELS_QUESTIONS_ERROR_MSG,
   MATERIELS_QUESTION5_LABEL,
+  MATERIELS_QUESTION5_TOOLTIP,
   MATERIELS_QUESTION6_LABEL,
   MATERIELS_QUESTION7_LABEL,
   MATERIELS_QUESTION8_LABEL,
@@ -178,12 +179,13 @@ export function PersoStep3({ step, setNextStep }) {
         </div>
 
         <div className="forms-margin">
-          <TitleWithHorizontalLine title="Électroniques" />
+          <TitleWithHorizontalLine title="Numérique" />
         </div>
 
         <FormCounter
           form={form}
           name="5f5569516acd3"
+          tooltipTitle={MATERIELS_QUESTION5_TOOLTIP}
           textCounter={MATERIELS_QUESTION5_LABEL}
           value={question5}
           setValue={setQuestion5}
@@ -276,7 +278,7 @@ export function PersoStep3({ step, setNextStep }) {
       )}
 
       <div className="wizard-content-right-form-parent">
-        <TitleWithHorizontalLine title="Dressing" />
+        <TitleWithHorizontalLine title="Vêtements" />
 
         <div className="forms-margin">
           <FormItemInputNumber

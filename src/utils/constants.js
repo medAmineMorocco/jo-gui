@@ -373,6 +373,8 @@ export const MATERIELS_QUESTION3_LABEL =
   "Nombre de voitures SUV, berlines, monospaces";
 export const MATERIELS_QUESTION4_LABEL = "Renouvelés tous les";
 export const MATERIELS_QUESTION5_LABEL = "Nombre d'Ordinateurs fixes";
+export const MATERIELS_QUESTION5_TOOLTIP =
+  "Ne pensez plus qu'à vos consommations personnelles";
 export const MATERIELS_QUESTION6_LABEL = "Renouvelés tous les";
 export const MATERIELS_QUESTION7_LABEL = "Nombre d'Ordinateurs portables";
 export const MATERIELS_QUESTION8_LABEL = "Renouvelés tous les";
