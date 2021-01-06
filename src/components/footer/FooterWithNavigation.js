@@ -14,7 +14,6 @@ export function FooterWithNavigation({ previous, next, step }) {
     category: nextCategory,
     details: nextDetails = "",
     onClick: onNextClick,
-    text: textInButtonNext,
   } = next;
   return (
     <Footer>

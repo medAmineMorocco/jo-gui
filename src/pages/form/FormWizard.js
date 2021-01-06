@@ -12,6 +12,7 @@ import { Footer } from "@components/footer/Footer";
 import { CATEGORY } from "@utils/category";
 import { getUserProgess } from "@services/userService";
 import { notify } from "@utils/notification";
+import { requestState } from "@utils/requestState";
 import { config } from "./formConfig";
 import "./formWizard.css";
 
@@ -19,7 +20,7 @@ export function FormWizard() {
   const isMobileOrTablet = useTabletOrMobileSize();
   const history = useHistory();
   const [activeStep, setActiveStep] = useState();
-  const [pageState, setPageState] = useState("loading");
+  const [pageState, setPageState] = useState(requestState.LOADING);
 
   const getCurrentStep = useCallback(() => {
     getUserProgess()
@@ -27,7 +28,7 @@ export function FormWizard() {
         if (response.progress === "VIE_PROFESIONAL") {
           setTimeout(() => {
             setActiveStep(Number(response.step));
-            setPageState("success");
+            setPageState(requestState.SUCCESS);
           }, 500);
         } else if (response.progress === "RESULTATS") {
           history.push("/home");
@@ -35,7 +36,7 @@ export function FormWizard() {
       })
       .catch(() => {
         setTimeout(() => {
-          setPageState("error");
+          setPageState(requestState.ERROR);
           notify(
             "Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
           );
@@ -55,7 +56,7 @@ export function FormWizard() {
     setActiveStep(Number(activeStep) - 1);
   };
 
-  if (pageState === "success") {
+  if (pageState === requestState.SUCCESS) {
     const { component: FormStep, progress, category, previous, next } = config[
       activeStep
     ];
@@ -133,7 +134,7 @@ export function FormWizard() {
         />
       </>
     );
-  } else if (pageState === "loading") {
+  } else if (pageState === requestState.LOADING) {
     return (
       <>
         <HeaderWithCategory className="form-header" title1="" title2="">
