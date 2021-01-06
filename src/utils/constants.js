@@ -355,7 +355,7 @@ export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
 export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
 export const EQUIPMENT_QUESTION = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
-export const EQUIPMENT_QUESTION10 = "As-tu la fibre chez toi ?";
+export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
   "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
