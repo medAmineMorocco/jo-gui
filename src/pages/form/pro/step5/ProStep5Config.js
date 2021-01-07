@@ -138,9 +138,9 @@ export const actionReductionData = [
 
 export const overlay_items = [
   {
-    image: "/images/conso-electrique.png",
+    image: "/images/DistanceFrance.png",
   },
   {
-    image: "/images/conso-electrique.png",
+    image: "/images/DistanceMonde.png",
   },
 ];
