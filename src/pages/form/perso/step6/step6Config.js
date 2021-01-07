@@ -23,9 +23,9 @@ export const transportation_options = (
 };
 
 export const question2_options = [
+  { text: "Electrique", value: "Electrique" },
   { text: "Essence", value: "Essence" },
   { text: "Diesel", value: "Diesel" },
-  { text: "Electrique", value: "Electrique" },
 ];
 
 export const question3_questions = [
