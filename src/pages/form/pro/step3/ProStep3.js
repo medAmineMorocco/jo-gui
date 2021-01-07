@@ -175,6 +175,9 @@ export function ProStep3({ step, setNextStep }) {
           <FormSlider
             form={form}
             labels={REPAS_QUESTION1}
+            tooltipTitle={
+              "Le total doit faire 5 pour vos 5 déjeuners au bureau"
+            }
             questions={[
               curseurQuestion(
                 "",

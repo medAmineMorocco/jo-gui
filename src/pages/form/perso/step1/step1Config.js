@@ -59,8 +59,8 @@ export const consommation_options = (
 ) => {
   return [
     {
-      label: "Electrique",
-      value: "Electrique",
+      label: "Electricité",
+      value: "Electricité",
       onChange: onElectriqueChange,
     },
     {
@@ -135,8 +135,8 @@ export const chauffage_options = [
 
 export const energy_type_options = [
   {
-    label: "Electrique",
-    value: "Electrique",
+    label: "Electricité",
+    value: "Electricité",
   },
   {
     label: "Gaz",
@@ -150,8 +150,8 @@ export const energy_type_options = [
 
 export const eau_chaude_energy_type_options = [
   {
-    label: "Electrique",
-    value: "Electrique",
+    label: "Electricité",
+    value: "Electricité",
   },
   {
     label: "Gaz",

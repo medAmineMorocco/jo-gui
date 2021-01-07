@@ -117,7 +117,7 @@ export function ProStep1({ step, setNextStep }) {
           form={form}
           name="5f554229451a5"
           tooltipTitle="Ces émissions concernent les consommations des bâtiments, rapportées à chaque collaborateur."
-          label="Votre bureau est situé"
+          label="Sur votre année de référence, vous étiez : "
           options={emplacementBureauOptions}
           subQuestions={subQuestions}
           selectedValue={emplacementBureau}

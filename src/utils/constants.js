@@ -104,11 +104,12 @@ export const LIRE_PLUS = "... LIRE PLUS";
 // introduction
 export const INTRODUCTION_QUESTION1 = "Nombre de jours travaillés par an";
 export const INTRODUCTION_QUESTION1_INFOS =
-  "Prends en compte tes jours de télétravail ici. (≈ 218 jours)";
+  "Indice : 215 dans un contrat temps-plein !";
+export const INTRODUCTION_QUESTION2_INFOS =
+  "Par rapport à ton année de référence";
 export const INTRODUCTION_QUESTION1_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
-export const INTRODUCTION_QUESTION2 =
-  "Ancienneté dans le COJO par rapport à l'année de référence choisie (en mois)";
+export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
 export const INTRODUCTION_QUESTION2_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
@@ -139,7 +140,7 @@ export const TITLE_ECRANS =
   "Nombre d'écrans additionels mis à votre disposition";
 
 // Empreinte numérique
-export const TAILLE_BOITE = "Taille de ta boîte mail (en Go)";
+export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
 export const TAILLE_BOITE_INFO =
   "Pour trouver cette information, check le « pop-in conseil » plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -160,11 +161,11 @@ export const EMREINTE_OVERLAY_IMAGE =
 
 // Trajets
 export const DISTANCE_DOMICILE_TRAVAIL =
-  "Distance entre ton domicile et ton travail (km)";
+  "Distance entre votre domicile et votre travail (km)";
 export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const MODE_DEPLACEMENT =
-  "Mode de déplacement principal (celui que tu utilises le plus fréquemment et sur la plus grande partie de votre trajet)";
+  "Mode de déplacement principal (celui que vous utilisez le plus fréquemment et sur la plus grande partie de votre trajet)";
 export const MOTORISATION = "Motorisation du véhicule";
 export const MOTORISATION_INFOS =
   "Pour le métro, tramway, train, RER et TGV, la motorisation est électrique !";
@@ -202,7 +203,7 @@ export const QUESTION11_NBR_VOLS_AR =
 
 // Restauration
 export const REPAS_QUESTION1 =
-  "De quoi sont majoritairement composés tes repas au bureau ?";
+  "Au bureau, quelle est la composition de vos repas ? (5 déjeuners) :";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -222,7 +223,7 @@ export const ALIMENTATION_QUESTION2 =
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION =
-  "De quoi sont majoritairement composés tes repas ?";
+  "Dans votre vie perso, quelle est la composition de vos repas ? (Les 9 repas restants sur une semaine : dîners et week-end)";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
@@ -252,7 +253,7 @@ export const ALIMENTATION_SAVIEZ_VOUS =
 
 // deplacement personnels
 export const TRANSPORTATION_LABEL =
-  "Effectuez-vous des déplacements personnels en ?";
+  "Quel moyen de transport utilisez-vous pour vos déplacements personnels ?";
 export const DEPLACEMENTS_QUESTION1 =
   "Distance parcourue en voiture par an (véhicule personnel ou de location)";
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
@@ -280,15 +281,14 @@ export const HOUSE_QUESTION1 =
 export const HOUSE_QUESTION2 = "Surface logement";
 export const HOUSE_QUESTION2_TOOLTIP = "Indiquée sur ton bail / acte de vente.";
 export const HOUSE_QUESTION3 = "Vous vivez en ?";
-export const HOUSE_QUESTION4 =
-  "Classe Energie de ton logement, DPE (si vous le connaissez)";
+export const HOUSE_QUESTION4 = "Classe Energie de votre logement, DPE";
 export const HOUSE_QUESTION4_TOOLTIP =
   "Indiquée sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
 export const HOUSE_QUESTION5 =
-  "Souhaitez-vous entrer dans le détail de vos consommations énergétiques ?";
+  "Voulez-vous rentrer dans le détail de vos consommations énergétiques ?";
 export const HOUSE_QUESTION6 =
   "Votre électricité et gaz sont-ils renouvelables ?";
-export const HOUSE_QUESTION7 = "Quel(s) type(s) d'énergie utilisez-vous ?";
+export const HOUSE_QUESTION7 = "Quel(s) type(s) d'énergie consommez vous ?";
 export const HOUSE_QUESTION8 =
   "Consommation annuelle d'électricité de votre logement";
 export const HOUSE_QUESTION8_TOOLTIP =

@@ -12,6 +12,7 @@ import {
   INTRODUCTION_QUESTION1_INFOS,
   INTRODUCTION_QUESTION1_ERROR_MSG,
   INTRODUCTION_QUESTION2,
+  INTRODUCTION_QUESTION2_INFOS,
   INTRODUCTION_QUESTION2_ERROR_MSG,
   INTRODUCTION_QUESTION3,
   INTRODUCTION_QUESTION3_ERROR_MSG,
@@ -21,14 +22,6 @@ import { notify } from "@utils/notification";
 // introduction
 export function ProStep0({ step, setNextStep }) {
   const [form] = Form.useForm();
-
-  const spanWithEmoji = () => {
-    return (
-      <span role="img" aria-label="emoji du clin d'oeil">
-        Pour une année "type" &#128521;
-      </span>
-    );
-  };
 
   useEffect(() => {
     scrollToTopOfThePage();
@@ -107,6 +100,7 @@ export function ProStep0({ step, setNextStep }) {
           <FormItemInputNumber
             form={form}
             name="5f5541a7845e0"
+            tooltipTitle={INTRODUCTION_QUESTION2_INFOS}
             label={INTRODUCTION_QUESTION2}
             rules={[
               { required: true, message: INTRODUCTION_QUESTION2_ERROR_MSG },
@@ -118,7 +112,6 @@ export function ProStep0({ step, setNextStep }) {
           <FormItemInputNumber
             form={form}
             name="5f5541ba9b096"
-            tooltipTitle={spanWithEmoji}
             label={INTRODUCTION_QUESTION3}
             rules={[
               { required: true, message: INTRODUCTION_QUESTION3_ERROR_MSG },
