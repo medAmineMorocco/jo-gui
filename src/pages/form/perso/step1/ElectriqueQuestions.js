@@ -58,7 +58,7 @@ export function ElectriqueQuestions({ form }) {
   return (
     <Fragment>
       <div className="forms-margin">
-        <TitleWithHorizontalLine title="Electrique" />
+        <TitleWithHorizontalLine title="Electricité" />
       </div>
 
       <div className="forms-margin">

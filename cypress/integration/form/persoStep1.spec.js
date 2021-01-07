@@ -40,7 +40,7 @@ context('Form | Logement step', () => {
 		});
 	});
 
-	it('should get responses when user respondes with "non" to the question "Souhaitez-vous entrer dans le détail de vos consommations énergétiques ?"', () => {
+	it('should get responses when user respondes with "non" to the question "Voulez-vous rentrer dans le détail de vos consommations énergétiques ?"', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep1/progress.json', 'progressJSON');
 		cy.stubRequest(
 			'GET',
@@ -63,14 +63,14 @@ context('Form | Logement step', () => {
 				.should('have.attr', 'title', 'B = 70,5');
 			cy.get('#5fe30bac50656').find('label.ant-radio-button-wrapper-checked').contains('Non').should('exist');
 			cy.get('#5fe46949b764d').find('label.ant-radio-button-wrapper-checked').contains('Non').should('exist');
-			cy.get(`body:contains("Quel(s) type(s) d'énergie utilisez-vous ?")`).should('not.exist');
+			cy.get(`body:contains("Quel(s) type(s) d'énergie consommez vous ?")`).should('not.exist');
 			cy.get(`body:contains("Votre chauffage ou eau chaude sanitaire dépend-il d'un système collectif ?")`).should(
 				'not.exist'
 			);
 		});
 	});
 
-	it('should get responses when user respondes with "oui" to the question "Souhaitez-vous entrer dans le détail de vos consommations énergétiques ?"', () => {
+	it('should get responses when user respondes with "oui" to the question "Voulez-vous rentrer dans le détail de vos consommations énergétiques ?"', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep1/progress.json', 'progressJSON');
 		cy.stubRequest(
 			'GET',
@@ -94,8 +94,9 @@ context('Form | Logement step', () => {
 			cy.get('#5fe30bac50656').find('label.ant-radio-button-wrapper-checked').contains('Oui').should('exist');
 
 			cy.get('#5fe30b3a5a6b4').find('label.ant-checkbox-wrapper-checked').as('checkedEnergies');
+
 			cy.get('@checkedEnergies').should('have.length', 4);
-			['Electrique', 'Gaz', 'Fioul', 'Bois'].forEach((energy) =>
+			['Electricité', 'Gaz', 'Fioul', 'Bois'].forEach((energy) =>
 				cy.get('@checkedEnergies').find(`input[value=${energy}]`).should('exist')
 			);
 

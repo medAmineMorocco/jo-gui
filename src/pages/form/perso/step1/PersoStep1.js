@@ -114,7 +114,7 @@ export function PersoStep1({ step, setNextStep }) {
       setConsommationQuestionsVisible(form.getFieldValue("5fe30bac50656"));
       if (form.getFieldValue("5fe30b3a5a6b4")) {
         setElectriqueQuestionsVisible(
-          form.getFieldValue("5fe30b3a5a6b4").includes("Electrique")
+          form.getFieldValue("5fe30b3a5a6b4").includes("Electricité")
         );
         setGazQuestionsVisible(
           form.getFieldValue("5fe30b3a5a6b4").includes("Gaz")

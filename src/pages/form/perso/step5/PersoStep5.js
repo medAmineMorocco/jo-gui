@@ -272,6 +272,7 @@ export function PersoStep5({ step, setNextStep }) {
           <FormSlider
             form={form}
             labels={ALIMENTATION_QUESTION}
+            tooltipTitle={"Le total doit faire 9 pour vos 9 repas restants"}
             questions={[
               curseurQuestion(
                 "5f5570ff217a4",
