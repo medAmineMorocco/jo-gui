@@ -63,10 +63,14 @@ export function ProStep3({ step, setNextStep }) {
     setSwitch2Value(isChecked);
   };
 
-  const getNombreOfMeals = () => {
-    return (
-      slider1Value + slider2Value + slider3Value + slider4Value + slider5Value
-    );
+  const getNombreOfMeals = (
+    val1 = 0,
+    val2 = 0,
+    val3 = 0,
+    val4 = 0,
+    val5 = 0
+  ) => {
+    return val1 + val2 + val3 + val4 + val5;
   };
 
   useEffect(() => {
@@ -134,7 +138,15 @@ export function ProStep3({ step, setNextStep }) {
   }, [form, step]);
 
   const onFinish = (values) => {
-    if (getNombreOfMeals() === NUMBER_OF_MEALS_TO_BE_ENTERED) {
+    if (
+      getNombreOfMeals(
+        slider1Value,
+        slider2Value,
+        slider3Value,
+        slider4Value,
+        slider5Value
+      ) === NUMBER_OF_MEALS_TO_BE_ENTERED
+    ) {
       setIsQuestion1Valide(true);
       const submitButton = document.querySelector('[type="submit"]');
       submitButton.disabled = true;
@@ -223,8 +235,8 @@ export function ProStep3({ step, setNextStep }) {
             isInline={true}
           />
           {!isQuestion1Valide && (
-            <span style={{ color: "var(--main-color)" }}>
-              Veuillez renseigner au moins 5 repas
+            <span style={{ color: "var(--error-color)" }}>
+              Veuillez renseigner {NUMBER_OF_MEALS_TO_BE_ENTERED} repas !
             </span>
           )}
         </div>

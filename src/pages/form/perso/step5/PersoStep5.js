@@ -84,10 +84,14 @@ export function PersoStep5({ step, setNextStep }) {
     return options.reverse().find(({ value }) => value <= questionValue).value;
   };
 
-  const getNombreOfMeals = () => {
-    return (
-      slider1Value + slider2Value + slider3Value + slider4Value + slider5Value
-    );
+  const getNombreOfMeals = (
+    val1 = 0,
+    val2 = 0,
+    val3 = 0,
+    val4 = 0,
+    val5 = 0
+  ) => {
+    return val1 + val2 + val3 + val4 + val5;
   };
 
   useEffect(() => {
@@ -221,7 +225,15 @@ export function PersoStep5({ step, setNextStep }) {
   }, [form, setReponsesOfStep, step]);
 
   const onFinish = (values) => {
-    if (getNombreOfMeals() === NUMBER_OF_MEALS_TO_BE_ENTERED) {
+    if (
+      getNombreOfMeals(
+        slider1Value,
+        slider2Value,
+        slider3Value,
+        slider4Value,
+        slider5Value
+      ) === NUMBER_OF_MEALS_TO_BE_ENTERED
+    ) {
       setIsQuestion2Valide(true);
 
       const submitButton = document.querySelector('[type="submit"]');
@@ -313,8 +325,8 @@ export function PersoStep5({ step, setNextStep }) {
             isInline={true}
           />
           {!isQuestion2Valide && (
-            <span style={{ color: "var(--main-color)" }}>
-              Veuillez renseigner au moins 9 repas
+            <span style={{ color: "var(--error-color)" }}>
+              Veuillez renseigner {NUMBER_OF_MEALS_TO_BE_ENTERED} repas !
             </span>
           )}
         </div>
