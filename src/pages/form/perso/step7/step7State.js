@@ -7,7 +7,11 @@ export const persostep7State = (values) => {
         response: 1283.76,
       },
     ],
-    actions: [],
-    settings: [],
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      actions: [],
+    }),
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      settings: [],
+    }),
   };
 };
