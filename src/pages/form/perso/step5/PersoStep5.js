@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Form } from "antd";
 import {
   CoffeeIcon,
@@ -9,11 +9,14 @@ import {
   WhiskyIcon,
 } from "@components/icons/Icons";
 import { Form as ConfiguredForm } from "@components/form/Form";
+import { ReactComponent as MeatSvg } from "@components/form/formSlider/meat.svg";
+import { ReactComponent as ChickenSvg } from "@components/form/formSlider/chicken.svg";
+import { ReactComponent as VegetablesSvg } from "@components/form/formSlider/vegetables.svg";
+import { ReactComponent as FishSvg } from "@components/form/formSlider/fish.svg";
+import { ReactComponent as EggSvg } from "@components/form/formSlider/egg.svg";
+import { FormSlider } from "@components/form/formSlider/FormSlider";
 import {
   ALIMENTATION_QUESTION1,
-  ALIMENTATION_QUESTION2,
-  ALIMENTATION_QUESTION3,
-  ALIMENTATION_QUESTION4,
   ALIMENTATION_QUESTION5,
   ALIMENTATION_QUESTION6,
   ALIMENTATION_QUESTION7,
@@ -21,49 +24,36 @@ import {
   ALIMENTATION_QUESTION9,
   POPIN_INFOS,
   OVERLAY_TITLE,
-  ALIMENATTION_ERROR_MSG,
-  ALIMENTATION_QUESTION3_TOOTLTIP,
-  ALIMENTATION_QUESTION4_TOOTLTIP,
   ALIMENTATION_SAVIEZ_VOUS,
+  ALIMENTATION_QUESTION,
 } from "@utils/constants";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
-import { MealsOfWeek } from "@components/form/mealsOfWeek/MealsOfWeek";
 import { Overlay } from "@components/overlay/Overlay";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
-} from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
-import { step5State, step5ActionReductionState } from "./step5State";
+import { selectDetail, selectDetail2, curseurQuestion } from "./step5Config";
 import {
-  question2_subQuestions,
-  question3_subQuestions,
-  question4_subQuestions,
-  selectDetail,
-  selectDetail2,
-} from "./step5Config";
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep5State } from "./step5State";
+import { notify } from "@utils/notification";
 
 // Alimentation
 export function PersoStep5({ step, setNextStep }) {
   const [form] = Form.useForm();
+  const NUMBER_OF_MEALS_TO_BE_ENTERED = 9;
 
-  const mealBetail1 = "5f5570ff217a4";
-  const mealPoulet1 = "5f55715960e9a";
-  const actionBetail1 = "5f60a1d33da5f";
-  const actionPoulet1 = "5f60a1e56f9be";
-
-  const mealBetail2 = "5f5572735716e";
-  const mealPoulet2 = "5f5572b1b9be9";
-  const actionBetail2 = "5f60a1f6aa5d9";
-  const actionPoulet2 = "5f60a209470be";
-
-  const mealBetail3 = "5f5572e23ac37";
-  const mealPoulet3 = "5f5572f94a692";
-  const actionBetail3 = "5f60a21ef0fe9";
-  const actionPoulet3 = "5f60a24828ffa";
+  const [slider1Value, setSlider1Value] = useState(0);
+  const [slider1Max, setSlider1Max] = useState(5);
+  const [slider2Value, setSlider2Value] = useState(0);
+  const [slider2Max, setSlider2Max] = useState(5);
+  const [slider3Value, setSlider3Value] = useState(0);
+  const [slider3Max, setSlider3Max] = useState(5);
+  const [slider4Value, setSlider4Value] = useState(0);
+  const [slider4Max, setSlider4Max] = useState(5);
+  const [slider5Value, setSlider5Value] = useState(0);
+  const [slider5Max, setSlider5Max] = useState(5);
 
   const actionSoda = "5f60aa4172f98";
   const actionVin = "5f60aa6244f4d";
@@ -79,24 +69,8 @@ export function PersoStep5({ step, setNextStep }) {
   const [question7Count, setQuestion7Count] = useState(0);
   const [question8Count, setQuestion8Count] = useState(0);
   const [question9Count, setQuestion9Count] = useState(0);
-  const [question2State, setQuestion2State] = useState({
-    monday: null,
-    tuesday: null,
-    wednesday: null,
-    thursday: null,
-    friday: null,
-  });
-  const [question3State, setQuestion3State] = useState({
-    saturday: null,
-    sunday: null,
-  });
-  const [question4State, setQuestion4State] = useState({
-    monday: null,
-    tuesday: null,
-    wednesday: null,
-    thursday: null,
-    friday: null,
-  });
+
+  const [isQuestion2Valide, setIsQuestion2Valide] = useState(true);
 
   const handleSwitchReductionAction1Change = (isChecked) => {
     setReductionAction1Opened(isChecked);
@@ -109,6 +83,39 @@ export function PersoStep5({ step, setNextStep }) {
   const getValueLessThanQuestionValue = (options, questionValue) => {
     return options.reverse().find(({ value }) => value <= questionValue).value;
   };
+
+  const getNombreOfMeals = (
+    val1 = 0,
+    val2 = 0,
+    val3 = 0,
+    val4 = 0,
+    val5 = 0
+  ) => {
+    return val1 + val2 + val3 + val4 + val5;
+  };
+
+  useEffect(() => {
+    const getSliderMaxValues = (val1 = 0, val2 = 0, val3 = 0, val4 = 0) => {
+      const result = NUMBER_OF_MEALS_TO_BE_ENTERED - val1 - val2 - val3 - val4;
+      return result < 0 ? 0 : result;
+    };
+
+    setSlider1Max(
+      getSliderMaxValues(slider2Value, slider3Value, slider4Value, slider5Value)
+    );
+    setSlider2Max(
+      getSliderMaxValues(slider1Value, slider3Value, slider4Value, slider5Value)
+    );
+    setSlider3Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider4Value, slider5Value)
+    );
+    setSlider4Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider5Value)
+    );
+    setSlider5Max(
+      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider4Value)
+    );
+  }, [slider1Value, slider2Value, slider3Value, slider4Value, slider5Value]);
 
   // change ActionSoda Value
   selectDetail2[0].options = [{ text: "0", value: 0 }];
@@ -170,21 +177,34 @@ export function PersoStep5({ step, setNextStep }) {
     });
   }
 
-  useEffect(() => {
-    scrollToTopOfThePage();
-    const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+  const setReponsesOfStep = useCallback(
+    (stepState) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setReductionAction1Opened(form.getFieldValue("alimentation-switch-1"));
+        setReductionAction2Opened(form.getFieldValue("alimentation-switch-2"));
+      }
+
+      setSlider1Value(form.getFieldValue("5f5570ff217a4"));
+      setSlider2Value(form.getFieldValue("5f55715960e9a"));
+      setSlider3Value(form.getFieldValue("5fe086093c517"));
+      setSlider4Value(form.getFieldValue("5f557184101ce"));
+      setSlider5Value(form.getFieldValue("5fe085c49e973"));
 
       setQuestion1Count(form.getFieldValue("5f5570e5d882c"));
       setQuestion5Count(form.getFieldValue("5f557459e6c45"));
@@ -192,253 +212,50 @@ export function PersoStep5({ step, setNextStep }) {
       setQuestion7Count(form.getFieldValue("5f557508ea4c5"));
       setQuestion8Count(form.getFieldValue("5f557531751f2"));
       setQuestion9Count(form.getFieldValue("5f55754725a12"));
+    },
+    [form]
+  );
 
-      setQuestion2State(form.getFieldValue("alimentation_question2"));
-      setQuestion3State(form.getFieldValue("alimentation_question3"));
-      setQuestion4State(form.getFieldValue("alimentation_question4"));
+  useEffect(() => {
+    scrollToTopOfThePage();
 
-      // Calendar 1
-      let nbrBetail1 = 0;
-      let nbrPoulet1 = 0;
-      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-        async (day) => {
-          if (
-            form.getFieldValue("alimentation_question2")[day] === mealBetail1
-          ) {
-            nbrBetail1++;
-          } else if (
-            form.getFieldValue("alimentation_question2")[day] === mealPoulet1
-          ) {
-            nbrPoulet1++;
-          }
-        }
-      );
-      for (let i = 1; i <= nbrBetail1; i++) {
-        selectDetail[0].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-      for (let i = 1; i <= nbrPoulet1; i++) {
-        selectDetail[1].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-
-      // Calendar weekend
-      let nbrBetail2 = 0;
-      let nbrPoulet2 = 0;
-      ["saturday", "sunday"].forEach(async (day) => {
-        if (form.getFieldValue("alimentation_question3")[day] === mealBetail2) {
-          nbrBetail2++;
-        } else if (
-          form.getFieldValue("alimentation_question3")[day] === mealPoulet2
-        ) {
-          nbrPoulet2++;
-        }
-      });
-      for (let i = 1; i <= nbrBetail2; i++) {
-        selectDetail[2].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-      for (let i = 1; i <= nbrPoulet2; i++) {
-        selectDetail[3].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-
-      // Calendar 3
-      let nbrBetail3 = 0;
-      let nbrPoulet3 = 0;
-      ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-        async (day) => {
-          if (
-            form.getFieldValue("alimentation_question4")[day] === mealBetail3
-          ) {
-            nbrBetail3++;
-          } else if (
-            form.getFieldValue("alimentation_question4")[day] === mealPoulet3
-          ) {
-            nbrPoulet3++;
-          }
-        }
-      );
-      for (let i = 1; i <= nbrBetail3; i++) {
-        selectDetail[4].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-      for (let i = 1; i <= nbrPoulet3; i++) {
-        selectDetail[5].options.push({
-          text: `${i}`,
-          value: i,
-        });
-      }
-    };
-
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-      setReductionAction2Opened(
-        form.getFieldValue("action-reduction-switch-2")
-      );
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
-  }, [form, step]);
+    getResponsesOfStep("ALIMENTATIONS")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+  }, [form, setReponsesOfStep, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(step5State(values), step);
-    saveSettingsStep(step5ActionReductionState(values), step);
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    if (
+      getNombreOfMeals(
+        slider1Value,
+        slider2Value,
+        slider3Value,
+        slider4Value,
+        slider5Value
+      ) === NUMBER_OF_MEALS_TO_BE_ENTERED
+    ) {
+      setIsQuestion2Valide(true);
+
+      const submitButton = document.querySelector('[type="submit"]');
+      submitButton.disabled = true;
+
+      saveResponsesOfStep(persostep5State(values))
+        .then(() => {
+          submitButton.disabled = false;
+          submitButton.blur();
+          setNextStep();
+        })
+        .catch(() => {
+          submitButton.disabled = false;
+          notify("Erreur serveur, veuillez réessayer ultérieurement");
+        });
+    } else {
+      setIsQuestion2Valide(false);
+    }
   };
 
   const onFieldsChange = () => {
     setRender(Math.random);
-  };
-
-  const onChangeMealsOfWeek1 = (data) => {
-    let nbrBetail = 0;
-    let nbrPoulet = 0;
-    ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-      async (day) => {
-        if (data[day] === mealBetail1) {
-          nbrBetail++;
-        } else if (data[day] === mealPoulet1) {
-          nbrPoulet++;
-        }
-      }
-    );
-    selectDetail[0].options = [{ text: "0", value: 0 }];
-    selectDetail[1].options = [{ text: "0", value: 0 }];
-    for (let i = 1; i <= nbrBetail; i++) {
-      selectDetail[0].options.push({ text: `${i}`, value: i });
-    }
-    for (let i = 1; i <= nbrPoulet; i++) {
-      selectDetail[1].options.push({ text: `${i}`, value: i });
-    }
-    if (data.monday) {
-      if (nbrBetail < form.getFieldValue(actionBetail1)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[0].options,
-          nbrBetail
-        );
-        form.setFieldsValue({
-          [actionBetail1]: value,
-        });
-      }
-      if (nbrPoulet < form.getFieldValue(actionPoulet1)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[1].options,
-          nbrPoulet
-        );
-        form.setFieldsValue({
-          [actionPoulet1]: value,
-        });
-      }
-    }
-  };
-
-  const onChangeMealsOfWeekend = (data) => {
-    let nbrBetail = 0;
-    let nbrPoulet = 0;
-    ["saturday", "sunday"].forEach(async (day) => {
-      if (data[day] === mealBetail2) {
-        nbrBetail++;
-      } else if (data[day] === mealPoulet2) {
-        nbrPoulet++;
-      }
-    });
-    selectDetail[2].options = [{ text: "0", value: 0 }];
-    selectDetail[3].options = [{ text: "0", value: 0 }];
-    for (let i = 1; i <= nbrBetail; i++) {
-      selectDetail[2].options.push({ text: `${i}`, value: i });
-    }
-    for (let i = 1; i <= nbrPoulet; i++) {
-      selectDetail[3].options.push({ text: `${i}`, value: i });
-    }
-    if (data.saturday) {
-      if (nbrBetail < form.getFieldValue(actionBetail2)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[2].options,
-          nbrBetail
-        );
-        form.setFieldsValue({
-          [actionBetail2]: value,
-        });
-      }
-      if (nbrPoulet < form.getFieldValue(actionPoulet2)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[3].options,
-          nbrPoulet
-        );
-        form.setFieldsValue({
-          [actionPoulet2]: value,
-        });
-      }
-    }
-  };
-
-  const onChangeMealsOfWeek3 = (data) => {
-    let nbrBetail = 0;
-    let nbrPoulet = 0;
-    ["monday", "tuesday", "wednesday", "thursday", "friday"].forEach(
-      async (day) => {
-        if (data[day] === mealBetail3) {
-          nbrBetail++;
-        } else if (data[day] === mealPoulet3) {
-          nbrPoulet++;
-        }
-      }
-    );
-    selectDetail[4].options = [{ text: "0", value: 0 }];
-    selectDetail[5].options = [{ text: "0", value: 0 }];
-    for (let i = 1; i <= nbrBetail; i++) {
-      selectDetail[4].options.push({ text: `${i}`, value: i });
-    }
-    for (let i = 1; i <= nbrPoulet; i++) {
-      selectDetail[5].options.push({ text: `${i}`, value: i });
-    }
-    if (data.monday) {
-      if (nbrBetail < form.getFieldValue(actionBetail3)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[5].options,
-          nbrBetail
-        );
-        form.setFieldsValue({
-          [actionBetail3]: value,
-        });
-      }
-      if (nbrPoulet < form.getFieldValue(actionPoulet3)) {
-        const value = getValueLessThanQuestionValue(
-          selectDetail[5].options,
-          nbrPoulet
-        );
-        form.setFieldsValue({
-          [actionPoulet3]: value,
-        });
-      }
-    }
   };
 
   return (
@@ -451,7 +268,7 @@ export function PersoStep5({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Alimentation</span>
+          <span className="pro-step-title">Alimentation personnelle</span>
         </div>
 
         <FormCounter
@@ -463,58 +280,72 @@ export function PersoStep5({ step, setNextStep }) {
           setValue={setQuestion1Count}
         />
 
-        <div className="forms-margin">
-          <MealsOfWeek
+        <div className="forms-margin nombres-repas">
+          <FormSlider
             form={form}
-            name="alimentation_question2"
-            questions={question2_subQuestions}
-            label={ALIMENTATION_QUESTION2}
-            errorMsg={ALIMENATTION_ERROR_MSG}
-            state={question2State}
-            onChange={onChangeMealsOfWeek1}
+            labels={ALIMENTATION_QUESTION}
+            tooltipTitle={"Le total doit faire 9 pour vos 9 repas restants"}
+            questions={[
+              curseurQuestion(
+                "5f5570ff217a4",
+                <MeatSvg />,
+                slider1Max,
+                slider1Value,
+                setSlider1Value
+              ),
+              curseurQuestion(
+                "5f55715960e9a",
+                <ChickenSvg />,
+                slider2Max,
+                slider2Value,
+                setSlider2Value
+              ),
+              curseurQuestion(
+                "5fe086093c517",
+                <FishSvg />,
+                slider3Max,
+                slider3Value,
+                setSlider3Value
+              ),
+              curseurQuestion(
+                "5f557184101ce",
+                <EggSvg />,
+                slider4Max,
+                slider4Value,
+                setSlider4Value
+              ),
+              curseurQuestion(
+                "5fe085c49e973",
+                <VegetablesSvg />,
+                slider5Max,
+                slider5Value,
+                setSlider5Value
+              ),
+            ]}
+            isInline={true}
           />
-        </div>
-
-        <div className="forms-margin">
-          <MealsOfWeek
-            form={form}
-            name="alimentation_question3"
-            questions={question3_subQuestions}
-            label={ALIMENTATION_QUESTION3}
-            tooltipTitle={ALIMENTATION_QUESTION3_TOOTLTIP}
-            errorMsg={ALIMENATTION_ERROR_MSG}
-            state={question3State}
-            weekend={true}
-            onChange={onChangeMealsOfWeekend}
-          />
-        </div>
-
-        <div className="forms-margin">
-          <MealsOfWeek
-            form={form}
-            name="alimentation_question4"
-            questions={question4_subQuestions}
-            label={ALIMENTATION_QUESTION4}
-            tooltipTitle={ALIMENTATION_QUESTION4_TOOTLTIP}
-            errorMsg={ALIMENATTION_ERROR_MSG}
-            state={question4State}
-            onChange={onChangeMealsOfWeek3}
-          />
+          {!isQuestion2Valide && (
+            <span style={{ color: "var(--error-color)" }}>
+              Veuillez renseigner {NUMBER_OF_MEALS_TO_BE_ENTERED} repas !
+            </span>
+          )}
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={ALIMENTATION_SAVIEZ_VOUS}
-          saviezVousPosition={3}
-          selectDetail={selectDetail}
-          switchName="action-reduction-switch-1"
-          setSwitchValue={handleSwitchReductionAction1Change}
-          isOpened={isReductionAction1Opened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={ALIMENTATION_SAVIEZ_VOUS}
+            saviezVousPosition={3}
+            selectDetail={selectDetail}
+            switchName="alimentation-switch-1"
+            setSwitchValue={handleSwitchReductionAction1Change}
+            isOpened={isReductionAction1Opened}
+            render={render}
+          />
+        </div>
+      )}
 
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
@@ -574,16 +405,18 @@ export function PersoStep5({ step, setNextStep }) {
         />
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={selectDetail2}
-          switchName="action-reduction-switch-2"
-          setSwitchValue={handleSwitchReductionAction2Change}
-          isOpened={isReductionAction2Opened}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={selectDetail2}
+            switchName="alimentation-switch-2"
+            setSwitchValue={handleSwitchReductionAction2Change}
+            isOpened={isReductionAction2Opened}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { Modal, Button, Carousel } from "antd";
 import {
   BulbOutlined,
+  CloseOutlined,
   LeftOutlined,
   RightOutlined,
-  CloseOutlined,
 } from "@ant-design/icons";
-import { useTabletOrMobileSize } from "@hooks/window";
 import "./overlay.css";
 
 export function Overlay(props) {
-  const isMobileOrTablet = useTabletOrMobileSize();
   const [visible, SetVisible] = useState({
     modalVisible: false,
     closeButton: "none",
@@ -18,32 +16,22 @@ export function Overlay(props) {
   const { modalVisible, closeButton } = visible;
   let { items, title } = props;
 
-  const titleModal = (
-    <div className="container-flex-title-modal">
-      <BulbOutlined className="icon-modal" />
-      <p className="title-modal">{title}</p>
-    </div>
-  );
-
   const tiles = items.map((value) => (
     <div key={value}>
       {value.text && (
         <h3
-          className="content-style"
+          className="text-modal-overlay"
           dangerouslySetInnerHTML={{ __html: value.text }}
         />
       )}
-      <div className="content-style">
-        {value.image && (
-          <img
-            className="div-image"
-            src={value.image}
-            alt={value.alt}
-            title={value.alt}
-          />
-        )}
-        {value.sousText && <h4 className="text-modal">{value.sousText}</h4>}
-      </div>
+      {value.image && (
+        <img
+          className="div-image-overlay"
+          src={value.image}
+          alt={value.alt}
+          title={value.alt}
+        />
+      )}
     </div>
   ));
 
@@ -70,14 +58,13 @@ export function Overlay(props) {
         style={{ display: closeButton }}
       />
       <Modal
-        title={titleModal}
         visible={modalVisible}
         onOk={() => SetVisible({ modalVisible: false, closeButton: "none" })}
         onCancel={() =>
           SetVisible({ modalVisible: false, closeButton: "none" })
         }
         className="custom-modal"
-        width={isMobileOrTablet ? 650 : 550}
+        width={"100%"}
         footer={null}
         centered
         closable={false}

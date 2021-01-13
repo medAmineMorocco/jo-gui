@@ -1,0 +1,113 @@
+{
+  "thematic": "DEPLACEMENTS_PROFESSIONNELS",
+  "questions": [
+    {
+      "question": "5fe088069900b",
+      "response": true
+    },
+    {
+      "question": "5fe088aa8d674",
+      "response": ["Voiture", "Train", "Avion"]
+    },
+    {
+      "question": "5f5557936a4cd",
+      "response": 1
+    },
+    {
+      "question": "5f5557c81d9d6",
+      "response": 2
+    },
+    {
+      "question": "5f5557ec74a11",
+      "response": 1
+    },
+    {
+      "question": "5f555809e50b5",
+      "response": 2
+    },
+    {
+      "question": "5f5558209ce59",
+      "response": 1
+    },
+    {
+      "question": "5f55582edaeda",
+      "response": 2
+    },
+    {
+      "question": "5f55584be6d5b",
+      "response": 1
+    },
+    {
+      "question": "5f55587eaf0e1",
+      "response": 2
+    },
+    {
+      "question": "5f555897f3a7b",
+      "response": 1
+    },
+    {
+      "question": "5f5558b32689d",
+      "response": 2
+    },
+    {
+      "question": "5f5558d002ef1",
+      "response": 1
+    },
+    {
+      "question": "5f5558f29483f",
+      "response": 2
+    },
+    {
+      "question": "5f5559164e7c5",
+      "response": 1
+    },
+    {
+      "question": "5f55597082002",
+      "response": 2
+    },
+    {
+      "question": "5f55598f84ab3",
+      "response": 1
+    },
+    {
+      "question": "5f555a0999cae",
+      "response": 2
+    },
+    {
+      "question": "5f555a4459b35",
+      "response": 1
+    },
+    {
+      "question": "5f555c744517e",
+      "response": 2
+    },
+    {
+      "question": "5f555d17a49a0",
+      "response": 1
+    }
+  ],
+  "actions": [
+    {
+      "action": "5f60a0c685332",
+      "response": 1
+    },
+    {
+      "action": "5f60a0d990f4e",
+      "response": 2
+    },
+    {
+      "action": "5f60a0f2df4e3",
+      "response": 1
+    },
+    {
+      "action": "5f60a102140c9",
+      "response": 2
+    }
+  ],
+  "settings": [
+    {
+      "setting": "deplcament-pro-switch-1",
+      "response": true
+    }
+  ]
+}

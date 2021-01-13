@@ -1,12 +1,13 @@
 .ant-modal-content .icon-modal {
   margin: 15px 0px 0px 0px;
   font-size: 2.9vw;
-  color: black;
+  color: grey;
 }
 .icon-modal {
   font-size: 1.9vw;
   color: black;
 }
+
 .custom-btn-modal {
   width: 100%;
   background-color: var(--main-color);
@@ -20,21 +21,14 @@
 .modal-close-btn-modal:hover {
   z-index: 10001;
   font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background: var(--main-color);
-  border-color: var(--main-color);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  color: grey;
   position: fixed;
   right: 1.5vw;
   top: 1.5vw;
 }
-.custom-btn-modal:hover,
-.custom-btn-modal:focus {
-  background-color: var(--main-color);
-  color: black;
-}
+
 .title-button {
   margin: 0 auto;
   font-family: Paris2024;
@@ -43,51 +37,14 @@
   color: #000000;
   font-size: 1.3vw;
 }
-.ant-btn-primary {
-  border-color: transparent;
-}
 
-.ant-carousel .slick-prev,
-.ant-carousel .slick-prev:hover,
-.ant-carousel .slick-prev:focus {
-  font-size: 40px;
-  color: black;
-  top: 35%;
-}
-.ant-carousel .slick-next,
-.ant-carousel .slick-next:hover,
-.ant-carousel .slick-next:focus {
-  font-size: 40px;
-  color: black;
-  right: -5px;
-  top: 35%;
-}
-
-.title-modal {
-  font-family: Paris2024;
-  text-align: center;
-  font-style: italic;
-  color: black;
-  font-size: 1.7vw;
-  line-height: 1.7vw;
-  margin: 1vw 5vw 0vw 0vw;
-  width: 24vw;
-  text-transform: none;
-}
 .ant-modal-wrap {
-  background-color: var(--bg-color-shade);
+  background-color: black;
+  opacity: 0.85;
 }
 
-.custom-modal .ant-modal-header {
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  padding-top: 3%;
-  padding-bottom: 0%;
-  background-color: var(--main-color);
-}
 .custom-modal .ant-modal-content {
-  background-color: var(--main-color);
-  border-radius: 32px;
+  width: 100%;
   height: 100%;
 }
 .custom-modal .ant-carousel .slick-dots li.slick-active button {
@@ -96,41 +53,34 @@
   background: #000000;
   border-radius: 40px;
 }
-
 .ant-carousel .slick-dots li button {
-  height: 8px;
+  height: 15px;
+  width: 15px;
   background-color: grey;
   border-radius: 40px;
-  width: 50%;
+  margin-top: 30px;
 }
 .ant-carousel .slick-dots-bottom {
   bottom: 0;
   top: 100%;
 }
 
-.div-image:only-child {
-  width: 82%;
-  margin: auto;
-}
-.div-image {
-  width: 50%;
-  height: 100%;
-  background-size: cover;
-}
-.text-modal {
-  width: 40%;
-}
-.content-style {
-  color: black;
-  padding: 2% 1% 0% 2%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 15px;
-  font-family: Paris2024;
+.text-modal-overlay {
   width: 100%;
+  color: grey;
+  text-align: center;
+  padding-left: 120px;
+  padding-right: 120px;
 }
+.text-modal-overlay:only-child {
+  padding: 10%;
+}
+.div-image-overlay {
+  width: 60%;
+  margin: auto;
+  padding-top: 2%;
+}
+
 .container-flex-overlay {
   display: inline-flex;
   align-items: flex-start;
@@ -149,27 +99,17 @@
 }
 
 @media (max-width: 767px) {
-  .title-modal {
-    font-size: 15px;
-    font-style: italic;
-  }
-  .content-style {
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
-  }
-  .div-image {
+  .div-image-overlay {
     width: 100%;
     height: 100%;
     margin-bottom: 10px;
   }
-  .text-modal {
+  .text-modal-overlay {
     width: 100%;
     padding-left: 2%;
     padding-right: 2%;
   }
   .custom-modal .ant-modal-content {
-    margin: 10%;
     top: 6vw;
     height: 100%;
   }
@@ -181,9 +121,6 @@
   .title-button {
     font-size: 3.5vw;
   }
-  .ant-modal-wrap {
-    background-color: black;
-  }
 
   .icon-modal {
     font-size: 6vw;
@@ -194,16 +131,8 @@
     font-size: 7vw;
     margin: 20px 0px 0px 8px;
   }
-
-  .custom-modal .title-modal {
-    font-size: 4.5vw;
-    line-height: 4.5vw;
-    margin: 4vw 8vw 0vw 0vw;
-    width: 44vw;
-  }
-
-  .div-image:only-child {
-    width: 100%;
+  .ant-modal-body {
+    padding: 7% 13%;
   }
 }
 
@@ -221,13 +150,6 @@
     font-size: 4vw;
     color: black;
     margin-left: 2vw;
-  }
-
-  .custom-modal .title-modal {
-    font-size: 4vw;
-    line-height: 4vw;
-    margin: 3vw 12vw 0vw 0vw;
-    width: 44vw;
   }
 
   .modal-close-btn-modal,
@@ -249,20 +171,6 @@
     height: 100%;
     border-radius: 55px;
   }
-
-  .div-image:only-child {
-    width: 100%;
-  }
-
-  .text-modal {
-    width: 45%;
-    font-size: 16px;
-  }
-
-  .content-style {
-    font-size: 26px;
-  }
-
   .title-button {
     font-size: 3.5vw;
   }

@@ -4,12 +4,6 @@ import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
 import { Overlay } from "@components/overlay/Overlay";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import {
-  saveResponsesOfQuestionsStep,
-  saveSettingsStep,
-  getResponsesOfQuestionsOfStep,
-  getSettingsOfStep,
-} from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
   overlay_items,
@@ -24,7 +18,12 @@ import {
   NUMERIC_QUESTION2_TOOLTIP,
   NUMERIC_SAVIEZ_VOUS,
 } from "@utils/constants";
-import { step4ActionReductionState, step4State } from "./step4State";
+import {
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep4State } from "./step4State";
+import { notify } from "@utils/notification";
 
 // Numérique
 export function PersoStep4({ step, setNextStep }) {
@@ -38,48 +37,46 @@ export function PersoStep4({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setReductionAction1Opened(form.getFieldValue("numerique-switch-1"));
+      }
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) =>
-        form.setFieldsValue({
-          [question]: response,
-        })
-      );
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("NUMERIQUE")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(step4State(values), step);
-    saveSettingsStep(step4ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep4State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   return (
@@ -91,7 +88,9 @@ export function PersoStep4({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Consommation internet</span>
+          <span className="pro-step-title">
+            Utilisation du numérique (perso)
+          </span>
         </div>
 
         <div className="forms-margin">
@@ -122,17 +121,19 @@ export function PersoStep4({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={NUMERIC_SAVIEZ_VOUS}
-          saviezVousPosition={0}
-          selectDetail={selectDetail}
-          switchName="action-reduction-switch-1"
-          setSwitchValue={handleSwitchReductionAction1Change}
-          isOpened={isReductionAction1Opened}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={NUMERIC_SAVIEZ_VOUS}
+            saviezVousPosition={0}
+            selectDetail={selectDetail}
+            switchName="numerique-switch-1"
+            setSwitchValue={handleSwitchReductionAction1Change}
+            isOpened={isReductionAction1Opened}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

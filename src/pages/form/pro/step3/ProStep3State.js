@@ -1,58 +1,71 @@
-export const proStep3ActionReductionState = (values) => {
-  return [
-    {
-      question: "restauration-switch-1",
-      response: values["restauration-switch-1"] || false,
-    },
-    {
-      question: "restauration-switch-2",
-      response: values["restauration-switch-2"] || false,
-    },
-  ];
-};
-
-export const proStep3State = (values) => {
-  const stepState = [
-    {
-      type: "calendar",
-      choices: ["5f55500f273e7", "5f5550293a164", "5f5550530eaf3"],
-      question: "repas_question1",
-      response: values["repas_question1"],
+export const stepState = (values) => {
+  return {
+    thematic: "RESTAURATION",
+    questions: [
+      {
+        question: "5f55500f273e7",
+        response: values["5f55500f273e7"],
+      },
+      {
+        question: "5f5550293a164",
+        response: values["5f5550293a164"],
+      },
+      {
+        question: "5fe08273352c1",
+        response: values["5fe08273352c1"],
+      },
+      {
+        question: "5f5550530eaf3",
+        response: values["5f5550530eaf3"],
+      },
+      {
+        question: "5fe08462b666d",
+        response: values["5fe08462b666d"],
+      },
+      {
+        question: "5f5550724626b",
+        response: values["5f5550724626b"],
+      },
+      {
+        question: "5f55508b92e6c",
+        response: values["5f55508b92e6c"],
+      },
+      {
+        question: "5f5550b00730d",
+        response: values["5f5550b00730d"],
+      },
+    ],
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
       actions: [
         {
-          id: "5f60a03929c5e",
-          response: values["5f60a03929c5e"] || 0,
+          action: "5f60a03929c5e",
+          response: values["5f60a03929c5e"],
         },
         {
-          id: "5f60a04cb2a94",
-          response: values["5f60a04cb2a94"] || 0,
+          action: "5f60a04cb2a94",
+          response: values["5f60a04cb2a94"],
         },
-      ],
-    },
-    {
-      question: "5f5550724626b",
-      response: values["5f5550724626b"],
-      actions: [
         {
-          id: "5f60a05e206d2",
-          response: values["5f60a05e206d2"] || 0,
+          action: "5f60a05e206d2",
+          response: values["5f60a05e206d2"],
         },
-      ],
-    },
-    {
-      question: "5f55508b92e6c",
-      response: values["5f55508b92e6c"],
-      actions: [
         {
-          id: "5f60a06d650a3",
-          response: values["5f60a06d650a3"] || 0,
+          action: "5f60a06d650a3",
+          response: values["5f60a06d650a3"],
         },
       ],
-    },
-    {
-      question: "5f5550b00730d",
-      response: values["5f5550b00730d"],
-    },
-  ];
-  return stepState;
+    }),
+    ...(process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && {
+      settings: [
+        {
+          setting: "restauration-switch-1",
+          response: values["restauration-switch-1"] || false,
+        },
+        {
+          setting: "restauration-switch-2",
+          response: values["restauration-switch-2"] || false,
+        },
+      ],
+    }),
+  };
 };

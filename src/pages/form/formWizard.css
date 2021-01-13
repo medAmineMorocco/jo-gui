@@ -47,10 +47,6 @@
   color: white;
 }
 
-.form-questions-tooltip {
-  font-size: 1.2vw;
-}
-
 .tooltip-icon {
   float: right;
 }
@@ -85,6 +81,12 @@
   font-size: 1.1vw;
 }
 
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 20vh 0;
+}
+
 @media (max-width: 767px) {
   .mobile-wizard-container {
     height: 55vh;
@@ -108,10 +110,6 @@
   .overlay-consommation .title-button {
     font-size: 2.9vw;
   }
-
-  .form-questions-tooltip {
-    font-size: 4vw;
-  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -134,10 +132,6 @@
   }
 
   .overlay-consommation .title-button {
-    font-size: var(--tablet-font-size);
-  }
-
-  .form-questions-tooltip {
     font-size: var(--tablet-font-size);
   }
 }

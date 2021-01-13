@@ -13,24 +13,26 @@ import {
   EQUIPMENT_QUESTION8,
   EQUIPMENT_QUESTION10,
   EQUIPMENT_QUESTION11,
+  MATERIELS_QUESTION1_LABEL,
+  MATERIELS_QUESTION2_LABEL,
+  MATERIELS_QUESTION3_LABEL,
+  MATERIELS_QUESTION4_LABEL,
   EQUIPMENT_ERROR_MSG,
   EQUIPMENT_SAVIEZ_VOUS,
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { optionsFibre, selectDetailEquipment } from "./step2Config";
-import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
-} from "@services/responseService";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
+import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
 import {
-  equipmentstep2State,
-  equipment2ActionReductionState,
-} from "./step2State";
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep2State } from "./step2State";
+import { notify } from "@utils/notification";
+import { actionReduction1Data } from "../step3/step3Config";
 
 // Équipement du logement
 export function PersoStep2({ step, setNextStep }) {
@@ -49,6 +51,19 @@ export function PersoStep2({ step, setNextStep }) {
   const [question10Select, setQuestion10Select] = useState("Oui");
   const [question11Count, setQuestion11Count] = useState(0);
   const [question12Input, setQuestion12Input] = useState(0);
+
+  const [question1, setQuestion1] = useState(0);
+  const [question2, setQuestion2] = useState(0);
+  const [question3, setQuestion3] = useState(0);
+  const [question4, setQuestion4] = useState(0);
+
+  const onchangeQuestion4 = () => {
+    setRender(Math.random);
+    actionReduction1Data[0].options = [{ text: "0", value: 0 }];
+    for (let i = 1; i <= form.getFieldValue("5f55692a73b55"); i++) {
+      actionReduction1Data[0].options.push({ text: `${i}`, value: i });
+    }
+  };
 
   const handleSwitchReductionActionChange = (isChecked) => {
     setReductionActionOpened(isChecked);
@@ -75,18 +90,26 @@ export function PersoStep2({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
+      }
+
       setQuestion1Count(form.getFieldValue("5f556168dab39"));
       setQuestion2Count(form.getFieldValue("5f5561e5eb854"));
       setQuestion3Count(form.getFieldValue("5f55664839d67"));
@@ -99,33 +122,31 @@ export function PersoStep2({ step, setNextStep }) {
       setQuestion10Select(form.getFieldValue("5f556711c1671"));
       setQuestion11Count(form.getFieldValue("5f55674380953"));
       setQuestion12Input(form.getFieldValue("5f5567451cb10"));
+      setQuestion1(form.getFieldValue("5f5568d39449f"));
+      setQuestion2(form.getFieldValue("5f5568e651349"));
+      setQuestion3(form.getFieldValue("5f5568f49b63c"));
+      setQuestion4(form.getFieldValue("5f55692a73b55"));
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-      setReductionActionOpened(form.getFieldValue("equipment-switch-1"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("APPAREILS")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(equipmentstep2State(values), step);
-    saveSettingsStep(equipment2ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep2State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onChange = () => {
@@ -141,7 +162,11 @@ export function PersoStep2({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Appareils et électroménager</span>
+          <span className="pro-step-title">Biens du foyer</span>
+        </div>
+
+        <div className="forms-margin">
+          <TitleWithHorizontalLine title="Electroménager" />
         </div>
 
         <div className="forms-margin">
@@ -237,6 +262,10 @@ export function PersoStep2({ step, setNextStep }) {
         </div>
 
         <div className="forms-margin">
+          <TitleWithHorizontalLine title="Numérique" />
+        </div>
+
+        <div className="forms-margin">
           <FormCounter
             form={form}
             iconCounter={false}
@@ -298,20 +327,58 @@ export function PersoStep2({ step, setNextStep }) {
           onChange={onChange}
           oneLineInput={true}
         />
-      </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
+        <TitleWithHorizontalLine title="Véhicules" />
+
+        <FormCounter
           form={form}
-          savierVous={EQUIPMENT_SAVIEZ_VOUS}
-          saviezVousPosition={1}
-          selectDetail={selectDetailEquipment}
-          switchName="equipment-switch-1"
-          setSwitchValue={handleSwitchReductionActionChange}
-          isOpened={isReductionActionOpened}
-          render={render}
+          name="5f5568d39449f"
+          textCounter={MATERIELS_QUESTION1_LABEL}
+          value={question1}
+          setValue={setQuestion1}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f5568e651349"
+          textCounter={MATERIELS_QUESTION2_LABEL}
+          value={question2}
+          setValue={setQuestion2}
+        />
+
+        <FormCounter
+          form={form}
+          name="5f5568f49b63c"
+          textCounter={MATERIELS_QUESTION3_LABEL}
+          value={question3}
+          setValue={setQuestion3}
+        />
+
+        <FormItemInputNumberWithUnit
+          form={form}
+          name="5f55692a73b55"
+          label={MATERIELS_QUESTION4_LABEL}
+          unit="ans"
+          value={question4}
+          onChange={onchangeQuestion4}
+          oneLineInput={true}
         />
       </div>
+
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={EQUIPMENT_SAVIEZ_VOUS}
+            saviezVousPosition={1}
+            selectDetail={selectDetailEquipment}
+            switchName="equipment-switch-1"
+            setSwitchValue={handleSwitchReductionActionChange}
+            isOpened={isReductionActionOpened}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

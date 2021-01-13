@@ -1,0 +1,37 @@
+{
+  "thematic": "EMPREINTE_NUMERIQUE",
+  "questions": [
+    {
+      "question": "5f554eb63be47",
+      "response": 99
+    },
+    {
+      "question": "5f554eddc68dd",
+      "response": 16.5
+    },
+    {
+      "question": "5f554f1127cec",
+      "response": 1
+    },
+    {
+      "question": "5f554f36de849",
+      "response": 5
+    },
+    {
+      "question": "5f554fb2238b4",
+      "response": 9
+    }
+  ],
+  "actions": [
+    {
+      "action": "5f60a00c2ead6",
+      "response": 2
+    }
+  ],
+  "settings": [
+    {
+      "setting": "empreinte-switch-1",
+      "response": true
+    }
+  ]
+}

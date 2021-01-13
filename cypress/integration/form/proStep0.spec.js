@@ -15,11 +15,11 @@ context("Form | introduction step", () => {
   ];
 
   it("should show introduction step on form page", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
     sizes.forEach((size) => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 0);
         cy.login("email@paris2024.org");
 
         cy.visit("/form");
@@ -34,9 +34,11 @@ context("Form | introduction step", () => {
   });
 
   it("should submit form", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
+    cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/proStep0/state.json', 'getResponsesOfStep0');
+    cy.stubRequest('POST', '**/api/response/thematic', 200);
     cy.window().then((win) => {
       win.sessionStorage.clear();
-      win.sessionStorage.setItem("current-step", 0);
       cy.login("email@paris2024.org");
       cy.visit("/form");
       win.sessionStorage.clear();
@@ -44,7 +46,7 @@ context("Form | introduction step", () => {
       cy.get("#5f554172a13c7").clear().type("15");
       cy.get("#5f5541a7845e0").clear().type("16");
       cy.get("#5f5541ba9b096").clear().type("17");
-      cy.get("button span:contains(suite)").click();
+      cy.submitForm();
 
       cy.wait(1000);
       cy.get(".footer-navigation-left span")
@@ -61,15 +63,16 @@ context("Form | introduction step", () => {
   });
 
   it("should not submit form when questions are not filled", () => {
+    cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep0/progress.json', 'progressJSON');
     sizes.forEach((size) => {
       cy.viewport(size.device);
       cy.window().then((win) => {
         win.sessionStorage.clear();
-        win.sessionStorage.setItem("current-step", 0);
         cy.login("email@paris2024.org");
         cy.visit("/form");
 
-        cy.get("button span:contains(suite)").click();
+        cy.wait(1000);
+        cy.submitForm();
 
         cy.get(
           '.ant-form-item-explain div:contains("⚠ Merci de saisir votre réponse")'

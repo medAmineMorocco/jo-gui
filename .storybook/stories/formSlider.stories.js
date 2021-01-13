@@ -1,13 +1,14 @@
 import React from 'react';
-import { FormSlider } from '@components/form/formSlider/FormSlider';
 import { Form } from 'antd';
+import {withKnobs, boolean, text, object} from "@storybook/addon-knobs";
+import { FormSlider } from '@components/form/formSlider/FormSlider';
 import { ConfiguredForm } from '../ConfiguredForm';
 import { ReactComponent as TeaSvg } from '@components/form/formSlider/tea.svg';
 import { ReactComponent as CapsuleSvg } from '@components/form/formSlider/capsule.svg';
 import { ReactComponent as CoffeeSvg } from '@components/form/formSlider/coffee.svg';
 import './stories.css';
 
-export default { title: 'Data Entry/Slider'};
+export default { title: 'Data Entry/Slider', decorators: [withKnobs] };
 
 let questions = [
 	{
@@ -44,9 +45,10 @@ export const slider = () => {
 		<ConfiguredForm form={form}>
 			<FormSlider
 				form={form}
-				labels={'Combien de boissons chaudes prends-tu par jour ?'}
-				tooltipTitle={tooltipTitle}
-				questions={questions}
+				labels={text('labels', 'Combien de boissons chaudes prends-tu par jour ?')}
+				tooltipTitle={text('tooltipTitle', tooltipTitle)}
+				questions={object('questions', questions)}
+				isInline={boolean('isInline', true)}
 			/>
 		</ConfiguredForm>
 	);

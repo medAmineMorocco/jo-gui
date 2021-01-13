@@ -1,51 +1,14 @@
-import { ReactComponent as MeatSvg } from "@components/form/mealsOfWeek/meat.svg";
-import { ReactComponent as ChickenSvg } from "@components/form/mealsOfWeek/chicken.svg";
-import { ReactComponent as VegetablesSvg } from "@components/form/mealsOfWeek/vegetables.svg";
-
-export const question2_subQuestions = [
-  {
-    name: "5f5570ff217a4",
-    icon: MeatSvg,
-  },
-  {
-    name: "5f55715960e9a",
-    icon: ChickenSvg,
-  },
-  {
-    name: "5f557184101ce",
-    icon: VegetablesSvg,
-  },
-];
-
-export const question3_subQuestions = [
-  {
-    name: "5f5572735716e",
-    icon: MeatSvg,
-  },
-  {
-    name: "5f5572b1b9be9",
-    icon: ChickenSvg,
-  },
-  {
-    name: "5f5572cda4e57",
-    icon: VegetablesSvg,
-  },
-];
-
-export const question4_subQuestions = [
-  {
-    name: "5f5572e23ac37",
-    icon: MeatSvg,
-  },
-  {
-    name: "5f5572f94a692",
-    icon: ChickenSvg,
-  },
-  {
-    name: "5f55732d44ed6",
-    icon: VegetablesSvg,
-  },
-];
+export const curseurQuestion = (name, logo, max, value, setValue) => {
+  return {
+    label: "",
+    name: name,
+    logo: logo,
+    min: 0,
+    max: max,
+    value: value,
+    setValue: setValue,
+  };
+};
 
 export const selectDetail = [
   {
@@ -61,34 +24,6 @@ export const selectDetail = [
     name: "5f60a1e56f9be",
     options: [{ text: "0", value: 0 }],
     secondText: "dîner(s) à base de légumes plutôt que de viande blanche",
-  },
-  {
-    type: "select",
-    firstText: "Consommer le week-end",
-    name: "5f60a1f6aa5d9",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande rouge",
-  },
-  {
-    type: "select",
-    firstText: "Consommer le week-end",
-    name: "5f60a209470be",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande blanche",
-  },
-  {
-    type: "select",
-    firstText: "Consommer en vacances",
-    name: "5f60a21ef0fe9",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande rouge",
-  },
-  {
-    type: "select",
-    firstText: "Consommer en vacances",
-    name: "5f60a24828ffa",
-    options: [{ text: "0", value: 0 }],
-    secondText: "déjeuner(s) à base de légumes plutôt que de viande blanche",
   },
   {
     type: "select",

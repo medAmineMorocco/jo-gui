@@ -4,46 +4,46 @@ export const proItems = [
     description: "4 questions",
   },
   {
-    title: "Empreinte numérique",
+    title: "Utilisation du numérique (pro)",
     description: "5 questions",
   },
   {
-    title: "Restauration",
+    title: "Restauration au bureau",
     description: "2 questions",
   },
   {
-    title: "Trajets Domicile-travail",
+    title: "Déplacements Domicile-Travail",
     description: "3 questions",
   },
   {
-    title: "Déplacements professionnels",
+    title: "Déplacements Professionnels",
     description: "11 questions",
   },
 ];
 
 export const persoItems = [
   {
-    title: "À la maison",
+    title: "Logement",
     description: "12 questions",
   },
   {
-    title: "Appareils et électroménager",
+    title: "Biens du foyer",
     description: "12 questions",
   },
   {
-    title: "Véhicules et électronique",
+    title: "Biens personnels",
     description: "15 questions",
   },
   {
-    title: "Consommation internet",
+    title: "Utilisation du numérique (perso)",
     description: "2 questions",
   },
   {
-    title: "Alimentation",
+    title: "Alimentation personnelle",
     description: "9 questions",
   },
   {
-    title: "Déplacements personnels",
+    title: "Déplacements Personnels",
     description: "7 questions",
   },
   {

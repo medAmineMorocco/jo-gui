@@ -1,7 +1,31 @@
+export const transportation_options = (
+  onCarChange,
+  onTrainChange,
+  onPlaneChange
+) => {
+  return [
+    {
+      label: "Voiture",
+      value: "Voiture",
+      onChange: onCarChange,
+    },
+    {
+      label: "Train",
+      value: "Train",
+      onChange: onTrainChange,
+    },
+    {
+      label: "Avion",
+      value: "Avion",
+      onChange: onPlaneChange,
+    },
+  ];
+};
+
 export const question2_options = [
+  { text: "Electrique", value: "Electrique" },
   { text: "Essence", value: "Essence" },
   { text: "Diesel", value: "Diesel" },
-  { text: "Electrique", value: "Electrique" },
 ];
 
 export const question3_questions = [
@@ -130,5 +154,14 @@ export const actionReduction3_selectDetail = [
     name: "5f60aadf53101",
     secondText:
       "des vols long courrier et privilégier les destinations accessibles en train",
+  },
+];
+
+export const overlay_items = [
+  {
+    image: "/images/DistanceFrance.png",
+  },
+  {
+    image: "/images/DistanceMonde.png",
   },
 ];

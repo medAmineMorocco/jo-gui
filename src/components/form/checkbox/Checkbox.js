@@ -13,7 +13,7 @@ export function Checkbox({ value, onChange }) {
     <CheckboxAntd
       className="cojo-checkbox"
       onChange={onDefaultChange}
-      checked={value}
+      value={value}
     />
   );
 }

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "antd";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemInput } from "@components/form/formItemInput/FormItemInput";
-import { saveResponses } from "@services/responseService";
 import { notify } from "@utils/notification";
+import {
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep7State } from "./step7State";
+import { scrollToTopOfThePage } from "@hooks/window";
 
 // Services publics
 export function PersoStep7({ step }) {
@@ -18,12 +23,35 @@ export function PersoStep7({ step }) {
     "Les émissions du service public dont nous disposons sont réparties\n" +
     "                                  entre tous les français.";
 
-  const onFinish = (values) => {
-    saveResponses()
-      .then(() => history.push("/results"))
+  useEffect(() => {
+    scrollToTopOfThePage();
+    const setReponsesOfStep = (stepState) => {
+      stepState.questions.forEach(({ question, response }) => {
+        form.setFieldsValue({
+          [question]: response,
+        });
+      });
+    };
+
+    getResponsesOfStep("SERVICES")
+      .then((stepState) => setReponsesOfStep(stepState))
       .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
+  }, [form, step]);
+
+  const onFinish = (values) => {
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep7State(values))
+      .then(() => {
+        history.push("/results");
+        submitButton.disabled = false;
+        submitButton.blur();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   return (

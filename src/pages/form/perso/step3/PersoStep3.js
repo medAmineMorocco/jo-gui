@@ -8,16 +8,9 @@ import { FormItemActionReduction } from "@components/form/action/formItemActionR
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
 import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
 import {
-  persoStep3State,
-  persoStep3ActionReductionState,
-} from "./PersoStep3State";
-import {
   MATERIELS_QUESTIONS_ERROR_MSG,
-  MATERIELS_QUESTION1_LABEL,
-  MATERIELS_QUESTION2_LABEL,
-  MATERIELS_QUESTION3_LABEL,
-  MATERIELS_QUESTION4_LABEL,
   MATERIELS_QUESTION5_LABEL,
+  MATERIELS_QUESTION5_TOOLTIP,
   MATERIELS_QUESTION6_LABEL,
   MATERIELS_QUESTION7_LABEL,
   MATERIELS_QUESTION8_LABEL,
@@ -28,25 +21,22 @@ import {
   MATERIELS_QUESTION13_LABEL,
   MATERIELS_QUESTION14_LABEL,
   MATERIELS_QUESTION15_LABEL,
+  MATERIELS_QUESTION16_LABEL,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
-import { actionReduction1Data, actionReduction2Data } from "./PersoStep3Config";
+import { actionReduction1Data, actionReduction2Data } from "./step3Config";
+import { persostep3State } from "./step3State";
+import { notify } from "@utils/notification";
 
-// Biens matériels
+// Biens personnels
 export function PersoStep3({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [render, setRender] = useState(0);
   const [switch1Value, setSwitch1Value] = useState(false);
   const [switch2Value, setSwitch2Value] = useState(false);
-  const [question1, setQuestion1] = useState(0);
-  const [question2, setQuestion2] = useState(0);
-  const [question3, setQuestion3] = useState(0);
-  const [question4, setQuestion4] = useState(0);
   const [question5, setQuestion5] = useState(0);
   const [question6, setQuestion6] = useState(0);
   const [question7, setQuestion7] = useState(0);
@@ -63,14 +53,6 @@ export function PersoStep3({ step, setNextStep }) {
 
   const handleSwitch2Change = (isChecked) => {
     setSwitch2Value(isChecked);
-  };
-
-  const onchangeQuestion4 = () => {
-    setRender(Math.random);
-    actionReduction1Data[0].options = [{ text: "0", value: 0 }];
-    for (let i = 1; i <= form.getFieldValue("5f55692a73b55"); i++) {
-      actionReduction1Data[0].options.push({ text: `${i}`, value: i });
-    }
   };
 
   const onchangeQuestion6 = () => {
@@ -124,24 +106,29 @@ export function PersoStep3({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setSwitch1Value(form.getFieldValue("materiels-switch-1"));
+        setSwitch2Value(form.getFieldValue("materiels-switch-2"));
+      }
+
       onchangeQuestion14(form.getFieldValue("5f556b94d465c"));
       onchangeQuestion15(form.getFieldValue("5f556baea779b"));
-      setQuestion1(form.getFieldValue("5f5568d39449f"));
-      setQuestion2(form.getFieldValue("5f5568e651349"));
-      setQuestion3(form.getFieldValue("5f5568f49b63c"));
-      setQuestion4(form.getFieldValue("5f55692a73b55"));
       setQuestion5(form.getFieldValue("5f5569516acd3"));
       setQuestion6(form.getFieldValue("5f5569587abe3"));
       setQuestion7(form.getFieldValue("5f55697727f39"));
@@ -153,32 +140,25 @@ export function PersoStep3({ step, setNextStep }) {
       setQuestion13(form.getFieldValue("5f556b6cefd5a"));
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-      setSwitch1Value(form.getFieldValue("materiels_switch1"));
-      setSwitch2Value(form.getFieldValue("materiels_switch2"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("VEHICULES")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(persoStep3State(values), step);
-    saveSettingsStep(persoStep3ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep3State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onFieldsChange = () => {
@@ -195,52 +175,17 @@ export function PersoStep3({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Véhicules et électronique</span>
+          <span className="pro-step-title">Biens personnels</span>
         </div>
 
-        <TitleWithHorizontalLine title="Véhicules" />
-
-        <FormCounter
-          form={form}
-          name="5f5568d39449f"
-          textCounter={MATERIELS_QUESTION1_LABEL}
-          value={question1}
-          setValue={setQuestion1}
-        />
-
-        <FormCounter
-          form={form}
-          name="5f5568e651349"
-          textCounter={MATERIELS_QUESTION2_LABEL}
-          value={question2}
-          setValue={setQuestion2}
-        />
-
-        <FormCounter
-          form={form}
-          name="5f5568f49b63c"
-          textCounter={MATERIELS_QUESTION3_LABEL}
-          value={question3}
-          setValue={setQuestion3}
-        />
-
-        <FormItemInputNumberWithUnit
-          form={form}
-          name="5f55692a73b55"
-          label={MATERIELS_QUESTION4_LABEL}
-          unit="ans"
-          value={question4}
-          onChange={onchangeQuestion4}
-          oneLineInput={true}
-        />
-
         <div className="forms-margin">
-          <TitleWithHorizontalLine title="Électroniques" />
+          <TitleWithHorizontalLine title="Numérique" />
         </div>
 
         <FormCounter
           form={form}
           name="5f5569516acd3"
+          tooltipTitle={MATERIELS_QUESTION5_TOOLTIP}
           textCounter={MATERIELS_QUESTION5_LABEL}
           value={question5}
           setValue={setQuestion5}
@@ -319,29 +264,38 @@ export function PersoStep3({ step, setNextStep }) {
         />
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction1Data}
-          switchName="materiels_switch1"
-          setSwitchValue={handleSwitch1Change}
-          isOpened={switch1Value}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={actionReduction1Data}
+            switchName="materiels-switch-1"
+            setSwitchValue={handleSwitch1Change}
+            isOpened={switch1Value}
+            render={render}
+          />
+        </div>
+      )}
 
       <div className="wizard-content-right-form-parent">
-        <TitleWithHorizontalLine title="Dressing" />
+        <TitleWithHorizontalLine title="Vêtements" />
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f556b94d465c"
             label={MATERIELS_QUESTION14_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
             onChange={onchangeQuestion14}
           />
-
           <FormItemInputNumber
+            form={form}
+            name="5fe3732ac7689"
+            label={MATERIELS_QUESTION16_LABEL}
+            rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
+          />
+          <FormItemInputNumber
+            form={form}
             name="5f556baea779b"
             label={MATERIELS_QUESTION15_LABEL}
             rules={[{ required: true, message: MATERIELS_QUESTIONS_ERROR_MSG }]}
@@ -350,16 +304,18 @@ export function PersoStep3({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction2Data}
-          switchName="materiels_switch2"
-          setSwitchValue={handleSwitch2Change}
-          isOpened={switch2Value}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            selectDetail={actionReduction2Data}
+            switchName="materiels-switch-2"
+            setSwitchValue={handleSwitch2Change}
+            isOpened={switch2Value}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

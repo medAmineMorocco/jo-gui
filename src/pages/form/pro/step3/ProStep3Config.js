@@ -1,22 +1,3 @@
-import { ReactComponent as MeatSvg } from "@components/form/mealsOfWeek/meat.svg";
-import { ReactComponent as ChickenSvg } from "@components/form/mealsOfWeek/chicken.svg";
-import { ReactComponent as VegetablesSvg } from "@components/form/mealsOfWeek/vegetables.svg";
-
-export const question1_subQuestions = [
-  {
-    name: "5f55500f273e7",
-    icon: MeatSvg,
-  },
-  {
-    name: "5f5550293a164",
-    icon: ChickenSvg,
-  },
-  {
-    name: "5f5550530eaf3",
-    icon: VegetablesSvg,
-  },
-];
-
 export const actionReductionDataDejeuners = [
   {
     type: "select",
@@ -34,17 +15,16 @@ export const actionReductionDataDejeuners = [
   },
 ];
 
-export const curseurQuestion = (label, name, logo, value, setValue) => {
-  const question = {
+export const curseurQuestion = (label, name, logo, max, value, setValue) => {
+  return {
     label: label,
     name: name,
     logo: logo,
     min: 0,
-    max: 10,
+    max: max,
     value: value,
     setValue: setValue,
   };
-  return question;
 };
 
 export const actionReductionDataCafe = [

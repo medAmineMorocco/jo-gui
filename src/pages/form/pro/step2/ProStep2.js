@@ -5,7 +5,7 @@ import { Overlay } from "@components/overlay/Overlay";
 import { FormSlider } from "@components/form/formSlider/FormSlider";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import { proStep2State, proStep2ActionReductionState } from "./ProStep2State";
+import { stepState } from "./ProStep2State";
 import {
   TAILLE_BOITE,
   TAILLE_BOITE_INFO,
@@ -18,10 +18,8 @@ import {
   SAVIER_VOUS_EMPREINTE,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -30,6 +28,7 @@ import {
   curseurQuestions,
   actionReductionData,
 } from "./ProStep2Config";
+import { notify } from "@utils/notification";
 
 // Empreinte numérique
 export function ProStep2({ step, setNextStep }) {
@@ -60,50 +59,51 @@ export function ProStep2({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setSwitchValue(form.getFieldValue("empreinte-switch-1"));
+      }
+
       handleTailleBoite(form.getFieldValue("5f554eb63be47"));
       setNbrRecherche(form.getFieldValue("5f554f1127cec"));
       setNbrConference(form.getFieldValue("5f554f36de849"));
       setNbrStreaming(form.getFieldValue("5f554fb2238b4"));
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) =>
-        form.setFieldsValue({
-          [question]: response,
-        })
-      );
-      setSwitchValue(form.getFieldValue("empreinte-switch-1"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("EMPREINTE_NUMERIQUE")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(proStep2State(values), step);
-    saveSettingsStep(proStep2ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(stepState(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onFieldsChange = () => {
@@ -120,10 +120,11 @@ export function ProStep2({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Empreinte numérique</span>
+          <span className="pro-step-title">Utilisation du numérique (pro)</span>
         </div>
 
         <FormItemInputNumber
+          form={form}
           name="5f554eb63be47"
           label={TAILLE_BOITE}
           tooltipTitle={TAILLE_BOITE_INFO}
@@ -137,6 +138,7 @@ export function ProStep2({ step, setNextStep }) {
 
         <div className="forms-margin">
           <FormItemInputNumber
+            form={form}
             name="5f554eddc68dd"
             label={TAILLE_STOCKAGE}
             disabled={true}
@@ -183,18 +185,20 @@ export function ProStep2({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={SAVIER_VOUS_EMPREINTE}
-          saviezVousPosition={0}
-          selectDetail={actionReductionData}
-          switchName="empreinte-switch-1"
-          setSwitchValue={handleSwitchChange}
-          isOpened={switchValue}
-          render={render}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={SAVIER_VOUS_EMPREINTE}
+            saviezVousPosition={0}
+            selectDetail={actionReductionData}
+            switchName="empreinte-switch-1"
+            setSwitchValue={handleSwitchChange}
+            isOpened={switchValue}
+            render={render}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

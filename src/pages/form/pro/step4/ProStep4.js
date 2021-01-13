@@ -4,7 +4,7 @@ import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemInputNumber } from "@components/form/formItemInputNumber/FormItemInputNumber";
 import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
-import { proStep4State, proStep4ActionReductionState } from "./ProStep4State";
+import { stepState } from "./ProStep4State";
 import {
   DISTANCE_DOMICILE_TRAVAIL,
   DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG,
@@ -14,10 +14,8 @@ import {
   SAVIER_VOUS_TRAJETS,
 } from "@utils/constants";
 import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
+  saveResponsesOfStep,
+  getResponsesOfStep,
 } from "@services/responseService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -26,8 +24,9 @@ import {
   actionReductionData,
   electricTravelModes,
 } from "./ProStep4Config";
+import { notify } from "@utils/notification";
 
-// Trajets
+// Trajets Domicile-travail
 export function ProStep4({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [switchValue, setSwitchValue] = useState(false);
@@ -79,47 +78,48 @@ export function ProStep4({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setSwitchValue(form.getFieldValue("trajets-switch-1"));
+      }
+
       setModeDeplacement(form.getFieldValue("5f55561b34276"));
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) =>
-        form.setFieldsValue({
-          [question]: response,
-        })
-      );
-      setSwitchValue(form.getFieldValue("trajets-switch-1"));
-    };
-
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
+    getResponsesOfStep("TRAJETS_DOMICILE_TRAVAIL")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(proStep4State(values), step);
-    saveSettingsStep(proStep4ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(stepState(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   return (
@@ -131,10 +131,11 @@ export function ProStep4({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Trajets domicile - travail</span>
+          <span className="pro-step-title">Déplacements Domicile-Travail</span>
         </div>
 
         <FormItemInputNumber
+          form={form}
           name="5f55554022dc3"
           label={DISTANCE_DOMICILE_TRAVAIL}
           rules={[
@@ -163,17 +164,19 @@ export function ProStep4({ step, setNextStep }) {
         </div>
       </div>
 
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={SAVIER_VOUS_TRAJETS}
-          saviezVousPosition={0}
-          selectDetail={actionReductionData}
-          switchName="trajets-switch-1"
-          setSwitchValue={handleSwitchChange}
-          isOpened={switchValue}
-        />
-      </div>
+      {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+        <div className="forms-margin">
+          <FormItemActionReduction
+            form={form}
+            savierVous={SAVIER_VOUS_TRAJETS}
+            saviezVousPosition={0}
+            selectDetail={actionReductionData}
+            switchName="trajets-switch-1"
+            setSwitchValue={handleSwitchChange}
+            isOpened={switchValue}
+          />
+        </div>
+      )}
     </ConfiguredForm>
   );
 }

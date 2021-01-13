@@ -104,7 +104,9 @@ export const LIRE_PLUS = "... LIRE PLUS";
 // introduction
 export const INTRODUCTION_QUESTION1 = "Nombre de jours travaillés par an";
 export const INTRODUCTION_QUESTION1_INFOS =
-  "Prends en compte tes jours de télétravail ici. (≈ 218 jours)";
+  "Indice : 215 dans un contrat temps-plein !";
+export const INTRODUCTION_QUESTION2_INFOS =
+  "Par rapport à ton année de référence";
 export const INTRODUCTION_QUESTION1_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
@@ -138,7 +140,7 @@ export const TITLE_ECRANS =
   "Nombre d'écrans additionels mis à votre disposition";
 
 // Empreinte numérique
-export const TAILLE_BOITE = "Taille de ta boîte mail (en Go)";
+export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
 export const TAILLE_BOITE_INFO =
   "Pour trouver cette information, check le « pop-in conseil » plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -159,18 +161,22 @@ export const EMREINTE_OVERLAY_IMAGE =
 
 // Trajets
 export const DISTANCE_DOMICILE_TRAVAIL =
-  "Distance entre ton domicile et ton travail (km)";
+  "Distance entre votre domicile et votre travail (km)";
 export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const MODE_DEPLACEMENT =
-  "Mode de déplacement principal (celui que tu utilises le plus fréquemment et sur la plus grande partie de votre trajet)";
+  "Mode de déplacement principal (celui que vous utilisez le plus fréquemment et sur la plus grande partie de votre trajet)";
 export const MOTORISATION = "Motorisation du véhicule";
 export const MOTORISATION_INFOS =
   "Pour le métro, tramway, train, RER et TGV, la motorisation est électrique !";
 export const SAVIER_VOUS_TRAJETS =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
-// Déplacements
+// Déplacements professionnels
+export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_TITLE = "Cartes des distances";
+export const MAKE_TRANSPORTATION_LABEL =
+  "Effectuez-vous des déplacements professionels ?";
+export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
 export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
 export const NBR_KM_VOITURE =
   "Nombre de km en voiture (location, personnelle, ou taxi)";
@@ -195,9 +201,9 @@ export const QUESTION10_NBR_VOLS_AR =
 export const QUESTION11_NBR_VOLS_AR =
   "Nombre d'aller-retours longs courriers (>10h)";
 
-// Déplacements
+// Restauration
 export const REPAS_QUESTION1 =
-  "De quoi sont majoritairement composés tes repas au bureau ?";
+  "Au bureau, quelle est la composition de vos repas ? (5 déjeuners) :";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -216,6 +222,8 @@ export const ALIMENTATION_QUESTION2 =
   "De quoi sont composés majoritairement tes dîners en semaine ?";
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
+export const ALIMENTATION_QUESTION =
+  "Dans votre vie perso, quelle est la composition de vos repas ? (Les 9 repas restants sur une semaine : dîners et week-end)";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
@@ -243,7 +251,9 @@ export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
   "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
 
-// deplacement
+// deplacement personnels
+export const TRANSPORTATION_LABEL =
+  "Quel moyen de transport utilisez-vous pour vos déplacements personnels ?";
 export const DEPLACEMENTS_QUESTION1 =
   "Distance parcourue en voiture par an (véhicule personnel ou de location)";
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
@@ -260,41 +270,54 @@ export const DEPLACEMENTS_QUESTION6 =
   "Nombre de vols AR longs courriers (>5h et <10h)";
 export const DEPLACEMENTS_QUESTION7 =
   "Nombre de vols AR longs courriers (>10h)";
-
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO₂ dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE = "Cartes des distances";
 
 // À la maison
-export const HOUSE_QUESTION1 = "Nombre d'adultes du logement";
-export const HOUSE_QUESTION2 =
-  "Consommation annuelle d'Electricité de votre logement";
-export const HOUSE_QUESTION2_TOOTLTIP =
-  "Affichée sur ta facture ou dans l’espace client de ton fournisseur. En moyenne 1100kwh/an.";
-export const HOUSE_QUESTION3 =
-  "Consommation annuelle de Gaz naturel de votre logement";
-export const HOUSE_QUESTION3_TOOTLTIP =
-  "De même : facture ou espace client ! En moyenne 14000kwh/100 m² pour 4 personnes";
-export const HOUSE_QUESTION4 =
-  "Consommation annuelle de Fioul domestique de votre logement";
-export const HOUSE_QUESTION4_TOOTLTIP =
-  "Calculable en effectuant en relevé de ta cuve à fioul. En moyenne 150L/m2/an.";
-export const HOUSE_QUESTION5 =
-  "Consommation annuelle de bois de chauffage pour votre logement";
-export const HOUSE_QUESTION5_TOOTLTIP = "En fonction de tes achats !";
-export const HOUSE_QUESTION6 = "Consommation mensuelle d'électricité";
-export const HOUSE_QUESTION7 = "Consommation mensuelle de gaz naturel";
-export const HOUSE_QUESTION8 = "Consommation mensuelle de fioul";
-export const HOUSE_QUESTION678_TOOTLTIP = "Indiquée sur ta facture mensuelle.";
-export const HOUSE_QUESTION9 = "Surface logement";
-export const HOUSE_QUESTION9_TOOTLTIP =
-  "Indiquée sur ton bail / acte de vente.";
-export const HOUSE_QUESTION10 =
-  "Classe Energie de ton logement, DPE (si vous le connaissez)";
-export const HOUSE_QUESTION10_TOOTLTIP =
+export const HOUSE_QUESTION1 =
+  "Nombre de personnes adultes résidant dans le logement";
+export const HOUSE_QUESTION2 = "Surface logement";
+export const HOUSE_QUESTION2_TOOLTIP = "Indiquée sur ton bail / acte de vente.";
+export const HOUSE_QUESTION3 = "Vous vivez en ?";
+export const HOUSE_QUESTION4 = "Classe Energie de votre logement, DPE";
+export const HOUSE_QUESTION4_TOOLTIP =
   "Indiquée sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
-export const HOUSE_QUESTION11 =
-  "Sinon ton logement a été construit (ou rénové)";
+export const HOUSE_QUESTION5 =
+  "Voulez-vous rentrer dans le détail de vos consommations énergétiques ?";
+export const HOUSE_QUESTION6 =
+  "Votre électricité et gaz sont-ils renouvelables ?";
+export const HOUSE_QUESTION7 = "Quel(s) type(s) d'énergie consommez vous ?";
+export const HOUSE_QUESTION8 =
+  "Consommation annuelle d'électricité de votre logement";
+export const HOUSE_QUESTION8_TOOLTIP =
+  "Affichée sur ta facture ou dans l’espace client de ton fournisseur. En moyenne 1100kwh/an.";
+export const HOUSE_QUESTION9 = "Consommation mensuelle d'électricité";
+export const HOUSE_QUESTION9_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+export const HOUSE_QUESTION10 =
+  "Consommation annuelle de Gaz naturel de votre logement";
+export const HOUSE_QUESTION10_TOOLTIP =
+  "De même : facture ou espace client ! En moyenne 14000kwh/100 m² pour 4 personnes";
+export const HOUSE_QUESTION11 = "Consommation mensuelle de Gaz naturel";
+export const HOUSE_QUESTION11_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+export const HOUSE_QUESTION12 =
+  "Consommation annuelle de Fioul domestique de votre logement";
+export const HOUSE_QUESTION12_TOOLTIP =
+  "Calculable en effectuant en relevé de ta cuve à fioul. En moyenne 150L/m2/an.";
+export const HOUSE_QUESTION13 = "Consommation mensuelle de Fioul domestique";
+export const HOUSE_QUESTION13_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+export const HOUSE_QUESTION14 =
+  "Consommation annuelle de bois de votre logement";
+export const HOUSE_QUESTION14_TOOLTIP = "En fonction de tes achats !";
+export const HOUSE_QUESTION16 =
+  "Votre chauffage ou eau chaude sanitaire dépend-il d'un système collectif ?";
+export const HOUSE_QUESTION17 =
+  "A quel type d'énergie fonctionne votre système de chauffage collectif ?";
+export const HOUSE_QUESTION18 =
+  "A quel type d'énergie fonctionne votre système d'eau chaude collective ?";
+export const HOUSE_QUESTION19 =
+  "Votre électricité et gaz sont-ils renouvelables ?";
 export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_TITLE_HOUSE =
   "Comment optimiser ta consommation d’énergie ?";
@@ -332,7 +355,7 @@ export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
 export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
 export const EQUIPMENT_QUESTION = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
-export const EQUIPMENT_QUESTION10 = "As-tu la fibre chez toi ?";
+export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
   "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -350,6 +373,8 @@ export const MATERIELS_QUESTION3_LABEL =
   "Nombre de voitures SUV, berlines, monospaces";
 export const MATERIELS_QUESTION4_LABEL = "Renouvelés tous les";
 export const MATERIELS_QUESTION5_LABEL = "Nombre d'Ordinateurs fixes";
+export const MATERIELS_QUESTION5_TOOLTIP =
+  "Ne pensez plus qu'à vos consommations personnelles";
 export const MATERIELS_QUESTION6_LABEL = "Renouvelés tous les";
 export const MATERIELS_QUESTION7_LABEL = "Nombre d'Ordinateurs portables";
 export const MATERIELS_QUESTION8_LABEL = "Renouvelés tous les";
@@ -363,3 +388,5 @@ export const MATERIELS_QUESTION14_LABEL =
   "Nombre de vêtements neufs achetés par an (articles)";
 export const MATERIELS_QUESTION15_LABEL =
   "Nombre de paires de chaussures neuves achetées par an";
+export const MATERIELS_QUESTION16_LABEL =
+  "Nombre de vêtements achetés de seconde main par an";

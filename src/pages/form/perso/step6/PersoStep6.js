@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Form } from "antd";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { TitleWithHorizontalLine } from "@components/title/TitleWithHorizontalLine";
@@ -7,13 +7,8 @@ import { FormItemActionReduction } from "@components/form/action/formItemActionR
 import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
 import { FormItemWithTwoInputs } from "@components/form/formItemWithTwoInputs/FormItemWithTwoInputs";
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
-import {
-  saveResponsesOfQuestionsStep,
-  getResponsesOfQuestionsOfStep,
-  saveSettingsStep,
-  getSettingsOfStep,
-} from "@services/responseService";
-import { step6State, step6ActionReductionState } from "./step6State";
+import { FormItemCheckboxes } from "@components/form/formItemCheckboxes/FormItemCheckboxes";
+import { Overlay } from "@components/overlay/Overlay";
 import {
   DEPLACEMENTS_QUESTION1,
   DEPLACEMENTS_QUESTION2,
@@ -25,9 +20,12 @@ import {
   DEPLACEMENTS_QUESTION7,
   DEPLACEMENTS_QUESTION1_ERROR_MSG,
   DEPLACEMENTS_SAVIEZ_VOUS,
+  TRANSPORTATION_LABEL,
+  DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE,
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
+  transportation_options,
   question2_options,
   actionReduction1_selectDetail,
   question4_questions,
@@ -37,12 +35,22 @@ import {
   question7_questions,
   actionReduction3_selectDetail,
   question3_questions,
+  overlay_items,
 } from "./step6Config";
+import {
+  saveResponsesOfStep,
+  getResponsesOfStep,
+} from "@services/responseService";
+import { persostep6State } from "./step6State";
+import { notify } from "@utils/notification";
 
 // Déplacements
 export function PersoStep6({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [render, setRender] = useState(0);
+  const [areCarQuestionsVisible, setCarQuestionsVisible] = useState(false);
+  const [areTrainQuestionsVisible, setTrainQuestionsVisible] = useState(false);
+  const [arePlaneQuestionsVisible, setPlaneQuestionsVisible] = useState(false);
 
   const [, setQuestion1DefaultValue] = useState();
   const [question3IncomingChoice, setQuestion3IncomingChoice] = useState(
@@ -99,58 +107,65 @@ export function PersoStep6({ step, setNextStep }) {
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
-      stepState.forEach(({ question, response, actions }) => {
+      stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
           [question]: response,
         });
-        if (actions) {
-          actions.forEach(({ id, response }) => {
-            form.setFieldsValue({
-              [id]: response,
-            });
-          });
-        }
       });
+
+      if (process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true") {
+        stepState.actions.forEach(({ action, response }) => {
+          form.setFieldsValue({
+            [action]: response,
+          });
+        });
+        stepState.settings.forEach(({ setting, response }) => {
+          form.setFieldsValue({
+            [setting]: response,
+          });
+        });
+        setReductionAction1Opened(form.getFieldValue("deplacement-switch-1"));
+        setReductionAction2Opened(form.getFieldValue("deplacement-switch-2"));
+        setReductionAction3Opened(form.getFieldValue("deplacement-switch-3"));
+      }
+
+      if (form.getFieldValue("5fe09867744e9")) {
+        setCarQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Voiture")
+        );
+        setTrainQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Train")
+        );
+        setPlaneQuestionsVisible(
+          form.getFieldValue("5fe09867744e9").includes("Avion")
+        );
+      }
+
       setQuestion1DefaultValue(form.getFieldValue("5f5575ba93b32"));
       setQuestion3IncomingChoice(
         getNewChoice(form.getFieldValue("5f5575dc9b4ac"))
       );
     };
 
-    const setSettingsOfStep = (settingsOfStep) => {
-      settingsOfStep.forEach(({ question, response }) => {
-        form.setFieldsValue({
-          [question]: response,
-        });
-      });
-
-      setReductionAction1Opened(
-        form.getFieldValue("action-reduction-switch-1")
-      );
-      setReductionAction2Opened(
-        form.getFieldValue("action-reduction-switch-2")
-      );
-      setReductionAction3Opened(
-        form.getFieldValue("action-reduction-switch-3")
-      );
-    };
-
-    const settingsOfStep = getSettingsOfStep(step);
-    if (settingsOfStep) {
-      setSettingsOfStep(settingsOfStep);
-    }
-    const stepState = getResponsesOfQuestionsOfStep(step);
-    if (stepState) {
-      setReponsesOfStep(stepState);
-    }
+    getResponsesOfStep("DEPLACEMENT")
+      .then((stepState) => setReponsesOfStep(stepState))
+      .catch(() => notify("Erreur serveur, veuillez réessayer ultérieurement"));
   }, [form, step]);
 
   const onFinish = (values) => {
-    saveResponsesOfQuestionsStep(step6State(values), step);
-    saveSettingsStep(step6ActionReductionState(values), step);
     const submitButton = document.querySelector('[type="submit"]');
-    submitButton.blur();
-    setNextStep();
+    submitButton.disabled = true;
+
+    saveResponsesOfStep(persostep6State(values))
+      .then(() => {
+        submitButton.disabled = false;
+        submitButton.blur();
+        setNextStep();
+      })
+      .catch(() => {
+        submitButton.disabled = false;
+        notify("Erreur serveur, veuillez réessayer ultérieurement");
+      });
   };
 
   const onChangeQuestion2 = (value) => {
@@ -170,114 +185,159 @@ export function PersoStep6({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements personnels</span>
+          <span className="pro-step-title">Déplacements Personnels</span>
         </div>
+      </div>
 
-        <TitleWithHorizontalLine title="En voiture" />
-        <div className="forms-margin">
-          <FormItemInputNumberWithUnit
-            form={form}
-            name="5f5575ba93b32"
-            label={DEPLACEMENTS_QUESTION1}
-            unit="Km"
-            rules={[
-              { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
-            ]}
-            onChange={onChange}
-          />
-        </div>
-        <div className="forms-margin">
-          <FormItemSelect
-            name="5f5575dc9b4ac"
-            label={DEPLACEMENTS_QUESTION2}
-            options={question2_options}
-            onChange={onChangeQuestion2}
-            disabled={false}
-          />
-        </div>
-        <div className="forms-margin">
-          <FormItemWithTwoInputs
-            form={form}
-            label={DEPLACEMENTS_QUESTION3}
-            incomingChoice={question3IncomingChoice}
-            questions={question3_questions}
-            tooltipTitle={DEPLACEMENTS_QUESTION3_INFO}
-          />
-        </div>
-      </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction1_selectDetail}
-          switchName="action-reduction-switch-1"
-          setSwitchValue={handleSwitchReductionAction1Change}
-          isOpened={isReductionAction1Opened}
-          render={render}
-        />
-      </div>
       <div className="wizard-content-right-form-parent">
         <div className="forms-margin">
-          <TitleWithHorizontalLine title="En train" />
-        </div>
-        <div className="forms-margin">
-          <FormItemMultipleInputNumber
+          <FormItemCheckboxes
             form={form}
-            name="multi1"
-            label={DEPLACEMENTS_QUESTION4}
-            questions={question4_questions}
+            name="5fe09867744e9"
+            text={TRANSPORTATION_LABEL}
+            options={transportation_options(
+              (isChecked) => {
+                setCarQuestionsVisible(isChecked);
+              },
+              (isChecked) => {
+                setTrainQuestionsVisible(isChecked);
+              },
+              (isChecked) => {
+                setPlaneQuestionsVisible(isChecked);
+              }
+            )}
           />
         </div>
-        <div className="forms-margin">
-          <TitleWithHorizontalLine title="En avion" />
-        </div>
-        <div className="forms-margin">
-          <FormItemMultipleInputNumber
-            form={form}
-            name="multi2"
-            label={DEPLACEMENTS_QUESTION5}
-            questions={question5_questions}
-            onChange={onChange}
-          />
-        </div>
-      </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          selectDetail={actionReduction2_selectDetail}
-          switchName="action-reduction-switch-2"
-          setSwitchValue={handleSwitchReductionAction2Change}
-          isOpened={isReductionAction2Opened}
+        <Overlay
+          title={DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE}
+          items={overlay_items}
         />
       </div>
-      <div className="wizard-content-right-form-parent">
-        <div className="forms-margin">
-          <FormItemMultipleInputNumber
-            form={form}
-            name="multi3"
-            label={DEPLACEMENTS_QUESTION6}
-            questions={question6_questions}
-          />
+
+      {areCarQuestionsVisible && (
+        <Fragment>
+          <div className="wizard-content-right-form-parent">
+            <TitleWithHorizontalLine title="En voiture" />
+            <div className="forms-margin">
+              <FormItemInputNumberWithUnit
+                form={form}
+                name="5f5575ba93b32"
+                label={DEPLACEMENTS_QUESTION1}
+                unit="Km"
+                rules={[
+                  { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
+                ]}
+                onChange={onChange}
+              />
+            </div>
+            <div className="forms-margin">
+              <FormItemSelect
+                name="5f5575dc9b4ac"
+                label={DEPLACEMENTS_QUESTION2}
+                options={question2_options}
+                onChange={onChangeQuestion2}
+                disabled={false}
+              />
+            </div>
+            <div className="forms-margin">
+              <FormItemWithTwoInputs
+                form={form}
+                label={DEPLACEMENTS_QUESTION3}
+                incomingChoice={question3IncomingChoice}
+                questions={question3_questions}
+                tooltipTitle={DEPLACEMENTS_QUESTION3_INFO}
+              />
+            </div>
+          </div>
+          {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+            <div className="forms-margin">
+              <FormItemActionReduction
+                form={form}
+                selectDetail={actionReduction1_selectDetail}
+                switchName="deplacement-switch-1"
+                setSwitchValue={handleSwitchReductionAction1Change}
+                isOpened={isReductionAction1Opened}
+                render={render}
+              />
+            </div>
+          )}
+        </Fragment>
+      )}
+      {areTrainQuestionsVisible && (
+        <div className="wizard-content-right-form-parent">
+          <div className="forms-margin">
+            <TitleWithHorizontalLine title="En train" />
+          </div>
+          <div className="forms-margin">
+            <FormItemMultipleInputNumber
+              form={form}
+              name="multi1"
+              label={DEPLACEMENTS_QUESTION4}
+              questions={question4_questions}
+            />
+          </div>
         </div>
-        <div className="forms-margin">
-          <FormItemMultipleInputNumber
-            form={form}
-            name="multi4"
-            label={DEPLACEMENTS_QUESTION7}
-            questions={question7_questions}
-          />
-        </div>
-      </div>
-      <div className="forms-margin">
-        <FormItemActionReduction
-          form={form}
-          savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
-          saviezVousPosition={0}
-          selectDetail={actionReduction3_selectDetail}
-          switchName="action-reduction-switch-3"
-          setSwitchValue={handleSwitchReductionAction3Change}
-          isOpened={isReductionAction3Opened}
-        />
-      </div>
+      )}
+      {arePlaneQuestionsVisible && (
+        <Fragment>
+          <div className="wizard-content-right-form-parent">
+            <div className="forms-margin">
+              <TitleWithHorizontalLine title="En avion" />
+            </div>
+            <div className="forms-margin">
+              <FormItemMultipleInputNumber
+                form={form}
+                name="multi2"
+                label={DEPLACEMENTS_QUESTION5}
+                questions={question5_questions}
+                onChange={onChange}
+              />
+            </div>
+          </div>
+          {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+            <div className="forms-margin">
+              <FormItemActionReduction
+                form={form}
+                selectDetail={actionReduction2_selectDetail}
+                switchName="deplacement-switch-2"
+                setSwitchValue={handleSwitchReductionAction2Change}
+                isOpened={isReductionAction2Opened}
+              />
+            </div>
+          )}
+          <div className="wizard-content-right-form-parent">
+            <div className="forms-margin">
+              <FormItemMultipleInputNumber
+                form={form}
+                name="multi3"
+                label={DEPLACEMENTS_QUESTION6}
+                questions={question6_questions}
+              />
+            </div>
+            <div className="forms-margin">
+              <FormItemMultipleInputNumber
+                form={form}
+                name="multi4"
+                label={DEPLACEMENTS_QUESTION7}
+                questions={question7_questions}
+              />
+            </div>
+          </div>
+          {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
+            <div className="forms-margin">
+              <FormItemActionReduction
+                form={form}
+                savierVous={DEPLACEMENTS_SAVIEZ_VOUS}
+                saviezVousPosition={0}
+                selectDetail={actionReduction3_selectDetail}
+                switchName="deplacement-switch-3"
+                setSwitchValue={handleSwitchReductionAction3Change}
+                isOpened={isReductionAction3Opened}
+              />
+            </div>
+          )}
+        </Fragment>
+      )}
     </ConfiguredForm>
   );
 }

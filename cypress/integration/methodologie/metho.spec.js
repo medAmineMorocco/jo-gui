@@ -17,6 +17,7 @@ context('Methodologie page', () => {
 
 
     it('should show Methodologie page', () => {
+        cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
         sizes.forEach(size => {
             cy.viewport(size.device);
             cy.window().then(win=> {

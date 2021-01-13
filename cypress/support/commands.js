@@ -3,12 +3,14 @@ import '@percy/cypress';
 Cypress.Commands.add('stubRequest', (method, path, status, fixture, alias) => {
 	cy.server();
 	if (status === 200) {
-		cy.fixture(fixture).as(alias);
+		if(fixture) {
+			cy.fixture(fixture).as(alias);
+		}
 		cy.route({
 			method,
 			url: path,
 			status,
-			response: `@${alias}`,
+			response: fixture ? `@${alias}`: 'some-response',
 		});
 	}
 	else {
@@ -59,7 +61,7 @@ Cypress.Commands.add('count', (selector, number) => {
 
 Cypress.Commands.add('typeNumber', (questions) => {
 	questions.forEach(({ name, value }) =>
-		cy.get(`#${name}`).clear().type(`${value}`)
+		cy.get(`#${name}`).clear({force: true}).type(`${value}`)
 	);
 });
 
@@ -88,5 +90,9 @@ Cypress.Commands.add('typeNumberForQuestionWithUnit', (name, value) => {
 Cypress.Commands.add('pickValue', (selector, value) => {
 	cy.get(`${selector} .ant-slider-mark .ant-slider-mark-text`)
 		.contains(value)
-		.click();
+		.click({force: true});
+});
+
+Cypress.Commands.add('submitForm', () => {
+	cy.get("button span").contains("Suite", {matchCase: false}).click();
 });

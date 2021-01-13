@@ -1,0 +1,105 @@
+{
+      "thematic": "DEPLACEMENT",
+      "questions": [
+        		{
+					"question": "5fe09867744e9",
+					"response": ["Voiture", "Train", "Avion"]
+				},
+			    {
+				  "question": "5f5575ba93b32",
+				  "response": 1
+			    },
+				{
+					"question": "5f5575dc9b4ac",
+					"response": "Electrique"
+				},
+				{
+					"question": "5f55763a2d2b1",
+					"response": null
+				},
+				{
+					"question": "5f55776c56494",
+					"response": 4
+				},
+				{
+					"question": "5f557851c481e",
+					"response": 5
+				},
+				{
+					"question": "5f5578d055227",
+					"response": 6
+				},
+				{
+					"question": "5f5578e039aea",
+					"response": 7
+				},
+				{
+					"question": "5f55791c16575",
+					"response": 1
+				},
+				{
+					"question": "5f55797b8b5f2",
+					"response": 2
+				},
+				{
+					"question": "5f55799ed06a0",
+					"response": 3
+				},
+				{
+					"question": "5f5579c25b653",
+					"response": 11
+				},
+				{
+					"question": "5f5579df87f62",
+					"response": 12
+				},
+				{
+					"question": "5f5579f265cce",
+					"response": 13
+				},
+				{
+					"question": "5f557a0b076f3",
+					"response": 14
+				},
+				{
+					"question": "5f557a34ea334",
+					"response": 15
+				},
+				{
+					"question": "5f557a44eafc4",
+					"response": 16
+				}
+      ],
+      "actions": [
+        {
+					"action": "5f60aa994d161",
+					"response": 1
+				},
+				{
+					"action": "5f60aaad99c98",
+					"response": false
+				},
+				{
+					"action": "5f60aadf53101",
+					"response": 75
+				},
+				{
+					"action": "5f60aac6c60bf",
+					"response": 2
+				}
+      ],
+      "settings": [
+        {
+					"setting": "deplacement-switch-1",
+					"response": true
+				},
+				{
+					"setting": "deplacement-switch-2",
+					"response": true
+				},
+				{
+					"setting": "deplacement-switch-3",
+					"response": true
+				}
+      ]
+    }

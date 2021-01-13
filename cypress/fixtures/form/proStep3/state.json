@@ -1,0 +1,65 @@
+{
+  "thematic": "RESTAURATION",
+  "questions": [
+    {
+      "question": "5f55500f273e7",
+      "response": 0
+    },
+    {
+      "question": "5f5550293a164",
+      "response": 1
+    },
+    {
+      "question": "5fe08273352c1",
+      "response": 2
+    },
+    {
+      "question": "5f5550530eaf3",
+      "response": 2
+    },
+    {
+      "question": "5fe08462b666d",
+      "response": 0
+    },
+    {
+      "question": "5f5550724626b",
+      "response": 1
+    },
+    {
+      "question": "5f55508b92e6c",
+      "response": 5
+    },
+    {
+      "question": "5f5550b00730d",
+      "response": 9
+    }
+  ],
+  "actions": [
+    {
+      "action": "5f60a03929c5e",
+      "response": 0
+    },
+    {
+      "action": "5f60a04cb2a94",
+      "response": 0
+    },
+    {
+      "action": "5f60a05e206d2",
+      "response": 0
+    },
+    {
+      "action": "5f60a06d650a3",
+      "response": 0
+    }
+  ],
+  "settings": [
+    {
+      "setting": "restauration-switch-1",
+      "response": true
+    },
+    {
+      "setting": "restauration-switch-2",
+      "response": true
+    }
+  ]
+}

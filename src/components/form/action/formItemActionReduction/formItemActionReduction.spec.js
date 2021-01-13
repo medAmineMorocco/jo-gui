@@ -66,135 +66,137 @@ function ActionReductionForm({ onFinish, onFinishFailed, isOpened }) {
   );
 }
 
-describe("FormItemActionReduction component", () => {
-  it("should display details", () => {
-    const onFinish = cy.stub();
+if (Cypress.env("REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED") === true) {
+  describe("FormItemActionReduction component", () => {
+    it("should display details", () => {
+      const onFinish = cy.stub();
 
-    mount(
-      <ActionReductionForm
-        onFinish={onFinish}
-        onFinishFailed={() => cy.stub()}
-        isOpened={true}
-      />,
-      {
-        style: `body {
+      mount(
+        <ActionReductionForm
+          onFinish={onFinish}
+          onFinishFailed={() => cy.stub()}
+          isOpened={true}
+        />,
+        {
+          style: `body {
                 background-color: var(--bg-color)
             }`,
-      }
-    );
-
-    cy.get(".panel-header-span-first-title").should(
-      "contain",
-      "À remplir à la fin du test si c’est la première fois !"
-    );
-
-    cy.get(".first-para").should(
-      "contain",
-      "Remplis ici les actions que tu aimerais effectuer pour l’année prochaine, et calcule ton potentiel de réduction !"
-    );
-  });
-
-  it("should show more details (savier-vous)", () => {
-    const onFinish = cy.stub();
-
-    mount(
-      <ActionReductionForm
-        onFinish={onFinish}
-        onFinishFailed={() => cy.stub()}
-        isOpened={true}
-      />,
-      {
-        style: `body {
-                background-color: var(--bg-color)
-            }`,
-      }
-    );
-
-    cy.get(".showDetail").click();
-  });
-
-  it("should show success when user submit with switch is OFF", () => {
-    const onFinish = cy.stub();
-
-    mount(
-      <ActionReductionForm
-        onFinish={onFinish}
-        onFinishFailed={cy.stub()}
-        isOpened={false}
-      />,
-      {
-        style: `body {
-                background-color: var(--bg-color)
-            }`,
-      }
-    );
-
-    cy.get("button:contains(Submit)")
-      .click({ force: true })
-      .then(() =>
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switch_name: undefined,
-        })
+        }
       );
-  });
 
-  it("should show success when user submit with default values", () => {
-    const onFinish = cy.stub();
+      cy.get(".panel-header-span-first-title").should(
+        "contain",
+        "À remplir à la fin du test si c’est la première fois !"
+      );
 
-    mount(
-      <ActionReductionForm
-        onFinish={onFinish}
-        onFinishFailed={() => cy.stub()}
-        isOpened={true}
-      />,
-      {
-        style: `body {
+      cy.get(".first-para").should(
+        "contain",
+        "Remplis ici les actions que tu aimerais effectuer pour l’année prochaine, et calcule ton potentiel de réduction !"
+      );
+    });
+
+    it("should show more details (savier-vous)", () => {
+      const onFinish = cy.stub();
+
+      mount(
+        <ActionReductionForm
+          onFinish={onFinish}
+          onFinishFailed={() => cy.stub()}
+          isOpened={true}
+        />,
+        {
+          style: `body {
                 background-color: var(--bg-color)
             }`,
-      }
-    );
-
-    cy.get("button:contains(Submit)")
-      .click({ force: true })
-      .then(() =>
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switch_name: undefined,
-          firstSelect: 2,
-          secondSelect: 2,
-          thirdSelect: undefined,
-        })
+        }
       );
-  });
 
-  it("should show success when user select one value and submit", () => {
-    const onFinish = cy.stub();
+      cy.get(".showDetail").click();
+    });
 
-    mount(
-      <ActionReductionForm
-        onFinish={onFinish}
-        onFinishFailed={() => cy.stub()}
-        isOpened={true}
-      />,
-      {
-        style: `body {
+    it("should show success when user submit with switch is OFF", () => {
+      const onFinish = cy.stub();
+
+      mount(
+        <ActionReductionForm
+          onFinish={onFinish}
+          onFinishFailed={cy.stub()}
+          isOpened={false}
+        />,
+        {
+          style: `body {
                 background-color: var(--bg-color)
             }`,
-      }
-    );
-
-    cy.selectOption("#firstSelect", 3);
-
-    cy.get("#thirdSelect").type(3);
-
-    cy.get("button:contains(Submit)")
-      .click({ force: true })
-      .then(() =>
-        expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
-          switch_name: undefined,
-          firstSelect: 3,
-          secondSelect: 2,
-          thirdSelect: 3,
-        })
+        }
       );
+
+      cy.get("button:contains(Submit)")
+        .click({ force: true })
+        .then(() =>
+          expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+            switch_name: undefined,
+          })
+        );
+    });
+
+    it("should show success when user submit with default values", () => {
+      const onFinish = cy.stub();
+
+      mount(
+        <ActionReductionForm
+          onFinish={onFinish}
+          onFinishFailed={() => cy.stub()}
+          isOpened={true}
+        />,
+        {
+          style: `body {
+                background-color: var(--bg-color)
+            }`,
+        }
+      );
+
+      cy.get("button:contains(Submit)")
+        .click({ force: true })
+        .then(() =>
+          expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+            switch_name: undefined,
+            firstSelect: 2,
+            secondSelect: 2,
+            thirdSelect: undefined,
+          })
+        );
+    });
+
+    it("should show success when user select one value and submit", () => {
+      const onFinish = cy.stub();
+
+      mount(
+        <ActionReductionForm
+          onFinish={onFinish}
+          onFinishFailed={() => cy.stub()}
+          isOpened={true}
+        />,
+        {
+          style: `body {
+                background-color: var(--bg-color)
+            }`,
+        }
+      );
+
+      cy.selectOption("#firstSelect", 3);
+
+      cy.get("#thirdSelect").type(3);
+
+      cy.get("button:contains(Submit)")
+        .click({ force: true })
+        .then(() =>
+          expect(onFinish).to.be.calledOnce.and.have.been.calledWith({
+            switch_name: undefined,
+            firstSelect: 3,
+            secondSelect: 2,
+            thirdSelect: 3,
+          })
+        );
+    });
   });
-});
+}

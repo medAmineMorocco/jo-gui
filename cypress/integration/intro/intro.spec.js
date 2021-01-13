@@ -86,7 +86,7 @@ context('Intro page', () => {
 			cy.login('email@paris2024.org');
 			cy.visit("/intro");
 
-			cy.get('button span:contains(FAIRE LE TEST)').click();
+			cy.get('.custom-btn-intro:contains(FAIRE LE TEST)').click();
 			cy.url().should('include', '/form');
 		});
 	});

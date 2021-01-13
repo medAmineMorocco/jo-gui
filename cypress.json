@@ -4,5 +4,8 @@
   "componentFolder": "src",
   "experimentalFetchPolyfill": true,
   "testFiles": "**/*.spec.js",
-  "watchForFileChanges": false
+  "watchForFileChanges": false,
+  "env": {
+    "REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED": false
+  }
 }

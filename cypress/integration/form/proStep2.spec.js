@@ -15,11 +15,11 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 	];
 
 	it('should show Empreinte numérique step on form page', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
 				win.sessionStorage.clear();
-				win.sessionStorage.setItem('current-step', 2);
 				cy.login('email@paris2024.org');
 
 				cy.visit('/form');
@@ -27,16 +27,18 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Empreinte numérique', size);
+						cy.takeSnapshots('form - Utilisation du numérique (pro)', size);
 					});
 			});
 		});
 	});
 
 	it('should submit form', () => {
+		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');
+		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/proStep2/state.json', 'getResponsesOfStep2');
+		cy.stubRequest('POST', '**/api/response/thematic', 200);
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
-			win.sessionStorage.setItem('current-step', 2);
 			cy.login('email@paris2024.org');
 
 			cy.visit('/form');
@@ -49,7 +51,7 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 
 			cy.pickValue('.nbr-streaming', '9');
 
-			cy.get('button span:contains(suite)').click();
+			cy.submitForm();
 
 			cy.wait(1000);
 
