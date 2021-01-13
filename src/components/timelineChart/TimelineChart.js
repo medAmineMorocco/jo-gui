@@ -4,13 +4,7 @@ import "./timelineChart.css";
 
 const DISTANCE_POINTS_COEFFICIENT = 4;
 
-export function TimelineChart({ userResult, items }) {
-  items.push({
-    value: userResult,
-    description: "Tu es ici !",
-    color: "#EE334E",
-  });
-
+export function TimelineChart({ items }) {
   items = items.sort(function (a, b) {
     return a.value - b.value;
   });
@@ -44,9 +38,6 @@ export function TimelineChart({ userResult, items }) {
 
   return (
     <div className="timeline-chart">
-      <div className="timeline-chart-title">
-        <span className="timeline-title">Et se situe</span>
-      </div>
       <Timeline mode="left">
         {items.map(({ value, description, height, color }, key) => (
           <Timeline.Item

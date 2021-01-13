@@ -2,16 +2,6 @@
   color: white;
 }
 
-.timeline-chart-title {
-  font-family: Paris2024;
-  font-size: 25px;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 60px;
-  letter-spacing: 0em;
-  text-align: center;
-}
-
 .ant-timeline.ant-timeline-label .ant-timeline-item-label {
   color: var(--bg-color-shade-4);
 }
@@ -26,8 +16,4 @@
 
 .first-node {
   height: 30vh;
-}
-
-.timeline-title {
-  color: var(--main-color);
 }

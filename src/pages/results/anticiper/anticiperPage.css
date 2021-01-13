@@ -1,0 +1,26 @@
+.anticiper-body-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+}
+
+.anticiper-title {
+  font-family: Paris2024;
+  color: white;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+@media screen and (max-device-width: 768px) and (max-device-width: 1024px) {
+  .anticiper-body-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 0;
+  }
+}

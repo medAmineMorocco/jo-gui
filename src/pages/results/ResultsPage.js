@@ -74,7 +74,7 @@ export function ResultsPage() {
   return (
     <Fragment>
       <HeaderWithCategory
-        className="form-header"
+        className="form-header-result"
         title1={RESULT_TITLE1}
         title2={RESULT_TITLE2}
       />

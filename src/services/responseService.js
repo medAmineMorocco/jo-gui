@@ -42,7 +42,10 @@ export function getResponsesSummary() {
     },
   };
 
-  return fetchWrapper(getBackendUrl() + `/api/results`, requestOptions)
+  return fetchWrapper(
+    `https://run.mocky.io/v3/2f83246b-1f05-4e74-baf2-0fd02c503685`,
+    requestOptions
+  )
     .then((response) => response.json())
     .catch((error) => Promise.reject(error));
 }
