@@ -1,10 +1,15 @@
 import React from 'react';
-import { number, object, withKnobs } from '@storybook/addon-knobs';
+import { object, withKnobs } from '@storybook/addon-knobs';
 import { TimelineChart } from '@components/timelineChart/TimelineChart';
 
 export default { title: 'TimelineChart', decorators: [withKnobs] };
 
 let timelineItems = [
+    {
+        value: 4,
+        description: "Tu es ici !",
+        color: "#EE334E",
+    },
     {
       value: 2,
       description: "Cible de l’accord de Paris",
@@ -42,4 +47,4 @@ let timelineItems = [
     }
   ];
 
-export const timelineChart = () => <TimelineChart userResult={number("userResult", 4)} items={object("items", timelineItems)} />;
+export const timelineChart = () => <TimelineChart  items={object("items", timelineItems)} />;

@@ -56,11 +56,13 @@
 .navbar-result {
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
   height: 10vh;
 }
+.form-header-result {
+  height: 20vh !important;
+}
 .content-result {
-  height: 50vh;
+  height: 60vh;
   width: 80%;
   margin-left: 10%;
   display: flex;

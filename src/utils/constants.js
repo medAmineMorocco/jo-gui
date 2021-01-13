@@ -102,6 +102,10 @@ export const LIRE_PLUS = "... LIRE PLUS";
 export const RESULT_TITLE1 = "Mon Impact";
 export const RESULT_TITLE2 = "Carbone";
 
+export const ANTICIPER_SUB_TITLE1 =
+  "Neutralisez votre empreinte carbone reviendrait à planter et surtout entretenir";
+export const ANTICIPER_SUB_TITLE2 = "arbres par an !";
+
 ///////////////////////////////////////
 //   Form - Pro
 //////////////////////////////////////
