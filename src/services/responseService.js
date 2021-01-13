@@ -33,3 +33,16 @@ export function getResponsesOfStep(thematic) {
     .then((response) => response.json())
     .catch((error) => Promise.reject(error));
 }
+
+export function getResponsesSummary() {
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getCurrentUser().token}`,
+    },
+  };
+
+  return fetchWrapper(getBackendUrl() + `/api/results`, requestOptions)
+    .then((response) => response.json())
+    .catch((error) => Promise.reject(error));
+}
