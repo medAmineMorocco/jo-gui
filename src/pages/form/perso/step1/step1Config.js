@@ -1,8 +1,8 @@
 export const optionsClasses = [
-  { text: "C = 120,5", value: "C" },
+  { text: "D = 190,5", value: "D" },
   { text: "A = 50", value: "A" },
   { text: "B = 70,5", value: "B" },
-  { text: "D = 190,5", value: "D" },
+  { text: "C = 120,5", value: "C" },
   { text: "E = 280,5", value: "E" },
   { text: "F = 390,5", value: "F" },
   { text: "G = 450", value: "G" },
@@ -124,7 +124,7 @@ export const chauffage_options = [
     value: "eau_chaude_collective",
   },
   {
-    label: "les deux",
+    label: "Les deux",
     value: "les_deux",
   },
   {

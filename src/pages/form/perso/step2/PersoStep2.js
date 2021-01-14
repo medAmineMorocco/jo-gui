@@ -354,15 +354,17 @@ export function PersoStep2({ step, setNextStep }) {
           setValue={setQuestion3}
         />
 
-        <FormItemInputNumberWithUnit
-          form={form}
-          name="5f55692a73b55"
-          label={MATERIELS_QUESTION4_LABEL}
-          unit="ans"
-          value={question4}
-          onChange={onchangeQuestion4}
-          oneLineInput={true}
-        />
+        <div className="forms-margin">
+          <FormItemInputNumberWithUnit
+            form={form}
+            name="5f55692a73b55"
+            label={MATERIELS_QUESTION4_LABEL}
+            unit="ans"
+            value={question4}
+            onChange={onchangeQuestion4}
+            oneLineInput={true}
+          />
+        </div>
       </div>
 
       {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (

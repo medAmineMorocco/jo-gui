@@ -30,12 +30,12 @@
 }
 
 .form-item-radio-buttons .ant-radio-button-wrapper {
+  width: 190px;
   height: 36px;
   padding-top: 0;
-  padding-left: 24px;
-  padding-right: 24px;
   margin-bottom: 8px;
   margin-right: 16px;
+  text-align: center;
   background-color: var(--bg-color-shade-4);
   color: var(--main-color);
   border: 1px solid var(--main-color);
@@ -56,8 +56,6 @@
 @media (max-width: 767px) {
   .form-item-radio-buttons .ant-radio-button-wrapper {
     margin-bottom: 16px;
-    padding-left: 36px;
-    padding-right: 36px;
   }
 }
 

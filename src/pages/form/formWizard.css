@@ -113,12 +113,16 @@
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .forms-margin:last-child {
+    margin-bottom: 60px;
+  }
+
   .pro-step-title {
     font-size: 42px;
   }
 
   .wizard-content-right-form-parent {
-    padding: 0px 50px;
+    padding: 0 50px;
   }
 
   .mobile-wizard-container {
