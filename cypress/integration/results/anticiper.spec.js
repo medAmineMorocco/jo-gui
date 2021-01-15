@@ -52,7 +52,7 @@ context('Anticiper page', () => {
         });
     });
 
-    it.skip('should show error msg notification when cannot get user summary', () => {
+    it('should show error msg notification when cannot get user summary', () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
         cy.stubRequest('GET', '**/api/results', 500);
         cy.window().then(win => {
