@@ -5,7 +5,7 @@ import "./stories.css";
 
 
 
-export default { title: 'homeButton', decorators: [withKnobs]};
+export default { title: 'General/homeButton', decorators: [withKnobs]};
 
 
 

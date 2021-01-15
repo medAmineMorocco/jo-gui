@@ -4,7 +4,7 @@ import {ChartResult} from "@components/result/chartResult/ChartResult";
 import "./stories.css";
 
 
-export default { title: "ChartEquilibre", decorators: [withKnobs]};
+export default { title: "Charts/ChartEquilibre", decorators: [withKnobs]};
 
 
 export const Chart = () => {

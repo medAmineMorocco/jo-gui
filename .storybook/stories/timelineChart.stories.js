@@ -2,7 +2,7 @@ import React from 'react';
 import { object, withKnobs } from '@storybook/addon-knobs';
 import { TimelineChart } from '@components/timelineChart/TimelineChart';
 
-export default { title: 'TimelineChart', decorators: [withKnobs] };
+export default { title: 'Charts/TimelineChart', decorators: [withKnobs] };
 
 let timelineItems = [
     {
