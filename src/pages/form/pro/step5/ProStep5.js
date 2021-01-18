@@ -35,6 +35,7 @@ import {
   overlay_items,
   make_transportation_options,
   transportation_options,
+  question7options,
   question8options,
   question9options,
   question10options,
@@ -85,8 +86,12 @@ export function ProStep5({ step, setNextStep }) {
   ];
 
   // vols AR data pour les champs multiples
-  const volsARIndex = [8, 9, 10, 11];
+  const volsARIndex = [7, 8, 9, 10, 11];
   const volsARDynamicProps = [
+    {
+      label: QUESTION7_NBR_TRAJETS_AR,
+      questions: question7options,
+    },
     {
       label: QUESTION8_NBR_VOLS_AR,
       questions: question8options,
@@ -256,13 +261,6 @@ export function ProStep5({ step, setNextStep }) {
           <div className="wizard-content-right-form-parent">
             <div className="forms-margin">
               <TitleWithHorizontalLine title="En avion" />
-            </div>
-            <div className="forms-margin">
-              <FormItemInputNumber
-                form={form}
-                label={QUESTION7_NBR_TRAJETS_AR}
-                name="5f55584be6d5b"
-              />
             </div>
             {volsARIndex.map((index, key) => (
               <div className="forms-margin" key={key}>

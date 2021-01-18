@@ -33,6 +33,24 @@ export const transportation_options = (
   ];
 };
 
+export const question7options = [
+  {
+    name: "5f55584be6d5b",
+    label: "Économie",
+    defaultValue: 0,
+  },
+  {
+    name: "5ffdc0f7c4a6a",
+    label: "Business",
+    defaultValue: 0,
+  },
+  {
+    name: "5ffdc14b093b2",
+    label: "Première",
+    defaultValue: 0,
+  },
+];
+
 export const question8options = [
   {
     name: "5f55587eaf0e1",

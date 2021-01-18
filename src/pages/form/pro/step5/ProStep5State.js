@@ -39,6 +39,14 @@ export const stepState = (values) => {
         response: values["5f55584be6d5b"],
       },
       {
+        question: "5ffdc0f7c4a6a",
+        response: values["5ffdc0f7c4a6a"],
+      },
+      {
+        question: "5ffdc14b093b2",
+        response: values["5ffdc14b093b2"],
+      },
+      {
         question: "5f55587eaf0e1",
         response: values["5f55587eaf0e1"],
       },
