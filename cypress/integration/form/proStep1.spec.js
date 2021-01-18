@@ -1,18 +1,6 @@
+import {sizes} from "../utils";
+
 context('Form | Vie professionnelle - Au bureau step', () => {
-	const sizes = [
-		{
-			device: 'iphone-5',
-			width: 320,
-		},
-		{
-			device: 'ipad-2',
-			width: 768,
-		},
-		{
-			device: 'macbook-13',
-			width: 1280,
-		},
-	];
 
 	it('should show Au Bureau step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep1/progress.json', 'progressJSON');

@@ -1,18 +1,6 @@
+import {sizes} from "../utils";
+
 context('Form | Vie professionnelle - Empreinte numérique step2', () => {
-	const sizes = [
-		{
-			device: 'iphone-5',
-			width: 320,
-		},
-		{
-			device: 'ipad-2',
-			width: 768,
-		},
-		{
-			device: 'macbook-13',
-			width: 1280,
-		},
-	];
 
 	it('should show Empreinte numérique step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');

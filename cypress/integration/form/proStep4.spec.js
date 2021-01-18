@@ -1,18 +1,6 @@
+import {sizes} from "../utils";
+
 context('Form | Vie professionnelle - Trajets Domicile-travail step', () => {
-	const sizes = [
-		{
-			device: 'iphone-5',
-			width: 320,
-		},
-		{
-			device: 'ipad-2',
-			width: 768,
-		},
-		{
-			device: 'macbook-13',
-			width: 1280,
-		},
-	];
 
 	it('should show Trajets step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep4/progress.json', 'progressJSON');

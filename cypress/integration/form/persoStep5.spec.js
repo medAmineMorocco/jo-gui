@@ -1,18 +1,6 @@
+import {sizes} from "../utils";
+
 context('Form | alimentation step', () => {
-	const sizes = [
-		{
-			device: 'iphone-5',
-			width: 320,
-		},
-		{
-			device: 'ipad-2',
-			width: 768,
-		},
-		{
-			device: 'macbook-13',
-			width: 1280,
-		},
-	];
 
 	it('should show alimentation step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
