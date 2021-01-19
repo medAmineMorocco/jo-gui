@@ -1,0 +1,76 @@
+.panel-mes-actions-collapse {
+  width: 100%;
+  max-width: 70vw;
+}
+
+.panel-mes-actions-collapse
+  .ant-collapse-borderless
+  > .ant-collapse-item
+  > .ant-collapse-content {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.panel-mes-actions-collapse .panel-mes-actions-header {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  padding: 3vh 0vw;
+}
+
+.panel-mes-actions-collapse
+  .ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-arrow {
+  color: white;
+  font-size: 18px;
+}
+
+.panel-mes-actions-collapse .panel-mes-actions-contents {
+  color: white;
+}
+
+.panel-mes-actions-collapse th {
+  text-align: center;
+}
+
+.panel-mes-actions-collapse .panel-description {
+  width: 100%;
+  color: white;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  padding: 2vh 0vw;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.panel-mes-actions-collapse .panel-hidden {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.panel-mes-actions-collapse .ant-checkbox-inner {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.panel-mes-actions-collapse .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: white;
+  border-color: white;
+}
+
+.panel-mes-actions-collapse .ant-checkbox-checked::after {
+  border: white;
+}
+
+.panel-mes-actions-collapse .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: black;
+}
