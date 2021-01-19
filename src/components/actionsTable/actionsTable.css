@@ -1,0 +1,30 @@
+.table-head {
+  font-family: Source Sans Pro;
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  height: 8vh;
+}
+
+.table-head-column {
+  text-align: center;
+}
+
+.table-contents {
+  font-family: Source Sans Pro;
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.table-contents-description {
+  padding: 5vh 5vw;
+}
+
+.table-contents-actions {
+  padding: 5vh 8vw;
+  text-align: center;
+}
