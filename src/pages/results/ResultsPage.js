@@ -121,7 +121,8 @@ export function ResultsPage() {
       <span className="sub-title-result-1">
         <p>{contentSubTitle}</p>
       </span>
-      <div className="content-result">{content}</div>
+      {content}
+      <div className="content-result"></div>
       {isCurrent === "ANTICIPER" ? (
         <span className="sub-title-result-2">
           <p>{footerTitle}</p>
