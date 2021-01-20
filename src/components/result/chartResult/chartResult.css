@@ -4,14 +4,28 @@
 }
 .body-content-chart {
   display: flex;
-  height: 40vh;
+  height: 35vh;
   align-items: center;
   justify-content: center;
 }
+.title-content-chart {
+  height: 10vh;
+}
+.button-content-chart {
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+  height: 10vh;
+}
+.sub-title-content-chart {
+  height: 10vh;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
 .styled-title-chart {
   font-family: Paris2024;
   font-size: 5vh;
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
   line-height: 58px;
   text-align: center;
@@ -39,7 +53,7 @@
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 22px;
   background-color: rgba(255, 255, 255, 0.3);
-  width: 550px;
+  width: 50vh;
   height: 44px;
   display: flex;
   justify-content: space-evenly;
@@ -62,7 +76,7 @@
   background-color: rgba(215, 195, 120, 0);
   font-style: normal;
   font-weight: 900;
-  font-size: 12px;
+  font-size: 1.5vh;
 }
 
 .button-chart-style .ant-radio-button-wrapper:not(:first-child)::before {
@@ -89,8 +103,8 @@
   border-color: rgba(255, 255, 255, 1);
 }
 .button-chart-style .ant-radio-button-wrapper {
-  padding-right: 45px;
-  padding-left: 45px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .button-chart-style .ant-radio-button-wrapper-checked {
@@ -99,7 +113,6 @@
 .button-chart-style {
   display: flex;
   justify-content: center;
-  padding-bottom: 1vh;
 }
 .styled-sub-title-chart {
   color: var(--main-color);
@@ -114,7 +127,7 @@
 
 @media only screen and (max-device-width: 767px) {
   .button-chart-style .ant-radio-group {
-    width: 330px;
+    width: 40vh;
     height: 44px;
     justify-content: space-evenly;
   }
@@ -131,5 +144,32 @@
   }
   .styled-subtitle-chart {
     font-size: 2vh;
+  }
+  .title-content-chart {
+    height: 10vh;
+  }
+  .body-content-chart {
+    height: 35vh;
+  }
+  .button-content-chart {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    height: 10vh;
+  }
+  .sub-title-content-chart {
+    height: 10vh;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .button-content-chart {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+  }
+  .button-chart-style .ant-radio-group {
+    width: 40vh;
+  }
+  .button-chart-style .ant-radio-button-wrapper,
+  .button-chart-style .ant-radio-button-wrapper:last-child {
+    font-size: 12px;
   }
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import { Timeline } from "antd";
+import { TONNE } from "@utils/constants";
 import "./timelineChart.css";
 
-const DISTANCE_POINTS_COEFFICIENT = 4;
+const DISTANCE_POINTS_COEFFICIENT = 3;
 
 export function TimelineChart({ items }) {
   items = items.sort(function (a, b) {
@@ -43,7 +44,7 @@ export function TimelineChart({ items }) {
           <Timeline.Item
             color={color}
             style={{ height: height + "vh" }}
-            label={value + " KgCO₂eq"}
+            label={value + TONNE}
             key={key}
           >
             <span style={{ color: color }}>{description}</span>

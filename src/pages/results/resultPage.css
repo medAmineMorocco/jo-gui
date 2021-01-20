@@ -61,14 +61,33 @@
 .form-header-result {
   height: 20vh !important;
 }
+.form-header-result .styled-title-form {
+  font-size: 5vh;
+}
 .content-result {
-  height: 60vh;
+  height: 50vh;
   width: 80%;
   margin-left: 10%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 25vh;
 }
-
+.sub-title-result-1 {
+  text-align: center;
+  height: 5vh;
+  font-family: Paris2024;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 700;
+}
+.sub-title-result-2 {
+  text-align: center;
+  height: 5vh;
+  font-family: Paris2024;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 700;
+}
 .footer-result .ant-btn-round.ant-btn-icon-only {
   width: 45px;
   padding: 28%;
@@ -98,6 +117,23 @@
     padding-right: 15px;
     float: right;
   }
+  .content-result {
+    width: 100%;
+    margin-left: 0%;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-bottom: 0;
+    height: 45vh;
+  }
+  .footer-result .footer-container {
+    height: 9vh;
+  }
+  .sub-title-result-1 {
+    font-size: 1.5vh;
+  }
+  .sub-title-result-2 {
+    font-size: 1.5vh;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .footer-result .ant-btn-round.ant-btn-icon-only {
@@ -106,5 +142,19 @@
     padding-top: 0px;
     padding-right: 25px;
     float: right;
+  }
+  .content-result {
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-bottom: 0;
+  }
+  .footer-result .footer-container {
+    height: 9vh;
+  }
+  .sub-title-result-1 {
+    font-size: 2vh;
+  }
+  .sub-title-result-2 {
+    font-size: 2vh;
   }
 }
