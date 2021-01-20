@@ -64,7 +64,12 @@
 .form-header-result .styled-title-form {
   font-size: 5vh;
 }
-
+.content-result {
+  height: 50vh;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 25vh;
+}
 .sub-title-result-1 {
   text-align: center;
   height: 5vh;
@@ -110,6 +115,13 @@
     padding-right: 15px;
     float: right;
   }
+  .content-result {
+    width: 100%;
+    margin-left: 0%;
+    overflow-y: scroll;
+    margin-bottom: 0;
+    height: 45vh;
+  }
   .footer-result .footer-container {
     height: 9vh;
   }
@@ -127,6 +139,10 @@
     padding-top: 0px;
     padding-right: 25px;
     float: right;
+  }
+  .content-result {
+    overflow-y: scroll;
+    margin-bottom: 0;
   }
   .footer-result .footer-container {
     height: 9vh;
