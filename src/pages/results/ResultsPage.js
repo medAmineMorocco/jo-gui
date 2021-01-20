@@ -6,14 +6,31 @@ import { CompenserPage } from "./compenser/CompenserPage";
 import { MobiliserPage } from "./mobiliser/MobiliserPage";
 import { ReduirePage } from "./reduire/ReduirePage";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
-import { RESULT_TITLE1, RESULT_TITLE2 } from "@utils/constants";
+import {
+  RESULT_TITLE1,
+  RESULT_TITLE2,
+  MAILTO,
+  ANTICIPER_FOOTER,
+} from "@utils/constants";
+import { getColor } from "@utils/cssUtil";
 import "./resultPage.css";
+
+const mainColor = getColor("--main-color");
 
 export function ResultsPage() {
   const [isCurrent, setCurrent] = useState("ANTICIPER");
   const [nextPage, setNextPage] = useState("");
   const [previousPage, setPreviousPage] = useState("");
   const [content, setContent] = useState(null);
+  const [contentSubTitle, setContentSubTitle] = useState();
+  const footerTitle = (
+    <p>
+      {ANTICIPER_FOOTER}
+      <a href="mailto:coach-climat@paris2024.org" style={{ color: mainColor }}>
+        {MAILTO}
+      </a>
+    </p>
+  );
 
   function onChange(e) {
     setCurrent(e.target.value);
@@ -48,18 +65,27 @@ export function ResultsPage() {
     switch (isCurrent) {
       case "ANTICIPER":
         setContent(<AnticiperPage />);
+        setContentSubTitle(
+          <p>
+            <span style={{ color: mainColor }}>Mesurer et comprendre</span> son
+            empreinte pour la maîtriser
+          </p>
+        );
         setPreviousAndNext("", "Réduire");
         break;
       case "REDUIRE":
         setContent(<ReduirePage />);
+        setContentSubTitle("");
         setPreviousAndNext("Anticiper", "Compenser");
         break;
       case "COMPENSER":
         setContent(<CompenserPage />);
+        setContentSubTitle("");
         setPreviousAndNext("Réduire", "Mobiliser");
         break;
       case "MOBILISER":
         setContent(<MobiliserPage />);
+        setContentSubTitle("");
         setPreviousAndNext("Compenser", "");
         break;
       default:
@@ -92,7 +118,15 @@ export function ResultsPage() {
           <Radio.Button style={radioStyle}></Radio.Button>
         </Radio.Group>
       </div>
+      <span className="sub-title-result-1">
+        <p>{contentSubTitle}</p>
+      </span>
       <div className="content-result">{content}</div>
+      {isCurrent === "ANTICIPER" ? (
+        <span className="sub-title-result-2">
+          <p>{footerTitle}</p>
+        </span>
+      ) : null}
       <div className="footer-result">
         <FooterWithNavigation
           previous={{

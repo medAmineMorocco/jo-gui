@@ -99,12 +99,14 @@ export const LIRE_PLUS = "... LIRE PLUS";
 
 /* Results Page */
 
-export const RESULT_TITLE1 = "Mon Impact";
-export const RESULT_TITLE2 = "Carbone";
-
+export const RESULT_TITLE1 = "Coach";
+export const RESULT_TITLE2 = "Climat";
 export const ANTICIPER_SUB_TITLE1 =
-  "Neutralisez votre empreinte carbone reviendrait à planter et surtout entretenir";
-export const ANTICIPER_SUB_TITLE2 = "arbres par an !";
+  "Neutralisez votre empreinte carbone reviendrait à planter et surtout entretenir ";
+export const ANTICIPER_SUB_TITLE2 = " arbres par an !";
+export const MAILTO = " coach-climat@paris2024.org";
+export const ANTICIPER_FOOTER = "Faites-nous vos retours à l’adresse ";
+export const TONNE = "tCO₂eq";
 
 ///////////////////////////////////////
 //   Form - Pro
