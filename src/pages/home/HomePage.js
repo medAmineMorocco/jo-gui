@@ -59,10 +59,13 @@ export function HomePage(props) {
         <div className="hero-container">
           <div className="hero-wrapper">
             <div className="styled-title-container-home">
-              <p>La neutralité carbone des Jeux, c’est l’affaire de tous.</p>
+              <p>
+                La neutralité carbone des Jeux, c’est l’affaire{" "}
+                <span className="text-title-bold">de tous.</span>
+              </p>
               <p>
                 Paris 2024 a créé le{" "}
-                <span className="text-title-bold"> COACH CLIMAT </span>
+                <span className="text-title-bold"> Coach climat </span>
                 pour vous aider à mesurer et réduire votre{" "}
                 <span className="text-title-bold"> empreinte carbone.</span>
               </p>{" "}

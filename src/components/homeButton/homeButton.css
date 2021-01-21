@@ -17,7 +17,7 @@
   text-align: center;
   color: white;
   padding-top: 50%;
-  font-style: italic;
+  font-style: normal;
 }
 .container-single-button:hover .text-button-home-hover {
   display: flex;
@@ -37,7 +37,7 @@
 .text-decoration-home {
   font-family: Paris2024;
   font-size: 3vh;
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
   color: white;
   text-align: center;
@@ -48,15 +48,15 @@
 .sous-text-decoration-home {
   font-family: Paris2024;
   font-size: 3vh;
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: normal;
   color: white;
   text-align: center;
 }
 .text-decoration-home-button {
   font-family: Paris2024;
   font-size: 4vh;
-  font-style: italic;
+  font-style: normal;
   font-weight: 700;
   text-align: center;
   color: white;
