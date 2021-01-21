@@ -3,7 +3,7 @@ import { Button } from "antd";
 import "./homeButton.css";
 
 export function HomeButton({ doesUserFinishAllForms }) {
-  const styleBrightnessUp = "brightness(100%)";
+  const styleBrightnessUp = "brightness(80%)";
   const styleBrightnessDown = "brightness(20%)";
   return (
     <>

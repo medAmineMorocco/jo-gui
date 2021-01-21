@@ -49,7 +49,7 @@ context('Home page', () => {
             cy.login('email@paris2024.org');
             
             cy.get('.container-single-button').first().then($el => {
-                expect($el).to.have.css('filter', 'brightness(1)');
+                expect($el).to.have.css('filter', 'brightness(0.8)');
             });
             cy.get('.container-single-button').eq(1).then($el => {
                 expect($el).to.have.css('filter', 'brightness(0.2)');
@@ -61,7 +61,7 @@ context('Home page', () => {
         
     });
 
-    it('should enable all button when the user completes all form ', () => {
+    it.only('should enable all button when the user completes all form ', () => {
         cy.window().then((win) => {
             win.sessionStorage.clear();
             cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
@@ -69,13 +69,13 @@ context('Home page', () => {
     
             cy.wait(500);
             cy.get('.container-single-button').first().then($el => {
-                expect($el).to.have.css('filter', 'brightness(1)');
+                expect($el).to.have.css('filter', 'brightness(0.8)');
             });
             cy.get('.container-single-button').eq(1).then($el => {
-                expect($el).to.have.css('filter', 'brightness(1)');
+                expect($el).to.have.css('filter', 'brightness(0.8)');
             });
             cy.get('.container-single-button').eq(2).then($el => {
-                expect($el).to.have.css('filter', 'brightness(1)');
+                expect($el).to.have.css('filter', 'brightness(0.8)');
             });
     });
 });

@@ -1,6 +1,6 @@
 .show-overlay-btn {
   font-family: Paris2024;
-  font-style: italic;
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
   width: 40px;
@@ -46,6 +46,7 @@
   font-size: 3vh;
   font-family: Paris2024;
   text-align: center;
+  margin-top: 15px;
 }
 
 .title-container-home .hero-wrapper {
