@@ -19,10 +19,6 @@ import {
   INTRODUCTION_TITLE1,
   INTRODUCTION_TITLE2,
   INTRODUCTION_TITLE4,
-  INTRODUCTION_DESCRIPTION1,
-  INTRODUCTION_DESCRIPTION21,
-  INTRODUCTION_DESCRIPTION22,
-  INTRODUCTION_DESCRIPTION4,
   INTRODUCTION_BTN_DESCRIPTION,
   LINK_HOME_ICON,
 } from "@utils/constants";
@@ -98,7 +94,11 @@ export function NewIntroPage() {
             </span>
           </div>
           <div className="intro-parag">
-            <span>{INTRODUCTION_DESCRIPTION1}</span>
+            <span>
+              Eh oui, il y a quelques questions à se poser{" "}
+              <span style={{ fontWeight: "bolder" }}>avant</span> de connaître
+              son empreinte carbonne !
+            </span>
           </div>
         </div>
 
@@ -112,12 +112,14 @@ export function NewIntroPage() {
             </span>
           </div>
           <div className="intro-parag">
-            <div>
-              <span>{INTRODUCTION_DESCRIPTION21}</span>
-            </div>
-            <div>
-              <span>{INTRODUCTION_DESCRIPTION22}</span>
-            </div>
+            <span>
+              Pour votre <span style={{ color: "#0061FF" }}>vie perso</span> :
+              vos souvenirs de voyages, repas, éventuellement vos factures
+              d'énergies...
+              <br />
+              Pour votre <span style={{ color: "#00B460" }}>vie pro</span> :
+              laissez-vous guider.
+            </span>
           </div>
         </div>
 
@@ -131,7 +133,11 @@ export function NewIntroPage() {
             </span>
           </div>
           <div className="intro-parag">
-            <span>{INTRODUCTION_DESCRIPTION4}</span>
+            <span>
+              On vous recommande de vous référer à l'année{" "}
+              <span style={{ fontWeight: "bolder" }}>2019</span> afin de pouvoir
+              comparer par la suite à l'année 2020 moins standard, puis 2021 !
+            </span>
           </div>
         </div>
       </div>

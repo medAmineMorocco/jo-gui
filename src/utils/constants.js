@@ -129,16 +129,8 @@ export const INTRODUCTION_QUESTION3_ERROR_MSG =
 
 // new page introduction
 export const INTRODUCTION_TITLE1 = "Environ 25 min";
-export const INTRODUCTION_DESCRIPTION1 =
-  "Eh oui, il y a quelques questions à se poser avant de connaître son empreinte carbonne !";
 export const INTRODUCTION_TITLE2 = "Quelques données";
-export const INTRODUCTION_DESCRIPTION21 =
-  "Pour votre vie perso : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...";
-export const INTRODUCTION_DESCRIPTION22 =
-  "Pour votre vie pro : laissez-vous guider.";
 export const INTRODUCTION_TITLE4 = "Une année de référence";
-export const INTRODUCTION_DESCRIPTION4 =
-  "On vous recommande de vous référer à l'année 2019 afin de pouvoir comparer par la suite à l'année 2020 moins standard, puis 2021 !";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
 export const LINK_HOME_ICON = "PARIS2024";
 
