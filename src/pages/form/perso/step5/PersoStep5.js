@@ -45,15 +45,10 @@ export function PersoStep5({ step, setNextStep }) {
   const NUMBER_OF_MEALS_TO_BE_ENTERED = 9;
 
   const [slider1Value, setSlider1Value] = useState(0);
-  const [slider1Max, setSlider1Max] = useState(5);
   const [slider2Value, setSlider2Value] = useState(0);
-  const [slider2Max, setSlider2Max] = useState(5);
   const [slider3Value, setSlider3Value] = useState(0);
-  const [slider3Max, setSlider3Max] = useState(5);
   const [slider4Value, setSlider4Value] = useState(0);
-  const [slider4Max, setSlider4Max] = useState(5);
   const [slider5Value, setSlider5Value] = useState(0);
-  const [slider5Max, setSlider5Max] = useState(5);
 
   const actionSoda = "5f60aa4172f98";
   const actionVin = "5f60aa6244f4d";
@@ -93,29 +88,6 @@ export function PersoStep5({ step, setNextStep }) {
   ) => {
     return val1 + val2 + val3 + val4 + val5;
   };
-
-  useEffect(() => {
-    const getSliderMaxValues = (val1 = 0, val2 = 0, val3 = 0, val4 = 0) => {
-      const result = NUMBER_OF_MEALS_TO_BE_ENTERED - val1 - val2 - val3 - val4;
-      return result < 0 ? 0 : result;
-    };
-
-    setSlider1Max(
-      getSliderMaxValues(slider2Value, slider3Value, slider4Value, slider5Value)
-    );
-    setSlider2Max(
-      getSliderMaxValues(slider1Value, slider3Value, slider4Value, slider5Value)
-    );
-    setSlider3Max(
-      getSliderMaxValues(slider1Value, slider2Value, slider4Value, slider5Value)
-    );
-    setSlider4Max(
-      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider5Value)
-    );
-    setSlider5Max(
-      getSliderMaxValues(slider1Value, slider2Value, slider3Value, slider4Value)
-    );
-  }, [slider1Value, slider2Value, slider3Value, slider4Value, slider5Value]);
 
   // change ActionSoda Value
   selectDetail2[0].options = [{ text: "0", value: 0 }];
@@ -289,35 +261,35 @@ export function PersoStep5({ step, setNextStep }) {
               curseurQuestion(
                 "5f5570ff217a4",
                 <MeatSvg />,
-                slider1Max,
+                NUMBER_OF_MEALS_TO_BE_ENTERED,
                 slider1Value,
                 setSlider1Value
               ),
               curseurQuestion(
                 "5f55715960e9a",
                 <ChickenSvg />,
-                slider2Max,
+                NUMBER_OF_MEALS_TO_BE_ENTERED,
                 slider2Value,
                 setSlider2Value
               ),
               curseurQuestion(
                 "5fe086093c517",
                 <FishSvg />,
-                slider3Max,
+                NUMBER_OF_MEALS_TO_BE_ENTERED,
                 slider3Value,
                 setSlider3Value
               ),
               curseurQuestion(
                 "5f557184101ce",
                 <EggSvg />,
-                slider4Max,
+                NUMBER_OF_MEALS_TO_BE_ENTERED,
                 slider4Value,
                 setSlider4Value
               ),
               curseurQuestion(
                 "5fe085c49e973",
                 <VegetablesSvg />,
-                slider5Max,
+                NUMBER_OF_MEALS_TO_BE_ENTERED,
                 slider5Value,
                 setSlider5Value
               ),
