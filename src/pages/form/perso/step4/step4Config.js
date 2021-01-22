@@ -45,9 +45,3 @@ export const selectDetail = [
     ],
   },
 ];
-
-export const overlay_items = [
-  {
-    image: "/images/conso-electrique.png",
-  },
-];

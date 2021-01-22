@@ -22,13 +22,10 @@ import {
   ALIMENTATION_QUESTION7,
   ALIMENTATION_QUESTION8,
   ALIMENTATION_QUESTION9,
-  POPIN_INFOS,
-  OVERLAY_TITLE,
   ALIMENTATION_SAVIEZ_VOUS,
   ALIMENTATION_QUESTION,
 } from "@utils/constants";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
-import { Overlay } from "@components/overlay/Overlay";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { selectDetail, selectDetail2, curseurQuestion } from "./step5Config";
@@ -256,7 +253,6 @@ export function PersoStep5({ step, setNextStep }) {
           <FormSlider
             form={form}
             labels={ALIMENTATION_QUESTION}
-            tooltipTitle={"Le total doit faire 9 pour vos 9 repas restants"}
             questions={[
               curseurQuestion(
                 "5f5570ff217a4",
@@ -323,21 +319,21 @@ export function PersoStep5({ step, setNextStep }) {
         <div className="forms-margin">
           <FormCounter
             form={form}
-            name="5f557459e6c45"
-            iconCounter={SodaIcon}
-            textCounter={ALIMENTATION_QUESTION5}
-            value={question5Count}
-            setValue={setQuestion5Count}
+            name="5f5574ead218e"
+            iconCounter={WaterIcon}
+            textCounter={ALIMENTATION_QUESTION6}
+            value={question6Count}
+            setValue={setQuestion6Count}
           />
         </div>
 
         <FormCounter
           form={form}
-          name="5f5574ead218e"
-          iconCounter={WaterIcon}
-          textCounter={ALIMENTATION_QUESTION6}
-          value={question6Count}
-          setValue={setQuestion6Count}
+          name="5f557459e6c45"
+          iconCounter={SodaIcon}
+          textCounter={ALIMENTATION_QUESTION5}
+          value={question5Count}
+          setValue={setQuestion5Count}
         />
 
         <FormCounter
@@ -365,15 +361,6 @@ export function PersoStep5({ step, setNextStep }) {
           textCounter={ALIMENTATION_QUESTION9}
           value={question9Count}
           setValue={setQuestion9Count}
-        />
-
-        <Overlay
-          title={OVERLAY_TITLE}
-          items={[
-            {
-              text: POPIN_INFOS,
-            },
-          ]}
         />
       </div>
 

@@ -17,8 +17,7 @@ export function PersoStep7({ step }) {
   const history = useHistory();
 
   const QUESTION1_LABEL =
-    "Quote-part des émissions liées aux Services de l'Etat et des collectivités\n" +
-    "                          (Santé, Education, Justice, Défense, etc.) (kg éq CO₂)";
+    "Chaque français partage les émissions générées par les Services de l'Etat et des collectivités (Santé, Education, Justice, Défense, etc…). Elle s'ajoute à votre empreinte carbone :";
   const QUESTION1_TOOLTIP =
     "Les émissions du service public dont nous disposons sont réparties\n" +
     "                                  entre tous les français.";

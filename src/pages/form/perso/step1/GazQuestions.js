@@ -6,7 +6,6 @@ import {
   HOUSE_QUESTION11,
   HOUSE_ERROR_MSG,
   HOUSE_QUESTION10_TOOLTIP,
-  HOUSE_QUESTION11_TOOLTIP,
 } from "@utils/constants";
 
 export function GazQuestions({ form }) {
@@ -85,7 +84,6 @@ export function GazQuestions({ form }) {
           form={form}
           name="5f7f2382ba8a0"
           label={HOUSE_QUESTION11}
-          tooltipTitle={HOUSE_QUESTION11_TOOLTIP}
           rules={[
             {
               required: !isQuestion11Disabled,
@@ -93,7 +91,7 @@ export function GazQuestions({ form }) {
             },
           ]}
           value={question11Input}
-          unit={"€/mois"}
+          unit={"€/an"}
           onChange={onchangeQuestion10And11Value}
           disabled={isQuestion11Disabled}
         />

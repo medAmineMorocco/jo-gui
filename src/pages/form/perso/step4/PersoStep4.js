@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Form } from "antd";
 import { Form as ConfiguredForm } from "@components/form/Form";
 import { FormItemMultipleInputNumber } from "@components/form/formItemMultipleInputNumber/FormItemMultipleInputNumber";
-import { Overlay } from "@components/overlay/Overlay";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
-  overlay_items,
   question1_questions,
   question2_questions,
   selectDetail,
@@ -110,13 +108,6 @@ export function PersoStep4({ step, setNextStep }) {
             label={NUMERIC_QUESTION2_LABEL}
             tooltipTitle={NUMERIC_QUESTION2_TOOLTIP}
             questions={question2_questions}
-          />
-        </div>
-
-        <div className="overlay-consommation">
-          <Overlay
-            title="Consommation en fonction du réseau"
-            items={overlay_items}
           />
         </div>
       </div>

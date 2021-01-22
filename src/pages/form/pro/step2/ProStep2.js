@@ -30,7 +30,7 @@ import {
 } from "./ProStep2Config";
 import { notify } from "@utils/notification";
 
-// Empreinte numérique
+// Utilisation du numérique (pro)
 export function ProStep2({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [render, setRender] = useState(0);

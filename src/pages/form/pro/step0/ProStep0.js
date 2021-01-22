@@ -11,9 +11,6 @@ import {
   INTRODUCTION_QUESTION1,
   INTRODUCTION_QUESTION1_INFOS,
   INTRODUCTION_QUESTION1_ERROR_MSG,
-  INTRODUCTION_QUESTION2,
-  INTRODUCTION_QUESTION2_INFOS,
-  INTRODUCTION_QUESTION2_ERROR_MSG,
   INTRODUCTION_QUESTION3,
   INTRODUCTION_QUESTION3_ERROR_MSG,
 } from "@utils/constants";
@@ -45,10 +42,6 @@ export function ProStep0({ step, setNextStep }) {
         {
           question: "5f554172a13c7",
           response: values["5f554172a13c7"],
-        },
-        {
-          question: "5f5541a7845e0",
-          response: values["5f5541a7845e0"],
         },
         {
           question: "5f5541ba9b096",
@@ -95,18 +88,6 @@ export function ProStep0({ step, setNextStep }) {
             { required: true, message: INTRODUCTION_QUESTION1_ERROR_MSG },
           ]}
         />
-
-        <div className="forms-margin">
-          <FormItemInputNumber
-            form={form}
-            name="5f5541a7845e0"
-            tooltipTitle={INTRODUCTION_QUESTION2_INFOS}
-            label={INTRODUCTION_QUESTION2}
-            rules={[
-              { required: true, message: INTRODUCTION_QUESTION2_ERROR_MSG },
-            ]}
-          />
-        </div>
 
         <div className="forms-margin">
           <FormItemInputNumber

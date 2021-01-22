@@ -21,7 +21,7 @@ function FormItemInputNumberWithUnitForm({ onFinish, onFinishFailed }) {
         label="what is the distance between USA and AUS ?"
         rules={[{ required: true, message: "⚠ Please input the distance!" }]}
         tooltipTitle="this is a tooltip"
-        unit="Km"
+        unit="km"
       />
       <Form.Item>
         <Button type="primary" htmlType="submit">
