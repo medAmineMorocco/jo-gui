@@ -1,8 +1,7 @@
-import {sizes} from "../utils";
+import { sizes } from '../utils';
 
-context('Form | Vie professionnelle - Empreinte numérique step2', () => {
-
-	it('should show Empreinte numérique step on form page', () => {
+context('Form | Vie professionnelle - Utilisation du numérique (pro) step2', () => {
+	it('should show Utilisation du numérique (pro) step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep2/progress.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -43,8 +42,8 @@ context('Form | Vie professionnelle - Empreinte numérique step2', () => {
 
 			cy.wait(1000);
 
-			cy.get('.footer-navigation-left span').contains('Empreinte numérique').should('exist');
-			cy.get('.footer-navigation-right span').contains('Trajets').should('exist');
+			cy.get('.footer-navigation-left span').contains('Utilisation du numérique (pro)').should('exist');
+			cy.get('.footer-navigation-right span').contains('Déplacements Domicile - Travail').should('exist');
 
 			cy.get('.footer-buttons-left button').click();
 

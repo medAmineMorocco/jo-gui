@@ -1,7 +1,6 @@
-import {sizes} from "../utils";
+import { sizes } from '../utils';
 
 context('Form | alimentation step', () => {
-
 	it('should show alimentation step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/persoStep5/progress.json', 'progressJSON');
 		cy.stubRequest('GET', '**/api/response/thematic/**', 200, 'form/persoStep5/state.json', 'getResponsesOfStep5');
@@ -17,21 +16,14 @@ context('Form | alimentation step', () => {
 					.should('include', '/form')
 					.then(() => {
 						cy.takeSnapshots('form - Alimentation personnelle', size).then(() => {
-							cy.get('.custom-btn-modal')
-								.click({ force: true })
-								.then(() =>
-									cy.takeSnapshots('form - Alimentation personnelle conseils', size).then(() => {
-										cy.get('.modal-close-btn-modal').click();
-										if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
-											cy.get('.ant-switch')
-												.eq(0)
-												.click({ force: true })
-												.then(() => cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size));
-										} else {
-											cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size);
-										}
-									})
-								);
+							if (Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true) {
+								cy.get('.ant-switch')
+									.eq(0)
+									.click({ force: true })
+									.then(() => cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size));
+							} else {
+								cy.takeSnapshots('form - Alimentation personnelle actions de réduction', size);
+							}
 						});
 					});
 			});

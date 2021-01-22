@@ -1,8 +1,7 @@
-import {sizes} from "../utils";
+import { sizes } from '../utils';
 
-context('Form | Vie professionnelle - Trajets Domicile-travail step', () => {
-
-	it('should show Trajets step on form page', () => {
+context('Form | Vie professionnelle - Déplacements Domicile - Travail step', () => {
+	it('should show Déplacements Domicile - Travail step on form page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'form/proStep4/progress.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
@@ -15,7 +14,7 @@ context('Form | Vie professionnelle - Trajets Domicile-travail step', () => {
 				cy.url()
 					.should('include', '/form')
 					.then(() => {
-						cy.takeSnapshots('form - Déplacements Domicile-Travail', size);
+						cy.takeSnapshots('form - Déplacements Domicile - Travail', size);
 					});
 			});
 		});

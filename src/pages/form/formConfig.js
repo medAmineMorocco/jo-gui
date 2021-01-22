@@ -37,7 +37,7 @@ export const config = {
     },
     next: {
       category: CATEGORY.PRO,
-      details: "Empreinte numérique",
+      details: "Utilisation du numérique (pro)",
     },
   },
   2: {
@@ -50,7 +50,7 @@ export const config = {
     },
     next: {
       category: CATEGORY.PRO,
-      details: "Restauration",
+      details: "Restauration au bureau",
     },
   },
   3: {
@@ -59,11 +59,11 @@ export const config = {
     progress: 2,
     previous: {
       category: CATEGORY.PRO,
-      details: "Empreinte numérique",
+      details: "Utilisation du numérique (pro)",
     },
     next: {
       category: CATEGORY.PRO,
-      details: "Trajets",
+      details: "Déplacements Domicile - Travail",
     },
   },
   4: {
@@ -72,11 +72,11 @@ export const config = {
     progress: 3,
     previous: {
       category: CATEGORY.PRO,
-      details: "Restauration",
+      details: "Restauration au bureau",
     },
     next: {
       category: CATEGORY.PRO,
-      details: "Déplacements",
+      details: "Déplacements Personnels Professionnels",
     },
   },
   5: {
@@ -85,11 +85,11 @@ export const config = {
     progress: 4,
     previous: {
       category: CATEGORY.PRO,
-      details: "Trajets",
+      details: "Déplacements Domicile - Travail",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "À la maison",
+      details: "Logement",
     },
   },
   6: {
@@ -98,11 +98,11 @@ export const config = {
     progress: 0,
     previous: {
       category: CATEGORY.PRO,
-      details: "Déplacements",
+      details: "Déplacements Personnels Professionnels",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "Équipement du logement",
+      details: "Biens du foyer",
     },
   },
   7: {
@@ -111,11 +111,11 @@ export const config = {
     progress: 1,
     previous: {
       category: CATEGORY.PERSO,
-      details: "À la maison",
+      details: "Logement",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "Biens matériels",
+      details: "Biens personnels",
     },
   },
   8: {
@@ -124,11 +124,11 @@ export const config = {
     progress: 2,
     previous: {
       category: CATEGORY.PERSO,
-      details: "Équipement du logement",
+      details: "Biens du foyer",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "Numérique",
+      details: "Utilisation du numérique (perso)",
     },
   },
   9: {
@@ -137,11 +137,11 @@ export const config = {
     progress: 3,
     previous: {
       category: CATEGORY.PERSO,
-      details: "Biens matériels",
+      details: "Biens personnels",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "Alimentation",
+      details: "Alimentation personnelle",
     },
   },
   10: {
@@ -150,11 +150,11 @@ export const config = {
     progress: 4,
     previous: {
       category: CATEGORY.PERSO,
-      details: "Numérique",
+      details: "Utilisation du numérique (perso)",
     },
     next: {
       category: CATEGORY.PERSO,
-      details: "Déplacements",
+      details: "Déplacements Personnels",
     },
   },
   11: {
@@ -163,7 +163,7 @@ export const config = {
     progress: 5,
     previous: {
       category: CATEGORY.PERSO,
-      details: "Alimentation",
+      details: "Alimentation personnelle",
     },
     next: {
       category: CATEGORY.PERSO,
@@ -176,7 +176,7 @@ export const config = {
     progress: 6,
     previous: {
       category: CATEGORY.PERSO,
-      details: "Déplacements",
+      details: "Déplacements Personnels",
     },
     next: {
       category: CATEGORY.RESULTS,

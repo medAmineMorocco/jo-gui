@@ -6,7 +6,6 @@ import {
   HOUSE_QUESTION9,
   HOUSE_ERROR_MSG,
   HOUSE_QUESTION8_TOOLTIP,
-  HOUSE_QUESTION9_TOOLTIP,
 } from "@utils/constants";
 
 export function ElectriqueQuestions({ form }) {
@@ -85,7 +84,6 @@ export function ElectriqueQuestions({ form }) {
           form={form}
           name="5f7f230d75c78"
           label={HOUSE_QUESTION9}
-          tooltipTitle={HOUSE_QUESTION9_TOOLTIP}
           rules={[
             {
               required: !isQuestion9Disabled,
@@ -93,7 +91,7 @@ export function ElectriqueQuestions({ form }) {
             },
           ]}
           value={question9Input}
-          unit={"€/mois"}
+          unit={"€/an"}
           onChange={onchangeQuestion8And9Value}
           disabled={isQuestion9Disabled}
         />

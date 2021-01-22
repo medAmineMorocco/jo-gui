@@ -15,13 +15,16 @@ import {
   DEPLACEMENTS_QUESTION3,
   DEPLACEMENTS_QUESTION3_INFO,
   DEPLACEMENTS_QUESTION4,
+  TOOLTIP_QUESTION4,
   DEPLACEMENTS_QUESTION5,
+  TOOLTIP_QUESTION5,
   DEPLACEMENTS_QUESTION6,
   DEPLACEMENTS_QUESTION7,
   DEPLACEMENTS_QUESTION1_ERROR_MSG,
   DEPLACEMENTS_SAVIEZ_VOUS,
   TRANSPORTATION_LABEL,
-  DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE,
+  DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE,
+  DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE,
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import {
@@ -35,7 +38,8 @@ import {
   question7_questions,
   actionReduction3_selectDetail,
   question3_questions,
-  overlay_items,
+  overlay_items_france,
+  overlay_items_internationnal,
 } from "./step6Config";
 import {
   saveResponsesOfStep,
@@ -209,8 +213,12 @@ export function PersoStep6({ step, setNextStep }) {
           />
         </div>
         <Overlay
-          title={DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE}
-          items={overlay_items}
+          title={DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE}
+          items={overlay_items_france}
+        />
+        <Overlay
+          title={DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE}
+          items={overlay_items_internationnal}
         />
       </div>
 
@@ -223,7 +231,7 @@ export function PersoStep6({ step, setNextStep }) {
                 form={form}
                 name="5f5575ba93b32"
                 label={DEPLACEMENTS_QUESTION1}
-                unit="Km"
+                unit="km"
                 rules={[
                   { required: true, message: DEPLACEMENTS_QUESTION1_ERROR_MSG },
                 ]}
@@ -274,6 +282,7 @@ export function PersoStep6({ step, setNextStep }) {
               name="multi1"
               label={DEPLACEMENTS_QUESTION4}
               questions={question4_questions}
+              tooltipTitle={TOOLTIP_QUESTION4}
             />
           </div>
         </div>
@@ -291,6 +300,7 @@ export function PersoStep6({ step, setNextStep }) {
                 label={DEPLACEMENTS_QUESTION5}
                 questions={question5_questions}
                 onChange={onChange}
+                tooltipTitle={TOOLTIP_QUESTION5}
               />
             </div>
           </div>

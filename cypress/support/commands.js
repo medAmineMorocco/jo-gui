@@ -3,17 +3,16 @@ import '@percy/cypress';
 Cypress.Commands.add('stubRequest', (method, path, status, fixture, alias) => {
 	cy.server();
 	if (status === 200) {
-		if(fixture) {
+		if (fixture) {
 			cy.fixture(fixture).as(alias);
 		}
 		cy.route({
 			method,
 			url: path,
 			status,
-			response: fixture ? `@${alias}`: 'some-response',
+			response: fixture ? `@${alias}` : 'some-response',
 		});
-	}
-	else {
+	} else {
 		cy.route({
 			method,
 			url: path,
@@ -39,9 +38,9 @@ Cypress.Commands.add('takeSnapshots', (title, size) => {
 	cy.percySnapshot(`${title} | on ${size.device}`, { widths: [size.width] });
 });
 
-Cypress.Commands.add('login', (email, password = "password") => {
+Cypress.Commands.add('login', (email, password = 'password') => {
 	cy.stubRequest('POST', '**/auth/signin', 200, 'signin.json', 'signinJSON');
-	cy.window().then(win=> {
+	cy.window().then((win) => {
 		cy.visit('/');
 		cy.get('#login_email').clear().type(email);
 		cy.get('#login_password').clear().type(password);
@@ -51,18 +50,14 @@ Cypress.Commands.add('login', (email, password = "password") => {
 });
 
 Cypress.Commands.add('count', (selector, number) => {
-	cy.get(`${selector} > .flex-container-button > #plus-counter`).as(
-		'btnSelector'
-	);
+	cy.get(`${selector} > .flex-container-button > #plus-counter`).as('btnSelector');
 	for (let i = 1; i <= number; i++) {
-		cy.get('@btnSelector').click();
+		cy.get('@btnSelector').click({ force: true });
 	}
 });
 
 Cypress.Commands.add('typeNumber', (questions) => {
-	questions.forEach(({ name, value }) =>
-		cy.get(`#${name}`).clear({force: true}).type(`${value}`)
-	);
+	questions.forEach(({ name, value }) => cy.get(`#${name}`).clear({ force: true }).type(`${value}`));
 });
 
 Cypress.Commands.add('checkMeals', (selector, mealsByDay) => {
@@ -73,26 +68,18 @@ Cypress.Commands.add('checkMeals', (selector, mealsByDay) => {
 
 Cypress.Commands.add('expectToBeChecked', (radios) => {
 	radios.forEach((radio) => {
-		cy.get(`input[data-label="${radio}"]`)
-			.parent()
-			.should('have.class', 'ant-radio-checked');
+		cy.get(`input[data-label="${radio}"]`).parent().should('have.class', 'ant-radio-checked');
 	});
 });
 
 Cypress.Commands.add('typeNumberForQuestionWithUnit', (name, value) => {
-	cy.get(`label[for="${name}"]`)
-		.parents('.ant-form-item')
-		.find('.ant-input-number-input')
-		.clear()
-		.type(value);
+	cy.get(`label[for="${name}"]`).parents('.ant-form-item').find('.ant-input-number-input').clear().type(value);
 });
 
 Cypress.Commands.add('pickValue', (selector, value) => {
-	cy.get(`${selector} .ant-slider-mark .ant-slider-mark-text`)
-		.contains(value)
-		.click({force: true});
+	cy.get(`${selector} .ant-slider-mark .ant-slider-mark-text`).contains(value).click({ force: true });
 });
 
 Cypress.Commands.add('submitForm', () => {
-	cy.get("button span").contains("Suite", {matchCase: false}).click();
+	cy.get('button span').contains('Suite', { matchCase: false }).click();
 });

@@ -12,7 +12,7 @@ export const proItems = [
     description: "2 questions",
   },
   {
-    title: "Déplacements Domicile-Travail",
+    title: "Déplacements Domicile - Travail",
     description: "3 questions",
   },
   {

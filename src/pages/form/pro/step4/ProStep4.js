@@ -26,7 +26,7 @@ import {
 } from "./ProStep4Config";
 import { notify } from "@utils/notification";
 
-// Trajets Domicile-travail
+// Déplacements Domicile - Travail
 export function ProStep4({ step, setNextStep }) {
   const [form] = Form.useForm();
   const [switchValue, setSwitchValue] = useState(false);
@@ -131,7 +131,9 @@ export function ProStep4({ step, setNextStep }) {
     >
       <div className="wizard-content-right-form-parent">
         <div className="pro-step-title-container">
-          <span className="pro-step-title">Déplacements Domicile-Travail</span>
+          <span className="pro-step-title">
+            Déplacements Domicile - Travail
+          </span>
         </div>
 
         <FormItemInputNumber
@@ -153,7 +155,7 @@ export function ProStep4({ step, setNextStep }) {
           />
         </div>
 
-        <div className="forms-margin">
+        <div className="forms-margin motorisation-field">
           <FormItemSelect
             name="5f555681b8e00"
             label={MOTORISATION}

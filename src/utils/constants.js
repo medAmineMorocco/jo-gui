@@ -116,12 +116,7 @@ export const TONNE = "tCO₂eq";
 export const INTRODUCTION_QUESTION1 = "Nombre de jours travaillés par an";
 export const INTRODUCTION_QUESTION1_INFOS =
   "Indice : 215 dans un contrat temps-plein !";
-export const INTRODUCTION_QUESTION2_INFOS =
-  "Par rapport à ton année de référence";
 export const INTRODUCTION_QUESTION1_ERROR_MSG =
-  "⚠ Merci de saisir votre réponse";
-export const INTRODUCTION_QUESTION2 = "Ancienneté dans le COJO (en mois)";
-export const INTRODUCTION_QUESTION2_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
@@ -142,13 +137,13 @@ export const TITLE_TELEPHONES =
 export const TITLE_ECRANS =
   "Nombre d'écrans additionels mis à votre disposition";
 
-// Empreinte numérique
+// Utilisation du numérique (pro)
 export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
 export const TAILLE_BOITE_INFO =
   "Pour trouver cette information, check le « pop-in conseil » plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const EMPREINTE_OVERLAY_TITLE =
-  "Comment connaître la taille de ta boîte mail ?";
+  "Comment connaître la taille de sa boîte mail ?";
 export const TAILLE_STOCKAGE =
   "Taille de ton stockage en ligne, type SharePoint/OneDrive (en Go)";
 export const NBR_RECHERCHE =
@@ -162,7 +157,7 @@ export const SAVIER_VOUS_EMPREINTE =
 export const EMREINTE_OVERLAY_IMAGE =
   "Pour connaître la taille de ta boîte mail, ouvre l’application mail Outlook. En haut à gauche, ouvre l’onglet Fichiers. Dans le sous-onglet Informations où te trouves, en 3e position et en face d’outils, tu trouveras Paramètres de la boîte au lettres. Une jauge indique ton espace disponible par rapport à l’espace total. Soustrait l’un à l’autre et tu connaîtras la taille de ta boîte mail.";
 
-// Trajets
+// Déplacements Domicile - Travail
 export const DISTANCE_DOMICILE_TRAVAIL =
   "Distance entre votre domicile et votre travail (km)";
 export const DISTANCE_DOMICILE_TRAVAIL_ERROR_MSG =
@@ -176,7 +171,10 @@ export const SAVIER_VOUS_TRAJETS =
   "Les émissions des vélos/trottinettes partagés électriques incluent une quote-part liée à leur fabrication (batterie au lithium). Ayant actuellement une faible durée vie en milieu urbain, la fabrication est proratisée sur un faible kilométrage parcouru.";
 
 // Déplacements professionnels
-export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_TITLE = "Cartes des distances";
+export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_FRANCE_TITLE =
+  "Carte de la france";
+export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_INTERNATIONNAL_TITLE =
+  "Carte internationnale";
 export const MAKE_TRANSPORTATION_LABEL =
   "Effectuez-vous des déplacements professionels ?";
 export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
@@ -193,6 +191,7 @@ export const QUESTION5_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en train TGV (à environ 800 km)";
 export const QUESTION6_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en train au CIO à Lausanne";
+export const QUESTION6_NBR_TRAJETS_AR_TOOLTIP = "Une case vide équivaut à un 0";
 export const QUESTION7_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en avion au CIO à Lausanne en Economie";
 export const QUESTION8_NBR_VOLS_AR =
@@ -226,31 +225,25 @@ export const ALIMENTATION_QUESTION2 =
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION =
-  "Dans votre vie perso, quelle est la composition de vos repas ? (Les 9 repas restants sur une semaine : dîners et week-end)";
+  "Sur les 9 repas restants dans votre vie perso (dîners et week-ends), quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porc et volailles), poisson, végétarien (œufs et produits laitiers), ou végétalien)";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
   "De quoi sont composés majoritairement tes repas en vacances ?";
 export const ALIMENTATION_QUESTION4_TOOTLTIP =
   "Les déjeuners en semaine de vacances n'incluent pas les week-ends (comptés ci-dessus)";
-export const ALIMENTATION_QUESTION5 = "Jus / Sodas consommés par semaine (L)";
 export const ALIMENTATION_QUESTION6 =
-  "Eau en bouteille consommés par semaine (L)";
-export const ALIMENTATION_QUESTION7 = "Vin consommés par semaine (L)";
-export const ALIMENTATION_QUESTION8 = "Bière consommés par semaine (L)";
+  "Eau en bouteille consommée par semaine (L)";
+export const ALIMENTATION_QUESTION5 =
+  "Verre(s) de jus / sodas consommé(s) par semaine (20cL)";
+export const ALIMENTATION_QUESTION7 =
+  "Verre(s) de vin consommé(s) par semaine (20cL)";
+export const ALIMENTATION_QUESTION8 =
+  "Demi(s) de bière consommé(s) par semaine";
 export const ALIMENTATION_QUESTION9 =
-  "Alcool, hors vin et bière, consommés par semaine (L)";
+  "Verre(s) d'alcool, hors vin et bière, consommés par semaine (10cL)";
 export const ALIMENATTION_ERROR_MSG = "⚠ Merci de saisir votre réponse";
-export const POPIN_INFOS = `<div style="width:100%"><p style="text-align:center">Pour réduire le gaspillage alimentaire, plusieurs actions sont possibles :</p></br>
-  • Apprendre à cuisiner les restes</br>
-  • Apprendre à bien conserver les aliments</br>
-  • Vérifier régulièrement les dates de péremption</br>
-  • Cuisiner la bonne quantité de nourriture</br>
-  • Ranger le réfrigérateur pour ne rien oublier dans le fond</br>
-  • Faire ses courses avec une liste, et sans avoir faim !</br></br>
-  <p style="text-align:center">Prêt à réduire ton gaspillage alimentaire ?</p></div>`;
 
-export const OVERLAY_TITLE = "Astuces pour réduire le gaspillage alimentaire";
 export const ALIMENTATION_SAVIEZ_VOUS =
   "20% de la nourriture achetée est jetée dont notamment les fruits, légumes, pain, produits entamés…";
 
@@ -266,17 +259,21 @@ export const DEPLACEMENTS_QUESTION3 = "Consommation moyenne aux 100 km";
 export const DEPLACEMENTS_QUESTION3_INFO =
   "Un simple calcul à faire en comparant la distance parcourue entre 2 pleins !";
 export const DEPLACEMENTS_QUESTION4 =
-  "Nombre de trajets AR en train TGV par an";
+  "Nombre d'aller-retours en train TGV par an";
+export const TOOLTIP_QUESTION4 = "Une case vide équivaut à un 0";
 export const DEPLACEMENTS_QUESTION5 =
-  "Nombre de vols AR courts courriers (<5h)";
+  "Nombre d'aller-retours courts courriers (<5h)";
+export const TOOLTIP_QUESTION5 = "Une case vide équivaut à un 0";
 export const DEPLACEMENTS_QUESTION6 =
-  "Nombre de vols AR longs courriers (>5h et <10h)";
+  "Nombre d'aller-retours longs courriers (>5h et <10h)";
 export const DEPLACEMENTS_QUESTION7 =
-  "Nombre de vols AR longs courriers (>10h)";
+  "Nombre d'aller-retours longs courriers (>10h)";
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO₂ dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
-export const DEPLACEMENTS_PERSONNEL_OVERLAY_TITLE = "Cartes des distances";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE = "Carte de la france";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE =
+  "Carte internationnale";
 
 // À la maison
 export const HOUSE_QUESTION1 =
@@ -295,20 +292,18 @@ export const HOUSE_QUESTION7 = "Quel(s) type(s) d'énergie consommez vous ?";
 export const HOUSE_QUESTION8 =
   "Consommation annuelle d'électricité de votre logement";
 export const HOUSE_QUESTION8_TOOLTIP =
-  "Affichée sur ta facture ou dans l’espace client de ton fournisseur. En moyenne 1100kwh/an.";
-export const HOUSE_QUESTION9 = "Consommation mensuelle d'électricité";
-export const HOUSE_QUESTION9_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+  "Afficher sur votre facture ou dans l'espace client de votre fournisseur. En moyenne, 10 450 kwh/an pour 100m2.";
+export const HOUSE_QUESTION9 = "Ou facture annuelle d'électricité ";
 export const HOUSE_QUESTION10 =
   "Consommation annuelle de Gaz naturel de votre logement";
 export const HOUSE_QUESTION10_TOOLTIP =
-  "De même : facture ou espace client ! En moyenne 14000kwh/100 m² pour 4 personnes";
-export const HOUSE_QUESTION11 = "Consommation mensuelle de Gaz naturel";
-export const HOUSE_QUESTION11_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+  "De même, facture ou esapce client ! En moyenne :  100 kwh par m2.";
+export const HOUSE_QUESTION11 = "Ou facture annuelle de Gaz naturel";
 export const HOUSE_QUESTION12 =
   "Consommation annuelle de Fioul domestique de votre logement";
 export const HOUSE_QUESTION12_TOOLTIP =
   "Calculable en effectuant en relevé de ta cuve à fioul. En moyenne 150L/m2/an.";
-export const HOUSE_QUESTION13 = "Consommation mensuelle de Fioul domestique";
+export const HOUSE_QUESTION13 = "Ou facture annuelle de Fioul domestique";
 export const HOUSE_QUESTION13_TOOLTIP = "Indiquée sur ta facture mensuelle.";
 export const HOUSE_QUESTION14 =
   "Consommation annuelle de bois de votre logement";
@@ -322,21 +317,8 @@ export const HOUSE_QUESTION18 =
 export const HOUSE_QUESTION19 =
   "Votre électricité et gaz sont-ils renouvelables ?";
 export const HOUSE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
-export const OVERLAY_TITLE_HOUSE =
-  "Comment optimiser ta consommation d’énergie ?";
-export const OVERLAY_SOUSTEXTE_HOUSE =
-  "https://www.ademe.fr/sites/default/files/assets/documents/infographie-economiser-eau-energie-2019.pdf";
 export const HOUSE_SAVIEZ_VOUS =
   "Adopter les bons gestes au quotidien peut faire économiser jusqu’à 0,5% par geste en moyenne ! Par exemple, aérer son logement quotidiennement rend l'air plus sec et le logement plus facilement chauffable, permettant d'économiser jusqu'à 2% de gaz naturel.";
-export const OVERLAY_IMAGE_ALT =
-  "Pour optimiser ta consommation d’énergie à la maison, plein de conseils et pratiques sont disponibles sur le site de l’ADEME !\n" +
-  "Quelques exemples :\n" +
-  "Eteindre les veilles dès que possible réduit de 10% l’WEBSITE_INFO_MSGélectricité consommée ;\n" +
-  "Baisser le chauffage de 1°C réduit de 7% l’énergie consommée\n" +
-  "Couvrir les casseroles pendant la cuisson consomme 4 fois moins en électricité ou gaz ;\n" +
-  "Privilégier le programme éco de son lave-linge réduit de 45% l’énergie consommée ;\n" +
-  "Laver son linge à 30°C consomme 3 fois moins d’électricité qu’à 90°C\n" +
-  "Et bien plus encore !";
 
 // Numérique
 export const NUMERIC_QUESTION1_LABEL =

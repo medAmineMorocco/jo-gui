@@ -14,11 +14,8 @@ import {
   HOUSE_QUESTION17,
   HOUSE_QUESTION18,
   HOUSE_QUESTION19,
-  OVERLAY_TITLE_HOUSE,
-  OVERLAY_SOUSTEXTE_HOUSE,
   HOUSE_ERROR_MSG,
   HOUSE_SAVIEZ_VOUS,
-  OVERLAY_IMAGE_ALT,
   HOUSE_QUESTION2_TOOLTIP,
   HOUSE_QUESTION4_TOOLTIP,
 } from "@utils/constants";
@@ -28,7 +25,6 @@ import {
 } from "@services/responseService";
 import { FormCounter } from "@components/form/formCounter/FormCounter";
 import { FormItemSelect } from "@components/form/formItemSelect/FormItemSelect";
-import { Overlay } from "@components/overlay/Overlay";
 import { FormItemInputNumberWithUnit } from "@components/form/formItemInputNumberWithUnit/FormItemInputNumberWithUnit";
 import { FormItemActionReduction } from "@components/form/action/formItemActionReduction/FormItemActionReduction";
 import { FormItemRadioButtons } from "@components/form/formItemRadioButtons/FormItemRadioButtons";
@@ -326,32 +322,6 @@ export function PersoStep1({ step, setNextStep }) {
             </Fragment>
           </Fragment>
         )}
-
-        <div className="forms-margin">
-          <div className="overlay-house">
-            <Overlay
-              title={OVERLAY_TITLE_HOUSE}
-              items={[
-                {
-                  image: "/images/conseil.png",
-                  alt: OVERLAY_IMAGE_ALT,
-                  sousText: [
-                    "Encore plus de conseils pratiques sur : ",
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "black" }}
-                      href={OVERLAY_SOUSTEXTE_HOUSE}
-                    >
-                      {OVERLAY_SOUSTEXTE_HOUSE}
-                    </a>,
-                    " (ADEME, 2020)",
-                  ],
-                },
-              ]}
-            />
-          </div>
-        </div>
       </div>
       {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
         <div className="forms-margin">

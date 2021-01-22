@@ -154,10 +154,13 @@ export const actionReductionData = [
   },
 ];
 
-export const overlay_items = [
+export const overlay_items_france = [
   {
     image: "/images/DistanceFrance.png",
   },
+];
+
+export const overlay_items_internationnal = [
   {
     image: "/images/DistanceMonde.png",
   },
