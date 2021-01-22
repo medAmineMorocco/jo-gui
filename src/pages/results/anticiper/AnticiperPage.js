@@ -31,23 +31,23 @@ export function AnticiperPage() {
       setData1([
         {
           id: "Vie Professionnelle",
-          value: Math.round(sum(bilanByCategory["Vie Professionnelle"])),
-          color: "#1A18BA",
+          value: Math.round(sum(bilanByCategory["Vie Professionnelle"]) / 1000),
+          color: "#00B460",
         },
         {
           id: "Vie Personnelle",
-          value: Math.round(sum(bilanByCategory["Vie Personnelle"])),
-          color: "#69B6FF",
+          value: Math.round(sum(bilanByCategory["Vie Personnelle"]) / 1000),
+          color: "#006AFF",
         },
       ]);
       setData2(
         bilanByCategory["Vie Professionnelle"].map((item) => {
-          return { ...item, id: item.thematic, value: Math.round(item.value) };
+          return { ...item, id: item.thematic, value: Math.round(item.value/1000) };
         })
       );
       setData3(
         bilanByCategory["Vie Personnelle"].map((item) => {
-          return { ...item, id: item.thematic, value: Math.round(item.value) };
+          return { ...item, id: item.thematic, value: Math.round(item.value/1000) };
         })
       );
       setPageState(requestState.SUCCESS);
@@ -79,7 +79,6 @@ export function AnticiperPage() {
   useEffect(() => {
     getUserSummary();
   }, [getUserSummary]);
-
   if (pageState === requestState.LOADING) {
     return (
       <div className="loading-spinner">
@@ -93,7 +92,7 @@ export function AnticiperPage() {
     <>
       <div className="anticiper-body-container">
         <div className="left-container-anticiper">
-          <h3 className="anticiper-title">Votre empreinte mesure</h3>
+          <h3 className="anticiper-title">Votre empreinte carbone</h3>
           <ChartResult
             dataCircle1={data1}
             dataCircle2={data2}
@@ -101,14 +100,14 @@ export function AnticiperPage() {
           />
         </div>
         <div className="right-container-anticiper">
-          <h3 className="anticiper-title">Et se situe</h3>
+          <h3 className="anticiper-title">Où vous situez vous ?</h3>
           <TimelineChart
             items={[
               ...averages,
               {
                 value: sum(data1).toFixed(2),
                 description: "Tu es ici !",
-                color: "#006AFF",
+                color: "#D7C378",
               },
             ]}
           />
