@@ -11,8 +11,6 @@ import "./chartResult.css";
 const commonProps = {
   height: 350,
   margin: { top: 0, right: 80, bottom: 180, left: 80 },
-  padAngle: 0,
-  cornerRadius: 0,
   borderWidth: 1,
   enableRadialLabels: false,
   borderColor: { from: "color", modifiers: [["darker", 0.2]] },
@@ -23,6 +21,7 @@ const commonProps = {
   radialLabelsLinkColor: { from: "color" },
   sliceLabelsSkipAngle: 10,
   sliceLabelsTextColor: "#000000",
+  sliceLabelsRadiusOffset:0.50,
   radialLabelsLinkHorizontalLength: 6,
   isInteractive: true,
   theme: {
@@ -45,7 +44,8 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
   const [content, setContent] = useState(0);
   const [switchGraph, setSwitchGraph] = useState(0);
 
-  const nombreTotalCo2 = dataCircle1[0].value + dataCircle1[1].value;
+  const totalCo2 = Number(dataCircle1[0].value) +  Number(dataCircle1[1].value);
+
   const CO2_EQUIVALENT_OF_ONE_TREE_IN_TONNE = 0.025;
   function onChange(e) {
     setSwitchGraph(e.target.value);
@@ -84,7 +84,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
       <div className="content-wrap-chart">
         <div className="title-content-chart">
           <h3 className="styled-title-chart">
-            {Math.round(nombreTotalCo2.toFixed(2))}
+            {totalCo2}
           </h3>
           <span className="styled-subtitle-chart">{TONNE}</span>
         </div>
@@ -107,7 +107,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
           <h4 className="styled-sub-title-chart">
             {ANTICIPER_SUB_TITLE1}
             <span className="result-sub-title-chart">
-              {Math.round(nombreTotalCo2 / CO2_EQUIVALENT_OF_ONE_TREE_IN_TONNE)}
+              {Math.round(totalCo2 / CO2_EQUIVALENT_OF_ONE_TREE_IN_TONNE)}
             </span>
             {ANTICIPER_SUB_TITLE2}
           </h4>

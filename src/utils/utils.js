@@ -9,3 +9,8 @@ export const groupBy = (xs, key) => {
     return rv;
   }, {});
 };
+
+
+export const round = (e) =>{
+  return e.toFixed(1)
+}
