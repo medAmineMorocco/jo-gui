@@ -123,10 +123,14 @@ export function ResultsPage() {
       </span>
       <div className="content-result">{content}</div>
       {isCurrent === "ANTICIPER" ? (
+        <>
         <span className="sub-title-result-2">
           <p>{footerTitle}</p>
         </span>
+        <div className="align-zoom-bottom"></div>
+        </>
       ) : null}
+
       <div className="footer-result">
         <FooterWithNavigation
           previous={{
