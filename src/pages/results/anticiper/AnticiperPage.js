@@ -33,6 +33,11 @@ export function AnticiperPage() {
         {
           id: "Vie Professionnelle",
           value: round(
+            sum(bilanByCategory["Vie Professionnelle"], "value") /
+              CO2_EQUIVALENT_IN_TONNE
+          ),
+          color: "#00B460",
+          value: round(
             sum(bilanByCategory["Vie Professionnelle"]) /
               CO2_EQUIVALENT_IN_TONNE
           ),

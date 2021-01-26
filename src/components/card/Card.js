@@ -1,32 +1,33 @@
 import React from "react";
 import { Card as CardAntd } from "antd";
+import "./card.css";
 
-export function Card({ title, backgroundColor, children }) {
+export function Card({
+  title,
+  backgroundColor,
+  children,
+  borderRadiusLeft = "20px",
+  borderRadiusRight = "20px",
+}) {
   return (
     <CardAntd
+      className="card-cojo"
       title={title}
       bordered={false}
       headStyle={{
-        color: "white",
-        fontFamily: "Paris2024",
-        textTransform: "uppercase",
-        fontSize: "28px",
-        fontWeight: "bold",
-        borderTopLeftRadius: "20px",
-        borderTopRightRadius: "20px",
+        borderTopLeftRadius: borderRadiusLeft,
+        borderTopRightRadius: borderRadiusRight,
       }}
       bodyStyle={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        borderBottomLeftRadius: "20px",
-        borderBottomRightRadius: "20px",
-        textAlign: "left",
+        borderBottomLeftRadius: borderRadiusLeft,
+        borderBottomRightRadius: borderRadiusRight,
       }}
       style={{
-        width: 500,
         backgroundColor: backgroundColor,
-        textAlign: "center",
-        color: "white",
-        borderRadius: "20px",
+        borderTopRightRadius: borderRadiusRight,
+        borderTopLeftRadius: borderRadiusLeft,
+        borderBottomRightRadius: borderRadiusRight,
+        borderBottomLeftRadius: borderRadiusLeft,
       }}
     >
       {children}

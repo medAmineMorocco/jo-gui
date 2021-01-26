@@ -1,7 +1,7 @@
 import { getCurrentUser } from "./authService";
 import { getBackendUrl } from "./config";
 
-export async function getUserProgess() {
+export function getUserProgess() {
   const requestOptions = {
     method: "GET",
     headers: {

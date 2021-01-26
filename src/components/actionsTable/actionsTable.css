@@ -1,3 +1,8 @@
+.actions-table {
+  width: 100%;
+  height: 100%;
+}
+
 .table-head {
   font-family: Source Sans Pro;
   color: white;
@@ -9,6 +14,7 @@
 
 .table-head-column {
   text-align: center;
+  font-weight: bold;
 }
 
 .table-contents {
@@ -20,11 +26,26 @@
   line-height: 24px;
 }
 
-.table-contents-description {
-  padding: 5vh 5vw;
+.table-contents-description,
+.table-contents-gain {
+  font-weight: bold;
+}
+
+.table-contents-actions,
+.table-contents-gain {
+  text-align: center;
 }
 
 .table-contents-actions {
-  padding: 5vh 8vw;
-  text-align: center;
+  width: 16%;
+}
+
+.actions-checkbox .ant-checkbox-inner {
+  background-color: transparent;
+  border-color: white;
+  border-radius: 0;
+}
+
+.actions-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: white;
 }

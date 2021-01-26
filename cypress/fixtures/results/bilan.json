@@ -2,61 +2,66 @@
   {
     "category": "Vie Professionnelle",
     "thematic": "AU_BUREAU",
-    "value": 0.2
+    "value": 1643
   },
   {
     "category": "Vie Professionnelle",
     "thematic": "EMPREINTE_NUMERIQUE",
-    "value": 0.1
+    "value": 349.7593886505
   },
   {
     "category": "Vie Professionnelle",
     "thematic": "RESTAURATION",
-    "value": 0.3
+    "value": 0.5362
   },
   {
     "category": "Vie Professionnelle",
     "thematic": "TRAJETS_DOMICILE_TRAVAIL",
-    "value": 0.7
+    "value": 0
   },
   {
     "category": "Vie Professionnelle",
     "thematic": "DEPLACEMENTS_PROFESSIONNELS",
-    "value": 0.6
+    "value": 7.1221768
   },
   {
     "category": "Vie Personnelle",
     "thematic": "MAISON",
-    "value": 0.4
+    "value": 0
   },
   {
     "category": "Vie Personnelle",
     "thematic": "APPAREILS",
-    "value": 0.3
+    "value": 0
   },
   {
     "category": "Vie Personnelle",
     "thematic": "VEHICULES",
-    "value": 0.1
+    "value": 231
   },
   {
     "category": "Vie Personnelle",
     "thematic": "NUMERIQUE",
-    "value": 0.2
+    "value": 215.56432252256
   },
   {
     "category": "Vie Personnelle",
     "thematic": "ALIMENTATIONS",
-    "value": 0.6
+    "value": 1529.2212
   },
   {
     "category": "Vie Personnelle",
     "thematic": "DEPLACEMENT",
-    "value": 0.2
+    "value": 0.004568
   },
   {
     "category": "Vie Personnelle",
     "thematic": "SERVICES",
-    "value": 1
+    "value": 1283.76
+  },
+  {
+    "category": "general",
+    "thematic": "GENERAL",
+    "value": 0
   }
 ]

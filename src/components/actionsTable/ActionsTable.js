@@ -4,7 +4,7 @@ import "./actionsTable.css";
 
 export function ActionsTable({ columns, actions, onChange }) {
   return (
-    <table>
+    <table className="actions-table">
       <thead className="table-head">
         <tr>
           {columns.map((column, key) => (
@@ -15,13 +15,20 @@ export function ActionsTable({ columns, actions, onChange }) {
         </tr>
       </thead>
       <tbody>
-        {actions.map(({ description, reduction }, key) => {
+        {actions.map(({ category, description, reduction, gain }, key) => {
           return (
             <tr className="table-contents" key={key}>
-              <td className="table-contents-description">{description}</td>
-              {reduction && <td>{reduction}</td>}
+              <td className="table-contents-description">{`${
+                key + 1
+              }. ${description}`}</td>
+              <td className="table-contents-gain">{gain}</td>
               <td className="table-contents-actions">
-                <Checkbox data-reduction={reduction} onChange={onChange} />
+                <Checkbox
+                  className="actions-checkbox"
+                  data_category={category}
+                  data_reduction={reduction / 1000}
+                  onChange={onChange}
+                />
               </td>
             </tr>
           );

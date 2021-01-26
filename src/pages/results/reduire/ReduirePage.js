@@ -1,6 +1,268 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Spin } from "antd";
+import { Card } from "@components/card/Card";
+import { ActionsTable } from "@components/actionsTable/ActionsTable";
+import { PanelMesActions } from "@components/panelMesActions/PanelMesActions";
+import { StackedBar } from "@components/stackedBar/StackedBar";
+import {
+  getThematicsWithItsActionsByCategory,
+  getTopsAndFlops,
+} from "@services/thematicService";
+import { getResponsesSummary } from "@services/responseService";
+import { getTopActions, getNewValues } from "@services/actionService";
+import { notify } from "@utils/notification";
+import { requestState } from "@utils/requestState";
+import { CATEGORY, CATEGORY_CODE } from "@utils/category";
+import { sum, groupBy, timeOutIf, round } from "@utils/utils";
+import * as dompurify from "dompurify";
+import { useMobileSize } from "@hooks/window";
+import {
+  PALMARES_TITLE,
+  PREMIERS_ACTIONS_TITLE,
+  PROFESSIONAL_MENU_ITEM,
+  PERSONAL_MENU_ITEM,
+  PALMARES_TOPS_TITLE,
+  PALMARES_FLOPS_TITLE,
+  PALMARES_TOPS,
+  PALMARES_FLOPS,
+  REDUIRE_DESCRIPTION,
+} from "@utils/constants";
 import "./reduirePage.css";
 
+const CO2_EQUIVALENT_IN_TONNE = 1000;
+
 export function ReduirePage() {
-  return <div>ReduirePage</div>;
+  const [pageState, setPageState] = useState(requestState.LOADING);
+  const [tops, setTops] = useState([]);
+  const [flops, setFlops] = useState([]);
+  const [proThematics, setProThematics] = useState([]);
+  const [persoThematics, setPersoThematics] = useState([]);
+  const [topActions, setTopActions] = useState([]);
+  const [totalTopActions, setTotalTopActions] = useState([]);
+  const [bilan, setBilan] = useState([]);
+  const [totalPro, setTotalPro] = useState();
+  const [totalPerso, setTotalPerso] = useState();
+  const isMobile = useMobileSize();
+
+  const manageErrorResponse = (msg) => {
+    setTimeout(() => {
+      setPageState(requestState.ERROR);
+      notify(msg);
+    }, 500);
+  };
+
+  useEffect(() => {
+    Promise.all([
+      getTopsAndFlops(),
+      getThematicsWithItsActionsByCategory(),
+      getResponsesSummary(),
+    ])
+      .then(([topsAndFlops, thematicsWithItsActionsByCategory, bilan]) => {
+        timeOutIf(
+          window.sessionStorage.getItem("topsAndFlops") &&
+            window.sessionStorage.getItem(
+              "thematicsWithItsActionsByCategory"
+            ) &&
+            window.sessionStorage.getItem("bilan"),
+          () => {
+            window.sessionStorage.setItem(
+              "topsAndFlops",
+              JSON.stringify(topsAndFlops)
+            );
+            window.sessionStorage.setItem(
+              "thematicsWithItsActionsByCategory",
+              JSON.stringify(thematicsWithItsActionsByCategory)
+            );
+            window.sessionStorage.setItem("bilan", JSON.stringify(bilan));
+
+            setTops(topsAndFlops["top3"].map((top) => top.thematic));
+            setFlops(topsAndFlops["flop3"].map((flop) => flop.thematic));
+            setProThematics(
+              thematicsWithItsActionsByCategory["Vie Professionnelle"]
+            );
+            setPersoThematics(
+              thematicsWithItsActionsByCategory["Vie Personnelle"]
+            );
+            const top3Actions = getTopActions(
+              thematicsWithItsActionsByCategory
+            );
+            setTopActions(top3Actions);
+            setTotalTopActions(sum(top3Actions, "gain") * -1);
+            const bilanByCategory = groupBy(bilan, "category");
+            const initialTotalPerso = round(
+              sum(bilanByCategory["Vie Personnelle"], "value") /
+                CO2_EQUIVALENT_IN_TONNE,
+              2
+            );
+            const initialTotalPro = round(
+              sum(bilanByCategory["Vie Professionnelle"], "value") /
+                CO2_EQUIVALENT_IN_TONNE,
+              2
+            );
+            setBilan([
+              {
+                category: CATEGORY_CODE[CATEGORY.PERSO],
+                "sans actions": initialTotalPerso,
+                "sans actionsColor": "#0061FF",
+                "avec actions": 0,
+                "avec actionsColor": "grey",
+              },
+              {
+                category: CATEGORY_CODE[CATEGORY.PRO],
+                "sans actions": initialTotalPro,
+                "sans actionsColor": "#00B460",
+                "avec actions": 0,
+                "avec actionsColor": "grey",
+              },
+            ]);
+            setTotalPerso(initialTotalPerso);
+            setTotalPro(initialTotalPro);
+            setPageState(requestState.SUCCESS);
+          }
+        );
+      })
+      .catch(() =>
+        manageErrorResponse("Erreur serveur, veuillez réessayer ultérieurement")
+      );
+  }, []);
+
+  const onCheckAction = (event) => {
+    const { checked, data_reduction, data_category } = event.target;
+    const {
+      bilanPro,
+      bilanPerso,
+      withActionsProNewValue,
+      withActionsPersoNewValue,
+    } = getNewValues(checked, bilan, data_category, data_reduction);
+    const newBilan = [
+      {
+        category: CATEGORY_CODE[CATEGORY.PERSO],
+        "sans actions": bilanPerso["sans actions"],
+        "sans actionsColor": "#0061FF",
+        "avec actions": withActionsPersoNewValue,
+        "avec actionsColor": "grey",
+      },
+      {
+        category: CATEGORY_CODE[CATEGORY.PRO],
+        "sans actions": bilanPro["sans actions"],
+        "sans actionsColor": "#00B460",
+        "avec actions": withActionsProNewValue,
+        "avec actionsColor": "grey",
+      },
+    ];
+    setBilan(newBilan);
+    setTotalPerso(
+      round(bilanPerso["sans actions"] - withActionsPersoNewValue, 2)
+    );
+    setTotalPro(round(bilanPro["sans actions"] - withActionsProNewValue, 2));
+  };
+
+  if (pageState === requestState.LOADING) {
+    return (
+      <div className="loading-spinner">
+        <Spin />
+      </div>
+    );
+  } else if (pageState === requestState.ERROR) {
+    return <></>;
+  }
+  return (
+    <>
+      <div className="cards-section">
+        <div>
+          <h3 className="reduire-title-section">{PALMARES_TITLE}</h3>
+          <div className="palmares-section">
+            <div>
+              <Card
+                title={PALMARES_TOPS_TITLE}
+                backgroundColor="#17B7B0"
+                borderRadiusRight={isMobile ? "24px" : "0"}
+              >
+                <ol className="palmares-tops-flops">
+                  {tops.map((top, key) => (
+                    <li key={key}>{top}</li>
+                  ))}
+                </ol>
+                <p className="palmares-mentions">{PALMARES_TOPS}</p>
+              </Card>
+            </div>
+            <div>
+              <Card
+                title={PALMARES_FLOPS_TITLE}
+                backgroundColor="#17B7B0"
+                borderRadiusLeft={isMobile ? "24px" : "0"}
+              >
+                <ol className="palmares-tops-flops">
+                  {flops.map((flop, key) => (
+                    <li key={key}>{flop}</li>
+                  ))}
+                </ol>
+                <p className="palmares-mentions">{PALMARES_FLOPS}</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 className="reduire-title-section">{PREMIERS_ACTIONS_TITLE}</h3>
+          <Card
+            title={`DEJA ${totalTopActions.toFixed(2)} % DE REDUCTION
+          POssible !`}
+            backgroundColor="#7872F4"
+          >
+            <ActionsTable
+              columns={["Actions de réductions", "% Gain", "Je me lance !"]}
+              actions={topActions}
+              onChange={onCheckAction}
+            />
+          </Card>
+        </div>
+      </div>
+      <div
+        className="reduire-description-section"
+        dangerouslySetInnerHTML={{
+          __html: dompurify.sanitize(REDUIRE_DESCRIPTION),
+        }}
+      />
+      <div className="bars-graph-section">
+        <div className="total-pro">Après réduction: {totalPro} tCO₂/an</div>
+        <div className="total-perso">Après réduction: {totalPerso} tCO₂/an</div>
+        <div className="bars-container">
+          <StackedBar data={bilan} />
+        </div>
+      </div>
+      <div className="panels-section">
+        <div>
+          <h3 className="reduire-title-section">{PROFESSIONAL_MENU_ITEM}</h3>
+          {proThematics.map(({ thematic, actions }, key) => (
+            <div key={key} style={{ marginBottom: "24px" }}>
+              <PanelMesActions
+                thematic={thematic}
+                actions={actions.map((action) => {
+                  return { ...action, category: CATEGORY.PRO };
+                })}
+                onChange={onCheckAction}
+                backgroundColor="var(--bg-color-pro)"
+              />
+            </div>
+          ))}
+        </div>
+        <div>
+          <h3 className="reduire-title-section">{PERSONAL_MENU_ITEM}</h3>
+          {persoThematics.map(({ thematic, actions }, key) => (
+            <div key={key} style={{ marginBottom: "24px" }}>
+              <PanelMesActions
+                thematic={thematic}
+                actions={actions.map((action) => {
+                  return { ...action, category: CATEGORY.PERSO };
+                })}
+                onChange={onCheckAction}
+                backgroundColor="var(--bg-color-perso)"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ height: "100px" }} />
+    </>
+  );
 }

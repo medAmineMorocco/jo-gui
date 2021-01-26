@@ -58,6 +58,11 @@ export const CATEGORY = {
   RESULTS: "Résultats",
 };
 
+export const CATEGORY_CODE = {
+  [CATEGORY.PRO]: "Pro",
+  [CATEGORY.PERSO]: "Perso",
+};
+
 const config = {
   [CATEGORY.PRO]: proItems,
   [CATEGORY.PERSO]: persoItems,
