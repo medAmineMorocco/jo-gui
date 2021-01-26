@@ -205,7 +205,7 @@ export const QUESTION11_NBR_VOLS_AR =
 
 // Restauration
 export const REPAS_QUESTION1 =
-  "Au bureau, quelle est la composition de vos repas ? (5 déjeuners) :";
+  "Sur vos 5 déjeuners au bureau, quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porc et volailles), poisson, végétarien (œufs et produits laitiers), ou végétalien)";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -297,7 +297,7 @@ export const HOUSE_QUESTION9 = "Ou facture annuelle d'électricité ";
 export const HOUSE_QUESTION10 =
   "Consommation annuelle de Gaz naturel de votre logement";
 export const HOUSE_QUESTION10_TOOLTIP =
-  "De même, facture ou esapce client ! En moyenne :  100 kwh par m2.";
+  "De même, facture ou espace client ! En moyenne : 100 kwh par m².";
 export const HOUSE_QUESTION11 = "Ou facture annuelle de Gaz naturel";
 export const HOUSE_QUESTION12 =
   "Consommation annuelle de Fioul domestique de votre logement";
