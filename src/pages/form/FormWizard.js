@@ -84,10 +84,6 @@ export function FormWizard() {
                 <DynamicSummary items={summaryItems} current={progress} />
               </div>
               <div className="wizard-content-left-questions-container">
-                <div className="form-questions-title">
-                  <div className="questions-first-title">Les</div>
-                  <div>questions</div>
-                </div>
                 <img
                   src={`/images/${imgMenu}`}
                   alt="questions"
