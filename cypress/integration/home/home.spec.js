@@ -1,19 +1,6 @@
-context('Home page', () => {
+import {sizes} from "../utils";
 
-    const sizes = [
-        {
-            device: 'iphone-5',
-            width: 320
-        },
-        {
-            device: 'ipad-2',
-            width: 768
-        },
-        {
-            device: 'macbook-13',
-            width: 1280
-        }
-    ];
+context('Home page', () => {
 
     it('should show home page', () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');

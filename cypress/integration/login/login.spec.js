@@ -1,19 +1,6 @@
-context("Login page", () => {
-  const sizes = [
-    {
-      device: "iphone-5",
-      width: 320,
-    },
-    {
-      device: "ipad-2",
-      width: 768,
-    },
-    {
-      device: "macbook-13",
-      width: 1280,
-    },
-  ];
+import {sizes} from "../utils";
 
+context("Login page", () => {
   const IDENTIFIER_REQUIRED = "Veuillez renseigner votre email";
   const PASSWORD_REQUIRED = "Veuillez renseigner votre Mot de passe";
   const CGU_ACCEPTATION_REQUIRED = "Vous devez accepter avant de soumettre";
