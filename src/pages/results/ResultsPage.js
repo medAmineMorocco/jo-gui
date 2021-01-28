@@ -12,10 +12,7 @@ import {
   MAILTO,
   ANTICIPER_FOOTER,
 } from "@utils/constants";
-import { getColor } from "@utils/cssUtil";
 import "./resultPage.css";
-
-const mainColor = getColor("--main-color");
 
 export function ResultsPage() {
   const [isCurrent, setCurrent] = useState("ANTICIPER");
@@ -26,7 +23,10 @@ export function ResultsPage() {
   const footerTitle = (
     <p>
       {ANTICIPER_FOOTER}
-      <a href="mailto:coach-climat@paris2024.org" style={{ color: mainColor }}>
+      <a
+        href="mailto:coach-climat@paris2024.org"
+        style={{ color: "var(--main-color)" }}
+      >
         {MAILTO}
       </a>
     </p>
@@ -67,15 +67,25 @@ export function ResultsPage() {
         setContent(<AnticiperPage />);
         setContentSubTitle(
           <p>
-            <span style={{ color: mainColor }}>Mesurer et comprendre</span> son
-            empreinte pour la maîtriser
+            <span style={{ color: "var(--main-color)" }}>
+              Mesurer et comprendre
+            </span>{" "}
+            son empreinte pour la maîtriser
           </p>
         );
         setPreviousAndNext("", "Réduire");
         break;
       case "REDUIRE":
         setContent(<ReduirePage />);
-        setContentSubTitle("");
+        setContentSubTitle(
+          <p>
+            Mesurer et comprendre Changer ses habitudes et mettre en place des{" "}
+            <span style={{ color: "var(--main-color)" }}>
+              actions de réduction
+            </span>{" "}
+            pour minimiser cette empreinte.
+          </p>
+        );
         setPreviousAndNext("Anticiper", "Compenser");
         break;
       case "COMPENSER":

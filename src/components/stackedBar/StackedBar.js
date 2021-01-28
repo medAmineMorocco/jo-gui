@@ -29,21 +29,6 @@ export function StackedBar({ data }) {
       labelSkipWidth={12}
       labelSkipHeight={12}
       labelTextColor="#ffffff"
-      legends={[
-        {
-          dataFrom: "keys",
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
-          translateX: 60,
-          translateY: 30,
-          itemWidth: 100,
-          itemHeight: 20,
-          itemsSpacing: 0,
-          symbolSize: 20,
-          itemDirection: "left-to-right",
-        },
-      ]}
       animate={false}
       isInteractive={false}
     />

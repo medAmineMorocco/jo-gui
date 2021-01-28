@@ -378,9 +378,9 @@ export const MATERIELS_QUESTION16_LABEL =
 ///////////////////////////////////////
 //   Réduire page
 //////////////////////////////////////
-export const PALMARES_TITLE = "Votre palmarès";
+export const PALMARES_TITLE = "Vos résultats";
 export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
-export const PALMARES_TOPS_TITLE = "eN HAUT DU PODIUM";
+export const PALMARES_TOPS_TITLE = "POINTS <br/> FORTS";
 export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
 export const PALMARES_TOPS =
   "Bravo, vous êtes en dessous de la moyenne française !";

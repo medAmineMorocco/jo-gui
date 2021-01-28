@@ -88,19 +88,21 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
             cy.visit("/results");
             cy.get('label span:contains(Réduire)').click();
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: 2 tCO₂/an');
-            })
-            cy.get(':nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
-            cy.get('@firstAction').check();
 
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: -59.08 tCO₂/an');
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('2');
+            });
+            cy.get(':nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
+
+            cy.get('@firstAction').check();
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('-59.08');
             });
             cy.get('@firstAction').uncheck();
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: 2 tCO₂/an');
-            })
+
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('2');
+            });
         });
     });
 
@@ -115,20 +117,21 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
             cy.visit("/results");
             cy.get('label span:contains(Réduire)').click();
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: 2 tCO₂/an');
-            })
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('2');
+            });
             cy.get('.panel-mes-actions-header span:contains(AU BUREAU)').click();
             cy.get('.panel-mes-actions-contents > .actions-table > tbody > :nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
-            cy.get('@firstAction').check();
 
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: 1.86 tCO₂/an');
+            cy.get('@firstAction').check();
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('1.86');
             });
+
             cy.get('@firstAction').uncheck();
-            cy.get('.total-pro').should(el => {
-                expect(el).to.contain('Après réduction: 2 tCO₂/an');
-            })
+            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
+                expect(el).to.contain('2');
+            });
         });
     });
 
@@ -143,20 +146,22 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
             cy.visit("/results");
             cy.get('label span:contains(Réduire)').click();
-            cy.get('.total-perso').should(el => {
-                expect(el).to.contain('Après réduction: 3.26 tCO₂/an');
-            })
+
+            cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
+                expect(el).to.contain('3.26');
+            });
             cy.get('.panel-mes-actions-header span:contains(MAISON)').click();
             cy.get('.panel-mes-actions-contents > .actions-table > tbody > :nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
-            cy.get('@firstAction').check();
 
-            cy.get('.total-perso').should(el => {
-                expect(el).to.contain('Après réduction: 1.56 tCO₂/an');
+            cy.get('@firstAction').check();
+            cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
+                expect(el).to.contain('1.56');
             });
+
             cy.get('@firstAction').uncheck();
-            cy.get('.total-perso').should(el => {
-                expect(el).to.contain('Après réduction: 3.26 tCO₂/an');
-            })
+            cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
+                expect(el).to.contain('3.26');
+            });
         });
     });
 

@@ -4,6 +4,7 @@ import { Card } from "@components/card/Card";
 import { ActionsTable } from "@components/actionsTable/ActionsTable";
 import { PanelMesActions } from "@components/panelMesActions/PanelMesActions";
 import { StackedBar } from "@components/stackedBar/StackedBar";
+import { BackTop } from "@components/backTop/BackTop";
 import {
   getThematicsWithItsActionsByCategory,
   getTopsAndFlops,
@@ -40,8 +41,6 @@ export function ReduirePage() {
   const [topActions, setTopActions] = useState([]);
   const [totalTopActions, setTotalTopActions] = useState([]);
   const [bilan, setBilan] = useState([]);
-  const [totalPro, setTotalPro] = useState();
-  const [totalPerso, setTotalPerso] = useState();
   const isMobile = useMobileSize();
 
   const manageErrorResponse = (msg) => {
@@ -103,20 +102,18 @@ export function ReduirePage() {
               {
                 category: CATEGORY_CODE[CATEGORY.PERSO],
                 "sans actions": initialTotalPerso,
-                "sans actionsColor": "#0061FF",
+                "sans actionsColor": "#17B7B0",
                 "avec actions": 0,
                 "avec actionsColor": "grey",
               },
               {
                 category: CATEGORY_CODE[CATEGORY.PRO],
                 "sans actions": initialTotalPro,
-                "sans actionsColor": "#00B460",
+                "sans actionsColor": "#3EDE8E",
                 "avec actions": 0,
                 "avec actionsColor": "grey",
               },
             ]);
-            setTotalPerso(initialTotalPerso);
-            setTotalPro(initialTotalPro);
             setPageState(requestState.SUCCESS);
           }
         );
@@ -129,32 +126,28 @@ export function ReduirePage() {
   const onCheckAction = (event) => {
     const { checked, data_reduction, data_category } = event.target;
     const {
-      bilanPro,
-      bilanPerso,
+      bilanProAfterReduction,
+      bilanPersoAfterReduction,
       withActionsProNewValue,
       withActionsPersoNewValue,
     } = getNewValues(checked, bilan, data_category, data_reduction);
     const newBilan = [
       {
         category: CATEGORY_CODE[CATEGORY.PERSO],
-        "sans actions": bilanPerso["sans actions"],
-        "sans actionsColor": "#0061FF",
+        "sans actions": bilanPersoAfterReduction,
+        "sans actionsColor": "#17B7B0",
         "avec actions": withActionsPersoNewValue,
         "avec actionsColor": "grey",
       },
       {
         category: CATEGORY_CODE[CATEGORY.PRO],
-        "sans actions": bilanPro["sans actions"],
-        "sans actionsColor": "#00B460",
+        "sans actions": bilanProAfterReduction,
+        "sans actionsColor": "#3EDE8E",
         "avec actions": withActionsProNewValue,
         "avec actionsColor": "grey",
       },
     ];
     setBilan(newBilan);
-    setTotalPerso(
-      round(bilanPerso["sans actions"] - withActionsPersoNewValue, 2)
-    );
-    setTotalPro(round(bilanPro["sans actions"] - withActionsProNewValue, 2));
   };
 
   if (pageState === requestState.LOADING) {
@@ -174,8 +167,14 @@ export function ReduirePage() {
           <div className="palmares-section">
             <div>
               <Card
-                title={PALMARES_TOPS_TITLE}
-                backgroundColor="#17B7B0"
+                title={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: dompurify.sanitize(PALMARES_TOPS_TITLE),
+                    }}
+                  />
+                }
+                backgroundColor="#006AFF"
                 borderRadiusRight={isMobile ? "24px" : "0"}
               >
                 <ol className="palmares-tops-flops">
@@ -189,7 +188,7 @@ export function ReduirePage() {
             <div>
               <Card
                 title={PALMARES_FLOPS_TITLE}
-                backgroundColor="#17B7B0"
+                backgroundColor="#006AFF"
                 borderRadiusLeft={isMobile ? "24px" : "0"}
               >
                 <ol className="palmares-tops-flops">
@@ -224,10 +223,12 @@ export function ReduirePage() {
         }}
       />
       <div className="bars-graph-section">
-        <div className="total-pro">Après réduction: {totalPro} tCO₂/an</div>
-        <div className="total-perso">Après réduction: {totalPerso} tCO₂/an</div>
         <div className="bars-container">
           <StackedBar data={bilan} />
+          <div className="bars-legend">
+            <div className="legend-box" />
+            <span className="legend-label">Actions de réduction</span>
+          </div>
         </div>
       </div>
       <div className="panels-section">
@@ -241,7 +242,7 @@ export function ReduirePage() {
                   return { ...action, category: CATEGORY.PRO };
                 })}
                 onChange={onCheckAction}
-                backgroundColor="var(--bg-color-pro)"
+                backgroundColor="#3EDE8E"
               />
             </div>
           ))}
@@ -256,13 +257,14 @@ export function ReduirePage() {
                   return { ...action, category: CATEGORY.PERSO };
                 })}
                 onChange={onCheckAction}
-                backgroundColor="var(--bg-color-perso)"
+                backgroundColor="#17B7B0"
               />
             </div>
           ))}
         </div>
       </div>
       <div style={{ height: "100px" }} />
+      <BackTop />
     </>
   );
 }

@@ -54,20 +54,30 @@
 }
 
 .bars-container {
+  position: relative;
   height: 300px;
   margin-bottom: 16px;
 }
 
-.total-pro {
-  color: var(--bg-color-pro);
-  font-family: Paris2024;
-  font-size: 24px;
+.bars-legend {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 }
 
-.total-perso {
-  color: var(--bg-color-perso);
-  font-family: Paris2024;
-  font-size: 24px;
+.legend-box {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: grey;
+}
+
+.legend-label {
+  font-family: "Source Sans Pro";
+  color: var(--main-color);
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
@@ -95,17 +105,14 @@
 
 @media (max-width: 767px) {
   .bars-graph-section {
-    margin-top: 0;
-    padding-top: 8px;
-    position: -webkit-sticky; /* Safari & IE */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: var(--bg-color-shade-2);
     z-index: 20;
   }
 
   .bars-container {
-    height: 206px;
+    height: 186px;
     background-color: var(--bg-color-shade-2);
   }
 }
