@@ -14,11 +14,12 @@ export const round = (e, shift = 1) => {
   return Number(e.toFixed(shift));
 };
 
-export const timeOutIf = (condition, fn) => {
+export const timeOutIf = (condition, initialFn, fn) => {
   if (condition) {
     fn();
   } else {
     setTimeout(() => {
+      initialFn();
       fn();
     }, 500);
   }
