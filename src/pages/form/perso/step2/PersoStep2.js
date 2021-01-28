@@ -13,6 +13,7 @@ import {
   EQUIPMENT_QUESTION8,
   EQUIPMENT_QUESTION10,
   EQUIPMENT_QUESTION11,
+  EQUIPMENT_QUESTION12,
   MATERIELS_QUESTION1_LABEL,
   MATERIELS_QUESTION2_LABEL,
   MATERIELS_QUESTION3_LABEL,
@@ -51,6 +52,7 @@ export function PersoStep2({ step, setNextStep }) {
   const [question10Select, setQuestion10Select] = useState("Oui");
   const [question11Count, setQuestion11Count] = useState(0);
   const [question12Input, setQuestion12Input] = useState(0);
+  const [question12Count, setQuestion12Count] = useState(0);
 
   const [question1, setQuestion1] = useState(0);
   const [question2, setQuestion2] = useState(0);
@@ -126,6 +128,7 @@ export function PersoStep2({ step, setNextStep }) {
       setQuestion2(form.getFieldValue("5f5568e651349"));
       setQuestion3(form.getFieldValue("5f5568f49b63c"));
       setQuestion4(form.getFieldValue("5f55692a73b55"));
+      setQuestion12Count(form.getFieldValue("5fe366fa29288"));
     };
 
     getResponsesOfStep("APPAREILS")
@@ -199,6 +202,17 @@ export function PersoStep2({ step, setNextStep }) {
             textCounter={EQUIPMENT_QUESTION3}
             value={question3Count}
             setValue={setQuestion3Count}
+          />
+        </div>
+
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            iconCounter={false}
+            name="5fe366fa29288"
+            textCounter={EQUIPMENT_QUESTION12}
+            value={question12Count}
+            setValue={setQuestion12Count}
           />
         </div>
 
