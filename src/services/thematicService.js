@@ -10,7 +10,7 @@ export function getTopsAndFlops() {
   };
   const storedResponse = window.sessionStorage.getItem("topsAndFlops");
   if (storedResponse) {
-    return JSON.parse(storedResponse);
+    return Promise.resolve(JSON.parse(storedResponse));
   }
   return fetch(getBackendUrl() + "/api/emissions/sort", requestOptions)
     .then((response) => response.json())
@@ -28,7 +28,7 @@ export function getThematicsWithItsActionsByCategory() {
     "thematicsWithItsActionsByCategory"
   );
   if (storedResponse) {
-    return JSON.parse(storedResponse);
+    return Promise.resolve(JSON.parse(storedResponse));
   }
   return fetch(getBackendUrl() + "/api/category/reductions", requestOptions)
     .then((response) => response.json())

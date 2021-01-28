@@ -73,7 +73,8 @@ export function ReduirePage() {
               JSON.stringify(thematicsWithItsActionsByCategory)
             );
             window.sessionStorage.setItem("bilan", JSON.stringify(bilan));
-
+          },
+          () => {
             setTops(topsAndFlops["top3"].map((top) => top.thematic));
             setFlops(topsAndFlops["flop3"].map((flop) => flop.thematic));
             setProThematics(
