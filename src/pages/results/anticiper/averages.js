@@ -6,27 +6,27 @@ export const averages = [
   },
   {
     value: 2,
-    description: "Indien moyen",
+    description: "Indien.ne moyen.ne",
     color: "#FFFFFF",
   },
   {
     value: 6,
-    description: "Le français bas carbone",
+    description: "La français.e engagé.e",
     color: "#FFFFFF",
   },
   {
-    value: 11.2,
-    description: "Moyenne française",
+    value: 10.1,
+    description: "Français.e moyen.ne",
     color: "#FFFFFF",
   },
   {
-    value: 13,
-    description: "Moyenne européenne",
+    value: 11.7,
+    description: "Européen.ne moyenne",
     color: "#FFFFFF",
   },
   {
     value: 16,
-    description: "Moyenne Nord-Américaine",
+    description: "Nord-Américain.e moyen.ne",
     color: "#FFFFFF",
   },
 ];
