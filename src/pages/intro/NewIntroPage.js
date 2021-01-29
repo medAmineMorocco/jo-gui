@@ -11,6 +11,7 @@ import { Header } from "@components/header/Header";
 import { Modal } from "@components/modal/Modal";
 import { HomeOutlined } from "@ant-design/icons";
 import { FooterWithDetails } from "@components/footer/FooterWithDetails";
+import * as dompurify from "dompurify";
 import {
   ABOUT_TITLE,
   ABOUT_CONTENT1,
@@ -21,6 +22,9 @@ import {
   INTRODUCTION_TITLE4,
   INTRODUCTION_BTN_DESCRIPTION,
   LINK_HOME_ICON,
+  INTRO_DESCRIPTION1,
+  INTRO_DESCRIPTION2,
+  INTRO_DESCRIPTION3,
 } from "@utils/constants";
 import "./newIntroPage.css";
 
@@ -89,17 +93,14 @@ export function NewIntroPage() {
             <StopWatch />
           </div>
           <div className="into-title">
-            <span className="intro-parag-title">
-              {INTRODUCTION_TITLE1}&nbsp;
-            </span>
+            <span className="intro-parag-title">{INTRODUCTION_TITLE1}</span>
           </div>
-          <div className="intro-parag">
-            <span>
-              Eh oui, il y a quelques questions à se poser{" "}
-              <span style={{ fontWeight: "bolder" }}>avant</span> de connaître
-              son empreinte carbonne !
-            </span>
-          </div>
+          <div
+            className="intro-parag"
+            dangerouslySetInnerHTML={{
+              __html: dompurify.sanitize(INTRO_DESCRIPTION1),
+            }}
+          />
         </div>
 
         <div className="item-container">
@@ -107,20 +108,14 @@ export function NewIntroPage() {
             <Folder />
           </div>
           <div className="into-title">
-            <span className="intro-parag-title">
-              {INTRODUCTION_TITLE2}&nbsp;
-            </span>
+            <span className="intro-parag-title">{INTRODUCTION_TITLE2}</span>
           </div>
-          <div className="intro-parag">
-            <span>
-              Pour votre <span style={{ color: "#0061FF" }}>vie perso</span> :
-              vos souvenirs de voyages, repas, éventuellement vos factures
-              d'énergies...
-              <br />
-              Pour votre <span style={{ color: "#00B460" }}>vie pro</span> :
-              laissez-vous guider.
-            </span>
-          </div>
+          <div
+            className="intro-parag"
+            dangerouslySetInnerHTML={{
+              __html: dompurify.sanitize(INTRO_DESCRIPTION2),
+            }}
+          />
         </div>
 
         <div className="item-container">
@@ -128,17 +123,14 @@ export function NewIntroPage() {
             <Calendar />
           </div>
           <div className="into-title">
-            <span className="intro-parag-title">
-              {INTRODUCTION_TITLE4}&nbsp;
-            </span>
+            <span className="intro-parag-title">{INTRODUCTION_TITLE4}</span>
           </div>
-          <div className="intro-parag">
-            <span>
-              On vous recommande de vous référer à l'année{" "}
-              <span style={{ fontWeight: "bolder" }}>2019</span> afin de pouvoir
-              comparer par la suite à l'année 2020 moins standard, puis 2021 !
-            </span>
-          </div>
+          <div
+            className="intro-parag"
+            dangerouslySetInnerHTML={{
+              __html: dompurify.sanitize(INTRO_DESCRIPTION3),
+            }}
+          />
         </div>
       </div>
 
