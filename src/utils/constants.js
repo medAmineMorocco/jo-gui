@@ -84,9 +84,17 @@ export const RESULTS_MENU_ITEM = "Résultats";
 export const NAVIGATION_HOME = "Accueil";
 export const NAVIGATION_PROFESSIONAL = "Vie professionnelle";
 
-/* Intro Page */
-export const INTRO_TITLE1 = "Ton empreinte carbone";
-export const INTRO_TITLE2 = "sur une année";
+// new page introduction
+export const INTRODUCTION_TITLE1 = "Environ 25 min";
+export const INTRODUCTION_TITLE2 = "Quelques données";
+export const INTRODUCTION_TITLE4 = "Une année de référence";
+export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
+export const LINK_HOME_ICON = "PARIS2024";
+export const INTRO_DESCRIPTION1 = `<span>Eh oui, il y a quelques questions à se poser <span style="font-weight: bolder">avant</span> de connaître son empreinte carbonne !</span>`;
+export const INTRO_DESCRIPTION2 = `<span>Pour votre <span style="color: #17B7B0">vie perso</span> : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...
+							<br />
+							Pour votre <span style="color: #3EDE8E">vie pro</span> : laissez-vous guider.</span>`;
+export const INTRO_DESCRIPTION3 = `<span>On vous recommande de vous référer à l'année <span style="font-weight: bolder">2019</span> afin de pouvoir comparer par la suite à l'année 2020moins standard, puis 2021 !</span>`;
 
 /* Action de reduction */
 export const SUR_TITLE_ACTION =
@@ -98,7 +106,6 @@ export const LIRE_MOINS = "LIRE MOINS";
 export const LIRE_PLUS = "... LIRE PLUS";
 
 /* Results Page */
-
 export const RESULT_TITLE1 = "Coach";
 export const RESULT_TITLE2 = "Climat";
 export const ANTICIPER_SUB_TITLE1 =
@@ -121,13 +128,6 @@ export const INTRODUCTION_QUESTION1_ERROR_MSG =
 export const INTRODUCTION_QUESTION3 = "Nombre de jours de télétravail par mois";
 export const INTRODUCTION_QUESTION3_ERROR_MSG =
   "⚠ Merci de saisir votre réponse";
-
-// new page introduction
-export const INTRODUCTION_TITLE1 = "Environ 25 min";
-export const INTRODUCTION_TITLE2 = "Quelques données";
-export const INTRODUCTION_TITLE4 = "Une année de référence";
-export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
-export const LINK_HOME_ICON = "PARIS2024";
 
 // Au bureau
 export const TITLE_ORDINATEURS =
