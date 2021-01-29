@@ -81,6 +81,7 @@ export function Login() {
         className="login-styled-title"
         title1={HERO_TITLE1}
         title2={HERO_TITLE2}
+        color={"styled-title-container-main"}
       />
       <ConfiguredForm
         name="login"

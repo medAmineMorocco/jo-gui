@@ -87,6 +87,7 @@ export function MethoPage(props) {
               fontSize: "5vw",
               lineHeight: "4vw",
             }}
+            color={"styled-title-container-main"}
             title1={HERO_TITLE1}
             title2={HERO_TITLE2}
           />
