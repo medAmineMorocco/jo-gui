@@ -72,6 +72,10 @@
   background: var(--bg-color-shade-2);
 }
 
+.logement-first-question .ant-form-item {
+  margin-bottom: unset;
+}
+
 @media (max-width: 767px) {
   .mobile-wizard-container {
     height: 55vh;

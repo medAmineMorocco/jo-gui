@@ -90,23 +90,27 @@ export function Login() {
         onFinishFailed={onFinishFailed}
         basicInputs={["login_email"]}
       >
-        <FormItemInput
-          className="email-input"
-          label={IDENTIFIER}
-          name="email"
-          rules={[
-            { required: true, message: IDENTIFIER_REQUIRED },
-            {
-              pattern: new RegExp(/^\w+([.-]?\w+)+@paris2024\.org/g),
-              message: IDENTIFIER_NOT_VALID,
-            },
-          ]}
-        />
-        <FormItemPassword
-          label={PASSWORD}
-          name="password"
-          rules={[{ required: true, message: PASSWORD_REQUIRED }]}
-        />
+        <div className="login-fields">
+          <FormItemInput
+            className="email-input"
+            label={IDENTIFIER}
+            name="email"
+            rules={[
+              { required: true, message: IDENTIFIER_REQUIRED },
+              {
+                pattern: new RegExp(/^\w+([.-]?\w+)+@paris2024\.org/g),
+                message: IDENTIFIER_NOT_VALID,
+              },
+            ]}
+          />
+          <FormItemPassword
+            className="password-input"
+            label={PASSWORD}
+            name="password"
+            rules={[{ required: true, message: PASSWORD_REQUIRED }]}
+          />
+        </div>
+
         <div className="CGU-container">
           <Checkbox value={isCGUchecked} onChange={onCGUcheckChange} />
           <span className="CGU-description" onClick={openCGU}>
