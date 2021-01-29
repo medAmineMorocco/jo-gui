@@ -1,0 +1,104 @@
+.page-compenser .page-title {
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2vw;
+  line-height: 2vw;
+  margin-bottom: 10vh;
+}
+
+.page-compenser .ant-card-head-title {
+  overflow: unset;
+  white-space: unset;
+  text-overflow: unset;
+}
+
+.page-compenser .card-description {
+  font-family: Paris2024;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: unset;
+  margin: 5vh 0;
+}
+
+.page-compenser .card-cojo {
+  height: 382px;
+}
+
+.page-compenser .card-cojo .ant-card-body {
+  justify-content: flex-start;
+}
+
+.page-compenser .cards-section,
+.page-compenser .compenser-description-section {
+  width: 100%;
+}
+
+.page-compenser .cards-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 24px;
+}
+
+.page-compenser .compenser-description-section {
+  margin-top: 40px;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.page-compenser .composer-video {
+  height: 70vh;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .page-compenser .cards-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .page-compenser {
+    margin: 4vh 5vw;
+  }
+
+  .page-compenser .page-title {
+    font-size: 6vw;
+    line-height: 7vw;
+    margin-bottom: 5vh;
+  }
+
+  .page-compenser .compenser-description-section {
+    margin-top: 4vh;
+    font-size: 6vw;
+    line-height: 7vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-compenser .cards-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .page-compenser .page-title {
+    font-size: 4vw;
+    line-height: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  .page-compenser .compenser-description-section {
+    margin-top: 4vh;
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+}
