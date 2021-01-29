@@ -56,6 +56,7 @@ export function PersoStep1({ step, setNextStep }) {
   const [question9Input, setQuestion9Input] = useState(0);
   const [question10Select, setQuestion10Select] = useState(0);
   const [isReductionActionOpened, setReductionActionOpened] = useState(false);
+  const [isQuestion1Valide, setIsQuestion1Valide] = useState(true);
 
   const [
     areConsommationQuestionsVisible,
@@ -132,19 +133,23 @@ export function PersoStep1({ step, setNextStep }) {
   }, [form, step]);
 
   const onFinish = (values) => {
-    const submitButton = document.querySelector('[type="submit"]');
-    submitButton.disabled = true;
-
-    saveResponsesOfStep(persostep1State(values))
-      .then(() => {
-        submitButton.disabled = false;
-        submitButton.blur();
-        setNextStep();
-      })
-      .catch(() => {
-        submitButton.disabled = false;
-        notify("Erreur serveur, veuillez réessayer ultérieurement");
-      });
+    if (question1Count > 0) {
+      setIsQuestion1Valide(true);
+      const submitButton = document.querySelector('[type="submit"]');
+      submitButton.disabled = true;
+      saveResponsesOfStep(persostep1State(values))
+        .then(() => {
+          submitButton.disabled = false;
+          submitButton.blur();
+          setNextStep();
+        })
+        .catch(() => {
+          submitButton.disabled = false;
+          notify("Erreur serveur, veuillez réessayer ultérieurement");
+        });
+    } else {
+      setIsQuestion1Valide(false);
+    }
   };
 
   return (
@@ -159,7 +164,7 @@ export function PersoStep1({ step, setNextStep }) {
           <span className="pro-step-title">Logement</span>
         </div>
 
-        <div className="forms-margin">
+        <div className="forms-margin logement-first-question">
           <FormCounter
             form={form}
             name="5f555eea00a7c"
@@ -167,6 +172,11 @@ export function PersoStep1({ step, setNextStep }) {
             value={question1Count}
             setValue={setQuestion1Count}
           />
+          {!isQuestion1Valide && (
+            <span style={{ color: "var(--error-color)" }}>
+              {HOUSE_ERROR_MSG}
+            </span>
+          )}
         </div>
 
         <div className="forms-margin">

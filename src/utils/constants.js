@@ -10,8 +10,8 @@ export const TERMS_DESCRIPTION =
 export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
 
 /* Méthologie Page */
-export const HERO_TITLE1 = "coach";
-export const HERO_TITLE2 = "climat";
+export const HERO_TITLE1 = "Coach";
+export const HERO_TITLE2 = "Climat";
 export const HERO_DESCRIPTION =
   "Réduis tes émissions de CO₂ pour contribuer à la neutralité carbone des Jeux !";
 export const FOOTER_START_ACTION = "Prêt à prendre le départ ?";
@@ -376,3 +376,33 @@ export const MATERIELS_QUESTION15_LABEL =
   "Nombre de paires de chaussures neuves achetées par an";
 export const MATERIELS_QUESTION16_LABEL =
   "Nombre de vêtements achetés de seconde main par an";
+
+///////////////////////////////////////
+//   Réduire page
+//////////////////////////////////////
+export const PALMARES_TITLE = "Votre palmarès";
+export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
+export const PALMARES_TOPS_TITLE = "eN HAUT DU PODIUM";
+export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
+export const PALMARES_TOPS =
+  "Bravo, vous êtes en dessous de la moyenne française !";
+export const PALMARES_FLOPS =
+  "Ici, vous êtes au-dessus, mais tout peut encore changer !";
+
+export const REDUIRE_DESCRIPTION = `<p>
+          SUR QUOI SOUHAITEZ-VOUS
+          <span style="color:var(--main-color)">AGIR</span> EN PREMIER ?
+        </p>
+        <p>
+          Cochez les
+          <span style="color: var(--main-color)">
+            actions de réduction
+          </span>
+          adaptées à vos objectifs, et
+          <span style="color: var(--main-color)">observez l’impact</span>
+          sur votre empreinte ci-dessous : <br />
+          Vous le verrez, toutes les actions ne se valent pas en termes de
+          réduction carbone, mais peuvent avoir un fort impact environnemental
+          (sur la biodiversité, l'économie circulaire ou encore les pollutions
+          locales ).
+        </p>`;

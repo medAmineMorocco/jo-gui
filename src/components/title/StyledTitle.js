@@ -1,7 +1,7 @@
 import React from "react";
-import "./styledTitle.css";
 import { Row, Col } from "antd";
 import { useTabletOrMobileSize } from "@hooks/window";
+import "./styledTitle.css";
 
 export function StyledTitle({ className, title1, title2, style, color }) {
   const isMobileOrTablet = useTabletOrMobileSize();

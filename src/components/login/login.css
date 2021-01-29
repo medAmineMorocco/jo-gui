@@ -6,6 +6,8 @@
   position: absolute;
   left: 0;
   top: 0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .right-side-login {
@@ -24,14 +26,16 @@
   padding: 30px 30px 0px 30px;
 }
 
+.login-fields .ant-form-item-label label {
+  font-family: Paris2024;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .email-input,
 .login-submit {
   width: 100%;
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
 }
 
 .login-submit {
