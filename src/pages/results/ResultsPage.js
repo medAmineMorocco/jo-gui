@@ -68,7 +68,7 @@ export function ResultsPage() {
         setContentSubTitle(
           <p>
             <span style={{ color: "var(--main-color)" }}>
-              Mesurer et comprendre
+              Mesurer et comprendre{" "}
             </span>
             son empreinte pour la maîtriser
           </p>
@@ -79,9 +79,9 @@ export function ResultsPage() {
         setContent(<ReduirePage />);
         setContentSubTitle(
           <p>
-            Mesurer et comprendre Changer ses habitudes et mettre en place des
+            Mesurer et comprendre Changer ses habitudes et mettre en place des{" "}
             <span style={{ color: "var(--main-color)" }}>
-              actions de réduction
+              actions de réduction{" "}
             </span>
             pour minimiser cette empreinte.
           </p>
@@ -92,7 +92,7 @@ export function ResultsPage() {
         setContent(<CompenserPage />);
         setContentSubTitle(
           <p>
-            Retirer du CO2 de l'atmosphère en participant à des&nbsp;
+            Retirer du CO₂ de l'atmosphère en participant à des{" "}
             <span style={{ color: "var(--main-color)" }}>
               projets de compensation
             </span>
