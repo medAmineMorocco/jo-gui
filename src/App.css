@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: Paris2024;
-  src: url(/fonts/Paris2024-BlackItalic.otf);
+  src: url(/fonts/Paris2024-Black.otf);
   font-weight: bold;
   font-style: normal;
 }
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: Paris2024Bold;
-  src: url(/fonts/Paris2024-BlackItalic.otf);
+  src: url(/fonts/Paris2024-Black.otf);
 }
 
 body {
