@@ -81,7 +81,15 @@ export function FormWizard() {
           left={
             <div className="wizard-content-left-container">
               <div className="wizard-content-left-summary-container">
-                <DynamicSummary items={summaryItems} current={progress} />
+                <DynamicSummary
+                  items={summaryItems}
+                  current={progress}
+                  color={
+                    category === CATEGORY.PRO
+                      ? "dynamic-summary-pro"
+                      : "dynamic-summary-perso"
+                  }
+                />
               </div>
               <div className="wizard-content-left-questions-container">
                 <img
@@ -109,6 +117,11 @@ export function FormWizard() {
       <>
         <HeaderWithCategory
           className="form-header"
+          color={
+            category === CATEGORY.PRO
+              ? "styled-title-container-pro"
+              : "styled-title-container-perso"
+          }
           title1={title1}
           title2={title2}
         />
@@ -133,7 +146,12 @@ export function FormWizard() {
   } else if (pageState === requestState.LOADING) {
     return (
       <>
-        <HeaderWithCategory className="form-header" title1="" title2="">
+        <HeaderWithCategory
+          className="form-header"
+          title1=""
+          title2=""
+          color={"styled-title-container-main"}
+        >
           <img
             className="intro-logo"
             src="/images/paris-2024.png"
@@ -149,7 +167,12 @@ export function FormWizard() {
   } else {
     return (
       <>
-        <HeaderWithCategory className="form-header" title1="" title2="">
+        <HeaderWithCategory
+          className="form-header"
+          title1=""
+          title2=""
+          color={"styled-title-container-main"}
+        >
           <img
             className="intro-logo"
             src="/images/paris-2024.png"

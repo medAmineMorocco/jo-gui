@@ -101,6 +101,7 @@ export function ResultsPage() {
     <Fragment>
       <HeaderWithCategory
         className="form-header-result"
+        color={"styled-title-container-main"}
         title1={RESULT_TITLE1}
         title2={RESULT_TITLE2}
       />
@@ -124,10 +125,10 @@ export function ResultsPage() {
       <div className="content-result">{content}</div>
       {isCurrent === "ANTICIPER" ? (
         <>
-        <span className="sub-title-result-2">
-          <p>{footerTitle}</p>
-        </span>
-        <div className="align-zoom-bottom"></div>
+          <span className="sub-title-result-2">
+            <p>{footerTitle}</p>
+          </span>
+          <div className="align-zoom-bottom"></div>
         </>
       ) : null}
 

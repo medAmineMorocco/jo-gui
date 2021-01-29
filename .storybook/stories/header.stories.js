@@ -19,4 +19,5 @@ export const header = () => <Header>
 </Header>;
 
 export const headerWithCategory = () => <MemoryRouter><HeaderWithCategory title1="vie"
-                                                                          title2="personnelle"/></MemoryRouter>;
+                                                                          title2="personnelle"
+                                                                          color={"styled-title-container-main"}/></MemoryRouter>;

@@ -14,7 +14,7 @@ import {
 } from "@utils/constants";
 import "./headerWithCategory.css";
 
-export function HeaderWithCategory({ title1, title2, className }) {
+export function HeaderWithCategory({ title1, title2, className, color }) {
   const [isVisible, setVisible] = useState(false);
 
   return (
@@ -43,6 +43,7 @@ export function HeaderWithCategory({ title1, title2, className }) {
           className="styled-title-form"
           title1={title1}
           title2={title2}
+          color={color}
         />
       </Header>
       <Modal

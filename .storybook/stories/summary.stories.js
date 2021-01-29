@@ -8,6 +8,6 @@ export default { title: 'Summary/Summary & DynamicSummary', decorators: [withKno
 
 export const summary = () => <Summary items={persoItems} />;
 
-export const dynamicSummary = () => <DynamicSummary items={persoItems} current={number('current', -1)} />;
+export const dynamicSummary = () => <DynamicSummary items={persoItems} current={number('current', -1)} color={"dynamic-summary-pro"}/>;
 
 

@@ -2,28 +2,51 @@
   line-height: 0.57 !important;
 }
 
-.dynamic-summary
+.dynamic-summary-perso
   > .ant-steps-item-finish
   > .ant-steps-item-container
   > .ant-steps-item-content
   > .ant-steps-item-title {
-  color: var(--main-color);
+  color: var(--main-color-perso);
   font-size: 15px;
 }
 
-.dynamic-summary
+.dynamic-summary-perso
   > .ant-steps-item-finish
   .ant-steps-item-icon
   > .ant-steps-icon
   .ant-steps-icon-dot {
-  background-color: var(--main-color);
+  background-color: var(--main-color-perso);
 }
 
-.dynamic-summary
+.dynamic-summary-perso
   > .ant-steps-item-finish
   > .ant-steps-item-container
   > .ant-steps-item-tail::after {
-  background-color: var(--main-color);
+  background-color: var(--main-color-perso);
+}
+.dynamic-summary-pro
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: var(--main-color-pro);
+  font-size: 15px;
+}
+
+.dynamic-summary-pro
+  > .ant-steps-item-finish
+  .ant-steps-item-icon
+  > .ant-steps-icon
+  .ant-steps-icon-dot {
+  background-color: var(--main-color-pro);
+}
+
+.dynamic-summary-pro
+  > .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: var(--main-color-pro);
 }
 
 .dynamic-summary

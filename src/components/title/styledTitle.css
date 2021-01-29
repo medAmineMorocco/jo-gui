@@ -1,5 +1,4 @@
 .styled-title-container {
-  color: var(--main-color);
   font-family: Paris2024Bold;
   font-weight: bolder;
   font-size: 3vw;
@@ -8,9 +7,14 @@
   text-transform: uppercase;
   margin: 1vw 0 0;
 }
-
-.styled-title-container::first-line {
-  color: white;
+.styled-title-container-perso {
+  color: var(--main-color-perso);
+}
+.styled-title-container-pro {
+  color: var(--main-color-pro);
+}
+.styled-title-container-main {
+  color: var(--main-color);
 }
 
 @media (max-width: 767px) {
