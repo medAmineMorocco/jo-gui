@@ -94,7 +94,7 @@ export const INTRO_DESCRIPTION1 = `<span>Eh oui, il y a quelques questions à se
 export const INTRO_DESCRIPTION2 = `<span>Pour votre <span style="color: #17B7B0">vie perso</span> : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...
 							<br />
 							Pour votre <span style="color: #3EDE8E">vie pro</span> : laissez-vous guider.</span>`;
-export const INTRO_DESCRIPTION3 = `<span>On vous recommande de vous référer à l'année <span style="font-weight: bolder">2019</span> afin de pouvoir comparer par la suite à l'année 2020moins standard, puis 2021 !</span>`;
+export const INTRO_DESCRIPTION3 = `<span>On vous recommande de vous référer à l'année <span style="font-weight: bolder">2019</span> afin de pouvoir comparer par la suite à l'année 2020 moins standard, puis 2021 !</span>`;
 
 /* Action de reduction */
 export const SUR_TITLE_ACTION =
@@ -145,7 +145,7 @@ export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const EMPREINTE_OVERLAY_TITLE =
   "Comment connaître la taille de sa boîte mail ?";
 export const TAILLE_STOCKAGE =
-  "Taille de ton stockage en ligne, type SharePoint/OneDrive (en Go)";
+  "Taille de votre stockage en ligne, type SharePoint/OneDrive (en Go)";
 export const NBR_RECHERCHE =
   "Nombre d'heures passées à faire des recherches sur internet à des fins professionnelles (hors streaming) par jour (en moyenne)";
 export const NBR_CONFERENCE =
@@ -193,7 +193,7 @@ export const QUESTION6_NBR_TRAJETS_AR =
   "Nombre d'aller-retours en train au CIO à Lausanne";
 export const QUESTION6_NBR_TRAJETS_AR_TOOLTIP = "Une case vide équivaut à un 0";
 export const QUESTION7_NBR_TRAJETS_AR =
-  "Nombre d'aller-retours en avion au CIO à Lausanne en Economie";
+  "Nombre d'aller-retours en avion au CIO à Lausanne";
 export const QUESTION8_NBR_VOLS_AR =
   "Nombre d'aller-retours longs courriers à Tokyo";
 export const QUESTION9_NBR_VOLS_AR =
@@ -225,7 +225,7 @@ export const ALIMENTATION_QUESTION2 =
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION =
-  "Sur les 9 repas restants dans votre vie perso (dîners et week-ends), quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porc et volailles), poisson, végétarien (œufs et produits laitiers), ou végétalien)";
+  "Sur les 9 repas restants dans votre vie perso (dîners et week-ends), quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien)";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
@@ -249,7 +249,7 @@ export const ALIMENTATION_SAVIEZ_VOUS =
 
 // deplacement personnels
 export const TRANSPORTATION_LABEL =
-  "Quel moyen de transport utilisez-vous pour vos déplacements personnels ?";
+  "Quel(s) moyen(s) de transport utilisez-vous pour vos déplacements personnels ?";
 export const DEPLACEMENTS_QUESTION1 =
   "Distance parcourue en voiture par an (véhicule personnel ou de location)";
 export const DEPLACEMENTS_QUESTION1_ERROR_MSG =
@@ -279,11 +279,12 @@ export const DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE =
 export const HOUSE_QUESTION1 =
   "Nombre de personnes adultes résidant dans le logement";
 export const HOUSE_QUESTION2 = "Surface logement";
-export const HOUSE_QUESTION2_TOOLTIP = "Indiquée sur ton bail / acte de vente.";
+export const HOUSE_QUESTION2_TOOLTIP =
+  "Indiquée sur votre bail ou acte de vente.";
 export const HOUSE_QUESTION3 = "Vous vivez en ?";
 export const HOUSE_QUESTION4 = "Classe Energie de votre logement, DPE";
 export const HOUSE_QUESTION4_TOOLTIP =
-  "Indiquée sur ton bail (locataire) / sur ton Diagnostic de Performance Energétique (propriétaire)";
+  "Indiquée sur votre bail (locataire) ou sur votre Diagnostic de Performance Energétique (propriétaire)";
 export const HOUSE_QUESTION5 =
   "Voulez-vous rentrer dans le détail de vos consommations énergétiques ?";
 export const HOUSE_QUESTION6 =
@@ -292,7 +293,7 @@ export const HOUSE_QUESTION7 = "Quel(s) type(s) d'énergie consommez vous ?";
 export const HOUSE_QUESTION8 =
   "Consommation annuelle d'électricité de votre logement";
 export const HOUSE_QUESTION8_TOOLTIP =
-  "Afficher sur votre facture ou dans l'espace client de votre fournisseur. En moyenne, 10 450 kwh/an pour 100m2.";
+  "Affichée sur votre facture ou dans l'espace client de votre fournisseur. En moyenne, 10 450 kwh/an pour 100m².";
 export const HOUSE_QUESTION9 = "Ou facture annuelle d'électricité ";
 export const HOUSE_QUESTION10 =
   "Consommation annuelle de Gaz naturel de votre logement";
@@ -302,12 +303,12 @@ export const HOUSE_QUESTION11 = "Ou facture annuelle de Gaz naturel";
 export const HOUSE_QUESTION12 =
   "Consommation annuelle de Fioul domestique de votre logement";
 export const HOUSE_QUESTION12_TOOLTIP =
-  "Calculable en effectuant en relevé de ta cuve à fioul. En moyenne 150L/m2/an.";
+  "Calculable en effectuant en relevé de votre cuve à fioul. En moyenne 150L/m²/an.";
 export const HOUSE_QUESTION13 = "Ou facture annuelle de Fioul domestique";
-export const HOUSE_QUESTION13_TOOLTIP = "Indiquée sur ta facture mensuelle.";
+export const HOUSE_QUESTION13_TOOLTIP = "";
 export const HOUSE_QUESTION14 =
   "Consommation annuelle de bois de votre logement";
-export const HOUSE_QUESTION14_TOOLTIP = "En fonction de tes achats !";
+export const HOUSE_QUESTION14_TOOLTIP = "En fonction de vos achats";
 export const HOUSE_QUESTION16 =
   "Votre chauffage ou eau chaude sanitaire dépend-il d'un système collectif ?";
 export const HOUSE_QUESTION17 =
@@ -334,7 +335,7 @@ export const NUMERIC_SAVIEZ_VOUS =
 //Équipement
 export const EQUIPMENT_QUESTION1 = "Nombre de réfrigérateurs";
 export const EQUIPMENT_QUESTION2 = "Nombre de congélateurs";
-export const EQUIPMENT_QUESTION3 = "Nombre de lave-linge";
+export const EQUIPMENT_QUESTION3 = "Nombre de lave-linges";
 export const EQUIPMENT_QUESTION4 = "Nombre de lave-vaisselles";
 export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
 export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
@@ -343,7 +344,7 @@ export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
 export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
 export const EQUIPMENT_QUESTION11 =
   "Nombre d'appareils électroniques partagés (chaîne hifi, console de jeu vidéo de salon, imprimantes)";
-export const EQUIPMENT_QUESTION12 = "Nombre de sèche-linge";
+export const EQUIPMENT_QUESTION12 = "Nombre de sèche-linges";
 export const EQUIPMENT_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const OVERLAY_SOUSTEXTE_EQUIPMENT = "";
 export const EQUIPMENT_SAVIEZ_VOUS =
@@ -371,7 +372,7 @@ export const MATERIELS_QUESTION12_LABEL =
   "Nombre d'autres petits biens électroniques personnels (appareil photo, liseuse, cadre numérique, radio)";
 export const MATERIELS_QUESTION13_LABEL = "Renouvelés en moyenne tous les";
 export const MATERIELS_QUESTION14_LABEL =
-  "Nombre de vêtements neufs achetés par an (articles)";
+  "Nombre de vêtements neufs achetés par an";
 export const MATERIELS_QUESTION15_LABEL =
   "Nombre de paires de chaussures neuves achetées par an";
 export const MATERIELS_QUESTION16_LABEL =

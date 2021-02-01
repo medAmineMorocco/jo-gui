@@ -8,7 +8,7 @@ import { requestState } from "@utils/requestState";
 import { ChartResult } from "@components/result/chartResult/ChartResult";
 import { TimelineChart } from "@components/timelineChart/TimelineChart";
 import { averages } from "./averages";
-import { groupBy, sum , round } from "@utils/utils";
+import { groupBy, sum, round } from "@utils/utils";
 import "./anticiperPage.css";
 
 export function AnticiperPage() {
@@ -18,7 +18,6 @@ export function AnticiperPage() {
   const [data2, setData2] = useState();
   const [data3, setData3] = useState();
   const CO2_EQUIVALENT_IN_TONNE = 1000;
-  
 
   const manageErrorResponse = (msg) => {
     setTimeout(() => {
@@ -33,23 +32,36 @@ export function AnticiperPage() {
       setData1([
         {
           id: "Vie Professionnelle",
-          value: round(sum(bilanByCategory["Vie Professionnelle"])/CO2_EQUIVALENT_IN_TONNE),
-          color: "#00B460",
+          value: round(
+            sum(bilanByCategory["Vie Professionnelle"]) /
+              CO2_EQUIVALENT_IN_TONNE
+          ),
+          color: "#3EDE8E",
         },
         {
           id: "Vie Personnelle",
-          value: round(sum(bilanByCategory["Vie Personnelle"])/CO2_EQUIVALENT_IN_TONNE),
-          color: "#006AFF",
+          value: round(
+            sum(bilanByCategory["Vie Personnelle"]) / CO2_EQUIVALENT_IN_TONNE
+          ),
+          color: "#17B7B0",
         },
       ]);
       setData2(
         bilanByCategory["Vie Professionnelle"].map((item) => {
-          return { ...item, id: item.thematic, value: round(item.value/CO2_EQUIVALENT_IN_TONNE)};
+          return {
+            ...item,
+            id: item.thematic,
+            value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
+          };
         })
       );
       setData3(
         bilanByCategory["Vie Personnelle"].map((item) => {
-          return { ...item, id: item.thematic, value: round(item.value/CO2_EQUIVALENT_IN_TONNE)};
+          return {
+            ...item,
+            id: item.thematic,
+            value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
+          };
         })
       );
       setPageState(requestState.SUCCESS);
@@ -107,7 +119,7 @@ export function AnticiperPage() {
             items={[
               ...averages,
               {
-                value: Number(data1[0].value) +  Number(data1[1].value),
+                value: Number(data1[0].value) + Number(data1[1].value),
                 description: "Tu es ici !",
                 color: "#D7C378",
               },
