@@ -35,9 +35,10 @@ export function NewIntroPage() {
   useEffect(() => {
     getUserProgess()
       .then((response) => {
-        if (response.progress === "RESULTATS") {
-          history.push("/home");
-        }
+        // On ne redirige plus vers la home si formulaire est terminé (Lionel Raggini)
+        // if (response.progress === "RESULTATS") {
+        //   history.push("/home");
+        // }
       })
       .catch(() => history.push("/home"));
     scrollToTopOfThePage();

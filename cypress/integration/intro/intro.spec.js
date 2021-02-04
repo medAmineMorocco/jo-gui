@@ -54,7 +54,7 @@ context('Intro page', () => {
 		});
 	});
 
-	it('should not redirect user to form page when user completes the form', () => {
+	it('should redirect user to intro page when user completes the form', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
 
 		cy.window().then((win) => {
@@ -62,7 +62,7 @@ context('Intro page', () => {
 			cy.login('email@paris2024.org');
 			cy.visit("/intro");
 			
-			cy.url().should('include', '/home');
+			cy.url().should('include', '/intro');
 		});
 	});
 
