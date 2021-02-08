@@ -41,7 +41,7 @@ export function AnticiperPage() {
               sum(bilanByCategory["Vie Professionnelle"], "value") /
                 CO2_EQUIVALENT_IN_TONNE
             ),
-          color: "#3EDE8E",
+            color: "#3EDE8E",
           },
           {
             id: "Vie Personnelle",
@@ -49,7 +49,7 @@ export function AnticiperPage() {
               sum(bilanByCategory["Vie Personnelle"], "value") /
                 CO2_EQUIVALENT_IN_TONNE
             ),
-          color: "#17B7B0",
+            color: "#17B7B0",
           },
         ]);
         setData2(
@@ -130,7 +130,7 @@ export function AnticiperPage() {
               ...averages,
               {
                 value: Number(data1[0].value) + Number(data1[1].value),
-                description: "Tu es ici !",
+                description: "Vous êtes ici !",
                 color: "#D7C378",
               },
             ]}

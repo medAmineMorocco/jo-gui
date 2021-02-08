@@ -21,7 +21,7 @@ export const averages = [
   },
   {
     value: 11.7,
-    description: "Européen.ne moyenne",
+    description: "Européen.ne moyen.ne",
     color: "#FFFFFF",
   },
   {

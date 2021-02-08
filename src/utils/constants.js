@@ -7,7 +7,8 @@ export const PASSWORD_REQUIRED = "⚠ Veuillez renseigner votre Mot de passe";
 export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
 export const TERMS_DESCRIPTION =
   "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
-export const CGU_MSG_ERROR = "⚠ Vous devez accepter avant de soumettre";
+export const CGU_MSG_ERROR =
+  "⚠ Vous devez accepter les conditions avant de soumettre";
 
 /* Méthologie Page */
 export const HERO_TITLE1 = "Coach";
@@ -19,24 +20,24 @@ export const ABOUT_TITLE = "à propos";
 export const ABOUT_CONTENT1 =
   "Paris 2024 s’est engagé à réduire de moitié les émissions de CO₂ liées à l’organisation des Jeux, du collaborateur, jusqu’au spectateur.";
 export const ABOUT_CONTENT2 =
-  "C’est pourquoi le Coach Carbone est là pour vous aider à comprendre et réduire votre impact sur le climat par des actions concrètes.";
+  "C’est pourquoi le Coach Climat est là pour vous aider à comprendre et réduire votre impact sur le climat par des actions concrètes.";
 export const ABOUT_CONTENT3 =
   "Les résultats proposés ont fait l'objet d'une modélisation. Ils sont représentatifs d'un ordre de grandeur, mais ils n'ont pas pour but d'être exhaustifs. Une part d'incertitude existe comme dans toute modélisation.";
 export const MAIN_DESC1 =
   "Dans la lutte contre le changement climatique, chaque action compte !";
 export const MAIN_DESC2 =
-  "C’est pourquoi Paris 2024 a créé le Coach Carbone, qui permet de calculer vos émissions de CO2 annuelles, votre empreinte carbone.";
+  "C’est pourquoi Paris 2024 a créé le Coach Climat, qui permet de calculer vos émissions de CO2 annuelles, votre empreinte carbone.";
 export const MAIN_DESC3 =
   "Il distingue les émissions liées à la vie professionnelle, des émissions liées à la vie personnelle pour visualiser l'impact concret de vos activités et consommations, et donner des moyens pour le réduire.";
 
 export const SECTION1_TITLE = "1/3 Comment ça marche ?";
 export const SECTION1_PARAG0 = `<b>1. Naviguez en tout sécurité</b></br>
-Toutes les informations saisies sont strictement confidentielles et vous êtes la seule personne à y avoir accès 😉  `;
+Toutes les informations saisies sont strictement confidentielles et vous êtes la seule personne à y avoir accès 😉`;
 export const SECTION1_PARAG1 = `<b>2. Mesurez votre impact </b></br>
 Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans la vie quotidienne au bureau, et à la maison, vous allez pouvoir mesurer vos émissions de CO2 et identifier les principales sources.`;
 export const SECTION1_PARAG2 = `<b>3. Découvre les résultats</b></br>
 Quels sont les postes où vous émettez le plus, et où vous situez-vous ? Le Coach Climat vous donne les clefs pour devenir un véritable champion du climat, à vous de jouer ! `;
-export const SECTION1_PARAG3 = `<b>4. Choisis tes actions de réduction</b></br>
+export const SECTION1_PARAG3 = `<b>4. Choisissez vos actions de réduction</b></br>
 Pour chaque poste d’émission, passez à l’action ! A partir de votre empreinte carbone, le Coach Climat vous proposera des actions de réduction concrètes et applicables au quotidien. Choisissez celles qui vous paraissent atteignables et devenez un champion du climat. `;
 
 export const SECTION2_TITLE =
@@ -145,7 +146,7 @@ export const TITLE_ECRANS =
 // Utilisation du numérique (pro)
 export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
 export const TAILLE_BOITE_INFO =
-  "Pour trouver cette information, check le « pop-in conseil » plus bas !";
+  "Pour trouver cette information, checkez le « pop-in » conseil plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const EMPREINTE_OVERLAY_TITLE =
   "Comment connaître la taille de sa boîte mail ?";
@@ -177,9 +178,9 @@ export const SAVIER_VOUS_TRAJETS =
 
 // Déplacements professionnels
 export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_FRANCE_TITLE =
-  "Carte de la france";
+  "Carte de la France";
 export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_INTERNATIONNAL_TITLE =
-  "Carte internationnale";
+  "Carte du Monde";
 export const MAKE_TRANSPORTATION_LABEL =
   "Effectuez-vous des déplacements professionels ?";
 export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
@@ -246,7 +247,7 @@ export const ALIMENTATION_QUESTION7 =
 export const ALIMENTATION_QUESTION8 =
   "Demi(s) de bière consommé(s) par semaine";
 export const ALIMENTATION_QUESTION9 =
-  "Verre(s) d'alcool, hors vin et bière, consommés par semaine (10cL)";
+  "Verre(s) d'alcool, hors vin et bière, consommé(s) par semaine (10cL)";
 export const ALIMENATTION_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 
 export const ALIMENTATION_SAVIEZ_VOUS =
@@ -315,7 +316,7 @@ export const HOUSE_QUESTION14 =
   "Consommation annuelle de bois de votre logement";
 export const HOUSE_QUESTION14_TOOLTIP = "En fonction de vos achats";
 export const HOUSE_QUESTION16 =
-  "Votre chauffage ou eau chaude sanitaire dépend-il d'un système collectif ?";
+  "Votre chauffage et eau chaude sanitaire dépendent-ils d'un système collectif ?";
 export const HOUSE_QUESTION17 =
   "A quel type d'énergie fonctionne votre système de chauffage collectif ?";
 export const HOUSE_QUESTION18 =
