@@ -28,6 +28,7 @@
   top: 2vw;
   left: 2vw;
   color: var(--main-color);
+  z-index: 20;
 }
 
 .styled-title-form {

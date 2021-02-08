@@ -111,6 +111,14 @@ export const ANTICIPER_SUB_TITLE2 = " arbres par an !";
 export const MAILTO = " coach-climat@paris2024.org";
 export const ANTICIPER_FOOTER = "Faites-nous vos retours à l’adresse ";
 export const TONNE = "tCO₂eq";
+export const COMPENSER_PANEL_TITLE1 =
+  "POUR VOTRE VIE PROFESSIONNELLE, Paris 2024 s’occupe de tout";
+export const COMPENSER_PANEL_TITLE2 =
+  "POUR VOTRE VIE PERSONNELLE, vous avez LE POUVOIR D’AGIR !";
+export const COMPENSER_DESCRIPTION1 =
+  "Paris 2024 compense ses émissions résiduelles via un projet de compensation labellisé et responsable, aujourd’hui en cours de discussions.​";
+export const COMPENSER_DESCRIPTION2 =
+  "Il est possible de compenser ses émissions personnelles, en contribuant à un projet de compensation labélisé de préférence, via des organisations comme l’ONU.​​";
 
 ///////////////////////////////////////
 //   Form - Pro
@@ -378,15 +386,14 @@ export const MATERIELS_QUESTION16_LABEL =
 ///////////////////////////////////////
 //   Réduire page
 //////////////////////////////////////
-export const PALMARES_TITLE = "Votre palmarès";
+export const PALMARES_TITLE = "Vos résultats";
 export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
-export const PALMARES_TOPS_TITLE = "eN HAUT DU PODIUM";
+export const PALMARES_TOPS_TITLE = "POINTS <br/> FORTS";
 export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
 export const PALMARES_TOPS =
   "Bravo, vous êtes en dessous de la moyenne française !";
 export const PALMARES_FLOPS =
   "Ici, vous êtes au-dessus, mais tout peut encore changer !";
-
 export const REDUIRE_DESCRIPTION = `<p>
           SUR QUOI SOUHAITEZ-VOUS
           <span style="color:var(--main-color)">AGIR</span> EN PREMIER ?
@@ -404,3 +411,8 @@ export const REDUIRE_DESCRIPTION = `<p>
           (sur la biodiversité, l'économie circulaire ou encore les pollutions
           locales ).
         </p>`;
+
+///////////////////////////////////////
+//   Compenser page
+//////////////////////////////////////
+export const COMPENSER_DESCRIPTION_VIDEO = `<p>Compenser, c’est quoi ? Explications en <span style="color: var(--main-color)">vidéo</span> !</p>`;

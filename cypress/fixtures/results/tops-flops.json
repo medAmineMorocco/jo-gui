@@ -1,0 +1,22 @@
+{
+  "top3": [
+    {
+      "thematic": "TRAJETS DOMICILE TRAVAIL",
+      "value": "0"
+    },
+    {
+      "thematic": "DEPLACEMENTS PROFESSIONNELS",
+      "value": "0"
+    },
+    {
+      "thematic": "APPAREILS",
+      "value": "0"
+    }
+  ],
+  "flop3": [
+    {
+      "thematic": "NUMERIQUE",
+      "value": "406.795512203525"
+    }
+  ]
+}

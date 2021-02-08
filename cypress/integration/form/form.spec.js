@@ -13,7 +13,7 @@ context('Form wizard', () => {
 		});
 	});
 
-	it('should redirect user to intro page when he already finished the forms', () => {
+	it('should not redirect user to intro page when he already finished the forms', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
@@ -21,7 +21,7 @@ context('Form wizard', () => {
 
 			cy.visit('/form');
 
-			cy.url().should('include', '/home');
+			cy.url().should('include', '/form');
 		});
 	});
 

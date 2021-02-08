@@ -1,20 +1,6 @@
+import {sizes} from "../utils";
+
 context('Anticiper page', () => {
-
-    const sizes = [
-        {
-            device: 'iphone-5',
-            width: 320
-        },
-        {
-            device: 'ipad-2',
-            width: 768
-        },
-        {
-            device: 'macbook-13',
-            width: 1280
-        }
-    ];
-
 
     it('should show anticiper page', () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
@@ -32,6 +18,14 @@ context('Anticiper page', () => {
                     .then(() => {
                         cy.wait(1000);
                         cy.takeSnapshots('Anticiper', size);
+
+                        cy.wait(1000);
+                        cy.get('span:contains(Détail Vie Pro)').click();
+                        cy.takeSnapshots('Anticiper pro', size);
+
+                        cy.wait(1000);
+                        cy.get('span:contains(Détail Vie Perso)').click();
+                        cy.takeSnapshots('Anticiper perso', size);
                     });
             });
         })

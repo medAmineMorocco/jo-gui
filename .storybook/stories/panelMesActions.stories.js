@@ -1,5 +1,6 @@
 import React from 'react';
-import { withKnobs, text, select, object } from '@storybook/addon-knobs';
+import {withKnobs, text, object, color} from '@storybook/addon-knobs';
+import {action} from "@storybook/addon-actions";
 import { PanelMesActions } from '@components/panelMesActions/PanelMesActions';
 
 export default { title: 'Data Display/PanelMesActions', decorators: [withKnobs] };
@@ -23,20 +24,12 @@ export const panelMesActions = () => {
 		},
 	];
 
-	const onChange = (event) => console.log('isChecked', event);
-
-	const selectOptions = {
-		vie_personnelle: 'Vie personnelle',
-		vie_professionnelle: 'Vie professionnelle',
-	};
-	const selectDefaultValue = 'Vie professionnelle';
-
 	return (
 		<PanelMesActions
 			actions={object('actions', actions)}
 			thematic={text('Thematic', 'Logement')}
-			category={select('category', selectOptions, selectDefaultValue)}
-			onChange={onChange}
+			onChange={action('checked')}
+			backgroundColor={color('backgroundColor', '#17b7b0')}
 		/>
 	);
 };

@@ -1,0 +1,226 @@
+{
+  "Vie Professionnelle": [
+    {
+      "thematic": "AU BUREAU",
+      "actions": [
+        {
+          "description": "Bannir les objets à usage unique (gobelets, bouteilles d’eau plastiques, couverts en plastique…) ",
+          "reduction": -140,
+          "gain": -0.16
+        },
+        {
+          "description": "Eteindre ses appareils dès que possible (soirs, week-ends, vacances…)",
+          "reduction": -33,
+          "gain": -0.04
+        },
+        {
+          "description": "Prendre les esacaliers",
+          "reduction": -90,
+          "gain": -0.1
+        }
+      ]
+    },
+    {
+      "thematic": "EMPREINTE NUMERIQUE",
+      "actions": [
+        {
+          "description": "Passer son ordinateur en Dark mode",
+          "reduction": -8.74,
+          "gain": -0.01
+        },
+        {
+          "description": "Nettoyer régulièrement et mieux gérer sa boîte mail, grâce à une application de type Cleanfox",
+          "reduction": -105.3,
+          "gain": -0.12
+        },
+        {
+          "description": "Installer un moteur de recherche éco-responsable de type Ecosia par défaut et réduire le nombre de recherches",
+          "reduction": -39,
+          "gain": -0.05
+        }
+      ]
+    },
+    {
+      "thematic": "RESTAURATION",
+      "actions": [
+        {
+          "description": "Ne plus consommer de viande au bureau",
+          "reduction": -316.35,
+          "gain": -0.37
+        },
+        {
+          "description": "Réduire sa consommation de viande, en consommant 3 repas sur 5 végétarien au bureau",
+          "reduction": -120.7,
+          "gain": -0.14
+        },
+        {
+          "description": "Diminuer sa consommation de café et la remplacer par du thé",
+          "reduction": -104.36,
+          "gain": -0.12
+        }
+      ]
+    },
+    {
+      "thematic": "TRAJETS DOMICILE TRAVAIL",
+      "actions": [
+        {
+          "description": "Si possible, venir en vélo ou à pied",
+          "reduction": -1709,
+          "gain": -1.99
+        },
+        {
+          "description": "Si possible, venir en transport en commun",
+          "reduction": -1668.28,
+          "gain": -1.94
+        },
+        {
+          "description": "Si vous êtes obligés de venir en voiture, faire du covoiturage",
+          "reduction": -895.19,
+          "gain": -1.04
+        }
+      ]
+    },
+    {
+      "thematic": "DEPLACEMENTS PROFESSIONNELS",
+      "actions": [
+        {
+          "description": "Pour les longues distances, privilégier le train",
+          "reduction": -61075.64,
+          "gain": -71.07
+        },
+        {
+          "description": "En avion, privilégier les vols en Economie (plutôt qu’en classe supérieure)",
+          "reduction": -37038.8,
+          "gain": -43.1
+        },
+        {
+          "description": "Dans une même ville, préférer les taxi verts et transports en commun",
+          "reduction": -2,
+          "gain": 0
+        }
+      ]
+    }
+  ],
+  "Vie Personnelle": [
+    {
+      "thematic": "MAISON",
+      "actions": [
+        {
+          "description": "Souscrire à un contrat d’énergie renouvelable",
+          "reduction": -1695.6,
+          "gain": -1.97
+        },
+        {
+          "description": "En étudiant les possibilités d’aides, faire une rénovation énergétoique de son logement",
+          "reduction": -1318.8,
+          "gain": -1.53
+        },
+        {
+          "description": "Toute l'année, réduire de 1°C la température de son chauffage",
+          "reduction": -131.88,
+          "gain": -0.15
+        }
+      ]
+    },
+    {
+      "thematic": "APPAREILS",
+      "actions": [
+        {
+          "description": "Equiper son foyer avec de l'électroménager et numérique de 2nde main",
+          "reduction": -587,
+          "gain": -0.68
+        },
+        {
+          "description": "Allonger la durée de vie de l'électroménager et numérique de 3 ans, en les réparant par exemple.",
+          "reduction": -134.42,
+          "gain": -0.16
+        },
+        {
+          "description": "S’assurer qu’une fois obsolète, les équipements du foyer soient traités en recyclerie ou déchèterie adaptées.",
+          "reduction": -27,
+          "gain": -0.03
+        }
+      ]
+    },
+    {
+      "thematic": "VEHICULES",
+      "actions": [
+        {
+          "description": "Réduire l'achat de vêtements neufs, pour du seconde main",
+          "reduction": -341,
+          "gain": -0.4
+        },
+        {
+          "description": "Allonger la durée de vie de ses/ de son smartphone(s) et ordinateur(s)",
+          "reduction": -81,
+          "gain": -0.09
+        },
+        {
+          "description": "S’assurer qu’une fois obsolète, les biens personnels soient traités en recyclerie ou déchèterie adaptées.",
+          "reduction": -12,
+          "gain": -0.01
+        }
+      ]
+    },
+    {
+      "thematic": "NUMERIQUE",
+      "actions": [
+        {
+          "description": "Toujours privilégier la Wifi à la 4G",
+          "reduction": -172.95,
+          "gain": -0.2
+        },
+        {
+          "description": "Installer un moteur de recherche éco-responsable de type Ecosia par défaut et réduire le nombre de recherches",
+          "reduction": -111.6,
+          "gain": -0.13
+        },
+        {
+          "description": "Passer son ordinateur en Dark mode",
+          "reduction": -83.7,
+          "gain": -0.1
+        }
+      ]
+    },
+    {
+      "thematic": "ALIMENTATIONS",
+      "actions": [
+        {
+          "description": "Ne plus consommer de viande à la maison",
+          "reduction": -432.15,
+          "gain": -0.5
+        },
+        {
+          "description": "Ne plus consommer d’eau en bouteille",
+          "reduction": -215,
+          "gain": -0.25
+        },
+        {
+          "description": "Réduire son gaspillage alimentaire, notamment en compostant",
+          "reduction": -31,
+          "gain": -0.04
+        }
+      ]
+    },
+    {
+      "thematic": "DEPLACEMENT",
+      "actions": [
+        {
+          "description": "Réduire le nombre de véhicules par foyer, en faisant du covoiturage ou si possible de l’autopartage (type autolib)",
+          "reduction": -4400,
+          "gain": -5.12
+        },
+        {
+          "description": "Adopter la marche ou le vélo pour les déplacements du quotidien",
+          "reduction": -122,
+          "gain": -0.14
+        },
+        {
+          "description": "Privilégier des destinations de vacances accessibles en train",
+          "reduction": -5251.76,
+          "gain": -6.11
+        }
+      ]
+    }
+  ]
+}

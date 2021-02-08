@@ -1,0 +1,147 @@
+.cards-section,
+.reduire-description-section,
+.bars-graph-section,
+.panels-section {
+  width: 100%;
+}
+
+.cards-section,
+.panels-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 24px;
+}
+
+.palmares-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.reduire-description-section {
+  margin-top: 40px;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.reduire-title-section {
+  text-align: center;
+  color: white;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 28px;
+  font-style: normal;
+}
+
+.palmares-tops-flops {
+  flex-grow: 1;
+  padding-left: 12px;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+}
+
+.palmares-mentions {
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+}
+
+.bars-graph-section {
+  width: 100%;
+}
+
+.bars-container {
+  position: relative;
+  height: 300px;
+  margin-bottom: 16px;
+}
+
+.bars-legend {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.legend-box {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: grey;
+}
+
+.legend-label {
+  font-family: "Source Sans Pro";
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .cards-section,
+  .reduire-description-section,
+  .bars-graph-section,
+  .panels-section {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .cards-section,
+  .panels-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .palmares-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bars-graph-section {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .bars-container {
+    height: 186px;
+    background-color: var(--bg-color-shade-2);
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  .cards-section,
+  .panels-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .palmares-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .palmares-mentions {
+    font-size: 20px;
+  }
+
+  .bars-graph-section {
+    margin-top: 0;
+    padding-top: 8px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color-shade-2);
+    z-index: 20;
+  }
+}

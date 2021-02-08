@@ -1,0 +1,11 @@
+.ant-back-top {
+  z-index: 100;
+  right: 30px;
+  bottom: 114px;
+}
+
+.ant-back-top-content,
+.ant-back-top-content:hover {
+  background-color: white;
+  color: black;
+}

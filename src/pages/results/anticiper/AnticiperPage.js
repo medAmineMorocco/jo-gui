@@ -8,7 +8,7 @@ import { requestState } from "@utils/requestState";
 import { ChartResult } from "@components/result/chartResult/ChartResult";
 import { TimelineChart } from "@components/timelineChart/TimelineChart";
 import { averages } from "./averages";
-import { groupBy, sum, round } from "@utils/utils";
+import { groupBy, sum, round, timeOutIf } from "@utils/utils";
 import "./anticiperPage.css";
 
 export function AnticiperPage() {
@@ -27,50 +27,60 @@ export function AnticiperPage() {
   };
 
   const manageBilan = (bilan) => {
-    setTimeout(() => {
-      const bilanByCategory = groupBy(bilan, "category");
-      setData1([
-        {
-          id: "Vie Professionnelle",
-          value: round(
-            sum(bilanByCategory["Vie Professionnelle"]) /
-              CO2_EQUIVALENT_IN_TONNE
-          ),
+    timeOutIf(
+      window.sessionStorage.getItem("bilan"),
+      () => {
+        window.sessionStorage.setItem("bilan", JSON.stringify(bilan));
+      },
+      () => {
+        const bilanByCategory = groupBy(bilan, "category");
+        setData1([
+          {
+            id: "Vie Professionnelle",
+            value: round(
+              sum(bilanByCategory["Vie Professionnelle"], "value") /
+                CO2_EQUIVALENT_IN_TONNE
+            ),
           color: "#3EDE8E",
-        },
-        {
-          id: "Vie Personnelle",
-          value: round(
-            sum(bilanByCategory["Vie Personnelle"]) / CO2_EQUIVALENT_IN_TONNE
-          ),
+          },
+          {
+            id: "Vie Personnelle",
+            value: round(
+              sum(bilanByCategory["Vie Personnelle"], "value") /
+                CO2_EQUIVALENT_IN_TONNE
+            ),
           color: "#17B7B0",
-        },
-      ]);
-      setData2(
-        bilanByCategory["Vie Professionnelle"].map((item) => {
-          return {
-            ...item,
-            id: item.thematic,
-            value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
-          };
-        })
-      );
-      setData3(
-        bilanByCategory["Vie Personnelle"].map((item) => {
-          return {
-            ...item,
-            id: item.thematic,
-            value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
-          };
-        })
-      );
-      setPageState(requestState.SUCCESS);
-    }, 500);
+          },
+        ]);
+        setData2(
+          bilanByCategory["Vie Professionnelle"].map((item) => {
+            return {
+              ...item,
+              id: item.thematic,
+              value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
+            };
+          })
+        );
+        setData3(
+          bilanByCategory["Vie Personnelle"].map((item) => {
+            return {
+              ...item,
+              id: item.thematic,
+              value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
+            };
+          })
+        );
+        setPageState(requestState.SUCCESS);
+      }
+    );
   };
 
   const getUserSummary = useCallback(() => {
     getUserProgess()
-      .then(async (response) => {
+      .then((response) => {
+        if (!window.sessionStorage.getItem("progress")) {
+          window.sessionStorage.setItem("progress", JSON.stringify(response));
+        }
         if (response.progress === "VIE_PROFESIONAL") {
           history.push("/home");
         } else if (response.progress === "RESULTATS") {

@@ -42,6 +42,10 @@ export function getResponsesSummary() {
     },
   };
 
+  const storedResponse = window.sessionStorage.getItem("bilan");
+  if (storedResponse) {
+    return Promise.resolve(JSON.parse(storedResponse));
+  }
   return fetchWrapper(getBackendUrl() + `/api/results`, requestOptions)
     .then((response) => response.json())
     .catch((error) => Promise.reject(error));

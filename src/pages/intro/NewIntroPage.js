@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "antd";
 import { Button as ButtonAntd } from "antd";
 import { ReactComponent as Calendar } from "@theme/icons/col-calendar.svg";
 import { ReactComponent as Folder } from "@theme/icons/col-folder.svg";
 import { ReactComponent as StopWatch } from "@theme/icons/col-stopwatch.svg";
-import { getUserProgess } from "@services/userService";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { Header } from "@components/header/Header";
 import { Modal } from "@components/modal/Modal";
@@ -29,19 +28,11 @@ import {
 import "./newIntroPage.css";
 
 export function NewIntroPage() {
-  const history = useHistory();
   const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
-    getUserProgess()
-      .then((response) => {
-        if (response.progress === "RESULTATS") {
-          history.push("/home");
-        }
-      })
-      .catch(() => history.push("/home"));
     scrollToTopOfThePage();
-  }, [history]);
+  }, []);
 
   return (
     <div className="new-intro-page">
