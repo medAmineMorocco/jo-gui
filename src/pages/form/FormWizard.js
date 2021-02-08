@@ -44,7 +44,7 @@ export function FormWizard() {
           );
         }, 500);
       });
-  }, [history]);
+  }, []);
 
   useEffect(() => {
     getCurrentStep();

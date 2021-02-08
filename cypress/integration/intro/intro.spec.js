@@ -3,7 +3,6 @@ import {sizes} from "../utils";
 context('Intro page', () => {
 
 	it('should show intro page', () => {
-		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
@@ -22,7 +21,6 @@ context('Intro page', () => {
 	});
 
 	it('should open infos modal', () => {
-		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
 		sizes.forEach((size) => {
 			cy.viewport(size.device);
 			cy.window().then((win) => {
@@ -42,33 +40,7 @@ context('Intro page', () => {
 		});
 	});
 
-	it('should not redirect user to page form due to error 404', () => {
-		cy.stubRequest('GET', '**/api/user/progress', 404);
-
-		cy.window().then((win) => {
-			win.sessionStorage.clear();
-			cy.login('email@paris2024.org');
-			cy.visit("/intro");
-
-			cy.url().should('include', '/home');
-		});
-	});
-
-	it('should redirect user to intro page when user completes the form', () => {
-		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
-
-		cy.window().then((win) => {
-			win.sessionStorage.clear();
-			cy.login('email@paris2024.org');
-			cy.visit("/intro");
-			
-			cy.url().should('include', '/intro');
-		});
-	});
-
-	it("should redirect user to form page when user didn't complete the form", () => {
-		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-vie-pro.json', 'progressJSON');
-
+	it("should redirect user to form page when click on \"FAIRE LE TEST\"", () => {
 		cy.window().then((win) => {
 			win.sessionStorage.clear();
 			cy.login('email@paris2024.org');
