@@ -5,6 +5,7 @@
   "experimentalFetchPolyfill": true,
   "testFiles": "**/*.spec.js",
   "watchForFileChanges": false,
+  "video": false,
   "env": {
     "REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED": false
   }
