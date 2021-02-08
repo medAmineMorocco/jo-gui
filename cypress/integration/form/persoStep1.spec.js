@@ -52,7 +52,7 @@ context('Form | Logement step', () => {
 			cy.get('#5fe30bac50656').find('label.ant-radio-button-wrapper-checked').contains('Non').should('exist');
 			cy.get('#5fe46949b764d').find('label.ant-radio-button-wrapper-checked').contains('Non').should('exist');
 			cy.get(`body:contains("Quel(s) type(s) d'énergie consommez vous ?")`).should('not.exist');
-			cy.get(`body:contains("Votre chauffage ou eau chaude sanitaire dépend-il d'un système collectif ?")`).should(
+			cy.get(`body:contains("Votre chauffage et eau chaude sanitaire dépendent-ils d'un système collectif ?")`).should(
 				'not.exist'
 			);
 		});

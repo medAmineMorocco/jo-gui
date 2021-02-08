@@ -13,6 +13,9 @@
 .styled-title-container-pro {
   color: var(--main-color-pro);
 }
+.styled-title-container-main:first-line {
+  color: white;
+}
 .styled-title-container-main {
   color: var(--main-color);
 }

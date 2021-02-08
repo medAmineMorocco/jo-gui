@@ -3,7 +3,7 @@ import {sizes} from "../utils";
 context("Login page", () => {
   const IDENTIFIER_REQUIRED = "Veuillez renseigner votre email";
   const PASSWORD_REQUIRED = "Veuillez renseigner votre Mot de passe";
-  const CGU_ACCEPTATION_REQUIRED = "Vous devez accepter avant de soumettre";
+  const CGU_ACCEPTATION_REQUIRED = "Vous devez accepter les conditions avant de soumettre";
 
   const IDENTIFIER_NOT_VALID = "Adresse email non valide";
 

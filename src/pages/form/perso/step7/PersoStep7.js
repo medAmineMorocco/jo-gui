@@ -18,10 +18,6 @@ export function PersoStep7({ step }) {
 
   const QUESTION1_LABEL =
     "Chaque français partage les émissions générées par les Services de l'Etat et des collectivités (Santé, Education, Justice, Défense, etc…). Elle s'ajoute à votre empreinte carbone :";
-  const QUESTION1_TOOLTIP =
-    "Les émissions du service public dont nous disposons sont réparties\n" +
-    "                                  entre tous les français.";
-
   useEffect(() => {
     scrollToTopOfThePage();
     const setReponsesOfStep = (stepState) => {
@@ -70,7 +66,7 @@ export function PersoStep7({ step }) {
           label={QUESTION1_LABEL}
           disabled={true}
           defaultValue="1283,76 kgCO2/citoyen"
-          tooltipTitle={QUESTION1_TOOLTIP}
+          tooltipTitle={false}
         />
       </div>
     </ConfiguredForm>
