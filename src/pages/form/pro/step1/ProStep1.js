@@ -136,25 +136,29 @@ export function ProStep1({ step, setNextStep }) {
           />
         </div>
 
-        <FormCounter
-          form={form}
-          name="5f554354aa382"
-          iconCounter={SmartphoneIcon}
-          textCounter={TITLE_TELEPHONES}
-          value={nbrTelephones}
-          setValue={setNbrTelephones}
-          max={9}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f554354aa382"
+            iconCounter={SmartphoneIcon}
+            textCounter={TITLE_TELEPHONES}
+            value={nbrTelephones}
+            setValue={setNbrTelephones}
+            max={9}
+          />
+        </div>
 
-        <FormCounter
-          form={form}
-          name="5f55437711711"
-          iconCounter={ScreenIcon}
-          textCounter={TITLE_ECRANS}
-          value={nbrEcrans}
-          setValue={setNbrEcrans}
-          max={9}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f55437711711"
+            iconCounter={ScreenIcon}
+            textCounter={TITLE_ECRANS}
+            value={nbrEcrans}
+            setValue={setNbrEcrans}
+            max={9}
+          />
+        </div>
       </div>
     </ConfiguredForm>
   );

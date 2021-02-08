@@ -327,41 +327,49 @@ export function PersoStep5({ step, setNextStep }) {
           />
         </div>
 
-        <FormCounter
-          form={form}
-          name="5f557459e6c45"
-          iconCounter={SodaIcon}
-          textCounter={ALIMENTATION_QUESTION5}
-          value={question5Count}
-          setValue={setQuestion5Count}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f557459e6c45"
+            iconCounter={SodaIcon}
+            textCounter={ALIMENTATION_QUESTION5}
+            value={question5Count}
+            setValue={setQuestion5Count}
+          />
+        </div>
 
-        <FormCounter
-          form={form}
-          name="5f557508ea4c5"
-          iconCounter={WineIcon}
-          textCounter={ALIMENTATION_QUESTION7}
-          value={question7Count}
-          setValue={setQuestion7Count}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f557508ea4c5"
+            iconCounter={WineIcon}
+            textCounter={ALIMENTATION_QUESTION7}
+            value={question7Count}
+            setValue={setQuestion7Count}
+          />
+        </div>
 
-        <FormCounter
-          form={form}
-          name="5f557531751f2"
-          iconCounter={BeerIcon}
-          textCounter={ALIMENTATION_QUESTION8}
-          value={question8Count}
-          setValue={setQuestion8Count}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f557531751f2"
+            iconCounter={BeerIcon}
+            textCounter={ALIMENTATION_QUESTION8}
+            value={question8Count}
+            setValue={setQuestion8Count}
+          />
+        </div>
 
-        <FormCounter
-          form={form}
-          name="5f55754725a12"
-          iconCounter={WhiskyIcon}
-          textCounter={ALIMENTATION_QUESTION9}
-          value={question9Count}
-          setValue={setQuestion9Count}
-        />
+        <div className="forms-margin">
+          <FormCounter
+            form={form}
+            name="5f55754725a12"
+            iconCounter={WhiskyIcon}
+            textCounter={ALIMENTATION_QUESTION9}
+            value={question9Count}
+            setValue={setQuestion9Count}
+          />
+        </div>
       </div>
 
       {process.env.REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED === "true" && (
