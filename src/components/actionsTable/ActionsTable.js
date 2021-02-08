@@ -2,7 +2,7 @@ import React from "react";
 import { Checkbox } from "antd";
 import "./actionsTable.css";
 
-export function ActionsTable({ columns, actions, onChange }) {
+export function ActionsTable({ columns, actions, onChange, showGain = true }) {
   return (
     <table className="actions-table">
       <thead className="table-head">
@@ -21,7 +21,7 @@ export function ActionsTable({ columns, actions, onChange }) {
               <td className="table-contents-description">{`${
                 key + 1
               }. ${description}`}</td>
-              <td className="table-contents-gain">{gain}</td>
+              {showGain && <td className="table-contents-gain">{gain}</td>}
               <td className="table-contents-actions">
                 <Checkbox
                   className="actions-checkbox"

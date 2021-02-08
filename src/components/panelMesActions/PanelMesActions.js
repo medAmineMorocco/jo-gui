@@ -36,9 +36,10 @@ export function PanelMesActions({
         <Panel header={panelHeader} key={"1"}>
           <div className="panel-mes-actions-contents">
             <ActionsTable
-              columns={["Actions de réductions", "% Gain", "Je me lance !"]}
+              columns={["Actions de réductions", "Je me lance !"]}
               actions={actions}
               onChange={onChange}
+              showGain={false}
             />
           </div>
         </Panel>
