@@ -95,6 +95,7 @@ export function FormItemMultipleInputNumber({
                   onFocus={() => onFocus(name)}
                   onBlur={() => onBlur(name)}
                   min={0}
+                  inputMode="tel"
                 />
               </Form.Item>
             </div>

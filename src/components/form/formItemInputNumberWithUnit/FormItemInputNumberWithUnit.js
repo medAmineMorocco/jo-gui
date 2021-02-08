@@ -89,6 +89,7 @@ export function FormItemInputNumberWithUnit({
         min={0}
         id={name}
         {...(disabled && { disabled: disabled })}
+        inputMode="tel"
       />
       <span ref={inputUnitRef} className="input-unit">
         &nbsp;&nbsp;{unit}

@@ -92,6 +92,7 @@ export function FormItemWithTwoInputs({
                 onChange={(value) => onChange(value, response.name)}
                 onFocus={() => onFocus(response.name)}
                 onBlur={() => onBlur(response.name)}
+                inputMode="tel"
               />
             </Form.Item>
             <span

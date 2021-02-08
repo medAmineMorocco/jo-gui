@@ -62,6 +62,7 @@ export function FormItemInputNumber({
         min={0}
         {...(disabled && { disabled: disabled })}
         onChange={onChange}
+        inputMode="tel"
       />
     </FormItem>
   );
