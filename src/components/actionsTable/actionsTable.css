@@ -8,8 +8,8 @@
   color: white;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
-  height: 8vh;
+  font-size: 1.5vh;
+  height: 24px;
 }
 
 .table-head-column {
@@ -22,8 +22,8 @@
   color: white;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 3vh;
 }
 
 .table-contents-description,

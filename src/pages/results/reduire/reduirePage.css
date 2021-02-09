@@ -22,7 +22,7 @@
   font-family: "Paris2024";
   font-weight: 700;
   font-style: normal;
-  font-size: 24px;
+  font-size: 3vh;
   line-height: 24px;
 }
 
@@ -40,11 +40,14 @@
   padding-left: 12px;
   font-family: "Source Sans Pro";
   font-weight: bold;
+  text-align: center;
+  line-height: 28px;
+  list-style-type: none;
 }
 
 .palmares-mentions {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 12px;
   font-family: "Source Sans Pro";
   font-weight: bold;
 }
@@ -54,7 +57,7 @@
 }
 
 .bars-container {
-  position: relative;
+  position: sticky;
   height: 300px;
   margin-bottom: 16px;
 }
@@ -79,6 +82,31 @@
   color: var(--main-color);
   font-weight: 600;
 }
+.panels-section.section-reduire {
+  height: 40vh;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+.text-if-no-thematic-card {
+  font-size: 2vh;
+  line-height: 7vh;
+}
+.card-right-result .card-cojo .ant-card-head .ant-card-head-title {
+  margin-top: 4%;
+}
 
 @media (max-width: 767px) {
   .cards-section,
@@ -100,6 +128,9 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     row-gap: 24px;
+  }
+  .card-right-result .card-cojo .ant-card-head .ant-card-head-title {
+    margin-top: 0%;
   }
 }
 
@@ -143,5 +174,15 @@
     top: 0;
     background-color: var(--bg-color-shade-2);
     z-index: 20;
+  }
+  .palmares-tops-flops {
+    line-height: 3vh;
+  }
+  .text-if-no-thematic-card {
+    font-size: 2vh;
+    line-height: 3vh;
+  }
+  .card-right-result .card-cojo .ant-card-head .ant-card-head-title {
+    margin-top: 0%;
   }
 }

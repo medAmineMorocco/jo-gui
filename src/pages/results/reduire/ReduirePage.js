@@ -4,7 +4,6 @@ import { Card } from "@components/card/Card";
 import { ActionsTable } from "@components/actionsTable/ActionsTable";
 import { PanelMesActions } from "@components/panelMesActions/PanelMesActions";
 import { StackedBar } from "@components/stackedBar/StackedBar";
-import { BackTop } from "@components/backTop/BackTop";
 import {
   getThematicsWithItsActionsByCategory,
   getTopsAndFlops,
@@ -179,11 +178,19 @@ export function ReduirePage() {
                 borderRadiusRight={isMobile ? "24px" : "0"}
               >
                 <ol className="palmares-tops-flops">
-                  {tops.map((top, key) => (
-                    <li key={key}>{top}</li>
-                  ))}
+                  {tops.length > 0 ? (
+                    tops.map((top, key) => <li key={key}>{top}</li>)
+                  ) : (
+                    <p className="text-if-no-thematic-card">
+                      Vous êtes au-dessus de la moyenne française pour toutes
+                      vos thématiques. Mais bonne nouvelle: il sera d'autant
+                      plus facile de réduire vos émissions !
+                    </p>
+                  )}
                 </ol>
-                <p className="palmares-mentions">{PALMARES_TOPS}</p>
+                <p className="palmares-mentions">
+                  {tops.length > 0 ? PALMARES_TOPS : ""}
+                </p>
               </Card>
             </div>
             <div>
@@ -193,28 +200,38 @@ export function ReduirePage() {
                 borderRadiusLeft={isMobile ? "24px" : "0"}
               >
                 <ol className="palmares-tops-flops">
-                  {flops.map((flop, key) => (
-                    <li key={key}>{flop}</li>
-                  ))}
+                  {flops.length > 0 ? (
+                    flops.map((flop, key) => <li key={key}>{flop}</li>)
+                  ) : (
+                    <p className="text-if-no-thematic-card">
+                      Bravo, tu es plus bas-carbone qu'un français moyen toute
+                      catégorie !
+                    </p>
+                  )}
                 </ol>
-                <p className="palmares-mentions">{PALMARES_FLOPS}</p>
+                <p className="palmares-mentions">
+                  {flops.length > 0 ? PALMARES_FLOPS : ""}
+                </p>
               </Card>
             </div>
           </div>
         </div>
         <div>
           <h3 className="reduire-title-section">{PREMIERS_ACTIONS_TITLE}</h3>
-          <Card
-            title={`DEJA ${totalTopActions.toFixed(2)} % DE REDUCTION
-          POssible !`}
-            backgroundColor="#7872F4"
-          >
-            <ActionsTable
-              columns={["Actions de réductions", "% Gain", "Je me lance !"]}
-              actions={topActions}
-              onChange={onCheckAction}
-            />
-          </Card>
+          <div className="card-right-result">
+            <Card
+              title={`DEJA ${totalTopActions.toFixed(
+                2
+              )} % DE REDUCTION POSSIBLE !`}
+              backgroundColor="#7872F4"
+            >
+              <ActionsTable
+                columns={["Actions de réductions", "% Gain", "Je me lance !"]}
+                actions={topActions}
+                onChange={onCheckAction}
+              />
+            </Card>
+          </div>
         </div>
       </div>
       <div
@@ -232,7 +249,7 @@ export function ReduirePage() {
           </div>
         </div>
       </div>
-      <div className="panels-section">
+      <div className="panels-section section-reduire">
         <div>
           <h3 className="reduire-title-section">{PROFESSIONAL_MENU_ITEM}</h3>
           {proThematics.map(({ thematic, actions }, key) => (
@@ -265,7 +282,6 @@ export function ReduirePage() {
         </div>
       </div>
       <div style={{ height: "100px" }} />
-      <BackTop />
     </>
   );
 }
