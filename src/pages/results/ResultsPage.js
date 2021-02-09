@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Radio } from "antd";
 import { HeaderWithCategory } from "@components/header/HeaderWithCategory";
+import { Header } from "@components/header/Header";
 import { AnticiperPage } from "./anticiper/AnticiperPage";
 import { CompenserPage } from "./compenser/CompenserPage";
 import { MobiliserPage } from "./mobiliser/MobiliserPage";
@@ -116,6 +117,9 @@ export function ResultsPage() {
 
   return (
     <Fragment>
+      <Header className="logo-result-page">
+        <img className="logo" src="/images/paris-2024.png" alt="paris-2024" />
+      </Header>
       <HeaderWithCategory
         className="form-header-result"
         color={"styled-title-container-main"}

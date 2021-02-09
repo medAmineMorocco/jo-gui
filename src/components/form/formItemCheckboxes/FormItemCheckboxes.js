@@ -3,7 +3,13 @@ import { Form, Checkbox as CheckboxAntd } from "antd";
 import { Checkbox } from "@components/form/checkbox/Checkbox";
 import "./formItemCheckboxes.css";
 
-export function FormItemCheckboxes({ form, name, text, options }) {
+export function FormItemCheckboxes({
+  form,
+  name,
+  text,
+  options,
+  checkrequired,
+}) {
   useEffect(() => {
     return () => {
       form.setFieldsValue({
@@ -19,7 +25,10 @@ export function FormItemCheckboxes({ form, name, text, options }) {
           name={name}
           label={text}
           rules={[
-            { required: true, message: "⚠ Veuillez sélectionner une option" },
+            {
+              required: checkrequired,
+              message: "⚠ Veuillez sélectionner une option",
+            },
           ]}
           className="form-item-checkboxes"
         >
