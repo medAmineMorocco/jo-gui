@@ -48,6 +48,7 @@ function FormItemCheckboxesForm({ onFinish, onFinishFailed, initialValues }) {
       onFinishFailed={onFinishFailed}
     >
       <FormItemCheckboxes
+        checkrequired={true}
         form={form}
         name="country"
         text="quel moyen de transport ?"
@@ -67,6 +68,7 @@ describe("FormItemCheckboxes component", () => {
     const onFinishFailed = cy.stub();
     mount(
       <FormItemCheckboxesForm
+        checkrequired={true}
         onFinish={() => cy.stub()}
         onFinishFailed={onFinishFailed}
       />,
@@ -91,6 +93,7 @@ describe("FormItemCheckboxes component", () => {
     const onFinish = cy.stub();
     mount(
       <FormItemCheckboxesForm
+        checkrequired={true}
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
       />,
@@ -118,6 +121,7 @@ describe("FormItemCheckboxes component", () => {
     const onFinish = cy.stub();
     mount(
       <FormItemCheckboxesForm
+        checkrequired={true}
         onFinish={onFinish}
         onFinishFailed={() => cy.stub()}
         initialValues={["Voiture", "Train"]}

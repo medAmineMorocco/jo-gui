@@ -137,9 +137,6 @@ context('Form | Déplacements personnels step', () => {
             'form/persoStep6/empty-state.json',
             'getResponsesOfStep6'
         );
-
-        sizes.forEach((size) => {
-            cy.viewport(size.device);
             cy.window().then((win) => {
                 win.sessionStorage.clear();
                 cy.login('email@paris2024.org');
@@ -149,14 +146,9 @@ context('Form | Déplacements personnels step', () => {
                 cy.submitForm();
                 cy.get('.ant-form-item-explain div:contains("⚠ Veuillez sélectionner une option")')
                     .should(($el) => {
-                        expect($el).to.have.length(1);
+                        expect($el).to.have.length(0);
                     })
-                    .then(() => {
-                        cy.wait(1000);
-                        cy.takeSnapshots('form - Déplacements personnels errors', size);
-                    });
             });
-        });
     });
 
     itIf(Cypress.env('REACT_APP_ARE_REDUCTION_ACTIONS_ACTIVATED') === true, 'should not exceed question value in its reduction action', () => {

@@ -250,6 +250,7 @@ export function PersoStep1({ step, setNextStep }) {
           <Fragment>
             <div className="forms-margin">
               <FormItemCheckboxes
+                checkrequired={true}
                 form={form}
                 name="5fe30b3a5a6b4"
                 text={HOUSE_QUESTION7}
