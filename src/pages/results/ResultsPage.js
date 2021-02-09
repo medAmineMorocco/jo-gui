@@ -81,7 +81,7 @@ export function ResultsPage() {
         setContent(<ReduirePage />);
         setContentSubTitle(
           <p>
-            Mesurer et comprendre Changer ses habitudes et mettre en place des{" "}
+            Changer ses habitudes et mettre en place des{" "}
             <span style={{ color: "var(--main-color)" }}>
               actions de réduction{" "}
             </span>
