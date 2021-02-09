@@ -70,9 +70,7 @@ export function Login() {
   };
 
   const openCGU = () => {
-    const CGU_DOCUMENT_URL =
-      "https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf";
-    window.open(CGU_DOCUMENT_URL);
+    window.open("/pdfs/SUS - 210203 - CONFIDENTIEL - CGU.pdf");
   };
 
   const titleWithForm = (

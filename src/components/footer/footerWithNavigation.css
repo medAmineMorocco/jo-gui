@@ -10,12 +10,16 @@
   float: left;
   margin-left: 5%;
   margin-top: -20px;
+  z-index: 100;
+  position: relative;
 }
 
 .footer-buttons-right {
   float: right;
   margin-right: 5%;
   margin-top: -20px;
+  z-index: 100;
+  position: relative;
 }
 
 .footer-navigation-container {
@@ -31,6 +35,8 @@
   margin-left: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
+  z-index: 100;
+  position: relative;
 }
 
 .footer-navigation-right {
@@ -38,6 +44,8 @@
   margin-right: 5%;
   margin-top: -16px;
   font-family: Source Sans Pro;
+  z-index: 100;
+  position: relative;
 }
 
 .footer-navigation-details-container {

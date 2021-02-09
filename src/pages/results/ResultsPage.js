@@ -7,6 +7,7 @@ import { CompenserPage } from "./compenser/CompenserPage";
 import { MobiliserPage } from "./mobiliser/MobiliserPage";
 import { ReduirePage } from "./reduire/ReduirePage";
 import { FooterWithNavigation } from "@components/footer/FooterWithNavigation";
+import { FooterWithDetails } from "@components/footer/FooterWithDetails";
 import {
   RESULT_TITLE1,
   RESULT_TITLE2,
@@ -164,7 +165,9 @@ export function ResultsPage() {
             text: "",
             onClick: () => ClickNext(),
           }}
-        />
+        >
+          <FooterWithDetails />
+        </FooterWithNavigation>
       </div>
     </Fragment>
   );
