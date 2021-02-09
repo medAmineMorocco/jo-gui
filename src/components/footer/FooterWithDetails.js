@@ -17,7 +17,12 @@ export function FooterWithDetails() {
         <div className="footer-details">
           <span
             className="footer-detail"
-            onClick={() => window.open("#", "_blank")}
+            onClick={() =>
+              window.open(
+                "/pdfs/SUS - 210203 - CONFIDENTIEL - Mentions légales.pdf",
+                "_blank"
+              )
+            }
           >
             Mentions légales
           </span>
@@ -25,7 +30,12 @@ export function FooterWithDetails() {
         <div className="footer-details">
           <span
             className="footer-detail"
-            onClick={() => window.open("#", "_blank")}
+            onClick={() =>
+              window.open(
+                "/pdfs/SUS - 210203 - CONFIDENTIEL - CGU.pdf",
+                "_blank"
+              )
+            }
           >
             Condition générales d’utilisation
           </span>
@@ -33,17 +43,14 @@ export function FooterWithDetails() {
         <div className="footer-details">
           <span
             className="footer-detail"
-            onClick={() => window.open("#", "_blank")}
+            onClick={() =>
+              window.open(
+                "/pdfs/SUS - 210203 - CONFIDENTIEL - Politique de confidentialité.pdf",
+                "_blank"
+              )
+            }
           >
             Politique de confidentialité
-          </span>
-        </div>
-        <div className="footer-details">
-          <span
-            className="footer-detail"
-            onClick={() => window.open("#", "_blank")}
-          >
-            Accessibilité site
           </span>
         </div>
       </div>

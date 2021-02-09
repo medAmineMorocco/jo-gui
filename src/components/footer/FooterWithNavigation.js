@@ -4,7 +4,8 @@ import { Footer } from "@components/footer/Footer";
 import { Button } from "@components/button/Button";
 import { BackButton } from "@components/button/BackButton";
 import "./footerWithNavigation.css";
-export function FooterWithNavigation({ previous, next, step }) {
+
+export function FooterWithNavigation({ previous, next, step, children }) {
   const {
     category: previousCategory,
     details: previousDetails = "",
@@ -47,6 +48,7 @@ export function FooterWithNavigation({ previous, next, step }) {
           <span>{nextDetails}</span>
         </div>
       </div>
+      {children}
     </Footer>
   );
 }
