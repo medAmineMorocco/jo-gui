@@ -277,9 +277,9 @@ export const DEPLACEMENTS_QUESTION7 =
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO₂ dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
-export const DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE = "Carte de la france";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE = "Carte de la France";
 export const DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE =
-  "Carte internationnale";
+  "Carte du Monde";
 
 // À la maison
 export const HOUSE_QUESTION1 =

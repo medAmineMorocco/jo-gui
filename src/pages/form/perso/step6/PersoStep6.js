@@ -217,12 +217,10 @@ export function PersoStep6({ step, setNextStep }) {
           title={DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE}
           items={overlay_items_france}
         />
-        <div className="forms-margin">
-          <Overlay
-            title={DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE}
-            items={overlay_items_internationnal}
-          />
-        </div>
+        <Overlay
+          title={DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE}
+          items={overlay_items_internationnal}
+        />
       </div>
 
       {areCarQuestionsVisible && (

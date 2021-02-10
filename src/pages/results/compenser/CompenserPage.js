@@ -15,13 +15,12 @@ export function CompenserPage() {
     <div className="page-compenser">
       <div className="cards-section">
         <div>
-          <Card title={COMPENSER_PANEL_TITLE1} backgroundColor="#00B460">
+          <Card title={COMPENSER_PANEL_TITLE1} backgroundColor="#3ede8e">
             <p className="card-description">{COMPENSER_DESCRIPTION1}</p>
           </Card>
         </div>
-
         <div>
-          <Card title={COMPENSER_PANEL_TITLE2} backgroundColor="#0061FF">
+          <Card title={COMPENSER_PANEL_TITLE2} backgroundColor="#17b7b0">
             <p className="card-description">{COMPENSER_DESCRIPTION2}</p>
           </Card>
         </div>
