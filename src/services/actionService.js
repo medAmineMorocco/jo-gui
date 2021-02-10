@@ -42,14 +42,14 @@ export function getNewValues(checked, bilan, data_category, data_reduction) {
       CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
         ? bilanPro["avec actions"] + data_reduction * -1
         : bilanPro["avec actions"];
-    bilanPersoAfterReduction = round(
-      bilanPerso["sans actions"] - withActionsPersoNewValue,
-      2
-    );
-    bilanProAfterReduction = round(
-      bilanPro["sans actions"] - withActionsProNewValue,
-      2
-    );
+    bilanPersoAfterReduction =
+      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
+        ? round(bilanPerso["sans actions"] - withActionsPersoNewValue, 2)
+        : bilanPerso["sans actions"];
+    bilanProAfterReduction =
+      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
+        ? round(bilanPro["sans actions"] - withActionsProNewValue, 2)
+        : bilanPro["sans actions"];
   } else {
     withActionsPersoNewValue =
       CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
@@ -59,14 +59,14 @@ export function getNewValues(checked, bilan, data_category, data_reduction) {
       CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
         ? bilanPro["avec actions"] - data_reduction * -1
         : bilanPro["avec actions"];
-    bilanPersoAfterReduction = round(
-      bilanPerso["sans actions"] + bilanPerso["avec actions"],
-      2
-    );
-    bilanProAfterReduction = round(
-      bilanPro["sans actions"] + bilanPro["avec actions"],
-      2
-    );
+    bilanPersoAfterReduction =
+      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
+        ? round(bilanPerso["sans actions"] + bilanPerso["avec actions"], 2)
+        : bilanPerso["sans actions"];
+    bilanProAfterReduction =
+      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
+        ? round(bilanPro["sans actions"] + bilanPro["avec actions"], 2)
+        : bilanPro["sans actions"];
   }
 
   return {
