@@ -31,7 +31,6 @@ export function FormWizard() {
             setPageState(requestState.SUCCESS);
           }, 500);
         } else if (response.progress === "RESULTATS") {
-          // On redirige vers la première étape si le formulaire est terminé (Lionel Raggini)
           setActiveStep(0);
           setPageState(requestState.SUCCESS);
         }

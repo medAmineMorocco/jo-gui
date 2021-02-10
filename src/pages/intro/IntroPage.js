@@ -25,9 +25,9 @@ import {
   INTRO_DESCRIPTION2,
   INTRO_DESCRIPTION3,
 } from "@utils/constants";
-import "./newIntroPage.css";
+import "./introPage.css";
 
-export function NewIntroPage() {
+export function IntroPage() {
   const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
