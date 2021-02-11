@@ -29,8 +29,8 @@ export function ActionsTable({ columns, actions, onChange, showGain = true }) {
               <td className="table-contents-actions">
                 <Checkbox
                   className="actions-checkbox"
-                  data_category={category}
-                  data_reduction={reduction / CO2_EQUIVALENT_IN_TONNE}
+                  data-category={category}
+                  data-reduction={reduction / CO2_EQUIVALENT_IN_TONNE}
                   onChange={onChange}
                 />
               </td>

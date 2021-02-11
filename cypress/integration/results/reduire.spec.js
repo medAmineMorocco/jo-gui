@@ -90,18 +90,18 @@ context('Réduire page', () => {
             cy.get('label span:contains(Réduire)').click();
 
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('2');
+                expect(el).to.have.text('2');
             });
             cy.get(':nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
 
             cy.get('@firstAction').check();
-            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('-59.08');
+            cy.get('.bars-container svg > g g').eq(4).should(el => {
+                expect(el).not.to.have.descendants('text');
             });
             cy.get('@firstAction').uncheck();
 
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('2');
+                expect(el).to.have.text('2');
             });
         });
     });
@@ -118,19 +118,19 @@ context('Réduire page', () => {
             cy.visit("/results");
             cy.get('label span:contains(Réduire)').click();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('2');
+                expect(el).to.have.text('2');
             });
             cy.get('.panel-mes-actions-header span:contains(AU BUREAU)').click();
             cy.get('.panel-mes-actions-contents > .actions-table > tbody > :nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
 
             cy.get('@firstAction').check();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('1.86');
+                expect(el).to.have.text('1.86');
             });
 
             cy.get('@firstAction').uncheck();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.contain('2');
+                expect(el).to.have.text('2');
             });
         });
     });
@@ -148,19 +148,19 @@ context('Réduire page', () => {
             cy.get('label span:contains(Réduire)').click();
 
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
-                expect(el).to.contain('3.26');
+                expect(el).to.have.text('3.3');
             });
             cy.get('.panel-mes-actions-header span:contains(MAISON)').click();
             cy.get('.panel-mes-actions-contents > .actions-table > tbody > :nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
 
             cy.get('@firstAction').check();
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
-                expect(el).to.contain('1.56');
+                expect(el).to.have.text('1.6');
             });
 
             cy.get('@firstAction').uncheck();
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
-                expect(el).to.contain('3.26');
+                expect(el).to.have.text('3.3');
             });
         });
     });
