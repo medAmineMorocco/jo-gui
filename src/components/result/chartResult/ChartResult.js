@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Radio } from "antd";
 import { ResponsivePie } from "@nivo/pie";
+import { round } from "@utils/utils";
 import {
   ANTICIPER_SUB_TITLE1,
   ANTICIPER_SUB_TITLE2,
@@ -21,7 +22,7 @@ const commonProps = {
   radialLabelsLinkColor: { from: "color" },
   sliceLabelsSkipAngle: 10,
   sliceLabelsTextColor: "#000000",
-  sliceLabelsRadiusOffset:0.50,
+  sliceLabelsRadiusOffset: 0.5,
   radialLabelsLinkHorizontalLength: 6,
   isInteractive: true,
   theme: {
@@ -44,7 +45,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
   const [content, setContent] = useState(0);
   const [switchGraph, setSwitchGraph] = useState(0);
 
-  const totalCo2 = Number(dataCircle1[0].value) +  Number(dataCircle1[1].value);
+  const totalCo2 = Number(dataCircle1[0].value) + Number(dataCircle1[1].value);
 
   const CO2_EQUIVALENT_OF_ONE_TREE_IN_TONNE = 0.025;
   function onChange(e) {
@@ -65,7 +66,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
         <ResponsivePie
           {...commonProps}
           data={dataCircle2}
-          colors={["#00B460","#17B7B0","#3EDE8E","#004F45","#6EDBD7"]}
+          colors={["#00B460", "#17B7B0", "#3EDE8E", "#004F45", "#6EDBD7"]}
         />
       );
     } else if (switchGraph === 2) {
@@ -73,7 +74,15 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
         <ResponsivePie
           {...commonProps}
           data={dataCircle3}
-          colors={["#006AFF","#1A18BA","#003F5C","#69B6FF","#7872F4","#91ADFF","#341269"]}
+          colors={[
+            "#006AFF",
+            "#1A18BA",
+            "#003F5C",
+            "#69B6FF",
+            "#7872F4",
+            "#91ADFF",
+            "#341269",
+          ]}
         />
       );
     }
@@ -83,9 +92,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
     <>
       <div className="content-wrap-chart">
         <div className="title-content-chart">
-          <h3 className="styled-title-chart">
-            {totalCo2}
-          </h3>
+          <h3 className="styled-title-chart">{round(totalCo2, 2)}</h3>
           <span className="styled-subtitle-chart">{TONNE}</span>
         </div>
         <div className="body-content-chart">{content}</div>

@@ -41,12 +41,12 @@ export function AnticiperPage() {
         setData1([
           {
             id: "Vie Professionnelle",
-            value: bilanPro,
+            value: round(bilanPro, 2),
             color: "#3EDE8E",
           },
           {
             id: "Vie Personnelle",
-            value: bilanPerso,
+            value: round(bilanPerso, 2),
             color: "#17B7B0",
           },
         ]);
@@ -64,7 +64,7 @@ export function AnticiperPage() {
             return {
               ...item,
               id: item.thematic,
-              value: round(item.value / CO2_EQUIVALENT_IN_TONNE),
+              value: round(item.value / CO2_EQUIVALENT_IN_TONNE, 2),
             };
           })
         );
@@ -127,7 +127,10 @@ export function AnticiperPage() {
             items={[
               ...averages,
               {
-                value: Number(data1[0].value) + Number(data1[1].value),
+                value: round(
+                  Number(data1[0].value) + Number(data1[1].value),
+                  2
+                ),
                 description: "Vous êtes ici !",
                 color: "#D7C378",
               },
