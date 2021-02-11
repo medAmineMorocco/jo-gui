@@ -1,5 +1,7 @@
-import { CATEGORY, CATEGORY_CODE } from "@utils/category";
-import { round } from "@utils/utils";
+import { CATEGORY } from "@utils/category";
+import { round, groupBy, sum } from "@utils/utils";
+
+const CO2_EQUIVALENT_IN_TONNE = 1000;
 
 export function getTopActions(thematicsWithItsActionsByCategory) {
   return [
@@ -22,57 +24,59 @@ export function getTopActions(thematicsWithItsActionsByCategory) {
     .slice(0, 3);
 }
 
-export function getNewValues(checked, bilan, data_category, data_reduction) {
-  const bilanPro = bilan.find(
-    (item) => item.category === CATEGORY_CODE[CATEGORY.PRO]
+export function getBilanProAndPerso(bilan) {
+  const bilanByCategory = groupBy(bilan, "category");
+
+  const bilanPerso = round(
+    sum(bilanByCategory["Vie Personnelle"], "value") / CO2_EQUIVALENT_IN_TONNE
   );
-  const bilanPerso = bilan.find(
-    (item) => item.category === CATEGORY_CODE[CATEGORY.PERSO]
+  const bilanPro = round(
+    sum(bilanByCategory["Vie Professionnelle"], "value") /
+      CO2_EQUIVALENT_IN_TONNE
   );
-  let withActionsProNewValue;
-  let withActionsPersoNewValue;
-  let bilanProAfterReduction;
-  let bilanPersoAfterReduction;
-  if (checked) {
-    withActionsPersoNewValue =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
-        ? bilanPerso["avec actions"] + data_reduction * -1
-        : bilanPerso["avec actions"];
-    withActionsProNewValue =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
-        ? bilanPro["avec actions"] + data_reduction * -1
-        : bilanPro["avec actions"];
-    bilanPersoAfterReduction =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
-        ? round(bilanPerso["sans actions"] - withActionsPersoNewValue, 2)
-        : bilanPerso["sans actions"];
-    bilanProAfterReduction =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
-        ? round(bilanPro["sans actions"] - withActionsProNewValue, 2)
-        : bilanPro["sans actions"];
-  } else {
-    withActionsPersoNewValue =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
-        ? bilanPerso["avec actions"] - data_reduction * -1
-        : bilanPerso["avec actions"];
-    withActionsProNewValue =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
-        ? bilanPro["avec actions"] - data_reduction * -1
-        : bilanPro["avec actions"];
-    bilanPersoAfterReduction =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PERSO]
-        ? round(bilanPerso["sans actions"] + bilanPerso["avec actions"], 2)
-        : bilanPerso["sans actions"];
-    bilanProAfterReduction =
-      CATEGORY_CODE[data_category] === CATEGORY_CODE[CATEGORY.PRO]
-        ? round(bilanPro["sans actions"] + bilanPro["avec actions"], 2)
-        : bilanPro["sans actions"];
+
+  return {
+    bilanPro,
+    bilanPerso,
+    bilanByCategory,
+  };
+}
+
+export function getNewBilanAfterReduction(bilan, checkedActions) {
+  const checkedActionsByCategory = groupBy(checkedActions, "category");
+  const checkedProActions = checkedActionsByCategory["Vie professionnelle"];
+  const checkedPersoActions = checkedActionsByCategory["Vie personnelle"];
+
+  const { bilanPro, bilanPerso } = getBilanProAndPerso(bilan);
+
+  let bilanProAfterReduction = bilanPro;
+  let withActionsProNewValue = 0;
+  if (checkedProActions) {
+    checkedProActions.forEach(
+      (proAction) => (bilanProAfterReduction -= proAction.reduction)
+    );
+    withActionsProNewValue = round(sum(checkedProActions, "reduction"), 2);
+  }
+
+  let bilanPersoAfterReduction = bilanPerso;
+  let withActionsPersoNewValue = 0;
+  if (checkedPersoActions) {
+    checkedPersoActions.forEach(
+      (persoAction) => (bilanPersoAfterReduction -= persoAction.reduction)
+    );
+    withActionsPersoNewValue = round(sum(checkedPersoActions, "reduction"), 2);
   }
 
   return {
-    bilanPersoAfterReduction,
-    bilanProAfterReduction,
-    withActionsProNewValue: round(withActionsProNewValue, 2),
-    withActionsPersoNewValue: round(withActionsPersoNewValue, 2),
+    bilanProAfterReduction:
+      round(bilanProAfterReduction, 2) > 0
+        ? round(bilanProAfterReduction, 2)
+        : 0,
+    bilanPersoAfterReduction:
+      round(bilanPersoAfterReduction, 2) > 0
+        ? round(bilanPersoAfterReduction, 2)
+        : 0,
+    withActionsProNewValue,
+    withActionsPersoNewValue,
   };
 }

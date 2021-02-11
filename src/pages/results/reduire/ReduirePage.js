@@ -9,11 +9,15 @@ import {
   getTopsAndFlops,
 } from "@services/thematicService";
 import { getResponsesSummary } from "@services/responseService";
-import { getTopActions, getNewValues } from "@services/actionService";
+import {
+  getTopActions,
+  getNewBilanAfterReduction,
+  getBilanProAndPerso,
+} from "@services/actionService";
 import { notify } from "@utils/notification";
 import { requestState } from "@utils/requestState";
 import { CATEGORY, CATEGORY_CODE } from "@utils/category";
-import { sum, groupBy, timeOutIf, round } from "@utils/utils";
+import { sum, timeOutIf } from "@utils/utils";
 import * as dompurify from "dompurify";
 import { useMobileSize } from "@hooks/window";
 import {
@@ -28,8 +32,6 @@ import {
   REDUIRE_DESCRIPTION,
 } from "@utils/constants";
 import "./reduirePage.css";
-
-const CO2_EQUIVALENT_IN_TONNE = 1000;
 
 export function ReduirePage() {
   const [pageState, setPageState] = useState(requestState.LOADING);
@@ -87,28 +89,18 @@ export function ReduirePage() {
             );
             setTopActions(top3Actions);
             setTotalTopActions(sum(top3Actions, "gain") * -1);
-            const bilanByCategory = groupBy(bilan, "category");
-            const initialTotalPerso = round(
-              sum(bilanByCategory["Vie Personnelle"], "value") /
-                CO2_EQUIVALENT_IN_TONNE,
-              2
-            );
-            const initialTotalPro = round(
-              sum(bilanByCategory["Vie Professionnelle"], "value") /
-                CO2_EQUIVALENT_IN_TONNE,
-              2
-            );
+            const { bilanPro, bilanPerso } = getBilanProAndPerso(bilan);
             setBilan([
               {
                 category: CATEGORY_CODE[CATEGORY.PERSO],
-                "sans actions": initialTotalPerso,
+                "sans actions": bilanPerso,
                 "sans actionsColor": "#17B7B0",
                 "avec actions": 0,
                 "avec actionsColor": "grey",
               },
               {
                 category: CATEGORY_CODE[CATEGORY.PRO],
-                "sans actions": initialTotalPro,
+                "sans actions": bilanPro,
                 "sans actionsColor": "#3EDE8E",
                 "avec actions": 0,
                 "avec actionsColor": "grey",
@@ -123,31 +115,44 @@ export function ReduirePage() {
       );
   }, []);
 
-  const onCheckAction = (event) => {
-    const { checked, data_reduction, data_category } = event.target;
-    const {
-      bilanProAfterReduction,
-      bilanPersoAfterReduction,
-      withActionsProNewValue,
-      withActionsPersoNewValue,
-    } = getNewValues(checked, bilan, data_category, data_reduction);
-    const newBilan = [
-      {
-        category: CATEGORY_CODE[CATEGORY.PERSO],
-        "sans actions": bilanPersoAfterReduction,
-        "sans actionsColor": "#17B7B0",
-        "avec actions": withActionsPersoNewValue,
-        "avec actionsColor": "grey",
-      },
-      {
-        category: CATEGORY_CODE[CATEGORY.PRO],
-        "sans actions": bilanProAfterReduction,
-        "sans actionsColor": "#3EDE8E",
-        "avec actions": withActionsProNewValue,
-        "avec actionsColor": "grey",
-      },
-    ];
-    setBilan(newBilan);
+  const onCheckAction = () => {
+    setTimeout(() => {
+      const checkedActions = [
+        ...document.querySelectorAll(".ant-checkbox-checked"),
+      ].map((el) => {
+        const input = el.childNodes[0];
+        return {
+          category: input.getAttribute("data-category"),
+          reduction: Number(input.getAttribute("data-reduction")) * -1,
+        };
+      });
+      const {
+        bilanProAfterReduction,
+        bilanPersoAfterReduction,
+        withActionsProNewValue,
+        withActionsPersoNewValue,
+      } = getNewBilanAfterReduction(
+        JSON.parse(window.sessionStorage.getItem("bilan")),
+        checkedActions
+      );
+      const newBilan = [
+        {
+          category: CATEGORY_CODE[CATEGORY.PERSO],
+          "sans actions": bilanPersoAfterReduction,
+          "sans actionsColor": "#17B7B0",
+          "avec actions": withActionsPersoNewValue,
+          "avec actionsColor": "grey",
+        },
+        {
+          category: CATEGORY_CODE[CATEGORY.PRO],
+          "sans actions": bilanProAfterReduction,
+          "sans actionsColor": "#3EDE8E",
+          "avec actions": withActionsProNewValue,
+          "avec actionsColor": "grey",
+        },
+      ];
+      setBilan(newBilan);
+    });
   };
 
   if (pageState === requestState.LOADING) {

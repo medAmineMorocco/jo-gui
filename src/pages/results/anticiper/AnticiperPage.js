@@ -3,12 +3,13 @@ import { useHistory } from "react-router-dom";
 import { Spin } from "antd";
 import { getUserProgess } from "@services/userService";
 import { getResponsesSummary } from "@services/responseService";
+import { getBilanProAndPerso } from "@services/actionService";
 import { notify } from "@utils/notification";
 import { requestState } from "@utils/requestState";
 import { ChartResult } from "@components/result/chartResult/ChartResult";
 import { TimelineChart } from "@components/timelineChart/TimelineChart";
 import { averages } from "./averages";
-import { groupBy, sum, round, timeOutIf } from "@utils/utils";
+import { round, timeOutIf } from "@utils/utils";
 import "./anticiperPage.css";
 
 export function AnticiperPage() {
@@ -33,22 +34,19 @@ export function AnticiperPage() {
         window.sessionStorage.setItem("bilan", JSON.stringify(bilan));
       },
       () => {
-        const bilanByCategory = groupBy(bilan, "category");
+        const { bilanByCategory, bilanPro, bilanPerso } = getBilanProAndPerso(
+          bilan
+        );
+
         setData1([
           {
             id: "Vie Professionnelle",
-            value: round(
-              sum(bilanByCategory["Vie Professionnelle"], "value") /
-                CO2_EQUIVALENT_IN_TONNE
-            ),
+            value: bilanPro,
             color: "#3EDE8E",
           },
           {
             id: "Vie Personnelle",
-            value: round(
-              sum(bilanByCategory["Vie Personnelle"], "value") /
-                CO2_EQUIVALENT_IN_TONNE
-            ),
+            value: bilanPerso,
             color: "#17B7B0",
           },
         ]);
