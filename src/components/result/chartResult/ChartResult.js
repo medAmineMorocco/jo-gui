@@ -92,7 +92,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
     <>
       <div className="content-wrap-chart">
         <div className="title-content-chart">
-          <h3 className="styled-title-chart">{round(totalCo2, 2)}</h3>
+          <h3 className="styled-title-chart">{round(totalCo2)}</h3>
           <span className="styled-subtitle-chart">{TONNE}</span>
         </div>
         <div className="body-content-chart">{content}</div>

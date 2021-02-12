@@ -248,10 +248,6 @@ export function ReduirePage() {
       <div className="bars-graph-section">
         <div className="bars-container">
           <StackedBar data={bilan} />
-          <div className="bars-legend">
-            <div className="legend-box" />
-            <span className="legend-label">Actions de réduction</span>
-          </div>
         </div>
       </div>
       <div className="panels-section section-reduire">

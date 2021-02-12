@@ -20,7 +20,6 @@
 .reduire-description-section {
   margin-top: 40px;
   font-family: "Paris2024";
-  font-weight: 700;
   font-style: normal;
   font-size: 3vh;
   line-height: 24px;
@@ -62,26 +61,6 @@
   margin-bottom: 16px;
 }
 
-.bars-legend {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-}
-
-.legend-box {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  background-color: grey;
-}
-
-.legend-label {
-  font-family: "Source Sans Pro";
-  color: var(--main-color);
-  font-weight: 600;
-}
 .panels-section.section-reduire {
   height: 40vh;
   overflow-y: scroll;
