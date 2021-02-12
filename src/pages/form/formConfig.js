@@ -76,7 +76,7 @@ export const config = {
     },
     next: {
       category: CATEGORY.PRO,
-      details: "Déplacements Personnels Professionnels",
+      details: "Déplacements professionnels",
     },
   },
   5: {

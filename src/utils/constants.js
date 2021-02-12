@@ -26,7 +26,7 @@ export const ABOUT_CONTENT3 =
 export const MAIN_DESC1 =
   "Dans la lutte contre le changement climatique, chaque action compte !";
 export const MAIN_DESC2 =
-  "C’est pourquoi Paris 2024 a créé le Coach Climat, qui permet de calculer vos émissions de CO2 annuelles, votre empreinte carbone.";
+  "C’est pourquoi Paris 2024 a créé le Coach Climat, qui permet de calculer vos émissions de CO₂ annuelles, votre empreinte carbone.";
 export const MAIN_DESC3 =
   "Il distingue les émissions liées à la vie professionnelle, des émissions liées à la vie personnelle pour visualiser l'impact concret de vos activités et consommations, et donner des moyens pour le réduire.";
 
@@ -34,7 +34,7 @@ export const SECTION1_TITLE = "1/3 Comment ça marche ?";
 export const SECTION1_PARAG0 = `<b>1. Naviguez en tout sécurité</b></br>
 Toutes les informations saisies sont strictement confidentielles et vous êtes la seule personne à y avoir accès 😉`;
 export const SECTION1_PARAG1 = `<b>2. Mesurez votre impact </b></br>
-Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans la vie quotidienne au bureau, et à la maison, vous allez pouvoir mesurer vos émissions de CO2 et identifier les principales sources.`;
+Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans la vie quotidienne au bureau, et à la maison, vous allez pouvoir mesurer vos émissions de CO₂ et identifier les principales sources.`;
 export const SECTION1_PARAG2 = `<b>3. Découvre les résultats</b></br>
 Quels sont les postes où vous émettez le plus, et où vous situez-vous ? Le Coach Climat vous donne les clefs pour devenir un véritable champion du climat, à vous de jouer ! `;
 export const SECTION1_PARAG3 = `<b>4. Choisissez vos actions de réduction</b></br>
@@ -43,7 +43,7 @@ Pour chaque poste d’émission, passez à l’action ! A partir de votre empr
 export const SECTION2_TITLE =
   "2/3 Qu’est-ce que l’impact carbone et pourquoi le calculer ?";
 export const SECTION2_PARAG1 = `<b>1. Qu’est ce-ce que l’impact carbone ?</b></br>
-La multiplication des activités humaines a engendré l’augmentation drastique des émissions et de la concentration de Gaz à effet de Serre (GES) dans l’atmosphère, ayant pour conséquence d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de tes émissions de GES ramenées en tonne équivalent CO2 (teqCO2). Agir sur ses émissions de GES, c’est contribuer à la lutte contre le changement climatique.`;
+La multiplication des activités humaines a engendré l’augmentation drastique des émissions et de la concentration de Gaz à effet de Serre (GES) dans l’atmosphère, ayant pour conséquence d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de tes émissions de GES ramenées en tonne équivalent CO₂ (teqCO₂). Agir sur ses émissions de GES, c’est contribuer à la lutte contre le changement climatique.`;
 export const SECTION2_PARAG2 = `<b>2. Pourquoi le calculer ?</b></br>
 Calculer son impact carbone, c'est la première étape pour devenir un acteur de la lutte contre le changement climatique en se fixant des objectifs pour réduire son impact carbone individuel. 
 Cela fait partie de la méthode AERCM (Anticiper, Eviter, Réduire, Compenser, et Mobiliser) adoptée par Paris 2024, afin de respecter ses engagements, et atteindre la neutralité carbone. 
@@ -136,7 +136,7 @@ export const TITLE_ECRANS =
   "Nombre d'écrans additionels mis à votre disposition";
 
 // Utilisation du numérique (pro)
-export const TAILLE_BOITE = "Taille de votre boite mail (en Go)";
+export const TAILLE_BOITE = "Taille de votre boîte mail (en Go)";
 export const TAILLE_BOITE_INFO =
   "Pour trouver cette information, checkez le « pop-in » conseil plus bas !";
 export const TAILLE_BOITE_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -203,14 +203,14 @@ export const QUESTION11_NBR_VOLS_AR =
 
 // Restauration
 export const REPAS_QUESTION1 =
-  "Sur vos 5 déjeuners au bureau, quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porc et volailles), poisson, végétarien (œufs et produits laitiers), ou végétalien)";
+  "Sur vos 5 déjeuners au bureau, quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien)";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
 export const SAVIER_VOUS_RESTAU =
   "Une tasse de café émet presque 5 fois plus de CO₂ dans l'atmosphère qu'une tasse de thé. Cela est dû notamment au processus de transformation et au transport nécessaires à la production d'une tasse de café.";
 export const CURSEUR_BOISSONS =
-  "Combien de boissons chaudes prends-tu par jour ?";
+  "Combien de boissons chaudes prenez-vous par jour ?";
 
 ///////////////////////////////////////
 //   Form - Perso
@@ -335,8 +335,8 @@ export const EQUIPMENT_QUESTION1 = "Nombre de réfrigérateurs";
 export const EQUIPMENT_QUESTION2 = "Nombre de congélateurs";
 export const EQUIPMENT_QUESTION3 = "Nombre de lave-linges";
 export const EQUIPMENT_QUESTION4 = "Nombre de lave-vaisselles";
-export const EQUIPMENT_QUESTION5 = "Nombre de four traditionnel";
-export const EQUIPMENT_QUESTION6 = "Nombre de four micro-onde";
+export const EQUIPMENT_QUESTION5 = "Nombre de fours traditionnels";
+export const EQUIPMENT_QUESTION6 = "Nombre de fours micro-ondes";
 export const EQUIPMENT_QUESTION = "Appareils renouvelés en moyenne tous les";
 export const EQUIPMENT_QUESTION8 = "Nombre de télévisions";
 export const EQUIPMENT_QUESTION10 = "Avez-vous la fibre chez vous ?";
@@ -356,12 +356,12 @@ export const MATERIELS_QUESTION2_LABEL =
   "Nombre de voitures Polyvalantes, Monospaces Compacts";
 export const MATERIELS_QUESTION3_LABEL =
   "Nombre de voitures SUV, berlines, monospaces";
-export const MATERIELS_QUESTION4_LABEL = "Renouvelés tous les";
-export const MATERIELS_QUESTION5_LABEL = "Nombre d'Ordinateurs fixes";
+export const MATERIELS_QUESTION4_LABEL = "Renouvelées tous les";
+export const MATERIELS_QUESTION5_LABEL = "Nombres d'ordinateurs fixes";
 export const MATERIELS_QUESTION5_TOOLTIP =
   "Ne pensez plus qu'à vos consommations personnelles";
 export const MATERIELS_QUESTION6_LABEL = "Renouvelés tous les";
-export const MATERIELS_QUESTION7_LABEL = "Nombre d'Ordinateurs portables";
+export const MATERIELS_QUESTION7_LABEL = "Nombres d'ordinateurs portables";
 export const MATERIELS_QUESTION8_LABEL = "Renouvelés tous les";
 export const MATERIELS_QUESTION9_LABEL = "Nombre de Smartphones";
 export const MATERIELS_QUESTION10_LABEL = "Nombre de tablettes";
