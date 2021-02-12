@@ -31,7 +31,7 @@ context('Form | Services publics step', () => {
 			cy.visit('/form');
 			cy.wait(1000);
 
-			cy.get('#5f557a78e938b').should('have.attr', 'value', '1283,76 kgCO2/citoyen');
+			cy.get('#5f557a78e938b').should('have.attr', 'value', '1283,76 kgCO₂/citoyen');
 		});
 	});
 });

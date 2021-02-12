@@ -65,7 +65,7 @@ export function PersoStep7({ step }) {
           name="5f557a78e938b"
           label={QUESTION1_LABEL}
           disabled={true}
-          defaultValue="1283,76 kgCO2/citoyen"
+          defaultValue="1283,76 kgCO₂/citoyen"
           tooltipTitle={false}
         />
       </div>
