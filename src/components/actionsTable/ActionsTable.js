@@ -24,7 +24,7 @@ export function ActionsTable({ columns, actions, onChange, showGain = true }) {
                 key + 1
               }. ${description}`}</td>
               {showGain && (
-                <td className="table-contents-gain">{round(gain, 2)}</td>
+                <td className="table-contents-gain">{round(gain)}</td>
               )}
               <td className="table-contents-actions">
                 <Checkbox

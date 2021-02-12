@@ -125,7 +125,7 @@ context('Réduire page', () => {
 
             cy.get('@firstAction').check();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.have.text('1.86');
+                expect(el).to.have.text('1.9');
             });
 
             cy.get('@firstAction').uncheck();

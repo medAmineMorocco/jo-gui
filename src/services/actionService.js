@@ -55,7 +55,7 @@ export function getNewBilanAfterReduction(bilan, checkedActions) {
     checkedProActions.forEach(
       (proAction) => (bilanProAfterReduction -= proAction.reduction)
     );
-    withActionsProNewValue = round(sum(checkedProActions, "reduction"), 2);
+    withActionsProNewValue = round(sum(checkedProActions, "reduction"));
   }
 
   let bilanPersoAfterReduction = bilanPerso;
@@ -64,18 +64,14 @@ export function getNewBilanAfterReduction(bilan, checkedActions) {
     checkedPersoActions.forEach(
       (persoAction) => (bilanPersoAfterReduction -= persoAction.reduction)
     );
-    withActionsPersoNewValue = round(sum(checkedPersoActions, "reduction"), 2);
+    withActionsPersoNewValue = round(sum(checkedPersoActions, "reduction"));
   }
 
   return {
     bilanProAfterReduction:
-      round(bilanProAfterReduction, 2) > 0
-        ? round(bilanProAfterReduction, 2)
-        : 0,
+      round(bilanProAfterReduction) > 0 ? round(bilanProAfterReduction) : 0,
     bilanPersoAfterReduction:
-      round(bilanPersoAfterReduction, 2) > 0
-        ? round(bilanPersoAfterReduction, 2)
-        : 0,
+      round(bilanPersoAfterReduction) > 0 ? round(bilanPersoAfterReduction) : 0,
     withActionsProNewValue,
     withActionsPersoNewValue,
   };
