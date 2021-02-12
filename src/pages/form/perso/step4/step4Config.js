@@ -27,7 +27,7 @@ export const question2_questions = [
 export const selectDetail = [
   {
     type: "select",
-    firstText: "Consulter Internet en wifi plutôt qu'en 4G",
+    firstText: "Consultez Internet en wifi plutôt qu'en 4G",
     name: "5f60a1b0cce8c",
     options: [
       { text: "oui", value: true },

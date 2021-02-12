@@ -11,6 +11,7 @@
 
 .footer-detail {
   cursor: pointer;
+  font-family: Paris2024;
 }
 
 @media (max-width: 767px) {
