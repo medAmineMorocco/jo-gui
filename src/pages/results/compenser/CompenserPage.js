@@ -21,7 +21,14 @@ export function CompenserPage() {
         </div>
         <div>
           <Card title={COMPENSER_PANEL_TITLE2} backgroundColor="#17b7b0">
-            <p className="card-description">{COMPENSER_DESCRIPTION2}</p>
+            <p
+              className="card-description"
+              dangerouslySetInnerHTML={{
+                __html: dompurify.sanitize(COMPENSER_DESCRIPTION2, {
+                  ADD_ATTR: ["target"],
+                }),
+              }}
+            />
           </Card>
         </div>
       </div>

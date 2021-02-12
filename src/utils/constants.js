@@ -112,14 +112,6 @@ export const ANTICIPER_SUB_TITLE2 = " arbres par an !";
 export const MAILTO = " coach-climat@paris2024.org";
 export const ANTICIPER_FOOTER = "Faites-nous vos retours à l’adresse ";
 export const TONNE = "tCO₂eq";
-export const COMPENSER_PANEL_TITLE1 =
-  "POUR VOTRE VIE PROFESSIONNELLE, Paris 2024 s’occupe de tout";
-export const COMPENSER_PANEL_TITLE2 =
-  "POUR VOTRE VIE PERSONNELLE, vous avez LE POUVOIR D’AGIR !";
-export const COMPENSER_DESCRIPTION1 =
-  "Paris 2024 compense ses émissions résiduelles via un projet de compensation labellisé et responsable, aujourd’hui en cours de discussions.​";
-export const COMPENSER_DESCRIPTION2 =
-  "Il est possible de compenser ses émissions personnelles, en contribuant à un projet de compensation labélisé de préférence, via des organisations comme l’ONU.​​";
 
 ///////////////////////////////////////
 //   Form - Pro
@@ -416,4 +408,12 @@ export const REDUIRE_DESCRIPTION = `<p>
 ///////////////////////////////////////
 //   Compenser page
 //////////////////////////////////////
+export const COMPENSER_PANEL_TITLE1 =
+  "POUR VOTRE VIE PROFESSIONNELLE, Paris 2024 s’occupe de tout";
+export const COMPENSER_PANEL_TITLE2 =
+  "POUR VOTRE VIE PERSONNELLE, vous avez LE POUVOIR D’AGIR !";
+export const COMPENSER_DESCRIPTION1 =
+  "Paris 2024 compense ses émissions résiduelles via un projet de compensation labellisé et responsable, aujourd’hui en cours de discussions.​";
+export const COMPENSER_DESCRIPTION2 =
+  'Il est possible de compenser ses émissions personnelles, en contribuant à un projet de compensation labélisé de préférence, via des organisations comme l’<a href="https://offset.climateneutralnow.org/allprojects" target="_blank">ONU</a>.';
 export const COMPENSER_DESCRIPTION_VIDEO = `<p>Compenser, c’est quoi ? Explications en <span style="color: var(--main-color)">vidéo</span> !</p>`;

@@ -1,7 +1,7 @@
 import { sizes } from '../utils';
 
 context('Compenser page', () => {
-	it.only('should show compenser page', () => {
+	it('should show compenser page', () => {
 		cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
 
 		sizes.forEach((size) => {
