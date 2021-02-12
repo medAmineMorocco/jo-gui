@@ -9,7 +9,7 @@ context('Intro page', () => {
 				win.sessionStorage.clear();
 				cy.login('email@paris2024.org');
                 cy.visit("/metho");
-				cy.get('button:contains(Prêt à prendre le départ ?)').click({ force: true });
+				cy.get('button:contains(Prête.e à prendre le départ ?)').click({ force: true });
 
 				cy.url()
 					.should('include', '/intro')

@@ -5,8 +5,7 @@ export const LOGIN = "ok";
 export const IDENTIFIER_REQUIRED = "⚠ Veuillez renseigner votre email";
 export const PASSWORD_REQUIRED = "⚠ Veuillez renseigner votre Mot de passe";
 export const IDENTIFIER_NOT_VALID = "⚠ Adresse email non valide";
-export const TERMS_DESCRIPTION =
-  "J'ai lu et j'accepte les conditions générales d'utilisation du Coach Climat";
+export const TERMS_DESCRIPTION = `J'ai lu et j'accepte les <u>Conditions générales d'utilisation</u> du Coach Climat`;
 export const CGU_MSG_ERROR =
   "⚠ Vous devez accepter les conditions avant de soumettre";
 
@@ -15,7 +14,7 @@ export const HERO_TITLE1 = "Coach";
 export const HERO_TITLE2 = "Climat";
 export const HERO_DESCRIPTION =
   "Réduisez-vos émissions de CO₂ pour contribuer à la neutralité carbone des Jeux !";
-export const FOOTER_START_ACTION = "Prêt à prendre le départ ?";
+export const FOOTER_START_ACTION = "Prête.e à prendre le départ ?";
 export const ABOUT_TITLE = "à propos";
 export const ABOUT_CONTENT1 =
   "Paris 2024 s’est engagé à réduire de moitié les émissions de CO₂ liées à l’organisation des Jeux, du collaborateur, jusqu’au spectateur.";
@@ -34,8 +33,8 @@ export const SECTION1_TITLE = "1/3 Comment ça marche ?";
 export const SECTION1_PARAG0 = `<b>1. Naviguez en tout sécurité</b></br>
 Toutes les informations saisies sont strictement confidentielles et vous êtes la seule personne à y avoir accès 😉`;
 export const SECTION1_PARAG1 = `<b>2. Mesurez votre impact </b></br>
-Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans la vie quotidienne au bureau, et à la maison, vous allez pouvoir mesurer vos émissions de CO₂ et identifier les principales sources.`;
-export const SECTION1_PARAG2 = `<b>3. Découvre les résultats</b></br>
+Le premier pas pour réduire son impact, c’est d’abord le comprendre. En répondant à des questions sur 12 thématiques, dans la vie quotidienne au bureau, et à la maison, vous allez pouvoir mesurer vos émissions de CO2 et identifier les principales sources.`;
+export const SECTION1_PARAG2 = `<b>3. Découvrez les résultats</b></br>
 Quels sont les postes où vous émettez le plus, et où vous situez-vous ? Le Coach Climat vous donne les clefs pour devenir un véritable champion du climat, à vous de jouer ! `;
 export const SECTION1_PARAG3 = `<b>4. Choisissez vos actions de réduction</b></br>
 Pour chaque poste d’émission, passez à l’action ! A partir de votre empreinte carbone, le Coach Climat vous proposera des actions de réduction concrètes et applicables au quotidien. Choisissez celles qui vous paraissent atteignables et devenez un champion du climat. `;
@@ -43,7 +42,7 @@ Pour chaque poste d’émission, passez à l’action ! A partir de votre empr
 export const SECTION2_TITLE =
   "2/3 Qu’est-ce que l’impact carbone et pourquoi le calculer ?";
 export const SECTION2_PARAG1 = `<b>1. Qu’est ce-ce que l’impact carbone ?</b></br>
-La multiplication des activités humaines a engendré l’augmentation drastique des émissions et de la concentration de Gaz à effet de Serre (GES) dans l’atmosphère, ayant pour conséquence d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de tes émissions de GES ramenées en tonne équivalent CO₂ (teqCO₂). Agir sur ses émissions de GES, c’est contribuer à la lutte contre le changement climatique.`;
+La multiplication des activités humaines a engendré l’augmentation drastique des émissions et de la concentration de Gaz à effet de Serre (GES) dans l’atmosphère, ayant pour conséquence d’augmenter la température terrestre. Ces émissions peuvent être mesurées, pour chaque individu et pour chaque activité. L’impact carbone, c’est l’empreinte de vos émissions de GES ramenées en tonne équivalent CO2 (teqCO2). Agir sur ses émissions de GES, c’est contribuer à la lutte contre le changement climatique.`;
 export const SECTION2_PARAG2 = `<b>2. Pourquoi le calculer ?</b></br>
 Calculer son impact carbone, c'est la première étape pour devenir un acteur de la lutte contre le changement climatique en se fixant des objectifs pour réduire son impact carbone individuel. 
 Cela fait partie de la méthode AERCM (Anticiper, Eviter, Réduire, Compenser, et Mobiliser) adoptée par Paris 2024, afin de respecter ses engagements, et atteindre la neutralité carbone. 
@@ -53,14 +52,14 @@ Oui. Réduire son impact carbone d’une tonne, c’est réduire les émissions 
 `;
 
 export const SECTION3_TITLE = "3/3 Comment est-il calculé ?";
-export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME, <b>cet outil de diagnostic estime vos émissions carbone</b> en associant tes activités à la moyenne des émissions qu’elles impliquent, appelée « facteur d’émission »`;
+export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME, <b>cet outil de diagnostic estime vos émissions carbone</b> en associant vos activités à la moyenne des émissions qu’elles impliquent, appelée « facteur d’émission »`;
 export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz </b>(CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques`;
 export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence. <b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties grâce aux facteurs d’émissions.`;
-export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre ta vie professionnelle et personnelle</b> pour une meilleure lecture.`;
+export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre vôtre vie professionnelle et personnelle</b> pour une meilleure lecture.<br/><br/> <b>Paris 2024 innove</b> en vous proposant un outil sur les volets pro et perso. <b>Les repères de comparaison</b> proposés dans les résultats (issus des calculs de Carbone 4 et de l’ADEME), <b>vous permettent de vous situer</b>, même si ces repères ne prennent pas en compte tous les aspects de la vie professionnelle (comme les consommations énergétiques du siège social par exemple). <b>Le Coach Climat est plus rigoureux</b>, et nous incite à réduire toutes nos émissions !
+`;
 
-//export const WEBSITE_INFO_MSG = `<b>Plus d’informations ?</b> Consulte notre page dédiée : <div className="website-url"><a href="https://www.paris2024.org/fr/methode-carbone" target="_blank" rel="noreferrer noopener">https://www.paris2024.org/fr/methode-carbone</a></div>`;
 export const WEBSITE_INFO_MSG =
-  "Plus d'informations ? Consulte notre page dédiée :";
+  "Plus d'informations ? Consultez notre page dédiée :";
 export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
 
 export const CONTACT_LEGAL_MENTION = "Mentions légales";

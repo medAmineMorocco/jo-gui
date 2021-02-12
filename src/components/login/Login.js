@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Form } from "antd";
+import * as dompurify from "dompurify";
 import { StyledTitle } from "@components/title/StyledTitle";
 import { BoxSides } from "@components/box/BoxSides";
 import { useTabletOrMobileSize } from "@hooks/window";
@@ -111,9 +112,13 @@ export function Login() {
 
         <div className="CGU-container">
           <Checkbox value={isCGUchecked} onChange={onCGUcheckChange} />
-          <span className="CGU-description" onClick={openCGU}>
-            {TERMS_DESCRIPTION}
-          </span>
+          <span
+            className="CGU-description"
+            onClick={openCGU}
+            dangerouslySetInnerHTML={{
+              __html: dompurify.sanitize(TERMS_DESCRIPTION),
+            }}
+          ></span>
         </div>
         {isCGUmsgErrorShown && <p className="CGU-msg-error">{CGU_MSG_ERROR}</p>}
 

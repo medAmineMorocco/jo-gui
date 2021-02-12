@@ -37,7 +37,7 @@ export function FooterWithDetails() {
               )
             }
           >
-            Condition générales d’utilisation
+            Conditions générales d’utilisation
           </span>
         </div>
         <div className="footer-details">
