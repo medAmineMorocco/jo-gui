@@ -40,7 +40,7 @@ context('Anticiper page', () => {
             cy.visit("/results");
 
             cy.url().should('include', '/results');
-            cy.get(`body:contains("Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
+            cy.get(`body:contains("Votre état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
                 .should("exist");
 
         });
@@ -56,7 +56,7 @@ context('Anticiper page', () => {
             cy.visit("/results");
 
             cy.url().should('include', '/results');
-            cy.get(`body:contains("Ton bilan ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
+            cy.get(`body:contains("Votre bilan ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
                 .should("exist");
 
         });

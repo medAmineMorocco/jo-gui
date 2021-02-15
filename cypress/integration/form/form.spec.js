@@ -35,7 +35,7 @@ context('Form wizard', () => {
 
 			cy.url().should('include', '/form');
 			cy.get(
-				`body:contains("Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement")`
+				`body:contains("Votre état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement")`
 			).should('exist');
 		});
 	});

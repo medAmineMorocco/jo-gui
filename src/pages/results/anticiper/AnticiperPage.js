@@ -86,14 +86,14 @@ export function AnticiperPage() {
             .then((bilan) => manageBilan(bilan))
             .catch(() =>
               manageErrorResponse(
-                "Ton bilan ne peut pas être récupéré, veuillez réessayer ultérieurement"
+                "Votre bilan ne peut pas être récupéré, veuillez réessayer ultérieurement"
               )
             );
         }
       })
       .catch(() =>
         manageErrorResponse(
-          "Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
+          "Votre état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
         )
       );
   }, [history]);

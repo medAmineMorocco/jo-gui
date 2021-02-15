@@ -34,7 +34,7 @@ export function FormWizard() {
         setTimeout(() => {
           setPageState(requestState.ERROR);
           notify(
-            "Ton état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
+            "Votre état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement"
           );
         }, 500);
       });
