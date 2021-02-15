@@ -24,16 +24,11 @@ export function FormWizard() {
 
   const getCurrentStep = useCallback(() => {
     getUserProgess()
-      .then((response) => {
-        if (response.progress === "VIE_PROFESIONAL") {
-          setTimeout(() => {
-            setActiveStep(Number(response.step));
-            setPageState(requestState.SUCCESS);
-          }, 500);
-        } else if (response.progress === "RESULTATS") {
-          setActiveStep(0);
+      .then(({ step }) => {
+        setTimeout(() => {
+          setActiveStep(Number(step));
           setPageState(requestState.SUCCESS);
-        }
+        }, 500);
       })
       .catch(() => {
         setTimeout(() => {
