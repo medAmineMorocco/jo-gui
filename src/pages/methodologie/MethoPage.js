@@ -35,12 +35,6 @@ import {
   SECTION3_PARAG4,
   WEBSITE_INFO_MSG,
   WEBSITE_URL,
-  CONTACT_LEGAL_MENTION,
-  CONTACT_ACCESSIBILITY_SITES,
-  CONTACT_PRIVACY_POLICY,
-  CONTACT_COOKIES,
-  CONTACT_CALL_TENDER,
-  CONTACT_TERMS_PURCHASE,
 } from "@utils/constants";
 import { scrollToTopOfThePage } from "@hooks/window";
 import { useHistory } from "react-router-dom";
@@ -141,19 +135,6 @@ export function MethoPage(props) {
           <a href="#0">{WEBSITE_URL}</a>
         </div>
       </div>
-
-      <div className="metho-contacts">
-        <div className="metho-contacts-urls">
-          <a href="#0">{CONTACT_LEGAL_MENTION}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_ACCESSIBILITY_SITES}</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_PRIVACY_POLICY}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_COOKIES}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_CALL_TENDER}</a>&nbsp;&nbsp;-&nbsp;&nbsp;
-          <a href="#0">{CONTACT_TERMS_PURCHASE}</a>
-        </div>
-      </div>
-
       <div className="metho-footer-picture"></div>
 
       <Footer style={{ display: "flex", justifyContent: "space-between" }}>

@@ -132,28 +132,6 @@
   margin: 5vh auto;
 }
 
-.metho-contacts {
-  background-color: #323232;
-  width: 100%;
-  height: auto;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  text-align: center;
-  padding: 6vh 0;
-}
-
-.metho-contacts-urls {
-  font-family: Source Sans Pro;
-  margin: 0 auto;
-  width: 80%;
-  position: relative;
-}
-
-.metho-contacts-urls a {
-  color: #ffffff;
-  margin: 0.5vw;
-}
-
 .metho-footer-picture {
   background: url("/images/footer-picture.png");
   width: 100%;
@@ -225,28 +203,6 @@
     margin: 9vw auto;
   }
 
-  .metho-contacts {
-    background: url("/images/contact-background.png");
-    background-size: 100% auto;
-    font-size: 16px;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    padding: 2vh 0;
-  }
-
-  .metho-contacts-urls {
-    margin: 0 auto;
-    width: 80%;
-    position: relative;
-    line-height: 8vw;
-  }
-
-  .metho-contacts-urls > a {
-    margin: 2vw;
-    font-size: 3vw;
-  }
-
   .metho-footer-picture {
     height: 42vh;
   }
@@ -309,15 +265,6 @@
     margin: 9vw auto;
   }
 
-  .metho-contacts {
-    height: auto;
-    padding: 4vh 0;
-  }
-
-  .metho-contacts-urls {
-    font-size: 26px;
-    width: 80%;
-  }
   .footer-action-start {
     width: auto;
   }
