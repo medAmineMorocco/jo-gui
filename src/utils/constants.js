@@ -372,10 +372,7 @@ export const MATERIELS_QUESTION16_LABEL =
 //   Anticiper page
 //////////////////////////////////////
 
-export const SUB_TEXT_TIMELINE = `Le Coach Climat intègre des émissions liées à Paris 2024 (énergies,
-  achats…) quand d’autres calculateurs ne le font pas encore, <b>c’est un parti pris innovant !</b> 
-  Ces valeurs d’impact sont donc seulement des points de repères. Sources et explications dans la
-  <a href="/metho">
+export const SUB_TEXT_TIMELINE = `Découvrez comment ces repères sont calculés dans la <a href="/metho">
     <u>Méthodologie</u>
   </a>`;
 
