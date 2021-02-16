@@ -41,6 +41,13 @@ export function FormWizard() {
   }, []);
 
   useEffect(() => {
+    window.sessionStorage.removeItem("progress");
+    window.sessionStorage.removeItem("bilan");
+    window.sessionStorage.removeItem("topsAndFlops");
+    window.sessionStorage.removeItem("thematicsWithItsActionsByCategory");
+  }, []);
+
+  useEffect(() => {
     getCurrentStep();
   }, [getCurrentStep]);
 
