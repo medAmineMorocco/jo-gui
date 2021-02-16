@@ -11,7 +11,7 @@ context('Anticiper page', () => {
                 win.sessionStorage.clear();
                 cy.login('email@paris2024.org');
 
-                cy.visit("/results");
+                cy.visit("/results/anticiper");
 
                 cy.url()
                     .should('include', '/results')
@@ -37,7 +37,7 @@ context('Anticiper page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/anticiper");
 
             cy.url().should('include', '/results');
             cy.get(`body:contains("Votre état d'avancement ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
@@ -53,7 +53,7 @@ context('Anticiper page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/anticiper");
 
             cy.url().should('include', '/results');
             cy.get(`body:contains("Votre bilan ne peut pas être récupéré, veuillez réessayer ultérieurement")`)
@@ -68,7 +68,7 @@ context('Anticiper page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/anticiper");
 
             cy.url().should('include', '/home');
         });

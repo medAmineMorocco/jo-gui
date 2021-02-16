@@ -39,7 +39,7 @@ export function HomeButton({ doesUserFinishAllForms }) {
         >
           <Button
             className="size-image-home"
-            href="/results"
+            href="/results/anticiper"
             style={{ backgroundImage: "url(/images/section-1.jpg)" }}
             disabled={!doesUserFinishAllForms}
           >
@@ -66,7 +66,7 @@ export function HomeButton({ doesUserFinishAllForms }) {
         >
           <Button
             className="size-image-home"
-            href="/results"
+            href="/results/mobiliser"
             style={{ backgroundImage: "url(/images/section-2.jpg)" }}
             disabled={!doesUserFinishAllForms}
           >

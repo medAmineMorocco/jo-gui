@@ -32,7 +32,7 @@ function App() {
       <PrivateRoute exact path="/form">
         <FormWizard />
       </PrivateRoute>
-      <PrivateRoute exact path="/results">
+      <PrivateRoute exact path="/results/:tab">
         <ResultsPage />
       </PrivateRoute>
     </BrowserRouter>

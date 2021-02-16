@@ -48,7 +48,7 @@ context('Home page', () => {
         
     });
 
-    it.only('should enable all button when the user completes all form ', () => {
+    it('should enable all button when the user completes all form ', () => {
         cy.window().then((win) => {
             win.sessionStorage.clear();
             cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
