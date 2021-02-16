@@ -14,7 +14,7 @@ context('Réduire page', () => {
                 win.sessionStorage.clear();
                 cy.login('email@paris2024.org');
 
-                cy.visit("/results");
+                cy.visit("/results/reduire");
                 cy.get('label span:contains(Réduire)').click();
 
                 cy.wait(1000);
@@ -32,7 +32,7 @@ context('Réduire page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
@@ -50,7 +50,7 @@ context('Réduire page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
@@ -68,7 +68,7 @@ context('Réduire page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
 
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
@@ -86,7 +86,7 @@ context('Réduire page', () => {
         cy.window().then(win => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
 
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
@@ -115,7 +115,7 @@ context('Réduire page', () => {
         cy.window().then(win => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
                 expect(el).to.have.text('2');
@@ -144,7 +144,7 @@ context('Réduire page', () => {
         cy.window().then(win => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
-            cy.visit("/results");
+            cy.visit("/results/reduire");
             cy.get('label span:contains(Réduire)').click();
 
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {

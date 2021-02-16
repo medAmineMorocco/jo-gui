@@ -10,7 +10,7 @@ context('Compenser page', () => {
 				win.sessionStorage.clear();
 				cy.login('email@paris2024.org');
 
-				cy.visit('/results');
+				cy.visit('/results/compenser');
 				cy.get('label span:contains(Compenser)').click();
 
 				cy.url()

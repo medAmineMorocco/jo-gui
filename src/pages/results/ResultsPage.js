@@ -1,4 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import { Radio } from "antd";
 import { HeaderWithCategory } from "@components/header/HeaderWithCategory";
 import { Header } from "@components/header/Header";
@@ -17,11 +19,13 @@ import {
 import "./resultPage.css";
 
 export function ResultsPage() {
-  const [isCurrent, setCurrent] = useState("ANTICIPER");
+  const { tab } = useParams();
+  const [isCurrent, setCurrent] = useState(tab);
   const [nextPage, setNextPage] = useState("");
   const [previousPage, setPreviousPage] = useState("");
   const [content, setContent] = useState(null);
   const [contentSubTitle, setContentSubTitle] = useState();
+
   const footerTitle = (
     <p>
       {ANTICIPER_FOOTER}
@@ -44,28 +48,28 @@ export function ResultsPage() {
   }
 
   function ClickNext() {
-    if (isCurrent === "ANTICIPER") {
-      setCurrent("REDUIRE");
-    } else if (isCurrent === "REDUIRE") {
-      setCurrent("COMPENSER");
-    } else if (isCurrent === "COMPENSER") {
-      setCurrent("MOBILISER");
+    if (isCurrent === "anticiper") {
+      setCurrent("reduire");
+    } else if (isCurrent === "reduire") {
+      setCurrent("compenser");
+    } else if (isCurrent === "compenser") {
+      setCurrent("mobiliser");
     }
   }
 
   function ClickPrevious() {
-    if (isCurrent === "REDUIRE") {
-      setCurrent("ANTICIPER");
-    } else if (isCurrent === "COMPENSER") {
-      setCurrent("REDUIRE");
-    } else if (isCurrent === "MOBILISER") {
-      setCurrent("COMPENSER");
+    if (isCurrent === "reduire") {
+      setCurrent("anticiper");
+    } else if (isCurrent === "compenser") {
+      setCurrent("reduire");
+    } else if (isCurrent === "mobiliser") {
+      setCurrent("compenser");
     }
   }
 
   useEffect(() => {
     switch (isCurrent) {
-      case "ANTICIPER":
+      case "anticiper":
         setContent(<AnticiperPage />);
         setContentSubTitle(
           <p>
@@ -77,7 +81,7 @@ export function ResultsPage() {
         );
         setPreviousAndNext("", "Réduire");
         break;
-      case "REDUIRE":
+      case "reduire":
         setContent(<ReduirePage />);
         setContentSubTitle(
           <p>
@@ -90,7 +94,7 @@ export function ResultsPage() {
         );
         setPreviousAndNext("Anticiper", "Compenser");
         break;
-      case "COMPENSER":
+      case "compenser":
         setContent(<CompenserPage />);
         setContentSubTitle(
           <p>
@@ -102,7 +106,7 @@ export function ResultsPage() {
         );
         setPreviousAndNext("Réduire", "Mobiliser");
         break;
-      case "MOBILISER":
+      case "mobiliser":
         setContent(<MobiliserPage />);
         setContentSubTitle("");
         setPreviousAndNext("Compenser", "");
@@ -129,15 +133,15 @@ export function ResultsPage() {
       />
       <div className="navbar-result">
         <Radio.Group
-          defaultValue={"ANTICIPER"}
+          defaultValue={"anticiper"}
           buttonStyle="solid"
           onChange={onChange}
           value={isCurrent}
         >
-          <Radio.Button value={"ANTICIPER"}>Anticiper</Radio.Button>
-          <Radio.Button value={"REDUIRE"}>Réduire</Radio.Button>
-          <Radio.Button value={"COMPENSER"}>Compenser</Radio.Button>
-          <Radio.Button value={"MOBILISER"}>Mobiliser</Radio.Button>
+          <Radio.Button value={"anticiper"}>Anticiper</Radio.Button>
+          <Radio.Button value={"reduire"}>Réduire</Radio.Button>
+          <Radio.Button value={"compenser"}>Compenser</Radio.Button>
+          <Radio.Button value={"mobiliser"}>Mobiliser</Radio.Button>
           <Radio.Button style={radioStyle}></Radio.Button>
         </Radio.Group>
       </div>
@@ -145,7 +149,7 @@ export function ResultsPage() {
         <p>{contentSubTitle}</p>
       </span>
       <div className="content-result">{content}</div>
-      {isCurrent === "ANTICIPER" ? (
+      {isCurrent === "anticiper" ? (
         <>
           <span className="sub-title-result-2">
             <p>{footerTitle}</p>

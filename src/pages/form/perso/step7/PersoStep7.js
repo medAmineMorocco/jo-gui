@@ -39,7 +39,7 @@ export function PersoStep7({ step }) {
 
     saveResponsesOfStep(persostep7State(values))
       .then(() => {
-        history.push("/results");
+        history.push("/results/anticiper");
         submitButton.disabled = false;
         submitButton.blur();
       })
