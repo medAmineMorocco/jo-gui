@@ -60,7 +60,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
           {...commonProps}
           data={dataCircle1}
           colors={{ datum: "data.color" }}
-          sliceLabel={(e) => `${e.value} tCO₂eq`}
+          sliceLabel={(e) => `${e.value} teqCO₂`}
         />
       );
     } else if (switchGraph === 1) {

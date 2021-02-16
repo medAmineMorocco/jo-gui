@@ -103,7 +103,7 @@ export const ANTICIPER_SUB_TITLE1 =
 export const ANTICIPER_SUB_TITLE2 = " arbres par an !";
 export const MAILTO = " coach-climat@paris2024.org";
 export const ANTICIPER_FOOTER = "Faites-nous vos retours à l’adresse ";
-export const TONNE = "tCO₂eq";
+export const TONNE = "teqCO₂";
 
 ///////////////////////////////////////
 //   Form - Pro
