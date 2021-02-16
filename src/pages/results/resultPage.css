@@ -87,6 +87,9 @@
   font-style: normal;
   font-weight: 700;
 }
+.sub-title-result-2 p {
+  padding-right: 25%;
+}
 .footer-result .ant-btn-round.ant-btn-icon-only {
   width: 45px;
   padding: 28%;
@@ -135,6 +138,9 @@
   .sub-title-result-2 {
     font-size: 1.5vh;
   }
+  .sub-title-result-2 p {
+    padding-right: 0%;
+  }
   .form-header-result .home-link {
     position: fixed;
   }
@@ -162,6 +168,9 @@
   }
   .sub-title-result-2 {
     font-size: 2vh;
+  }
+  .sub-title-result-2 p {
+    padding-right: 0%;
   }
   .form-header-result .home-link {
     position: fixed;
