@@ -5,18 +5,13 @@ export const averages = [
     color: "#FFFFFF",
   },
   {
-    value: 2,
-    description: "Indien.ne moyen.ne",
-    color: "#FFFFFF",
-  },
-  {
     value: 6,
-    description: "La français.e engagé.e",
+    description: "Français.e engagé.e",
     color: "#FFFFFF",
   },
   {
     value: 10.1,
-    description: "Français.e moyen.ne",
+    description: "Le/la Français.e moyen.ne",
     color: "#FFFFFF",
   },
   {

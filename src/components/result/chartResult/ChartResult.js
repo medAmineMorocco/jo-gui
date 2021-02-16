@@ -44,8 +44,9 @@ const commonProps = {
 export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
   const [content, setContent] = useState(0);
   const [switchGraph, setSwitchGraph] = useState(0);
-
-  const totalCo2 = Number(dataCircle1[0].value) + Number(dataCircle1[1].value);
+  const totalCo2Pro = Number(dataCircle1[0].value);
+  const totalCo2Perso = Number(dataCircle1[1].value);
+  const totalCo2 = totalCo2Pro + totalCo2Perso;
 
   const CO2_EQUIVALENT_OF_ONE_TREE_IN_TONNE = 0.025;
   function onChange(e) {
@@ -59,6 +60,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
           {...commonProps}
           data={dataCircle1}
           colors={{ datum: "data.color" }}
+          sliceLabel={(e) => `${e.value} tCO₂eq`}
         />
       );
     } else if (switchGraph === 1) {
@@ -66,7 +68,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
         <ResponsivePie
           {...commonProps}
           data={dataCircle2}
-          colors={["#00B460", "#17B7B0", "#3EDE8E", "#004F45", "#6EDBD7"]}
+          colors={["#3EDE8E", "#17B7B0", "#3EDE8E", "#004F45", "#003F5C"]}
         />
       );
     } else if (switchGraph === 2) {
@@ -75,13 +77,13 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
           {...commonProps}
           data={dataCircle3}
           colors={[
+            "#69B6FF",
+            "#91ADFF",
+            "#7872F4",
+            "#6EDBD7",
             "#006AFF",
             "#1A18BA",
-            "#003F5C",
-            "#69B6FF",
-            "#7872F4",
-            "#91ADFF",
-            "#341269",
+            "#00004D",
           ]}
         />
       );
@@ -92,7 +94,15 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
     <>
       <div className="content-wrap-chart">
         <div className="title-content-chart">
-          <h3 className="styled-title-chart">{round(totalCo2)}</h3>
+          <h3 className="styled-title-chart">
+            {switchGraph === 0
+              ? round(totalCo2)
+              : switchGraph === 1
+              ? round(totalCo2Pro)
+              : switchGraph === 2
+              ? round(totalCo2Perso)
+              : totalCo2}
+          </h3>
           <span className="styled-subtitle-chart">{TONNE}</span>
         </div>
         <div className="body-content-chart">{content}</div>

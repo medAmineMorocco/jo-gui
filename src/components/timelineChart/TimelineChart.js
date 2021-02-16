@@ -1,6 +1,7 @@
 import React from "react";
 import { Timeline } from "antd";
-import { TONNE } from "@utils/constants";
+import { TONNE, SUB_TEXT_TIMELINE } from "@utils/constants";
+import * as dompurify from "dompurify";
 import "./timelineChart.css";
 
 const MAX_TIMELINE_VALUE = 17;
@@ -63,6 +64,13 @@ export function TimelineChart({ items }) {
           </Timeline.Item>
         ))}
       </Timeline>
+      <div className="sub-title-timeline">
+        <span
+          dangerouslySetInnerHTML={{
+            __html: dompurify.sanitize(SUB_TEXT_TIMELINE),
+          }}
+        ></span>
+      </div>
     </div>
   );
 }

@@ -17,3 +17,13 @@
 .first-node {
   height: 30vh;
 }
+
+.sub-title-timeline {
+  font-size: 2vh;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.ant-timeline-item-last {
+  padding-bottom: 0;
+}
