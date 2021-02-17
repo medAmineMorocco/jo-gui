@@ -81,14 +81,11 @@
 }
 .sub-title-result-2 {
   text-align: center;
-  height: 5vh;
+  height: 2vh;
   font-family: Paris2024;
-  font-size: 3vh;
+  font-size: 2vh;
   font-style: normal;
   font-weight: 700;
-}
-.sub-title-result-2 p {
-  padding-right: 25%;
 }
 .footer-result .ant-btn-round.ant-btn-icon-only {
   width: 45px;
@@ -138,9 +135,6 @@
   .sub-title-result-2 {
     font-size: 1.5vh;
   }
-  .sub-title-result-2 p {
-    padding-right: 0%;
-  }
   .form-header-result .home-link {
     position: fixed;
   }
@@ -168,9 +162,6 @@
   }
   .sub-title-result-2 {
     font-size: 2vh;
-  }
-  .sub-title-result-2 p {
-    padding-right: 0%;
   }
   .form-header-result .home-link {
     position: fixed;

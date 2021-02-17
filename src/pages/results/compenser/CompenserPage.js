@@ -51,7 +51,7 @@ export function CompenserPage() {
         ></iframe>
       </div>
 
-      <div style={{ height: "300px" }} />
+      <div style={{ height: "100px" }} />
     </div>
   );
 }

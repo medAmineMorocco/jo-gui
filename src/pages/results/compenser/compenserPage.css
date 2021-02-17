@@ -18,7 +18,7 @@
   font-family: Paris2024;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 29px;
   text-align: center;
   margin-bottom: unset;
@@ -26,7 +26,7 @@
 }
 
 .page-compenser .card-cojo {
-  height: 382px;
+  height: 250px;
 }
 
 .page-compenser .card-cojo .ant-card-body {
@@ -49,7 +49,7 @@
   font-family: "Paris2024";
   font-weight: 700;
   font-style: normal;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 24px;
   text-align: center;
 }
@@ -90,6 +90,9 @@
   .panels-section {
     margin-left: 0%;
   }
+  .page-compenser .card-cojo {
+    height: 330px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -109,5 +112,8 @@
     margin-top: 4vh;
     font-size: 4vw;
     line-height: 5vw;
+  }
+  .page-compenser .card-cojo {
+    height: 330px;
   }
 }
