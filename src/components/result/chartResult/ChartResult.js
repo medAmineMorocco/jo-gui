@@ -68,7 +68,7 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
         <ResponsivePie
           {...commonProps}
           data={dataCircle2}
-          colors={["#3EDE8E", "#17B7B0", "#3EDE8E", "#004F45", "#003F5C"]}
+          colors={["#3EDE8E", "#17B7B0", "#00B460", "#004F45", "#003F5C"]}
         />
       );
     } else if (switchGraph === 2) {

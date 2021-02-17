@@ -122,7 +122,7 @@ export function AnticiperPage() {
           />
         </div>
         <div className="right-container-anticiper">
-          <h3 className="anticiper-title">Où vous situez vous ?</h3>
+          <h3 className="anticiper-title">Quelques points de repère ?</h3>
           <TimelineChart
             items={[
               ...averages,
