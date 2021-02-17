@@ -398,11 +398,7 @@ export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title"
           </span>
           adaptées à vos objectifs, et
           <span style="color: var(--main-color)">observez l’impact</span>
-          sur votre empreinte ci-dessous : <br />
-          Vous le verrez, toutes les actions ne se valent pas en termes de
-          réduction carbone, mais peuvent avoir un fort impact environnemental
-          (sur la biodiversité, l'économie circulaire ou encore les pollutions
-          locales ).
+          sur votre empreinte ci-dessous :
         </p>`;
 
 ///////////////////////////////////////
