@@ -388,8 +388,8 @@ export const PALMARES_TOPS =
 export const PALMARES_FLOPS =
   "Ici, vous êtes au-dessus, mais tout peut encore changer !";
 export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title">
-          SUR QUOI SOUHAITEZ-VOUS
-          <span style="color:var(--main-color)">AGIR</span> EN PREMIER ?
+          <b>SUR QUOI SOUHAITEZ-VOUS
+          <span style="color:var(--main-color)">AGIR</span> EN PREMIER ?</b>
         </p>
         <p>
           Cochez les

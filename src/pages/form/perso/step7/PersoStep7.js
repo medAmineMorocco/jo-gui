@@ -23,7 +23,7 @@ export function PersoStep7({ step }) {
     const setReponsesOfStep = (stepState) => {
       stepState.questions.forEach(({ question, response }) => {
         form.setFieldsValue({
-          [question]: response,
+          [question]: response + " kgCO₂/citoyen",
         });
       });
     };
