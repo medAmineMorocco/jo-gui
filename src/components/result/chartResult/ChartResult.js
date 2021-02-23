@@ -114,9 +114,15 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
               onChange={onChange}
               value={switchGraph}
             >
-              <Radio.Button value={0}>Équilibre Pro/Perso</Radio.Button>
-              <Radio.Button value={1}>Détail Vie Pro</Radio.Button>
-              <Radio.Button value={2}>Détail Vie Perso</Radio.Button>
+              <Radio.Button value={0} aria-label="Équilibre Pro/Perso">
+                Équilibre Pro/Perso
+              </Radio.Button>
+              <Radio.Button value={1} aria-label="Détail Vie Pro">
+                Détail Vie Pro
+              </Radio.Button>
+              <Radio.Button value={2} aria-label="Détail Vie Perso">
+                Détail Vie Perso
+              </Radio.Button>
             </Radio.Group>
           </div>
         </div>

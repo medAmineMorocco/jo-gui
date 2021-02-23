@@ -145,7 +145,7 @@ export const NBR_STREAMING =
 export const SAVIER_VOUS_EMPREINTE =
   "Utiliser le wifi plutôt que la 4G pour le streaming vidéo et gaming permet de consommer presque 6 fois moins d'électricité !";
 export const EMREINTE_OVERLAY_IMAGE =
-  "Pour connaître la taille de ta boîte mail, ouvre l’application mail Outlook. En haut à gauche, ouvre l’onglet Fichiers. Dans le sous-onglet Informations où te trouves, en 3e position et en face d’outils, tu trouveras Paramètres de la boîte au lettres. Une jauge indique ton espace disponible par rapport à l’espace total. Soustrait l’un à l’autre et tu connaîtras la taille de ta boîte mail.";
+  "Pour connaître la taille de votre boîte mail, ouvrez l’application mail Outlook. En haut à gauche, ouvrez l’onglet Fichiers. Dans le sous-onglet Informations où vous vous trouvez, en 3e position et en face d’outils, sélectionnez Paramètres de la boîte aux lettres. Une jauge indique l’espace disponible par rapport à l’espace total. Soustrayez l’un à l’autre et vous connaîtrez la taille de votre boîte mail.";
 
 // Déplacements Domicile - Travail
 export const DISTANCE_DOMICILE_TRAVAIL =
@@ -261,9 +261,13 @@ export const DEPLACEMENTS_QUESTION7 =
 export const DEPLACEMENTS_SAVIEZ_VOUS =
   "Un vol Paris-New York, c’est une tonne de CO₂ dans l’atmosphère, soit la moitié de l’empreinte\n" +
   "carbone visée pour 2050… Le calcul est vite fait : privilégie la mobilité douce !";
-export const DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE = "Carte de la France";
+export const DEPLACEMENTS_PERSONNEL_OVERLAY_FRANCE_TITLE = "Carte de France";
 export const DEPLACEMENTS_PERSONNEL_OVERLAY_INTERNATIONNAL_TITLE =
   "Carte du Monde";
+export const TEXT_IMAGE_FRANCE =
+  "Distances entre Paris et d’autres villes en France, Paris – Lille = 200km , Paris - Strasbourg = 400km, Paris – Bordeaux = 600 km , Paris – Pau ou Paris – Marseille = 800km";
+export const TEXT_IMAGE_MONDE =
+  "Distances entre Paris et d’autres villes du monde, Paris – New-York = 5700 km ,Paris – Pékin = 8200 km, Paris – Los Angeles ou Paris – Rio = 9000 km, Paris – Johannesbourg = 14000 km, Paris – Sydney = 17 000km";
 
 // À la maison
 export const HOUSE_QUESTION1 =
