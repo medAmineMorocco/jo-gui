@@ -133,15 +133,24 @@ export function ResultsPage() {
       />
       <div className="navbar-result">
         <Radio.Group
+          aria-labelledby="Bouton de navigation"
           defaultValue={"anticiper"}
           buttonStyle="solid"
           onChange={onChange}
           value={isCurrent}
         >
-          <Radio.Button value={"anticiper"}>Anticiper</Radio.Button>
-          <Radio.Button value={"reduire"}>Réduire</Radio.Button>
-          <Radio.Button value={"compenser"}>Compenser</Radio.Button>
-          <Radio.Button value={"mobiliser"}>Mobiliser</Radio.Button>
+          <Radio.Button value={"anticiper"} aria-label="Anticiper">
+            Anticiper
+          </Radio.Button>
+          <Radio.Button value={"reduire"} aria-label="Réduire">
+            Réduire
+          </Radio.Button>
+          <Radio.Button value={"compenser"} aria-label="Compenser">
+            Compenser
+          </Radio.Button>
+          <Radio.Button value={"mobiliser"} aria-label="Mobiliser">
+            Mobiliser
+          </Radio.Button>
           <Radio.Button style={radioStyle}></Radio.Button>
         </Radio.Group>
       </div>

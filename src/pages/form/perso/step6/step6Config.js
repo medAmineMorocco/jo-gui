@@ -1,3 +1,5 @@
+import { TEXT_IMAGE_FRANCE, TEXT_IMAGE_MONDE } from "@utils/constants";
+
 export const transportation_options = (
   onCarChange,
   onTrainChange,
@@ -160,11 +162,13 @@ export const actionReduction3_selectDetail = [
 export const overlay_items_france = [
   {
     image: "/images/DistanceFrance.png",
+    alt: TEXT_IMAGE_FRANCE,
   },
 ];
 
 export const overlay_items_internationnal = [
   {
     image: "/images/DistanceMonde.png",
+    alt: TEXT_IMAGE_MONDE,
   },
 ];
