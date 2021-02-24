@@ -24,7 +24,7 @@ export const actionsTable = () => {
         },
         {
             category: CATEGORY.PRO,
-            description: 'Prendre les esacaliers',
+            description: 'Prendre les escaliers',
             reduction: -90,
             gain: -0.05549163291773303
         },

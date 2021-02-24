@@ -17,7 +17,7 @@ import {
 import { notify } from "@utils/notification";
 import { requestState } from "@utils/requestState";
 import { CATEGORY, CATEGORY_CODE } from "@utils/category";
-import { sum, timeOutIf } from "@utils/utils";
+import { sum, timeOutIf, round } from "@utils/utils";
 import * as dompurify from "dompurify";
 import { useMobileSize } from "@hooks/window";
 import {
@@ -88,7 +88,7 @@ export function ReduirePage() {
               thematicsWithItsActionsByCategory
             );
             setTopActions(top3Actions);
-            setTotalTopActions(sum(top3Actions, "gain") * -1);
+            setTotalTopActions(round(sum(top3Actions, "gain") * -1));
             const { bilanPro, bilanPerso } = getBilanProAndPerso(bilan);
             setBilan([
               {
@@ -193,9 +193,13 @@ export function ReduirePage() {
                     </p>
                   )}
                 </ol>
-                <p className="palmares-mentions">
-                  {tops.length > 0 ? PALMARES_TOPS : ""}
-                </p>
+                <p
+                  className="palmares-mentions"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      tops.length > 0 ? dompurify.sanitize(PALMARES_TOPS) : "",
+                  }}
+                ></p>
               </Card>
             </div>
             <div>
@@ -225,9 +229,7 @@ export function ReduirePage() {
           <h3 className="reduire-title-section">{PREMIERS_ACTIONS_TITLE}</h3>
           <div className="card-right-result">
             <Card
-              title={`DEJA ${totalTopActions.toFixed(
-                2
-              )} % DE REDUCTION POSSIBLE !`}
+              title={`DEJA ${totalTopActions} % DE REDUCTION POSSIBLE !`}
               backgroundColor="#7872F4"
             >
               <ActionsTable
