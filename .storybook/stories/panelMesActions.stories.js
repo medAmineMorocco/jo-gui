@@ -18,7 +18,7 @@ export const panelMesActions = () => {
 			avg_reduction: -0.020346932069835445,
 		},
 		{
-			description: 'Prendre les esacaliers',
+			description: 'Prendre les escaliers',
 			reduction: -90,
 			avg_reduction: -0.05549163291773303,
 		},

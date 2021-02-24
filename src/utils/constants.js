@@ -60,7 +60,7 @@ export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes c
 
 export const WEBSITE_INFO_MSG =
   "Plus d'informations ? Consultez notre page dédiée :";
-export const WEBSITE_URL = "www.paris2024.org/fr/methode-carbone";
+export const WEBSITE_URL = "http://paris2024.org/fr/methode-carbone";
 
 /* Menu Page */
 export const MENU_DESCRIPTION =
@@ -80,11 +80,11 @@ export const INTRODUCTION_TITLE2 = "Quelques données";
 export const INTRODUCTION_TITLE4 = "Une année de référence";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
 export const LINK_HOME_ICON = "PARIS2024";
-export const INTRO_DESCRIPTION1 = `<span>Eh oui, il y a quelques questions à se poser <span style="font-weight: bolder">avant</span> de connaître son empreinte carbonne !</span>`;
+export const INTRO_DESCRIPTION1 = `<span>Eh oui, il y a quelques questions à se poser <span style="font-weight: bolder">avant</span> de connaître son empreinte carbone !</span>`;
 export const INTRO_DESCRIPTION2 = `<span>Pour votre <span style="color: #17B7B0">vie perso</span> : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...
 							<br />
 							Pour votre <span style="color: #3EDE8E">vie pro</span> : laissez-vous guider.</span>`;
-export const INTRO_DESCRIPTION3 = `<span>On vous recommande de vous référer à l'année <span style="font-weight: bolder">2019</span> afin de pouvoir comparer par la suite à l'année 2020 moins standard, puis 2021 !</span>`;
+export const INTRO_DESCRIPTION3 = `<span>On vous recommande de vous référer à l'année <span style="font-weight: bolder">2019</span> afin de pouvoir la comparer par la suite à l'année 2020 moins standard, puis 2021 !</span>`;
 
 /* Action de reduction */
 export const SUR_TITLE_ACTION =
@@ -166,7 +166,7 @@ export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_FRANCE_TITLE =
 export const DEPLACEMENTS_PROFESSIONNEL_OVERLAY_INTERNATIONNAL_TITLE =
   "Carte du Monde";
 export const MAKE_TRANSPORTATION_LABEL =
-  "Effectuez-vous des déplacements professionels ?";
+  "Effectuez-vous des déplacements professionnels sur une année ?";
 export const TRANSPORTATION_PRO_LABEL = "Par quel moyen de transport ?";
 export const DEPLACEMENT_MSG_ERROR = "⚠ Merci de saisir votre réponse";
 export const NBR_KM_VOITURE =
@@ -387,8 +387,7 @@ export const PALMARES_TITLE = "Vos résultats";
 export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
 export const PALMARES_TOPS_TITLE = "POINTS <br/> FORTS";
 export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
-export const PALMARES_TOPS =
-  "Bravo, vous êtes en dessous de la moyenne française !";
+export const PALMARES_TOPS = `<span style="color:var(--main-color-pro);"><b>Bravo</b></span>, vous êtes <span style="color:var(--main-color-pro);"><b>en dessous</b></span> de la moyenne française !`;
 export const PALMARES_FLOPS =
   "Ici, vous êtes au-dessus, mais tout peut encore changer !";
 export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title">

@@ -132,7 +132,7 @@ export function MethoPage(props) {
         <div className="metho-section-divider"></div>
         <div className="metho-website-info">{WEBSITE_INFO_MSG}</div>
         <div className="metho-website-url">
-          <a href="#0">{WEBSITE_URL}</a>
+          <a href={WEBSITE_URL}>{WEBSITE_URL}</a>
         </div>
       </div>
       <div className="metho-footer-picture"></div>
