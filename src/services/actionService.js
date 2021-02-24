@@ -42,29 +42,58 @@ export function getBilanProAndPerso(bilan) {
   };
 }
 
-export function getNewBilanAfterReduction(bilan, checkedActions) {
+export function getNewBilanAfterReduction(
+  initialBilan,
+  checkedActions,
+  lastUpdatedBilan
+) {
   const checkedActionsByCategory = groupBy(checkedActions, "category");
   const checkedProActions = checkedActionsByCategory["Vie professionnelle"];
   const checkedPersoActions = checkedActionsByCategory["Vie personnelle"];
 
-  const { bilanPro, bilanPerso } = getBilanProAndPerso(bilan);
+  const { bilanPro, bilanPerso } = getBilanProAndPerso(initialBilan);
 
   let bilanProAfterReduction = bilanPro;
   let withActionsProNewValue = 0;
   if (checkedProActions) {
-    checkedProActions.forEach(
-      (proAction) => (bilanProAfterReduction -= proAction.reduction)
-    );
-    withActionsProNewValue = round(sum(checkedProActions, "reduction"));
+    if (
+      getThematicsOfActions(checkedProActions).size === 1 &&
+      sum(checkedProActions, "reduction") > checkedProActions[0].totalThematic
+    ) {
+      withActionsProNewValue = getTotalThematicFromBilan(
+        checkedProActions[0].thematic,
+        initialBilan
+      );
+      bilanProAfterReduction =
+        getBilanProAndPerso(initialBilan).bilanPro - withActionsProNewValue;
+    } else {
+      checkedProActions.forEach(
+        (proAction) => (bilanProAfterReduction -= proAction.reduction)
+      );
+      withActionsProNewValue = round(sum(checkedProActions, "reduction"));
+    }
   }
 
   let bilanPersoAfterReduction = bilanPerso;
   let withActionsPersoNewValue = 0;
   if (checkedPersoActions) {
-    checkedPersoActions.forEach(
-      (persoAction) => (bilanPersoAfterReduction -= persoAction.reduction)
-    );
-    withActionsPersoNewValue = round(sum(checkedPersoActions, "reduction"));
+    if (
+      getThematicsOfActions(checkedPersoActions).size === 1 &&
+      sum(checkedPersoActions, "reduction") >
+        checkedPersoActions[0].totalThematic
+    ) {
+      withActionsPersoNewValue = getTotalThematicFromBilan(
+        checkedPersoActions[0].thematic,
+        initialBilan
+      );
+      bilanPersoAfterReduction =
+        getBilanProAndPerso(initialBilan).bilanPerso - withActionsPersoNewValue;
+    } else {
+      checkedPersoActions.forEach(
+        (persoAction) => (bilanPersoAfterReduction -= persoAction.reduction)
+      );
+      withActionsPersoNewValue = round(sum(checkedPersoActions, "reduction"));
+    }
   }
 
   return {
@@ -75,4 +104,18 @@ export function getNewBilanAfterReduction(bilan, checkedActions) {
     withActionsProNewValue,
     withActionsPersoNewValue,
   };
+}
+
+function getThematicsOfActions(actions) {
+  return new Set(actions.map((action) => action.thematic));
+}
+
+function getTotalThematicFromBilan(thematic, bilan) {
+  console.log("thematic", thematic);
+  let round1 = round(
+    bilan.find((bilanItem) => bilanItem.thematic === thematic).value /
+      CO2_EQUIVALENT_IN_TONNE
+  );
+  console.log("round1", round1);
+  return round1;
 }

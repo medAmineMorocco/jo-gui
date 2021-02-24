@@ -1,12 +1,12 @@
 [
   {
     "category": "Vie Professionnelle",
-    "thematic": "AU_BUREAU",
+    "thematic": "AU BUREAU",
     "value": 1643
   },
   {
     "category": "Vie Professionnelle",
-    "thematic": "EMPREINTE_NUMERIQUE",
+    "thematic": "EMPREINTE NUMERIQUE",
     "value": 349.7593886505
   },
   {
@@ -16,12 +16,12 @@
   },
   {
     "category": "Vie Professionnelle",
-    "thematic": "TRAJETS_DOMICILE_TRAVAIL",
+    "thematic": "TRAJETS DOMICILE TRAVAIL",
     "value": 0
   },
   {
     "category": "Vie Professionnelle",
-    "thematic": "DEPLACEMENTS_PROFESSIONNELS",
+    "thematic": "DEPLACEMENTS PROFESSIONNELS",
     "value": 7.1221768
   },
   {

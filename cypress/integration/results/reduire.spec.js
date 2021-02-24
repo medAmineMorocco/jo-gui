@@ -77,35 +77,6 @@ context('Réduire page', () => {
         });
     });
 
-    it('should update total of co2 after reduction when check and uncheck an action in the section "Vos premières actions"', () => {
-        cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
-        cy.stubRequest('GET', '**/api/results', 200, 'results/bilan.json', 'getSummary');
-        cy.stubRequest('GET', '**/api/emissions/sort', 200, 'results/tops-flops.json', 'getTopsAndFlops');
-        cy.stubRequest('GET', '**/api/category/reductions', 200, 'results/categories-thematics-actions.json', 'getThematicsWithItsActionsByCategory');
-
-        cy.window().then(win => {
-            win.sessionStorage.clear();
-            cy.login('email@paris2024.org');
-            cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
-
-            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.have.text('2');
-            });
-            cy.get(':nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
-
-            cy.get('@firstAction').check();
-            cy.get('.bars-container svg > g g').eq(4).should(el => {
-                expect(el).not.to.have.descendants('text');
-            });
-            cy.get('@firstAction').uncheck();
-
-            cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
-                expect(el).to.have.text('2');
-            });
-        });
-    });
-
     it('should update total of co2 after reduction when check and uncheck a pro action', () => {
         cy.stubRequest('GET', '**/api/user/progress', 200, 'progress-results.json', 'progressJSON');
         cy.stubRequest('GET', '**/api/results', 200, 'results/bilan.json', 'getSummary');
@@ -150,12 +121,12 @@ context('Réduire page', () => {
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
                 expect(el).to.have.text('3.3');
             });
-            cy.get('.panel-mes-actions-header span:contains(MAISON)').click();
+            cy.get('.panel-mes-actions-header span:contains(NUMERIQUE)').eq(1).click();
             cy.get('.panel-mes-actions-contents > .actions-table > tbody > :nth-child(1) > .table-contents-actions > .actions-checkbox > .ant-checkbox > .ant-checkbox-input').as('firstAction');
 
             cy.get('@firstAction').check();
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
-                expect(el).to.have.text('1.6');
+                expect(el).to.have.text('3.1');
             });
 
             cy.get('@firstAction').uncheck();

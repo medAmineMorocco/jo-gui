@@ -3,7 +3,13 @@ import { Checkbox } from "antd";
 import { round } from "@utils/utils";
 import "./actionsTable.css";
 
-export function ActionsTable({ columns, actions, onChange, showGain = true }) {
+export function ActionsTable({
+  columns,
+  actions,
+  onChange,
+  showGain = true,
+  showCheckBox = true,
+}) {
   const CO2_EQUIVALENT_IN_TONNE = 1000;
   return (
     <table className="actions-table">
@@ -17,26 +23,31 @@ export function ActionsTable({ columns, actions, onChange, showGain = true }) {
         </tr>
       </thead>
       <tbody>
-        {actions.map(({ category, description, reduction, gain }, key) => {
-          return (
-            <tr className="table-contents" key={key}>
-              <td className="table-contents-description">{`${
-                key + 1
-              }. ${description}`}</td>
-              {showGain && (
-                <td className="table-contents-gain">{round(gain)}</td>
-              )}
-              <td className="table-contents-actions">
-                <Checkbox
-                  className="actions-checkbox"
-                  data-category={category}
-                  data-reduction={reduction / CO2_EQUIVALENT_IN_TONNE}
-                  onChange={onChange}
-                />
-              </td>
-            </tr>
-          );
-        })}
+        {actions.map(
+          ({ category, thematic, description, reduction, gain }, key) => {
+            return (
+              <tr className="table-contents" key={key}>
+                <td className="table-contents-description">{`${
+                  key + 1
+                }. ${description}`}</td>
+                {showGain && (
+                  <td className="table-contents-gain">{round(gain)}</td>
+                )}
+                {showCheckBox && (
+                  <td className="table-contents-actions">
+                    <Checkbox
+                      className="actions-checkbox"
+                      data-category={category}
+                      data-thematic={thematic}
+                      data-reduction={reduction / CO2_EQUIVALENT_IN_TONNE}
+                      onChange={onChange}
+                    />
+                  </td>
+                )}
+              </tr>
+            );
+          }
+        )}
       </tbody>
     </table>
   );
