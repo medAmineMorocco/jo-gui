@@ -33,6 +33,8 @@ import {
 } from "@utils/constants";
 import "./reduirePage.css";
 
+const CO2_EQUIVALENT_IN_TONNE = 1000;
+
 export function ReduirePage() {
   const [pageState, setPageState] = useState(requestState.LOADING);
   const [tops, setTops] = useState([]);
@@ -116,13 +118,20 @@ export function ReduirePage() {
   }, []);
 
   const onCheckAction = () => {
+    const storedBilan = JSON.parse(window.sessionStorage.getItem("bilan"));
     setTimeout(() => {
       const checkedActions = [
         ...document.querySelectorAll(".ant-checkbox-checked"),
       ].map((el) => {
         const input = el.childNodes[0];
+        const thematic = input.getAttribute("data-thematic");
         return {
           category: input.getAttribute("data-category"),
+          thematic,
+          totalThematic: round(
+            storedBilan.find((bilanItem) => bilanItem.thematic === thematic)
+              .value / CO2_EQUIVALENT_IN_TONNE
+          ),
           reduction: Number(input.getAttribute("data-reduction")) * -1,
         };
       });
@@ -133,7 +142,8 @@ export function ReduirePage() {
         withActionsPersoNewValue,
       } = getNewBilanAfterReduction(
         JSON.parse(window.sessionStorage.getItem("bilan")),
-        checkedActions
+        checkedActions,
+        bilan
       );
       const newBilan = [
         {
@@ -233,9 +243,10 @@ export function ReduirePage() {
               backgroundColor="#7872F4"
             >
               <ActionsTable
-                columns={["Actions de réductions", "% Gain", "Je me lance !"]}
+                columns={["Actions de réductions", "% Gain"]}
                 actions={topActions}
                 onChange={onCheckAction}
+                showCheckBox={false}
               />
             </Card>
           </div>
@@ -260,7 +271,7 @@ export function ReduirePage() {
               <PanelMesActions
                 thematic={thematic}
                 actions={actions.map((action) => {
-                  return { ...action, category: CATEGORY.PRO };
+                  return { ...action, category: CATEGORY.PRO, thematic };
                 })}
                 onChange={onCheckAction}
                 backgroundColor="#3EDE8E"
@@ -275,7 +286,7 @@ export function ReduirePage() {
               <PanelMesActions
                 thematic={thematic}
                 actions={actions.map((action) => {
-                  return { ...action, category: CATEGORY.PERSO };
+                  return { ...action, category: CATEGORY.PERSO, thematic };
                 })}
                 onChange={onCheckAction}
                 backgroundColor="#17B7B0"
