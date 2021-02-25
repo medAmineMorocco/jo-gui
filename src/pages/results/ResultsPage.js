@@ -108,7 +108,14 @@ export function ResultsPage() {
         break;
       case "mobiliser":
         setContent(<MobiliserPage />);
-        setContentSubTitle("");
+        setContentSubTitle(
+          <p>
+            <span style={{ color: "var(--main-color)" }}>
+              Partager et engager
+            </span>{" "}
+            son entourage pour le climat !
+          </p>
+        );
         setPreviousAndNext("Compenser", "");
         break;
       default:

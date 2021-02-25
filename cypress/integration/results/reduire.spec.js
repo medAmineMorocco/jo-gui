@@ -15,7 +15,6 @@ context('Réduire page', () => {
                 cy.login('email@paris2024.org');
 
                 cy.visit("/results/reduire");
-                cy.get('label span:contains(Réduire)').click();
 
                 cy.wait(1000);
                 cy.takeSnapshots('Réduire', size);
@@ -33,7 +32,6 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
 
             cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
                 .should("exist");
@@ -51,7 +49,6 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
 
             cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
                 .should("exist");
@@ -69,7 +66,6 @@ context('Réduire page', () => {
             cy.login('email@paris2024.org');
 
             cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
 
             cy.get(`body:contains("Erreur serveur, veuillez réessayer ultérieurement")`)
                 .should("exist");
@@ -87,7 +83,6 @@ context('Réduire page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
             cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
             cy.get('.bars-container svg > g g').eq(4).find('text').should(el => {
                 expect(el).to.have.text('2');
             });
@@ -116,7 +111,6 @@ context('Réduire page', () => {
             win.sessionStorage.clear();
             cy.login('email@paris2024.org');
             cy.visit("/results/reduire");
-            cy.get('label span:contains(Réduire)').click();
 
             cy.get('.bars-container svg > g g').eq(3).find('text').should(el => {
                 expect(el).to.have.text('3.3');
