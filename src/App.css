@@ -23,6 +23,13 @@
   src: url(/fonts/Paris2024-Black.otf);
 }
 
+@font-face {
+  font-family: Paris2024Regular;
+  src: url(/fonts/Paris2024-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: var(--bg-color-shade-2);
   color: white;

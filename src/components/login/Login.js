@@ -71,7 +71,7 @@ export function Login() {
   };
 
   const openCGU = () => {
-    window.open("/pdfs/SUS - 210203 - CONFIDENTIEL - CGU.pdf");
+    window.open("/pdfs/Coach Climat - Conditions Générales d'Utilisation.pdf");
   };
 
   const titleWithForm = (
