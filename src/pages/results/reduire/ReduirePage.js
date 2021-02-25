@@ -228,9 +228,13 @@ export function ReduirePage() {
                     </p>
                   )}
                 </ol>
-                <p className="palmares-mentions">
-                  {flops.length > 0 ? PALMARES_FLOPS : ""}
-                </p>
+                <p
+                  className="palmares-mentions"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      tops.length > 0 ? dompurify.sanitize(PALMARES_FLOPS) : "",
+                  }}
+                ></p>
               </Card>
             </div>
           </div>
@@ -261,6 +265,20 @@ export function ReduirePage() {
       <div className="bars-graph-section">
         <div className="bars-container">
           <StackedBar data={bilan} />
+          <div className="legend-bar-container">
+            <label>Légende :</label>
+            <ul className="list-bar-legend">
+              <li>
+                <span>Empreinte de la vie pro avec action</span>
+              </li>
+              <li>
+                <span>Empreinte de la vie perso avec actions</span>
+              </li>
+              <li>
+                <span>Réduction induite par vos actions</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="panels-section section-reduire">

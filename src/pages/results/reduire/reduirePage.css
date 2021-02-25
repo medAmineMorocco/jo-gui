@@ -62,6 +62,44 @@
   height: 300px;
   margin-bottom: 16px;
 }
+.legend-bar-container {
+  font-size: 11px;
+  font-family: Paris2024;
+  text-align: center;
+  border: solid 1px;
+  border-color: var(--main-color);
+  padding: 8px;
+  text-align: center;
+  top: 250px;
+  position: absolute;
+  right: 20%;
+}
+.legend-bar-container li {
+  text-align: left;
+  display: inline;
+}
+.list-bar-legend {
+  list-style: none;
+  margin-bottom: 0;
+}
+.list-bar-legend li::before {
+  content: "▪";
+  font-size: 30px;
+  line-height: 0;
+}
+.list-bar-legend li:nth-child(1) {
+  color: var(--main-color-pro);
+}
+.list-bar-legend li:nth-child(2) {
+  color: var(--main-color-perso);
+}
+.list-bar-legend li:nth-child(3) {
+  color: grey;
+}
+.list-bar-legend li span {
+  color: white;
+  vertical-align: super;
+}
 
 .panels-section.section-reduire {
   height: 40vh;
@@ -127,6 +165,13 @@
     height: 186px;
     background-color: var(--bg-color-shade-2);
   }
+  .legend-bar-container {
+    font-size: 10px;
+    padding: 3px;
+    top: 130px;
+    position: absolute;
+    right: 0;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -165,5 +210,10 @@
   }
   .card-right-result .card-cojo .ant-card-head .ant-card-head-title {
     margin-top: 0%;
+  }
+  .legend-bar-container {
+    font-size: 11px;
+    top: 230px;
+    right: 0%;
   }
 }

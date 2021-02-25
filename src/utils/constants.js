@@ -388,20 +388,16 @@ export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
 export const PALMARES_TOPS_TITLE = "POINTS <br/> FORTS";
 export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
 export const PALMARES_TOPS = `<span style="color:var(--main-color-pro);"><b>Bravo</b></span>, vous êtes <span style="color:var(--main-color-pro);"><b>en dessous</b></span> de la moyenne française !`;
-export const PALMARES_FLOPS =
-  "Ici, vous êtes au-dessus, mais tout peut encore changer !";
+export const PALMARES_FLOPS = `Ici, vous êtes <span style="color:var(--main-color-pro);"><b>au-dessus</b></span>, mais tout peut encore changer ! `;
 export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title">
-          <b>SUR QUOI SOUHAITEZ-VOUS
-          <span style="color:var(--main-color)">AGIR</span> EN PREMIER ?</b>
+          <b>UNE MULTITUDE D'AUTRES ACTIONS POSSIBLES, SUR QUOI SOUHAITEZ-VOUS
+          <span style="color:var(--main-color)">AGIR EN PREMIER ?</b></span> 
         </p>
         <p>
-          Cochez les
           <span style="color: var(--main-color)">
-            actions de réduction
+            Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           </span>
-          adaptées à vos objectifs, et
-          <span style="color: var(--main-color)">observez l’impact</span>
-          sur votre empreinte ci-dessous :
+          <br/>Si rien ne bouge, soit l'action a un faible impact, soit elle fait déjà partie de votre mode de vie !
         </p>`;
 
 ///////////////////////////////////////

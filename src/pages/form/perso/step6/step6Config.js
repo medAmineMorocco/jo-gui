@@ -28,6 +28,9 @@ export const question2_options = [
   { text: "Electrique", value: "Electrique" },
   { text: "Essence", value: "Essence" },
   { text: "Diesel", value: "Diesel" },
+  { text: "GPL", value: "GPL" },
+  { text: "Hybride essence", value: "Hybride essence" },
+  { text: "Hybride diesel", value: "Hybride diesel" },
 ];
 
 export const question3_questions = [
