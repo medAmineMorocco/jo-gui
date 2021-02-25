@@ -243,7 +243,7 @@ export function ReduirePage() {
               backgroundColor="#7872F4"
             >
               <ActionsTable
-                columns={["Actions de réductions", "% Gain"]}
+                columns={["Actions de réductions", "Gain"]}
                 actions={topActions}
                 onChange={onCheckAction}
                 showCheckBox={false}

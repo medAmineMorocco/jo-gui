@@ -12,6 +12,11 @@
   height: 24px;
 }
 
+.table-head tr {
+  font-family: "Paris2024";
+  font-size: 24px;
+}
+
 .table-head-column {
   text-align: center;
   font-weight: bold;
