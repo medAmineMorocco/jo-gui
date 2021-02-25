@@ -19,26 +19,34 @@ export function FooterWithNavigation({ previous, next, step, children }) {
   return (
     <Footer>
       <div className="footer-buttons-container">
-        <div className="footer-buttons-left">
-          <BackButton onClick={onPreviousClick} />
-        </div>
-        <div className="footer-buttons-right">
-          <Button
-            {...(!onNextClick && { htmlType: "submit" })}
-            onClick={onNextClick}
-            form={step}
-            text="suite"
-            icon={<ArrowRightOutlined aria-label="flèche suivante" />}
-          />
-        </div>
+        {previousCategory && (
+          <div className="footer-buttons-left">
+            <BackButton onClick={onPreviousClick} />
+          </div>
+        )}
+        {nextCategory && (
+          <div className="footer-buttons-right">
+            <Button
+              {...(!onNextClick && { htmlType: "submit" })}
+              onClick={onNextClick}
+              form={step}
+              text="suite"
+              icon={<ArrowRightOutlined aria-label="flèche suivante" />}
+            />
+          </div>
+        )}
       </div>
       <div className="footer-navigation-container">
-        <div className="footer-navigation-left">
-          <span>{previousCategory}</span>
-        </div>
-        <div className="footer-navigation-right">
-          <span>{nextCategory}</span>
-        </div>
+        {previousCategory && (
+          <div className="footer-navigation-left">
+            <span>{previousCategory}</span>
+          </div>
+        )}
+        {nextCategory && (
+          <div className="footer-navigation-right">
+            <span>{nextCategory}</span>
+          </div>
+        )}
       </div>
       <div className="footer-navigation-details-container">
         <div className="footer-navigation-left">
