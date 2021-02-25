@@ -1,0 +1,169 @@
+.mobiliser-card-container {
+  display: grid;
+  justify-content: center;
+}
+
+.mobiliser-card {
+  width: 1024px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: black;
+  color: white;
+}
+
+.mobiliser-card .ant-card-head {
+  width: 80%;
+  margin-left: 10%;
+  border-bottom: 3px solid var(--main-color);
+  text-align: center;
+}
+
+.mobiliser-card .ant-card-head .ant-card-head-title {
+  padding: 24px 0;
+  text-transform: uppercase;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: white;
+}
+
+.mobiliser-card .ant-card-body {
+  padding-bottom: 44px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobiliser-card-body-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.arch-container {
+  display: flex;
+  justify-content: center;
+}
+
+.arch {
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 230px;
+  border-top-left-radius: 111px;
+  border-top-right-radius: 111px;
+  border: 3px solid #006aff;
+}
+
+.arch-description-container {
+  flex-grow: 2;
+  padding: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arch-description {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.arch-stats-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+}
+
+.arch-stats-number-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.arch-stats-number {
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 44px;
+}
+
+.arch-stats-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.arch-stats-text {
+  font-family: "Paris2024";
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.mobiliser-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mobiliser-reduction {
+  width: 70%;
+  text-align: center;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.share-container {
+  padding: 16px 0;
+}
+
+.share-description {
+  text-align: center;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.share-social-medias-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.newsletter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.newsletter-link {
+  text-align: left;
+  color: white;
+  text-decoration: underline;
+  font-family: "Paris2024";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+[aria-label="download"] svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-device-width: 767px) {
+  .mobiliser-card-container {
+    display: block;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .mobiliser-card-container {
+    display: block;
+  }
+}

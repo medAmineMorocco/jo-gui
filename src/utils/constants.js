@@ -416,3 +416,40 @@ export const COMPENSER_DESCRIPTION1 =
 export const COMPENSER_DESCRIPTION2 =
   'Il est possible de compenser ses émissions personnelles, en contribuant à un projet de compensation labélisé de préférence, via des organisations comme l’<a href="https://offset.climateneutralnow.org/allprojects" target="_blank">ONU</a>.';
 export const COMPENSER_DESCRIPTION_VIDEO = `<p>Compenser, c’est quoi ? Explications en <span style="color: var(--main-color)">vidéo</span> !</p>`;
+
+///////////////////////////////////////
+//   Mobiliser page
+//////////////////////////////////////
+
+export const MOBILISER_ARCH_DESCRIPTION = "mon empreinte carbone est de";
+
+export const MOBILISER_STATS_TEXT = `Tonnes <br />
+                        de CO2 /an`;
+
+export const MOBILISER_CARD_TITLE = `en tant que collaborateur de
+              <span style="color: var(--main-color)">paris 2024</span>
+              <br />
+              je m’engage pour le climat !`;
+
+export const MOBILISER_SHARE_DESCRIPTION = `Téléchargez votre <span style="color: var(--main-color)">sCOre-card</span>, invitez vos <span style="color: var(--main-color)">collegues</span> a faire le test ET <span style="color: var(--main-color)">partagez vos resultats</span> sur vos reseaux sociaux`;
+
+export const MOBILISER_NEWSLETTER_LINK = `Rejoignez la <span style="color: var(--main-color)">Green Team</span> de
+          Paris 2024 pour
+          suivre
+          <br /> les <span style="color: var(--main-color)">conseils et actualités</span> du Coach Climat`;
+
+export const MOBILISER_MAIL_BODY = (total, reduction) => `Bonjour xxx, 
+J’ai passé le test du Coach Climat de Paris 2024. Mon empreinte carbone annuelle est de ${total} tonnes équivalent CO₂. Grâce à 3 actions concrètes, je peux dès à présent viser de réduire mes émissions de ${reduction}%. Et parce qu’on est plus forts ensemble, je te mets au défi de me rejoindre !
+<< message perso >>
+
+
+A toi de jouer: https://coach-climat.paris2024.org ! 
+
+[Partagez votre score card en la téléchargeant et la mettant en pièce jointe]`;
+
+export const MOBILISER_POST_TEXT = (
+  reduction
+) => `@Paris2024 s’engage et engage ses collaborateurs pour livrer des Jeux neutres en carbone ! J’ai fait le test du Coach Climat, j’ai déjà 3 actions concrètes pour réduire mes émissions de ${reduction}% ! ♻️
+Vous aussi faites le test sur https://nosgestesclimat.fr/ 
+Engagez-vous pour le climat !
+[Ajouter votre score card]`;
