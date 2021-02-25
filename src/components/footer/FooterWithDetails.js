@@ -18,10 +18,7 @@ export function FooterWithDetails() {
           <span
             className="footer-detail"
             onClick={() =>
-              window.open(
-                "/pdfs/SUS - 210203 - CONFIDENTIEL - Mentions légales.pdf",
-                "_blank"
-              )
+              window.open("/pdfs/Coach Climat - Mentions légales.pdf", "_blank")
             }
           >
             Mentions légales
@@ -32,7 +29,7 @@ export function FooterWithDetails() {
             className="footer-detail"
             onClick={() =>
               window.open(
-                "/pdfs/SUS - 210203 - CONFIDENTIEL - CGU.pdf",
+                "/pdfs/Coach Climat - Conditions Générales d'Utilisation.pdf",
                 "_blank"
               )
             }
@@ -45,7 +42,7 @@ export function FooterWithDetails() {
             className="footer-detail"
             onClick={() =>
               window.open(
-                "/pdfs/SUS - 210203 - CONFIDENTIEL - Politique de confidentialité.pdf",
+                "/pdfs/Coach Climat - Politique de confidentialité.pdf",
                 "_blank"
               )
             }
