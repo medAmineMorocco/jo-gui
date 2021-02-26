@@ -4,7 +4,7 @@ import { round, groupBy, sum } from "@utils/utils";
 const CO2_EQUIVALENT_IN_TONNE = 1000;
 
 export function getTopActions(thematicsWithItsActionsByCategory) {
-  return [
+  const actions = [
     ...thematicsWithItsActionsByCategory["Vie Professionnelle"].flatMap(
       (thematic) => {
         thematic.actions.map((action) => (action.category = CATEGORY.PRO));
@@ -22,6 +22,11 @@ export function getTopActions(thematicsWithItsActionsByCategory) {
       return a.reduction - b.reduction;
     })
     .slice(0, 3);
+  actions.forEach(
+    (action, index) =>
+      (action.description = index + 1 + ". " + action.description.substring(3))
+  );
+  return actions;
 }
 
 export function getBilanProAndPerso(bilan) {
