@@ -29,7 +29,7 @@ export function ActionsTable({
               <tr className="table-contents" key={key}>
                 <td className="table-contents-description">{description}</td>
                 {showGain && (
-                  <td className="table-contents-gain">{round(gain)} %</td>
+                  <td className="table-contents-gain">{round(gain)}%</td>
                 )}
                 {showCheckBox && (
                   <td className="table-contents-actions">
