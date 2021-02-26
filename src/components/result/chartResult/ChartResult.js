@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Radio } from "antd";
 import { ResponsivePie } from "@nivo/pie";
 import { round } from "@utils/utils";
@@ -90,11 +90,51 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
     }
   }, [dataCircle1, dataCircle2, dataCircle3, switchGraph]);
 
+  const getAriaLabel = useCallback(() => {
+    if (switchGraph === 0) {
+      return `le total de votre vie professionnelle est ${dataCircle1[0].value} tonnes équivalents C O 2 et le total de votre vie personnelle est ${dataCircle1[1].value} tonnes équivalents C O 2`;
+    } else if (switchGraph === 1) {
+      return dataCircle2
+        .map(
+          ({ thematic, value }) =>
+            ` le total de la thématique ${thematic} est ${value} tonnes équivalents C O 2`
+        )
+        .reduce((item1, item2) => item1 + item2);
+    } else if (switchGraph === 2) {
+      return dataCircle3
+        .map(
+          ({ thematic, value }) =>
+            ` le total de la thématique ${thematic} est ${value} tonnes équivalents C O 2`
+        )
+        .reduce((item1, item2) => item1 + item2);
+    }
+  }, [dataCircle1, dataCircle2, dataCircle3, switchGraph]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      document
+        .querySelector(".body-content-chart svg")
+        .setAttribute("aria-label", getAriaLabel());
+    });
+  }, [content, getAriaLabel]);
+
   return (
     <>
       <div className="content-wrap-chart">
         <div className="title-content-chart">
-          <h3 className="styled-title-chart">
+          <h3
+            className="styled-title-chart"
+            role="img"
+            aria-label={`${
+              switchGraph === 0
+                ? round(totalCo2)
+                : switchGraph === 1
+                ? round(totalCo2Pro)
+                : switchGraph === 2
+                ? round(totalCo2Perso)
+                : totalCo2
+            } tonnes équivalents C O 2`}
+          >
             {switchGraph === 0
               ? round(totalCo2)
               : switchGraph === 1
