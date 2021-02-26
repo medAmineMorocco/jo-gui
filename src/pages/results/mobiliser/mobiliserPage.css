@@ -136,21 +136,6 @@
   margin-top: 20px;
 }
 
-.newsletter-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-}
-
-.newsletter-link {
-  text-align: left;
-  color: white;
-  text-decoration: underline;
-  font-family: "Paris2024";
-  font-weight: 700;
-  font-size: 24px;
-}
-
 [aria-label="download"] svg {
   width: 24px;
   height: 24px;

@@ -429,11 +429,6 @@ export const MOBILISER_CARD_TITLE = `en tant que collaborateur de
 
 export const MOBILISER_SHARE_DESCRIPTION = `Téléchargez votre <span style="color: var(--main-color)">sCOre-card</span>, invitez vos <span style="color: var(--main-color)">collegues</span> a faire le test ET <span style="color: var(--main-color)">partagez vos resultats</span> sur vos reseaux sociaux`;
 
-export const MOBILISER_NEWSLETTER_LINK = `Rejoignez la <span style="color: var(--main-color)">Green Team</span> de
-          Paris 2024 pour
-          suivre
-          <br /> les <span style="color: var(--main-color)">conseils et actualités</span> du Coach Climat`;
-
 export const MOBILISER_MAIL_BODY = (total, reduction) => `Bonjour xxx, 
 J’ai passé le test du Coach Climat de Paris 2024. Mon empreinte carbone annuelle est de ${total} tonnes équivalent CO₂. Grâce à 3 actions concrètes, je peux dès à présent viser de réduire mes émissions de ${reduction}%. Et parce qu’on est plus forts ensemble, je te mets au défi de me rejoindre !
 << message perso >>

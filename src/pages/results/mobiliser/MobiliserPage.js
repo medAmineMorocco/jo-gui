@@ -12,7 +12,6 @@ import {
 import * as dompurify from "dompurify";
 import {
   MOBILISER_CARD_TITLE,
-  MOBILISER_NEWSLETTER_LINK,
   MOBILISER_SHARE_DESCRIPTION,
   MOBILISER_ARCH_DESCRIPTION,
   MOBILISER_STATS_TEXT,
@@ -152,7 +151,11 @@ export function MobiliserPage() {
           />
           <div className="share-social-medias-container">
             <div>
-              <DownloadOutlined style={{ color: "white" }} onClick={download} />
+              <DownloadOutlined
+                aria-label="télécharger"
+                style={{ color: "white" }}
+                onClick={download}
+              />
             </div>
             <div>
               <EmailShareButton
@@ -160,7 +163,11 @@ export function MobiliserPage() {
                 subject="Score card"
                 body={MOBILISER_MAIL_BODY(total, reductionPercentage)}
               >
-                <EmailIcon size={32} round={true} />
+                <EmailIcon
+                  aria-label="envoyer un émail"
+                  size={32}
+                  round={true}
+                />
               </EmailShareButton>
             </div>
             <div>
@@ -168,7 +175,11 @@ export function MobiliserPage() {
                 url=" "
                 title={MOBILISER_POST_TEXT(reductionPercentage)}
               >
-                <TwitterIcon size={32} round={true} />
+                <TwitterIcon
+                  aria-label="partager sur twitter"
+                  size={32}
+                  round={true}
+                />
               </TwitterShareButton>
             </div>
             <div>
@@ -177,24 +188,17 @@ export function MobiliserPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkedinIcon size={32} round={true} />
+                <LinkedinIcon
+                  aria-label="aller vers linkedin"
+                  size={32}
+                  round={true}
+                />
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="newsletter-container">
-        <a
-          href="https://www.paris2024.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="newsletter-link"
-          dangerouslySetInnerHTML={{
-            __html: dompurify.sanitize(MOBILISER_NEWSLETTER_LINK),
-          }}
-        />
-      </div>
       <div style={{ height: "200px" }} />
     </Fragment>
   );
