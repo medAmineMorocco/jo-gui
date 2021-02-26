@@ -112,9 +112,10 @@ export function ChartResult({ dataCircle1, dataCircle2, dataCircle3 }) {
 
   useEffect(() => {
     setTimeout(() => {
-      document
-        .querySelector(".body-content-chart svg")
-        .setAttribute("aria-label", getAriaLabel());
+      const chart = document.querySelector(".body-content-chart svg");
+      if (chart) {
+        chart.setAttribute("aria-label", getAriaLabel());
+      }
     });
   }, [content, getAriaLabel]);
 
