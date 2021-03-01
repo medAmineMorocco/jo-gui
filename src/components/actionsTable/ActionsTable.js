@@ -27,7 +27,9 @@ export function ActionsTable({
           ({ category, thematic, description, reduction, gain }, key) => {
             return (
               <tr className="table-contents" key={key}>
-                <td className="table-contents-description">{description}</td>
+                <td className="table-contents-description">
+                  {description.substring(3)}
+                </td>
                 {showGain && (
                   <td className="table-contents-gain">{round(gain)}%</td>
                 )}
