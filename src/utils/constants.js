@@ -388,7 +388,7 @@ export const PREMIERS_ACTIONS_TITLE = "Vos premières actions";
 export const PALMARES_TOPS_TITLE = "POINTS <br/> FORTS";
 export const PALMARES_FLOPS_TITLE = "encore UN PEU D’ENTRAînement";
 export const PALMARES_TOPS = `<span style="color:var(--main-color-pro);"><b>Bravo</b></span>, vous êtes <span style="color:var(--main-color-pro);"><b>en dessous</b></span> de la moyenne française !`;
-export const PALMARES_FLOPS = `Ici, vous êtes <span style="color:var(--main-color-pro);"><b>au-dessus</b></span>, mais tout peut encore changer ! `;
+export const PALMARES_FLOPS = `Ici, vous êtes <span style="color:red"><b>au-dessus</b></span>, mais tout peut encore changer ! `;
 export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title">
           <b>UNE MULTITUDE D'AUTRES ACTIONS POSSIBLES, SUR QUOI SOUHAITEZ-VOUS
           <span style="color:var(--main-color)">AGIR EN PREMIER ?</b></span> 

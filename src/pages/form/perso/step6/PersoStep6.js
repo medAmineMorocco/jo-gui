@@ -106,7 +106,7 @@ export function PersoStep6({ step, setNextStep }) {
   };
 
   const getNewChoice = (value) =>
-    value === "Essence" || value === "Diesel" ? "gasoline" : "electric";
+    value === "Electrique" ? "electric" : "gasoline";
 
   useEffect(() => {
     scrollToTopOfThePage();
