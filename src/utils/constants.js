@@ -55,7 +55,7 @@ Oui. Réduire son impact carbone d’une tonne, c’est réduire les émissions 
 export const SECTION3_TITLE = "3/3 Comment est-il calculé ?";
 export const SECTION3_PARAG1 = `Paris 2024 a développé son propre outil et sa propre méthodologie pour deux raisons :</br>
 •	Parce que conformément à la stratégie d’Excellence Environnementale des Jeux, nous maîtrisons l’impact carbone de la vie du comité. En la mesurant et en mettant en place des actions de réductions, et enfin de compensation, nous travaillons pour que toutes les activités du Comité d’Organisation soient neutres en carbone.</br>
-•	Parce qu’on n’a pas toujours les mêmes comportements dans sa vie personnelle et professionnelle, comme pour l’alimentation ou les déplacements par exemple, nous avons décidé de séparer votre vie professionnelle et personnelle pour vous donner les clefs pour mieux comprendre votre impact et vos leviers de réduction.
+•	Parce qu’on n’a pas toujours les mêmes comportements dans sa vie personnelle et professionnelle, comme pour l’alimentation ou les déplacements par exemple, nous avons décidé de séparer <b>votre vie professionnelle et personnelle</b> pour vous donner les clefs pour mieux comprendre votre impact et vos leviers de réduction.
 `;
 export const SECTION3_PARAG2 = `Grâce à vos réponses associées aux « facteurs d’émission » proposés par l’ADEME (l’Agence de l’Environnement et de la Maîtrise de l’Energie), nous estimons les émissions de 6 gaz (CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques. <b>L'impact est exprimé en « tonne équivalente CO₂ » </b>car le CO₂, majoritairement répandu, est utilisé comme référence.`;
 export const SECTION3_PARAG3 = `<b>Les repères de comparaison</b> proposés dans les résultats <b>vous permettent de vous situer par rapport au français moyen.</b> A noter que ces repères sont indicatifs et ne prennent pas en compte tous les aspects de la vie professionnelle (comme les consommations énergétiques du siège social par exemple).<b> Le Coach Climat est plus rigoureux,</b> et nous incite à réduire toutes nos émissions ! `;
@@ -81,7 +81,7 @@ export const INTRODUCTION_TITLE1 = "Environ 15 min";
 export const INTRODUCTION_TITLE2 = "Quelques données";
 export const INTRODUCTION_TITLE4 = "Une année de référence";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
-export const LINK_HOME_ICON = "PARIS2024";
+export const LINK_HOME_ICON = "ACCUEIL";
 export const INTRO_DESCRIPTION1 = `<span>Eh oui, il y a quelques questions à se poser <span style="font-weight: bolder">avant</span> de connaître son empreinte carbone !</span>`;
 export const INTRO_DESCRIPTION2 = `<span>Pour votre <span style="color: #17B7B0">vie perso</span> : vos souvenirs de voyages, repas, éventuellement vos factures d'énergies...
 							<br />
@@ -397,7 +397,7 @@ export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title"
         </p>
         <p class="reduire-descrption-section-sub-title">
           <span style="color: var(--main-color)">
-          cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte. Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
+          Cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte. Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           </span>
           <br/>Si rien ne bouge, soit l'action a un faible impact, soit elle fait déjà partie de votre mode de vie !
         </p>`;
