@@ -243,7 +243,7 @@ export function ReduirePage() {
           <h3 className="reduire-title-section">{PREMIERS_ACTIONS_TITLE}</h3>
           <div className="card-right-result">
             <Card
-              title={`DEJA ${totalTopActions} % DE REDUCTION POSSIBLE !`}
+              title={`DÉJÀ ${totalTopActions} % DE REDUCTION POSSIBLE !`}
               backgroundColor="#7872F4"
             >
               <ActionsTable
@@ -269,13 +269,13 @@ export function ReduirePage() {
             <label>Légende :</label>
             <ul className="list-bar-legend">
               <li>
-                <span>Empreinte de la vie pro avec action</span>
+                <span> Empreinte de la vie pro avec actions </span>
               </li>
               <li>
-                <span>Empreinte de la vie perso avec actions</span>
+                <span> Empreinte de la vie perso avec actions </span>
               </li>
               <li>
-                <span>Réduction induite par vos actions</span>
+                <span> Réduction induite par vos actions </span>
               </li>
             </ul>
           </div>

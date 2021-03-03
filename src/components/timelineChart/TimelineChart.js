@@ -56,7 +56,7 @@ export function TimelineChart({ items }) {
         {items.map(({ value, description, height, color }, key) => (
           <Timeline.Item
             color={color}
-            style={{ height: height + "vh" }}
+            style={{ height: height > 15.2 ? 15.2 + "vh" : height + "vh" }}
             label={value + TONNE}
             key={key}
           >

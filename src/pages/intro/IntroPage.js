@@ -16,6 +16,7 @@ import {
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
+  ABOUT_CONTENT4,
   INTRODUCTION_TITLE1,
   INTRODUCTION_TITLE2,
   INTRODUCTION_TITLE4,
@@ -64,7 +65,12 @@ export function IntroPage() {
       </Header>
       <Modal
         title={ABOUT_TITLE}
-        content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
+        content={[
+          ABOUT_CONTENT1,
+          ABOUT_CONTENT2,
+          ABOUT_CONTENT3,
+          ABOUT_CONTENT4,
+        ]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />

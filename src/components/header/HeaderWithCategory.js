@@ -11,6 +11,7 @@ import {
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
+  ABOUT_CONTENT4,
 } from "@utils/constants";
 import "./headerWithCategory.css";
 
@@ -28,7 +29,7 @@ export function HeaderWithCategory({ title1, title2, className, color }) {
               shape="circle"
               icon={<HomeOutlined aria-label="Revenir à la page d'accueil" />}
             />
-            <span className="paris2024-title">PARIS2024</span>
+            <span className="paris2024-title">ACCUEIL</span>
           </Link>
         </div>
         <ButtonAntd
@@ -48,7 +49,12 @@ export function HeaderWithCategory({ title1, title2, className, color }) {
       </Header>
       <Modal
         title={ABOUT_TITLE}
-        content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
+        content={[
+          ABOUT_CONTENT1,
+          ABOUT_CONTENT2,
+          ABOUT_CONTENT3,
+          ABOUT_CONTENT4,
+        ]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />

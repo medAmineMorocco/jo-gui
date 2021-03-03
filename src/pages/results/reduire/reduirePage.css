@@ -26,6 +26,10 @@
 }
 .reduire-description-section-title {
   font-size: 2.5vh;
+  font-family: "SOURCE SANS PRO";
+}
+.reduire-descrption-section-sub-title {
+  font-size: 2vh;
 }
 .reduire-title-section {
   text-align: center;

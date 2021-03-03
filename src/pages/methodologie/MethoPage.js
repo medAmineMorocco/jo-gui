@@ -16,6 +16,7 @@ import {
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
+  ABOUT_CONTENT4,
   MAIN_DESC1,
   MAIN_DESC2,
   MAIN_DESC3,
@@ -32,7 +33,6 @@ import {
   SECTION3_PARAG1,
   SECTION3_PARAG2,
   SECTION3_PARAG3,
-  SECTION3_PARAG4,
   WEBSITE_INFO_MSG,
   WEBSITE_URL,
 } from "@utils/constants";
@@ -69,7 +69,12 @@ export function MethoPage(props) {
       </Header>
       <Modal
         title={ABOUT_TITLE}
-        content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
+        content={[
+          ABOUT_CONTENT1,
+          ABOUT_CONTENT2,
+          ABOUT_CONTENT3,
+          ABOUT_CONTENT4,
+        ]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />
@@ -118,12 +123,7 @@ export function MethoPage(props) {
       <div className="metho-intro-last-section">
         <Section
           title={SECTION3_TITLE}
-          paragraphs={[
-            SECTION3_PARAG1,
-            SECTION3_PARAG2,
-            SECTION3_PARAG3,
-            SECTION3_PARAG4,
-          ]}
+          paragraphs={[SECTION3_PARAG1, SECTION3_PARAG2, SECTION3_PARAG3]}
           style={{ background: "#003B55" }}
         />
       </div>

@@ -12,6 +12,7 @@ import {
   ABOUT_CONTENT1,
   ABOUT_CONTENT2,
   ABOUT_CONTENT3,
+  ABOUT_CONTENT4,
 } from "@utils/constants";
 import "./homePage.css";
 
@@ -51,7 +52,12 @@ export function HomePage(props) {
       </div>
       <Modal
         title={ABOUT_TITLE}
-        content={[ABOUT_CONTENT1, ABOUT_CONTENT2, ABOUT_CONTENT3]}
+        content={[
+          ABOUT_CONTENT1,
+          ABOUT_CONTENT2,
+          ABOUT_CONTENT3,
+          ABOUT_CONTENT4,
+        ]}
         isVisible={isVisible}
         hideOverlay={() => setVisible(false)}
       />

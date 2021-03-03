@@ -20,7 +20,8 @@ export const ABOUT_CONTENT1 =
   "Paris 2024 s’est engagé à réduire de moitié les émissions de CO₂ liées à l’organisation des Jeux, du collaborateur, jusqu’au spectateur.";
 export const ABOUT_CONTENT2 =
   "C’est pourquoi le Coach Climat est là pour vous aider à comprendre et réduire votre impact sur le climat par des actions concrètes.";
-export const ABOUT_CONTENT3 =
+export const ABOUT_CONTENT3 = "Toutes vos données sont confidentielles.";
+export const ABOUT_CONTENT4 =
   "Les résultats proposés ont fait l'objet d'une modélisation. Ils sont représentatifs d'un ordre de grandeur, mais ils n'ont pas pour but d'être exhaustifs. Une part d'incertitude existe comme dans toute modélisation.";
 export const MAIN_DESC1 =
   "Dans la lutte contre le changement climatique, chaque action compte !";
@@ -52,11 +53,12 @@ Oui. Réduire son impact carbone d’une tonne, c’est réduire les émissions 
 `;
 
 export const SECTION3_TITLE = "3/3 Comment est-il calculé ?";
-export const SECTION3_PARAG1 = `Sur le modèle du “bilan carbone®” développé par l'ADEME, <b>cet outil de diagnostic estime vos émissions carbone</b> en associant vos activités à la moyenne des émissions qu’elles impliquent, appelée « facteur d’émission »`;
-export const SECTION3_PARAG2 = `<b>Cet outil estime les émissions de 6 gaz </b>(CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques`;
-export const SECTION3_PARAG3 = `Le CO₂ majoritairement répandu est utilisé comme référence. <b>L'impact carbone est exprimé en tonne équivalente CO₂</b>, unité dans laquelle les quantités des autres gaz sont converties grâce aux facteurs d’émissions.`;
-export const SECTION3_PARAG4 = `Et parce qu’on n’a pas toujours les mêmes comportements chez soi ou au bureau, comme pour l’alimentation ou les déplacements par exemple, <b>l'impact carbone est calculé séparément entre votre vie professionnelle et personnelle</b> pour une meilleure lecture.<br/><br/> <b>Paris 2024 innove</b> en vous proposant un outil sur les volets pro et perso. <b>Les repères de comparaison</b> proposés dans les résultats (issus des calculs de Carbone 4 et de l’ADEME), <b>vous permettent de vous situer</b>, même si ces repères ne prennent pas en compte tous les aspects de la vie professionnelle (comme les consommations énergétiques du siège social par exemple). <b>Le Coach Climat est plus rigoureux</b>, et nous incite à réduire toutes nos émissions !
+export const SECTION3_PARAG1 = `Paris 2024 a développé son propre outil et sa propre méthodologie pour deux raisons :</br>
+•	Parce que conformément à la stratégie d’Excellence Environnementale des Jeux, nous maîtrisons l’impact carbone de la vie du comité. En la mesurant et en mettant en place des actions de réductions, et enfin de compensation, nous travaillons pour que toutes les activités du Comité d’Organisation soient neutres en carbone.</br>
+•	Parce qu’on n’a pas toujours les mêmes comportements dans sa vie personnelle et professionnelle, comme pour l’alimentation ou les déplacements par exemple, nous avons décidé de séparer votre vie professionnelle et personnelle pour vous donner les clefs pour mieux comprendre votre impact et vos leviers de réduction.
 `;
+export const SECTION3_PARAG2 = `Grâce à vos réponses associées aux « facteurs d’émission » proposés par l’ADEME (l’Agence de l’Environnement et de la Maîtrise de l’Energie), nous estimons les émissions de 6 gaz (CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques. <b>L'impact est exprimé en « tonne équivalente CO₂ » </b>car le CO₂, majoritairement répandu, est utilisé comme référence.`;
+export const SECTION3_PARAG3 = `<b>Les repères de comparaison</b> proposés dans les résultats <b>vous permettent de vous situer par rapport au français moyen.</b> A noter que ces repères sont indicatifs et ne prennent pas en compte tous les aspects de la vie professionnelle (comme les consommations énergétiques du siège social par exemple).<b> Le Coach Climat est plus rigoureux,</b> et nous incite à réduire toutes nos émissions ! `;
 
 export const WEBSITE_INFO_MSG =
   "Plus d'informations ? Consultez notre page dédiée :";
@@ -75,7 +77,7 @@ export const NAVIGATION_HOME = "Accueil";
 export const NAVIGATION_PROFESSIONAL = "Vie professionnelle";
 
 // new page introduction
-export const INTRODUCTION_TITLE1 = "Environ 25 min";
+export const INTRODUCTION_TITLE1 = "Environ 15 min";
 export const INTRODUCTION_TITLE2 = "Quelques données";
 export const INTRODUCTION_TITLE4 = "Une année de référence";
 export const INTRODUCTION_BTN_DESCRIPTION = "FAIRE LE TEST";
@@ -195,7 +197,7 @@ export const QUESTION11_NBR_VOLS_AR =
 
 // Restauration
 export const REPAS_QUESTION1 =
-  "Sur vos 5 déjeuners au bureau, quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien)";
+  "Sur vos 5 déjeuners au bureau, combien de repas sont : avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien ? ";
 export const REPAS_QUESTION1_INFO =
   "Coche 5 cases pour tes 5 déjeuners au boulot de la semaine !";
 export const REPAS_QUESTION1_ERROR_MSG = "⚠ Merci de saisir votre réponse";
@@ -215,7 +217,7 @@ export const ALIMENTATION_QUESTION2 =
 export const ALIMENTATION_QUESTION3 =
   "De quoi sont composés majoritairement tes repas en week-end ?";
 export const ALIMENTATION_QUESTION =
-  "Sur les 9 repas restants dans votre vie perso (dîners et week-ends), quelle est la composition de vos repas ? (avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien)";
+  "Sur les 9 repas restants dans votre vie perso (dîners et week-ends), combien de repas sont : avec viande rouge, viande blanche (porcs et volailles), poisson, végétarien (inclut œufs et produits laitiers), ou végétalien ? ";
 export const ALIMENTATION_QUESTION3_TOOTLTIP =
   "Les déjeuners en semaine sont séparés entre vie pro (au-dessus) et semaines de vacances (dessous)";
 export const ALIMENTATION_QUESTION4 =
@@ -391,11 +393,11 @@ export const PALMARES_TOPS = `<span style="color:var(--main-color-pro);"><b>Brav
 export const PALMARES_FLOPS = `Ici, vous êtes <span style="color:red"><b>au-dessus</b></span>, mais tout peut encore changer ! `;
 export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title">
           <b>UNE MULTITUDE D'AUTRES ACTIONS POSSIBLES, SUR QUOI SOUHAITEZ-VOUS
-          <span style="color:var(--main-color)">AGIR EN PREMIER ?</b></span> 
+          <span style="color:var(--main-color)">AGIR ?</b></span> 
         </p>
-        <p>
+        <p class="reduire-descrption-section-sub-title">
           <span style="color: var(--main-color)">
-            Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
+          cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte. Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           </span>
           <br/>Si rien ne bouge, soit l'action a un faible impact, soit elle fait déjà partie de votre mode de vie !
         </p>`;
@@ -403,8 +405,7 @@ export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title"
 ///////////////////////////////////////
 //   Compenser page
 //////////////////////////////////////
-export const COMPENSER_PANEL_TITLE1 =
-  "POUR VOTRE VIE PROFESSIONNELLE, Paris 2024 s’occupe de tout";
+export const COMPENSER_PANEL_TITLE1 = `POUR VOTRE VIE PROFESSIONNELLE, Paris 2024 s’occupe de tout`;
 export const COMPENSER_PANEL_TITLE2 =
   "POUR VOTRE VIE PERSONNELLE, vous avez LE POUVOIR D’AGIR !";
 export const COMPENSER_DESCRIPTION1 =

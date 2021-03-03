@@ -74,7 +74,7 @@ export function MobiliserPage() {
       .toJpeg(document.getElementById("mobiliser-capture"))
       .then((dataUrl) => {
         var link = document.createElement("a");
-        link.download = "mon-bilan-cojo.jpg";
+        link.download = "Score card - Coach Climat.jpg";
         link.href = dataUrl;
         link.click();
       });
@@ -160,7 +160,7 @@ export function MobiliserPage() {
             <div>
               <EmailShareButton
                 url=" "
-                subject="Score card"
+                subject="[Coach Climat] Toi aussi, fais le test !"
                 body={MOBILISER_MAIL_BODY(total, reductionPercentage)}
               >
                 <EmailIcon
