@@ -12,7 +12,9 @@ export function StyledTitle({ className, title1, title2, style, color }) {
         style={isMobileOrTablet ? {} : style}
         className={`${className} styled-title-container ${color}`}
       >
-        <Col span={24}>{title1}</Col>
+        <Col span={24} style={{ color: "white" }}>
+          {title1}
+        </Col>
         <Col span={24}>{title2}</Col>
       </h1>
     </Row>
