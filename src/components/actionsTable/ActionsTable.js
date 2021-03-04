@@ -28,7 +28,7 @@ export function ActionsTable({
             return (
               <tr className="table-contents" key={key}>
                 <td className="table-contents-description">
-                  {"- " + description.substring(3)}
+                  {"• " + description.substring(3)}
                 </td>
                 {showGain && (
                   <td className="table-contents-gain">{round(gain)}%</td>
