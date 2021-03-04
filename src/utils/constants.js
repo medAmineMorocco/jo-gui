@@ -398,8 +398,8 @@ export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title"
         <p class="reduire-descrption-section-sub-title">
           <span style="color: var(--main-color)">
           Cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte.<br/> 
-          Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           </span>
+          Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           <br/>Si rien ne bouge, soit l'action a un faible impact, soit elle fait déjà partie de votre mode de vie !
         </p>`;
 
