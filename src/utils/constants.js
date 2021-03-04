@@ -53,8 +53,8 @@ Oui. Réduire son impact carbone d’une tonne, c’est réduire les émissions 
 `;
 
 export const SECTION3_TITLE = "3/3 Comment est-il calculé ?";
-export const SECTION3_PARAG1 = `Paris 2024 a développé son propre outil et sa propre méthodologie pour deux raisons :</br>
-•	Parce que conformément à la stratégie d’Excellence Environnementale des Jeux, nous maîtrisons l’impact carbone de la vie du comité. En la mesurant et en mettant en place des actions de réductions, et enfin de compensation, nous travaillons pour que toutes les activités du Comité d’Organisation soient neutres en carbone.</br>
+export const SECTION3_PARAG1 = `Paris 2024 a développé son propre outil et sa propre méthodologie pour deux raisons :</br></br>
+•	Parce que conformément à la stratégie d’Excellence Environnementale des Jeux, nous maîtrisons l’impact carbone de la vie du comité. En la mesurant et en mettant en place des actions de réductions, et enfin de compensation, nous travaillons pour que toutes les activités du Comité d’Organisation soient neutres en carbone.</br></br>
 •	Parce qu’on n’a pas toujours les mêmes comportements dans sa vie personnelle et professionnelle, comme pour l’alimentation ou les déplacements par exemple, nous avons décidé de séparer <b>votre vie professionnelle et personnelle</b> pour vous donner les clefs pour mieux comprendre votre impact et vos leviers de réduction.
 `;
 export const SECTION3_PARAG2 = `Grâce à vos réponses associées aux « facteurs d’émission » proposés par l’ADEME (l’Agence de l’Environnement et de la Maîtrise de l’Energie), nous estimons les émissions de 6 gaz (CO₂, CH₄, NO₂, PFC, HFC, et SF₆) selon une méthode standardisée, reconnue officiellement internationalement, et dont les règles sont accessibles par tous car publiques. <b>L'impact est exprimé en « tonne équivalente CO₂ » </b>car le CO₂, majoritairement répandu, est utilisé comme référence.`;
@@ -397,7 +397,8 @@ export const REDUIRE_DESCRIPTION = `<p class="reduire-description-section-title"
         </p>
         <p class="reduire-descrption-section-sub-title">
           <span style="color: var(--main-color)">
-          Cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte. Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
+          Cochez les actions de réduction adaptées à vos objectifs, et visualisez l’impact sur votre empreinte.<br/> 
+          Vous le verrez, toutes les actions ne se valent pas en matière de carbone.
           </span>
           <br/>Si rien ne bouge, soit l'action a un faible impact, soit elle fait déjà partie de votre mode de vie !
         </p>`;
@@ -421,14 +422,14 @@ export const COMPENSER_DESCRIPTION_VIDEO = `<p>Compenser, c’est quoi ? Explica
 export const MOBILISER_ARCH_DESCRIPTION = "mon empreinte carbone est de";
 
 export const MOBILISER_STATS_TEXT = `Tonnes <br />
-                        de CO2 /an`;
+                        de CO₂ /an`;
 
 export const MOBILISER_CARD_TITLE = `en tant que collaborateur de
               <span style="color: var(--main-color)">paris 2024</span>
               <br />
               je m’engage pour le climat !`;
 
-export const MOBILISER_SHARE_DESCRIPTION = `Téléchargez votre <span style="color: var(--main-color)">sCOre-card</span>, invitez vos <span style="color: var(--main-color)">collegues</span> a faire le test ET <span style="color: var(--main-color)">partagez vos resultats</span> sur vos reseaux sociaux`;
+export const MOBILISER_SHARE_DESCRIPTION = `Téléchargez votre <span style="color: var(--main-color)">sCOre-card</span>, invitez vos <span style="color: var(--main-color)">collègues</span> à faire le test ET <span style="color: var(--main-color)">partagez vos résultats</span> sur vos réseaux sociaux`;
 
 export const MOBILISER_MAIL_BODY = (total, reduction) => `Bonjour xxx, 
 J’ai passé le test du Coach Climat de Paris 2024. Mon empreinte carbone annuelle est de ${total} tonnes équivalent CO₂. Grâce à 3 actions concrètes, je peux dès à présent viser de réduire mes émissions de ${reduction}%. Et parce qu’on est plus forts ensemble, je te mets au défi de me rejoindre !

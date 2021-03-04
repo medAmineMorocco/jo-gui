@@ -56,10 +56,11 @@
 
 .arch-description-container {
   flex-grow: 2;
-  padding: 54px;
+  padding: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 0px;
 }
 
 .arch-description {
@@ -75,7 +76,11 @@
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
   column-gap: 16px;
+  position: absolute;
+  bottom: 60px;
+  left: 191px;
 }
 
 .arch-stats-number-container {
